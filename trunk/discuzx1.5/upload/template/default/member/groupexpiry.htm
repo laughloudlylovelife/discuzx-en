@@ -1,0 +1,40 @@
+<!--{subtemplate common/header}-->
+<div id="pt" class="bm cl">
+	<!--{subtemplate common/simplesearchform}-->
+	<div class="z"><a href="forum.php" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em> {lang group_expiry}</div>
+</div>
+<div id="ct" class="wp cl">
+	<div class="mn">
+		<h1 class="mt">{lang group_expiry}</h1>
+		<div class="bm">
+			<h3 class="bm_h">{lang group_expiry_comment}</h3>
+			<div class="bm_c">
+				<table cellspacing="0" cellpadding="0" class="tl">
+					<tbody class="th">
+						<tr>
+							<td width="5"></td>
+							<td>{lang usergroup}</td>
+							<td>{lang group_expiry_time}</td>
+							<td>{lang group_expiry_type}</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<!--{loop $expirylist $group}-->
+							<tr class="{echo swapclass('alt')}">
+								<td></td>
+								<td>$group[grouptitle]</td>
+								<td>$group[time]</td>
+								<td ><!--{if $group['type'] == 'main'}-->{lang group_expiry_type_main}<!--{else}-->{lang group_expiry_type_ext}<!--{/if}--></td>
+							</tr>
+						<!--{/loop}-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="appl">
+		<!--{subtemplate common/userabout}-->
+	</div>
+</div>
+
+<!--{subtemplate common/footer}-->
