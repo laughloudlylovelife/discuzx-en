@@ -1,0 +1,158 @@
+||==================================||
+||  Discuz! X Conversion document   ||
+||----------------------------------||
+|| English Version                  ||
+|| by Valery Votintsev at sources.ru||
+||==================================||
+
+This document is designed to help you to convert the existing
+community products to the Discuz! X series products.
+
+Before you start the conversion, be sure to read step by step
+the following precautions:
+
+1. Before the conversion, in order to ensure the correct processing,
+   it is strongly recommended to backup all the original data,
+   and your current database!
+   We can not provide any technical support for customers
+   who did not make a backup before the upgrade!
+   
+2. Typically, our conversion program placed in the /utility/convert/ directory
+   of the product release, and can be run independently of the product.
+
+3. We can not guarantee a successfull conversion to Discuz! X if
+   all the product data are not valid, or some plug-ins or
+   functional data were developed by your own needs
+
+4. In most cases, after you converted to Discuz! X product,
+   you need to go to your admin-center, and update all the cache!
+   Elsewhere some features may not work properly.
+
+5. Unless the special statements, our conversion process will not change
+   your original data format and settings, it would copy the original
+   data and then perform the format conversion.
+   So, before the conversion, you should check if your database storage space
+   is sufficient.
+   Assuming your original data is 100M, so you need at least 110M free space
+   above the data, otherwise your product can not be converted successfully.
+
+6. After a successful upgrade, please delete the conversion program
+   to avoid possible security problems.
+
++--------------------------------------+
+ Conversion methods and steps
++--------------------------------------+
+
+1. Shut down your curent system.
+
+2. Backup all the files.
+
+3. Backup your database.
+
+4. Back up your system configuration files
+   such as config.inc.php, config_global.php, config_ucenter.php
+
+5. By Discuz! X program directory to your site
+
+6. Correctly Discuz! X (if you Ucenter Server is a stand-alone installation,
+   you need to provide access to his
+   Path and the founder of the password)
+
+7. Upload utilities directory to your site convert program.
+   Meanwhile, the convert/data directory
+   Writable (777)
+
+8. Visit http://your_domain/convert/ to start the conversion/transformation
+
+9. Convert program integrates a variety of programs which can be converted
+   to the Discuz! X, you select the system
+
+10. The conversion process is usually a conversion or the installation
+    instructions carefully before you begin to read him
+
+11. In accordance with the program prompts, until all the conversion is
+    finished
+
++--------------------------------------+
+ Conversion Troubleshooting
++--------------------------------------+
+You encounter any problems during the conversion process can be resolved
+through the following channels
+
+1. To our forum to seek help and support
+   http://www.discuz.net
+
+2. See detailed guidance document conversion
+   http://faq.comsenz.com/category-202
+
+3. Commercial users can purchase according to your service,
+   phone calls, MSN, QQ, forums for technical support and other means
+
+
++--------------------------------------+
+ FAQ
++--------------------------------------+
+
+1. I must first install DiscuzX it?
+   Often the case, especially during the conversion time,
+   this is the most critical step, or can not be converted successfully
+
+2. I have installed Discuz! Forum and UChome two products
+   can be converted to DiscuzX product?
+   Can. DiscuzX integration of the functions of the Forum and the SNS,
+   the conversion after two of your products will be seamlessly integrated
+
+3. Conversion Discuz! And UChome have any special requirements it?
+   During the conversion, you must install on your site DiscuzX program
+   and ensure that it functions properly.
+   If you only install a certain product, then switch to DiscuzX is easy to
+   follow the prompts.
+   If you have two or more products, then converted when converting the
+   order to pay attention, you should first conversion of Forum products
+   to DiscuzX, and then run the other conversion programs,
+   conversion UChome or supesite
+
+4. Why is my conversion is finished, the site's users do not have the
+   Ucenter conversion program only detected when the data table,
+   will convert the user data. If you previously used the
+   We provide Discuz! Full version, the conversion program can automatically
+   detect ucenter's. However, if you are using Be your own installation ucenter,
+   then the conversion process will not be detected.
+   The solution:
+       Please re-install your Discuz! X, select the time of installation
+       to install only Discuz! X (safety manual has been designated
+   Installed Ucenter Server), and then fill in your ucenter information,
+   and start the installation. After the re-installation Begin the conversion.
+
+5. I had the forum is large, the data conversion process limit the size of it?
+   Possible to ensure a successful conversion?
+   Our conversion process after several tests, and in > 6G data environment
+   repeatedly successful conversion, so the original
+   The size of the data is no limit, but with the larger amount of data,
+   conversion time is longer. You should protect the
+   During the conversion data, the server has been available.
+
+6. If the conversion error or accident interrupted halfway, how to deal with?
+   If the unexpected interruption, usually you should be based on error,
+   eliminate errors, and then start again.
+   Converter provides a high conversion mode,
+   you can choose to skip some of the conversion steps,
+   without having to start over, but you
+   Should be aware of what steps have been performed,
+   or it may result in data conversion is not complete.
+   If you are in the process of converting UChome or supesite error,
+   and the Forum have been converted at this time is completed,
+   Then you may need to convert forum, and then run Uchome conversion,
+   or conversion may not succeed.
+   Therefore, if you need to convert Forum + UChome .. more than one program,
+   we recommend the end of each conversion process,
+   Good data on the backup has already been converted,
+   this time in the interrupt and restore the backup, and then continue.
+
+7. The conversion process requires human intervention it?
+   In addition to converting the front to fill in some information
+   and select the conversion process, the conversion once you start,
+   the program will automatically run and
+   Jump, so you do not need to intervene.
+   Inappropriate intervention into the conversion but may be interrupted
+   or failed.
