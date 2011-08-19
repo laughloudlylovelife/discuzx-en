@@ -31,15 +31,26 @@ The package was totally translated:
   * All the PHP/JS/CSS comments translated to English 
   * All the regions data (China Provinces/Cities/Districts/Villages) translated to English 
 
+TRANSLATION QUALITY:
+
+If you are waiting for a high quality professional English translation, this package is not for you!
+This package prepared only for demonstration purposes, for show the Discuz!X engine possibilities to non-chinese speaking people.
+Most of texts are autotranslated by Google Translator.
+
+So, if you want a brilliant English - do it by yourself! :)
+
+
 YET NOT TRANSLATED:
 
 /data/ipdata/tinyipdata.dat - it is a correspondence between IP adress range and country name,
 
 To solve this problem I need a help to compile/decompile this file.
 
+
 DOWNLOAD PAGE:
 
 http://china.sources.ru/read.php?11
+
 
 BUGREPORTS:
 
