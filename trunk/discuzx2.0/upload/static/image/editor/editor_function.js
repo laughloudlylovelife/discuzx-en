@@ -87,7 +87,7 @@ function edit_insert(html) {
 	var obj = p.window.frames['HtmlEditor'];
 	var status = p.document.getElementById('uchome-editstatus').value;
 	if(status != 'html') {
-		alert(lng['wysiwyg_only']);
+		alert(lng['wysiwyg_only']); //vot
 		return;
 	}
 	obj.focus();

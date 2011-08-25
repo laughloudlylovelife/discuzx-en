@@ -20,7 +20,7 @@ function previewFormSubmit() {
 	saveAllThread();
 
 		if (!selectedTopicId || selectedNormalIds.length < 1) {
-		alert(lng['select_topic_to_push']);
+		alert(lng['select_topic_to_push']);//vot
 			return false;
 		}
 
@@ -62,13 +62,13 @@ function ajaxChangeSearch() {
 }
 
 function ajaxGetSearchResultThreads() {
-	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');
+	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
 	ajaxpost('search_form', 'search_result', null, null, null, function() {initSelect(); return false});
 	return false;
 }
 
 function ajaxGetPageResultThreads(page, mpurl) {
-	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');
+	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
 	if (typeof page == 'undefined' || page === null) {
 		page = 1;
 	}
@@ -161,7 +161,7 @@ function addMiniportalList(tid) {
 		return false;
 	}
 	if (selectedNormalIds.length >= 5) {
-		alert(lng['push5reached']);
+		alert(lng['push5reached']);//vot
 		return false;
 	}
 	if (tid == selectedTopicId) {
@@ -296,14 +296,14 @@ function removeNormalThreadRecall(displayorder, inNormalEditor) {
 		if (inNormalEditor) {
 			saveAllThread();
 		}
-		firstThreadLi.html('<div class="tips">'+lng['click_left']+' <img src="static/image/admincp/cloud/qun_op_list.png" align="absmiddle" /> '+lng['push_to_list']+'</div>');
+		firstThreadLi.html('<div class="tips">'+lng['click_left']+' <img src="static/image/admincp/cloud/qun_op_list.png" align="absmiddle" /> '+lng['push_to_list']+'</div>');//vot
 		firstThreadLi.show();
 	}
 }
 
 function ajaxUploadQQGroupImage() {
 	j('#uploadImageResult').parent().show();
-	j('#uploadImageResult').text(lng['wait_image_upload']);
+	j('#uploadImageResult').text(lng['wait_image_upload']);//vot
 	ajaxpost('uploadImage', 'uploadImageResult', null, null, null, 'uploadRecall()');
 }
 

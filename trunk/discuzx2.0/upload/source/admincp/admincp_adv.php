@@ -265,8 +265,8 @@ if($operation == 'ad') {
 			}
 		}
 
-		$adv['starttime'] = $adv['starttime'] ? dgmdate($adv['starttime'], 'Y-m-d') : '';
-		$adv['endtime'] = $adv['endtime'] ? dgmdate($adv['endtime'], 'Y-m-d') : '';
+/*vot*/	$adv['starttime'] = $adv['starttime'] ? dgmdate($adv['starttime'], 'Y-m-d') : '';
+/*vot*/	$adv['endtime'] = $adv['endtime'] ? dgmdate($adv['endtime'], 'Y-m-d') : '';
 
 		echo '<script type="text/javascript" src="static/js/calendar.js"></script>'.
 			'<div class="colorbox"><h4>'.lang('adv/'.$type, $advclass->name).'</h4>'.
