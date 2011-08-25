@@ -10,10 +10,10 @@
 
 $lang = array
 (
-	'hello'							=> 'Hello',//'你好',
+	'hello'				=> 'Hello',//'你好',
 	'moderate_member_invalidate'	=> 'Decline',//'否决',
-	'moderate_member_delete'		=> 'Delete',//'删除',
-	'moderate_member_validate'		=> 'Accept',//'通过',
+	'moderate_member_delete'	=> 'Delete',//'删除',
+	'moderate_member_validate'	=> 'Accept',//'通过',
 
 
 	'get_passwd_subject'	=> 'Retrieve Password Help',//'取回密码说明',
@@ -251,7 +251,7 @@ Sincerely yours,<br />
 
 	'adv_expiration_subject' =>	'Your site ad will be {day} days after the due, Please timely processing',
 	'adv_expiration_message' =>	'The following ads on your site will be expired {day} days, please deal with:<br /><br />{advs}',
-	'invite_payment_email_message' => '
+	'invite_payment_email_message'	=> '
 Thank you for using the {bbname} ({siteurl}), Your order {orderid} has been paid completed, Order has been validated.<br />
 <br />----------------------------------------------------------------------<br />
 Here is what you get the invitation code

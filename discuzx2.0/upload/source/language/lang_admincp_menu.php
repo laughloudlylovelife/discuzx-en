@@ -179,7 +179,7 @@ $lang = array
 	'menu_setting_manyou'		=> 'Manyou settings',//'Manyou 设置',
 	'menu_setting_qqconnect'	=> 'QQ binding settings',//'QQ 绑定设置',
 
-	'admincp_title'		=> $_G['setting']['bbname'].' Admin Center',//$_G['setting']['bbname'].' 管理中心',
+	'admincp_title'			=> $_G['setting']['bbname'].' Admin Center',//$_G['setting']['bbname'].' 管理中心',
 
 );
 
