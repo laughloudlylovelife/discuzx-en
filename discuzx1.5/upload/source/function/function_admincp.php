@@ -328,6 +328,10 @@ function cpheader() {
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta http-equiv="x-ua-compatible" content="ie=7" />
 <link href="static/image/admincp/admincp.css" rel="stylesheet" type="text/css" />
+
+	<!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
+	<script type="text/javascript" src="{$_G[setting][jspath]}lang_js.js?{VERHASH}"></script>
+
 </head>
 <body>
 <script type="text/JavaScript">
