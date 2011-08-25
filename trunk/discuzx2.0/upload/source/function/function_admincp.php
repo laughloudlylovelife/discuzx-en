@@ -343,6 +343,8 @@ function cpheader() {
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta http-equiv="x-ua-compatible" content="ie=7" />
 <link href="static/image/admincp/admincp.css?{$_G[style][verhash]}" rel="stylesheet" type="text/css" />
+	<!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
+	<script type="text/javascript" src="{$_G[setting][jspath]}lang_js.js?{VERHASH}"></script>
 </head>
 <body>
 <script type="text/JavaScript">
@@ -901,7 +903,7 @@ function cpfooter() {
 		echo <<<EOT
 <script type="text/javascript">
 	var newhtml = '';
-	newhtml += '<table class="tb tb2"><tr><th class="partition edited">You are currently using up-to-date Discuz! program. To update, please refer to the prompts of following line</th></tr>';
+/*vot*/	newhtml += '<table class="tb tb2"><tr><th class="partition edited">You are currently using up-to-date Discuz! program. To update, please refer to the prompts of following line</th></tr>';
 	newhtml += '<tr><td class="tipsblock"><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version={$version}&release={$release}&charset={$charset}" target="_blank"><img src="{$newsurl}" onload="shownews()" /></a></td></tr></table>';
 	\$('boardnews').style.display = 'none';
 	\$('boardnews').innerHTML = newhtml;
