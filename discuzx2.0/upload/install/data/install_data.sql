@@ -13,7 +13,7 @@ INSERT INTO pre_common_credit_rule VALUES ('2','Reply post','reply','4','0','0',
 INSERT INTO pre_common_credit_rule VALUES ('3','Add Digest','digest','4','0','0','0','0','5','0','0','0','0','0','0','');
 INSERT INTO pre_common_credit_rule VALUES ('4','Upload attachment','postattach','4','0','0','0','0','0','0','0','0','0','0','0','');
 INSERT INTO pre_common_credit_rule VALUES ('5','Download attachment','getattach','4','0','0','0','0','0','0','0','0','0','0','0','');
-INSERT INTO pre_common_credit_rule VALUES ('6','Send PM','search','4','0','0','0','0','0','0','0','0','0','0','0','');
+INSERT INTO pre_common_credit_rule VALUES ('6','Send PM','sendpm','4','0','0','0','0','0','0','0','0','0','0','0','');
 INSERT INTO pre_common_credit_rule VALUES ('7','Search','search','4','0','0','0','0','0','0','0','0','0','0','0','');
 INSERT INTO pre_common_credit_rule VALUES ('8','Visit Promotion','promotion_visit','4','0','0','0','0','1','0','0','0','0','0','0','');
 INSERT INTO pre_common_credit_rule VALUES ('9','Register by Promotion','promotion_register','4','0','0','0','0','2','0','0','0','0','0','0','');
