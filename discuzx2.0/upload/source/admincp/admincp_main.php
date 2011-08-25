@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_main.php 22760 2011-05-20 01:03:11Z monkey $
+ *		English by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -177,13 +178,11 @@ echo <<<EOT
 		if(!obj) {
 			return;
 		}
-//vot		var scrollh = document.body.offsetHeight - 160;
-		var scrollh = document.body.offsetHeight - 210;
+/*vot*/		var scrollh = document.body.offsetHeight - 210;
 		obj.style.overflow = 'visible';
 		obj.style.height = '';
 		$('scrolllink').style.display = 'none';
-//vot		if(obj.offsetHeight + 150 > document.body.offsetHeight && scrollh > 0) {
-		if(obj.offsetHeight + 200 > document.body.offsetHeight && scrollh > 0) {
+/*vot*/		if(obj.offsetHeight + 200 > document.body.offsetHeight && scrollh > 0) {
 			obj.style.overflow = 'hidden';
 			obj.style.height = scrollh + 'px';
 			$('scrolllink').style.display = '';

@@ -41,10 +41,10 @@ function renewContent() {
 		}
 	};
 
-	if(window.confirm(lng['restore_last_saved'])) {
+	if(window.confirm(lng['restore_last_saved'])) { //vot
 		var data = loadUserdata('home');
 		if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
-			parent.showDialog(lng['no_data_recover']);
+			parent.showDialog(lng['no_data_recover']); //vot
 			return;
 		}
 		var data = data.split(/\x09\x09/);
@@ -207,13 +207,13 @@ function format(type, para){
 	if(!gIsIE){
 		switch(type){
 			case "Cut":
-				sAlert = lng['cut_manually'];
+				sAlert = lng['cut_manually']; //vot
 				break;
 			case "Copy":
-				sAlert = lng['copy_manually'];
+				sAlert = lng['copy_manually']; //vot
 				break;
 			case "Paste":
-				sAlert = lng['paste_manually'];
+				sAlert = lng['paste_manually']; //vot
 				break;
 		}
 	}
@@ -297,7 +297,7 @@ function doodleBox(event, id) {
 	if(parent.$('uchome-ttHtmlEditor') != null) {
 		parent.showWindow(id, 'home.php?mod=magic&mid=doodle&showid=blog_doodle&target=uchome-ttHtmlEditor&from=editor');
 	} else {
-		alert(lng['graffiti_no_init']);
+		alert(lng['graffiti_no_init']); //vot
 	}
 }
 function backColor(e){
@@ -459,7 +459,7 @@ function fSetBorderMouseDown(obj) {
 }
 function fDisplayElement(element,displayValue) {
 	if(gIEVer<=5.01 && gIsIE){
-		alert(lng['ie5_only']);
+		alert(lng['ie5_only']); //vot
 		return;
 	}
 	fHideMenu();
@@ -495,7 +495,7 @@ function fSetModeTip(obj){
 		dv.style.padding = "2px";
 		dv.style.border = "1px #000000 solid";
 		dv.style.backgroundColor = "#FFFFCC";
-		dv.innerHTML = lng['edit_raw'];
+		dv.innerHTML = lng['edit_raw']; //vot
 		document.body.appendChild(dv);
 	}else{
 		dvModeTip.style.display = "";
@@ -613,7 +613,7 @@ function changeEditType(flag, ev){
 			}
 			ev = ev || event;
 			if(ev){
-				if(window.confirm(lng['plain_text_warn'])){
+				if(window.confirm(lng['plain_text_warn'])){ //vot
 					$('uchome-editstatus').value = 'text';
 					sub1();
 				}else{

@@ -12,8 +12,8 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-$allowdiy = false; //Diy permissions: $_G['group']['allowdiy'] || $_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic']
-$ref = $_G['gp_diy'] == 'yes'; //DIY mode
+$allowdiy = false; //vot: Diy permissions: $_G['group']['allowdiy'] || $_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic']
+$ref = $_G['gp_diy'] == 'yes'; //vot: DIY mode
 if(!$ref && $_G['gp_action'] == 'get') {
 	if($_G['gp_type'] == 'index') {
 		if($_G['group']['allowdiy']) {
