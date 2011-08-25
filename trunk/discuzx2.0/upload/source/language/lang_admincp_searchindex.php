@@ -14,7 +14,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Admin Center Home' => 'action=index',
+      'Admin Center Home'	=> 'action=index',
     ),
     'text' =>
     array (
@@ -25,7 +25,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Custom Menu Management' => 'action=misc&operation=custommenu',
+      'Custom Menu Management'	=> 'action=misc&operation=custommenu',
     ),
     'text' =>
     array (
@@ -36,7 +36,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -47,7 +47,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Base Settings' => 'action=setting&operation=basic',
+      'Base Settings'	=> 'action=setting&operation=basic',
     ),
     'text' =>
     array (
@@ -58,7 +58,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Access control' => 'action=setting&operation=access',
+      'Access control'	=> 'action=setting&operation=access',
     ),
     'text' =>
     array (
@@ -69,7 +69,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',
+      'Site features'	=> 'action=setting&operation=functions',
     ),
     'text' =>
     array (
@@ -80,7 +80,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Performance Optimization' => 'action=setting&operation=cachethread',
+      'Performance Optimization'	=> 'action=setting&operation=cachethread',
     ),
     'text' =>
     array (
@@ -91,7 +91,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'SEO settings' => 'action=setting&operation=seo',
+      'SEO settings'	=> 'action=setting&operation=seo',
     ),
     'text' =>
     array (
@@ -102,7 +102,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Domain settings' => 'action=domain',
+      'Domain settings'	=> 'action=domain',
     ),
     'text' =>
     array (
@@ -113,7 +113,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Space settings' => 'action=setting&operation=home',
+      'Space settings'	=> 'action=setting&operation=home',
     ),
     'text' =>
     array (
@@ -124,7 +124,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Permissions' => 'action=setting&operation=permissions',
+      'User Permissions'	=> 'action=setting&operation=permissions',
     ),
     'text' =>
     array (
@@ -135,7 +135,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Money Setttings' => 'action=setting&operation=credits',
+      'Money Setttings'	=> 'action=setting&operation=credits',
     ),
     'text' =>
     array (
@@ -146,7 +146,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Anti-spam settings' => 'action=setting&operation=sec',
+      'Anti-spam settings'	=> 'action=setting&operation=sec',
     ),
     'text' =>
     array (
@@ -157,7 +157,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Time settings' => 'action=setting&operation=datetime',
+      'Time settings'	=> 'action=setting&operation=datetime',
     ),
     'text' =>
     array (
@@ -168,7 +168,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Upload Settings' => 'action=setting&operation=attach',
+      'Upload Settings'	=> 'action=setting&operation=attach',
     ),
     'text' =>
     array (
@@ -179,7 +179,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Watermark' => 'action=setting&operation=imgwater',
+      'Watermark'	=> 'action=setting&operation=imgwater',
     ),
     'text' =>
     array (
@@ -190,7 +190,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment size' => 'action=misc&operation=attachtype',
+      'Attachment size'	=> 'action=misc&operation=attachtype',
     ),
     'text' =>
     array (
@@ -201,7 +201,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Search Settings' => 'action=setting&operation=search',
+      'Search Settings'	=> 'action=setting&operation=search',
     ),
     'text' =>
     array (
@@ -234,7 +234,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Mobile Access settings' => 'action=setting&operation=mobile',
+      'Mobile Access settings'	=> 'action=setting&operation=mobile',
     ),
     'text' =>
     array (
@@ -256,7 +256,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',
+      'Style settings'	=> 'action=setting&operation=styles',
     ),
     'text' =>
     array (
@@ -267,7 +267,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style Management' => 'action=styles',
+      'Style Management'	=> 'action=styles',
     ),
     'text' =>
     array (
@@ -278,7 +278,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Template Management' => 'action=templates',
+      'Template Management'	=> 'action=templates',
     ),
     'text' =>
     array (
@@ -289,7 +289,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Smile management' => 'action=smilies',
+      'Smile management'	=> 'action=smilies',
     ),
     'text' =>
     array (
@@ -300,7 +300,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Rate management' => 'action=click',
+      'Rate management'	=> 'action=click',
     ),
     'text' =>
     array (
@@ -311,7 +311,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread icons' => 'action=misc&operation=stamp',
+      'Thread icons'	=> 'action=misc&operation=stamp',
     ),
     'text' =>
     array (
@@ -322,7 +322,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Editor Settings' => 'action=setting&operation=editor',
+      'Editor Settings'	=> 'action=setting&operation=editor',
     ),
     'text' =>
     array (
@@ -333,7 +333,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Online List icons' => 'action=misc&operation=onlinelist',
+      'Online List icons'	=> 'action=misc&operation=onlinelist',
     ),
     'text' =>
     array (
@@ -344,7 +344,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Moderate' => 'action=moderate',
+      'Moderate'	=> 'action=moderate',
     ),
     'text' =>
     array (
@@ -355,7 +355,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Bad Word Filter' => 'action=misc&operation=censor',
+      'Bad Word Filter'	=> 'action=misc&operation=censor',
     ),
     'text' =>
     array (
@@ -366,7 +366,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Reports' => 'action=report',
+      'User Reports'	=> 'action=report',
     ),
     'text' =>
     array (
@@ -377,7 +377,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Tag Management' => 'action=tag',
+      'Tag Management'	=> 'action=tag',
     ),
     'text' =>
     array (
@@ -388,7 +388,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -399,7 +399,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum Thread Management' => 'action=threads',
+      'Forum Thread Management'	=> 'action=threads',
     ),
     'text' =>
     array (
@@ -410,7 +410,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Bulk post delete' => 'action=prune',
+      'Bulk post delete'	=> 'action=prune',
     ),
     'text' =>
     array (
@@ -421,7 +421,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment Management' => 'action=attach',
+      'Attachment Management'	=> 'action=attach',
     ),
     'text' =>
     array (
@@ -432,7 +432,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -443,7 +443,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -454,7 +454,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Thread Management' => 'action=threads&operation=group',
+      'Group Thread Management'	=> 'action=threads&operation=group',
     ),
     'text' =>
     array (
@@ -465,7 +465,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Posts Batch delete' => 'action=prune&operation=group',
+      'Group Posts Batch delete'	=> 'action=prune&operation=group',
     ),
     'text' =>
     array (
@@ -476,7 +476,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Attachment Management' => 'action=attach&operation=group',
+      'Group Attachment Management'	=> 'action=attach&operation=group',
     ),
     'text' =>
     array (
@@ -487,7 +487,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -498,7 +498,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -520,7 +520,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Replies Recycle Bin' => 'action=recyclebinpost',
+      'Replies Recycle Bin'	=> 'action=recyclebinpost',
     ),
     'text' =>
     array (
@@ -531,7 +531,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum/Group Top' => 'action=threads&operation=forumstick',
+      'Forum/Group Top'	=> 'action=threads&operation=forumstick',
     ),
     'text' =>
     array (
@@ -542,7 +542,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Posts optimization' => 'action=threads&operation=postposition',
+      'Posts optimization'	=> 'action=threads&operation=postposition',
     ),
     'text' =>
     array (
@@ -553,7 +553,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Post Comment Management' => 'action=postcomment',
+      'Post Comment Management'	=> 'action=postcomment',
     ),
     'text' =>
     array (
@@ -564,7 +564,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -575,7 +575,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -586,7 +586,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Doings Management' => 'action=doing',
+      'Doings Management'	=> 'action=doing',
     ),
     'text' =>
     array (
@@ -597,7 +597,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Blogs Management' => 'action=blog',
+      'Blogs Management'	=> 'action=blog',
     ),
     'text' =>
     array (
@@ -608,7 +608,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Feed management' => 'action=feed',
+      'Feed management'	=> 'action=feed',
     ),
     'text' =>
     array (
@@ -619,7 +619,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Albums manage' => 'action=album',
+      'Albums manage'	=> 'action=album',
     ),
     'text' =>
     array (
@@ -630,7 +630,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Images Management' => 'action=pic',
+      'Images Management'	=> 'action=pic',
     ),
     'text' =>
     array (
@@ -641,7 +641,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Comments/Messages Management' => 'action=comment',
+      'Comments/Messages Management'	=> 'action=comment',
     ),
     'text' =>
     array (
@@ -652,7 +652,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Share Management' => 'action=share',
+      'Share Management'	=> 'action=share',
     ),
     'text' =>
     array (
@@ -663,7 +663,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=',
+      ''	=> 'action=',
     ),
     'text' =>
     array (
@@ -674,7 +674,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Management' => 'action=members&operation=search',
+      'User Management'	=> 'action=members&operation=search',
     ),
     'text' =>
     array (
@@ -685,7 +685,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Add User' => 'action=members&operation=add',
+      'Add User'	=> 'action=members&operation=add',
     ),
     'text' =>
     array (
@@ -696,7 +696,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User profile' => 'action=members&operation=profile',
+      'User profile'	=> 'action=members&operation=profile',
     ),
     'text' =>
     array (
@@ -707,7 +707,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Statistics' => 'action=members&operation=stat',
+      'Statistics'	=> 'action=members&operation=stat',
     ),
     'text' =>
     array (
@@ -718,7 +718,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Send notification' => 'action=members&operation=newsletter',
+      'Send notification'	=> 'action=members&operation=newsletter',
     ),
     'text' =>
     array (
@@ -729,7 +729,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Ban users' => 'action=members&operation=ban',
+      'Ban users'	=> 'action=members&operation=ban',
     ),
     'text' =>
     array (
@@ -740,7 +740,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Ban IP' => 'action=members&operation=ipban',
+      'Ban IP'	=> 'action=members&operation=ipban',
     ),
     'text' =>
     array (
@@ -751,7 +751,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Reward points' => 'action=members&operation=reward',
+      'Reward points'	=> 'action=members&operation=reward',
     ),
     'text' =>
     array (
@@ -762,7 +762,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Review new users' => 'action=moderate&operation=members',
+      'Review new users'	=> 'action=moderate&operation=members',
     ),
     'text' =>
     array (
@@ -773,7 +773,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',
+      'Group Management'	=> 'action=admingroup',
     ),
     'text' =>
     array (
@@ -784,7 +784,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',
+      'User Groups'	=> 'action=usergroups',
     ),
     'text' =>
     array (
@@ -795,7 +795,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Star Members' => 'action=specialuser&operation=hotuser',
+      'Star Members'	=> 'action=specialuser&operation=hotuser',
     ),
     'text' =>
     array (
@@ -806,7 +806,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Default friends' => 'action=specialuser&operation=defaultuser',
+      'Default friends'	=> 'action=specialuser&operation=defaultuser',
     ),
     'text' =>
     array (
@@ -817,7 +817,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=verify&operation=verify',
+      ''	=> 'action=verify&operation=verify',
     ),
     'text' =>
     array (
@@ -828,7 +828,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Verification settings' => 'action=verify',
+      'Verification settings'	=> 'action=verify',
     ),
     'text' =>
     array (
@@ -839,7 +839,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Portal Categories' => 'action=portalcategory',
+      'Portal Categories'	=> 'action=portalcategory',
     ),
     'text' =>
     array (
@@ -850,7 +850,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Article management' => 'action=article',
+      'Article management'	=> 'action=article',
     ),
     'text' =>
     array (
@@ -861,7 +861,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Topic management' => 'action=topic',
+      'Topic management'	=> 'action=topic',
     ),
     'text' =>
     array (
@@ -872,7 +872,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Layout Management' => 'action=diytemplate',
+      'Layout Management'	=> 'action=diytemplate',
     ),
     'text' =>
     array (
@@ -883,7 +883,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Block Management' => 'action=block',
+      'Block Management'	=> 'action=block',
     ),
     'text' =>
     array (
@@ -894,7 +894,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Block styles' => 'action=blockstyle',
+      'Block styles'	=> 'action=blockstyle',
     ),
     'text' =>
     array (
@@ -905,7 +905,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Third-party blocks' => 'action=blockxml',
+      'Third-party blocks'	=> 'action=blockxml',
     ),
     'text' =>
     array (
@@ -916,7 +916,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Blog Categories' => 'action=blogcategory',
+      'Blog Categories'	=> 'action=blogcategory',
     ),
     'text' =>
     array (
@@ -927,7 +927,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Album Categories' => 'action=albumcategory',
+      'Album Categories'	=> 'action=albumcategory',
     ),
     'text' =>
     array (
@@ -938,7 +938,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum Management' => 'action=forums',
+      'Forum Management'	=> 'action=forums',
     ),
     'text' =>
     array (
@@ -949,7 +949,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum merge' => 'action=forums&operation=merge',
+      'Forum merge'	=> 'action=forums&operation=merge',
     ),
     'text' =>
     array (
@@ -960,7 +960,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread types' => 'action=threadtypes',
+      'Thread types'	=> 'action=threadtypes',
     ),
     'text' =>
     array (
@@ -971,7 +971,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group settings' => 'action=group&operation=setting',
+      'Group settings'	=> 'action=group&operation=setting',
     ),
     'text' =>
     array (
@@ -982,7 +982,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group categories' => 'action=group&operation=type',
+      'Group categories'	=> 'action=group&operation=type',
     ),
     'text' =>
     array (
@@ -993,7 +993,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=group&operation=manage',
+      'Group Management'	=> 'action=group&operation=manage',
     ),
     'text' =>
     array (
@@ -1004,7 +1004,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Main group permissions' => 'action=group&operation=userperm',
+      'Main group permissions'	=> 'action=group&operation=userperm',
     ),
     'text' =>
     array (
@@ -1015,7 +1015,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group level' => 'action=group&operation=level',
+      'Group level'	=> 'action=group&operation=level',
     ),
     'text' =>
     array (
@@ -1026,7 +1026,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Announce' => 'action=announce',
+      'Site Announce'	=> 'action=announce',
     ),
     'text' =>
     array (
@@ -1037,7 +1037,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Advertising' => 'action=adv',
+      'Site Advertising'	=> 'action=adv',
     ),
     'text' =>
     array (
@@ -1048,7 +1048,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Tasks' => 'action=tasks',
+      'Site Tasks'	=> 'action=tasks',
     ),
     'text' =>
     array (
@@ -1059,7 +1059,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Magic Center' => 'action=magics',
+      'Magic Center'	=> 'action=magics',
     ),
     'text' =>
     array (
@@ -1070,7 +1070,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Medal Center' => 'action=medals',
+      'Medal Center'	=> 'action=medals',
     ),
     'text' =>
     array (
@@ -1081,7 +1081,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Help' => 'action=faq',
+      'Site Help'	=> 'action=faq',
     ),
     'text' =>
     array (
@@ -1092,7 +1092,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-commerce' => 'action=setting&operation=ec',
+      'E-commerce'	=> 'action=setting&operation=ec',
     ),
     'text' =>
     array (
@@ -1103,7 +1103,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Friend Links' => 'action=misc&operation=link',
+      'Friend Links'	=> 'action=misc&operation=link',
     ),
     'text' =>
     array (
@@ -1114,7 +1114,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Webmaster Recommended' => 'action=misc&operation=focus',
+      'Webmaster Recommended'	=> 'action=misc&operation=focus',
     ),
     'text' =>
     array (
@@ -1125,7 +1125,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Related Links' => 'action=misc&operation=relatedlink',
+      'Related Links'	=> 'action=misc&operation=relatedlink',
     ),
     'text' =>
     array (
@@ -1136,7 +1136,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Recharge card secret' => 'action=card',
+      'Recharge card secret'	=> 'action=card',
     ),
     'text' =>
     array (
@@ -1147,7 +1147,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      '' => 'action=cloud&operation=open',
+      ''	=> 'action=cloud&operation=open',
     ),
     'text' =>
     array (
@@ -1158,7 +1158,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Addons' => 'action=addons',
+      'Addons'	=> 'action=addons',
     ),
     'text' =>
     array (
@@ -1169,7 +1169,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Plugins' => 'action=plugins',
+      'Plugins'	=> 'action=plugins',
     ),
     'text' =>
     array (
@@ -1180,7 +1180,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Update cache' => 'action=tools&operation=updatecache',
+      'Update cache'	=> 'action=tools&operation=updatecache',
     ),
     'text' =>
     array (
@@ -1191,7 +1191,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Update statistics' => 'action=counter',
+      'Update statistics'	=> 'action=counter',
     ),
     'text' =>
     array (
@@ -1202,7 +1202,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Operation log' => 'action=logs',
+      'Operation log'	=> 'action=logs',
     ),
     'text' =>
     array (
@@ -1213,7 +1213,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Scheduled Tasks' => 'action=misc&operation=cron',
+      'Scheduled Tasks'	=> 'action=misc&operation=cron',
     ),
     'text' =>
     array (
@@ -1224,7 +1224,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Check file permissions' => 'action=tools&operation=fileperms',
+      'Check file permissions'	=> 'action=tools&operation=fileperms',
     ),
     'text' =>
     array (
@@ -1235,7 +1235,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'File Checksum' => 'action=checktools&operation=filecheck',
+      'File Checksum'	=> 'action=checktools&operation=filecheck',
     ),
     'text' =>
     array (
@@ -1246,7 +1246,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Management Team' => 'action=founder&operation=perm',
+      'Management Team'	=> 'action=founder&operation=perm',
     ),
     'text' =>
     array (
@@ -1257,7 +1257,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Mail Settings' => 'action=setting&operation=mail',
+      'Mail Settings'	=> 'action=setting&operation=mail',
     ),
     'text' =>
     array (
@@ -1268,7 +1268,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'UCenter Settings' => 'action=setting&operation=uc',
+      'UCenter Settings'	=> 'action=setting&operation=uc',
     ),
     'text' =>
     array (
@@ -1279,7 +1279,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Database' => 'action=db&operation=export',
+      'Database'	=> 'action=db&operation=export',
     ),
     'text' =>
     array (
@@ -1290,7 +1290,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Split posts' => 'action=postsplit&operation=manage',
+      'Split posts'	=> 'action=postsplit&operation=manage',
     ),
     'text' =>
     array (
@@ -1301,7 +1301,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Split thread' => 'action=threadsplit&operation=manage',
+      'Split thread'	=> 'action=threadsplit&operation=manage',
     ),
     'text' =>
     array (
@@ -1312,8 +1312,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Addons' => 'action=addons',
-      'Resource Provider' => 'action=addons',
+      'Addons'	=> 'action=addons',
+      'Resource Provider'	=> 'action=addons',
     ),
     'text' =>
     array (
@@ -1326,8 +1326,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Thread permision management' => 'action=admingroup&operation=edit&anchor=threadperm',//'主题管理权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Thread permision management'	=> 'action=admingroup&operation=edit&anchor=threadperm',//'主题管理权限'
     ),
     'text' =>
     array (
@@ -1397,8 +1397,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Post management privileges' => 'action=admingroup&operation=edit&anchor=postperm',//'帖子管理权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Post management privileges'	=> 'action=admingroup&operation=edit&anchor=postperm',//'帖子管理权限'
     ),
     'text' =>
     array (
@@ -1429,8 +1429,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Moderator panel privileges' => 'action=admingroup&operation=edit&anchor=modcpperm',//'管理面板权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Moderator panel privileges'	=> 'action=admingroup&operation=edit&anchor=modcpperm',//'管理面板权限'
     ),
     'text' =>
     array (
@@ -1476,8 +1476,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Space management privileges' => 'action=admingroup&operation=edit&anchor=spaceperm',//'空间管理权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Space management privileges'	=> 'action=admingroup&operation=edit&anchor=spaceperm',//'空间管理权限'
     ),
     'text' =>
     array (
@@ -1516,8 +1516,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Other privileges' => 'action=admingroup&operation=edit&anchor=otherperm',//'其他权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Other privileges'	=> 'action=admingroup&operation=edit&anchor=otherperm',//'其他权限'
     ),
     'text' =>
     array (
@@ -1533,8 +1533,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=admingroup',//'管理组'
-      'Portal management privileges' => 'action=admingroup&operation=edit&anchor=portalperm',//'门户管理权限'
+      'Group Management'	=> 'action=admingroup',//'管理组'
+      'Portal management privileges'	=> 'action=admingroup&operation=edit&anchor=portalperm',//'门户管理权限'
     ),
     'text' =>
     array (
@@ -1559,8 +1559,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Advertising' => 'action=adv',//'站点广告'
-      'Advertising space' => 'action=adv&operation=list',//'广告位'
+      'Site Advertising'	=> 'action=adv',//'站点广告'
+      'Advertising space'	=> 'action=adv&operation=list',//'广告位'
     ),
     'text' =>
     array (
@@ -1573,8 +1573,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Albums Management' => 'action=album',//'相册管理',
-      'Recent list' => 'action=album',//'最新列表',
+      'Albums Management'	=> 'action=album',//'相册管理',
+      'Recent list'	=> 'action=album',//'最新列表',
     ),
     'text' =>
     array (
@@ -1587,8 +1587,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Albums Management' => 'action=album',//'相册管理',
-      'Search' => 'action=album&search=true',//'搜索',
+      'Albums Management'	=> 'action=album',//'相册管理',
+      'Search'	=> 'action=album&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -1621,7 +1621,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Album Categories' => 'action=albumcategory',//'相册分类',
+      'Album Categories'	=> 'action=albumcategory',//'相册分类',
     ),
     'text' =>
     array (
@@ -1636,7 +1636,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site Announces' => 'action=announce',//'站点公告',
+      'Site Announces'	=> 'action=announce',//'站点公告',
     ),
     'text' =>
     array (
@@ -1658,8 +1658,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Third-party blocks' => 'action=blockxml',//'第三方模块',
-      'Search' => 'action=blockxml&operation=add',//'搜索',
+      'Third-party blocks'	=> 'action=blockxml',//'第三方模块',
+      'Search'	=> 'action=blockxml&operation=add',//'搜索',
     ),
     'text' =>
     array (
@@ -1686,8 +1686,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Blogs Management' => 'action=blog',//'日志管理',
-      'Recent blogs' => 'action=blog',//'最新列表',
+      'Blogs Management'	=> 'action=blog',//'日志管理',
+      'Recent blogs'	=> 'action=blog',//'最新列表',
     ),
     'text' =>
     array (
@@ -1700,8 +1700,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Blogs Management' => 'action=blog',//'日志管理',
-      'Search' => 'action=blog&search=true',//'搜索',
+      'Blogs Management'	=> 'action=blog',//'日志管理',
+      'Search'	=> 'action=blog&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -1747,7 +1747,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Blog Categories',//' => 'action=blogcategory',//'日志分类',
+      'Blog Categories',//'	=> 'action=blogcategory',//'日志分类',
     ),
     'text' =>
     array (
@@ -1762,7 +1762,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Allow recharge reception',//'允许前台充值' => 'action=card',
+      'Allow recharge reception',//'允许前台充值'	=> 'action=card',
     ),
     'text' =>
     array (
@@ -1776,7 +1776,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Export recharge card supports export up to 10,000 secret data. For open XlS files use any available tools such as EXCEL.' => 'action=card&operation=manage',//'导出充值卡密最多支持 10000 条数据，导出的 .xls 文件可用 EXCEL 等工具打开。',
+      'Export recharge card supports export up to 10,000 secret data. For open XlS files use any available tools such as EXCEL.'	=> 'action=card&operation=manage',//'导出充值卡密最多支持 10000 条数据，导出的 .xls 文件可用 EXCEL 等工具打开。',
     ),
     'text' =>
     array (
@@ -1789,7 +1789,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'If a card secret category removed, all the cards under it will be automatically included in the "Default Category"' => 'action=card&operation=type',//'卡密分类删除时，其下所有卡片将自动纳入“默认分类”',
+      'If a card secret category removed, all the cards under it will be automatically included in the "Default Category"'	=> 'action=card&operation=type',//'卡密分类删除时，其下所有卡片将自动纳入“默认分类”',
     ),
     'text' =>
     array (
@@ -1802,7 +1802,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'When the card secret is generated, simple rules or small number of sheets to generate may cause actual generated number of sheets will less than the default number of sheets.' => 'admin.php?action=card&operation=make',//'生成卡密时，简单的规则或较小的生成张数可能导致实际生成张数小于预设生成张数。',
+      'When the card secret is generated, simple rules or small number of sheets to generate may cause actual generated number of sheets will less than the default number of sheets.'	=> 'admin.php?action=card&operation=make',//'生成卡密时，简单的规则或较小的生成张数可能导致实际生成张数小于预设生成张数。',
     ),
     'text' =>
     array (
@@ -1835,7 +1835,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Rating management' => 'action=click',//'表态管理',
+      'Rating management'	=> 'action=click',//'表态管理',
     ),
     'text' =>
     array (
@@ -1848,8 +1848,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Comment Management' => 'action=comment',//'留言管理',
-      'Comments/Feedback' => 'action=comment',//'评论/留言',
+      'Comment Management'	=> 'action=comment',//'留言管理',
+      'Comments/Feedback'	=> 'action=comment',//'评论/留言',
     ),
     'text' =>
     array (
@@ -1888,9 +1888,9 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Comment Management' => 'action=comment',//'留言管理',
-      'Article Comments',//'文章评论' => 'action=comment&operation=article',
-      'Topic comments',//'专题评论' => 'action=comment&operation=topic',
+      'Comment Management'	=> 'action=comment',//'留言管理',
+      'Article Comments',//'文章评论'	=> 'action=comment&operation=article',
+      'Topic comments',//'专题评论'	=> 'action=comment&operation=topic',
     ),
     'text' =>
     array (
@@ -1916,8 +1916,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Database' => 'action=db&operation=export',//'数据库',
-      'Backup' => 'action=db&operation=export',//'备份',
+      'Database'	=> 'action=db&operation=export',//'数据库',
+      'Backup'	=> 'action=db&operation=export',//'备份',
     ),
     'text' =>
     array (
@@ -1950,8 +1950,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Database' => 'action=db&operation=export',//'数据库',
-      'Upgrade',//'升级' => 'action=db&operation=runquery',
+      'Database'	=> 'action=db&operation=export',//'数据库',
+      'Upgrade',//'升级'	=> 'action=db&operation=runquery',
     ),
     'text' =>
     array (
@@ -1968,8 +1968,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Database' => 'action=db&operation=export',//'数据库',
-      'Optimization' => 'action=db&operation=optimize',//'优化',
+      'Database'	=> 'action=db&operation=export',//'数据库',
+      'Optimization'	=> 'action=db&operation=optimize',//'优化',
     ),
     'text' =>
     array (
@@ -1982,7 +1982,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Region settings' => 'action=district',//'地区设置',
+      'Region settings'	=> 'action=district',//'地区设置',
     ),
     'text' =>
     array (
@@ -1995,7 +1995,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Doings Management',//'记录管理' => 'action=doing',
+      'Doings Management',//'记录管理'	=> 'action=doing',
     ),
     'text' =>
     array (
@@ -2008,8 +2008,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Doings Management' => 'action=doing',//'记录管理',
-      'Search' => 'action=doing&search=true',//'搜索',
+      'Doings Management'	=> 'action=doing',//'记录管理',
+      'Search'	=> 'action=doing&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -2039,8 +2039,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Domain settings' => 'action=domain',//'域名设置',
-      'Application Domain' => 'domain&operation=app',//'应用域名',
+      'Domain settings'	=> 'action=domain',//'域名设置',
+      'Application Domain'	=> 'domain&operation=app',//'应用域名',
     ),
     'text' =>
     array (
@@ -2053,8 +2053,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Domain settings' => 'action=domain',//'域名设置',
-      'Set the root domain name' => 'domain&operation=root',//'根域名设置',
+      'Domain settings'	=> 'action=domain',//'域名设置',
+      'Set the root domain name'	=> 'domain&operation=root',//'根域名设置',
     ),
     'text' =>
     array (
@@ -2067,8 +2067,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Domain settings' => 'action=domain',//'域名设置',
-      'Base settings' => 'domain&operation=base',//'基本设置',
+      'Domain settings'	=> 'action=domain',//'域名设置',
+      'Base settings'	=> 'domain&operation=base',//'基本设置',
     ),
     'text' =>
     array (
@@ -2090,8 +2090,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-Commerce Settings' => 'action=setting&operation=ec',//'电子商务',
-      'Alipay' => 'action=ec&operation=alipay',//'支付宝',
+      'E-Commerce Settings'	=> 'action=setting&operation=ec',//'电子商务',
+      'Alipay'	=> 'action=ec&operation=alipay',//'支付宝',
     ),
     'text' =>
     array (
@@ -2123,8 +2123,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-Commerce Settings' => 'action=setting&operation=ec',//'电子商务',
-      '财付通' => 'action=ec&operation=tenpay',
+      'E-Commerce Settings'	=> 'action=setting&operation=ec',//'电子商务',
+      '财付通'	=> 'action=ec&operation=tenpay',
     ),
     'text' =>
     array (
@@ -2157,8 +2157,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-Commerce Settings' => 'action=setting&operation=ec',//'电子商务',
-      'Points recharge orders' => 'action=ec&operation=orders',//'积分充值订单',
+      'E-Commerce Settings'	=> 'action=setting&operation=ec',//'电子商务',
+      'Points recharge orders'	=> 'action=ec&operation=orders',//'积分充值订单',
     ),
     'text' =>
     array (
@@ -2187,8 +2187,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-Commerce Settings' => 'action=setting&operation=ec',//'电子商务',
-      'Credit Rules' => 'action=ec&operation=credit',//'诚信规则',
+      'E-Commerce Settings'	=> 'action=setting&operation=ec',//'电子商务',
+      'Credit Rules'	=> 'action=ec&operation=credit',//'诚信规则',
     ),
     'text' =>
     array (
@@ -2206,7 +2206,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Feed Management' => 'action=feed',//'动态管理',
+      'Feed Management'	=> 'action=feed',//'动态管理',
     ),
     'text' =>
     array (
@@ -2244,8 +2244,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Edit Forum' => 'action=forums&operation=edit',//'编辑版块',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Edit Forum'	=> 'action=forums&operation=edit',//'编辑版块',
     ),
     'text' =>
     array (
@@ -2288,8 +2288,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums',//'版块管理' => 'action=forums',
-      'Base settings',//'基本设置' => 'action=forums&operation=edit&anchor=basic',
+      'Forums',//'版块管理'	=> 'action=forums',
+      'Base settings',//'基本设置'	=> 'action=forums&operation=edit&anchor=basic',
     ),
     'text' =>
     array (
@@ -2346,8 +2346,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Extended settings' => 'action=forums&operation=edit&anchor=extend',//'扩展设置',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Extended settings'	=> 'action=forums&operation=edit&anchor=extend',//'扩展设置',
     ),
     'text' =>
     array (
@@ -2435,8 +2435,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Post options' => 'action=forums&operation=edit&anchor=posts',//'帖子选项',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Post options'	=> 'action=forums&operation=edit&anchor=posts',//'帖子选项',
     ),
     'text' =>
     array (
@@ -2511,8 +2511,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Extended points exchange strategy' => 'action=forums&operation=edit&anchor=credits',//'扩展积分增减策略',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Extended points exchange strategy'	=> 'action=forums&operation=edit&anchor=credits',//'扩展积分增减策略',
     ),
     'text' =>
     array (
@@ -2525,8 +2525,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Thread types config' => 'action=forums&operation=edit&anchor=threadtypes',//'主题分类',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Thread types config'	=> 'action=forums&operation=edit&anchor=threadtypes',//'主题分类',
     ),
     'text' =>
     array (
@@ -2554,8 +2554,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Thread categories' => 'action=forums&operation=edit&anchor=threadsorts',//'分类信息',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Thread categories'	=> 'action=forums&operation=edit&anchor=threadsorts',//'分类信息',
     ),
     'text' =>
     array (
@@ -2579,8 +2579,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forums' => 'action=forums',//'版块管理',
-      'Forum permissions' => 'action=forums&operation=edit&anchor=perm',//'版块权限',
+      'Forums'	=> 'action=forums',//'版块管理',
+      'Forum permissions'	=> 'action=forums&operation=edit&anchor=perm',//'版块权限',
     ),
     'text' =>
     array (
@@ -2614,7 +2614,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Admin Team permissions' => 'action=founder',//'后台管理团队',
+      'Admin Team permissions'	=> 'action=founder',//'后台管理团队',
     ),
     'text' =>
     array (
@@ -2627,7 +2627,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Settings' => 'action=group&operation=setting',//'群组设置',
+      'Group Settings'	=> 'action=group&operation=setting',//'群组设置',
     ),
     'text' =>
     array (
@@ -2653,7 +2653,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'newgroup_userperm' => 'action=group&operation=userperm',
+      'newgroup_userperm'	=> 'action=group&operation=userperm',
     ),
     'text' =>
     array (
@@ -2675,7 +2675,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Level' => 'action=group&operation=level',//'群组等级',
+      'Group Level'	=> 'action=group&operation=level',//'群组等级',
     ),
     'text' =>
     array (
@@ -2688,7 +2688,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Group Management' => 'action=group&operation=manage',//'群组管理',
+      'Group Management'	=> 'action=group&operation=manage',//'群组管理',
     ),
     'text' =>
     array (
@@ -2719,7 +2719,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Magics' => 'action=magics',//'道具中心',
+      'Magics'	=> 'action=magics',//'道具中心',
     ),
     'text' =>
     array (
@@ -2738,7 +2738,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Medals' => 'action=medals',//'勋章中心',
+      'Medals'	=> 'action=medals',//'勋章中心',
     ),
     'text' =>
     array (
@@ -2751,7 +2751,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Aliases' => 'action=members&operation=repeat',//'马甲',
+      'Aliases'	=> 'action=members&operation=repeat',//'马甲',
     ),
     'text' =>
     array (
@@ -2768,7 +2768,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Add User' => 'action=members&operation=add',//'添加用户',
+      'Add User'	=> 'action=members&operation=add',//'添加用户',
     ),
     'text' =>
     array (
@@ -2789,7 +2789,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Edit user group members' => 'action=members&operation=group',//'编辑会员用户组',
+      'Edit user group members'	=> 'action=members&operation=group',//'编辑会员用户组',
     ),
     'text' =>
     array (
@@ -2821,7 +2821,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Edit User points' => 'action=members&operation=credit',//'编辑用户积分',
+      'Edit User points'	=> 'action=members&operation=credit',//'编辑用户积分',
     ),
     'text' =>
     array (
@@ -2839,7 +2839,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Edit User Permissions' => 'action=members&operation=access',//'编辑用户权限',
+      'Edit User Permissions'	=> 'action=members&operation=access',//'编辑用户权限',
     ),
     'text' =>
     array (
@@ -2857,7 +2857,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Edit User' => 'action=members&operation=edit',//'编辑用户',
+      'Edit User'	=> 'action=members&operation=edit',//'编辑用户',
     ),
     'text' =>
     array (
@@ -2921,7 +2921,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Search Members' => 'action=members&operation=search',//'用户管理',
+      'Search Members'	=> 'action=members&operation=search',//'用户管理',
     ),
     'text' =>
     array (
@@ -2977,7 +2977,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Online List icons' => 'action=misc&operation=onlinelist',//'在线列表图标',
+      'Online List icons'	=> 'action=misc&operation=onlinelist',//'在线列表图标',
     ),
     'text' =>
     array (
@@ -2990,7 +2990,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Links' => 'action=misc&operation=link',//'友情链接',
+      'Links'	=> 'action=misc&operation=link',//'友情链接',
     ),
     'text' =>
     array (
@@ -3004,7 +3004,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Related Links' => 'action=misc&operation=relatedlink',//'关联链接',
+      'Related Links'	=> 'action=misc&operation=relatedlink',//'关联链接',
     ),
     'text' =>
     array (
@@ -3017,8 +3017,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Editor Settings' => 'action=setting&operation=editor',//'编辑器设置',
-      'BB-Code' => 'action=setting&operation=bbcode',//'Discuz! 代码',
+      'Editor Settings'	=> 'action=setting&operation=editor',//'编辑器设置',
+      'BB-Code'	=> 'action=setting&operation=bbcode',//'Discuz! 代码',
     ),
     'text' =>
     array (
@@ -3031,7 +3031,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Bad Word Filter' => 'action=misc&operation=censor',//'词语过滤',
+      'Bad Word Filter'	=> 'action=misc&operation=censor',//'词语过滤',
     ),
     'text' =>
     array (
@@ -3048,8 +3048,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread stamps' => 'action=misc&operation=stamp',//'主题鉴定',
-      'Stamp List' => 'action=misc&operation=stamp&anchor=list',//'图章',
+      'Thread stamps'	=> 'action=misc&operation=stamp',//'主题鉴定',
+      'Stamp List'	=> 'action=misc&operation=stamp&anchor=list',//'图章',
     ),
     'text' =>
     array (
@@ -3062,8 +3062,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread stamps' => 'action=misc&operation=stamp',//'主题鉴定',
-      'Icons' => 'action=misc&operation=stamp&anchor=llist',//'图标',
+      'Thread stamps'	=> 'action=misc&operation=stamp',//'主题鉴定',
+      'Icons'	=> 'action=misc&operation=stamp&anchor=llist',//'图标',
     ),
     'text' =>
     array (
@@ -3076,8 +3076,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread stamps' => 'action=misc&operation=stamp',//'主题鉴定',
-      'Add' => 'action=misc&operation=stamp&anchor=add',//'添加',
+      'Thread stamps'	=> 'action=misc&operation=stamp',//'主题鉴定',
+      'Add'	=> 'action=misc&operation=stamp&anchor=add',//'添加',
     ),
     'text' =>
     array (
@@ -3090,7 +3090,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment type size' => 'action=misc&operation=attachtype',//'附件类型尺寸',
+      'Attachment type size'	=> 'action=misc&operation=attachtype',//'附件类型尺寸',
     ),
     'text' =>
     array (
@@ -3103,7 +3103,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Cron Scheduler' => 'action=misc&operation=cron',//'计划任务',
+      'Cron Scheduler'	=> 'action=misc&operation=cron',//'计划任务',
     ),
     'text' =>
     array (
@@ -3116,8 +3116,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Hot Threads' => 'action=misc&operation=focus',//'站长推荐',
-      'Manage' => 'action=misc&operation=focus',//'管理',
+      'Hot Threads'	=> 'action=misc&operation=focus',//'站长推荐',
+      'Manage'	=> 'action=misc&operation=focus',//'管理',
     ),
     'text' =>
     array (
@@ -3132,8 +3132,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Hot Threads' => 'action=misc&operation=focus',//'站长推荐',
-      'Add' => 'action=misc&operation=focus&do=add',//'添加',
+      'Hot Threads'	=> 'action=misc&operation=focus',//'站长推荐',
+      'Add'	=> 'action=misc&operation=focus&do=add',//'添加',
     ),
     'text' =>
     array (
@@ -3158,8 +3158,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Hot Threads' => 'action=misc&operation=focus',//'站长推荐',
-      'Settings' => 'action=misc&operation=focus&do=config',//'设置',
+      'Hot Threads'	=> 'action=misc&operation=focus',//'站长推荐',
+      'Settings'	=> 'action=misc&operation=focus&do=config',//'设置',
     ),
     'text' =>
     array (
@@ -3179,7 +3179,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Images Management' => 'action=pic',//'图片管理',
+      'Images Management'	=> 'action=pic',//'图片管理',
     ),
     'text' =>
     array (
@@ -3192,8 +3192,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Images Management' => 'action=pic',//'图片管理',
-      'Search' => 'action=pic&search=true',//'搜索',
+      'Images Management'	=> 'action=pic',//'图片管理',
+      'Search'	=> 'action=pic&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -3229,7 +3229,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Post Comment Management' => 'action=postcomment',//'帖子点评管理',
+      'Post Comment Management'	=> 'action=postcomment',//'帖子点评管理',
     ),
     'text' =>
     array (
@@ -3242,8 +3242,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Post Comment Management' => 'action=postcomment',//'帖子点评管理',
-      'Search' => 'action=postcomment&search=true',//'搜索',
+      'Post Comment Management'	=> 'action=postcomment',//'帖子点评管理',
+      'Search'	=> 'action=postcomment&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -3278,8 +3278,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Split Posts' => 'action=postsplit&operation=manage',//'帖子分表',
-      'Table management' => 'action=postsplit&operation=manage',//'分表管理',
+      'Split Posts'	=> 'action=postsplit&operation=manage',//'帖子分表',
+      'Table management'	=> 'action=postsplit&operation=manage',//'分表管理',
     ),
     'text' =>
     array (
@@ -3292,8 +3292,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Split Posts' => 'action=postsplit&operation=manage',//'帖子分表',
-      'Table management' => 'action=postsplit&operation=manage',//'分表管理',
+      'Split Posts'	=> 'action=postsplit&operation=manage',//'帖子分表',
+      'Table management'	=> 'action=postsplit&operation=manage',//'分表管理',
     ),
     'text' =>
     array (
@@ -3306,7 +3306,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Bulk post delete' => 'action=prune',//'论坛批量删帖',
+      'Bulk post delete'	=> 'action=prune',//'论坛批量删帖',
     ),
     'text' =>
     array (
@@ -3342,8 +3342,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Recycle Bin Management' => 'action=recyclebin',//'主题回收站',
-      'Search' => 'action=recyclebin&operation=search',//'搜索',
+      'Recycle Bin Management'	=> 'action=recyclebin',//'主题回收站',
+      'Search'	=> 'action=recyclebin&operation=search',//'搜索',
     ),
     'text' =>
     array (
@@ -3373,8 +3373,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread Recycle Bin' => 'action=recyclebin',//'主题回收站',
-      'Clean-up' => 'action=recyclebin&operation=clean',//'清理',
+      'Thread Recycle Bin'	=> 'action=recyclebin',//'主题回收站',
+      'Clean-up'	=> 'action=recyclebin&operation=clean',//'清理',
     ),
     'text' =>
     array (
@@ -3390,8 +3390,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Posts Recycle Bin' => 'action=recyclebinpost',//'回帖回收站',
-      'Search' => 'action=recyclebinpost&operation=search',//'搜索',
+      'Posts Recycle Bin'	=> 'action=recyclebinpost',//'回帖回收站',
+      'Search'	=> 'action=recyclebinpost&operation=search',//'搜索',
     ),
     'text' =>
     array (
@@ -3417,8 +3417,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Posts Recycle Bin' => 'action=recyclebinpost',//'回帖回收站',
-      'Clean-up' => 'action=recyclebinpost&operation=clean',//'清理',
+      'Posts Recycle Bin'	=> 'action=recyclebinpost',//'回帖回收站',
+      'Clean-up'	=> 'action=recyclebinpost&operation=clean',//'清理',
     ),
     'text' =>
     array (
@@ -3434,7 +3434,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Reports' => 'action=report',//'用户举报',
+      'User Reports'	=> 'action=report',//'用户举报',
     ),
     'text' =>
     array (
@@ -3447,7 +3447,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Base Settings' => 'action=setting&operation=basic',
+      'Base Settings'	=> 'action=setting&operation=basic',
     ),
     'text' =>
     array (
@@ -3490,8 +3490,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Space settings' => 'action=setting&operation=home',//'空间设置',
-      'Base settings' => 'action=setting&operation=home&anchor=base',//'基本设置',
+      'Space settings'	=> 'action=setting&operation=home',//'空间设置',
+      'Base settings'	=> 'action=setting&operation=home&anchor=base',//'基本设置',
     ),
     'text' =>
     array (
@@ -3543,8 +3543,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Space settings' => 'action=setting&operation=home',//'空间设置',
-      'Privacy' => 'action=setting&operation=home&anchor=privacy',//'隐私设置',
+      'Space settings'	=> 'action=setting&operation=home',//'空间设置',
+      'Privacy'	=> 'action=setting&operation=home&anchor=privacy',//'隐私设置',
     ),
     'text' =>
     array (
@@ -3580,8 +3580,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Registration and access control' => 'action=setting&operation=access',//'注册与访问控制',
-      'Registration' => 'action=setting&operation=access&anchor=register',//'注册',
+      'Registration and access control'	=> 'action=setting&operation=access',//'注册与访问控制',
+      'Registration'	=> 'action=setting&operation=access&anchor=register',//'注册',
     ),
     'text' =>
     array (
@@ -3671,8 +3671,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Registration and access control' => 'action=setting&operation=access',//'注册与访问控制',
-      'Access Control' => 'action=setting&operation=access&anchor=access',//'访问控制',
+      'Registration and access control'	=> 'action=setting&operation=access',//'注册与访问控制',
+      'Access Control'	=> 'action=setting&operation=access&anchor=access',//'访问控制',
     ),
     'text' =>
     array (
@@ -3695,8 +3695,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'Global' => 'action=setting&operation=styles&anchor=global',//'全局',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'Global'	=> 'action=setting&operation=styles&anchor=global',//'全局',
     ),
     'text' =>
     array (
@@ -3735,8 +3735,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'Forum Home' => 'action=setting&operation=styles&anchor=index',//'论坛首页',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'Forum Home'	=> 'action=setting&operation=styles&anchor=index',//'论坛首页',
     ),
     'text' =>
     array (
@@ -3785,8 +3785,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'Thread List' => 'action=setting&operation=styles&anchor=forumdisplay',//'主题列表页',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'Thread List'	=> 'action=setting&operation=styles&anchor=forumdisplay',//'主题列表页',
     ),
     'text' =>
     array (
@@ -3834,8 +3834,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'View thread settings' => 'action=setting&operation=styles&anchor=viewthread',//'帖子内容页',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'View thread settings'	=> 'action=setting&operation=styles&anchor=viewthread',//'帖子内容页',
     ),
     'text' =>
     array (
@@ -3909,8 +3909,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'Prompts' => 'action=setting&operation=styles&anchor=refresh',//'提示信息',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'Prompts'	=> 'action=setting&operation=styles&anchor=refresh',//'提示信息',
     ),
     'text' =>
     array (
@@ -3932,8 +3932,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style settings' => 'action=setting&operation=styles',//'界面设置',
-      'Pop-up messages' => 'action=setting&operation=styles&anchor=sitemessage',//'弹出信息',
+      'Style settings'	=> 'action=setting&operation=styles',//'界面设置',
+      'Pop-up messages'	=> 'action=setting&operation=styles&anchor=sitemessage',//'弹出信息',
     ),
     'text' =>
     array (
@@ -3961,8 +3961,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Performance Optimization',//'性能优化' => 'action=setting&operation=seo',
-      'SEO' => 'action=setting&operation=seo',//'搜索引擎优化',
+      'Performance Optimization',//'性能优化'	=> 'action=setting&operation=seo',
+      'SEO'	=> 'action=setting&operation=seo',//'搜索引擎优化',
     ),
     'text' =>
     array (
@@ -3981,8 +3981,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Performance Optimization' => 'action=setting&operation=seo',//'性能优化',
-      'Forum cache settings' => 'action=setting&operation=cachethread',//'论坛页面缓存设置',
+      'Performance Optimization'	=> 'action=setting&operation=seo',//'性能优化',
+      'Forum cache settings'	=> 'action=setting&operation=cachethread',//'论坛页面缓存设置',
     ),
     'text' =>
     array (
@@ -4013,8 +4013,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Performance Optimization' => 'action=setting&operation=seo',//'性能优化',
-      'Server optimization' => 'action=setting&operation=serveropti',//'服务器优化',
+      'Performance Optimization'	=> 'action=setting&operation=seo',//'性能优化',
+      'Server optimization'	=> 'action=setting&operation=serveropti',//'服务器优化',
     ),
     'text' =>
     array (
@@ -4050,8 +4050,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Editor Settings' => 'action=setting&operation=editor',//'编辑器设置',
-      'Global' => 'action=setting&operation=editor',//'全局',
+      'Editor Settings'	=> 'action=setting&operation=editor',//'编辑器设置',
+      'Global'	=> 'action=setting&operation=editor',//'全局',
     ),
     'text' =>
     array (
@@ -4079,8 +4079,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Functional blocks' => 'action=setting&operation=functions&anchor=curscript',//'功能模块',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Functional blocks'	=> 'action=setting&operation=functions&anchor=curscript',//'功能模块',
     ),
     'text' =>
     array (
@@ -4100,8 +4100,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Management-related' => 'action=setting&operation=functions&anchor=mod',//'管理相关',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Management-related'	=> 'action=setting&operation=functions&anchor=mod',//'管理相关',
     ),
     'text' =>
     array (
@@ -4149,8 +4149,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Thread hot value' => 'action=setting&operation=functions&anchor=heatthread',//'主题热度',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Thread hot value'	=> 'action=setting&operation=functions&anchor=heatthread',//'主题热度',
     ),
     'text' =>
     array (
@@ -4176,8 +4176,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Thread recommendation' => 'action=setting&operation=functions&anchor=recommend',//'主题评价',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Thread recommendation'	=> 'action=setting&operation=functions&anchor=recommend',//'主题评价',
     ),
     'text' =>
     array (
@@ -4208,8 +4208,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Post Comment' => 'action=setting&operation=functions&anchor=comment',//'帖子点评',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Post Comment'	=> 'action=setting&operation=functions&anchor=comment',//'帖子点评',
     ),
     'text' =>
     array (
@@ -4250,8 +4250,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Other' => 'action=setting&operation=functions&anchor=other',//'其他',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Other'	=> 'action=setting&operation=functions&anchor=other',//'其他',
     ),
     'text' =>
     array (
@@ -4291,8 +4291,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Site features' => 'action=setting&operation=functions',//'站点功能',
-      'Event thread' => 'action=setting&operation=functions&anchor=activity',//'活动主题',
+      'Site features'	=> 'action=setting&operation=functions',//'站点功能',
+      'Event thread'	=> 'action=setting&operation=functions&anchor=activity',//'活动主题',
     ),
     'text' =>
     array (
@@ -4318,7 +4318,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Permissions' => 'action=setting&operation=permissions',//'用户权限',
+      'User Permissions'	=> 'action=setting&operation=permissions',//'用户权限',
     ),
     'text' =>
     array (
@@ -4369,8 +4369,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Money Setttings' => 'action=setting&operation=credits',//'积分设置',
-      'Base settings' => 'action=setting&operation=credits&anchor=base',//'基本设置',
+      'Money Setttings'	=> 'action=setting&operation=credits',//'积分设置',
+      'Base settings'	=> 'action=setting&operation=credits&anchor=base',//'基本设置',
     ),
     'text' =>
     array (
@@ -4431,8 +4431,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Mail Settings' => 'action=setting&operation=mail',//'邮件设置',
-      'Settings' => 'action=setting&operation=mail&anchor=setting',//'设置',
+      'Mail Settings'	=> 'action=setting&operation=mail',//'邮件设置',
+      'Settings'	=> 'action=setting&operation=mail&anchor=setting',//'设置',
     ),
     'text' =>
     array (
@@ -4453,8 +4453,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Mail Settings' => 'action=setting&operation=mail',//'邮件设置',
-      'Check' => 'action=setting&operation=mail&anchor=check',//'检测',
+      'Mail Settings'	=> 'action=setting&operation=mail',//'邮件设置',
+      'Check'	=> 'action=setting&operation=mail&anchor=check',//'检测',
     ),
     'text' =>
     array (
@@ -4470,8 +4470,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Anti-spam settings' => 'action=setting&operation=sec',//'防灌水设置',
-      'Basic Anti-spam settings' => 'action=setting&operation=sec&anchor=base',//'防灌水基本设置',
+      'Anti-spam settings'	=> 'action=setting&operation=sec',//'防灌水设置',
+      'Basic Anti-spam settings'	=> 'action=setting&operation=sec&anchor=base',//'防灌水基本设置',
     ),
     'text' =>
     array (
@@ -4494,8 +4494,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Anti-spam settings' => 'action=setting&operation=sec',//'防灌水设置',
-      'Verification code settings' => 'action=setting&operation=sec&anchor=seccode',//'验证码设置',
+      'Anti-spam settings'	=> 'action=setting&operation=sec',//'防灌水设置',
+      'Verification code settings'	=> 'action=setting&operation=sec&anchor=seccode',//'验证码设置',
     ),
     'text' =>
     array (
@@ -4553,8 +4553,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Anti-spam settings' => 'action=setting&operation=sec',//'防灌水设置',
-      'Security Q & A' => 'action=setting&operation=sec&anchor=secqaa',//'验证问答设置',
+      'Anti-spam settings'	=> 'action=setting&operation=sec',//'防灌水设置',
+      'Security Q & A'	=> 'action=setting&operation=sec&anchor=secqaa',//'验证问答设置',
     ),
     'text' =>
     array (
@@ -4578,8 +4578,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Anti-spam settings' => 'action=setting&operation=sec',//'防灌水设置',
-      'Set the name of the registration form' => 'action=setting&operation=sec&anchor=reginput',//'注册表单名称设置',
+      'Anti-spam settings'	=> 'action=setting&operation=sec',//'防灌水设置',
+      'Set the name of the registration form'	=> 'action=setting&operation=sec&anchor=reginput',//'注册表单名称设置',
     ),
     'text' =>
     array (
@@ -4604,7 +4604,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Time settings' => 'action=setting&operation=datetime',//'时间设置',
+      'Time settings'	=> 'action=setting&operation=datetime',//'时间设置',
     ),
     'text' =>
     array (
@@ -4663,8 +4663,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment Settings' => 'action=setting&operation=attach',//'上传设置',
-      'Forum attachments' => 'action=setting&operation=attach&anchor=forumattach',//'论坛附件',
+      'Attachment Settings'	=> 'action=setting&operation=attach',//'上传设置',
+      'Forum attachments'	=> 'action=setting&operation=attach&anchor=forumattach',//'论坛附件',
     ),
     'text' =>
     array (
@@ -4699,8 +4699,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment Settings' => 'action=setting&operation=attach',//'上传设置',
-      'Remote attachments' => 'action=setting&operation=attach&anchor=remote',//'远程附件',
+      'Attachment Settings'	=> 'action=setting&operation=attach',//'上传设置',
+      'Remote attachments'	=> 'action=setting&operation=attach&anchor=remote',//'远程附件',
     ),
     'text' =>
     array (
@@ -4755,8 +4755,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment Settings' => 'action=setting&operation=attach',//'上传设置',
-      'Space attachments' => 'action=setting&operation=attach&anchor=albumattach',//'空间附件',
+      'Attachment Settings'	=> 'action=setting&operation=attach',//'上传设置',
+      'Space attachments'	=> 'action=setting&operation=attach&anchor=albumattach',//'空间附件',
     ),
     'text' =>
     array (
@@ -4770,8 +4770,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Attachment Settings' => 'action=setting&operation=attach',//'上传设置',
-      'Portal attachments' => 'action=setting&operation=attach&anchor=portalarticle',//'门户附件',
+      'Attachment Settings'	=> 'action=setting&operation=attach',//'上传设置',
+      'Portal attachments'	=> 'action=setting&operation=attach&anchor=portalarticle',//'门户附件',
     ),
     'text' =>
     array (
@@ -4788,8 +4788,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Watermark' => 'action=setting&operation=imgwater',//'水印设置',
-      'Articles' => 'action=setting&operation=imgwater&anchor=portal',//'文章',
+      'Watermark'	=> 'action=setting&operation=imgwater',//'水印设置',
+      'Articles'	=> 'action=setting&operation=imgwater&anchor=portal',//'文章',
     ),
     'text' =>
     array (
@@ -4856,8 +4856,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Watermark' => 'action=setting&operation=imgwater',//'水印设置',
-      'Forum' => 'action=setting&operation=imgwater&anchor=forum',//'论坛',
+      'Watermark'	=> 'action=setting&operation=imgwater',//'水印设置',
+      'Forum'	=> 'action=setting&operation=imgwater&anchor=forum',//'论坛',
     ),
     'text' =>
     array (
@@ -4924,8 +4924,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Watermark' => 'action=setting&operation=imgwater',//'水印设置',
-      'Space Album' => 'action=setting&operation=imgwater&anchor=album',//'空间相册',
+      'Watermark'	=> 'action=setting&operation=imgwater',//'水印设置',
+      'Space Album'	=> 'action=setting&operation=imgwater&anchor=album',//'空间相册',
     ),
     'text' =>
     array (
@@ -4992,7 +4992,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Search Settings' => 'action=setting&operation=search',//'搜索设置',
+      'Search Settings'	=> 'action=setting&operation=search',//'搜索设置',
     ),
     'text' =>
     array (
@@ -5046,7 +5046,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'UCenter settings' => 'action=setting&operation=uc',//'UCenter 设置',
+      'UCenter settings'	=> 'action=setting&operation=uc',//'UCenter 设置',
     ),
     'text' =>
     array (
@@ -5094,8 +5094,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'E-Commerce Settings' => 'action=setting&operation=ec',//'电子商务',
-      'Base settings' => 'action=setting&operation=ec',//'基本设置',
+      'E-Commerce Settings'	=> 'action=setting&operation=ec',//'电子商务',
+      'Base settings'	=> 'action=setting&operation=ec',//'基本设置',
     ),
     'text' =>
     array (
@@ -5120,8 +5120,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Performance Optimization' => 'action=setting&operation=seo',//'性能优化',
-      'Memory Optimization' => 'action=setting&operation=memory',//'内存优化',
+      'Performance Optimization'	=> 'action=setting&operation=seo',//'性能优化',
+      'Memory Optimization'	=> 'action=setting&operation=memory',//'内存优化',
     ),
     'text' =>
     array (
@@ -5138,7 +5138,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Rank List' => 'action=setting&operation=ranklist',//'排行榜设置',
+      'Rank List'	=> 'action=setting&operation=ranklist',//'排行榜设置',
     ),
     'text' =>
     array (
@@ -5159,7 +5159,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Mobile Access settings' => 'action=setting&operation=mobile',//'手机版访问设置',
+      'Mobile Access settings'	=> 'action=setting&operation=mobile',//'手机版访问设置',
     ),
     'text' =>
     array (
@@ -5207,7 +5207,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Share Management' => 'action=share',//'分享管理',
+      'Share Management'	=> 'action=share',//'分享管理',
     ),
     'text' =>
     array (
@@ -5220,8 +5220,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Share Management' => 'action=share',//'分享管理',
-      'Search' => 'action=share&search=true',//'搜索',
+      'Share Management'	=> 'action=share',//'分享管理',
+      'Search'	=> 'action=share&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -5252,8 +5252,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Smile management' => 'action=smilies',//'表情管理',
-      'Smile types' => 'action=smilies',//'表情分类',
+      'Smile management'	=> 'action=smilies',//'表情管理',
+      'Smile types'	=> 'action=smilies',//'表情分类',
     ),
     'text' =>
     array (
@@ -5266,8 +5266,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Smile management' => 'action=smilies',//'表情管理',
-      'Import smiles' => 'action=smilies&operation=import',//'导入表情',
+      'Smile management'	=> 'action=smilies',//'表情管理',
+      'Import smiles'	=> 'action=smilies&operation=import',//'导入表情',
     ),
     'text' =>
     array (
@@ -5280,7 +5280,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Style Management' => 'action=styles',//'风格管理',
+      'Style Management'	=> 'action=styles',//'风格管理',
     ),
     'text' =>
     array (
@@ -5293,7 +5293,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Tag Management' => 'action=tag',//'标签管理',
+      'Tag Management'	=> 'action=tag',//'标签管理',
     ),
     'text' =>
     array (
@@ -5310,8 +5310,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum Thread Management' => 'action=threads',//'论坛主题管理',
-      'Latest list' => 'action=threads',//'最新列表',
+      'Forum Thread Management'	=> 'action=threads',//'论坛主题管理',
+      'Latest list'	=> 'action=threads',//'最新列表',
     ),
     'text' =>
     array (
@@ -5324,8 +5324,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum Thread Management' => 'action=threads',//'论坛主题管理',
-      'Search' => 'action=threads&search=true',//'搜索',
+      'Forum Thread Management'	=> 'action=threads',//'论坛主题管理',
+      'Search'	=> 'action=threads&search=true',//'搜索',
     ),
     'text' =>
     array (
@@ -5375,8 +5375,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread Split' => 'action=threadsplit',//'主题分表',
-      'Sub-table management' => 'action=threadsplit&operation=manage',//'分表管理',
+      'Thread Split'	=> 'action=threadsplit',//'主题分表',
+      'Sub-table management'	=> 'action=threadsplit&operation=manage',//'分表管理',
     ),
     'text' =>
     array (
@@ -5393,8 +5393,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Thread Split' => 'action=threadsplit',//'主题分表',
-      'Move Thread' => 'action=threadsplit&operation=move',//'主题移动',
+      'Thread Split'	=> 'action=threadsplit',//'主题分表',
+      'Move Thread'	=> 'action=threadsplit&operation=move',//'主题移动',
     ),
     'text' =>
     array (
@@ -5455,7 +5455,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Update cache' => 'action=tools&operation=updatecache',//'更新缓存',
+      'Update cache'	=> 'action=tools&operation=updatecache',//'更新缓存',
     ),
     'text' =>
     array (
@@ -5478,7 +5478,7 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
+      'User Groups'	=> 'action=usergroups',//'用户组',
     ),
     'text' =>
     array (
@@ -5491,8 +5491,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Base settings' => 'action=usergroups&operation=edit&anchor=system',//'基本设置',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Base settings'	=> 'action=usergroups&operation=edit&anchor=system',//'基本设置',
     ),
     'text' =>
     array (
@@ -5512,8 +5512,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Base settings' => 'action=usergroups&operation=edit&anchor=basic',//'基本设置',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Base settings'	=> 'action=usergroups&operation=edit&anchor=basic',//'基本设置',
     ),
     'text' =>
     array (
@@ -5589,8 +5589,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Special thread' => 'action=usergroups&operation=edit&anchor=special',//'特殊主题',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Special thread'	=> 'action=usergroups&operation=edit&anchor=special',//'特殊主题',
     ),
     'text' =>
     array (
@@ -5642,8 +5642,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Post permissions' => 'action=usergroups&operation=edit&anchor=post',//'帖子相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Post permissions'	=> 'action=usergroups&operation=edit&anchor=post',//'帖子相关',
     ),
     'text' =>
     array (
@@ -5710,8 +5710,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Attachment permissions' => 'action=usergroups&operation=edit&anchor=attach',//'附件相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Attachment permissions'	=> 'action=usergroups&operation=edit&anchor=attach',//'附件相关',
     ),
     'text' =>
     array (
@@ -5751,8 +5751,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Magic related' => 'action=usergroups&operation=edit&anchor=magic',//'道具相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Magic related'	=> 'action=usergroups&operation=edit&anchor=magic',//'道具相关',
     ),
     'text' =>
     array (
@@ -5774,8 +5774,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Registration related' => 'action=usergroups&operation=edit&anchor=invite',//'注册相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Registration related'	=> 'action=usergroups&operation=edit&anchor=invite',//'注册相关',
     ),
     'text' =>
     array (
@@ -5803,8 +5803,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'PM related' => 'action=usergroups&operation=edit&anchor=pm',//'消息相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'PM related'	=> 'action=usergroups&operation=edit&anchor=pm',//'消息相关',
     ),
     'text' =>
     array (
@@ -5820,8 +5820,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Points related' => 'action=usergroups&operation=edit&anchor=credit',//'积分相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Points related'	=> 'action=usergroups&operation=edit&anchor=credit',//'积分相关',
     ),
     'text' =>
     array (
@@ -5846,8 +5846,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Space related' => 'action=usergroups&operation=edit&anchor=home',//'空间相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Space related'	=> 'action=usergroups&operation=edit&anchor=home',//'空间相关',
     ),
     'text' =>
     array (
@@ -5905,8 +5905,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Groups related' => 'action=usergroups&operation=edit&anchor=group',//'群组相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Groups related'	=> 'action=usergroups&operation=edit&anchor=group',//'群组相关',
     ),
     'text' =>
     array (
@@ -5926,8 +5926,8 @@ $lang = array (
   array (
     'index' =>
     array (
-      'User Groups' => 'action=usergroups',//'用户组',
-      'Portal related' => 'action=usergroups&operation=edit&anchor=portal',//'门户相关',
+      'User Groups'	=> 'action=usergroups',//'用户组',
+      'Portal related'	=> 'action=usergroups&operation=edit&anchor=portal',//'门户相关',
     ),
     'text' =>
     array (

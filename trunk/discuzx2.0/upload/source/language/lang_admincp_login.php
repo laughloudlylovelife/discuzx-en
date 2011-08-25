@@ -13,7 +13,7 @@ $lang = array
 	'login_username'	=> 'User name',//'用户名',
 	'login_password'	=> 'Password',//'密　码',
 
-	'submit'			=> 'Submit',//'提交',
+	'submit'		=> 'Submit',//'提交',
 	'forcesecques'		=> 'required',//'必填项',
 	'security_question'	=> 'Sequre Question',//'提　问',
 	'security_answer'	=> 'Answer',//'回　答',
@@ -32,7 +32,7 @@ $lang = array
 	'login_cplock'		=> 'Your Admin Center has been locked!<br>Please re-visit later in <b>{ltime}</b> seconds',//'您的管理面板已经锁定! <br>请在<b> {ltime} </b>秒以后重新访问管理中心',
 	'login_user_lock'	=> 'Since your password was wrong too many times, the login request has been denied. Please try again later after 15 minutes',//'由于您的登录密码错误次数过多,本次登录请求已经被拒绝. 请 15 分钟后重新尝试',
 	'login_cp_noaccess'	=> '<b>Admin Center (or this operation) was not yet opened for you.</b><br><br>Your current operation has been recorded, do not try illegall actions.',//'<b>管理中心(或此项操作)尚未对您开放</b><br><br>您的此次操作已经记录, 请勿非法尝试',
-	'noaccess'			=> 'Admin rights (or this operation) was not been open to you. Please contact the site administrator.',//'后台管理权限(或此项操作)尚未对您开放, 请联系站点管理员',
+	'noaccess'		=> 'Admin rights (or this operation) was not been open to you. Please contact the site administrator.',//'后台管理权限(或此项操作)尚未对您开放, 请联系站点管理员',
 
 
 );
