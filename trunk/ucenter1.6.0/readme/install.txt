@@ -1,0 +1,24 @@
+//=========================================
+// UCenter 1.6.0 installation documentation
+//=========================================
+
+1. Upload all the files from the "upload" folder to your site
+
+2. If your host is under the * nix operating system,
+   set permissions to 777 for following folders:
+	./data
+	./data/avatar
+	./data/backup
+	./data/cache
+	./data/logs
+	./data/tmp
+	./data/view
+
+3. Target your browser to http://your_domain/UCenter_directory/install/,
+   and you will be prompted to fill in mysql configuration,
+   and the administrator account
+
+4. Remove the "install" directory from your server
+
+5. All done.
+

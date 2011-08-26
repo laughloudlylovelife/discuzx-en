@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter API Development Guide - Tag interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>Application list</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_app_ls()</h4>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>Application list data structure. For a single application structure see the <a href="app.htm#table1">Single Application array structure</a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The application interface to access a list of all UCenter data. 
+
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Table: Single Application array structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr><th style="width:150px"><i>string</i> ['appid']</th><td>Application ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['type']</th><td>Application type</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['name']</th><td>Application Name</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['url']</th><td>Application Interface URL</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['tagtemplates']</th><td>Display single tag template</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['viewprourl']</th><td>View Single profile URL</td></tr>
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

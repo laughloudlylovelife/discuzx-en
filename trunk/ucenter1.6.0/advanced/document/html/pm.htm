@@ -1,0 +1,1231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Manual - Short Message Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="location"></a>
+<h3>into the short message center</h3>
+
+<div class="submsg">
+<h4>uc_pm_location(<i>integer</i> uid , <i>bool</i> newpm)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> newpm</th>
+	<td>
+	Whether direct view unread PM <br /> 
+	<em>1:</em> Yes<br />
+	<em>0:</em> <strong>(Default value)</strong> No<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+After running this interface function of the location will send a header request to the current page Jump to the short message center. So please do not run around in the function of any of the output of the code. If newpm short message to an access center, will open a new document the default box.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">short message center sample (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+&lt;?php
+
+uc_pm_location($uid);
+
+?&gt;
+</pre></div>
+
+</div>
+
+<a name="checknew"></a>
+<h3>check for new PMs</h3>
+
+<div class="submsg">
+<h4><i>bool/array</i> uc_pm_checknew(<i>integer</i> uid [, <i>bool</i> more])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> more</th>
+	<td>whether to display more information <br /> 
+	<em>2:</em> return the number of short messages, the number of public messages, last message time, last message content <br /> 
+	<em>1:</em> return the number of short messages, the number of public messages, last message time <br /> 
+	<em>0:</em> <strong>(Default value)</strong> only returns the number of short message <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 0 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>number of unread messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 1)</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="2"><i>array</i></th>
+	<th><i>integer</i> ['newpm']</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>New private messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 2 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="4"><i>array</i></th>
+	<th><i>integer</i> ['newpm']</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>New private messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newchatpm']</th>
+	<td>number of chat messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 3 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="8"><i>array</i></th>
+	<th><i>integer</i> [newpm]</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>number of new private messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newchatpm']</th>
+	<td>number of group chat messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['lastdate']</th>
+	<td>last message time</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['lastmsgfromid']</th>
+	<td>Last Message Sender ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['lastmsgfrom']</th>
+	<td>last message sender user name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['lastmsg']</th>
+	<td>last message content</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function checks whether the user has specified a new short message. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's2')">check for new short message example (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+if(uc_pm_checknew($uid)) {
+	echo "You have a new short message";
+}
+</pre></div>
+
+</div>
+
+<a name="send"></a>
+<h3>send text messages</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_send(<i>integer</i> fromuid , <i>string</i> msgto , <i>string</i> subject , <i>string</i> message [, <i>bool</i> instantly , <i>integer</i> replypmid , <i>bool</i> isusername , <i>integer</i> type])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> fromuid</th>
+	<td>Sender user ID, 0 for the system message</td>
+	</tr>
+	<tr>
+	<th><i>string</i> msgto</th>
+	<td>recipient user name / User ID, a number with a comma separated</td>
+	</tr>
+	<tr>
+	<th><i>string</i> subject</th>
+	<td>Message Title</td>
+	</tr>
+	<tr>
+	<th><i>string</i> message</th>
+	<td>message content</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> instantly</th>
+	<td>
+	Whether directly <br /> 
+	<em>1:</em> <strong> (default value) </ strong> Send a message directly to<br />
+	<em>0:</em>  into the interface to send short messages<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> replypid</th>
+	<td>
+	Reply to the message ID<br />
+	<em>greater than 0:</em> return the specified short message<br />
+	<em>0:</em> <strong> (default value) </ strong> to send a new short message<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> isusername</th>
+	<td>
+	msgto parameter is the user name<br />
+	<em>1:</em> msgto parameters for the user name<br />
+	<em>0:</em> <strong> (default value) </ strong> msgto parameters for user ID<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> type</th>
+	<td>
+	Message type<br />
+	<em>1:</em>Group chat message<br />
+	<em>0:</em><strong> (Default)</strong> Private Message<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>greater than 0:</em> the last message sent successfully ID<br />
+	<em>0:</em> send failed<br />
+	<em>-1:</em> than the 24-hour maximum allowable number of text messages sent<br />
+	<em>-2:</em> send a short message does not meet the minimum interval of two<br />
+	<em>-3:</em> to non-friends can not send bulk SMS<br />
+	<em>-4:</em> is still not use to send a short message function (the number of days after registration you can use the Send PM limit)<br />
+	<em>-5:</em>Group chat sessions exceed the maximum limit<br />
+	<em>-6:</em>In the ignore list<br />
+	<em>-7:</em>exceed the group chat maximum number of messages<br />
+	<em>-8:</em>Can not send message to yourself<br />
+	<em>-9:</em>Recipient is empty<br />
+	<em>-10:</em>Initiated group chat number is less than two<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to send short messages. When instantly to 1, the short message will be sent directly, otherwise, the function of the location request to send a header to the current page Jump to the short message center to send a short message page. Therefore, when instantly to 0 when you do not have any before and after running this function the output of the code. fromuid to 0 to send system messages. msgto default user ID, if you want the user name as a parameter, allowing isusername 1. replypid to 0 to send a short message to the initiator of the short message subject, if replypid for the specified message ID is said to send a short message to reply to the specified topic in the reply SMS message. If you instantly to 1, then the send function returns after the success of the last message sent successfully ID, return 0 send failed. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's3')">send a short message example (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+if(uc_pm_send($uid, $_POST['msgto'], $_POST['subject'], $_POST['message'])) {
+	echo "PM sent successfully";
+}
+</pre></div>
+
+</div>
+
+<a name="delete"></a>
+<h3>Delete short message</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_delete(<i>integer</i> uid , <i>string</i> folder , <i>array</i> pmids)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> folder</th>
+	<td>
+	where folder may be:<br /> 
+	<em>inbox:</em> PM Inbox<br />
+	<em>outbox:</em> PM Outbox<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>array</i> pmids</th>
+	<td>message ID array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>deleted PM number</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function will delete the specified folder in the specified message ID of the short message. pmids parameter is an array of free Key type, such as "array (1, 2, 3, 4, 5 ...)", array values are each message ID. Delete a short message each other remove the state will be conducted UCenter detection, if the short message is deleted the other state, then the current message will be deleted in the database, or delete only record a mark. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's4')">Remove short message example (PHP)</a></h6>
+<div class="code" id="s4" style="display: none"><pre>
+$if(!empty($_POST['delete']) && is_array($_POST['delete'])) {
+	uc_pm_delete($uid, 'inbox',  $_POST['delete']);
+}
+</pre></div>
+
+</div>
+
+<br />
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_deleteuser(<i>integer</i> uid , <i>array</i> touids)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> touids</th>
+	<td>other user ID array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>deleted PM number</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This function will delete and uid interface, the dialogue touids all the short message. 
+
+</div>
+
+<br />
+
+<div class="submsg">
+<h4>uc_pm_deletechat(<i>integer</i> uid , <i>array</i> plids [, <i>bool</i> type])</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> plids</th>
+	<td>Array of message ID to delete</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> type</th>
+	<td>
+	Type<br />
+	<em>0:</em><strong> (Default)</strong> Exit the group chat<br />
+	<em>1:</em>Delete the Group Chat<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function is used to exit the Group Chat message, and delete. plids parameter is a free Key array type, Such as "array(1, 2, 3, 4, 5 ...)", Each array value is ID.
+
+</div>
+
+<br />
+
+<a name="delete"></a>
+<h3>Mark PM state as read/unread</h3>
+
+<div class="submsg">
+<h4>uc_pm_readstatus(<i>integer</i> uid , <i>array</i> uids [, <i>array</i> plids, <i>bool</i> status])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> uids</th>
+	<td>to the other user ID tag array</td>
+	</tr>
+	<tr>
+	<th><i>array</i> pmids</th>
+	<td>the message ID array to mark, the default value is an empty array</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> status</th>
+	<td>
+	To mark the state of <br /> 
+	<em>0:</em> <strong>(default value)</ strong> mark as read<br />
+	<em>1:</em> mark as unread<br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to mark short messages status as read/unread. uids and plids parameter is an array of free Key type, such as "array (1, 2, 3, 4, 5 ...)", the value of each array are ID. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's9')">short message states labeled sample (PHP)</a></h6>
+<div class="code" id="s9" style="display: none"><pre>
+uc_pm_readstatus($uid, $uids);
+echo "PM has been marked as read";
+</pre></div>
+
+</div>
+
+<br />
+
+<a name="list"></a>
+<h3>Get PM list</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_pm_list(<i>integer</i> uid [, <i>integer</i> page , <i>integer</i> pagesize , <i>string</i> folder , <i>string</i> filter, <i>integer</i> msglen])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> page</th>
+	<td>the current page number, default value 1</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pagesize</th>
+	<td>the maximum number of entries per page, the default value 10</td>
+	</tr>
+	<tr>
+	<th><i>string</i> folder</th>
+	<td class="max">
+	Where folder mau be:<br />
+	<em>newbox:</em> New Inbox<br />
+	<em>inbox:</em> <strong> (default value) Inbox</ strong><br />
+	<em>outbox:</em> Outbox <br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>string</i> filter</th>
+	<td class="max">
+	Filtering<br />
+	<em>newpm:</em> <strong>(default value)</ strong> unread messages, folder for the inbox and outbox used<br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> msglen</th>
+	<td>interception of the contents of text short message length, 0 for no interception, the default value of 0</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="2"><i>array</i></th>
+	<th><i>integer</i> ['count']</th>
+	<td>Total messages</td>
+	</td>
+	</tr>
+	<tr>
+	<th><i>array</i> ['data']</th>
+	<td>
+	List of short message data. See the message list array structure <a href="pm.htm#table1">Table 1</a>. 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to access the specified folder, a list of short messages. Function has built-in paging, directly through the page and pagesize flip can be achieved. 
+
+</div>
+
+<a name="ignore"></a>
+<h3>Ignore the unread message prompts</h3>
+
+<div class="submsg">
+<h4>uc_pm_ignore(<i>integer</i> uid)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+Ignore this interface function is used to direct the short message is not read cue. 
+
+</div>
+
+<a name="view"></a>
+<h3>View short message content</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_pm_view(<i>integer</i> uid , <i>integer</i> pmid [, <i>integer</i> touid , <i>integer</i> daterange , <i>integer</i> page , <i>integer</i> pagesize , <i>integer</i> type , <i>integer</i> isplid])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pmid</th>
+	<td>message ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> touid</th>
+	<td>message to other User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> daterange</th>
+	<td>date range<br />
+	<em>1:</em> <strong> (default value) </ strong> today<br />
+	<em>2:</em> yesterday<br />
+	<em>3:</em> the day before yesterday<br />
+	<em>4:</em> last week<br />
+	<em>5:</em> earlier<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> page</th>
+	<td>Current Page</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pagesize</th>
+	<td>The maximum number of pages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> type</th>
+	<td>Message type 1: Private Message, 2: Group Chat message</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> isplid</th>
+	<td>touid Parameter is the session id Or user id</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>short message content data. See a single message array structure <a href="pm.htm#table2">Table 2</a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to return the specified user specified message ID of the message, the returned data contains a message for this response. If you specify touid parameter, then the short message will list all the uid and touid short message between, daterange return message can specify a date range. 
+
+</div>
+
+<a name="viewnum"></a>
+<h3>Find the session number of messages</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_view_num(<i>integer</i> uid , <i>integer</i> touid , <i>bool</i> isplid)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> touid</th>
+	<td>Find the session ID or user ID</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> isplid</th>
+	<td>touid parameter is the session ID or user ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>The number of messages for the specified session</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's4')">Find the number of session message example (PHP)</a></h6>
+<div class="code" id="s4" style="display: none"><pre>
+
+	uc_pm_view_num($uid, $plid, 1);
+
+</pre></div>
+
+</div>
+
+<br />
+
+<a name="viewnode"></a>
+<h3>Get a single short message content</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_viewnode(<i>integer</i> uid , <i>integer</i> type , <i>integer</i> pmid)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> type</th>
+	<td>
+	Message type <br /> 
+	<em>0:</em> Specify a single message<br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pmid</th>
+	<td>message ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>Message content data. See a single message array structure <a href="pm.htm#table2">Table 2</a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+</div>
+
+<a name="chatpmmemberlist"></a>
+<h3>Find a group chat member list</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_chatpmmemberlist(<i>integer</i> uid , <i>integer</i> plid)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> plid</th>
+	<td>Group chat session ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>Returns a list of the group chat members, see <a href="pm.htm#table3">Table 3</a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+</div>
+
+<a name="kickchatpm"></a>
+<h3>Kick out Members of group chat</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_kickchatpm(<i>integer</i> plid , <i>integer</i> uid , <i>integer</i> touid)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> plid</th>
+	<td>Session ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> touid</th>
+	<td>Kick out the user ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>1: kicked successfully, 2: kick failed</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+</div>
+
+<a name="appendchatpm"></a>
+<h3>Add members to the group chat</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_appendchatpm(<i>integer</i> plid , <i>integer</i> uid , <i>integer</i> touid)</h4>
+
+<h5>Function Parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> plid</th>
+	<td>Session ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> touid</th>
+	<td>Added User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>1: Added ok, 2: Add failure</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+</div>
+
+<a name="blackls_get"></a>
+<h3>get blacklist</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_pm_blackls_get(<i>integer</i> uid)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>blacklist data</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function returns the user to set the contents of the blacklist. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's5')">for black sample (PHP)</a></h6>
+<div class="code" id="s5" style="display: none"><pre>
+$blackls = uc_pm_blackls_get($uid);
+echo '&lt;form method="post"&gt;&lt;textarea name="blackls"&gt;'.htmlspecialchars($blackls).'&lt;/textarea&gt;';
+echo '&lt;input type="submit" value="Save" /&gt;&lt;/form&gt;';
+</pre></div>
+
+</div>
+
+<a name="blackls_set"></a>
+<h3>updat blacklist</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_pm_blackls_set(<i>integer</i> uid , <i>string</i> blackls)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> blackls</th>
+	<td>blacklist</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> updated successfully<br />
+	<em>0:</em> update failed<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This function is used to update the user interface to the blacklist list data. Set blacklist, the blacklist of the staff will not be able to send a short message to the uid specified user. The staff ignored the blacklist with a user name that, when more than ignore list of comma "," to separate (example: Joe Smith, John Doe, Wang V), For ban all users sent a short message, with "(ALL)" said. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's6')">update blacklist example (PHP)</a></h6>
+<div class="code" id="s6" style="display: none"><pre>
+if(uc_pm_blackls_set($uid, $_POST['blackls'])) {
+	echo 'blacklist updated successfully';
+}
+</pre></div>
+
+</div>
+
+<a name="blackls_add"></a>
+<h3>Add blacklist entry</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_pm_blackls_add(<i>integer</i> uid , <i>array</i> username)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> username</th>
+	<td>user name array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> added successfully<br />
+	<em>0:</em> Add failed<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface to the user's blacklist function is used to add items. For all user settings screen to add, please let username array contains "{ALL}"
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's7')">Add member to blacklist example (PHP)</a></h6>
+<div class="code" id="s7" style="display: none"><pre>
+uc_pm_blackls_add(1, array('username1', ''username2'));
+</pre></div>
+
+</div>
+
+<a name="blackls_delete"></a>
+<h3>Remove from blacklist</h3>
+
+<div class="submsg">
+<h4>uc_pm_blackls_delete(<i>integer</i> uid , <i>array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> username</th>
+	<td>user name array</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to delete the user from blacklist. For all users to delete the settings screen, please let username array contains "{ALL}"
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's8')">Add to blacklist example (PHP)</a></h6>
+<div class="code" id="s8" style="display: none"><pre>
+uc_pm_blackls_delete(1, array('username1', ''username2'));
+</pre></div>
+
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Table 1: Message list structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+
+	<tr><th style="width:150px"><i>integer</i> ['plid']</th><td>Session ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['uid']</th><td>Current user ID</td></tr>
+	<tr><th style="width:150px"><i>bool</i> ['isnew']</th><td>If unread marks</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['pmnum']</th><td>Number of messages Relative to the current user session</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['lastupdate']</th><td>The current user last Update Time</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['lastdateline']</th><td>Last update the session</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['authorid']</th><td>Session Author ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['pmtype']</th><td>Message type, 1: Private message, 2: group chat message</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['subject']</th><td>Subject</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['members']</th><td>Session members</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['touid']</th><td>If pmtype parameter is 1, return value indicates the other user ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['tousername']</th><td>If pmtype parameter is 1, return value indicates the other user name</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['founddateline']</th><td>the session Start Time</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['lastauthorid']</th><td>The session Last Sender ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['lastauthor']</th><td>The session Last Sender Name</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['lastsummary']</th><td>The session Last Send Message</td></tr>
+
+	<tr><th style="width:150px"><i>integer</i> ['pmid'][compatible]</th><td>message ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['msgfromid'][compatible]</th><td>Sender user ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['msgfrom'][compatible]</th><td>Sender user name</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['msgtoid'][compatible]</th><td>Recipient user ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['new'][compatible]</th><td><em>1:</em> unread PM<br /><em>0:</em> read PM<br /></td></tr>
+	<tr><th style="width:150px"><i>string</i> ['message'][compatible]</th><td>content</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['dateline'][compatible]</th><td>send time stamp</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['daterange'][compatible]</th><td><em>1:</em> today<br /><em>2:</em> yesterday<br /><em>3:</em> the day before yesterday<br /><em>4:</em> last week<br /><em>5:</em> more early<br /></td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+<a name="table2"></a>
+<h3>Table 2: Message content structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+
+	<tr><th style="width:150px"><i>integer</i> ['pmid']</th><td>Message ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['plid']</th><td>Belongs to the session ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['authorid']</th><td>The message author ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['author']</th><td>The message author user name</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['pmtype']</th><td>Message type, 1: Private message, 2: group chat message</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['subject']</th><td>Subject</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['members']</th><td>Session members</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['dateline']</th><td>send time stamp</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['message']</th><td>Message content</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['founderuid']</th><td>Session initiated by user ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['founddateline']</th><td>the session Start Time</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['touid']</th><td>If pmtype parameter is 1, the return value indicates the other user ID</td></tr>
+
+	<tr><th style="width:150px"><i>integer</i> ['msgfromid'][compatible]</th><td>Sender user ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['msgfrom'][compatible]</th><td>Sender user name</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['msgtoid'][compatible]</th><td>Recipient user ID</td></tr>
+
+</tbody>
+</table>
+</div>
+
+<a name="table3"></a>
+<h3>Table 3: Group chat member list structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+
+	<tr><th style="width:150px"><i>integer</i> ['author']</th><td>Group chat initiator ID</td></tr>
+	<tr><th style="width:150px"><i>array</i> ['member']</th><td>List of all group chat members ID, such as: "array(1, 2, 3, ...)"</td></tr>
+
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

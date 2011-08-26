@@ -1,0 +1,57 @@
+//=========================================
+// UCenter EN-UTF8 Changes log
+//=========================================
+
+UCenter 1.6.0 Realease 20110505
+
+20.05.2011:
+
+1. Adjusted short message data structures to support high-capacity SMS storage
+2. Improved the group chat interface
+3. Fixed memory problems from 1.5.2
+4. Adjusted the UTF-8 encoded user name length determination support (15 bytes, 7 characters)
+5. Removed the support for old version, now does not support the Client version low 1.5
+
+
+UCenter 1.5.2 EN-UTF8 Release 20101226 Changelog
+------------------------------------------------
+
+26.12.2010:
+
+1. Some code beautified
+2. Database structure revised and slightly modified
+3. Removed the ending "?>" from PHP files
+
+--------------------------------------------
+20.09.2010:
+
+1. UCenter version upgraded to v.1.5.2
+2. Some styles modified for more wider fields
+3. Upgrade/Convert utilities translated to English
+4. All documents in "readme/" directory translated to English
+
+
+--------------------------------------------
+20.09.2009:
+
+1. Database structure modified for european languages
+   (most of fields expanded)
+2. All the Chinese strings encoded with HTML code like &#NNNN;
+   translated to English
+3. All the images translated to English
+   (You can find the Photoshop files near the corresponding images)
+4. All other files translated to English (.xml, .css, etc.)
+5. UCenter API Development Guide translated to English
+   (see "advanced/" directory)
+
+
+--------------------------------------------
+20.01.2009:
+
+1. Created the first fork from
+   Original UCenter 1.5.0 Release 20081212
+2. All the language files translated to English
+3. All the javascript files verified and translated to English
+
+--------------------------------------------------
+
