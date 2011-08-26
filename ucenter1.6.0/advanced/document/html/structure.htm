@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Guide - Learn UCenter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<div class="mainmsg">
+The following set of documents and sample code, PHP programs are an example.
+<br /><br /></div>
+
+<h3>UCenter directory structure</h3>
+
+<div class="mainmsg">
+UCenter consist of 2 parts: server and client sides.
+Server directory is "upload/", the client directory id "client/".
+No matter how many of your website application server installed in a site,
+the UCenter installed only once.
+The client directory must exist in each application's root directory.
+For detailed directory structure, please see the table below:
+
+</div>
+
+<h4>Server: upload/</h4>
+
+<div class="mainmsg">
+
+UCenter install this folder when uploading files to your server, browser, enter the "http://Web_Address/install/" for install UCenter.
+After installation remove the install/ directory.
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<tbody>
+	<tr>
+		<th>control/</th>
+		<td>Application control part of the directory</td>
+	</tr>
+	<tr>
+		<th>data/</th>
+		<td>cache data directory, this directory and its subdirectories need to have writable permissions</td>
+	</tr>
+	<tr>
+		<th>images/</th>
+		<td>picture directory</td>
+	</tr>
+	<tr>
+		<th>install/</th>
+		<td>installation directory must be removed after installation</td>
+	</tr>
+	<tr>
+		<th>js/</th>
+		<td>javascript directory</td>
+	</tr>
+	<tr>
+		<th>lib/</th>
+		<td>application library directory</td>
+	</tr>
+	<tr>
+		<th>module/</th>
+		<td>application module part of the directory</td>
+	</tr>
+	<tr>
+		<th>view/</th>
+		<td>template directory</td>
+	</tr>
+	<tr>
+		<th>index.php</th>
+		<td>server interface function library interface file</td>
+	</tr>
+	<tr>
+		<th>admin.php</th>
+		<td>User Management Center, file</td>
+	</tr>
+	<tr>
+		<th>avatar.php</th>
+		<td>Avatar Display, file</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h4>Client: client/</h4>
+<div class="mainmsg">
+UCenter necessary application directory, if your application based on UCenter, then your application directory must contain the directory, the directory name can be customized (all Comsenz product corresponds to a directory named "uc_client /").
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<tbody>
+	<tr>
+		<th>control/</th>
+		<td>Application control part of the directory</td>
+	</tr>
+	<tr>
+		<th>data/</th>
+		<td>Cache data directory, this directory and its subdirectories need to have writable permissions</td>
+	</tr>
+	<tr>
+		<th>lib/</th>
+		<td>Application library directory</td>
+	</tr>
+	<tr>
+		<th>module/</th>
+		<td>Part of the application module directory</td>
+	</tr>
+	<tr>
+		<th>client.php</th>
+		<td>Interface library</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>UCenter interface function</h3>
+
+<div class="mainmsg">
+UCenter divided into two kinds of interfaces: MySQL and remote connections. MySQL database is preferrable, because of a direct connection mode is faster. But UCenter service and client are not the same host and remote MySQL account is not the case, you can only use the remote connection. UCenter Interface function before you use the application's requirements under the relevant definition of the following constants:
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<tbody>
+<tr>
+<th>UC_CONNECT</th>
+<td>
+Way to connect UCenter<br />
+<em>mysql:</em> MySQL method<br />
+<em>empty:</em> Remote method<br />
+</td>
+</tr>
+<tr>
+<th>UC_DBHOST</th>
+<td>UCenter Database Host</td>
+</tr>
+<tr>
+<th>UC_DBUSER</th>
+<td>UCenter database username</td>
+</tr>
+<tr>
+<th>UC_DBPW</th>
+<td>UCenter database password</td>
+</tr>
+<tr>
+<th>UC_DBNAME</th>
+<td>UCenter database name</td>
+</tr>
+<tr>
+<th>UC_DBCHARSET</th>
+<td>UCenter database charset</td>
+</tr>
+<tr>
+<th>UC_DBTABLEPRE</th>
+<td>UCenter database table prefix</td>
+</tr>
+<tr>
+<th>UC_DBCONNECT</th>
+<td>UCenter persistent database connection 0 = off, 1 = open</td>
+</tr>
+<tr>
+<th>UC_KEY</th>
+<td>and UCenter communication key, consistent with UCenter</td>
+</tr>
+<tr>
+<th>UC_API</th>
+<td>UCenter server URL address</td>
+</tr>
+<tr>
+<th>UC_IP</th>
+<td>UCenter IP. Set this value when UC_CONNECT is non-mysql manner, and the current application server have a problem in resolving the domain name</td>
+</tr>
+<tr>
+<th>UC_CHARSET</th>
+<td>UCenter character set</td>
+</tr>
+<tr>
+<th>UC_APPID</th>
+<td>Current application ID</td>
+</tr>
+</tbody>
+</table>
+Use UCenter Interface library must contain uc_client/client.php interface function library files, such as checking for new short message below the code: 
+<div class="code"><pre>
+include './uc_client/client.php';
+$newpm = uc_pm_checknew($Example_uid);
+</pre></div>
+For detailed interface function instructions, see "interface functions" section. 
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

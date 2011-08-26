@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter API Development Manual - Avatar Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>Modify the avatar</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_avatar(<i>integer</i> uid[, <i>string</i> type, <i>boolean</i> returnhtml])</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> type</th>
+	<td>Avatar image type<br />
+		<em>real:</em> a real image<br />
+		<em>virtual:</em> <strong>(default value)</strong> virtual image<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>boolean</i> returnhtml</th>
+	<td>Whether to return HTML code<br />
+		<em>1:</em> <strong>(default value)</strong> set to return avatar as HTML code<br />
+		<em>0:</em> No, back to set the picture of Flash called array<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>mixed</i></th>
+	<td>
+		<em>string:</em> set to return Avatar as HTML code<br />
+		<em>array:</em> set to returm avatar as the Flash array called<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to return the HTML code to set the user avatar, HTML will output a Flash, the resulting display similar to the following effect. <br /> 
+<img src="images/avatar.jpg" /><br />
+</div>
+
+<h3>Image format</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th style="width:100px">Image size</th>
+	<td style="width:300px">Call method</td>
+	<td>Description</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th style="width:100px">200 x 250</th>
+	<td><i>{UC_URL}</i>/avatar.php?uid=<i>{N}</i>&type=<i>{S}</i>&size=big</td>
+	<td>With the original photo zoom, width and height of not more than 200 * 250px. If the image is smaller, not to enlarge.</td>
+	</tr>
+	<tr>
+	<th style="width:100px">120 x 120</th>
+	<td><i>{UC_URL}</i>/avatar.php?uid=<i>{N}</i>&type=<i>{S}</i>&size=middle</td>
+	<td>Cut out with a cut box range zoom, you can box with an arbitrary cut.</td>
+	</tr>
+	<tr>
+	<th style="width:100px">48 x 48</th>
+	<td><i>{UC_URL}</i>/avatar.php?uid=<i>{N}</i>&type=<i>{S}</i>&size=small</td>
+	<td>cut out with a cut box zoom range, the region left for the rectangular area (later changed to the middle version) constituency within the square.</td>
+	</tr>
+	</td></tr>
+</tbody>
+</table>
+
+<i>{UC_URL}</i> for the UCenter URL. <i>{N}</i> for the user ID. <i>{S}</i> real for the real image type, virtual for the virtual avatar<br /><br />
+For example, call the user with user ID = 58, for the dimensions of 200x250px real image method: 
+<div class="code"><pre>
+&lt;img src=&quot;http://www.yourwebsite.com/uc_server/avatar.php?uid=58&amp;type=real&amp;size=big&quot; /&gt;
+</pre></div><br />
+For example, call the user ID = 58, 200x250px image size of the virtual method: 
+<div class="code"><pre>
+&lt;img src=&quot;http://www.yourwebsite.com/uc_server/avatar.php?uid=58&amp;type=virtual&amp;size=big&quot; /&gt;<br />
+Or<br />
+&lt;img src=&quot;http://www.yourwebsite.com/uc_server/avatar.php?uid=58&amp;size=big&quot; /&gt;
+</pre></div>
+
+</div>
+
+<h3>Detect the Avatar exists</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_check_avatar(<i>integer</i> uid[, <i>string</i> size, <i>string</i> type])</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Parameter</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> size</th>
+	<td>Image size<br />
+		<em>big:</em> big image (200 x 250)<br />
+		<em>middle:</em> <strong>(default value)</strong> middle image (120 x 120), the default value<br />
+		<em>small:</em> small image (48 x 48)<br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>string</i> type</th>
+	<td>Image type<br /> 
+		<em>real:</em> a real image<br />
+		<em>virtual:</em><strong> (default value)</strong>  virtual avatar, the default value<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>Value</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>boolean</i></th>
+	<td>
+		<em>1:</em> avatar exists<br />
+		<em>0:</em> avatar does not exist<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to detect the existence of the specified user avatar.<br />
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>
