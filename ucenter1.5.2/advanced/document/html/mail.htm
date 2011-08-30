@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Guide - Avatar interfaces</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>add messages to the queue</h3>
+
+<div class="submsg">
+<h4><i>mixed</i> uc_mail_queue(<i>string</i>uids, <i>string</i>emails, <i>string</i>subject, <i>string</i>message[, <i>mail</i>frommail, <i>string</i>charset, <i>boolean</i>htmlon, <i>integer</i>level]);</h4>
+
+<h5>function parameters</h5>
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameters</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> uids</th>
+	<td>user ID number with a comma (,) separated</td>
+	</tr>
+	<tr>
+	<th><i>string</i> emails</th>
+	<td>target email, a number with a comma (,) separated</td>
+	</tr>
+	<tr>
+	<th><i>string</i> subject</th>
+	<td>message title</td>
+	</tr>
+	<tr>
+	<th><i>string</i> message</th>
+	<td>message content</td>
+	</tr>
+	<tr>
+	<th><i>mail</i> frommail</th>
+	<td>sender, optional parameters, default is empty, uc source of background to set the e-mail address as the sender</td>
+	</tr>
+	<tr>
+	<th><i>string</i> charset</th>
+	<td>message character set, optional parameters, default gbk</td>
+	</tr>
+	<tr>
+	<th><i>boolean</i> htmlon</th>
+	<td>whether it is html format e-mail, optional parameter, defaults to FALSE, the text message</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> level</th>
+	<td>message-level, optional parameters, default is 1, the priority to send large numbers, when the value is 0 immediately send, the message would not join the queue</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>mixed</i></th>
+	<td>
+		<em>false:</em> failure: failure to enter the queue, or send failure <br /> 
+		<em>integer:</em> success: access to the message queue id, when the level is 0, then return 1 <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+
+This function is used to e-mail to e-mail queue, or directly send messages (when the level is 0) 
+
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">message queue using example (PHP)</a></h6>
+
+<div class="code" id="s1" style="display: none"><pre>
+$res = uc_mail_queue($uid, '', $_POST['subject'], $_POST['message']);
+if(empty($res)) {
+	echo 'access to the message queue failed';
+} else {
+	echo 'access to the message queue successfully';
+}
+</pre></div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

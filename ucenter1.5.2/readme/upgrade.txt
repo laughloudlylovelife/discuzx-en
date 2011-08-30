@@ -1,0 +1,23 @@
+//=========================================
+// UCenter upgrade documentation
+//=========================================
+
+
+UCenter 1.0.0 To UCenter 1.5.2
+-------------------------------
+1. Backup UCenter database
+2. Upload UCenter 1.5.2 files
+3. Direct access to the UCenter upgrade/upgrade2.php
+4. Follow promts until the upgrade is finished
+5. Remove upgrade2.php from the server
+
+
+
+UCenter 1.0.0 Beta To UCenter 1.0.0
+-------------------------------
+1. Backup UCenter database
+2. Upload UCenter 1.0.0 files
+3. Upload the file utilities/upgrade1.php to the site root folder
+4. Direct access to the upgrade1.php
+5. Follow promts until the upgrade is successful
+6. Remove upgrade1.php from the server

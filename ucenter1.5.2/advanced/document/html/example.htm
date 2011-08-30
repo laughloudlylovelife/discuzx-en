@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter API Development Guide - sample procedure</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="add"></a>
+
+<h3>Example program</h3>
+
+<div class="mainmsg">
+
+
+In order to facilitate the development, we put all the UCenter interface function together to produce a sample program. To run this example program, you need to do to work as follows: <br /> <br />
+1. sample program does not contain a default client directory, if you want to run this sample program, copy the client installation package UCenter example programs to the root directory. <br />
+2. in UCenter add an application, set the example to run the URL and other information, communication keys are free to fill out, such as "123456." <br />
+3. open the sample program to connect UCenter config.inc.php to set examples of the way, set the database connection parameters. "UC_KEY" complete set of communication in UCenter key (the example of the "12345"), "UC_APPID" fill out the application just to add ID. <br />
+<br />
+
+ucexample_1.php for the sample program without the user's master file table <br />
+ucexample_2.php users to have their own examples of program master file table <br /> <br />
+
+Specific directory structure, please see table below: 
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<tbody>
+	<tr>
+		<th>client/</th>
+		<td>UCenter client's file directory, the default is not included in this directory.</td>
+	</tr>
+	<tr>
+		<th>api/</th>
+		<td>API interface directory</td>
+	</tr>
+	<tr>
+		<th>code/</th>
+		<td>Example code program segment directory</td>
+	</tr>
+	<tr>
+		<th>code/login_nodb.php</th>
+		<td>ucexample_1.php user login sample code, including logon authentication, synchronization log on the example of the code. You know there is no user table can also be integrated UCenter.</td>
+	</tr>
+	<tr>
+		<th>code/login_db.php</th>
+		<td>ucexample_2.php User login sample code, including logon authentication, login and user activated simultaneously sample code.</td>
+	</tr>
+	<tr>
+		<th>code/register_nodb.php</th>
+		<td>ucexample_1.php User registration example code, contains an example of registration information verification code.</td>
+	</tr>
+	<tr>
+		<th>code/register_db.php</th>
+		<td>ucexample_2.php Example of a user registration code, including registration information verified, the user activate the judge's example code.</td>
+	</tr>
+	<tr>
+		<th>code/pmwin.php</th>
+		<td>Short message center directly into the sample code.</td>
+	</tr>
+	<tr>
+		<th>code/pmlist.php</th>
+		<td>Examples of self-made short message platform code, including access to the list of short message, content, and sample code to send a short message.</td>
+	</tr>
+	<tr>
+		<th>code/friend.php</th>
+		<td>Friend list example code</td>
+	</tr>
+	<tr>
+		<th>code/avatar.php</th>
+		<td>Avatar view/edit sample code</td>
+	</tr>
+	<tr>
+		<th>include/</th>
+		<td>Library files</td>
+	</tr>
+	<tr>
+		<th>view/</th>
+		<td>Template Directory</td>
+	</tr>
+	<tr>
+		<th>config.inc.php</th>
+		<td>Configuration file</td>
+	</tr>
+	<tr>
+		<th>ucexample_1.php</th>
+		<td>Application program without the user an example of master file table</td>
+	</tr>
+	<tr>
+		<th>ucexample_2.php</th>
+		<td>Applications have their own user master file table's sample program</td>
+	</tr>
+</tbody>
+</table>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

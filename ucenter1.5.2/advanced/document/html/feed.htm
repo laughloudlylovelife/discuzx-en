@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter API Development Guide - Event Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="register"></a>
+<h3>Add Event</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_feed_add(<i>string</i> icon , <i>integer</i> uid , <i>string</i> username , <i>string</i> title_template , <i>string</i> title_data
+ , <i>string</i> body_template , <i>string</i> body_data , <i>string</i> body_general , <i>string</i> target_ids , <i>array</i> images)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> icon</th>
+	<td>Icon type, such as: thread, post, video, products, reward, debate, blog, album, comment, wall, friend</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> title_template</th>
+	<td>Title Template</td>
+	</tr>
+	<tr>
+	<th><i>string</i> title_data</th>
+	<td>Title Data array</td>
+	</tr>
+	<tr>
+	<th><i>string</i> body_template</th>
+	<td>Content template</td>
+	</tr>
+	<tr>
+	<th><i>string</i> body_data</th>
+	<td>Content Data</td>
+	</tr>
+	<tr>
+	<th><i>string</i> body_general</th>
+	<td>The same data used in the event the merger: a specific array, only two: name, link, retention</td>
+	</tr>
+	<tr>
+	<th><i>string</i> target_ids</th>
+	<td>Reserved</td>
+	</tr>
+	<tr>
+	<th><i>array</i> images</th>
+	<td>Related image URL and the link address, please refer to examples of the format</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>Event ID</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to add events to the UCenter Home. If the correct return event ID.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">Add Event Example (PHP)</a></h6>
+<div class="code" ID="s1" style="display: none"><pre>
+$feed = array();
+$feed['icon'] = 'thread';
+$feed['title_template'] = '&lt;b&gt;{username} Initiated a new topic in the forum lt;/b&gt;';
+$feed['title_data'] = array('username'=>$discuz_user);
+$feed['body_template'] = '&lt;b&gt;{subject}&lt;/b&gt;&lt;br&gt;{message}';
+$feed['body_data'] = array(
+	'subject' => "&lt;a href=\&quot;viewthread.php?tid=$tid\&quot;&gt;$subject&lt;/a&gt;",
+	'message' => cutstr(strip_tags(preg_replace("/\[.+?\]/is", '', $message)), 150)
+);
+$feed['images'][] = array(
+	'url'=>'http://www.discuz.net/logo.gif',
+	'link'=> 'http://www.discuz.net/'
+);
+$feed['images'][] = array(
+	'url'=>'http://www.comenz.com/logo.gif',
+	'link'=> 'http://www.comenz.com/'
+);
+
+include_once(DISCUZ_ROOT.'./uc_client/client.php');
+uc_feed_add($feed['icon'], $discuz_uid, $discuz_user, $feed['title_template'], $feed['title_data'], $feed['body_template'], $feed['body_data'], '', '', $feed['images']);
+</pre></div>
+</div>
+
+
+<a name="register"></a>
+<h3>Get Event</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_feed_get(<i>integer</i> limit)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> limit</th>
+	<td>Taking the event as number, default is 100</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>Event list data, see the array structure <a href="feed.htm#table1">Schedule</a>
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to extract the event. If the correct list of events is returned array.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's2')">Get event sample (PHP)</a></h6>
+<div class="code" ID="s2" style="display: none"><pre>
+include_once(DISCUZ_ROOT.'./uc_client/client.php');
+$arr = uc_feed_get(100);
+
+/**
+Return the following format:
+Array (
+[1] => Array (
+	[feedid] => 2
+	[appid] => 0
+	[icon] => thread
+	[uid] => 1
+	[username] => admin
+	[dateline] => 1203661177
+	[hash_template] => c95dbd9aa75862c841b627e1e9598fd5
+	[hash_data] => 7f30f7b371cccdcd9901527ac32368ee
+	[title_template] => &lt;b&gt;{username} Initiated a new topic in the forum &lt;/b&gt;
+	[title_data] => usernameadmin
+	[body_template] => &lt;b&gt;{subject}&lt;/b&gt;&lt;br /&gt;{message}
+	[body_data] => subject&lt;a href="viewthread.php?tid=12"&gt;Topic&lt;/a&gt; content
+	[body_general] =>
+	[image_1] =>
+	[image_1_link] =>
+	[image_2] =>
+	[image_2_link] =>
+	[image_3] =>
+	[image_3_link] =>
+	[image_4] =>
+	[image_4_link] =>
+	[target_ids] =>
+	)
+);
+*/
+</pre>
+</div>
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Schedule: Event List array structure</h3>
+
+<div class="submsg">
+
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>key</th>
+	<td>Meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> ['feedid']</th>
+	<td>Event ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['appid']</th>
+	<td>Where the application of the ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['icon']</th>
+	<td>Events icon: thread, poll, reward, etc.</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['uid']</th>
+	<td>Events, by the user ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['username']</th>
+	<td>Event issuer username</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['dateline']</th>
+	<td>Time, UNIX timestamp format</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['hash_template']</th>
+	<td>Hash value of the template used to merge the same type of incident, 32-bit string, such as: c95dbd9aa75862c841b627e1e9598fd5</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['hash_data']</th>
+	<td>Hash value of data used to merge the same type of incident, 32-bit string, such as: c95dbd9aa75862c841b627e1e9598fd5</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['title_template']</th>
+	<td>Title Template</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['title_data']</th>
+	<td>Title Data</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['body_template']</th>
+	<td>Content template</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['body_data']</th>
+	<td>Event content HTML format, use the {xxx} format character that variables such as {username}</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['body_general']</th>
+	<td>reserve</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_1']</th>
+	<td>The first picture URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_1_link']</th>
+	<td>The first picture link URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_2']</th>
+	<td>The 2-nd picture URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_2_link</th>
+	<td>The 2-nd picture link URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_3']</th>
+	<td>The 3-rd picture URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_3_link']</th>
+	<td>The 3-rd picture link URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_4']</th>
+	<td>The 4-th picture URL</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['image_4_link']</th>
+	<td>The 4-th picture link URL</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Interface Process</h3>
+<div class="submsg">
+	
+<div class="pic">
+<h5>Submission, access events</h5>
+<table>
+<tr>
+	<th class="box">Interface function uc_feed_add () submit event</th>
+	<td class="rr"></td>
+	<th class="box">Notice to the UCenter</th>
+	<td class="rr"></td>
+	<th class="box">UCenter Home use interface function uc_feed_get () for submission of events</th>
+</tr>
+</table>
+</div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>
