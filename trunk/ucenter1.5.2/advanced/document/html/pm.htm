@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Manual - Short Message Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="location"></a>
+<h3>into the short message center</h3>
+
+<div class="submsg">
+<h4>uc_pm_location(<i>integer</i> uid , <i>bool</i> newpm)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> newpm</th>
+	<td>
+	Whether direct view unread PM <br /> 
+	<em>1:</em> Yes<br />
+	<em>0:</em> <strong>(Default value)</strong> No<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+After running this interface function of the location will send a header request to the current page Jump to the short message center. So please do not run around in the function of any of the output of the code. If newpm short message to an access center, will open a new document the default box.
+
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">short message center sample (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+&lt;?php
+
+uc_pm_location($uid);
+
+?&gt;
+</pre></div>
+
+</div>
+
+<a name="checknew"></a>
+<h3>check for new PMs</h3>
+
+<div class="submsg">
+<h4><i>bool/array</i> uc_pm_checknew(<i>integer</i> uid [, <i>bool</i> more])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> more</th>
+	<td>whether to display more information <br /> 
+	<em>2:</em> return the number of short messages, the number of public messages, last message time, last message content <br /> 
+	<em>1:</em> return the number of short messages, the number of public messages, last message time <br /> 
+	<em>0:</em> <strong>(Default value)</strong> only returns the number of short message <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 0 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>number of unread messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 1)</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="2"><i>array</i></th>
+	<th><i>integer</i> ['newpm']</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>New private messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 2 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="4"><i>array</i></th>
+	<th><i>integer</i> ['newpm']</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>New private messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['announcepm']</th>
+	<td>number of public messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['systempm']</th>
+	<td>Number of system messages</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value (when more = 3 )</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="8"><i>array</i></th>
+	<th><i>integer</i> [newpm]</th>
+	<td>number of unread messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['newprivatepm']</th>
+	<td>private message a few</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['announcepm']</th>
+	<td>number of public messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['systempm']</th>
+	<td>Number of system messages</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['lastdate']</th>
+	<td>last message time</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> ['lastmsgfromid']</th>
+	<td>Last Message Sender ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['lastmsgfrom']</th>
+	<td> last message sender user name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> ['lastmsg']</th>
+	<td>last message content</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function checks whether the user has specified a new short message. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's2')">check for new short message example (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+if(uc_pm_checknew($uid)) {
+	echo "You have a new short message";
+}
+</pre></div>
+
+</div>
+
+<a name="send"></a>
+<h3>send text messages</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_send(<i>integer</i> fromuid , <i>string</i> msgto , <i>string</i> subject , <i>string</i> message [, <i>bool</i> instantly , <i>integer</i> replypmid , <i>bool</i> isusername])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> fromuid</th>
+	<td>Sender user ID, 0 for the system message</td>
+	</tr>
+	<tr>
+	<th><i>string</i> msgto</th>
+	<td>recipient user name / User ID, a number with a comma separated</td>
+	</tr>
+	<tr>
+	<th><i>string</i> subject</th>
+	<td>Message Title</td>
+	</tr>
+	<tr>
+	<th><i>string</i> message</th>
+	<td>message content</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> instantly</th>
+	<td>
+	Whether directly <br /> 
+	<em>1:</em> <strong> (default value) </ strong> Send a message directly to <br /> 
+	<em>0:</em>  into the interface to send short messages <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> replypid</th>
+	<td>
+	Reply to the message ID <br /> 
+	<em>greater than 0:</em> return the specified short message <br />
+	<em>0:</em> <strong> (default value) </ strong> to send a new short message <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> isusername</th>
+	<td>
+	msgto parameter is the user name <br /> 
+	<em>1:</em> msgto parameters for the user name <br /> 
+	<em>0:</em> <strong> (default value) </ strong> msgto parameters for user ID <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>greater than 0:</em> the last message sent successfully ID <br /> 
+	<em>0:</em> send failed <br /> 
+	<em>-1:</em> than the 24-hour maximum allowable number of text messages sent <br /> 
+	<em>-2:</em> send a short message does not meet the minimum interval of two <br /> 
+	<em>-3:</em> to non-friends can not send bulk SMS <br /> 
+	<em>-4:</em> is still not use to send a short message function (the number of days after registration you can use the Send PM limit) <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to send short messages. When instantly to 1, the short message will be sent directly, otherwise, the function of the location request to send a header to the current page Jump to the short message center to send a short message page. Therefore, when instantly to 0 when you do not have any before and after running this function the output of the code. fromuid to 0 to send system messages. msgto default user ID, if you want the user name as a parameter, allowing isusername 1. replypid to 0 to send a short message to the initiator of the short message subject, if replypid for the specified message ID is said to send a short message to reply to the specified topic in the reply SMS message. If you instantly to 1, then the send function returns after the success of the last message sent successfully ID, return 0 send failed. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's3')">send a short message example (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+if(uc_pm_send($uid, $_POST['msgto'], $_POST['subject'], $_POST['message'])) {
+	echo "PM sent successfully";
+}
+</pre></div>
+
+</div>
+
+<a name="delete"></a>
+<h3>Delete short message</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_delete(<i>integer</i> uid , <i>string</i> folder , <i>array</i> pmids)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> folder</th>
+	<td>
+	PM folder where <br /> 
+	<em>inbox:</em> Inbox <br />
+	<em>outbox:</em> Outbox <br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>array</i> pmids</th>
+	<td>message ID array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>deleted PM number</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function will delete the specified folder in the specified message ID of the short message. pmids parameter is an array of free Key type, such as "array (1, 2, 3, 4, 5 ...)", array values are each message ID. Delete a short message each other remove the state will be conducted UCenter detection, if the short message is deleted the other state, then the current message will be deleted in the database, or delete only record a mark. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's4')">emove short message example (PHP)</a></h6>
+<div class="code" id="s4" style="display: none"><pre>
+$if(!empty($_POST['delete']) && is_array($_POST['delete'])) {
+	$num = uc_pm_delete($uid, 'inbox',  $_POST['delete']);
+	echo "deleted $num messages";
+}
+</pre></div>
+
+</div>
+
+<br />
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_deleteuser(<i>integer</i> uid , <i>array</i> touids)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> touids</th>
+	<td>other user ID array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>deleted PM number</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This function will delete and uid interface, the dialogue touids all the short message. 
+
+</div>
+
+<a name="delete"></a>
+<h3>mark PM read/unread state</h3>
+
+<div class="submsg">
+<h4>uc_pm_readstatus(<i>integer</i> uid , <i>array</i> uids [, <i>array</i> pmids, <i>bool</i> status])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> uids</th>
+	<td>to the other user ID tag array</td>
+	</tr>
+	<tr>
+	<th><i>array</i> pmids</th>
+	<td>To mark the message ID array, the default value of an empty array</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> status</th>
+	<td>
+	To mark the state of <br /> 
+	<em>0:</em> <strong> (default value) </ strong> marked as read <br /> 
+	<em>1:</em> marked as unread <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to mark short messages read / unread status. uids and pmids parameter is an array of free Key type, such as "array (1, 2, 3, 4, 5 ...)", the value of each array are ID. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's9')">short message states labeled sample (PHP)</a></h6>
+<div class="code" id="s9" style="display: none"><pre>
+uc_pm_readstatus($uid, $uids);
+echo "PM has been marked as read";
+</pre></div>
+
+</div>
+
+<br />
+
+<a name="list"></a>
+<h3>Get PM list</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_pm_list(<i>integer</i> uid [, <i>integer</i> page , <i>integer</i> pagesize , <i>string</i> folder , <i>string</i> filter, <i>integer</i> msglen])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> page</th>
+	<td>the current page number, default value 1</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pagesize</th>
+	<td>the maximum number of entries per page, the default value 10</td>
+	</tr>
+	<tr>
+	<th><i>string</i> folder</th>
+	<td class="max">
+	PM folder where <br />
+	<em>newbox:</em> a new piece box <br /> 
+	<em>inbox:</em> <strong> (default value) Inbox</ strong><br />
+	<em>outbox:</em> Outbox <br />
+	</td>
+	</tr>
+	<tr>
+	<th><i>string</i> filter</th>
+	<td class="max">
+	Filtering<br />
+	<em>newpm:</em> <strong> (default value) </ strong> unread message, folder for the inbox and outbox use <br /> 
+	<em>systempm:</em> system message, folder for the inbox using <br /> 
+	<em>announcepm:</em> public message, folder for the inbox using <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> msglen</th>
+	<td>interception of the contents of text short message length, 0 for no interception, the default value of 0</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="2"><i>array</i></th>
+	<th><i>integer</i> ['count']</th>
+	<td>Total news</td>
+	</td>
+	</tr>
+	<tr>
+	<th><i>array</i> ['data']</th>
+	<td>
+	List of short message data, single-array structure of the message see <a href="pm.htm#table1"> Schedule </ a>. 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to access the specified folder, a list of short messages. Function has built-in paging, directly through the page and pagesize flip can be achieved. 
+
+</div>
+
+<a name="ignore"></a>
+<h3> ignore the unread message prompts</h3>
+
+<div class="submsg">
+<h4>uc_pm_ignore(<i>integer</i> uid)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+Ignore this interface function is used to direct the short message is not read cue. 
+
+</div>
+
+<a name="view"></a>
+<h3>View short message content</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_pm_view(<i>integer</i> uid , <i>integer</i> pmid [, <i>integer</i> touid , <i>integer</i> daterange])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pmid</th>
+	<td>message ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> touid</th>
+	<td>message to other User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> daterange</th>
+	<td>date range <br /> 
+	<em>1:</em> <strong> (default value) </ strong> today <br /> 
+	<em>2:</em> yesterday <br /> 
+	<em>3:</em> the day before yesterday <br /> 
+	<em>4:</em> last week <br /> 
+	<em>5:</em> earlier <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>short message content data, in which a single message array structure see <a href="pm.htm#table1"> Schedule </ a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to return the specified user specified message ID of the message, the returned data contains a message for this response. If you specify touid parameter, then the short message will list all the uid and touid short message between, daterange return message can specify a date range. 
+
+</div>
+
+<a name="viewnode"></a>
+<h3>Get a single short message content</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_pm_viewnode(<i>integer</i> uid [, <i>integer</i> type , <i>integer</i> pmid])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> type</th>
+	<td>
+	Message type <br /> 
+	<em>0:</em> <strong> (default value) </ strong> for the specified single message <br /> 
+	<em>1:</em> for the specified user send a single message the last <br /> 
+	<em>2:</em> for the specified user received a message last single <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pmid</th>
+	<td>message ID, the default value of 0, type is 0, this parameter effectively</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>short message content data, in which a single message array structure see <a href="pm.htm#table1"> Schedule </ a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+If the type is 0, then the interface function returns the specified pmid single message content. If the type is 1 or 2, then the function returns the specified user interface, the last one to receive the message content. 
+
+</div>
+
+<a name="blackls_get"></a>
+<h3>get blacklist</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_pm_blackls_get(<i>integer</i> uid)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>blacklist data</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function returns the user to set the contents of the blacklist. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's5')">for black sample (PHP)</a></h6>
+<div class="code" id="s5" style="display: none"><pre>
+$blackls = uc_pm_blackls_get($uid);
+echo '&lt;form method="post"&gt;&lt;textarea name="blackls"&gt;'.htmlspecialchars($blackls).'&lt;/textarea&gt;';
+echo '&lt;input type="submit" value="Save" /&gt;&lt;/form&gt;';
+</pre></div>
+
+</div>
+
+<a name="blackls_set"></a>
+<h3>updat blacklist</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_pm_blackls_set(<i>integer</i> uid , <i>string</i> blackls)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> blackls</th>
+	<td>blacklist</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> updated successfully <br /> 
+	<em>0:</em> update failed <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This function is used to update the user interface to the blacklist list data. Set blacklist, the blacklist of the staff will not be able to send a short message to the uid specified user. The staff ignored the blacklist with a user name that, when more than ignore list of comma "," to separate (example: Joe Smith, John Doe, Wang V), For ban all users sent a short message, with "(ALL)" said. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's6')">update blacklist example (PHP)</a></h6>
+<div class="code" id="s6" style="display: none"><pre>
+if(uc_pm_blackls_set($uid, $_POST['blackls'])) {
+	echo 'blacklist updated successfully';
+}
+</pre></div>
+
+</div>
+
+<a name="blackls_add"></a>
+<h3>Add blacklist entry</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_pm_blackls_add(<i>integer</i> uid , <i>array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> username</th>
+	<td>user name array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> added successfully <br /> 
+	<em>0:</em> Add failed <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface to the user's blacklist function is used to add items. For all user settings screen to add, please let username array contains "{ALL}"
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's7')">add blacklist entry example (PHP)</a></h6>
+<div class="code" id="s7" style="display: none"><pre>
+uc_pm_blackls_add(1, array('username1', ''username2'));
+</pre></div>
+
+</div>
+
+<a name="blackls_delete"></a>
+<h3>remove blacklist entry</h3>
+
+<div class="submsg">
+<h4>uc_pm_blackls_delete(<i>integer</i> uid , <i>array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> username</th>
+	<td>user name array</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to delete the user's blacklist entry. For all users to delete the settings screen, please let username array contains "{ALL}"
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's8')">add blacklist entry example (PHP)</a></h6>
+<div class="code" id="s8" style="display: none"><pre>
+uc_pm_blackls_delete(1, array('username1', ''username2'));
+</pre></div>
+
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Table: array of single message structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr><th style="width:150px"><i>integer</i> ['pmid']</th><td>message ID</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['msgfrom']</th><td>sender user name</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['msgfromid']</th><td>Sender user ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['msgtoid']</th><td>recipient user ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['new']</th><td>
+          <em>1:</em> unread PM<br />
+          <em>0:</em> read PM<br />
+        </td></tr>
+	<tr><th style="width:150px"><i>string</i> ['subject']</th><td>title</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['dateline']</th><td>send time stamp</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['message']</th><td>content</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['daterange']</th><td>
+          <em>1:</em> today <br /> 
+          <em>2:</em> yesterday <br />
+          <em>3:</em> the day before yesterday
+          <em>4:</em> last week <br />
+          <em>5:</em> more early <br />
+        </td></tr>
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Guide - Friends interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="add"></a>
+<h3>Add Friends</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_friend_add(<i>integer</i> uid , <i>integer</i> friendid [, <i>string</i> comment])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> friendid</th>
+	<td>Friend User ID ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> comment</th>
+	<td>Notes, may be empty</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> success<br />
+	<em>0:</em> fail<br />
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The function interface is used to add the uid friendid friends. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">Add Friend example (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+$friendid = uc_get_user($_POST['friend']);
+if(uc_friend_add($uid, $friendid[0])) {
+	echo ''Add completed';
+}
+</pre></div>
+
+</div>
+
+<a name="delete"></a>
+<h3>Remove Friend</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_friend_delete(<i>integer</i> uid , <i>array</i> friendids)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>array</i> friendids</th>
+	<td>Friend User ID array</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>deleted a few friends</td>
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The function interface is used to delete the specified user's friends. friendids parameter is an array of free Key type, such as "array (1, 2, 3, 4, 5 ...)", array values are on behalf of friends of each user ID. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's2')">Remove Friend example (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+$if(!empty($_POST['delete']) && is_array($_POST['delete'])) {
+	$num = uc_friend_delete($uid, $_POST['delete']);
+	echo "deleted $num friend(s)";
+}
+</pre></div>
+
+</div>
+
+<a name="totoalnum"></a>
+<h3>Get friends</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_friend_totalnum(<i>integer</i> uid [, <i>integer</i> direction])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> direction</th>
+	<td>
+	<em>0:</em> <strong>(Default value)</strong> specifies the user's entire friends<br />
+	<em>1:</em> is positive, add the specified user's friends, but no one was added <br /> 
+	<em>2:</em> back to specify which users add the user to be friends, but no one was added <br /> 
+	<em>3:</em> two-way, mutual Add as Friend <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>friends number</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to return the specified user's friends number. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's3')">Get friends example (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+$num = uc_friend_totalnum($uid);
+echo "You have $num friend(s)";
+</pre></div>
+
+</div>
+
+<a name="ls"></a>
+<h3>get friend list</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_friend_ls(<i>integer</i> uid [, <i>integer</i> page , <i>integer</i> pagesize , <i>integer</i>totalnum , <i>integer</i> direction])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> page</th>
+	<td>the current page number, default value 1</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> pagesize</th>
+	<td>the maximum number of entries per page, the default value 10</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> totalnum</th>
+	<td>friends total, the default value of 10</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> direction</th>
+	<td>
+	<em>0:</em> <strong>(Defaul tvalue)</strong> specifies the user's entire friends <br /> 
+	<em>1:</em> is positive, add the specified user's friends, but no one was added <br /> 
+	<em>2:</em> back to specify which users add the user to be friends (fans) <br /> 
+	<em>3:</em>  two-way, mutual Add as Friend <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>friends list data structure in which an array of single friends see <a href="friend.htm#table1">Schedule</a></td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Table: array of single friends the structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr><th style="width:150px"><i>integer</i> ['uid']</th><td>User ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['friendid']</th><td>Friend User ID</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['direction']</th><td>
+	<em>0:</em> <strong>(default value)</ strong> specifies the user's entire friends <br /> 
+	<em>1:</em> is positive, add the specified user's friends, but no one was added <br /> 
+	<em>2:</em> back to specify which users add the user to be friends (fans) <br /> 
+	<em>3:</em> two-way, mutual Add as Friend <br /> 
+	</td></tr>
+	<tr><th style="width:150px"><i>string</i> ['username']</th><td>Friend User Name</td></tr>
+</tbody>
+</table>
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

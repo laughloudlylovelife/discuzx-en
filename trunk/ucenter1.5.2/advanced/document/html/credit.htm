@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter API Development Manual - Integration Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>Redeem request</h3>
+
+<div class="submsg">
+<h4><i>bool</i> uc_credit_exchange_request(<i>integer</i> uid , <i>integer</i> from , <i>integer</i> to , <i>integer</i> toappid , <i>integer</i> amount)</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> from</th>
+	<td>points from</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> to</th>
+	<td>points to</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> toappid</th>
+	<td>target application ID</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> amount</th>
+	<td>Points amount</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>bool</i></th>
+	<td>
+	<em>1:</em> request completed successfully<br /> 
+	<em>0:</em> request failed<br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Interface Process</h3>
+<div class="submsg">
+	
+<div class="pic">
+<h5>exchange parameter settings</h5>
+<table>
+<tr>
+	<th class="box">UCenter initiated the redeem request</th>
+	<td class="rr"></td>
+	<th class="box">API Interface getcreditsettings UCenter points back to the project</th>
+	<td class="rr"></td>
+	<th class="box">UCenter set the redeem parameters</th>
+	<td class="rr"></td>
+	<th class="box">API interfaces updatecreditsettings Save Exchange parameters</th>
+</tr>
+</table>
+</div>
+
+<div class="pic">
+<h5>redeem</h5>
+<table>
+<tr>
+	<th class="box">Redeem interface</th>
+	<td class="rr"></td>
+	<th class="box">Interface function uc_credit_exchange_request() request to the target application launch Exchange</th>
+	<td class="rr"></td>
+	<th class="box">target application API Interface updatecredit update user points</th>
+	<td class="rr"></td>
+	<th class="box">users update the application integration</th>
+</tr>
+</table>
+</div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

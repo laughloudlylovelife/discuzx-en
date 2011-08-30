@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Manual - Tag Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<h3>Get tag data</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_tag_get(<i>string</i> tagname [, <i>array</i> nums])</h4>
+
+<h5>Function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> tagname</th>
+	<td>Tag name</td>
+	</tr>
+	<tr>
+	<th><i>array</i> nums</th>
+	<td>
+	Specify how many of each application to return data, the array format is as follows: <br />
+
+	<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<thead>
+		<tr>
+		<th>KEY</th>
+		<td>VALUE</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<th>Application ID</th>
+		<td>article number to return data</td>
+		</tr>
+	</tbody>
+	</table>
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>Return Value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>Tag data, a single tag array structure see <a href="tag.htm#table1">Schedule</a></td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The center to the user interface to initiate a request to require all applications for users to center the label data. If you specify totalnum, it will be in accordance with the User Center tab to set the number in the appropriate proportion to the number of entries to return, if not specified, each application will return all of the 10 data.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">Get tag data sample (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+$nums = array(
+	1 => 3,//ID for the application of a return to three data
+	2 => 5,//ID for the two applications back to five data
+);
+
+$datalist = uc_tag_get($_GET['tagname'], $nums);
+
+foreach($datalist as $tag) {
+	echo "&lt;b&gt;$tag[type]:&lt;/b&gt;&lt;br /&gt;";
+	foreach($tag['data'] as $data) {
+		echo "&lt;a href='$data[url]'&gt;$data[subject]&lt;/a&gt;&lt;br /&gt;$data[extra]";
+	}
+}
+</pre></div>
+
+</div>
+
+<div class="line"></div>
+
+<a name="table1"></a>
+<h3>Schedule: single tag array structure</h3>
+
+<div class="submsg">
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+	<tbody>
+	<tr><th style="width:150px"><i>array</i> ['data']</th><td>
+		Labels array
+		<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+			<tbody>
+			<tr><th style="width:150px"><i>string</i> ['url']</th><td>URL</td></tr>
+			<tr><th style="width:150px"><i>string</i> ['subject']</th><td>Title</td></tr>
+			<tr><th style="width:150px"><i>string</i> ['extra']</th><td>Extended Data</td></tr>
+		</tbody>
+		</table>
+	</td></tr>
+	<tr><th style="width:150px"><i>integer</i> ['type']</th><td>Application type, value DISCUZ, SUPESITE, XSPACE, SUPEV, ECSHOP, OTHER</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Interface Process</h3>
+<div class="submsg">
+	
+<div class="pic">
+<h5>Get Tags</h5>
+<table>
+<tr>
+	<th class="box">Interface function uc_tag_get () access to relevant tag</th>
+	<td class="rr"></td>
+	<th class="box">the need to update the label to inform the project UCenter</th>
+	<td class="rr"></td>
+	<th class="box">API Interface gettag data to obtain the latest relevant tag</th>
+</tr>
+</table>
+</div>
+
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>

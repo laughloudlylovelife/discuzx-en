@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>UCenter Interface Development Guide - User Interface</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/style.css" type="text/css" media="all" />
+<meta content="Comsenz Inc." name="Copyright" />
+<script type="text/javascript" src="javascript/common.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="javascript/header.js"></script>
+
+<a name="register"></a>
+<h3>Register</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_register(<i>string</i> username , <i>string</i> password , <i>string</i> email [, <i>integer</i> questionid , <i>string</i> answer])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User Name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> password</th>
+	<td>Password</td>
+	</tr>
+	<tr>
+	<th><i>string</i> email</th>
+	<td>e-mail</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> questionid</th>
+	<td>security questions index</td>
+	</tr>
+	<tr>
+	<th><i>string</i> answer</th>
+	<td>security question answer</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>&gt 0:</em> return the user ID, that user registration is successful <br /> 
+	<em>-1:</em> the user name is not legitimate <br /> 
+	<em>-2:</em> contains words not allowed to register <br /> 
+	<em>-3:</em> the user name already exists <br /> 
+	<em>-4:</em> Email format is incorrect <br /> 
+	<em>-5:</em> Email does not allow registration <br /> 
+	<em>-6:</em> The Email is already registered <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function for the new user registration. User name, password, Email for a user UCenter basic data, after the submission of UCenter will be in accordance with the registered settings and word filtering rules for testing the user name and Email in the format is correct legally, if the correct return registration user ID, otherwise it returns the corresponding error message. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's1')">Register Example (PHP)</a></h6>
+<div class="code" id="s1" style="display: none"><pre>
+$uid = uc_user_register($_POST['username'], $_POST['password'], $_POST['email']);
+if($uid <= 0) {
+	if($uid == -1) {
+		echo 'user name not valid';
+	} elseif($uid == -2) {
+		echo 'register contains the words you want to allow';
+	} elseif($uid == -3) {
+		echo 'user name already exists';
+	} elseif($uid == -4) {
+		echo 'Email format is incorrect';
+	} elseif($uid == -5) {
+		echo 'Email does not allow registration';
+	} elseif($uid == -6) {
+		echo 'This Email is already registered';
+	} else {
+		echo 'undefined';
+	}
+} else {
+	echo 'registered successfully';
+}
+</pre></div>
+
+</div>
+
+<a name="login"></a>
+<h3>User Login</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_user_login(<i>string</i> username , <i>string</i> password [, <i>bool</i> isuid , <i>bool</i> checkques , <i>integer</i> questionid , <i>string</i> answer])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User name / User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> password</th>
+	<td>Password</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> isuid</th>
+	<td>
+	The use of user ID login <br /> 
+	<em>1:</em> use the user ID for log in <br /> 
+	<em>0:</em> <strong> (default value) </ strong> using the username <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> checkques</th>
+	<td>
+	Verify whether the installation questions <br /> 
+	<em>1:</em> authentication security questions <br /> 
+	<em>0:</em> <strong> (default value) </ strong> did not verify the security question <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> questionid</th>
+	<td>security questions index</td>
+	</tr>
+	<tr>
+	<th><i>string</i> answer</th>
+	<td> security question answer</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="5"><i>array</i></th>
+	<th><i>integer</i> [0]</th>
+	<td nowrap>
+	<em>&gt; 0:</em> return the user ID, that user logs on successfully <br /> 
+	<em>-1:</em> the user does not exist, or deleted <br /> 
+	<em>-2:</em> password wrong <br /> 
+	<em>-3:</em> security question wrong <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [1]</th>
+	<td>User Name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [2]</th>
+	<td>Password</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [3]</th>
+	<td>Email</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> [4]</th>
+	<td>user name allready exists</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface functions for the user's login authentication, user name and password are correct returns the user UCenter basic data, otherwise it returns the corresponding error message. If the application is an upgrade over, and there are users currently logged on user and the same name, then the returned array [4] will return a value. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's2')">Login example (PHP)</a></h6>
+<div class="code" id="s2" style="display: none"><pre>
+list($uid, $username, $password, $email) = uc_user_login($_POST['username'], $_POST['password']);
+if($uid > 0) {
+	echo 'Login successful';
+} elseif($uid == -1) {
+	echo 'user does not exist, or was removed';
+} elseif($uid == -2) {
+	echo 'password invalid';
+} else {
+	echo 'undefined';
+}
+</pre></div>
+
+</div>
+
+<a name="getinfo"></a>
+<h3>Access to user data</h3>
+
+<div class="submsg">
+<h4><i>array</i> uc_get_user(<i>string</i> username [, <i>bool</i> isuid])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User Name</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> isuid</th>
+	<td>
+	Whether to use the user ID <br /> 
+	<em>1:</em> use the user ID <br /> 
+	<em>0:</em> <strong> (default value) </ strong> using the User Name<br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th colspan="2">value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th rowspan="4"><i>array</i></th>
+	<th><i>integer</i> [0]</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [1]</th>
+	<td>User Name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> [2]</th>
+	<td>Email</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to obtain the user UCenter basic data, such as the user does not exist, the return value is integer value 0.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's3')">access to user data sample (PHP)</a></h6>
+<div class="code" id="s3" style="display: none"><pre>
+if($data = uc_get_user($username)) {
+	list($uid, $username, $email) = $data;
+} else {
+	echo 'user does not exist';
+}
+</pre></div>
+
+</div>
+
+<a name="edit"></a>
+<h3>Update user information</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_edit(<i>string</i> username , <i>string</i> oldpw , <i>string</i> newpw , <i>string</i> email [, <i>bool</i> ignoreoldpw, <i>integer</i> questionid , <i>string</i> answer])</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User Name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> oldpw</th>
+	<td>Old Password</td>
+	</tr>
+	<tr>
+	<th><i>string</i> newpw</th>
+	<td>new password, if not amended to empty</td>
+	</tr>
+	<tr>
+	<th><i>string</i> email</th>
+	<td>Email, if not amended to empty</td>
+	</tr>
+	<tr>
+	<th><i>bool</i> ignoreoldpw</th>
+	<td>
+	It ignores the old password <br /> 
+	<em>1:</em> ignore, change the data do not verify the password <br /> 
+	<em>0:</em> <strong> (default value) </ strong> does not ignore, change the data need to verify your password <br /> 
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> questionid</th>
+	<td>security questions index</td>
+	</tr>
+	<tr>
+	<th><i>string</i> answer</th>
+	<td>security question answer</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> updated successfully <br /> 
+  	<em>0:</em> does not make any changes to <br /> 
+  	<em>-1:</em> the old password is incorrect <br /> 
+	<em>-4:</em> Email format is incorrect <br /> 
+	<em>-5:</em> Email does not allow registration <br /> 
+	<em>-6:</em> The Email is already registered <br /> 
+	<em>-7:</em> does not make any changes to <br /> 
+	<em>-8:</em> the user without permissions to change the protected <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to update user information. Update the information required to verify the user's original password is correct, unless specified ignoreoldpw 1. If you only modify the Email does not modify the code that allows newpw empty; the same token, if only to modify the password does not modify the Email, allow email is empty. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's4')">update user information example (PHP)</a></h6>
+<div class="code" id="s4" style="display: none"><pre>
+$ucresult = uc_user_edit($_POST['username'], $_POST['oldpassword'], $_POST['newpassword'], $_POST['emailnew']);
+if($ucresult == -1) {
+	echo 'Old password is incorrect';
+} elseif($ucresult == -4) {
+	echo 'Email format is incorrect';
+} elseif($ucresult == -5) {
+	echo 'Email does not allow registration';
+} elseif($ucresult == -6) {
+	echo 'This Email is already registered';
+}
+</pre></div>
+
+</div>
+
+<a name="delete"></a>
+<h3>Remove users</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_delete(<i>string/array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> username</th>
+	<td>User Name</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> success <br /> 
+	<em>0:</em> fail <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<a name="delete"></a>
+<h3>Remove user avatar</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_deleteavatar(<i>string/array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> username</th>
+	<td>User Name</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<a name="synlogin"></a>
+<h3>Synchronization login</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_user_synlogin(<i>integer</i> uid)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>HTML code synchronous login</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+If the current application set UCenter allow synchronization log, then this interface function will notify the other set the synchronization log on the application log, to return to the HTML output in the page to complete the notification of the other applications. HTML output contains the implementation of remote scripting javascript, please allow this script to run the page to jump after the operation is completed, it may cause can not be successful synchronization log. We should also ensure the correct and effective synchronization log, please ensure that other applications of the Cookie Domain and Cookie Path set correctly. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's5')">synchronization log example (PHP)</a></h6>
+<div class="code" id="s5" style="display: none"><pre>
+list($uid, $username, $password, $email) = uc_user_login($_POST['username'], $_POST['password']);
+if($uid > 0) {
+	echo 'Login successful';
+	echo uc_user_synlogin($uid);
+} elseif($uid == -1) {
+	echo 'user does not exist, or be removed';
+} elseif($uid == -2) {
+	echo 'password error';
+} else {
+	echo 'undefined';
+}
+</pre></div>
+
+</div>
+
+<a name="synloout"></a>
+<h3>Synchronization exit</h3>
+
+<div class="submsg">
+<h4><i>string</i> uc_user_synlogout()</h4>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i></th>
+	<td>HTML code synchronization exit</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+If the current application set UCenter allow synchronization log, then this interface function will notify the other set out synchronization log on the application log, to return to the HTML output can be completed in the page to inform other applications. HTML output contains the implementation of remote scripting javascript, please allow this script to run the page to jump after the operation is completed, it may cause no synchronization exit log. While simultaneously out of the registry to ensure correct and effective, please ensure that other applications of the Cookie Domain and Cookie Path set correctly. 
+
+</div>
+
+<a name="checkemail"></a>
+<h3>Check Email Address</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_checkemail(<i>string</i> email)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> email</th>
+	<td>Email</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> success <br /> 
+	<em>-4:</em> Email format is incorrect <br /> 
+	<em>-5:</em> Email does not allow registration <br /> 
+	<em>-6:</em> The Email is already registered <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to check the legitimacy of user input Email. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's6')">Check Email example (PHP)</a></h6>
+<div class="code" id="s6" style="display: none"><pre>
+$ucresult = uc_user_checkemail($_GET['email']);
+if($ucresult > 0) {
+	echo 'Email format is correct';
+} elseif($ucresult == -4) {
+	echo 'Email format is incorrect';
+} elseif($ucresult == -5) {
+	echo 'Email does not allow registration';
+} elseif($ucresult == -6) {
+	echo 'This Email is already registered';
+}
+</pre></div>
+
+</div>
+
+<a name="checkname"></a>
+<h3>Check the user name</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_checkname(<i>string</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User Name</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> success <br /> 
+	<em>-1:</em> the user name is not legitimate <br /> 
+	<em>-2:</em> contains the words you want to allow registration <br /> 
+	<em>-3:</em> the user name already exists <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This function is used to check user input interface, the user name of legitimacy. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's7')">check the user name sample (PHP)</a></h6>
+<div class="code" id="s7" style="display: none"><pre>
+$ucresult = uc_user_checkname($_GET['email']);
+if($ucresult > 0) {
+	echo 'user name is available';
+} elseif($ucresult == -1) {
+	echo 'user name not valid';
+} elseif($ucresult == -2) {
+	echo 'user name contains the words you want to allow';
+} elseif($ucresult == -3) {
+	echo 'user name already exists';
+}
+</pre></div>
+
+</div>
+
+<a name="addprotected"></a>
+<h3>Add to protected users</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_addprotected(<i>string/array</i> username , <i>string</i> admin)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> username</th>
+	<td>protect the user name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> admin</th>
+	<td>Administrator</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> success <br /> 
+	<em>-1:</em> fail <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface functions for adding protected users. 
+</div>
+
+<a name="deleteprotected"></a>
+<h3>Delete from protected users</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_deleteprotected(<i>string/array</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string/array</i> username</th>
+	<td>protected user name</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+  	<em>1:</em> success <br /> 
+	<em>-1:</em> fail <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to remove the protected user. 
+</div>
+
+<a name="deleteprotected"></a>
+<h3>Protected user name list</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_getprotected()</h4>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>array</i></th>
+	<td>
+	Protected user data 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface function to get a list of protected users. 
+</div>
+
+<a name="uc_user_merge"></a>
+<h3>Merge user. Set the same user name into UCenter</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_merge(<i>string/</i> oldusername , <i>string</i> newusername, <i>integer</i> uid, <i>string</i> password, <i>string</i> email)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> oldusername</th>
+	<td>old user name</td>
+	</tr>
+	<tr>
+	<th><i>string</i> newusername</th>
+	<td>new user name</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>User ID</td>
+	</tr>
+	<tr>
+	<th><i>string</i> password</th>
+	<td>Password</td>
+	</tr>
+	<tr>
+	<th><i>string</i> email</th>
+	<td>e-mail</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	<em>&gt; 0:</em> return the user ID, that user registration is successful <br /> 
+	<em>-1:</em> the user name is not legitimate <br /> 
+	<em>-2:</em> the user name is not legitimate <br /> 
+	<em>-3:</em> the user name already exists <br /> 
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+The interface to the user function is used to duplicate names into UCenter. 
+
+<h5>users and users of the merger deal with duplicate names</h5>
+If your application when integrated into UCenter contains the old user data, we suggest that you can take the following example of the way to your users into UCenter.
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's8')">user merge example (PHP)</a></h6>
+<div class="code" id="s8" style="display: none"><pre>
+function getmaxuid() {
+	global $ucdb;
+	$query = $ucdb->query("SHOW CREATE TABLE ".UC_DBTABLEPRE."members");
+	$data = $ucdb->fetch_array($query);
+	$data = $data['Create Table'];
+	if(preg_match('/AUTO_INCREMENT=(\d+?)[\s|$]/i', $data, $a)) {
+		return $a[1] - 1;
+	} else {
+		return 0;
+	}
+}
+
+$maxuid = getmaxuid();
+
+$query = $db->query("SELECT * FROM {$tablepre}members");
+
+while($data = $db->fetch_array($query)) {
+	$salt = rand(100000, 999999);
+	$password = md5($data['password'].$salt);
+	$data['username'] = addslashes($data['username']);
+	$lastuid = $data['uid'] += $maxuid;
+	$queryuc = $ucdb->query("SELECT count(*) FROM ".UC_DBTABLEPRE."members WHERE username='$data[username]'");
+	$userexist = $ucdb->result($queryuc, 0);
+	if(!$userexist) {
+		$ucdb->query("INSERT LOW_PRIORITY INTO ".UC_DBTABLEPRE."members SET uid='$data[uid]', username='$data[username]', password='$password',
+			email='$data[email]', regip='$data[regip]', regdate='$data[regdate]', salt='$salt'", 'SILENT');
+		$ucdb->query("INSERT LOW_PRIORITY INTO ".UC_DBTABLEPRE."memberfields SET uid='$data[uid]'",'SILENT');
+	} else {
+		$ucdb->query("REPLACE INTO ".UC_DBTABLEPRE."mergemembers SET appid='".UC_APPID."', username='$data[username]'", 'SILENT');
+	}
+}
+
+$ucdb->query("ALTER TABLE ".UC_DBTABLEPRE."members AUTO_INCREMENT=".($lastuid + 1));
+</pre></div>
+The basic process is this way:
+First, get the current UCenter the largest user ID value.
+Then, read the application its own user table,
+reading the user name is repeated in UCenter.
+If repeated, the same name of the user name saved to UCenter
+the mergemembers table, do not merge the user.
+If you do not duplicate, according to the user to merge into the normal way.
+When the user inserted into mergemembers form,
+the user logged in the application when signed return array [4]
+the value will return 1 ( <a href="#login">see above on uc_user_login() function Description </a> ).
+When logged back to Chong Ming state after the application
+of the proposed interpretation of your user name change after the legality of
+the treatment, call the interface function. 
+
+<h6><a href="###" class="spread" onclick="collapse(this, 's9')">the same name as the user into UCenter example (PHP)</a></h6>
+<div class="code" id="s9" style="display: none"><pre>
+$uid = uc_user_merge($_GET['username'], $_GET['usernamenew'], $user['uid'], $_GET['password'], $user['email']);
+if($uid > 0) {
+	echo 'user name is available';
+} elseif($uid == -1) {
+	echo 'user name not valid';
+} elseif($uid == -2) {
+	echo 'register contains the words you want to allow';
+} elseif($uid == -3) {
+	echo 'user name already exists';
+}
+
+$db->query("UPDATE {$tablepre}members SET username='$_GET[usernamenew]' WHERE uid='$uid'");
+</pre></div>
+		
+</div>
+
+<a name="uc_user_merge"></a>
+<h3>Remove duplicate user name records</h3>
+
+<div class="submsg">
+<h4>uc_user_merge_remove(<i>string</i> username)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>string</i> username</th>
+	<td>User Name</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to remove duplicate names in the specified user record record, if the application has been processed the same name as the user, can perform this interface function. 
+</div>
+
+<a name="deleteprotected"></a>
+<h3>Specified user access to specified application integration</h3>
+
+<div class="submsg">
+<h4><i>integer</i> uc_user_getcredit(<i>integer</i> appid, <i>integer</i> uid, <i>integer</i> credit)</h4>
+
+<h5>function parameters</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>parameter</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i> appid</th>
+	<td>
+	Application ID
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> uid</th>
+	<td>
+	User ID
+	</td>
+	</tr>
+	<tr>
+	<th><i>integer</i> credit</th>
+	<td>
+	Integral number of points
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<h5>return value</h5>
+<table border="0" cellspacing="0" cellpadding="0" class="msgtable">
+<thead>
+	<tr>
+	<th>value</th>
+	<td>meaning</td>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<th><i>integer</i></th>
+	<td>
+	Summ of points
+	</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+This interface function is used to specify the application of the specified user access points. 
+</div>
+
+<script type="text/javascript" src="javascript/footer.js"></script>
+</body>
+</html>
