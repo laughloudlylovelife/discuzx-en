@@ -1,7 +1,7 @@
 <!--{if CURMODULE != 'logging'}-->
 	<script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
 	<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes" onsubmit="return lsSubmit()">
-	<div class="fastlg cl">
+	<div class="fastlg">
 		<span id="return_ls" style="display:none"></span>
 		<div class="y pns">
 			<table cellspacing="0" cellpadding="0">
@@ -9,7 +9,7 @@
 					<!--{if !$_G['setting']['autoidselect']}-->
 						<td>
 							<span class="ftid">
-								<select name="fastloginfield" id="ls_fastloginfield" width="40" tabindex="900">
+								<select name="fastloginfield" id="ls_fastloginfield" width="80" tabindex="900">
 									<option value="username">{lang username}</option>
 									<option value="uid">{lang uid}</option>
 									<option value="email">{lang email}</option>
