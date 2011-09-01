@@ -28,7 +28,7 @@ Created & Modified by Pony.
 
 #mu ul { border-bottom: 1px solid {COMMONBORDER}; background-image: none; background-color: {COMMONBG}; }
 
-.pg_post .ct2_a { margin-left: 0; margin-right: 150px; }
-	.pg_post .ct2_a .appl { margin-left: 0; margin-right: -150px; background: none; }
+.pg_post .ct2_a { margin-left: 0; margin-right: 220px; }
+	.pg_post .ct2_a .appl { margin-left: 0; margin-right: -210px; }
 .pg_modcp .ct2_a, .pg_announcement .ct2_a { border: none; }
 	.pg_modcp .ct2_a .mn, .pg_announcement .ct2_a .mn { margin-right: 0; padding-top: 0; }
