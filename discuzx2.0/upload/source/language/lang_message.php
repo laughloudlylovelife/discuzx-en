@@ -230,7 +230,7 @@ $lang = array (
 	'wrong_invitation_code'			=> 'The invitation code error, or invitations are disabled, please re-fill',//'邀请码错误，请重新填写，没有邀请码不允许注册',
 	'username_nonexistence'			=> 'Specified user does not exist.',//'指定用户不存在，请返回修改。',
 	'group_name_oversize'			=> 'If group name is longer than 20 characters, it will be truncuted automatically.',//'群组名称超过20个字节将被截断，请修改。',
-	'set_cover_succeed			=> 'The cover is set successfully',//'封面设置成功',
+	'set_cover_succeed'			=> 'The cover is set successfully',//'封面设置成功',
 
 	'announcement_nonexistence'		=> 'There are no announces for view.',//'目前没有公告供查看，请返回。',
 
