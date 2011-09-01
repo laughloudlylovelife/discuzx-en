@@ -552,7 +552,7 @@ Note on the CSS Hack:
 		#hd				Header
 			#nv			Navigation
 			#mu			Customer menu
-		.wp				Wrap
+		.wp				Wrapper
 		#ct				Container
 			.mn			Main area
 			.sd			Side area
@@ -655,21 +655,23 @@ Note on the CSS Hack:
 						#qmenu_menu ul a:hover { background-color: {SPECIALBG}; color: {HIGHLIGHTLINK}; text-shadow: none; }
 
 /* Page main area */
-	#ct { min-height: 300px; }
+	#ct { min-height: 300px;
+border: 1px solid green; }
 		.ie6 #ct { height: 300px; }
-		.mn { overflow: hidden; }
+		.mn { overflow: hidden;
+border: 1px solid red; }
 		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
 		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
 
-		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 10px; width: 117px; }
+		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 0 6px 10px; width: 180px; }
 
 		.ct2_a, .ct3_a { border: 1px solid {WRAPBORDERCOLOR}; {SIDEBGCODE} }
 			.ct2_a_r { border: none; background-image: none; }
 			 .ct2_a h1.mt { display: none; }
 			 .ct2_a .tb { margin-top: 3px; }
-		.ct2_a .mn { float: right; width: 810px; }
-			.ct2_a .mn { display: inline; margin-right: 10px; padding-top: 10px; width: 800px; }
-				#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; width: 810px; }
+		.ct2_a .mn { float: right; /*width: 810px; */}
+		.ct2_a .mn { display: inline; margin-right: 10px; padding-top: 10px; width: 750px/*800px*/; }
+			#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0;/* width: 810px;*/ }
 
 		.ct3_a .mn { float: left; margin-left: 20px; width: 565px; }
 		.ct3_a .sd { float: right; width: 220px; }
