@@ -1,0 +1,396 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<!--{if $uid}-->
+	<form method="post" action="admincp.php?ac=space&uid=$uid" enctype="multipart/form-data">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>$member[username] {lang base_info}</h3>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang user_name}</th>
+			<td><a href="space.php?uid=$member[uid]" target="_blank">$member[username]</a></td></tr>
+		
+		
+		<tr><th>{lang create_time}</th><td><!--{date('Y-m-d H:i',$member[dateline])}--></td></tr>
+		<tr><th>{lang time_update}</th><td><!--{if $member[updatetime]}--><!--{date('Y-m-d H:i',$member[updatetime])}--><!--{else}-->-<!--{/if}--></td></tr>
+		<tr><th>{lang last_logged}</th><td><!--{date('Y-m-d H:i',$member[lastlogin])}--></td></tr>
+		<tr><th>{lang registration_ip}</th><td>$member[regip]</td></tr>
+		<tr><th>{lang friends_number}</th><td>$member[friendnum]</td></tr>
+		<tr><th>{lang number_of_views}</th><td>$member[viewnum]</td></tr>
+		<tr><th>{lang batch_manage}</th>
+			<td>
+			<a href="admincp.php?ac=blog&uid=$member[uid]&searchsubmit=1" target="_blank">{lang blogs} ($member[blognum])</a> | 
+			<a href="admincp.php?ac=album&uid=$member[uid]&searchsubmit=1" target="_blank">{lang albums} ($member[albumnum])</a> | 
+			<a href="admincp.php?ac=thread&uid=$member[uid]&searchsubmit=1" target="_blank">{lang thread} ($member[threadnum])</a> | 
+			<a href="admincp.php?ac=poll&uid=$member[uid]&searchsubmit=1" target="_blank">{lang polls} ($member[pollnum])</a> | 
+			<a href="admincp.php?ac=event&uid=$member[uid]&searchsubmit=1" target="_blank">{lang events} ($member[eventnum])</a> | 
+			<a href="admincp.php?ac=doing&uid=$member[uid]&searchsubmit=1" target="_blank">{lang doings} ($member[doingnum])</a> | 
+			<a href="admincp.php?ac=share&uid=$member[uid]&searchsubmit=1" target="_blank">{lang shares} ($member[sharenum])</a> | 
+			<a href="admincp.php?ac=feed&uid=$member[uid]&searchsubmit=1" target="_blank">{lang feeds_happening}</a> | 
+			<a href="admincp.php?ac=pic&uid=$member[uid]&searchsubmit=1" target="_blank">{lang images}</a> | 
+			<a href="admincp.php?ac=comment&authorid=$member[uid]&searchsubmit=1" target="_blank">{lang comments}</a> | 
+			<a href="admincp.php?ac=post&uid=$member[uid]&searchsubmit=1" target="_blank">{lang posts}</a>
+		</td></tr>
+		
+		<tr><th>&nbsp;</th>
+			<td>
+			
+			<!--{if $member['flag'] != 1 && checkperm('managedelspace')}-->
+				<a href="admincp.php?ac=space&op=close&uid=$member[uid]" <!--{if $member[flag]!=-1}--> onclick="return confirm('{lang space_lock_confirm}');" <!--{/if}--> class="submit"><!--{if $member[flag]!=-1}-->{lang space_lock}<!--{else}-->{lang space_unlock}<!--{/if}--></a> &nbsp;
+				<a href="admincp.php?ac=space&op=delete&uid=$member[uid]" onclick="return confirm('{lang space_remove_confirm}');">{lang space_remove}</a>&nbsp;&nbsp;&nbsp;
+			<!--{else}-->
+				{lang space_remove_protected}
+			<!--{/if}-->
+			</td>
+		</tr>
+		
+		</table>
+	</div>
+	<!--{if $managespaceinfo}-->
+	<br>
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>$member[username] {lang personal_info}</h3>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang avatar}</th><td><a href="space.php?uid=$member[uid]" target="_blank"><!--{avatar($member[uid],big)}--></a>
+		<br>[<a href="admincp.php?ac=space&op=deleteavatar&uid=$uid">{lang avatar_delete}</a>]
+		</td></tr>
+		
+		<!--{if $_SCONFIG['videophoto']}-->
+		<tr><th>{lang video_certify}</th><td>
+			<p>
+				<input type="radio" name="videostatus" value="0"$videostatusarr[0]>{lang not_passed}
+				<input type="radio" name="videostatus" value="1"$videostatusarr[1]>{lang is_passed}
+			</p>
+			<!--{if $videopic}--><img src="$videopic" width="400"><br><!--{/if}-->
+			{lang video_certify_upload}:<br>
+			<input type="file" name="newvideopic" value="">
+		</td></tr>
+		<!--{/if}-->
+		
+		<tr>
+			<th style="width:12em;">{lang current_email}</th>
+			<td>
+				<input type="text" id="email" class="t_input" name="email" value="$member[email]" />
+				<input type="radio" name="emailcheck" value="0"<!--{if $member[emailcheck]==0}--> checked<!--{/if}-->> {lang not_activated}
+				<input type="radio" name="emailcheck" value="1"<!--{if $member[emailcheck]==1}--> checked<!--{/if}-->> {lang is_activated}
+			</td>
+		</tr>
+		<!--{if $_SCONFIG['allowdomain'] && $_SCONFIG['domainroot']}-->
+		<tr><th style="width:12em;">{lang domain_additional}</th><td><input type="text" class="t_input" name="domain" value="$member[domain]" size="10">.{$_SCONFIG[domainroot]}</td></tr>
+		<!--{/if}-->
+		<tr><th style="width:12em;">{lang friends_number_available}</th><td><input type="text" class="t_input" name="addfriend" value="$member[addfriend]" size="10"> {lang units}</td></tr>
+		
+		
+		<tr><th>{lang css_custom_clean}</th><td>
+			<input type="radio" name="clearcss" value="0" checked> {lang do_not_handle}
+			<input type="radio" name="clearcss" value="1"> {lang clean}
+			<p>{lang css_clean_intro}</p>
+		</td></tr>
+		
+		<tr>
+			<th>{lang gender}</th>
+			<td>
+				<label for="sexm"><input id="sexm" type="radio" value="1" name="sex"$sexarr[1] />{lang man}</label> 
+				<label for="sexw"><input id="sexw" type="radio" value="2" name="sex"$sexarr[2] />{lang woman}</label>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang marry}</th>
+			<td>
+				<select id="marry" name="marry">
+					<option value="0">{lang nothing}</option>
+					<option value="1"$marryarr[1]>{lang unmarried}</option>
+					<option value="2"$marryarr[2]>{lang married}</option>
+				</select>
+			</td>
+		</tr>
+		
+		<tr>
+			<th>{lang birthday}</th>
+			<td>
+				<select id="birthyear" name="birthyear">
+					<option value="0">{lang nothing}</option>
+					$birthyeayhtml
+				</select> {lang year} 
+				<select id="birthmonth" name="birthmonth">
+					<option value="0">{lang nothing}</option>
+					$birthmonthhtml
+				</select> {lang month} 
+				<select id="birthday" name="birthday">
+					<option value="0">{lang nothing}</option>
+					$birthdayhtml
+				</select> {lang day}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang blood_type}</th>
+			<td>
+				<select id="blood" name="blood">
+					<option value="">{lang secret}</option>
+					$bloodhtml
+				</select>
+			</td>
+		</tr>
+	
+		<tr>
+			<th>{lang birthplace}</th>
+			<td id="birthcitybox">
+				<script type="text/javascript" src="source/script_city.js"></script>
+				<script type="text/javascript">
+				<!--
+				showprovince('birthprovince', 'birthcity', '$member[birthprovince]', 'birthcitybox');
+				showcity('birthcity', '$member[birthcity]', 'birthprovince', 'birthcitybox');
+				
+				//-->
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang residence}</th>
+			<td id="residecitybox">
+				<script type="text/javascript">
+				<!--
+				showprovince('resideprovince', 'residecity', '$member[resideprovince]', 'residecitybox');
+				showcity('residecity', '$member[residecity]', 'resideprovince', 'residecitybox');
+				//-->
+				</script>
+			</td>
+		</tr>
+		<tr>
+			<th>QQ</th>
+			<td>
+				<input type="text" class="t_input" name="qq" value="$member[qq]" /> 
+			</td>
+		</tr>
+		<tr>
+			<th>MSN</th>
+			<td>
+				<input type="text" class="t_input" name="msn" value="$member[msn]" /> 
+			</td>
+		</tr>	
+
+		<!--{loop $profilefields $value}-->
+		<tr>
+			<th>$value[title]<!--{if $value[required]}-->*<!--{/if}--></th>
+			<td>
+				$value[formhtml]
+				<!--{if $value[note]}--><br>$value[note]<!--{/if}-->
+			</td>
+		</tr>
+		<!--{/loop}-->
+		
+		
+			
+		</table>
+	</div>
+	<!--{/if}-->
+	<!--{if $managename}-->
+	<br>
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>$member[username] {lang real_name_verification}</h3>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang realname}</th><td><input type="text" class="t_input" name="name" value="$member[name]">
+			<input type="radio" name="namestatus" value="0"<!--{if $member[namestatus]==0}--> checked<!--{/if}-->> {lang not_verified}
+			<input type="radio" name="namestatus" value="1"<!--{if $member[namestatus]==1}--> checked<!--{/if}-->> {lang verified}
+		</td></tr>
+		</table>
+	</div>
+	<!--{/if}-->
+	<!--{if $managespacecredit}-->
+	<br>
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>$member[username] {lang points_experience_space_size_management}</h3>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang space_additional_size}</th><td><input type="text" class="t_input" name="addsize" value="$member[addsize]" size="10"> Mb</td></tr>
+		<tr><th>{lang credit_number}</th><td><input type="text" name="credit" class="t_input" value="$member[credit]" size="10"></td></tr>
+		<tr><th>{lang experience_value}</th><td><input type="text" class="t_input" name="experience" value="$member[experience]" size="10"></td></tr>
+		</table>
+	</div>
+	<!--{/if}-->
+	<!--{if $managespacegroup}-->
+	<br>
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>$member[username] {lang protection_info}</h3>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		
+		<tr><th style="width:12em;">{lang user_group}</th><td>
+		<select name="groupid" onchange="showDateSet(this.value);">
+		<option value="0">{lang user_group_general}</option>
+		<!--{eval $show=true;}-->
+		<!--{loop $usergroups $value}-->
+			<!--{if $groupidarr[$value['gid']]}--><!--{eval $show=false;}--><!--{/if}-->
+		<option value="$value[gid]"{$groupidarr[$value[gid]]}>$value[grouptitle]</option>
+		<!--{/loop}-->
+		</select>
+		<p>{lang user_group_general_intro}</p></td></tr>
+		<tr id="expirationtr" <!--{if $show}-->style="display:none;"<!--{/if}-->><th>{lang user_group_expiration}</th><td>
+			<input type="text" class="t_input" name="expiration" value="$member[expiration]" size="20">({lang time_format})
+			<p>{lang expiration_empty}</p>
+		</td></tr>
+		<!--{if $member[flag] != -1}-->
+		<tr><th>{lang protection_remove}</th><td>
+			<input type="radio" name="flag" value="0"<!--{if $member[flag]==0}--> checked<!--{/if}-->> {lang not_protected}
+			<input type="radio" name="flag" value="1"<!--{if $member[flag]==1}--> checked<!--{/if}-->> {lang protected}
+			<p>{lang protection_remove_intro}</p>
+			</td></tr>
+		</td></tr>
+		<!--{/if}-->
+		</table>
+		<script type="text/javascript">
+			function showDateSet(val) {
+				var expObj = $("expirationtr");
+				expObj.style.display = parseInt(val) ? '' : 'none';
+			}
+		</script>
+	</div>
+	<!--{/if}-->
+
+	<div class="footactions">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<input type="submit" name="usergroupsubmit" value="{lang submit_button}" class="submit">
+	</div>
+	</form>
+<!--{elseif $_POST['optype'] == 4}-->
+
+	<form method="post" action="$url">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang email_bulk}</h3>
+			<p>{lang email_bulk_intro}</p>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th style="width:8em;">{lang recipient_uid}</th>
+			<td><input type="text" name="uids" value="$uids" size="60"> {lang recipient_uid_separate}</td>
+		</tr>
+		<tr>
+			<th>{lang email_title}</th>
+			<td><input type="text" name="subject" value="" size="60"></td>
+		</tr>
+		<tr>
+			<th>{lang email_content}</th>
+			<td><textarea name="message" cols="80" rows="10"></textarea><br>{lang email_content_html}</td>
+		</tr>
+		</table>
+	</div>
+	
+	<div class="footactions">		
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<input type="submit" name="sendemailsubmit" value="{lang send_email}" class="submit">
+	</div>
+	</form>
+	
+<!--{elseif $_POST['optype'] == 5}-->
+
+	<form method="post" action="$url">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang hello_bulk}</h3>
+			<p>{lang hello_bulk_intro}</p>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th style="width:8em;">{lang recipient_uid}</th>
+			<td><input type="text" name="uids" value="$uids" size="60"> {lang recipient_uid_separate}</td>
+		</tr>
+		<tr>
+			<th>{lang hello_content}</th>
+			<td><input type="text" name="note" value="" size="60"> ({lang hello_content_limit})</td>
+		</tr>
+		</table>
+	</div>
+	
+	<div class="footactions">		
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<input type="submit" name="pokesubmit" value="{lang send_hello}" class="submit">
+	</div>
+	</form>	
+	
+<!--{elseif $_POST['optype'] == 7}-->
+
+	<form method="post" action="$url" onsubmit="return checkPresent()">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang magic_gift_bulk}</h3>
+			<p>{lang magic_gift_bulk_intro}</p>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th style="width:8em;">{lang gift_recepient_id}</th>
+			<td><input type="text" name="uids" value="$uids" size="60"> {lang recipient_uid_separate}</td>
+		</tr>
+		<tr>
+			<th>{lang giving_magic}</th>
+			<td>
+				<select id="newmagicaward">
+					<!--{loop $_SGLOBAL['magic'] $key $value}-->
+					<option value="$key">$value</option>
+					<!--{/loop}-->
+				</select>
+				<input type="text" id="newmagicawardnum" value="1" />
+				<input class="button" type="button" onclick="addMagicAward()" value="{lang add_new}" />
+				<ul id="magicawards"></ul>
+				<script type="text/javascript">
+				function addMagicAward(){
+					var mid = $('newmagicaward').value;
+					var id = "magicaward_" + mid;
+					var num = $('newmagicawardnum').value;
+					var name = $('newmagicaward').options[$('newmagicaward').selectedIndex].text;
+					if($(id)) {
+						removeMagicAward($(id).getElementsByTagName("a")[0]);
+					}
+					var s = '<li id="' + id + '">';
+					s += '<input type="hidden" name="magicaward[]" value="' + mid + ',' + num + '" />';
+					s += name + ' &nbsp;&nbsp;' + "\n";
+					s += num + ' &nbsp;&nbsp;' + "\n";
+					s += '<a href="#" onclick="removeMagicAward(this);return false;">{lang delete}</a>';
+					s += '</li>';
+					$('magicawards').innerHTML += s;
+				}
+				function removeMagicAward(o) {
+					$('magicawards').removeChild(o.parentNode);
+				}
+				function checkPresent(){
+					if($('magicawards').getElementsByTagName("li").length) {
+						return true;
+					} else {
+						alert('{lang magic_select_warn}');
+						return false;
+					}
+				}
+				</script>
+			</td>
+		</tr>
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<input type="submit" name="magicsubmit" value="{lang giving_magic}" class="submit">
+	</div>
+	</form>
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

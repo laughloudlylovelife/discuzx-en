@@ -1,0 +1,312 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[holdlog]><a href="admincp.php?ac=magiclog&view=holdlog"><span>{lang magics_hold}</span></a></li>
+			<li$actives[inlog]><a href="admincp.php?ac=magiclog&view=inlog"><span>{lang magics_gifted}</span></a></li>
+			<li$actives[uselog]><a href="admincp.php?ac=magiclog&view=uselog"><span>{lang magics_used}</span></a></li>
+			<!--{if $allowmanage}-->
+			<li$actives[storelog]><a href="admincp.php?ac=magiclog&view=storelog"><span>{lang magic_shop_stats}</span></a></li>
+			<!--{/if}-->
+		</ul>
+	</div>
+
+<!--{if $_GET[view] == 'inlog'}-->
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+	<table cellspacing="3" cellpadding="3">
+		<tr>
+			<!--{if $allowmanage}-->
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<!--{else}-->
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
+			<!--{/if}-->
+			<th>{lang magic}</th>
+			<td>
+				<select name="mid">
+				<option value="">{lang unlimited}</option>
+				<!--{loop $_SGLOBAL[magic] $key $value}-->
+				<option value="$key"<!--{if $_GET[mid]==$key}--> selected<!--{/if}-->>$value</option>
+				<!--{/loop}-->
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang transaction_volume}</th>
+			<td>
+				<select name="count">
+					<option value="">{lang unlimited}</option>
+					<option value="1-4"<!--{if $_GET['count']=='1-4'}--> selected<!--{/if}-->>1 - 4</option>
+					<option value="5-9"<!--{if $_GET['count']=='5-9'}--> selected<!--{/if}-->>5 - 9</option>
+					<option value="10-49"<!--{if $_GET['count']=='10-49'}--> selected<!--{/if}-->>10 - 49</option>
+					<option value="50-99"<!--{if $_GET['count']=='50-99'}--> selected<!--{/if}-->>50 - 99</option>
+					<option value="100-99999"<!--{if $_GET['count']=='100-99999'}--> selected<!--{/if}-->>{lang more_100}</option>
+				</select>
+			</td>
+			<th>{lang get_method}</th>
+			<td>
+				<select name="type">
+					<option value="">{lang unlimited}</option>
+					<option value="1"<!--{if $_GET[type]==1}--> selected<!--{/if}-->>{lang buy}</option>
+					<option value="2"<!--{if $_GET[type]==2}--> selected<!--{/if}-->>{lang present}</option>
+					<option value="3"<!--{if $_GET[type]==3}--> selected<!--{/if}-->>{lang upgrade}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang record_time}</th>
+			<td colspan="3">
+				<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
+				<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
+				<input type="text" name="endtime" value="$_GET[endtime]"  onclick="showcalendar(event,this,1)" />
+				<input type="hidden" name="view" value="$_GET[view]">
+				<input type="hidden" name="ac" value="magiclog">
+				<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+			</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+	
+	<!--{if $list}-->
+	<div class="bdrcontent">
+	<table width="100%">
+		<tr>
+			<th>{lang member}</th>
+			<th>{lang method}</th>
+			<th>{lang magic}</th>
+			<th>{lang amount}</th>
+			<th>{lang time}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=inlog&username=$value[username]">$value[username]</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<!--{if $value[type]==2}-->
+			{lang gifted}
+			<!--{elseif $value[type] == 3}-->
+			{lang upgrade_user_group}
+			<!--{else}-->
+			{lang buy}
+			<!--{/if}-->
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=inlog&mid=$value[mid]">$_SGLOBAL[magic][$value[mid]]</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			$value[count]
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<!--{eval echo sgmdate('Y-m-d H:i', $value[dateline])}-->
+			</td>
+		</tr>
+		<!--{/loop}-->	
+	</table>
+	</div>
+	<div class="footactions">
+		<div class="pages">$multi</div>
+	</div>
+	<!--{else}-->
+	<div class="bdrcontent">
+	{lang no_related_data}
+	</div>	
+	<!--{/if}-->
+	
+<!--{elseif $_GET[view] == 'uselog'}-->
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+	<table cellspacing="3" cellpadding="3">
+		<tr>
+			<!--{if $allowmanage}-->
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<!--{else}-->
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_SGLOBAL[supe_username]" disabled></td>
+			<!--{/if}-->
+			<th>{lang magic}</th>
+			<td>
+				<select name="mid">
+				<option value="">{lang unlimited}</option>
+				<!--{loop $_SGLOBAL[magic] $key $value}-->
+				<option value="$key"<!--{if $_GET[mid]==$key}--> selected<!--{/if}-->>$value</option>
+				<!--{/loop}-->
+				</select>
+				</select>			
+			</td>
+		</tr>
+		<tr>
+			<th>{lang object_type}</th>
+			<td>
+				<select name="idtype">
+					<option value="">{lang unlimited}</option>
+					<option value="blogid"<!--{if $_GET['idtype']=='blogid'}--> selected<!--{/if}-->>{lang blogs}</option>
+					<option value="tid"<!--{if $_GET['idtype']=='tid'}--> selected<!--{/if}-->>{lang thread}</option>
+					<option value="cid"<!--{if $_GET['idtype']=='cid'}--> selected<!--{/if}-->>{lang comments}</option>
+					<option value="uid"<!--{if $_GET['idtype']=='uid'}--> selected<!--{/if}-->>{lang space}</option>
+					<option value="picid"<!--{if $_GET['idtype']=='picid'}--> selected<!--{/if}-->>{lang images}</option>
+					<option value="pollid"<!--{if $_GET['idtype']=='pollid'}--> selected<!--{/if}-->>{lang polls}</option>
+					<option value="eventid"<!--{if $_GET['idtype']=='eventid'}--> selected<!--{/if}-->>{lang events}</option>
+				</select>
+			</td>
+			<th>{lang object_id}</th>
+			<td>
+				<input type="text" name="id" value="$_GET[id]" />
+			</td>
+		</tr>
+		<tr>
+			<th>{lang record_time}</th>
+			<td colspan="3">
+				<script type="text/javascript" src="source/script_calendar.js"></script>
+				<input type="text" name="starttime" value="$_GET[starttime]" onclick="showcalendar(event,this,1)"/> ~
+				<input type="text" name="endtime" value="$_GET[endtime]"  onclick="showcalendar(event,this,1)" />
+				<input type="hidden" name="view" value="$_GET[view]">
+				<input type="hidden" name="ac" value="magiclog">
+				<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+			</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+	
+	<!--{if $list}-->	
+	<div class="bdrcontent">	
+	<table width="100%">
+		<tr>
+			<th>{lang member}</th>
+			<th>{lang magic}</th>
+			<th>{lang time}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=uselog&username=$value[username]">$value[username]</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=uselog&mid=$value[mid]">$_SGLOBAL[magic][$value[mid]]</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<!--{eval echo sgmdate('Y-m-d H:i', $value[dateline])}-->
+			</td>
+		</tr>
+		<!--{/loop}-->	
+	</table>
+	</div>
+	<div class="footactions">
+		<div class="pages">$multi</div>
+	</div>
+	<!--{else}-->
+	<div class="bdrcontent">
+	{lang no_related_data}
+	</div>	
+	<!--{/if}-->
+<!--{elseif $_GET['view'] == 'storelog'}-->
+	<!--{if $list}-->	
+	<div class="bdrcontent">
+	<h3>
+		{lang magics_sold_number} $totalcount {lang ones}, {lang recovered} $totalcredit {lang points}
+	</h3>
+	<br />
+	<table width="100%">
+		<tr>
+			<th>{lang magic}</th>
+			<th>{lang number_sold}</th>
+			<th>{lang recovered_summ}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td style="border-bottom: 1px solid #EEE;"><a href="admincp.php?ac=magiclog&view=holdlog&mid=$value[mid]">$_SGLOBAL[magic][$value[mid]]</a></td>
+			<td style="border-bottom: 1px solid #EEE;">$value[sellcount]</td>
+			<td style="border-bottom: 1px solid #EEE;">$value[sellcredit]</td>
+			</td>
+		</tr>
+		<!--{/loop}-->	
+	</table>
+	</div>
+	<div class="footactions">
+		<div class="pages">$multi</div>
+	</div>
+	<!--{else}-->
+	<div class="bdrcontent">
+	{lang no_related_data}
+	</div>	
+	<!--{/if}-->
+<!--{else}-->
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+	<table cellspacing="3" cellpadding="3">
+		<tr>
+			<!--{if $allowmanage}-->
+			<th>{lang user_id}</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_GET[username]"></td>
+			<!--{else}-->
+			<th>{lang user_id}</th><td><input type="text" name="uid" value="$_SGLOBAL[supe_uid]" disabled></td>
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_GET[username]" disabled></td>
+			<!--{/if}-->
+		</tr>
+		<tr>
+			<th>{lang magic}</th>
+			<td colspan="3">
+				<select name="mid">
+				<option value="">{lang unlimited}</option>
+				<!--{loop $_SGLOBAL[magic] $key $value}-->
+				<option value="$key"<!--{if $_GET[mid]==$key}--> selected<!--{/if}-->>$value</option>
+				<!--{/loop}-->
+				</select>
+				</select>	
+				<input type="hidden" name="view" value="$_GET[view]">
+				<input type="hidden" name="ac" value="magiclog">
+				<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">		
+			</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+	
+	<!--{if $list}-->	
+	<div class="bdrcontent">	
+	<table width="100%">
+		<tr>
+			<th>{lang member}</th>
+			<th>{lang magic}</th>
+			<th>{lang amount}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=holdlog&uid=$value[uid]">
+			$value[username]
+			</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			<a href="admincp.php?ac=magiclog&view=holdlog&mid=$value[mid]">$_SGLOBAL[magic][$value[mid]]</a>
+			</td>
+			<td style="border-bottom: 1px solid #EEE;">
+			$value[count]
+			</td>
+		</tr>
+		<!--{/loop}-->	
+	</table>
+	</div>
+	<div class="footactions">
+		<div class="pages">$multi</div>
+	</div>
+	<!--{else}-->
+	<div class="bdrcontent">
+	{lang no_related_data}
+	</div>	
+	<!--{/if}-->
+
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

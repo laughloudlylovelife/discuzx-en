@@ -1,0 +1,75 @@
+<!--{template header}-->
+
+<h2 class="title"><img src="image/icon/friend.gif">{lang friend_invited} <!--{if $userapp}-->{lang play_together} $userapp[appname]<!--{/if}--></h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="$theurl"><span>{lang friend_invited}</span></a></li>
+		<li><a href="space.php?$url_plus"><span>{lang visit_friend_home}</span></a></li>
+	</ul>
+</div>
+
+<div id="content">
+
+	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+	<table cellpadding="2" cellspacing="2" width="100%">
+	<tr>
+	<td>
+		<strong>{lang welcome}, <a href="space.php?$url_plus">{$_SN[$space[uid]]}</a> {lang invites_you_to_friends}<!--{if $userapp}-->, {lang and_play_together} $userapp[appname]<!--{/if}-->.</strong>
+		<br>{lang invite_you_intro1} $userapp[appname] ...
+		<br>{lang invite_you_intro2}
+		<br>{lang invite_you_intro3}
+	</td>
+	<!--{if $userapp}--><td><img src="http://appicon.manyou.com/logos/{$userapp[appid]}" alt="{$userapp[appname]}" /></td><!--{/if}-->
+	</tr>
+	</table>
+	</div></div></div></div></div>
+
+
+	<table cellpadding="2" cellspacing="2">
+		<tr>
+			<td>
+			<div class="ar_r_t"><div class="ar_l_t"><div class="ar_r_b"><div class="ar_l_b">
+			<a href="space.php?$url_plus" class="avatarlink"><!--{avatar($space[uid],middle)}--></a>
+			</div></div></div></div>
+			</td>
+			<td>
+				<h6 class="l_status"><a href="space.php?$url_plus">{$_SN[$space[uid]]}</a></h6>
+				<p>{lang from} $space[resideprovince] $space[residecity]</p>
+				<p>{lang has} $space[friendnum] {lang friends_num}, $albumnum {lang album_num}, $doingnum {lang records_num}, $blognum {lang tag_used_num}, $threadnum {lang topics_number}, $tagspacenum {lang groups_num}</p>
+				<!--{if $space[note]}--><div class="quote"><span id="quote" class="q">$space[note]</span></div><!--{/if}-->
+				<p style="padding-top:1em;">
+			<!--{if $_SGLOBAL['supe_uid']}-->
+				<form method="post" name="commentform" action="$theurl">
+				<input type="hidden" name="invitesubmit" value="1">
+				<input type="submit" name="invitesubmit_submit" value="{lang invite_accept}" class="submit" />
+				<a href="space.php" class="button">{lang ignore_this_invite}</a>
+				<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+				</form>
+			<!--{else}-->
+				<!--{if empty($_SCONFIG['closeinvite'])}-->
+				<a href="do.php?ac=$_SCONFIG[register_action]&$url_plus" class="submit">{lang accept_invite}</a>
+				<!--{/if}-->
+				<a href="do.php?ac=$_SCONFIG[login_action]&$url_plus" class="submit">{lang login_now}</a>
+			<!--{/if}-->
+				</p>
+			</td>
+		</tr>
+	</table>
+
+</div>
+
+<div id="sidebar">
+	<div class="sidebox">
+		<h2 class="title">{$_SN[$space[uid]]} {lang friends_of}</h2>
+		<ul class="avatar_list">
+			<!--{loop $flist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+
+<!--{template footer}-->

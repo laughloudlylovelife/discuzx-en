@@ -1,0 +1,129 @@
+<!--{eval $_TPL['titles'] = array(lang('groups'));}-->
+<!--{template header}-->
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang search_groups}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="mtag" />
+	<input type="hidden" name="view" value="hot" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/mtag.gif">{lang groups}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="space.php?uid=$space[uid]&do=thread"><span>{lang group_topics}</span></a></li>
+		<li$actives[me]><a href="space.php?do=mtag&view=me"><span>{lang member_of_groups}</span></a></li>
+		<li$actives[manage]><a href="space.php?do=mtag&view=manage"><span>{lang i_manage_groups}</span></a></li>
+		<li$actives[hot]><a href="space.php?do=mtag&view=hot"><span>{lang popular_groups}</span></a></li>
+		<li$actives[recommend]><a href="space.php?do=mtag&view=recommend"><span>{lang recommended_groups}</span></a></li>
+		<li class="null"><a href="cp.php?ac=thread">{lang topic_start}</a></li>
+		<li class="null"><a href="cp.php?ac=mtag">{lang group_create}</a></li>
+	</ul>
+</div>
+
+<div class="h_status">
+	{lang sort_by}: 
+	<a href="space.php?do=mtag&view=$_GET[view]&fieldid=$_GET[fieldid]&orderby=threadnum"$orderbyarr[threadnum]>{lang topics_num}</a><span class="pipe">|</span>
+	<a href="space.php?do=mtag&view=$_GET[view]&fieldid=$_GET[fieldid]&orderby=postnum"$orderbyarr[postnum]>{lang posts_num}</a><span class="pipe">|</span>
+	<a href="space.php?do=mtag&view=$_GET[view]&fieldid=$_GET[fieldid]&orderby=membernum"$orderbyarr[membernum]>{lang members_num}</a>
+</div>
+
+<!--{if $searchkey}-->
+<div class="h_status">{lang search_group_result} <span style="color:red;font-weight:bold;">$searchkey</span> {lang results_list}</div>
+<!--{/if}-->
+	
+<div id="content">
+
+<!--{if $rlist}-->
+	<div>
+		<h3 class="l_status">
+			<div class="r_option"><a href="space.php?do=mtag&view=recommend">{lang more_recommended}</a></div>
+			{lang groups_recommended}
+		</h3>
+		<table cellspacing="5" cellpadding="5"><tr>
+		<!--{loop $rlist $key $value}-->
+			<td width="80">
+				<div class="threadimg60"><a href="space.php?do=mtag&tagid=$value[tagid]"><img src="$value[pic]" style="width:60px;"></a></div>
+			</td>
+			<td width="200">
+				<a href="space.php?do=mtag&tagid=$value[tagid]" style="font-weight:bold;">$value[tagname]</a>
+				<div class="gray">$value[title]</div>
+				{lang has} <span class="num">$value[membernum]</span> {lang members_joined}
+				<div class="gray">
+					{lang thread}: $value[threadnum], {lang posts}: $value[postnum]
+				</div>
+			</td>
+		<!--{if $key%2==1}--></tr><tr><!--{/if}-->
+		<!--{/loop}-->
+		</tr></table>
+	</div>
+<!--{/if}-->
+
+<!--{if $list}-->
+
+	<div>
+		<!--{if $rlist}-->
+		<h3 class="l_status">
+			{lang my_groups}
+		</h3>
+		<!--{/if}-->
+		<table cellspacing="5" cellpadding="5"><tr>
+		<!--{loop $list $key $value}-->
+			<td width="80">
+				<div class="threadimg60"><a href="space.php?do=mtag&tagid=$value[tagid]"><img src="$value[pic]" style="width:60px;"></a></div>
+			</td>
+			<td width="200">
+				<a href="space.php?do=mtag&tagid=$value[tagid]" style="font-weight:bold;">$value[tagname]</a>
+				<div class="gray">$value[title]</div>
+				{lang has} <span class="num">$value[membernum]</span> {lang members_joined}
+				<div class="gray">
+					{lang thread}: $value[threadnum], {lang posts}: $value[postnum]
+				</div>
+			</td>
+		<!--{if $key%2==1}--></tr><tr><!--{/if}-->
+		<!--{/loop}-->
+		</tr></table>
+	</div>
+	
+	<div class="page">$multi</div>
+
+<!--{else}-->
+	<div class="c_form">{lang no_groups_found}</div>
+<!--{/if}-->
+
+</div>
+
+<div id="sidebar">
+
+	<div class="sidebox">
+	<h2 class="title">{lang group_category}</h2>
+	<ul class="post_list line_list">
+		<li$pro_actives[all]><a href="space.php?do=mtag&view=$_GET[view]&orderby=$_GET[orderby]">{lang all}</a>
+		<!--{loop $_SGLOBAL['profield'] $value}-->
+		<li{$pro_actives[$value[fieldid]]}><a href="space.php?do=mtag&view=$_GET[view]&fieldid=$value[fieldid]&orderby=$_GET[orderby]">$value[title]</a></li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+	
+	
+	<!--{if $threadlist}-->
+	<div class="sidebox">
+	<h2 class="title">{lang group_topics_updated}</h2>
+	<ul class="line_list">
+		<!--{loop $threadlist $key $value}-->
+			<li>
+				<a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a>
+				<!--{if $value[hot]}-->
+				<br><span class="gray">$value[hot] {lang hot_value}</span>
+				<!--{/if}-->
+			</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+	<!--{/if}-->
+
+</div>
+
+<!--/sidebar-->
+<!--{template footer}-->

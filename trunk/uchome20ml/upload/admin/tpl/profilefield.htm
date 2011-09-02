@@ -1,0 +1,107 @@
+<!--{eval 
+	$_TPL['formtypes'] = array('text'=>lang('input_text'), 'select'=>lang('input_radio'), 'multi'=>lang('input_select'));
+}-->
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=profilefield"><span>{lang fields_all}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=profilefield&op=add">{lang field_add}</a></li>
+	</ul>
+</div>
+
+<!--{if empty($thevalue)}-->
+
+	<form method="post" action="admincp.php?ac=profilefield">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang profile_fields}</th>
+			<th>{lang field_profile_name}</th>
+			<th>{lang field_fill_type}</th>
+			<th>{lang display_order}</th>
+			<th width="80">{lang operation}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<th>$value[title]</th>
+			<th>field_$value[fieldid]</th>
+			<td>{$_TPL[formtypes][$value[formtype]]}</td>
+			<td><input type="text" name="displayorder[{$value[fieldid]}]" value="$value[displayorder]" size="5"></td>
+			<td width="80">
+			<a href="admincp.php?ac=profilefield&op=edit&fieldid=$value[fieldid]">{lang edit}</a> | 
+			<a href="admincp.php?ac=profilefield&op=delete&fieldid=$value[fieldid]" onclick="return confirm('{lang delete_confirmation}');">{lang delete}</a></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="submit" name="ordersubmit" value="{lang order_update}" class="submit">
+	</div>
+	
+	</form>
+	
+<!--{else}-->
+
+	<script language="javascript">
+		function formtypeShow(value) {
+			if(value == 'text') {
+				$('tb_choice').style.display = 'none';
+			} else {
+				$('tb_choice').style.display = '';
+			}
+		}
+	</script>
+	
+	<form method="post" action="admincp.php?ac=profilefield&fieldid=$thevalue[fieldid]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:15em;">{lang field_title}</th><td><input type="text" name="title" value="$thevalue[title]"></td></tr>
+		<tr><th>{lang field_type}</th><td>
+			<select name="formtype" onchange="formtypeShow(this.value)">
+			<option value="text"$formtypearr[text]>{lang input_text_box}</option>
+			<option value="select"$formtypearr[select]>{lang input_list_box}</option>
+			</select>
+		</td></tr>
+	
+		<tbody id="tb_choice"<!--{if $thevalue[formtype]=='text'}--> style="display:none;"<!--{/if}-->>
+		<tr><th>{lang optional_value}</th><td><textarea name="choice" rows="5" cols="20">$thevalue[choice]</textarea>
+			<br />{lang optional_value_intro}</td></tr>
+		</tbody>
+
+		<tr><th>{lang field_max_size}</th><td><input type="text" name="maxsize" value="$thevalue[maxsize]" size="5"> (1~255)</td></tr>
+		<tr><th>{lang must_fill}</th><td><input type="radio" name="required" value="0"<!--{if !$thevalue[required]}--> checked<!--{/if}-->> {lang no}
+			<input type="radio" name="required" value="1"<!--{if $thevalue[required]}--> checked<!--{/if}-->> {lang yes}</td></tr>
+		<tr><th>{lang field_hidden}</th><td><input type="radio" name="invisible" value="0"<!--{if !$thevalue[invisible]}--> checked<!--{/if}-->> {lang no}
+			<input type="radio" name="invisible" value="1"<!--{if $thevalue[invisible]}--> checked<!--{/if}-->> {lang yes}</td></tr>
+		<tr><th>{lang search_allow}</th><td><input type="radio" name="allowsearch" value="0"<!--{if !$thevalue[allowsearch]}--> checked<!--{/if}-->> {lang no}
+			<input type="radio" name="allowsearch" value="1"<!--{if $thevalue[allowsearch]}--> checked<!--{/if}-->> {lang yes}</td></tr>
+
+		<tr><th>{lang field_descr}</th><td><input type="text" name="note" value="$thevalue[note]" size="40"></td></tr>
+		<tr><th>{lang display_order}</th><td><input type="text" name="displayorder" value="$thevalue[displayorder]" size="5"></td></tr>
+		</table>
+	</div>
+		
+	<div class="footactions">
+		<input type="submit" name="fieldsubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

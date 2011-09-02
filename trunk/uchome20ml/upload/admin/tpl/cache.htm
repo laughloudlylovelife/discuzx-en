@@ -1,0 +1,45 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+	<div class="maininner">
+	
+		<form method="post" action="$turl">
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		
+		<div class="bdrcontent">
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<tr>
+					<th style="width:8em;">{lang select_type}</th>
+					<td>
+						<p><input type="checkbox" id="cachetype1" name="cachetype[]" value="tpl" checked /> <label for="cachetype1" style="font-weight:bold;">{lang cache_template_file}</label></p>
+						<p>{lang cache_template_file_intro}</p>
+						<br />
+						<p><input type="checkbox" id="cachetype2" name="cachetype[]" value="block" checked /> <label for="cachetype2" style="font-weight:bold;">{lang block_data_cache}</label></p>
+						<p>{lang block_data_cache_intro1}<br />
+						{lang block_data_cache_intro2}<br />
+						{lang block_data_cache_intro3}<br />
+						{lang block_data_cache_intro4}</p>
+						<br />
+						<p><input type="checkbox" id="cachetype3" name="cachetype[]" value="database" checked /> <label for="cachetype3" style="font-weight:bold;">{lang system_cache_config}</label></p>
+						<p>{lang system_cache_intro}</p>
+						<br />
+						<p><input type="checkbox" id="cachetype4" name="cachetype[]" value="network" checked /> <label for="cachetype4" style="font-weight:bold;">{lang cache_other}</label></p>
+						<p>{lang cache_custom}</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="footactions">
+			<input type="submit" name="cachesubmit" value="{lang cache_update}" class="submit" />
+		</div>
+
+		</form>
+		
+	</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

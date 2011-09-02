@@ -1,0 +1,54 @@
+<!--{eval $_TPL['titles'] = array(lang('topics_last'));}-->
+<!--{template header}-->
+
+<h2 class="title"><img src="image/app/topic.gif" />{lang topics_last}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[new]><a href="space.php?do=topic&view=new"><span>{lang topics_new}</span></a></li>
+		<li$actives[hot]><a href="space.php?do=topic&view=hot"><span>{lang topics_hot}</span></a></li>
+		<li$actives[me]><a href="space.php?do=topic&view=me"><span>{lang topics_my}</span></a></li>
+		<!--{if checkperm('allowtopic')}-->
+		<li class="null"><a href="cp.php?ac=topic">{lang topic_create}</a></li>
+		<!--{/if}-->
+	</ul>
+	<!--{if $_SGLOBAL[refer]}-->
+	<div class="r_option">
+		<a  href="$_SGLOBAL[refer]">&laquo; {lang go_back}</a>
+	</div>
+	<!--{/if}-->
+</div>
+
+<!--{if $list}-->
+<div class="event_list">
+<ol>
+<!--{loop $list $key $value}-->
+<li>
+	<div class="event_icon">
+		<a href="space.php?do=topic&topicid=$value[topicid]"><img src="$value[pic]"></a>
+	</div>
+	
+	<div class="hotspot">
+		<a href="space.php?do=topic&topicid=$value[topicid]">$value[joinnum]</a>
+	</div>
+	
+	<div class="event_content">
+		<h4 class="event_title">
+			<a href="space.php?do=topic&topicid=$value[topicid]">$value[subject]</a>
+		</h4>
+		<ul>
+			<li>$value[message] ...</li>
+			<li class="gray">{lang topic_author}: <a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></li>
+			<li class="gray">{lang topic_start_time}: $value[dateline]</li>
+			<!--{if $value[endtime]}--><li class="gray">{lang topic_end_time}: $value[endtime]</li><!--{/if}-->
+			<li class="gray">{lang topic_last_post}: $value[lastpost]</li>
+		</ul>
+	</div>
+</li>
+<!--{/loop}-->
+</ol>
+</div>
+<!--{else}-->
+	<div class="c_form">{lang topics_no_relevant}</div>
+<!--{/if}-->
+
+<!--{template footer}-->

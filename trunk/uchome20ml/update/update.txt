@@ -1,0 +1,135 @@
+------------------------------------------------------
+	HOW TO UPDATE the original UCHome 2.0
+	to UCHome 2.0 MultiLanguage
+------------------------------------------------------
+
+
+If you have allready installed the UCHome 2.0 (original),
+follow the next instruction for update to UCHome MultiLanguage:
+
+-----------------------------------------------
+
+1) Make a backup of all the existing UCHome database.
+
+-----------------------------------------------
+
+2) Make a backup of all the existing UCHome files.
+
+-----------------------------------------------
+
+3) Edit the /config.php file at your site.
+
+   At the beginning after the line
+   $_SC = array();
+
+   add the next three lines:
+
+  // Default Interface Language
+  $_SC['language']	= 'en'; // Default Interface Language
+  $_SC['headercharset']	= 1; // force http header charset
+
+
+-----------------------------------------------
+
+4) Check the table prefix in your database.
+   If the table prefix is not equal to "uchome",
+   edit the "/update/update.sql" file in this package
+   and replace the "uchome_" prefix with your current prefix.
+
+   Example:
+   The update.sql file assumes that the table prefix is "uchome_",
+   i.e. you can see lines like this:
+   ALTER TABLE `uchome_ad`
+
+   If your table prefix is (for example) "discuz_",
+   you must edit all the lines started with "ALTER TABLE ...."
+   to something like this:
+   ALTER TABLE `discuz_ad`
+
+-----------------------------------------------
+
+5) Update your database.
+   Execute the "/update/update.sql" from this package.
+   by your PHPMyAdmin or by mysql shell.
+   Do not forget to change the table prefix if required!
+
+-----------------------------------------------
+
+6) Upload all the files from "upload" folder of this package
+   to your site.
+   You will have 3 language packs: cn, en, ru.
+
+-----------------------------------------------
+
+7) If there is no your language in the offered language list (en/cn/ru),
+   Make a subfolder for your current used language.
+   For example, if you use UCHome with English,
+   create the /language/en/ subfolder.
+
+-----------------------------------------------
+8) Copy all the files from any /language/XX/ folder to your new
+   language subfolder.
+
+-----------------------------------------------
+
+9) Move all the files from /language/*.* to your new language subfolder.
+   (Overwrite the existing files)
+
+-----------------------------------------------
+
+10) Edit the lang_title.php and set the name of your language,
+   and the flag image filename.
+   For example:
+     $_SGLOBAL['language_title'] = 'English';
+     $_SGLOBAL['language_icon'] = 'en.gif';
+
+   If there is no flag image for your language,
+   make it from existing Photoshop file,
+   i.e. /language/en/en.psd
+
+-----------------------------------------------
+
+11) Go by FTP or Shell to the "data/tpl_cache" folder at your site
+   and remove all the files except of index.htm.
+   Or just update the template cache from your AdminCP.
+
+-----------------------------------------------
+
+12) Remove the "/install" folder from your site
+   because of security reason
+
+-----------------------------------------------
+
+13) Go to your site and enjoy.
+
+-----------------------------------------------
+
+14) If you want to add another languages to your UCHome,
+    just create the corresponding language subfolder,
+    i.e. /language/jp/,
+    then copy to this folder all the files from any existing
+    language pack,
+    then edit the lang_title.php,
+    prepare the flag image.
+    And after this just translate all the files to your new language.
+
+----------------------------------------------
+
+15) If you want to add yet another language pack,
+    just create the corresponding subfolder,
+    i.e. /language/fr/,
+    then copy all the files from any existing pack,
+    i.e. from /language/en/,
+    and translate all the files to your new language.
+    That's all.
+
+----------------------------------------------
+
+16) Enjoy :)
+
+----------------------------------------------
+
+WBR,
+    Valery Votintsev, aka "vot" [at] sources.ru
+
+

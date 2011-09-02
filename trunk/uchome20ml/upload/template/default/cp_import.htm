@@ -1,0 +1,76 @@
+<!--{template header}-->
+
+<h2 class="title"><img src="image/app/blog.gif" />{lang blogs}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="cp.php?ac=blog"><span>{lang blog_new_publish}</span></a></li>
+		<li class="active"><a href="cp.php?ac=import"><span>{lang blog_import}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=blog&view=me"><span>{lang back_my_blog}</span></a></li>
+	</ul>
+</div>
+
+<!--{if $results}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+<caption>
+	<h2><!--{if $incount}-->{lang import_result}<!--{else}-->{lang choose_import_blog}<!--{/if}--></h2>
+	<!--{if $paycredit}-->
+	<p>{lang function_cost}: $paycredit ({lang you_have_points} <a href="cp.php?ac=credit">$space[credit]</a>)</p>
+	<!--{/if}-->
+</caption>
+
+<!--{loop $results $key $value}-->
+<tr>
+	<td><!--{if !$incount}--><input type="checkbox" name="ids[]" value="$key"><!--{/if}--> <!--{if $value[blogid]}--><a href="space.php?uid=$space[uid]&do=blog&id=$value[blogid]">$value[title]</a><!--{else}-->$value[title]<!--{/if}--></td>
+	<td>$value[dateCreated]</td>
+	<!--{if $incount}--><td>$value[status]</td><!--{/if}-->
+</tr>
+<!--{/loop}-->
+
+<!--{if !$incount}-->
+<tr>
+	<td colspan="3">
+	<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all}
+	<input type="submit" name="import2submit" value="{lang import}" class="submit" />
+	<input type="submit" name="resubmit" value="{lang reset}" class="submit" />
+	</td>
+</tr>
+<!--{/if}-->
+
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+<!--{else}-->
+
+<form method="post" action="cp.php?ac=import" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>{lang blog_import}</h2>
+		<p>{lang xml_rpc_intro}<br />
+		{lang service_url}: {$siteurl}xmlrpc.php<br />
+		{lang xml_rpc_intro2}<br />
+		{lang xml_rpc_intro3}
+		</p>
+	</caption>
+	<!--{if $paycredit}-->
+	<tr><th width="120">{lang points_required}</th><td>{lang function_cost}: $paycredit ({lang you_have_points} <a href="cp.php?ac=credit">$space[credit]</a>)</td></tr>
+	<!--{/if}-->
+	<tr><th width="120">{lang original_space_url}</th><td><input type="text" class="t_input" name="url" value="http://" size="40" />
+		<br />{lang similar_to} http://u.discuz.net/xmlrpc.php {lang this_link}
+		</td></tr>
+	<tr><th>{lang original_username}</th><td><input type="text" class="t_input" name="username" value="" /></td></tr>
+	<tr><th>{lang original_password}</th><td><input type="password" class="t_input" name="password" value="" /></td></tr>
+	<tr><th>{lang original_posts_per_session}</th><td><!--{eval echo $_SCONFIG['importnum'];}--></td></tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="importsubmit" value="{lang submit_button}" class="submit" /></td></tr>
+</table>
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+	
+
+<!--{/if}-->
+
+<!--{template footer}-->

@@ -1,0 +1,55 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="get" action="admincp.php">
+	
+	<div class="bdrcontent">
+	{lang stat_intro}
+	</div>
+	
+	<br />
+	<div class="bdrcontent">
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		<th style="width:12em;">{lang select_stat_type_for_update}</th>
+		<td>
+		<select name="counttype">
+		<option value="blog_replynum">{lang number_of_blog_comments}</option>
+		<option value="space_friendnum">{lang number_of_space_friends}</option>
+		<option value="space_friend">{lang number_of_friens_cache}</option>
+		<option value="mtag_membernum">{lang number_of_group_members}</option>
+		<option value="mtag_threadnum">{lang number_of_group_topics}</option>
+		<option value="mtag_postnum">{lang number_of_group_replies}</option>
+		<option value="thread_replynum">{lang number_of_global_replies}</option>
+		<option value="album_picnum">{lang number_of_album_images}</option>
+		<option value="tag_blognum">{lang number_of_tags}</option>
+		</select>
+		</td>
+		</tr>
+		
+		<tr>
+		<th>{lang number_of_items_per_page}</th>
+		<td>
+		<input type="text" name="perpage" value="10" size="10">
+		</td>
+		</tr>
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac" value="stat">
+		<input type="submit" name="countsubmit" value="{lang stats_update}" class="submit">
+	</div>
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

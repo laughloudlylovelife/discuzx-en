@@ -1,0 +1,42 @@
+<!--{eval $_TPL['titles'] = array(getstr($pic['title'], 60, 0, 0, 0, 0, -1), $album['albumname'], lang('albums'));}-->
+<!--{eval $friendsname = array(1 => lang('visible_to_friends_only'),2 => lang('friends_designated_only'),3 => lang('visible_to_me'),4 => lang('visible_by_password_only'));}-->
+<!--{template header}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+	<form method="get" action="space.php">
+		<input name="searchkey" value="" size="15" class="t_input" type="text">
+		<input name="searchsubmit" value="{lang photos_search}" class="submit" type="submit">
+		<input type="hidden" name="do" value="album" />
+		<input type="hidden" name="view" value="all" />
+		<input type="hidden" name="orderby" value="dateline" />
+	</form>
+</div>
+<h2 class="title"><img src="image/app/album.gif"> {lang albums} - $album[albumname]</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="space.php?uid=$pic[uid]&do=album&id=$pic[albumid]"><span>{lang view_image}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=album&id=$pic[albumid]"><span>{lang return_to_album}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=album&view=me"><span>{lang back_to_my_album}</span></a></li>
+		<li class="null"><a href="cp.php?ac=upload&albumid=$pic[albumid]">{lang upload_new_photo}</a></li>
+	</ul>
+	<!--{if $_SGLOBAL[refer]}-->
+	<div class="r_option">
+		<a  href="$_SGLOBAL[refer]">&laquo; {lang go_back}</a>
+	</div>
+	<!--{/if}-->
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = lang('albums').' - '.$album[albumname];
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&view=me\">".lang('author_all_albums')."</a>";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&id=$pic[albumid]\">$album[albumname]</a>";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&picid=$pic[picid]\">".lang('view_image')."</a>";
+}-->
+<!--{template space_menu}-->
+<!--{/if}-->
+
+<!--{template space_pic}-->
+
+	
+<!--{template footer}-->

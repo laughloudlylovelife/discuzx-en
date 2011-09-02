@@ -1,0 +1,159 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr><th>{lang group_id}</th><td><input type="text" name="tagid" value="$_GET[tagid]"></td>
+			<th>{lang title} *</th><td><input type="text" name="subject" value="$_GET[subject]"></td>
+		</tr>
+		<!--{if $allowmanage}-->
+		<tr><th>{lang author_uid}</th><td><input type="text" name="uid" value="$_GET[uid]"></td>
+			<th>{lang author_name}</th><td><input type="text" name="username" value="$_GET[username]"></td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<th>{lang enter_topic_id}</th>
+			<td colspan="3">
+				<input type="text" name="tid" value="$_GET[tid]" />
+			</td>
+		</tr>
+		<tr><th>{lang publish_time}</th><td colspan="3">
+			<input type="text" name="dateline1" value="$_GET[dateline1]" size="10"> ~
+			<input type="text" name="dateline2" value="$_GET[dateline2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		<tr><th>{lang number_of_views}</th><td colspan="3">
+			<input type="text" name="viewnum1" value="$_GET[viewnum1]" size="10"> ~
+			<input type="text" name="viewnum2" value="$_GET[viewnum2]" size="10">
+		</td></tr>
+		<tr><th>{lang replies_number}</th><td colspan="3">
+			<input type="text" name="replynum1" value="$_GET[replynum1]" size="10"> ~
+			<input type="text" name="replynum2" value="$_GET[replynum2]" size="10">
+		</td></tr>
+		<tr><th>{lang hot_edit}</th><td colspan="3">
+			<input type="text" name="hot1" value="$_GET[hot1]" size="10"> ~
+			<input type="text" name="hot2" value="$_GET[hot2]" size="10">
+		</td></tr>
+		<tr><th>{lang digest_status}</th><td colspan="3">
+			<select name="digest">
+			<option value="">{lang without_limits}</option>
+			<option value="1"<!--{if $_GET[digest]==1}--> selected<!--{/if}-->>{lang is_digest}</option>
+			</select>
+		</td></tr>
+	
+		<tr><th>{lang sort_results}</th>
+		<td colspan="3">
+		<select name="orderby">
+		<option value="">{lang sort_default}</option>
+		<option value="dateline"$orderby[dateline]>{lang publish_time}</option>
+		<option value="lastpost"$orderby[lastpost]>{lang last_post}</option>
+		<option value="viewnum"$orderby[viewnum]>{lang number_of_views}</option>
+		<option value="replynum"$orderby[replynum]>{lang replies_number}</option>
+		<option value="hot"$orderby[hot]>{lang hot_edit}</option>
+		</select>
+		<select name="ordersc">
+		<option value="desc"$ordersc[desc]>{lang descending}</option>
+		<option value="asc"$ordersc[asc]>{lang ascending}</option>
+		</select>
+		<select name="perpage">
+		<option value="20"$perpages[20]>{lang per_page_20}</option>
+		<option value="50"$perpages[50]>{lang per_page_50}</option>
+		<option value="100"$perpages[100]>{lang per_page_100}</option>
+		<option value="1000"$perpages[1000]>{lang per_page_1000}</option>
+		</select>
+		<input type="hidden" name="ac" value="thread">
+		<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+		</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+
+<!--{if $list}-->
+
+	<form method="post" action="admincp.php?ac=thread&tagid=$tagid">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	
+<!--{if $perpage>100}-->
+	<p>{lang total_data_by_conditions} <strong>$count</strong> {lang units}</p>
+	<!--{loop $list $value}-->
+	<input type="hidden" name="ids[]" value="$value[tid]">
+	<!--{/loop}-->
+
+<!--{else}-->
+	
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th width="25">&nbsp;</th>
+		<th>{lang title}</td>
+		<th width="50">{lang view_num}</th>
+		<th width="50">{lang replies}</th>
+		<!--{if $allowmanage}--><th width="80">{lang author}</th><!--{/if}-->
+		<th width="80">{lang time}</th>
+	</tr>
+	<!--{loop $list $value}-->
+	<tr>
+		<td><input type="<!--{if $allowbatch}-->checkbox<!--{else}-->radio<!--{/if}-->" name="ids[]" value="$value[tid]"></td>
+		<td>[<a href="$mpurl&tagid=$value[tagid]">{$tags[$value[tagid]]}</a>] <a href="space.php?do=thread&id=$value[tid]" target="_blank">$value[subject]</a>
+		<!--{if $value[digest]}-->[<a href="$mpurl&digest=$value[digest]">{lang has_digest}</a>]<!--{/if}-->
+		<!--{if $value[displayorder]}-->[<a href="$mpurl&displayorder=$value[displayorder]">{lang has_display_order}</a>]<!--{/if}-->
+		<!--{if $value[hot]}--><span style="color:red;">{lang hot_edit} ($value[hot])</span><!--{/if}-->
+		</td>
+		<td>$value[viewnum]</td>
+		<td><a href="admincp.php?ac=post&tid=$value[tid]">$value[replynum]</a></td>
+		<!--{if $allowmanage}--><td><a href="$mpurl&uid=$value[uid]">$value[username]</a></td><!--{/if}-->
+		<td><!--{date('Y-m-d',$value[dateline])}--></td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+
+<!--{/if}-->
+	</div>
+	
+	<div class="footactions">
+	<!--{if $perpage>100}-->
+		<input type="hidden" name="optype" value="delete">
+		<input type="submit" name="opsubmit" value="{lang delete_bulk}" onclick="return confirm('{lang action_not_recoverable}');" class="submit">
+	<!--{else}-->
+		<!--{if $allowbatch}-->
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all}
+		<!--{/if}-->
+		<input type="radio" name="optype" value="delete" checked> {lang delete}
+		<!--{if $_GET['tagid']}-->
+		<input type="radio" name="optype" value="digest"> {lang digest_bulk_set}
+		<select name="digestv">
+		<option value="1">{lang digest_set}</option>
+		<option value="0">{lang digest_cancel}</option>
+		</select>
+		<input type="radio" name="optype" value="top"> {lang top_bulk_set}
+		<select name="topv">
+		<option value="1">{lang top_set}</option>
+		<option value="0">{lang top_cancel}</option>
+		</select>
+		<!--{/if}-->
+		<input type="submit" name="opsubmit" value="{lang action_perform}" onclick="return confirm('{lang action_confirm}');" class="submit">
+	<!--{/if}-->
+		
+		<input type="hidden" name="mpurl" value="$mpurl">
+		<div class="pages">$multi</div>
+	</div>
+	
+	</form>
+
+<!--{else}-->
+	<div class="bdrcontent">
+		<p>{lang no_data_by_conditions}</p>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

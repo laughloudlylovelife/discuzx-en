@@ -1,0 +1,541 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<div class="l_status c_form">
+	<a href="cp.php?ac=profile&op=base"$cat_actives[base]>{lang basic_info}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=contact"$cat_actives[contact]>{lang contacts}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=edu"$cat_actives[edu]>{lang education_status}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=work"$cat_actives[work]>{lang work_place}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=profile&op=info"$cat_actives[info]>{lang personal_information}</a>
+</div>
+
+<!--{eval $farr = array(0=>lang('all_users'),'1'=>lang('friends_only'),'3'=>lang('me_only'));}-->
+<form method="post" action="$theurl&ref" class="c_form">
+
+<!--{if $_GET['op'] == 'base'}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+<tr>
+	<th style="width:10em;">{lang your_username}:</th>
+	<td>
+		<!--{eval echo stripslashes($space['username']);}--> (<a href="cp.php?ac=password">{lang change_my_password}</a>)
+	</td>
+	<td></td>
+</tr>
+<!--{if !$_SCONFIG['realname']}-->
+<tr>
+	<th style="width:10em;">{lang real_name}:</th>
+	<td>
+		<input type="text" id="name" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" class="t_input" />
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<!--{else}-->
+<tr>
+	<th style="width:10em;">{lang real_name}:</th>
+	<td>
+	<!--{if $space[name] && empty($_GET['namechange'])}-->
+	<span style="font-weight:bold;"><!--{eval echo stripslashes($space['name']);}--></span>
+	<!--{if $_SCONFIG['namechange']}-->[<a href="$theurl&namechange=1">{lang modify}</a>]<!--{/if}-->
+	<!--{if $space[namestatus]}-->[<font color="red">{lang verified}</font>]<!--{else}--><br>{lang not_verified_warn}<!--{/if}-->
+	<input type="hidden" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" />
+	<!--{else}-->
+	<!--{if $rncredit && $_GET['namechange']}--><img src="image/credit.gif" align="absmiddle"> {lang operation_require_pay} $rncredit {lang points_num}, {lang you_have_points} $space[credit] {lang points_num}.<br><!--{/if}-->
+	<!--{if empty($_SCONFIG['namechange'])}-->{lang rename_warn}<br><!--{/if}-->
+	<!--{if $_SCONFIG['namecheck']}-->{lang rename_warn2}<br><!--{/if}-->
+	<input type="text" id="name" name="name" value="<!--{eval echo stripslashes($space['name']);}-->" class="t_input" /> {lang real_name_length}
+	<!--{/if}-->
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<!--{/if}-->
+<tr>
+	<th style="width:10em;">{lang gender}:</th>
+	<td>
+	<!--{if empty($space[sex])}-->
+		<label for="sexm"><input id="sexm" type="radio" value="1" name="sex"$sexarr[1] />{lang man}</label> 
+		<label for="sexw"><input id="sexw" type="radio" value="2" name="sex"$sexarr[2] />{lang woman}</label>
+		<span style="font-weight:bold;color:red;">{lang gender_set_warn}</span>
+	<!--{else}-->
+		<!--{if $space[sex]==1}-->{lang man}<!--{else}-->{lang woman}<!--{/if}-->
+	<!--{/if}-->
+	</td>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<th style="width:10em;">{lang marry}:</th>
+	<td>
+		<select id="marry" name="marry">
+			<option value="0">&nbsp;</option>
+			<option value="1"$marryarr[1]>{lang unmarried}</option>
+			<option value="2"$marryarr[2]>{lang married}</option>
+		</select>
+		<a href="cp.php?ac=friend&op=search&view=sex">&raquo; {lang search_by_gender}</a>
+	</td>
+	<td>
+		<select name="friend[marry]">
+			<option value="0"{$friendarr[marry][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[marry][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[marry][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>{lang birthday}:</th>
+	<td>
+		<select id="birthyear" name="birthyear" onchange="showbirthday();">
+			<option value="0">&nbsp;</option>
+			$birthyeayhtml
+		</select> {lang year} 
+		<select id="birthmonth" name="birthmonth" onchange="showbirthday();">
+			<option value="0">&nbsp;</option>
+			$birthmonthhtml
+		</select> {lang month} 
+		<select id="birthday" name="birthday">
+			<option value="0">&nbsp;</option>
+			$birthdayhtml
+		</select> {lang day}
+		<a href="cp.php?ac=friend&op=search&view=birthyear"><br>&raquo; {lang find_friend_birthday}</a>
+	</td>
+	<td>
+		<select name="friend[birth]">
+			<option value="0"{$friendarr[birth][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[birth][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[birth][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>{lang blood_type}:</th>
+	<td>
+		<select id="blood" name="blood">
+			<option value="">&nbsp;</option>
+			$bloodhtml
+		</select>
+	</td>
+	<td>
+		<select name="friend[blood]">
+			<option value="0"{$friendarr[blood][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[blood][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[blood][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>{lang birthplace}:</th>
+	<td id="birthcitybox">
+		<!--script type="text/javascript" src="source/script_city.js"></script-->
+		<script type="text/javascript" src="language/$_SCONFIG['language']/script_city.js" charset="$_SC[charset]"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
+		showcity('birthcity', '$space[birthcity]', 'birthprovince', 'birthcitybox');
+		
+		//-->
+		</script>
+		<br><a href="cp.php?ac=friend&op=search&view=birth">&raquo; {lang find_fellow}</a>
+	</td>
+	<td>
+		<select name="friend[birthcity]">
+			<option value="0"{$friendarr[birthcity][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[birthcity][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[birthcity][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>{lang residence}:</th>
+	<td id="residecitybox">
+		<script type="text/javascript">
+		<!--
+		showprovince('resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
+		showcity('residecity', '$space[residecity]', 'resideprovince', 'residecitybox');
+		//-->
+		</script>
+		<br><a href="cp.php?ac=friend&op=search&view=reside">&raquo; {lang find_same_city}</a>
+	</td>
+	<td>
+		<select name="friend[residecity]">
+			<option value="0"{$friendarr[residecity][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[residecity][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[residecity][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<!--{loop $profilefields $value}-->
+<tr>
+	<th>$value[title]<!--{if $value[required]}-->*<!--{/if}-->:</th>
+	<td>
+		$value[formhtml]
+		<!--{if $value[note]}--> <span class="gray">$value[note]</span><!--{/if}-->
+	</td>
+	<td>
+		<select name="friend[field_{$value[fieldid]}]">
+		<!--{eval $field_friendarr = $friendarr["field_$value[fieldid]"];}-->
+			<option value="0"{$field_friendarr[0]}>{lang visible_all}</option>
+			<option value="1"{$field_friendarr[1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$field_friendarr[3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<!--{/loop}-->
+
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td>
+	<input type="submit" name="nextsubmit" value="{lang proceed_next}" class="submit" />
+	<input type="submit" name="profilesubmit" value="{lang save}" class="submit" />
+	</td>
+	<td>&nbsp;</td>
+</tr>
+</table>
+
+<!--{elseif $_GET['op'] == 'contact'}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+
+<!--{if $_GET[editemail]}-->
+</table>
+
+<div class="borderbox">
+<table cellspacing="0" cellpadding="0" class="formtable">
+<tbody>
+<tr>
+	<th style="width:10em;">{lang enter_your_password}:</th>
+	<td>
+		<input type="password" id="password" name="password" value="" class="t_input" />
+		<br>{lang enter_your_password_intro}
+	</td>
+	<td></td>
+</tr>
+<tr>
+	<th style="width:10em;">{lang new_email}:</th>
+	<td>
+		<input type="text" id="email" class="t_input" name="email" value="$space[email]" />
+		<!--{if $space['emailcheck']}-->
+		<br>{lang new_email_intro}
+		<!--{/if}-->
+	</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</div><br>
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+<!--{else}-->
+<!--{if !$space[email]}-->
+<tr>
+	<th style="width:10em;">{lang enter_your_password}:</th>
+	<td>
+		<input type="password" id="password" name="password" value="" class="t_input" />
+		<br>{lang enter_email_intro}
+	</td>
+	<td></td>
+</tr>
+<!--{/if}-->
+<tr>
+	<th style="width:10em;">{lang current_email}:</th>
+	<td>
+		<!--{if $space[email]}-->
+			$space[email]<br>
+			<!--{if $space['emailcheck']}-->
+				{lang email_is_verified} (<a href="$theurl&editemail=1">{lang change}</a>)
+			<!--{else}-->
+				{lang waiting_email_verification}<br>
+				{lang waiting_email_intro}<br>
+				{lang if_not_received}, {lang you_can} <a href="$theurl&editemail=1">{lang replace_mailbox}</a>, {lang or} <a href="$theurl&resend=1">{lang receive_again}</a>
+			<!--{/if}-->
+		<!--{else}-->
+			<input type="text" id="email" class="t_input" name="email" value="" />
+			<br>{lang retrieve_password_intro1}
+			<br>{lang retrieve_password_intro2}
+                        <br>
+		<!--{/if}-->
+		<!--{if $space[newemail]}-->
+			<p>{lang new_email_entered}: <strong>$space[newemail]</strong> {lang new_email_entered_info}<br>
+			{lang if_not_received}, {lang you_can} <a href="$theurl&resend=1">{lang receive_again}</a></p>
+		<!--{/if}-->
+	</td>
+	<td></td>
+</tr>
+<!--{/if}-->
+<tr>
+	<th style="width:10em;">{lang mobile_phone}:</th>
+	<td>
+		<input type="text" class="t_input" name="mobile" value="$space[mobile]" /> 
+	</td>
+	<td>
+		<select name="friend[mobile]">
+			<option value="0"{$friendarr[mobile][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[mobile][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[mobile][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th style="width:10em;">{lang icq}:</th>
+	<td>
+		<input type="text" class="t_input" name="qq" value="$space[qq]" /> 
+	</td>
+	<td>
+		<select name="friend[qq]">
+			<option value="0"{$friendarr[qq][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[qq][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[qq][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>{lang msn}:</th>
+	<td>
+		<input type="text" class="t_input" name="msn" value="$space[msn]" /> 
+	</td>
+	<td>
+		<select name="friend[msn]">
+			<option value="0"{$friendarr[msn][0]}>{lang visible_all}</option>
+			<option value="1"{$friendarr[msn][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friendarr[msn][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td>
+	<input type="submit" name="nextsubmit" value="{lang proceed_next}" class="submit" />
+	<input type="submit" name="profilesubmit" value="{lang save}" class="submit" />
+	</td>
+	<td>&nbsp;</td>
+</tr>
+</table>
+
+<!--{elseif $_GET['op'] == 'edu'}-->
+
+<!--{if $list}-->
+<table cellspacing="0" cellpadding="0" class="listtable">
+<tr class="title">
+	<td>{lang school}/{lang school_class}</td>
+	<td>{lang school_year}</td>
+	<td>{lang security}</td>
+	<td>{lang operation}</td>
+</tr>
+<!--{loop $list $key $value}-->
+<!--{if $key%2==1}--><tr class="line"><!--{else}--><tr><!--{/if}-->
+	<td>$value[title]<br>$value[subtitle]</td>
+	<td>$value[startyear]</td>
+	<td>{$farr[$value[friend]]}</td>
+	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">{lang delete_info}</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=edu&title=$value[title_s]">{lang find_classmates}</a></td>
+</tr>
+<!--{/loop}-->
+</table>
+<br>
+<!--{/if}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+<!--{if $list}-->
+<caption>
+	<h2>{lang add_new_school}</h2>
+</caption>
+<!--{/if}-->
+<tbody id="oldtbody">
+<tr>
+	<th style="width:10em;">{lang school_name}:</th>
+	<td>
+		<input type="text" name="title[]" value="" class="t_input">
+	</td>
+</tr>
+<tr>
+	<th>{lang school_class}:</th>
+	<td>
+		<input type="text" name="subtitle[]" value="" class="t_input">
+	</td>
+</tr>
+<tr>
+	<th>{lang school_year}:</th>
+	<td>
+		<select name="startyear[]">
+		$yearhtml
+		</select> {lang year}
+	</td>
+</tr>
+<tr>
+	<th>{lang security}:</th>
+	<td>
+		<select name="friend[]">
+			<option value="0">{lang visible_all}</option>
+			<option value="1">{lang visible_to_friends_only}</option>
+			<option value="3">{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+</tbody>
+
+<tbody id="newtbody"></tbody>
+
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td><a href="javascript:;" onclick="add_tbody();">{lang add_new_school_info}</a></td>
+</tr>
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td>
+		<input type="submit" name="nextsubmit" value="{lang proceed_next}" class="submit" />
+		<input type="submit" name="profilesubmit" value="{lang save}" class="submit" /></td>
+</tr>
+</table>
+
+<!--{elseif $_GET['op'] == 'work'}-->
+
+
+<!--{if $list}-->
+<table cellspacing="0" cellpadding="0" class="listtable">
+<tr class="title">
+	<td>{lang company}/{lang department}</td>
+	<td>{lang work_period}</td>
+	<td>{lang security}</td>
+	<td>{lang operation}</td>
+</tr>
+<!--{loop $list $key $value}-->
+<!--{if $key%2==1}--><tr class="line"><!--{else}--><tr><!--{/if}-->
+	<td>$value[title]<br>$value[subtitle]</td>
+	<td>
+		{$value[startyear]} {lang year} {$value[startmonth]} {lang month} ~ 
+		<!--{if $value[endyear]}-->{$value[endyear]} {lang year} <!--{/if}-->
+		<!--{if $value[endmonth]}-->{$value[endmonth]} {lang month} <!--{/if}-->
+		<!--{if !$value[endyear] && !$value[endmonth]}-->{lang now}<!--{/if}-->
+	</td>
+	<td>{$farr[$value[friend]]}</td>
+	<td><a href="$theurl&subop=delete&infoid=$value[infoid]">{lang delete_info}</a><br><a href="cp.php?ac=friend&op=search&searchmode=1&type=work&title=$value[title_s]">{lang find_coworkers}</a></td>
+</tr>
+<!--{/loop}-->
+</table>
+<br>
+<!--{/if}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+<!--{if $list}-->
+<caption>
+	<h2>{lang adding_new_company}</h2>
+</caption>
+<!--{/if}-->
+<tbody id="oldtbody">
+<tr>
+	<th style="width:10em;">{lang company}:</th>
+	<td>
+		<input type="text" name="title[]" value="" class="t_input">
+	</td>
+</tr>
+<tr>
+	<th>{lang department}:</th>
+	<td>
+		<input type="text" name="subtitle[]" value="" class="t_input">
+	</td>
+</tr>
+<tr>
+	<th>{lang work_period}:</th>
+	<td>
+		<select name="startyear[]">
+		$yearhtml
+		</select> {lang year}
+		<select name="startmonth[]">
+		$monthhtml
+		</select> {lang month} ~ 
+		<select name="endyear[]">
+		<option value="">{lang now}</option>
+		$yearhtml
+		</select> {lang year}
+		<select name="endmonth[]">
+		<option value=""></option>
+		$monthhtml
+		</select> {lang month}
+	</td>
+</tr>
+<tr>
+	<th>{lang security}:</th>
+	<td>
+		<select name="friend[]">
+			<option value="0">{lang visible_all}</option>
+			<option value="1">{lang visible_to_friends_only}</option>
+			<option value="3">{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+</tbody>
+
+<tbody id="newtbody"></tbody>
+
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td><a href="javascript:;" onclick="add_tbody();">{lang add_new_company}</a></td>
+</tr>
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td>
+		<input type="submit" name="nextsubmit" value="{lang proceed_next}" class="submit" />
+		<input type="submit" name="profilesubmit" value="{lang save}" class="submit" /></td>
+</tr>
+</table>
+
+<!--{elseif $_GET['op'] == 'info'}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+<!--{eval 
+$infoarr = array(
+	'trainwith' => lang('fav_train'),
+	'interest' => lang('interests'),
+	'book' => lang('fav_books'),
+	'movie' => lang('fav_movie'),
+	'tv' => lang('fav_tv'),
+	'music' => lang('fav_music'),
+	'game' => lang('fav_games'),
+	'sport' => lang('fav_sport'),
+	'idol' => lang('fav_idol'),
+	'motto' => lang('fav_motto'),
+	'wish' => lang('fav_wish'),
+	'intro' => lang('personal_intro')
+);
+}-->
+<tr>
+	<th>{lang field}</th>
+	<td>{lang content}</td>
+	<td>{lang security}</td>
+</tr>
+
+<!--{loop $infoarr $key $value}-->
+<tr>
+	<th>{$value}:</th>
+	<td>
+		<textarea name="info[$key]" rows="3" cols="50">{$list[$key][title]}</textarea>
+	</td>
+	<td>
+		<select name="info_friend[$key]">
+			<option value="0"{$friends[$key][0]}>{lang visible_all}</option>
+			<option value="1"{$friends[$key][1]}>{lang visible_to_friends_only}</option>
+			<option value="3"{$friends[$key][3]}>{lang visible_to_me}</option>
+		</select>
+	</td>
+</tr>
+<!--{/loop}-->
+
+<tr>
+	<th style="width:10em;">&nbsp;</th>
+	<td><input type="submit" name="profilesubmit" value="{lang save}" class="submit" /></td>
+</tr>
+</table>
+<!--{/if}-->
+
+
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+<script>
+function add_tbody() {
+	for(i=0; i<$("oldtbody").rows.length; i++) {
+		newnode = $("oldtbody").rows[i].cloneNode(true);
+		$("newtbody").appendChild(newnode);
+	}
+}
+</script>
+
+<!--{template footer}-->

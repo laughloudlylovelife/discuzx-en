@@ -1,0 +1,211 @@
+<!--{template header}-->
+<!--{if $_GET['op'] == 'resend'}-->
+
+<h1>{lang resend_email}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__resendform_{$id}">
+<form method="post" id="resendform_{$id}" name="resendform_{$id}" action="cp.php?ac=invite&op=resend&id=$id">
+	<p>{lang resend_sure}</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="resendsubmit" value="true" />
+		<button name="resendsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('resendform_{$id}', 'resend_mail', 2000)">{lang resend}</button>
+		<!--{else}-->
+		<button name="resendsubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+		<!--{/if}-->
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET['op'] == 'delete'}-->
+
+<h1>{lang record_delete}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__deleteform_{$id}">
+<form method="post" id="deleteform_{$id}" name="deleteform_{$id}" action="cp.php?ac=invite&op=delete&id=$id">
+	<p>{lang invite_delete_sure}</p>
+	<p>{lang invite_delete_intro1}<br/>{lang invite_delete_intro2}</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="deletesubmit" value="true" />
+		<button name="deletesubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('deleteform_{$id}', 'resend_mail', 2000)">{lang delete}</button>
+		<!--{else}-->
+		<button name="deletesubmit" type="submit" class="submit" value="true">{lang delete}</button>
+		<!--{/if}-->
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{else}-->
+
+<h2 class="title"><img src="image/icon/friend.gif">{lang friends}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="space.php?uid=$space[uid]&do=friend"><span>{lang friend_list}</span></a></li>
+		<li><a href="cp.php?ac=friend&op=search"><span>{lang friends_find}</span></a></li>
+		<li><a href="cp.php?ac=friend&op=find"><span>{lang who_might_know}</span></a></li>
+		<li class="active"><a href="cp.php?ac=invite"><span>{lang event_invite_friends}</span></a></li>
+		<li><a href="cp.php?ac=friend&op=request"><span>{lang friend_requests_me}</span></a></li>
+		<li><a href="space.php?do=top"><span>{lang members_top_list}</span></a></li>
+	</ul>
+</div>
+
+<div id="content">	
+	<form method="post" action="cp.php?ac=invite&appid=$appid&ref" class="c_form">
+		<!--{if $get_invite}-->
+		<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+			{lang for_each_invited} <strong>$get_invite</strong> {lang you_can_warn}
+		</div></div></div></div></div>
+		<!--{/if}-->
+		<table cellspacing="0" cellpadding="0" class="formtable" width="100%">
+			<caption>
+				<h2><!--{if $appid}-->{lang invite_friends_to_play} $appinfo[appname]<!--{else}-->{lang my_friends_invite_link}<!--{/if}--></h2>
+				<p>
+				<div class="composer_header">
+					<!--{if $appid}-->
+					<div class="ar_r_t"><div class="ar_l_t"><div class="ar_r_b"><div class="ar_l_b"><img src="http://appicon.manyou.com/logos/{$appid}" alt="{$appinfo[appname]}" /></div></div></div></div>
+					<!--{/if}-->
+					<p>
+						{lang use_im_or_email}
+						<table cellspacing="0" cellpadding="0" >
+						<!--{if $reward['credit']}-->
+							<!--{if $list_str}-->
+							<tr>
+								<td>{lang invite_link}<br/><textarea name="invite_urls" rows="4" style="width:98%;">$list_str</textarea></td>
+							</tr>
+							<!--{else}-->
+							<tr><td>{lang no_invite_code}</td></tr>
+							<!--{/if}-->
+							<tr>
+								<td><img src="image/credit.gif" align="absmiddle"> {lang for_each_invite_required} <strong>{lang points_required} $reward[credit] {lang points_per_each}</strong>, {lang you_now_have_points} <a href="cp.php?ac=credit">$space[credit]</a> {lang points}.</td>
+							</tr>
+							<tr class="notice">
+								<td>{lang get_invite_code} $maxinvitenum {lang units}): <input type="text" name="invitenum" value="1" size="5" class="t_input" /> <input type="submit" name="invitesubmit" value="{lang obtain}" class="submit" /></td>
+							</tr>
+						<!--{else}-->
+							<tr><td style="font-size:14px;font-weight:bold;"><a onclick="javascript:setCopy('$mailvar[4]');return false;" href="$mailvar[4]">$mailvar[4]</a></td></tr>
+						<!--{/if}-->
+						</table>
+					</p>
+				</div>
+				
+				</p>
+			</caption>
+			
+			
+		</table>
+		
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	<script type="text/javascript" src="widgets/misc/scripts/ab.js" charset="utf-8"></script>
+	<form method="post" action="cp.php?ac=invite&type=mail&appid=$appid&ref" class="c_form">
+		<table cellspacing="0" cellpadding="0" class="formtable" width="100%">
+			<caption>
+				<h2>{lang send_to_friend} <!--{if $appid}-->{lang for_playing} $appinfo[appname]<!--{/if}--></h2>
+				<p>{lang send_email_intro}</p>
+				<!--{if $pay[invite]}-->
+				<p>
+					<img src="image/credit.gif" align="absmiddle"> {lang sending_email_cost} <strong>{lang points_required} $pay[invite] {lang points_per_each}</strong>, {lang you_now_have_points} <a href="cp.php?ac=credit">$space[credit]</a> {lang points_num}.
+				</p>
+				<!--{/if}-->
+			</caption>
+			<tr>
+				<td>
+<!-- //vot DISABLED temporarily					
+					<div class="r_option"><a href="#"  onclick="MYABC.showChooser('email', '{$uri}api/getmaillist.htm', null, false, false, null); return false"><img src="widgets/misc/images/ab/ab_button.gif" style="margin: 5px 0 0;" alt="{lang add_from_addressbook}" /></a></div>
+-->
+					<div><br />{lang friend_email_address}</div>
+					<textarea name="email" id="email" rows="5" style="width:99%;"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					{lang say_to_friends}<br/>
+					<input type="text" name="saymsg" id="saymsg" onkeyup="showPreview(this.value, 'sayPreview')" class="t_input" style="width:98%;">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="emailinvite" value="{lang invite}" class="submit"></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="title" style="margin: 10px 0;">{lang invite_preview}</div>
+					<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+						<table border="0">
+						<tr>
+						<td valign="top">$mailvar[0]</td>
+						<td valign="top">
+						<!--{if $appid}-->
+						<h3>{lang hi_i_am} {$mailvar[1]}, {lang in} {$mailvar[2]} {lang playing_the} {$appinfo[appname]}, {lang inviting_to_play}</h3><br>
+						<!--{else}-->
+						<h3>{lang hi_i_am} {$mailvar[1]}, {lang in} {$mailvar[2]} {lang created_home_page}</h3><br>
+						{lang visit_my_space}<br>
+						<!--{/if}-->
+						<br>
+						{lang invite_ps}: <br>
+						<span id="sayPreview">{$mailvar[3]}</span>
+						<br><br>
+						<strong>{lang click_receive_invite} <!--{if $appid}-->{lang play_together} $appinfo[appname]<!--{/if}-->: </strong><br>
+						{$mailvar[4]}<br>
+						<br>
+						<strong>{lang if_you_have} {$mailvar[2]} {lang site_account}: </strong><br>
+						{$mailvar[5]}<br>
+						</td></tr></table>
+					</div></div></div></div></div>
+				</td>
+			</tr>
+		</table>
+		
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<div id="sidebar">
+		
+		<div class="sidebox">
+			<h2 class="title">{lang invited_friend_list}</h2>
+			<!--{if count($flist) < 24}-->
+			<ul class="avatar_list">
+				<!--{loop $flist $key $value}-->
+				<li>
+					<div class="avatar48"><a href="space.php?uid=$value[fuid]&do=doing"><!--{avatar($value[fuid],small)}--></a></div>
+					<p><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a></p>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<!--{else}-->
+			<div>
+			<!--{eval $mod='';}-->
+			<!--{loop $flist $key $value}-->
+			$mod<a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a>
+			<!--{eval $mod=',';}-->
+			<!--{/loop}-->
+			</div>
+			<!--{/if}-->
+		</div>
+
+		<!--{if $maillist}-->
+		<div class="sidebox">
+			<h2 class="title">{lang invites_not_success_list}</h2>
+			<ul class="sendmail">
+				<!--{loop $maillist $key $value}-->
+				<li id="sendmail_$value[id]_li">
+					<a href="cp.php?ac=invite&op=resend&id=$value[id]" id="mail_invite_$value[id]" class="c_resend" onclick="ajaxmenu(event, this.id)" title="{lang resend}">{lang resend}</a>
+					<a href="javascript:;" title="{lang link}" class="c_link" onclick="javascript:setCopy('$value[url]');return false;">{lang link}</a>
+					<a href="cp.php?ac=invite&op=delete&id=$value[id]" id="del_invite_$value[id]" class="c_delete" onclick="ajaxmenu(event, this.id)" title="{lang delete}">{lang delete}</a>
+					$value[email]
+				</li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+		<!--{/if}-->
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

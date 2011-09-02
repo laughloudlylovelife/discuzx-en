@@ -1,0 +1,37 @@
+	<div class="space_list">
+	<!--{if $list}-->
+	<!--{loop $list $key $value}-->
+	<table cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<td width="65"><div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div></td>
+		<td>
+			<h2>
+				<!--{if $ols[$value[uid]]}--><img src="image/online_icon.gif" align="absmiddle"> <!--{/if}-->
+				<a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"<!--{eval g_color($value[groupid]);}-->>{$_SN[$value[uid]]}</a>
+				<!--{if $value['username'] && $_SN[$value[uid]]!=$value['username']}--><span class="gray">($value[username])</span><!--{/if}-->
+				<!--{eval g_icon($value[groupid]);}-->
+				<!--{if $value['videostatus']}-->
+				<img src="image/videophoto.gif" align="absmiddle">
+				<!--{/if}-->
+			</h2>
+			<!--{if $value[sex]==2}--><p>{lang female}</p><!--{elseif $value[sex]==1}--><p>{lang male}</p><!--{/if}--></p>
+			<p>
+				<!--{if $_GET['view']=='show'}-->{lang bidding} <!--{/if}-->{lang credit}: $value[credit] / <!--{if $value[experience]}-->{lang experience}: $value[experience] / <!--{/if}-->{lang views}: $value[viewnum] / {lang friends}: $value[friendnum]</p>
+			<!--{if $value[note]}-->$value[note]<!--{/if}-->
+		</td>
+		<td width="100">
+			<ul class="line_list">
+				<li><a href="space.php?uid=$value[uid]">{lang go_profile}</a></li>
+				<li><a href="cp.php?ac=poke&op=send&uid=$value[uid]" id="a_poke_$key" onclick="ajaxmenu(event, this.id, 1)" title="{lang send_hello}">{lang send_hello}</a></li>
+				<!--{if isset($value['isfriend']) && !$value['isfriend']}--><li><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)" title="{lang friend_add}">{lang friend_add}</a></li><!--{/if}-->
+			</ul>
+		</td>
+	</tr>
+	</table>
+	<!--{/loop}-->
+	<div class="page">$multi</div>
+	<!--{else}-->
+	<div class="c_form">{lang no_members}</div>
+	<!--{/if}-->
+	</div>
+

@@ -1,0 +1,130 @@
+<!--{eval $_TPL['titles'] = array(lang('group_topics'));}-->
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_photo">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=thread" class="r_option">{lang publish_topic}</a>
+			{lang group_topics} ({lang total} $count {lang units})</h3>
+		<!--{if $list}-->
+		<ul class="line_list">
+		<!--{loop $list $key $value}-->
+			<li><a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]">$value[subject]</a>
+			<span class="gray">&nbsp;<a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a></span></li>
+		<!--{/loop}-->
+		</ul>
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">{lang no_topics_found}</div>
+		<!--{/if}-->
+	</div><br>
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang search_topic}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="thread" />
+	<input type="hidden" name="view" value="all" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/mtag.gif">{lang groups} - {lang thread}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="space.php?uid=$space[uid]&do=thread"><span>{lang group_topics}</span></a></li>
+		<li><a href="space.php?do=mtag&view=me"><span>{lang member_of_groups}</span></a></li>
+		<li><a href="space.php?do=mtag&view=manage"><span>{lang i_manage_groups}</span></a></li>
+		<li><a href="space.php?do=mtag&view=hot"><span>{lang popular_groups}</span></a></li>
+		<li><a href="space.php?do=mtag&view=recommend"><span>{lang recommended_groups}</span></a></li>
+		<li class="null"><a href="cp.php?ac=thread">{lang topic_start}</a></li>
+		<li class="null"><a href="cp.php?ac=mtag">{lang group_create}</a></li>
+	</ul>
+</div>
+<div class="h_status">
+	<a href="space.php?uid=$space[uid]&do=thread&view=hot"$actives[hot]>{lang hot_topics}</a><span class="pipe">|</span>
+	<a href="space.php?uid=$space[uid]&do=thread&view=new"$actives[new]>{lang new_topics}</a><span class="pipe">|</span>
+	<a href="space.php?uid=$space[uid]&do=thread&view=me"$actives[me]>{lang my_topics}</a>
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "{lang thread}";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=thread&view=me\">{lang author_all_topics}</a>";
+}-->
+<!--{template space_menu}-->
+<div class="h_status">{lang sorted_by_time}</div>
+<!--{/if}-->
+
+<!--{if $searchkey}-->
+<div class="h_status">{lang search_topic_result} <span style="color:red;font-weight:bold;">$searchkey</span> {lang results_list}</div>
+<!--{/if}-->
+
+<!--{if $list}-->
+<div class="topic_list">
+	<table cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<td class="subject">{lang topic}</td>
+				<td class="mtag">{lang group}</td>
+				<td class="author"><!--{if $_GET[view]!='me'}-->{lang author} <!--{/if}-->{lang replies_views}</td>
+				<td class="lastpost">{lang last_updated}</td>
+			</tr>
+		</thead>
+		<tbody>
+		<!--{loop $list $key $value}-->
+			<!--{eval $magicegg = ""}-->							
+			<!--{eval if($value[magicegg]) for($i=0; $i<$value[magicegg]; $i++) $magicegg .= '<img src="image/magic/egg/'.mt_rand(1,6).'.gif" />';}-->
+			<tr<!--{if $key%2==1}--> class="alt"<!--{/if}-->>
+				<td class="subject">
+					$magicegg <a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a>
+					<!--{if $value[hot]}-->
+					<br><span class="gray">$value[hot] {lang hot_value}</span>
+					<!--{/if}-->
+				</td>
+				<td><a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a></td>
+				<td class="author"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a><br><em>$value[replynum]/$value[viewnum]</em></td>
+				<td class="lastpost"><a href="space.php?uid=$value[lastauthorid]" title="{$_SN[$value[lastauthorid]]}">{$_SN[$value[lastauthorid]]}</a><br><!--{date('m-d H:i',$value[lastpost],1)}--></td>
+			</tr>
+		<!--{/loop}-->
+		</tbody>
+	</table>
+	<div class="page">$multi</div>
+</div>
+<!--{else}-->
+<div class="c_form">{lang no_topics_found}</div>
+<!--{/if}-->
+
+
+<!--{if $rlist}-->
+	<div style="padding-bottom:10px;">
+		<h3 class="l_status">
+			<div class="r_option"><a href="space.php?do=mtag&view=hot">{lang more_topics}</a></div>
+			{lang popular_groups}
+		</h3>
+		<ul class="thread_list">
+		<!--{loop $rlist $value}-->
+			<li>
+			<table width="100%">
+				<tr>
+				<td width="80">
+					<div class="threadimg60"><a href="space.php?do=mtag&tagid=$value[tagid]"><img src="$value[pic]" style="width:60px;"></a></div>
+				</td>
+				<td>
+					<a href="space.php?do=mtag&tagid=$value[tagid]" style="font-weight:bold;">$value[tagname]</a>
+					<div class="gray">$value[title]</div>
+					{lang has} <span class="num">$value[membernum]</span> {lang members_joined}
+					<div class="gray">
+						{lang thread}: $value[threadnum], {lang posts}: $value[postnum]
+					</div>
+				</td>
+				</tr></table>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+<!--{/if}-->
+
+<!--{/if}-->
+
+<!--{template footer}-->

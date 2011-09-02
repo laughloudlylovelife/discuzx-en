@@ -1,0 +1,384 @@
+<!--{eval $_TPL['titles'] = array(lang('events'));}-->
+<!--{template header}-->
+
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_event">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=event" class="r_option">{lang event_organize}</a>
+			{lang events} ({lang total} $count {lang units})</h3>
+		<!--{if $eventlist}-->
+		<ul class="line_list">
+		<!--{loop $eventlist $event}-->
+			<li>
+				<p class="r_option">
+					<!--{if $event[grade] == 0}-->
+					<span class="event_state">{lang pending}</span>
+					<!--{/if}-->
+					<!--{if $event[endtime]<$_SGLOBAL[timestamp]}-->
+					<span class="event_state">{lang closed}</span>
+					<!--{elseif $event[deadline]<$_SGLOBAL[timestamp]}-->
+					<span class="event_state">{lang finished}</span>
+					<!--{/if}-->
+				</p>
+				<h4><a href="space.php?do=event&id=$event[eventid]">$event[title]</a><span class="gray">[<!--{$_SGLOBAL[eventclass][$event[classid]][classname]}-->]</span></h4>
+	
+				<p><span class="gray">{lang event_time}:</span> 	<!--{eval echo sgmdate("d.m.Y H:i", $event[starttime])}--> - <!--{eval echo sgmdate("d.m.Y H:i", $event[endtime])}--></p>
+				<p><span class="gray">{lang event_location}:</span> 	$event[province] $event[city] $event[location]</p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<div class="page">$multi</div>
+		
+		<!--{else}-->
+		<div class="c_form">{lang events_related_no}</div>
+		<!--{/if}-->
+	</div><br>
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang events_search}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="event" />
+	<input type="hidden" name="view" value="all" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/event.gif" />{lang events}</h2>
+<div class="tabs_header">
+    <ul class="tabs">
+        <li $menu[all]><a href="space.php?do=event&view=all"><span>{lang events_all}</span></a></li>
+        <li $menu[recommend]><a href="space.php?do=event&view=recommend"><span>{lang events_recommended}</span></a></li>
+        <li $menu[city]><a href="space.php?do=event&view=city"><span>{lang events_same_city}</span></a></li>
+        <!--{if $space[friendnum]}-->
+        <li $menu[friend]><a href="space.php?do=event&view=friend"><span>{lang friends_events}</span></a></li>
+        <!--{/if}-->
+		<li $menu[me]><a href="space.php?uid=$space[uid]&do=event&view=me"><span>{lang my_events}</span></a></li>
+		<li class="null"><a href="cp.php?ac=event" class="t_button">{lang init_new_event}</a></li>
+    </ul>
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "{lang events}";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=event&view=me\">{lang author_all_events}</a>";
+}-->
+<!--{template space_menu}-->
+<!--{/if}-->
+<div class="h_status">
+	<!--{if $menu[all]}-->
+	<a $submenus[going] href="space.php?do=event&view=all&type=going">{lang events_active}</a>
+	<span class="pipe">|</span><a $submenus[over] href="space.php?do=event&view=all&type=over">{lang events_finished}</a>
+	<!--{elseif $menu[recommend]}-->
+	<a $submenus[hot] href="space.php?do=event&view=recommend&type=hot">{lang events_popular}</a>
+	<span class="pipe">|</span><a $submenus[admin] href="space.php?do=event&view=recommend&type=admin">{lang stats}</a>
+	<!--{elseif $menu[city]}-->	
+	<a $submenus[going] href="space.php?do=event&view=city&type=going">{lang events_active}</a>
+	<span class="pipe">|</span><a $submenus[over] href="space.php?do=event&view=city&type=over">{lang events_finished}</a>
+	<!--{elseif $menu[friend]}-->
+	<a $submenus[all] href="space.php?do=event&view=friend&type=all">{lang all}</a>
+	<span class="pipe">|</span><a $submenus[join] href="space.php?do=event&view=friend&type=join">{lang event_join}</a>
+	<span class="pipe">|</span><a $submenus[follow] href="space.php?do=event&view=friend&type=follow">{lang events_concerning}</a>
+	<span class="pipe">|</span><a $submenus[org] href="space.php?do=event&view=friend&type=org">{lang event_organizers}</a>
+	<!--{elseif $menu[me]}-->
+	<a $submenus[all] href="space.php?uid=$space[uid]&do=event&view=me&type=all">{lang all}</a>
+	<span class="pipe">|</span><a $submenus[join] href="space.php?uid=$space[uid]&do=event&view=me&type=join">{lang event_join}</a>
+	<span class="pipe">|</span><a $submenus[follow] href="space.php?uid=$space[uid]&do=event&view=me&type=follow">{lang events_concerning}</a>
+	<span class="pipe">|</span><a $submenus[org] href="space.php?uid=$space[uid]&do=event&view=me&type=org">{lang event_organizers}</a>
+	<!--{/if}-->
+</div>
+
+<!--{if $searchkey}-->
+<div class="h_status">{lang event_searching} <span style="color:red;font-weight:bold;">$searchkey</span> {lang results_list}</div>
+<!--{/if}-->
+
+<div id="content">
+	<!--{if $view == "all" && !empty($recommendevents)}-->
+	<div class="rec_event_list">
+		<h2>
+			<div class="r_option"><a href="space.php?do=event&view=recommend&type=admin">{lang more}</a></div>
+			{lang stats}
+		</h2>
+		<ol>
+			<!--{loop $recommendevents $key $value}-->
+			<li>
+				<div class="event_icon">
+					<a href="space.php?do=event&id=$value[eventid]"><img class="poster_pre" src="$value[pic]" alt="$value[title]" onerror="this.src='$_SGLOBAL[eventclass][$value[classid]][poster]'"></a>
+				</div>
+				<div class="event_content">
+					<h4><a href="space.php?do=event&id=$value[eventid]">$value[title]</a> <span class="gray">[<!--{$_SGLOBAL[eventclass][$value[classid]][classname]}-->]</span></h4>
+					<p>{lang event_time}: <!--{eval echo sgmdate("d.m.Y H:i", $value[starttime])}--> - <!--{eval echo sgmdate("d.m.Y H:i", $value[endtime])}--></p>
+				</div>
+			</li>
+			<!--{/loop}-->
+		</ol>
+	</div>
+	<!--{/if}-->
+	
+	<!--{if $view == "city"}-->
+	<div>
+		<!--{if $_GET[city]}-->
+			{lang you_are_browsing} <b>$_GET[province] - $_GET[city]</b> {lang event_list}
+			<a href="#" onclick="$('viewcityevents').style.display=''; this.blur(); return false;">{lang browse_other_cities}</a>
+		<!--{elseif $_GET[province]}-->
+			{lang you_are_browsing} $_GET[province] {lang event_list}
+			<!--{if $space[province] == $_GET[province] && $space[city]}-->
+			{lang also_browse} <a href="space.php?do=event&view=city&province=$space[province]&city=$space[city]">$space[city]</a> {lang event_list}
+			<!--{/if}-->
+			<a href="#" onclick="$('viewcityevents').style.display=''; this.blur(); return false;">{lang browse_other_cities}</a>
+		<!--{/if}-->
+		<!--script type="text/javascript" src="source/script_city.js"></script-->
+		<script type="text/javascript" src="language/$_SCONFIG['language']/script_city.js" charset="$_SC[charset]"></script>
+		<form id="viewcityevents" action="space.php" method="GET" style="display:none;">
+			<input type="hidden" name="do" value="event" />
+			<input type="hidden" name="view" value="city" />
+			<span id="eventcitybox"></span>
+			 <script type="text/javascript">
+				showprovince('province', 'city', '$_GET[province]', 'eventcitybox');
+		                showcity('city', '$_GET[city]', 'province', 'eventcitybox');
+			 </script>
+			<input class="submit" type="submit" value="{lang browse}" />
+		</form>
+		<!--{if !$space[resideprovince]}-->
+		<div class="c_form">
+			{lang location_not_set} <a href="cp.php?ac=profile">{lang set_now}</a>
+		</div>
+		<!--{/if}-->
+	</div>
+	<!--{/if}-->
+
+	<!--{if !empty($eventlist)}-->
+	<div class="event_list">
+		<ol>
+			<!--{eval $hiddecount = 0}-->
+			<!--{loop $eventlist $key $event}-->
+			<!--{if $event[uid] != $_SGLOBAL[supe_uid] && ($event[grade]==0 || ($event[public]==0 && ($_GET[view]!='me' || $_GET[uid] != $_SGLOBAL[supe_uid])))}-->
+			<!--{eval $hiddencount = $hiddencount + 1}-->
+			<!--{else}-->
+			<li>
+				<div class="event_icon">
+					<a href="space.php?do=event&id=$event[eventid]"><img class="poster_pre" src="$event[pic]" alt="$event[title]" onerror="this.src='$_SGLOBAL[eventclass][$event[classid]][poster]'"></a>
+				</div>
+				<div class="event_content">
+					<h4 class="event_title"><a href="space.php?do=event&id=$event[eventid]">$event[title]</a><span class="gray">[<!--{$_SGLOBAL[eventclass][$event[classid]][classname]}-->]</span></h4>
+					<ul>
+						<li>
+							<span class="gray">{lang event_time}:</span> 	<!--{eval echo sgmdate("d.m.Y H:i", $event[starttime])}--> - <!--{eval echo sgmdate("d.m.Y H:i", $event[endtime])}-->
+							<!--{if $event[grade] == 0}-->
+							<span class="event_state"> {lang pending}</span>
+							<!--{/if}-->
+							<!--{if $event[endtime]<$_SGLOBAL[timestamp]}-->
+							<span class="event_state"> {lang closed}</span>
+							<!--{elseif $event[deadline]<$_SGLOBAL[timestamp]}-->
+							<span class="event_state"> {lang finished}</span>
+							<!--{/if}-->						
+						</li>
+						<li><span class="gray">{lang event_location}:</span>
+							<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&date=$_GET[date]">$event[province]</a>
+							<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&city=$event[city]&date=$_GET[date]">$event[city]</a>
+							$event[location]
+						</li>
+						<li><span class="gray">{lang member_starter}:</span> <a href="space.php?uid=$event[uid]">$_SN[$event[uid]]</a></li>
+						<!--{if $fevents[$event[eventid]]}-->
+						<li><span class="gray">{lang friends}:</span> 
+							<!--{loop $fevents[$event[eventid]] $value}-->
+							<a href="space.php?uid=$value[fuid]">$_SN[$value[fuid]]</a>
+							<!--{if $value[status] == 2}--><span class="gray">{lang participate}</span>
+							<!--{elseif $value[status] == 3}--><span class="gray">{lang member_organizer}</span>
+							<!--{elseif $value[status] == 4}--><span class="gray">{lang starter}</span>
+							<!--{else}--><span class="gray">{lang concerned}</span>
+							<!--{/if}-->
+							&nbsp;
+							<!--{/loop}-->
+						</li>
+						<!--{/if}-->
+						<li style="margin: 5px 0 0;">$event[viewnum] {lang views_number}&nbsp; $event[membernum] {lang members_participants}&nbsp; $event[follownum] {lang members_concerning}</li>
+					</ul>
+				</div>
+			</li>
+			<!--{/if}-->
+			<!--{/loop}-->
+		</ol>
+		<!--{if $hiddencount}-->
+		<div>{lang page_has_hidden1} $hiddencount {lang events_because_privacy}</div>
+		<!--{/if}-->
+		<div class="page">$multi</div>		
+	</div>
+	<!--{else}-->
+	<div class="c_form">
+		<!--{if $view == "me"}-->
+		{lang events_related_not_found}
+		<!--{else}-->
+		<br/>
+		{lang events_related_no} {lang you_can} <a href="cp.php?ac=event">{lang event_init_new}</a>
+		<!--{/if}-->
+	</div>
+	<!--{/if}-->
+</div><!--//End of LEFT SIDE content//-->
+
+<div id="sidebar">
+
+	<!--{if $view == "all"}-->
+	<div class="sidebox">			
+		<h2 class="title">
+			<p class="r_option">
+				<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$_GET[province]&city=$_GET[city]">{lang all}</a>
+			</p>
+			{lang calendar}
+		</h2>
+		<div class="calendarbox" id="eventcalendar"></div>
+	</div>
+	<script type="text/javascript" charset="$_SC[charset]">
+		function showcalendar(month){
+			var month = month ? "&month="+month : "";
+			ajaxget('cp.php?ac=event&op=calendar' + month + '&date=$_GET[date]&url=<!--{eval echo urlencode($theurl)}-->', 'eventcalendar');
+		}
+		showcalendar();
+	</script>
+	<!--{/if}-->
+	
+	<!--{if $view != 'friend'}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<p class="r_option">
+				<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&date=$_GET[date]&uid=$_GET[uid]">{lang all}</a>
+			</p>
+			{lang category}
+		</h2>
+		<ul class="event_cat">
+		<!--{loop $_SGLOBAL[eventclass] $value}-->			
+			<li<!--{if $_GET[classid] == $value[classid]}--> class="on"<!--{/if}-->>
+			<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$value[classid]&province=$_GET[province]&city=$_GET[city]&date=$_GET[date]">$value[classname]</a></li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+
+	<!--{if $followevents}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<div class="r_option"><a href="space.php?do=event&view=me&type=follow">{lang more}</a></div>
+			{lang event_i_concerned}
+		</h2>
+		<ul class="attention">
+			<!--{loop $followevents $value}-->
+			<li style="height: auto;">
+				<p>
+					<a href="space.php?do=event&id=$value[eventid]">$value[title]</a>					
+				</p>
+				<p class="gray" style="text-align:left">
+					<!--{if $_SGLOBAL[timestamp] > $value[endtime]}-->
+						{lang closed}
+					<!--{else}-->
+						<!--{eval echo sgmdate("d.m.Y",$value[starttime])}-->
+					<!--{/if}-->&nbsp;		
+					$value[membernum] {lang members_participants} /				
+					$value[follownum] {lang members_concerning}
+				</p>
+				<p>
+					<!--{if $value[threadnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=thread">
+						$value[threadnum] {lang topics_number}
+					</a> &nbsp;
+					<!--{/if}-->
+					<!--{if $value[picnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=pic">
+						$value[picnum] {lang photos_number}
+					</a>
+					<!--{/if}-->
+				</p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+
+	<!--{if $friendevents}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<div class="r_option"><a href="space.php?do=event&view=friend">{lang more}</a></div>
+			{lang events_friends_attended}
+		</h2>
+		<ul class="attention">			
+			<!--{loop $friendevents $value}-->
+			<li style="height: auto;">
+				<p>
+					<a href="space.php?do=event&id=$value[eventid]">$value[title]</a>					
+				</p>
+				<p class="gray" style="text-align:left">
+					{lang friends}: 
+					<!--{loop $value[friends] $fuid}-->
+					<a href="space.php?uid=$fuid">$_SN[$fuid]</a>&nbsp;
+					<!--{/loop}-->
+				</p>
+				<p class="gray" style="text-align:left">
+					<!--{if $_SGLOBAL[timestamp] > $value[endtime]}-->
+						{lang closed}
+					<!--{else}-->
+						<!--{eval echo sgmdate("d.m.Y",$value[starttime])}-->
+					<!--{/if}-->&nbsp;		
+					$value[membernum] {lang members_participants} /				
+					$value[follownum] {lang members_concerning}
+				</p>
+				<p>
+					<!--{if $value[threadnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=thread">
+						$value[threadnum] {lang topics_number}
+					</a> &nbsp;
+					<!--{/if}-->
+					<!--{if $value[picnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=pic">
+						$value[picnum] {lang photos_number}
+					</a>
+					<!--{/if}-->
+				</p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+	
+	<!--{if $hotevents}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<div class="r_option"><a href="space.php?do=event&view=recommend&type=hot">{lang more}</a></div>
+			{lang events_popular}
+		</h2>
+		<ul class="attention">
+			<!--{loop $hotevents $value}-->
+			<li style="height: auto;">
+				<p>
+					<a href="space.php?do=event&id=$value[eventid]">$value[title]</a>					
+				</p>
+				<p class="gray" style="text-align:left">
+					<!--{if $_SGLOBAL[timestamp] > $value[endtime]}-->
+						{lang closed}
+					<!--{else}-->
+						<!--{eval echo sgmdate("d.m.Y",$value[starttime])}-->
+					<!--{/if}-->&nbsp;		
+					$value[membernum] {lang members_participants} /				
+					$value[follownum] {lang members_concerning}
+				</p>
+				<p>
+					<!--{if $value[threadnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=thread">
+						$value[threadnum] {lang topics_number}
+					</a> &nbsp;
+					<!--{/if}-->
+					<!--{if $value[picnum]}-->
+					<a href="space.php?do=event&id=$value[eventid]&view=pic">
+						$value[picnum] {lang photos_number}
+					</a>
+					<!--{/if}-->
+				</p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+	
+</div>
+<!--{/if}-->
+
+<!--{template footer}-->

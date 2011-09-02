@@ -1,0 +1,98 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+	<form method="post" action="admincp.php?ac=app">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	<p>{lang uc_apps_installed}</p>
+	<p>{lang uc_apps_intro1}</p>
+	<p>{lang uc_apps_intro2}</p>
+	</div>
+	<br>
+	
+	<!--{loop $applist $data}-->
+	<!--{eval $template = stripslashes(htmlspecialchars($relatedtag['data'][$data[appid]]['template'] != '' ? $relatedtag['data'][$data[appid]]['template'] : $data['tagtemplates']['template']));}-->
+	<!--{eval $name = stripslashes(htmlspecialchars($relatedtag['data'][$data[appid]]['name'] != '' ? $relatedtag['data'][$data[appid]]['name'] : $data['name']));}-->
+	<!--{eval $openarr = !isset($relatedtag['data'][$data[appid]][open]) || intval($relatedtag['data'][$data[appid]][open]) > 0 ? array('', 'checked') : array('checked', '');}-->
+	<div class="bdrcontent">
+	<div class="title">
+		<h3>$data[name]</h3>
+	</div>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th style="width: 200px;">{lang display_name}:</th>
+		<td><input type="text" name="relatedtag[data][{$data[appid]}][name]" value="$name"></td>
+	</tr>
+	<tr>
+		<th>{lang access_address}:</th>
+		<td>
+		<a href="$data[url]" target="_blank">$data[url]</a>
+		<input type="hidden" name="relatedtag[data][{$data[appid]}][url]" value="$data[url]" size="50"></td>
+	</tr>
+	<tr>
+		<th>{lang navigation_displayed}:</th>
+		<td>
+		<!--{if $data['appid'] == UC_APPID}-->
+		<input type="hidden" name="relatedtag[data][{$data[appid]}][open]" value="0">{lang current_product}
+		<!--{else}-->
+		<input type="radio" name="relatedtag[data][{$data[appid]}][open]" value="1" $openarr[1]>{lang yes}
+		<input type="radio" name="relatedtag[data][{$data[appid]}][open]" value="0" $openarr[0]>{lang no}
+		<!--{/if}-->
+		</td>
+	</tr>
+	<tr>
+		<th>{lang tags_related}:</th>
+		<td><input type="text" size="4" name="relatedtag[limit][{$data[appid]}]" value="<!--{eval echo intval($relatedtag['limit'][$data[appid]]);}-->" />
+			{lang tags_related_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang tags_related_single}:<br>
+		<!--{if is_array($data[tagtemplates][fields])}-->
+		<!--{loop $data[tagtemplates][fields] $field $memo}-->
+			<a onclick="insertunit('{{$field}}', 'jstemplate_$data[appid]')" href="javascript:;">{{$field}}</a> {lang in_the_name} $memo<br />
+		<!--{/loop}-->
+		<!--{/if}-->
+		</th>
+		<td><img src="image/zoomin.gif" onmouseover="this.style.cursor='pointer'" onclick="zoomTextarea('jstemplate_$data[appid]', 1)">
+			<img src="image/zoomout.gif" onmouseover="this.style.cursor='pointer'" onclick="zoomTextarea('jstemplate_$data[appid]', 0)"><br />
+			<textarea cols="100" rows="5" id="jstemplate_$data[appid]" name="relatedtag[data][{$data[appid]}][template]" style="width: 95%;">$template</textarea>
+			<input type="hidden" name="relatedtag[data][{$data[appid]}][type]" value="$data[type]">
+		</td>
+	</tr>
+	</table>
+	</div>
+	<div class="footactions">
+	<input type="submit" name="appsubmit" value="{lang submit_update}" class="submit">
+	</div>
+
+	<br>
+	<!--{/loop}-->
+
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<script type="text/javascript">
+function insertunit(text, obj) {
+	if(!obj) {
+		obj = 'jstemplate';
+	}
+	$(obj).focus();
+	if(!isUndefined($(obj).selectionStart)) {
+		var opn = $(obj).selectionStart + 0;
+		$(obj).value = $(obj).value.substr(0, $(obj).selectionStart) + text + $(obj).value.substr($(obj).selectionEnd);
+	} else if(document.selection && document.selection.createRange) {
+		var sel = document.selection.createRange();
+		sel.text = text.replace(/\r?\n/g, '\r\n');
+		sel.moveStart('character', -strlen(text));
+	} else {
+		$(obj).value += text;
+	}
+}
+</script>
+<!--{template admin/tpl/footer}-->

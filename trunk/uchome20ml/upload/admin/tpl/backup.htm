@@ -1,0 +1,318 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+<!--{if $showform == 0}-->
+
+	<form method="post" action="admincp.php?ac=backup&op=export" enctype="multipart/form-data">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	
+		<div class="title">
+			<h3>{lang backup}</h3>
+		</div>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th colspan="2"><input type="radio" name="type" value="uchomes" checked onclick="$('showtables').style.display='none'">{lang uchome_all_data}</th>
+			</tr>
+			<tr>
+				<th><input type="radio" name="type" value="custom" onclick="$('showtables').style.display=''">{lang backup_custom}</th>
+				<td>{lang backup_custom_intro}</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right"><input type="checkbox"  onclick="$('advanceoption').style.display=$('advanceoption').style.display == 'none' ? '' : 'none'; this.value = this.value == 1 ? 0 : 1; this.checked = this.value == 1 ? false : true" value="1">{lang more_options}</td>
+			</tr>
+		</table>
+		
+		<div id="showtables" style="display:none">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><td><input type="checkbox" name="chkall" onclick="checkAll(this.form, 'customtables')" checked>{lang check_all} <strong>{lang uchome_tables}</strong></td>
+		</table>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		<!--{loop $uchome_tablelist $key $value}-->
+		<!--{if $key%4 == 0}--></tr><tr><!--{/if}-->
+		<td><input type="checkbox" name="customtables[]" value="$value[Name]" checked>$value[Name]</td>
+		<!--{/loop}-->
+		</tr>
+		</table>
+		</div>
+		
+		<div id="advanceoption" style="display:none">
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		<th>{lang backup_type}</th>
+		</tr>
+		<tr>
+		<td><input type="radio" name="method" value="shell" $shelldisabled onclick="if($dbversion < '4.1'){if(this.form.sqlcompat[2].checked==true) this.form.sqlcompat[0].checked=true; this.form.sqlcompat[2].disabled=true; this.form.sizelimit.disabled=true;} else {this.form.sqlcharset[0].checked=true; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=true;}}">{lang backup_system_dump}</td>
+		</tr>
+		<tr>
+		<td><input type="radio" name="method" value="multivol" checked onclick="this.form.sqlcompat[2].disabled=false; this.form.sizelimit.disabled=false; for(var i=1; i<=5; i++) {if(this.form.sqlcharset[i]) this.form.sqlcharset[i].disabled=false;}">{lang backup_sub_volume} <input type="text" size="5" value="2048" name="sizelimit"> kb</td>
+		</tr>
+		</table>
+	
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		<th colspan="2">{lang backup_options}</th>
+		</tr>
+			<tr>
+				<th>{lang use_extended_insert}</th>
+				<td><input type="radio" value="1" name="extendins" checked>{lang yes} <input type="radio" value="0" name="extendins" checked>{lang no}</td>
+			</tr>
+			<tr>
+				<th>{lang create_table_statement}</th>
+				<td><input type="radio" value="" name="sqlcompat" checked>{lang default} (MySQL $dbversion) <input type="radio" value="MYSQL40" name="sqlcompat">MySQL 3.23/4.0.x  <input type="radio" value="MYSQL41" name="sqlcompat">MySQL 4.1.x/5.x </td>
+			</tr>
+			<tr>
+				<th>{lang backup_charset}</th>
+				<td>
+				<input class="radio" type="radio" name="sqlcharset" value="" checked>{lang default} ($_SC['dbcharset'])&nbsp;
+				<!--{if $_SC['dbcharset']}-->
+				<input class="radio" type="radio" name="sqlcharset" value="$_SC[dbcharset]">$_SC['dbcharset']&nbsp;
+				<!--{/if}-->
+				<!--{if $dbversion > '4.1' && $_SC['dbcharset'] != 'utf8'}-->
+				<input class="radio" type="radio" name="sqlcharset" value="utf8">utf-8</option>
+				<!--{/if}-->
+				</td>
+			</tr>
+			<tr>
+				<th>{lang backup_hexadecimal}</th>
+				<td><input type="radio" value="1" name="usehex" checked>{lang yes} <input type="radio" value="0" name="usehex" checked>{lang no}</td>
+			</tr>
+			<tr $zipdisplay>
+				<th>{lang backup_compress}</th>
+				<td><input type="radio" value="1" name="usezip">{lang backup_multi_volume} <input type="radio" value="2" name="usezip">{lang backup_single_volume} <input type="radio" value="0" name="usezip" checked>{lang uncompressed}</td>
+			</tr>
+			<tr>
+				<th>{lang backup_file_name}</th>
+				<td><input type="text" size="40" value="$filename" name="filename">.sql</td>
+			</tr>
+		</table>
+		</div>
+	</div>
+
+	<div class="footactions">
+		<input type="hidden" name="setup" value="1">
+		<input type="submit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+	
+	<br />
+
+	<form method="post" action="admincp.php?ac=backup" name="thevalueform">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	
+		<div class="title">
+			<h3>{lang recover_data}</h3>
+		</div>
+			
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr><td>{lang server_backup_filename}: ./data/<input type="text" name="datafile" value="$backupdir/" size="50"></td></tr>
+		</table>
+	</div>
+	<div class="footactions">
+		<input type="submit" name="importsubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+		
+	<br />
+
+	<form method="post" action="admincp.php?ac=backup" name="thevalueform">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	
+		<div class="title">
+			<h3>{lang backup_data_records}</h3>
+		</div>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+		<th width="4%">&nbsp;</th>
+		<th>{lang file_name}</th>
+		<th width="15%">{lang version}</th>
+		<th width="15%">{lang type}</th>
+		<th width="10%">{lang operation}</th>
+		</tr>
+		<!--{loop $exportlog $key $value}-->
+		<tr>
+		<td>
+		<input type="checkbox" name="delexport[]" value="$value['filename']">
+		</td>
+		<td>
+		<a href="./data/$value['filename']"><!--{eval echo basename($value['filename'])}--></a> ($value[size])<br />$value[dateline] 
+		<!--{if $value['method'] == 'multivol' && $value['type'] != 'zip'}-->
+		{lang multi_volume}
+		<!--{elseif $value['method'] == 'multivol'}-->
+		SHELL
+		<!--{else}-->
+		{lang compression}
+		<!--{/if}-->
+		<!--{if !empty($value['volume'])}-->
+		($value['volume'])
+		<!--{/if}-->
+		</td>
+		<td>$value[version]</td>
+		<td><!--{if $value['type'] == 'custom'}-->{lang backup_custom}<!--{else}-->{lang backup_full}<!--{/if}--></td>
+		<td>
+		<!--{if $value['type'] == 'zip'}-->
+		<a href="admincp.php?ac=backup&op=import&do=zip&datafile=$value[filename]">[{lang extract}]
+		<!--{else}-->
+			<!--{if $value['version'] != $x_ver}-->
+			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]"  onclick="return confirm('{lang import_confirm}');">[{lang import}]</a>
+			<!--{else}-->
+			<a href="admincp.php?ac=backup&op=import&do=import&datafile=$value[filename]">[{lang import}]</a>
+			<!--{/if}-->
+		<!--{/if}-->
+		</td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="checkbox" name="chkall" onclick="checkAll(this.form, 'delexport')">{lang check_all}
+		<input type="submit" name="delexportsubmit" value="{lang delete_bulk}" class="submit">
+	</div>
+
+	</form>
+	
+<!--{elseif $showform == 1}-->
+
+	<form method="get" action="admincp.php" name="thevalueform">
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang import_confirmation}</h3>
+		</div>
+		
+		<p>
+		<!--{eval echo basename($datafile)}--><br />
+		{lang import_version}: $identify[1]<br />
+		{lang import_type}: <!--{if $identify[2] == 'custom'}-->{lang backup_custom}<!--{else}-->{lang backup_full}<!--{/if}--><br />
+		{lang method}: <!--{if $identify[3] == 'multivol'}-->{lang multi_volume}<!--{else}-->Shell<!--{/if}--><br />
+		<br />{lang import_sure}
+		</p>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac"  value="backup">
+		<input type="hidden" name="op" value="import">
+		<input type="hidden" name="do" value="zip">
+		<input type="hidden" name="datafile" value="$datafile">
+		<input type="hidden" name="confirm" value="yes">
+		<input type="submit" name="confirmed" value="{lang continue}" class="submit">
+		<input type="button" value="{lang back}" onClick="location.href='admincp.php?ac=backup'">
+	</div>
+	</form>
+
+<!--{elseif $showform == 2}-->
+
+	<form method="get" action="admincp.php" name="thevalueform">
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang import_auto_confirm}</h3>
+		</div>
+		
+		<p>{lang extract_sub_completed_continue}</p>
+
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac"  value="backup">
+		<input type="hidden" name="op" value="import">
+		<input type="hidden" name="do" value="import">
+		<input type="hidden" name="datafile" value="$datafile_vol1">
+		<input type="hidden" name="delunzip" value="yes">
+		<input type="submit" name="confirmed" value="{lang continue}" class="submit">
+		<input type="button" value="{lang back}" onClick="location.href='admincp.php?ac=backup'">
+	</div>
+	</form>
+
+<!--{elseif $showform == 3}-->
+
+	<form method="get" action="admincp.php" name="thevalueform">
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang extract_continue_confirm}</h3>
+		</div>
+		
+		<p>$info<br />{lang extract_file_completed_continue}</p>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac"  value="backup">
+		<input type="hidden" name="op" value="import">
+		<input type="hidden" name="do" value="zip">
+		<input type="hidden" name="multivol" value="1">
+		<input type="hidden" name="datafile_vol1" value="$datafile">
+		<input type="hidden" name="confirm" value="yes">
+		<input type="submit" name="confirmed" value="{lang continue}" class="submit">
+		<input type="button" value="{lang back}" onClick="location.href='admincp.php?ac=backup'" class="submit">
+	</div>
+	</form>
+
+<!--{elseif $showform == 4}-->
+
+	<form method="get" action="admincp.php" name="thevalueform">
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang import_auto_backup_confirm}</h3>
+		</div>
+		
+		<p>
+		<!--{eval echo basename($datafile)}--><br />
+		{lang import_version}: $identify[1]<br />
+		{lang import_type}: <!--{if $identify[2] == 'custom'}-->{lang backup_custom}<!--{else}-->{lang backup_full}<!--{/if}--><br />
+		{lang method}: <!--{if $identify[3] == 'multivol'}-->{lang multi_volume}<!--{else}-->Shell<!--{/if}--><br />
+		<br />{lang extract_file_backup_continue}
+		</p>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac"  value="backup">
+		<input type="hidden" name="op" value="import">
+		<input type="hidden" name="do" value="import">
+		<input type="hidden" name="datafile" value="$backupdir/$importfile">
+		<input type="hidden" name="delunzip" value="yes">
+		<input type="submit" name="confirmed" value="{lang continue}" class="submit">
+		<input type="button" value="{lang back}" onClick="location.href='admincp.php?ac=backup'" class="submit">
+	</div>
+	</form>
+<!--{elseif $showform == 5}-->
+
+	<form method="get" action="admincp.php" name="thevalueform">
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang import_auto_backup_confirm}</h3>
+		</div>
+		
+		<p>{lang import_sub_completed_continue}</p>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="ac"  value="backup">
+		<input type="hidden" name="op" value="import">
+		<input type="hidden" name="do" value="import">
+		<input type="hidden" name="datafile" value="$datafile_next">
+		<input type="hidden" name="autoimport" value="yes">
+		<!--{if isset($_GET['unzip'])}-->
+		<input type="hidden" name="delunzip" value="yes">
+		<!--{/if}-->
+		<input type="submit" name="confirmed" value="{lang continue}" class="submit">
+		<input type="button" value="{lang back}" onClick="location.href='admincp.php?ac=backup'" class="submit">
+	</div>
+	</form>
+
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

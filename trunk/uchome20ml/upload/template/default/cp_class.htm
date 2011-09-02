@@ -1,0 +1,48 @@
+<!--{template header}-->
+
+<!--{if $_GET['op'] == 'edit'}-->
+
+<h1>{lang category_edit}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="$classid">
+<form id="classform" name="classform" method="post" action="cp.php?ac=class&op=edit&classid=$classid">
+	<p>
+		<label for="classname">{lang category_name_new}: </label>
+		<input type="text" id="classname" name="classname" value="$class[classname]" size="10"></td>
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="editsubmit" value="true">
+		<input type="submit" name="editsubmit_btn" value="{lang submit_button}" class="submit" />
+		<!--{else}-->
+		<input type="submit" name="editsubmit" value="{lang submit_button}" class="submit" />
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET['op'] == 'delete'}-->
+
+<h1>{lang category_delete}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="$classid">
+	<form id="classform" name="classform" method="post" action="cp.php?ac=class&op=delete&classid=$classid">
+	<p>{lang category_delete_sure}</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="deletesubmit" value="true" />
+		<input type="submit" name="deletesubmit_btn" value="{lang form_sure_yes}" class="submit" />
+		<!--{else}-->
+		<input type="submit" name="deletesubmit" value="{lang form_sure_yes}" class="submit" />
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<!--{/if}-->
+
+<!--{template footer}-->

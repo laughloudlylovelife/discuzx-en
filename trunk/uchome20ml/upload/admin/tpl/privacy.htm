@@ -1,0 +1,232 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+	
+	<form method="post" action="admincp.php?ac=privacy">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+	
+	<div class="title">
+		<h3>{lang system_open_status}</h3>
+		<p>{lang system_open_status_intro}</p>
+	</div>
+	
+	<table class="formtable">
+		<tr>
+			<th style="width:12em;">{lang is_open_to_browse}</th>
+			<td>
+				<input type="radio" name="config[networkpublic]" value="1"<!--{if $configs[networkpublic] == 1}--> checked<!--{/if}-->>{lang yes}
+				<input type="radio" name="config[networkpublic]" value="0"<!--{if $configs[networkpublic] == 0}--> checked<!--{/if}-->>{lang no}
+				<br>{lang is_open_to_browse_intro}</td>
+		</tr>
+	</table>
+	<br>
+	
+	<div class="title">
+		<h3>{lang new_user_default_privacy}</h3>
+		<p>{lang new_user_default_privacy_intro}</p>
+	</div>
+
+	<table class="formtable">
+		<tr>
+			<th style="width:12em;">{lang space_home}</th>
+			<td><select name="privacy[view][index]">
+				<option value="0"$sels[view][index][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][index][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][index][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang friend_list}</th>
+			<td><select name="privacy[view][friend]">
+				<option value="0"$sels[view][friend][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][friend][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][friend][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang wall_board}</th>
+			<td><select name="privacy[view][wall]">
+				<option value="0"$sels[view][wall][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][wall][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][wall][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang personal_dynamic}</th>
+			<td><select name="privacy[view][feed]">
+				<option value="0"$sels[view][feed][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][feed][1]>{lang visible_to_friends_only}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang groups}</th>
+			<td><select name="privacy[view][mtag]">
+				<option value="0"$sels[view][mtag][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][mtag][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][mtag][2]>{lang visible_to_me}</option>
+				</select>
+				
+			</td>
+		</tr>
+		<tr>
+			<th>{lang events}</th>
+			<td><select name="privacy[view][event]">
+				<option value="0"$sels[view][event][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][event][1]>{lang visible_to_friends_only}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang doings}</th>
+			<td><select name="privacy[view][doing]">
+				<option value="0"$sels[view][doing][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][doing][1]>{lang visible_to_friends_only}</option>
+				</select><br/>
+				{lang doings_open_intro}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang blogs}</th>
+			<td><select name="privacy[view][blog]">
+				<option value="0"$sels[view][blog][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][blog][1]>{lang visible_to_friends_only}</option>
+				</select><br/>
+				{lang blog_rights_intro}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang albums}</th>
+			<td><select name="privacy[view][album]">
+				<option value="0"$sels[view][album][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][album][1]>{lang visible_to_friends_only}</option>
+				</select><br/>
+				{lang album_rights_intro}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang shares}</th>
+			<td><select name="privacy[view][share]">
+				<option value="0"$sels[view][share][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][share][1]>{lang visible_to_friends_only}</option>
+				</select><br/>
+				{lang shares_open_intro}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang polls}</th>
+			<td><select name="privacy[view][poll]">
+				<option value="0"$sels[view][poll][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][poll][1]>{lang visible_to_friends_only}</option>
+				</select><br/>
+				{lang poll_open_intro}
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+	<div class="title">
+		<h3>{lang default_dynamic_settings}</h3>
+		<p>{lang default_dynamic_settings_intro}</p>
+	</div>
+	<table class="formtable">
+		<tr>
+			<th style="width:12em;">&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][doing]" value="1"$sels[feed][doing]>{lang doings}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][blog]" value="1"$sels[feed][blog]>{lang blog_writing}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][upload]" value="1"$sels[feed][upload]>{lang upload_image}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][share]" value="1"$sels[feed][share]>{lang topic_share}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][poll]" value="1"$sels[feed][poll]>{lang topic_poll}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][joinpoll]" value="1"$sels[feed][joinpoll]>{lang voting}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][thread]" value="1"$sels[feed][thread]>{lang topic_init}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][post]" value="1"$sels[feed][post]>{lang topic_replying}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][mtag]" value="1"$sels[feed][mtag]>{lang group_join}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][event]" value="1"$sels[feed][event]>{lang event_organize}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][join]" value="1"$sels[feed][join]>{lang event_joining}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][friend]" value="1"$sels[feed][friend]>{lang friend_adding}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][comment]" value="1"$sels[feed][comment]>{lang commenting}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][show]" value="1"$sels[feed][show]>{lang top_members}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][credit]" value="1"$sels[feed][credit]>{lang points_consumption}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][spaceopen]" value="1"$sels[feed][spaceopen]>{lang create_new_space}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][invite]" value="1"$sels[feed][invite]>{lang event_invite_friends}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][task]" value="1"$sels[feed][task]>{lang task_completing}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][profile]" value="1"$sels[feed][profile]>{lang update_profile}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="checkbox" name="privacy[feed][click]" value="1"$sels[feed][click]>{lang visiting_blog_image_topic}</td>
+		</tr>
+	</table>
+	
+	</div>
+	
+	<div class="footactions">
+		<input type="submit" name="thevaluesubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

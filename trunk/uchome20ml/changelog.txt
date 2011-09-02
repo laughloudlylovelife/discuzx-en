@@ -1,0 +1,78 @@
+--------------------------------------------------------------------------
+
+	UCenter Home Multilanguage v.2.0.
+	Release 20100913.
+	by Valery Votintsev, aka vot from sources.ru
+
+	Based on:
+	UCenter Home v2.0 Release 20100416
+	(C) 2007-2009 Comsenz Inc.
+
+	International Support: http://msg2me.com
+        
+--------------------------------------------------------------------------
+
+UCenter Home Multilanguage is a modification of original UCenter Home v2.0
+Release 20100416 (C) 2007-2009 Comsenz Inc.
+http://u.discuz.net
+
+--------------------------------------------------------------------------
+
+------------------------------------------------
+UCenter Home Multilanguage 2.0 version Changelog
+------------------------------------------------
+
+1) Some of PHP comments translated to English
+
+2) Added subfolders for different languages.
+   Original CN language files translated to English and Russian.
+
+   For now 3 language subfolders exists:
+     /language/cn/ - for Chinese SC UTF-8
+     /language/en/ - for English UTF-8
+     /language/ru/ - for Russian UTF-8
+
+3) All the language-specific strings stripped from PHP code
+   and replaced with new language variables
+
+4) All the language-specific strings stripped from templates
+   and replaced with new language variables
+
+5) New language variables added to language files
+
+6) The same operation was made with the Javascript files.
+
+7) Javascript language files was created:
+   /language/cn/lang_js.js
+   /language/en/lang_js.js
+   /language/ru/lang_js.js
+
+8) Added a call of Javascript language file, depending of the current language.
+
+9) All the language file includes changed for load files, depending of the
+   current language.
+
+10) The template parser seriously modified.
+    Added a possibility to use language variables in template files.
+
+11) Added a default language setting in a config file.
+
+12) Added a visual (user selectable) language switcher.
+
+13) Selected by user language is stored in the Cookies.
+
+14) Changed the 'S_ROOT' definition for nomal work ubder the Windows.
+
+15) Modified some templates and styles for support european language
+    strings that is more wide than corresponding Chinese ones.
+
+16) Modified the install SQL statements for european languages.
+
+17) The database structure slightly modified for enable more wide
+    european strings.
+
+
+Enjoy!
+
+---
+Valery Votintsev, aka vot from sources.ru

@@ -1,0 +1,115 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+	<div class="maininner">
+<!--{if $menus[0][config]}-->
+		<div class="bdrcontent">
+			<div class="title"><h3>{lang admin_center_welcome}</h3></div>
+			<p>{lang admin_center_welcome_intro}</p>
+		</div>
+		<br />
+		
+		<div class="bdrcontent">
+			<div class="title">
+				<h3>{lang news_official}</h3>
+				<p>{lang news_official_intro}</p>
+			</div>
+			<div id="customerinfor" style="line-height:1.5em;"></div>
+			<br />
+			<div class="title">
+				<h3>{lang techical_support}</h3>
+				<p>{lang techical_support_links}</p>
+			</div>
+			<ul class="listcol list2col">
+				<li><a href=http://www.discuz.net/index.php?gid=141 target="_blank">{lang official_forum}</a></li>
+				<li><a href=http://www.comsenz.com/purchase/uchome target="_blank">{lang purchase_support}</a></li>
+			</ul>
+		</div>
+		<br />
+		
+		<div class="bdrcontent">
+			<div class="title">
+				<h3>{lang site_statistics}</h3>
+				<p>{lang site_statistics_intro}</p>
+				<p>{lang you_can_also_view}</p>
+			</div>
+			<ul class="listcol list2col">
+				<li>{lang spaces_total}: $statistics[spacenum] (<a href="do.php?ac=stat&type=login" target="_blank">{lang trend}</a>)</li>
+				<li>{lang feeds_total}: $statistics[feednum]</li>
+				<li>{lang blogs_total}: $statistics[blognum] (<a href="do.php?ac=stat&type=blog" target="_blank">{lang trend}</a>)</li>
+				<li>{lang albums_total}: $statistics[albumnum] (<a href="do.php?ac=stat&type=pic" target="_blank">{lang trend}</a>)</li>
+				<li>{lang shares_total}: $statistics[sharenum] (<a href="do.php?ac=stat&type=share" target="_blank">{lang trend}</a>)</li>
+				<li>{lang topics_total}: $statistics[threadnum] (<a href="do.php?ac=stat&type=thread" target="_blank">{lang trend}</a>)</li>
+				<li>{lang comments_total}: $statistics[commentnum]</li>
+				<li>{lang applications_total}: $statistics[myappnum]</li>
+			</ul>
+		</div>
+		<br />
+		
+		<div class="bdrcontent">
+			<div class="title"><h3>{lang system_database_info}</h3></div>
+			<ul>
+				<li>{lang operating_system}: $os</li>
+				<li>{lang database_version}: $statistics[mysql]</li>
+				<li>{lang upload_limit}: $fileupload</li>
+				<li>{lang database_size}: $dbsize</li>
+				<li>{lang attachment_size}: $attachsize</li>
+				<li>{lang program_current_version}: UCenter Home $statistics[version] ( $statistics[release] )</li>
+				<li>{lang uc_client_version}: {UC_CLIENT_VERSION} Release {UC_CLIENT_RELEASE}</li>
+			</ul>
+		</div>
+		<br />
+		
+		<div class="bdrcontent">
+
+			<div class="title">
+				<h3>{lang development_team}</h3>
+			</div>
+			<table>
+				<tr><td width="130">{lang all_rights_reserved}</td><td><a href="http://www.comsenz.com/" target="_blank">{lang develper_name}</a></td></tr>
+				<tr><td>{lang chief_architect}</td><td><a  href="http://www.discuz.net/space.php?uid=1" target="_blank">Kevin 'Crossday' Day</a>, <a  href="http://www.discuz.net/space.php?uid=174393" target="_blank">Guode 'Sup' Li</a></td></tr>
+				<tr><td>{lang development_team}</td><td><a href="http://www.discuz.net/space.php?uid=322293" target="_blank">Qingpeng 'Andy' Zheng</a>, <a  href="http://www.discuz.net/space.php?uid=248739" target="_blank">Jing 'Qiezi' Zou</a>, <a  href="http://www.discuz.net/space.php?uid=672953" target="_blank">Fei 'Fengshu' Zhao</a>, <a  href="http://www.discuz.net/space.php?uid=465273" target="_blank">Lijun 'Maple-x' Zhang</a>, <a  href="http://www.discuz.net/space.php?uid=679269" target="_blank">Lei 'Shitou' Zhao</a>, <a  href="http://www.discuz.net/space.php?uid=906359" target="_blank">Peng 'Dingusxp' Xu</a></td></tr>
+				<tr><td>{lang graphic_design}</td><td><a href="http://www.discuz.net/space.php?uid=294092" target="_blank">Fangming 'Lushnis' Li</a>, <a  href="http://www.discuz.net/space.php?uid=174393" target="_blank">Yulong 'Yulong' Li</a>, <a  href="http://www.discuz.net/space.php?uid=41050" target="_blank">Rujian '{lang little_old}' Mo</a></td></tr>
+				<tr><td>{lang company_website}</td><td><a href=http://www.comsenz.com target="_blank">http://www.comsenz.com</a></td></tr>
+				<tr><td>{lang product_site}</td><td><a href=http://u.discuz.net target="_blank">http://u.discuz.net</a></td></tr>
+				<tr><td>{lang localization}</td><td><a href=http://forum.sources.ru/index.php?showuser=2 target="_blank">Valery Votintsev</a></td></tr>
+			</table>
+		</div>
+<!--{else}-->
+		<div class="bdrcontent">
+			<div class="title"><h3>{lang admin_center_welcome}</h3></div>
+			<p>{lang admin_center_intro}</p>
+			
+			<br />
+			<div class="title"><h3>{lang menu_shortcut_manage}</h3></div>
+			<ul class="listcol list2col">
+				<!--{if $menus[1]['space']}--><li><a href="admincp.php?ac=space" style="font-weight:bold;">{lang members}</a><p>{lang manage_users_spaces_groups}</p></li><!--{/if}-->
+				<li><a href="admincp.php?ac=feed" style="font-weight:bold;">{lang feeds_happening}</a><p>{lang feeds_intro}</p></li>
+				<li><a href="admincp.php?ac=blog" style="font-weight:bold;">{lang blogs}</a><p>{lang blog_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=album" style="font-weight:bold;">{lang albums}</a><p>{lang album_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=pic" style="font-weight:bold;">{lang images}</a><p>{lang image_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=comment" style="font-weight:bold;">{lang comments}</a><p>{lang comment_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=thread" style="font-weight:bold;">{lang topics}</a><p>{lang topic_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=post" style="font-weight:bold;">{lang posts}</a><p>{lang posts_batch_manage}</p></li>
+				<li><a href="admincp.php?ac=poll" style="font-weight:bold;">{lang polls}</a><p>{lang polls_batch_manage}</p></li>
+				<!--{if $menus[1]['tag']}--><li><a href="admincp.php?ac=tag" style="font-weight:bold;">{lang tags}</a><p>{lang tag_batch_manage}</p></li><!--{/if}-->
+				<!--{if $menus[1]['mtag']}--><li><a href="admincp.php?ac=mtag" style="font-weight:bold;">{lang groups}</a><p>{lang groups_batch_manage}</p></li><!--{/if}-->
+				<!--{if $menus[1]['event']}--><li><a href="admincp.php?ac=event" style="font-weight:bold;">{lang events}</a><p>{lang events_batch_manage}</p></li><!--{/if}-->
+				<!--{if $menus[1]['css']}--><li><a href="admincp.php?ac=css" style="font-weight:bold;">{lang style_templates}</a><p>{lang template_batch_manage}</p></li><!--{/if}-->
+			</ul>
+		</div><br />
+<!--{/if}-->
+	</div>
+	<br>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{if $statistics['update']}-->
+<script language="javascript" src="http://u.discuz.net/customer/update.php?get=$statistics[update]"></script>
+<!--{/if}-->
+<!--{eval my_checkupdate();}-->
+
+<!--{template admin/tpl/footer}-->

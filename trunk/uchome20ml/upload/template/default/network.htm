@@ -1,0 +1,428 @@
+<!--{eval $_TPL['nosidebar']=1;}-->
+<!--{template header}-->
+<div id="network">
+
+<script>
+function setintro(type) {
+	var intro = '';
+	var bPosition = '';
+	if(type == 'doing') {
+		intro = '{lang intro1}';
+		bPosition = '0';
+	} else if(type == 'mtag') {
+		intro = '{lang intro2}';
+		bPosition = '175px';
+	} else if(type == 'pic') {
+		intro = '{lang intro3}';
+		bPosition = '55px';
+	} else if(type == 'app') {
+		intro = '{lang intro4}';
+		bPosition = '118px';
+	} else {
+		intro = '{lang intro5}';
+		bPosition = '0';
+	}
+	$('guest_intro').innerHTML = intro + '......';
+	$('guest_intro').style.backgroundPosition = bPosition + ' 100%'
+}
+function scrollPic(e, LN, Width, Price, Speed) {
+	id = e.id;
+	if(LN == 'Last'){ scrollNum = Width; } else if(LN == 'Next'){ scrollNum = 0 - Width; }
+	scrollStart = parseInt(e.style.marginLeft, 10);
+	scrollEnd = parseInt(e.style.marginLeft, 10) + scrollNum;
+	
+	MaxIndex = (e.getElementsByTagName('li').length / Price).toFixed(0);
+	sPicMaxScroll = 0 - Width * MaxIndex;
+
+	if(scrollStart == 0 && scrollEnd == Width){
+		scrollEnd = -1806;
+		e.style.marginLeft = parseInt(e.style.marginLeft, 10) - Speed + 'px';
+	} else if(scrollStart == sPicMaxScroll + Width && scrollEnd == sPicMaxScroll){
+		scrollEnd = 0;
+		e.style.marginLeft = parseInt(e.style.marginLeft, 10) + Speed + 'px';
+	}
+	scrollShowPic = setInterval(scrollShow, 1);
+	
+	function scrollShow() {
+		if(scrollStart > scrollEnd) {
+			if(parseInt(e.style.marginLeft, 10) > scrollEnd) {
+				$(id + '_last').onclick = function(){ return false; };
+				$(id + '_next').onclick = function(){ return false; };
+				e.style.marginLeft = parseInt(e.style.marginLeft, 10) - Speed + 'px';
+			} else {
+				clearInterval(scrollShowPic);
+				$(id + '_last').onclick = function(){ scrollPic(e, 'Last', Width, Price, Speed);return false; };
+				$(id + '_next').onclick = function(){ scrollPic(e, 'Next', Width, Price, Speed);return false; };
+			}
+		} else {
+			if(parseInt(e.style.marginLeft, 10) < scrollEnd) {
+				$(id + '_last').onclick = function(){ return false; };
+				$(id + '_next').onclick = function(){ return false; };
+				e.style.marginLeft = parseInt(e.style.marginLeft, 10) + Speed + 'px';
+			} else {
+				clearInterval(scrollShowPic);
+				$(id + '_last').onclick = function(){ scrollPic(e, 'Last', Width, Price, Speed);return false; };
+				$(id + '_next').onclick = function(){ scrollPic(e, 'Next', Width, Price, Speed);return false; };
+			}					
+		}
+	}
+}
+function scrollShowNav(e, Width, Price, Speed) {
+	id = e.id;
+	$(id + '_last').onclick = function(){ scrollPic(e, 'Last', Width, Price, Speed);return false; };
+	$(id + '_next').onclick = function(){ scrollPic(e, 'Next', Width, Price, Speed);return false; };
+	
+}
+function getUserTip(obj) {
+	var tipBox = $('usertip_box');
+	tipBox.childNodes[0].innerHTML = '<strong>' + obj.rel + ':<\/strong> ' + obj.rev + '...';
+	
+	var showLeft;
+	if(obj.parentNode.offsetLeft > 730) {
+		showLeft = $('showuser').offsetLeft + obj.parentNode.offsetLeft - 148;
+		tipBox.childNodes[0].style.right = 0;
+	} else {
+		tipBox.childNodes[0].style.right = 'auto';
+		showLeft = $('showuser').offsetLeft + obj.parentNode.offsetLeft;
+	}
+	tipBox.style.left = showLeft + 'px';
+	
+	var showTop; 
+	if(obj.className == 'uonline') {
+		showTop = $('showuser').offsetTop + obj.parentNode.offsetTop - tipBox.childNodes[0].clientHeight;
+	} else {
+		showTop = $('showuser').offsetTop + obj.parentNode.offsetTop + 48;
+	}
+	tipBox.style.top = showTop + 'px';
+	
+	tipBox.style.visibility = 'visible';
+}
+</script>
+
+<!--{if empty($_SGLOBAL[supe_uid])}-->
+<div id="guestbar" class="nbox">
+	<div class="nbox_c">
+		<p id="guest_intro">{lang intro5}......</p>
+		<a href="do.php?ac=$_SCONFIG[register_action]" id="regbutton" onmouseover="setintro('register');">{lang signup}</a>
+		<p id="guest_app">
+			<a href="javascript:;" class="appdoing" onmouseover="setintro('doing');">{lang doing}</a>
+			<a href="javascript:;" class="appphotos" onmouseover="setintro('pic');">{lang photos}</a>
+			<a href="javascript:;" class="appgames" onmouseover="setintro('app');">{lang games}</a>
+			<a href="javascript:;" class="appgroups" onmouseover="setintro('mtag');">{lang mtag}</a> 
+		</p>
+	</div>	
+	<div class="nbox_s side_rbox" id="nlogin_box">
+		<h3 class="ntitle">{lang login_please}</h3>
+		<div class="side_rbox_c">
+			<form name="loginform" action="do.php?ac=$_SCONFIG[login_action]&$url_plus&ref" method="post">
+				<div><label for="username">{lang user_name}</label> <input type="text" name="username" id="username" class="t_input" value="$membername" /></div>
+				<p><label for="password">{lang password}</label> <input type="password" name="password" id="password" class="t_input" value="$password" /></p>
+				<div class="submitrow">
+				<!--p class="checkrow"--><input type="checkbox" id="cookietime" name="cookietime" value="315360000" $cookiecheck style="margin-bottom: -2px;" /><label for="cookietime">{lang remember}</label><!--/p-->
+					<input type="hidden" name="refer" value="space.php?do=home" />
+					<input type="submit" id="loginsubmit" name="loginsubmit" value="{lang log_in}" class="submit" />
+					<div style='clear:both;'>
+					<a href="do.php?ac=lostpasswd">{lang forgot}</a>
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+
+<div class="nbox">
+	<div class="nbox_c">
+			<h2 class="ntitle"><span class="r_option"><a href="space.php?do=blog&view=all">{lang blogs_more}</a></span> {lang blogs} &raquo;</h2>
+			<ul class="bloglist">
+			<!--{loop $bloglist $key $value}-->
+				<li <!--{if $key%2==1}-->class="list_r"<!--{/if}-->>
+					<h3><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]">$value[subject]</a></h3>
+					<div class="d_avatar avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+					<p class="message">$value[message] ...</p>
+					<p class="nhot"><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]">$value[hot] {lang hot_value}</a></p>
+					<p class="gray"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> {lang at} <!--{date('m-d H:i',$value[dateline],1)}--></p>
+				</li>
+			<!--{/loop}-->
+			</ul>
+	</div>
+	<div class="nbox_s side_rbox side_rbox_w">
+		<h2 class="ntitle"><span class="r_option"><a href="space.php?do=doing&view=all">{lang records_more}</a></span> {lang records} &raquo;</h2>
+		<div class="side_rbox_c">
+			<ul class="side_rbox_c doinglist">
+				<!--{loop $dolist $value}-->
+				<li>
+					<p>
+						<a href="space.php?uid=$value[uid]&do=doing&doid=$value[doid]" class="gray r_option dot" style="margin:0;background-position-y: 0;"><!--{date('H:i',$value[dateline],1)}--></a>
+						<a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}" class="s_avatar"><!--{avatar($value[uid],small)}--></a>
+						<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+					</p>
+					<p class="message" title="$value[title]">$value[message]</p>
+				</li>
+			<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="nbox" id="photolist">
+	<h2 class="ntitle">
+		<a href="space.php?do=album&view=all" class="r_option">{lang photos_more}</a>
+		{lang photos} &raquo;
+		</h2>
+	<div id="p_control">
+		<a href="javascript:;" id="spics_last">{lang prev_page}</a>
+		<a href="javascript:;" id="spics_next">{lang next_page}</a>
+		<ul id="p_control_pages">
+			<li>{lang page1}</li>
+			<li>{lang page2}</li>
+			<li>{lang page3}</li>
+			<li>{lang page4}</li>
+		</li>
+	</div>
+	<div id="spics_wrap">
+	<ul id="spics" style="margin-left: 0;">
+	<!--{loop $piclist $key $value}-->
+		<li class="spic_$key">
+			<div class="spic_img"><a href="space.php?uid={$value[uid]}&do=album&picid={$value[picid]}"><strong>$value[hot]</strong><img src="$value[pic]" alt="$value[albumname]" /></a></div>
+			<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+			<p><!--{date('m-d H:i',$value[dateline],1)}--></p>
+		</li>
+	<!--{/loop}-->
+	</ul>
+	</div>
+</div>
+<script type="text/javascript">
+scrollShowNav($('spics'), 903, 7, 43);
+
+marqueeInit({
+        uniqueid: 'mycrawler2',
+style: {
+                'height': '130px'
+        },
+        
+        inc: 1, //speed - pixel increment for each iteration of this marquee's movement
+        mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+        moveatleast: 1,
+        neutral: 150,
+        savedirection: true
+});
+</script>
+
+<div id="searchbar" class="nbox s_clear">
+	<div class="floatleft">
+		<form method="get" action="cp.php">
+			<input name="searchkey" value="" size="15" class="t_input" type="text" style="padding:5px;">
+			<input name="searchsubmit" value="{lang find_people}" class="submit" type="submit"> &nbsp;
+				{lang search_friends}: <a href="cp.php?ac=friend&op=search&view=sex">{lang find_by_sex}</a><span class="pipe">|</span>
+				<a href="cp.php?ac=friend&op=search&view=reside">{lang find_by_location}</a><span class="pipe">|</span>
+				<a href="cp.php?ac=friend&op=search&view=birth">{lang find_by_birthplace}</a><span class="pipe">|</span>
+				<a href="cp.php?ac=friend&op=search&view=birthyear">{lang find_by_birthday}</a><span class="pipe">|</span>
+				<a href="cp.php?ac=friend&op=search&view=edu">{lang find_by_edu}</a><span class="pipe">|</span>
+				<a href="cp.php?ac=friend&op=search&view=work">{lang find_by_work}</a><span class="pipe">|</span>
+				<a href="space.php?do=top&view=online">{lang online_members} ($olcount)</a>
+			<input type="hidden" name="searchmode" value="1" />
+			<input type="hidden" name="ac" value="friend" />
+			<input type="hidden" name="op" value="search" />
+		</form>
+	</div>
+	<div class="floatright">
+		<form method="get" action="space.php">
+			<input name="searchkey" value="" size="15" class="t_input" type="text" style="padding:5px;">
+			<select name="do">
+			<option value="blog">{lang blogs}</option>
+			<option value="album">{lang albums}</option>
+			<option value="thread">{lang topics}</option>
+			<option value="poll">{lang polls}</option>
+			<option value="event">{lang events}</option>
+			</select>
+			<input name="searchsubmit" value="{lang search_submit}" class="submit" type="submit">
+			<input type="hidden" name="view" value="all" />
+			<input type="hidden" name="orderby" value="dateline" />
+		</form>
+	</div>
+</div>
+
+<div id="showuser" class="nbox">
+	<div id="user_recomm">
+		<h2>{lang stats}</h2>
+		<!--{loop $star $value}-->
+		<div class="s_avatar"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],middle)}--></a></div>
+		<div class="s_cnts">
+			<h3><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></h3>
+			<p>{lang visits}: $value[viewnum]</p>
+			<p>{lang credit}: $value[credit]</p>
+			<hr />
+			<p>{lang friends}: $value[friendnum]</p>
+			<p>{lang updated}: <!--{date('H:i',$value[updatetime],1)}--></p>
+		</div>
+		<!--{/loop}-->
+	</div>
+	<div id="user_wall" onmouseout="javascript:$('usertip_box').style.visibility = 'hidden';">
+		<div id="user_pay" class="s_clear">
+			<h2><a href="space.php?do=top">{lang top_members}</a></h2>
+			<ul>
+			<!--{loop $showlist $value}-->
+				<li><a href="space.php?uid=$value[uid]" rel="{$_SN[$value[uid]]}" rev="$value[note]" onmouseover="getUserTip(this)"><!--{avatar($value[uid],small)}--></a></li>
+			<!--{/loop}-->
+			</ul>
+			<p><a href="space.php?do=top">{lang top_all}</a></p>
+		</div>
+		<div id="user_online" class="s_clear">
+			<h2><a href="space.php?do=top&view=online">{lang online_members}</a></h2>
+			<ul>
+			<!--{loop $onlinelist $value}-->
+				<li><a href="space.php?uid=$value[uid]" rel="{$_SN[$value[uid]]}" rev="$value[note]" class="uonline" onmouseover="getUserTip(this)"><!--{avatar($value[uid],small)}--></a></li>
+			<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="usertip_box"><div></div></div>
+
+<div class="nbox">
+	<div class="nbox_c">
+		<h2 class="ntitle"><span class="r_option"><a href="space.php?do=thread&view=all">{lang topics_more}</a></span> {lang topics} &raquo;</h2>
+		<div class="tlist">
+			<table cellpadding="0" cellspacing="1">
+				<tbody>
+				<!--{loop $threadlist $key $value}-->
+					<tr <!--{if $key%2==1}-->class="color_row"<!--{/if}-->>
+						<td class="ttopic"><div class="ttop"><div><span>$value[hot]</span></div></div><a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]">$value[subject]</a></td>
+						<td class="tuser"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a> <a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></td>
+						<td class="tgp"><a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a></td>
+					</tr>
+				<!--{/loop}-->
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="npoll" class="nbox_s side_rbox side_rbox_w">
+		<div class="side_rbox_c">
+			<h2 class="ntitle"><span class="r_option"><a href="space.php?do=poll">{lang polls_more}</a></span> {lang polls} &raquo;</h2>
+			<ul>
+			<!--{loop $polllist $key $value}-->
+				<li class="poll_$key"><a href="space.php?uid=$value[uid]&do=poll&pid=$value[pid]">$value[subject]</a><!--{if $key == 0}--><p><a href="">{lang voted1} $value[voternum] {lang voted2}</a></p><!--{/if}--></li>
+			<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--{if $myappcount}-->
+<div class="nbox">
+	<div class="nbox_c" style="border: none;">
+		<ul class="applist">
+		<!--{loop $myapplist $value}-->
+			<li>
+				<p class="aimg"><a href="userapp.php?id=$value[appid]" target="_blank"><img src="http://appicon.manyou.com/logos/$value[appid]" alt="$value[appname]" /></a></p>
+				<p><a href="userapp.php?id=$value[appid]" target="_blank">$value[appname]</a></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="susb">
+		<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+			<div class="appmo">
+				<p>{lang total_of} <span>$myappcount</span> {lang gamesnum2}</p>
+				<p class="appmobutton"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">{lang apps_more}</a></p>
+			</div>
+		</div></div></div></div>	
+	</div>
+</div>
+<!--{/if}-->
+
+<div class="nbox">
+	<div class="nbox_c">
+	<h2 class="ntitle"><span class="r_option"><a href="space.php?do=event&view=recommend">{lang events_more}</a></span> {lang events} &raquo; 
+	<!--{loop $_SGLOBAL[eventclass] $value}-->
+		&nbsp; <a href="space.php?do=event&view=all&type=going&classid=$value[classid]">$value[classname]</a></li>
+	<!--{/loop}-->
+	</h2>
+		<ul class="elist">
+		<!--{loop $eventlist $value}-->
+			<li>
+				<h3><a href="space.php?do=event&id=$value[eventid]">$value[title]</a></h3>
+				<p class="eimage"><a href="space.php?do=event&id=$value[eventid]"><img src="$value[pic]" alt=""/></a></p>
+				<p><span class="gray">{lang time}:</span> <!--{date('n-j H:i',$value[starttime])}--> - <!--{date('n-j H:i',$value[endtime])}--></p>
+				<p><span class="gray">{lang location}:</span> $value[province] $value[city] $value[location]</p>
+				<p><span class="gray">{lang launcher}:</span> <a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+				<p class="egz">$value[membernum] {lang members_attending} <span class="pipe">|</span> $value[follownum] {lang members_concerned}</p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div id="nshare" class="nbox_s side_rbox side_rbox_w">
+		<h2 class="ntitle"><span class="r_option"><a href="space.php?do=share&view=all">{lang shares_more}</a></span> {lang shares} &raquo;</h2>
+		<div class="side_rbox_c">
+			<ul>
+			<!--{loop $sharelist $value}-->
+				<li><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> <em><a href="space.php?uid=$value[uid]&do=share&view=me">$value[title_template]</a></em></li>
+			<!--{/loop}-->
+			</ul>
+		</div>
+		</div>
+	</div>
+
+	<div class="footerbar">
+		<div class="fbtop"></div>
+		<div class="nbox_c">
+			<div class="foobox">
+				<div class="fbox">
+					<h2 class="ntitle">{lang exists}</h2>
+					<ul>
+						<li><a href="space.php?do=doing">{lang doings}</a></li>
+						<li><a href="space.php?do=blog">{lang blogs}</a></li>
+						<li><a href="space.php?do=album">{lang albums}</a></li>
+						<li><a href="space.php?do=mtag">{lang groups}</a></li>
+						<li><a href="space.php?do=poll">{lang polls}</a></li>
+						<li><a href="space.php?do=event">{lang events}</a></li>
+						<li><a href="space.php?do=share">{lang shares}</a></li>
+					</ul>
+				</div>
+				<div class="fbox">
+					<h2 class="ntitle">{lang apps}</h2>
+					<ul>
+					<!--{if $myappcount}-->
+					<!--{loop $myapplist $value}-->
+						<li><a href="userapp.php?id=$value[appid]">$value[appname]</a></li>
+					<!--{/loop}-->
+						<li><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist" class="alink">{lang see_all} $myappcount {lang appsnum}</a></li>
+					<!--{else}-->
+						<li><a href="#">{lang apps_no}</a></li>
+					<!--{/if}-->
+					</ul>
+				</div>
+				<div class="fbox">
+					<h2 class="ntitle">{lang found}</h2>
+					<ul>
+						<li><a href="space.php?do=blog&view=all">{lang blogs_published}</a></li>
+						<li><a href="space.php?do=album&view=all">{lang photos_uploaded}</a></li>
+						<li><a href="space.php?do=thread&view=all">{lang topics_posted}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="nbox_s">
+			<h2 class="ntitle">{lang invites}</h2>
+			<ul>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite0}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite1}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite2}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite3}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite4}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite5}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite6}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite">{lang invite7}</a></li>
+				<li>&middot; <a href="cp.php?ac=invite" class="alink">{lang invite8}</a></li>
+			</ul>
+		</div>
+		<div class="fbbottom"></div>
+	</div>
+
+</div>
+
+<!--{template footer}-->

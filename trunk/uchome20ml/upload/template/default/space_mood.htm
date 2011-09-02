@@ -1,0 +1,23 @@
+<!--{eval $_TPL['titles'] = array(lang('with_the_mood'));}-->
+<!--{template header}-->
+
+
+<h2 class="title"><img src="image/app/doing.gif"> {lang doings}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<!--{if $space[self]}-->
+		<!--{if $space[friendnum]}--><li><a href="space.php?uid=$space[uid]&do=doing&view=we"><span>{lang new_friends_records}</span></a></li><!--{/if}-->
+		<li><a href="space.php?uid=$space[uid]&do=doing&view=all"><span>{lang all_records}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=doing&view=me"><span>{lang my_records}</span></a></li>
+		<!--{/if}-->
+		<li class="active"><a href="space.php?uid=$space[uid]&do=mood&view=all"><span>{lang friend_moods}</span></a></li>
+	</ul>
+</div>
+
+<div class="h_status">
+	{lang this_mood_list}
+</div>
+
+<!--{template space_list}-->
+
+<!--{template footer}-->

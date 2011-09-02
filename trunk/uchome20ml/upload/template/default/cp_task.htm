@@ -1,0 +1,230 @@
+<!--{template header}-->
+
+<h2 class="title"><img src="image/icon/task.gif">{lang task_types}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[task]><a href="cp.php?ac=task"><span>{lang task_performing}</span></a></li>
+		<li$actives[done]><a href="cp.php?ac=task&view=done"><span>{lang tasks_performed}</span></a></li>
+		<!--{if $task}-->
+		<li$actives[do]><a href="cp.php?ac=task&taskid=$task[taskid]"><span>{lang view_tasks}</span></a></li>
+		<!--{/if}-->
+	</ul>
+</div>
+
+<!--{if $task}-->
+
+<!--{if $_GET['view']=='member'}-->
+
+	<div class="h_status">
+		{lang task_completed_members}
+	</div>
+	<!--{template space_list}-->
+
+<!--{else}-->
+
+<div id="content">
+	<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+		<table cellspacing="0" cellpadding="0" width="100%" class="task_notice">
+			<tr>
+				<td width="70"><img src="$task[image]" width="64" height="64" alt="Icon" /></td>
+				<td>
+					<h3>{lang task_types}: $task[name]</h3>
+					<!--{if $task[starttime]}--><p>{lang start_time}: <!--{date('Y-m-d H:i',$task[starttime])}--></p><!--{/if}-->
+					<!--{if $task[endtime]}--><p>{lang end_time}: <!--{date('Y-m-d H:i',$task[endtime])}--></p><!--{/if}-->
+					<p>$task[note]</p>
+					<!--{if $task[credit]}--><p>{lang points_reward}: <strong class="num">$task[credit]</strong></p><!--{/if}-->
+				</td>
+			</tr>
+		</table>
+	</div></div></div></div>
+				
+	<div style="padding-top:20px;">
+	<!--{if $task['done']}-->
+		
+		
+
+		<!--{if $task['ignore']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_ignore}</h2>
+					<p>{lang task_is_ignored}</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task&taskid=$task[taskid]&op=redo" class="submit">{lang task_restart}</a></td>
+				</tr>
+			</table>
+		<!--{elseif $_SGLOBAL['task_maxnum']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_quota_full}</h2>
+					<p>{lang task_members_limit_reached}</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task" class="submit">{lang look_other_tasks}</a></td>
+				</tr>
+			</table>
+		<!--{elseif $_SGLOBAL['task_available']}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_finished}</h2>
+					<p>{lang task_finished_intro}</p>
+				</caption>
+				<tr>
+					<td><a href="cp.php?ac=task" class="submit">{lang look_other_tasks}</a></td>
+				</tr>
+			</table>
+		<!--{else}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_completed_ok}</h2>
+					<p>{lang task_reward_received}</p>
+				</caption>
+				<tr>
+					<td>
+					<!--{if $task[credit]}--><p style="color:red;font-size:14px;padding:0 0 5px 0;font-weight:bold;">{lang points_reward} $task[credit] {lang points_num}, {lang you_now_have} $space[credit] {lang points_at_all}</p><!--{/if}-->
+					<p>{lang task_complete_time}: <!--{date('d.m.Y H:i',$task[dateline],1)}--></p>
+					<p>{lang topic_members}: <a href="cp.php?ac=task&taskid=$task[taskid]&view=member">$task[num] {lang people}</a></p>
+					</td>
+				</tr>
+			</table>
+			<!--{if $task[result]}-->
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_result}</h2>
+				</caption>
+				<tr>
+					<td>$task[result]</td>
+				</tr>
+			</table>
+			<!--{/if}-->
+		<!--{/if}-->
+	<!--{else}-->
+			
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<caption>
+					<h2>{lang task_steps}</h2>
+					<p>{lang task_steps_intro}</p>
+				</caption>
+				<tr>
+					<td class="article l_status">$task[guide]</td>
+				</tr>
+			</table><br>
+			
+			<!--{if $_GET['view']=='result'}-->
+			<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+				<div class="task_notice">{lang task_start_intro}</div>
+			</div></div></div></div>
+			<!--{/if}-->
+				
+			<div style="text-align:center;padding:10px;">
+				<a href="cp.php?ac=task&taskid=$task[taskid]&view=result" class="submit">{lang receive_award}</a>
+				<a href="cp.php?ac=task&taskid=$task[taskid]&op=ignore" class="button">{lang task_do_ignore}</a>
+			</div>
+			
+	<!--{/if}-->
+	</div>
+	
+</div>
+
+<div id="sidebar">
+	<div class="sidebox">
+		<h2 class="title">
+			<a href="cp.php?ac=task&taskid=$taskid&view=member" class="r_option">{lang see_all}</a>
+			{lang friends_completed_this_task}
+		</h2>
+		<ul class="avatar_list">
+			<!--{loop $taskspacelist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+				<p class="gray"><!--{date('d.m.Y',$value[dateline],1)}--></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+
+<!--{/if}-->
+
+<!--{else}-->
+
+<div id="content">
+
+	<div class="h_status">
+		{lang sorted_by_task_priority}
+	</div>
+
+
+	<!--{if $_GET['view'] != 'done'}-->
+	<div class="task_percent">
+		<div class="percent" style="width: {$done_per}%;">&nbsp;</div>
+		<div class="label">{lang my_tasks_completeness} {$done_per}%</div>
+	</div>
+	<!--{/if}-->
+		
+	<!--{if empty($tasklist)}-->
+		<div class="c_form">{lang no_new_tasks}</div>
+	<!--{else}-->
+		<!--{loop $tasklist $value}-->
+		<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+			<table cellspacing="0" cellpadding="0" width="100%" class="task_notice">
+				<tr>
+					<td width="70"><img src="$value[image]" width="64" height="64" alt="Icon" class="icon" /></td>
+					<td>
+						<h3><a href="cp.php?ac=task&taskid=$value[taskid]">$value[name]</a></h3>
+						<!--{if $value[num]}-->
+							<p>
+								<a href="cp.php?ac=task&taskid=$value[taskid]&view=member">{lang allready_members}:  $value[num]</a>
+								<!--{if $value[maxnum]}-->
+								/ {lang task_quota} <!--{eval echo $value[maxnum]-$value[num];}--> {lang people_num}
+								<!--{/if}-->
+							</p>
+						<!--{/if}-->
+						<!--{if $value[starttime]}--><p>{lang start_time}: <!--{date('Y-m-d H:i',$value[starttime])}--></p><!--{/if}-->
+						<!--{if $value[endtime]}--><p>{lang end_time}: <!--{date('Y-m-d H:i',$value[endtime])}--></p><!--{/if}-->
+						$value[note]
+					</td>
+					<td width="150" style="text-align:right;">
+						<!--{if $value['done']}-->
+							<!--{if $value['ignore']}-->
+								{lang task_was_ignored}<br>
+								{lang you_can_choose} <a href="cp.php?ac=task&taskid=$value[taskid]&op=redo">{lang task_recomplete}</a>
+							<!--{else}-->
+								<!--{if $value[credit]}--><p>{lang points_increase}: <strong class="num">$value[credit]</strong></p><!--{/if}-->
+								<a href="cp.php?ac=task&taskid=$value[taskid]">{lang view_tasks}</a>
+							<!--{/if}-->
+						<!--{else}-->
+							<!--{if $value[credit]}--><p>{lang task_can_award}: <strong class="num">$value[credit]</strong></p><!--{/if}-->
+							<a href="cp.php?ac=task&op=do&taskid=$value[taskid]"><img src="image/start_task.gif" alt="{lang start_task_now}" /></a>
+						<!--{/if}-->
+					</td>
+				</tr>
+			</table>
+		</div></div></div></div><br>
+		<!--{/loop}-->
+	<!--{/if}-->
+
+</div>
+
+<div id="sidebar">
+
+	<div class="sidebox">
+		<h2 class="title">
+			{lang task_completed_friends}
+		</h2>
+		<ul class="avatar_list">
+			<!--{loop $taskspacelist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+				<p class="gray"><!--{date('d.m.Y',$value[dateline],1)}--></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	
+</div>
+
+<!--{/if}-->
+
+<!--{template footer}-->

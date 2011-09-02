@@ -1,0 +1,149 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=task"><span>{lang all_tasks}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=task&op=add">{lang add_new_task}</a></li>
+	</ul>
+</div>
+
+	<form method="post" action="admincp.php?ac=task&taskid=$taskid">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		{lang award_tasks_intro}
+	</div>
+	<br>
+
+	<div class="bdrcontent">
+		
+<!--{if $_GET['op']=='edit' || $_GET['op']=='add'}-->
+	
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th style="width:12em;">{lang award_task_name}</th>
+		<td><input size="25" name="name" value="$thevalue[name]" type="text">
+		</td>
+	</tr>
+	<tr>
+		<th>{lang award_task_image}</th>
+		<td><input size="100" name="image" value="$thevalue[image]" type="text">
+			<br>{lang award_task_image_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang award_task_note}</th>
+		<td><textarea name="note" rows="8" style="width:90%;">$thevalue[note]</textarea>
+		<br>{lang award_task_note_intro}
+		</td></tr>
+	<tr>
+		<th>{lang award_task_bonus}</th>
+		<td><input type="text" name="credit" value="$thevalue[credit]" size="10">
+		<br>{lang award_task_bonus_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang award_task_members_limit}</th>
+		<td><input type="text" name="maxnum" value="$thevalue[maxnum]" size="10">
+		<br>{lang award_task_members_limit_intro}
+		<!--{if $thevalue[num]}--><br><b>{lang award_task_members_number} $thevalue[num] {lang people_num}</b>.<!--{/if}-->
+		</td>
+	</tr>
+	<tr>
+		<th>{lang task_php_handler}</th>
+		<td>./source/task/<input size="25" name="filename" value="$thevalue[filename]" type="text">
+			<br>{lang task_php_handler_intro1}
+			<br>{lang task_php_handler_intro2}
+			<br>{lang task_php_handler_intro3}
+		</td></tr>
+	<tr>
+		<th>{lang state}</th>
+		<td><input type="radio" name="available" value="1"$availables[1]>{lang is_on} <input type="radio" name="available" value="0"$availables[0]>{lang is_off}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang start_date}</th>
+		<td><input type="text" name="starttime" value="$thevalue[starttime]" size="25"> ({lang format}: 2008-08-08 00:00:00)
+		<br>{lang task_start_date_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang end_date}</th>
+		<td><input type="text" name="endtime" value="$thevalue[endtime]" size="25"> ({lang format}: 2008-08-08 23:59:59)
+		<br>{lang task_end_date_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang task_execution_period}</th>
+		<td>
+		<select name="nexttype" onchange="show_nexttime(this.value);">
+		<option value="">{lang not_repeat}</option>
+		<option value="day"$nexttypearr[day]>{lang cycle_day}</option>
+		<option value="hour"$nexttypearr[hour]>{lang cycle_hour}</option>
+		<option value="time"$nexttypearr[time]>{lang custom_time_interval}</option>
+		</select>
+		<span id="nexttime" style="display:{$nextimestyle};">
+			{lang interval} <input type="text" name="nexttime" value="$thevalue[nexttime]" size="10"> {lang seconds_to_repeat}
+		</span>
+		
+		<script>
+		function show_nexttime(type) {
+			if(type == 'time') {
+				$('nexttime').style.display ='';
+			} else {
+				$('nexttime').style.display ='none';
+			}
+		}
+		</script>
+		</td>
+	</tr>
+	<tr>
+		<th>{lang priority_order}</th>
+		<td><input type="text" name="displayorder" value="$thevalue[displayorder]" size="10">
+			<br>{lang priority_order_intro}
+		</td>
+	</tr>
+	</table>
+	
+	</div>
+	<div class="footactions">
+	<input type="submit" name="tasksubmit" value="{lang submit_button}" class="submit">
+	
+	
+<!--{else}-->
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th width="80">{lang images}</th>
+		<th>{lang award_task_name}/<br>{lang award_task_script}</th>
+		<th>{lang award_points_number}</th>
+		<th>{lang period}</th>
+		<th>{lang operation}</th>
+	</tr>
+	<!--{loop $list $task}-->
+	<tr>
+		<td><img src="$task[image]" width="60" height="60"></td>
+		<td>$task[name]<br><b>$task[filename]</b></td>
+		<td>$task[credit]</td>
+		<td><!--{if $task[available]}-->$task[starttime]<br>$task[endtime]<!--{else}-->{lang is_off}<!--{/if}--></td>
+		<td><a href="admincp.php?ac=task&op=edit&taskid=$task[taskid]">{lang edit}</a>
+		&nbsp;|&nbsp;<a href="admincp.php?ac=task&op=delete&taskid=$task[taskid]">{lang delete}</a>
+		</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	
+<!--{/if}-->
+
+	</div>
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

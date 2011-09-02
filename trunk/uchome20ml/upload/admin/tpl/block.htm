@@ -1,0 +1,815 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[view]><a href="admincp.php?ac=block"><span>{lang blocks_all}</span></a></li>
+			<li class="null"><a href="admincp.php?ac=block&op=add">{lang block_add}</a></li>
+		</ul>
+	</div>
+	
+<!--{if empty($_GET['op'])}-->
+
+	<div class="bdrcontent">
+		<p>{lang data_query}
+		{lang data_query_code_intro1}
+		{lang data_query_code_intro2}</p>
+	</div>
+	<br />
+	<div class="bdrcontent">
+
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang name}</th>
+			<th width="220">{lang code_calling}</th>
+			<th width="180">{lang operation}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td>$value[blockname]</td>
+			<td><a href="$turl&op=tpl&id=$value[bid]">{lang block_embedded_code}</a> | <a href="$turl&op=js&id=$value[bid]">{lang javascript_code_tune}</a></td>
+			<td><a href="$turl&op=blocksql&id=$value[bid]">{lang sql_edit}</a> | 
+			<a href="$turl&op=code&id=$value[bid]">{lang preferences_explain}</a> | 
+			<a href="$turl&op=delete&id=$value[bid]">{lang delete}</a></td>
+		</tr>
+		<!--{/loop}-->
+		<tr><td colspan="3"><div class="pages">$multi</div></td></tr>
+		</table>
+	</div>
+
+<!--{elseif $_GET['op'] == 'add' || $_GET['op'] == 'blocksql'}-->
+
+	<form method="post" action="$turl" id="sqlform">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<div class="tabs_header"id="sqlGuide" style="display:none;">
+		<ul class="tabs">
+			<li id="li_<!--{eval echo tname('blog');}-->"><a id="a_select_<!--{eval echo tname('blog');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('blog');}-->');"><span>{lang blogs}</span></a></li>
+			<li id="li_<!--{eval echo tname('album');}-->"><a id="a_select_<!--{eval echo tname('album');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('album');}-->');"><span>{lang albums}</span></a></li>
+			<li id="li_<!--{eval echo tname('thread');}-->"><a id="a_select_<!--{eval echo tname('thread');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('thread');}-->');"><span>{lang thread}</span></a></li>
+			<li id="li_<!--{eval echo tname('feed');}-->"><a id="a_select_<!--{eval echo tname('feed');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('feed');}-->');"><span>{lang news}</span></a></li>
+			<li id="li_<!--{eval echo tname('space');}-->"><a id="a_select_<!--{eval echo tname('space');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('space');}-->');"><span>{lang members}</span></a></li>
+			<li id="li_<!--{eval echo tname('pic');}-->"><a id="a_select_<!--{eval echo tname('pic');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('pic');}-->');"><span>{lang photos}</span></a></li>
+			<li id="li_<!--{eval echo tname('mtag');}-->"><a id="a_select_<!--{eval echo tname('mtag');}-->" href="javascript:void(0);" onclick="javascript:showSQLDiv('<!--{eval echo tname('mtag');}-->');"><span>{lang groups}</span></a></li>
+			<li id="li_sqlDiy"><a id="a_select_sqlDiy" href="javascript:void(0);" onclick="javascript:showSQLDiv('sqlDiy');"><span>{lang sql_handmade}</span></a></li>
+		</ul>
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:10em;">{lang block_name}</th><td><input type="text" name="blockname" value="$block[blockname]"></td></tr>
+		</table>
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['blog']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tr><th>{lang specify_blogid}</th><td>
+			<input type="radio" name="sqluseid_{$sqlTables['blog']}" value="0" onclick="javascript:setRadioValue('{$sqlTables['blog']}_where', '{$sqlTables['blog']}_ids');" checked />{lang not_specified}
+			<input type="radio" name="sqluseid_{$sqlTables['blog']}" value="1" onclick="javascript:setRadioValue('{$sqlTables['blog']}_ids', '{$sqlTables['blog']}_where');" />{lang specified}
+			<input type="hidden" id="{$sqlTables['blog']}_id" value="blogid" />
+		</td></tr>
+		<tbody id="{$sqlTables['blog']}_ids" style="display:none;">
+			<tr><th>{lang blog_id}</th><td><input type="text" id="{$sqlTables['blog']}_where_blogid" value="" /> {lang blog_id_separate}</td></tr>
+		</tbody>
+		<tbody id="{$sqlTables['blog']}_where">
+			<tr><th>{lang specify_uid}</th><td><input type="text" id="{$sqlTables['blog']}_where_uid" value="" /> {lang specify_uid_separate}</td></tr>
+			<tr><th>{lang views_range}</th><td><input type="text" id="{$sqlTables['blog']}_where_viewnum_min" value="" /> ~ <input type="text" id="{$sqlTables['blog']}_where_viewnum_max" value="" /></td></tr>
+			<tr><th>{lang replies_range}</th><td><input type="text" id="{$sqlTables['blog']}_where_replynum_min" value="" /> ~ <input type="text" id="{$sqlTables['blog']}_where_replynum_max" value="" /></td></tr>
+			<tr><th>{lang publish_time}</th><td><select id="{$sqlTables['blog']}_where_dateline">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>{lang image_having}</th><td><select id="{$sqlTables['blog']}_where_picflag">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang image_have}</option>
+				</select></td></tr>
+			<tr><th>{lang privacy_range}</th><td><select id="{$sqlTables['blog']}_where_friend">
+				<option value="0">{lang visible_to_all}</option>
+				<option value="null">{lang all}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['blog']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['blog']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_2}</th><td><select id="{$sqlTables['blog']}_order_key_2">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['blog']}_order_value_2">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_3}</th><td><select id="{$sqlTables['blog']}_order_key_3">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['blog']}_order_value_3">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['album']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tr><th>{lang albums_id_specified}</th><td>
+			<input type="radio" name="sqluseid_{$sqlTables['album']}" value="0" onclick="javascript:setRadioValue('{$sqlTables['album']}_where', '{$sqlTables['album']}_ids');" checked />{lang not_specified}
+			<input type="radio" name="sqluseid_{$sqlTables['album']}" value="1" onclick="javascript:setRadioValue('{$sqlTables['album']}_ids', '{$sqlTables['album']}_where');" />{lang specified}
+			<input type="hidden" id="{$sqlTables['album']}_id" value="albumid" />
+		</td></tr>
+		<tbody id="{$sqlTables['album']}_ids" style="display:none;">
+			<tr><th>{lang albums_id}</th><td><input type="text" id="{$sqlTables['album']}_where_albumid" value="" /> {lang albums_id_separate}</td></tr>
+		</tbody>
+		<tbody id="{$sqlTables['album']}_where">
+			<tr><th>{lang specify_uid}</th><td><input type="text" id="{$sqlTables['album']}_where_uid" value="" /> {lang specify_uid_separate}</td></tr>
+			<tr><th>{lang images_number_range}</th><td><input type="text" id="{$sqlTables['album']}_where_picnum_min" value="" /> ~ <input type="text" id="{$sqlTables['album']}_where_picnum_max" value="" /></td></tr>
+			<tr><th>{lang publish_time}</th><td><select id="{$sqlTables['album']}_where_dateline">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>{lang time_update}</th><td><select id="{$sqlTables['album']}_where_updatetime">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>{lang image_having}</th><td><select id="{$sqlTables['album']}_where_picflag">
+				<option value="1">{lang image_have}</option>
+				<option value="null">{lang all}</option>
+				</select></td></tr>
+			<tr><th>{lang privacy_range}</th><td><select id="{$sqlTables['album']}_where_friend">
+				<option value="0">{lang visible_to_all}</option>
+				<option value="null">{lang have_set}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['album']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="picnum">{lang number_of_images}</option>
+			<option value="updatetime">{lang time_update}</option>
+			<option value="dateline">{lang create_date}</option>
+			</select>
+			<select id="{$sqlTables['album']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_2}</th><td><select id="{$sqlTables['album']}_order_key_2">
+			<option value="null">{lang select_please}</option>
+			<option value="picnum">{lang number_of_images}</option>
+			<option value="updatetime">{lang time_update}</option>
+			<option value="dateline">{lang create_date}</option>
+			</select>
+			<select id="{$sqlTables['album']}_order_value_2">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_3}</th><td><select id="{$sqlTables['album']}_order_key_3">
+			<option value="null">{lang select_please}</option>
+			<option value="picnum">{lang number_of_images}</option>
+			<option value="updatetime">{lang time_update}</option>
+			<option value="dateline">{lang create_date}</option>
+			</select>
+			<select id="{$sqlTables['album']}_order_value_3">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['thread']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tr><th>{lang topic_id_specify}</th><td>
+			<input type="radio" name="sqluseid_{$sqlTables['thread']}" value="0" onclick="javascript:setRadioValue('{$sqlTables['thread']}_where', '{$sqlTables['thread']}_ids');" checked />{lang not_specified}
+			<input type="radio" name="sqluseid_{$sqlTables['thread']}" value="1" onclick="javascript:setRadioValue('{$sqlTables['thread']}_ids', '{$sqlTables['thread']}_where');" />{lang specified}
+			<input type="hidden" id="{$sqlTables['thread']}_id" value="tid" />
+		</td></tr>
+		<tbody id="{$sqlTables['thread']}_ids" style="display:none;">
+			<tr><th>{lang topic_id_specify}</th><td><input type="text" id="{$sqlTables['thread']}_where_tid" value="" /> {lang topic_id_separate}</td></tr>
+		</tbody>
+		<tbody id="{$sqlTables['thread']}_where">
+			<tr><th>{lang specify_uid}</th><td><input type="text" id="{$sqlTables['thread']}_where_uid" value="" /> {lang specify_uid_separate}</td></tr>
+			<tr><th>{lang specify_group_id}</th><td><input type="text" id="{$sqlTables['thread']}_where_tagid" value="" /> {lang group_id_separate}</td></tr>
+			<tr><th>{lang specify_topic_views_range}</th><td><input type="text" id="{$sqlTables['thread']}_where_viewnum_min" value="" /> ~ <input type="text" id="{$sqlTables['thread']}_where_viewnum_max" value="" /></td></tr>
+			<tr><th>{lang specify_topic_replies_range}</th><td><input type="text" id="{$sqlTables['thread']}_where_replynum_min" value="" /> ~ <input type="text" id="{$sqlTables['thread']}_where_replynum_max" value="" /></td></tr>
+			<tr><th>{lang publish_time}</th><td><select id="{$sqlTables['thread']}_where_dateline">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>specify_top_status</th><td><select id="{$sqlTables['thread']}_where_displayorder">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang top_make}</option>
+				</select></td></tr>
+			<tr><th>{lang specify_digest}</th><td><select id="{$sqlTables['thread']}_where_digest">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang digest}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['thread']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['thread']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_2}</th><td><select id="{$sqlTables['thread']}_order_key_2">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['thread']}_order_value_2">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_3}</th><td><select id="{$sqlTables['thread']}_order_key_3">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="replynum">{lang replies_number}</option>
+			<option value="dateline">{lang publish_time}</option>
+			</select>
+			<select id="{$sqlTables['thread']}_order_value_3">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['feed']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tbody id="{$sqlTables['feed']}_where">
+			<tr><th>{lang feed_id}</th><td><input type="text" id="{$sqlTables['feed']}_where_feedid" value="" /> {lang feed_id_separate}</td></tr>
+			<tr><th>{lang dynamic_feed_type}</th><td><select id="{$sqlTables['feed']}_where_appid">
+				<option value="null">{lang all}</option>
+				<option value="0">{lang site_internal}</option>
+				<option value="1">{lang apps}</option>
+				</select></td></tr>
+			<tr><th>{lang privacy_range}</th><td><select id="{$sqlTables['feed']}_where_friend">
+				<option value="0">{lang visible_to_all}</option>
+				<option value="null">{lang all}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['feed']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="dateline">{lang time_created}</option>
+			</select>
+			<select id="{$sqlTables['feed']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['space']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tr><th>{lang specify_hoseholder}</th><td>
+			<input type="radio" name="sqluseid_{$sqlTables['space']}" value="0" onclick="javascript:setRadioValue('{$sqlTables['space']}_where', '{$sqlTables['space']}_ids');" checked />{lang not_specified}
+			<input type="radio" name="sqluseid_{$sqlTables['space']}" value="1" onclick="javascript:setRadioValue('{$sqlTables['space']}_ids', '{$sqlTables['space']}_where');" />{lang specified}
+			<input type="hidden" id="{$sqlTables['space']}_id" value="uid" />
+		</td></tr>
+		<tbody id="{$sqlTables['space']}_ids" style="display:none;">
+			<tr><th>{lang user_id}</th><td><input type="text" id="{$sqlTables['space']}_where_uid" value="" /> {lang specify_uid_separate}</td></tr>
+		</tbody>
+		<tbody id="{$sqlTables['space']}_where">
+			<tr><th>{lang points_range}</th><td><input type="text" id="{$sqlTables['space']}_where_credit_min" value="" /> ~ <input type="text" id="{$sqlTables['space']}_where_credit_max" value="" /></td></tr>
+			<tr><th>{lang specify_user_group}</th><td>
+				<table cellpadding="0" cellspacing="0" class="formtable"><tr>
+				<!--{eval $i = 0;}-->
+				<!--{loop $usergrouparr $gid $value}-->
+				<!--{if !empty($i) && 0 == $i % 3}--></tr><tr><!--{/if}-->
+				<td><input type="checkbox" name="{$sqlTables['space']}_where_groupid_{$gid}" value="$gid" id="{$sqlTables['space']}_where_groupid_{$gid}" /> <label for="{$sqlTables['space']}_where_groupid_{$gid}" style="cursor:pointer;">$value[grouptitle]</label></td>
+				<!--{eval $i ++;}-->
+				<!--{/loop}-->
+				</tr></table>
+			</td></tr>
+			<tr><th>{lang views_range}</th><td><input type="text" id="{$sqlTables['space']}_where_viewnum_min" value="" /> ~ <input type="text" id="{$sqlTables['space']}_where_viewnum_max" value="" /></td></tr>
+			<tr><th>{lang friends_range}</th><td><input type="text" id="{$sqlTables['space']}_where_friendnum_min" value="" /> ~ <input type="text" id="{$sqlTables['space']}_where_friendnum_max" value="" /></td></tr>
+			<tr><th>{lang specify_real_name}</th><td><select id="{$sqlTables['space']}_where_namestatus">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang certified}</option>
+				</select></td></tr>
+			<tr><th>{lang setup_time}</th><td><select id="{$sqlTables['space']}_where_dateline">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>{lang time_update}</th><td><select id="{$sqlTables['space']}_where_updatetime">
+				<option value="0" selected>---{lang without_limits}---</option>
+				<option value="86400">{lang in_1day}</option>
+				<option value="172800">{lang in_2day}</option>
+				<option value="604800">{lang in_1week}</option>
+				<option value="1209600">{lang in_2week}</option>
+				<option value="2592000">{lang in_1month}</option>
+				<option value="7948800">{lang in_3month}</option>
+				<option value="15897600">{lang in_6month}</option>
+				<option value="31536000">{lang in_1year}</option>
+				</select></td></tr>
+			<tr><th>{lang specify_avatar}</th><td><select id="{$sqlTables['space']}_where_avatar">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang have}</option>
+				</select></td></tr>
+			<tr><th>{lang user_gender}</th><td><select id="{$sqlTables['space']}_where_sex">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang man}</option>
+				<option value="2">{lang woman}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['space']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="friendnum">{lang friends_number}</option>
+			<option value="updatetime">{lang last_updated}</option>
+			<option value="lastlogin">{lang last_login_time}</option>
+			<option value="credit">{lang credit_number}</option>
+			<option value="dateline">{lang create_time}</option>
+			</select>
+			<select id="{$sqlTables['space']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_2}</th><td><select id="{$sqlTables['space']}_order_key_2">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="friendnum">{lang friends_number}</option>
+			<option value="updatetime">{lang last_updated}</option>
+			<option value="lastlogin">{lang last_login_time}</option>
+			<option value="credit">{lang credit_number}</option>
+			<option value="dateline">{lang create_time}</option>
+			</select>
+			<select id="{$sqlTables['space']}_order_value_2">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr>
+		<tr><th>{lang sort_3}</th><td><select id="{$sqlTables['space']}_order_key_3">
+			<option value="null">{lang select_please}</option>
+			<option value="viewnum">{lang number_of_views}</option>
+			<option value="friendnum">{lang friends_number}</option>
+			<option value="updatetime">{lang last_updated}</option>
+			<option value="lastlogin">{lang last_login_time}</option>
+			<option value="credit">{lang credit_number}</option>
+			<option value="dateline">{lang create_time}</option>
+			</select>
+			<select id="{$sqlTables['space']}_order_value_3">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['mtag']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tr><th>{lang specify_group_id}</th><td>
+			<input type="radio" name="sqluseid_{$sqlTables['mtag']}" value="0" onclick="javascript:setRadioValue('{$sqlTables['mtag']}_where', '{$sqlTables['mtag']}_ids');" checked />{lang not_specified}
+			<input type="radio" name="sqluseid_{$sqlTables['mtag']}" value="1" onclick="javascript:setRadioValue('{$sqlTables['mtag']}_ids', '{$sqlTables['mtag']}_where');" />{lang specified}
+			<input type="hidden" id="{$sqlTables['mtag']}_id" value="tagid" />
+		</td></tr>
+		<tbody id="{$sqlTables['mtag']}_ids" style="display:none;">
+			<tr><th>{lang groups_id}</th><td><input type="text" id="{$sqlTables['mtag']}_where_tagid" value="" /> {lang group_id_separate}</td></tr>
+		</tbody>
+		<tbody id="{$sqlTables['mtag']}_where">
+			<tr><th>{lang groups_size}</th><td><input type="text" id="{$sqlTables['mtag']}_where_membernum_min" value="" /> ~ <input type="text" id="{$sqlTables['mtag']}_where_membernum_max" value="" /></td></tr>
+			<tr><th>{lang group_category}</th><td>
+				<table cellpadding="0" cellspacing="0" class="formtable"><tr>
+				<!--{eval $i = 0;}-->
+				<!--{loop $list $value}-->
+				<!--{if !empty($i) && 0 == $i % 3}--></tr><tr><!--{/if}-->
+				<td><input type="checkbox" name="{$sqlTables['mtag']}_where_fieldid_{$value[fieldid]}" value="{$value[fieldid]}" id="{$sqlTables['mtag']}_where_fieldid_{$value[fieldid]}" /> <label for="{$sqlTables['mtag']}_where_fieldid_{$value[fieldid]}" style="cursor:pointer;">$value[title]</label></td>
+				<!--{eval $i ++;}-->
+				<!--{/loop}-->
+				</tr></table>
+			</td></tr>
+			<tr><th>{lang group_permissions}</th><td><select id="{$sqlTables['mtag']}_where_joinperm">
+				<option value="null">{lang all}</option>
+				<option value="1">{lang group_join_permission_set}</option>
+				</select></td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['mtag']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="membernum">{lang groups_size}</option>
+			</select>
+			<select id="{$sqlTables['mtag']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="{$sqlTables['pic']}" style="display:none;">
+		<tr><th style="width:10em;">{lang block_filter_settings}</th><td></td></tr>
+		<tbody id="{$sqlTables['pic']}_where">
+			<tr><th>{lang albums_id}</th><td><input type="text" id="{$sqlTables['pic']}_where_albumid" value="" /> {lang albums_id_separate}</td></tr>
+			<tr><th>{lang user_id}</th><td><input type="text" id="{$sqlTables['pic']}_where_uid" value="" /> {lang specify_uid_separate}</td></tr>
+		</tbody>
+		<tr><th>{lang set_sort_order}</th><td></td></tr>
+		<tr><th>{lang sort_1}</th><td><select id="{$sqlTables['pic']}_order_key_1">
+			<option value="null">{lang select_please}</option>
+			<option value="dateline">{lang uploaded_time}</option>
+			</select>
+			<select id="{$sqlTables['pic']}_order_value_1">
+			<option value="null">{lang select_please}</option>
+			<option value="ASC">{lang ascending}</option>
+			<option value="DESC">{lang descending}</option>
+			</select></td></tr></table>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable" id="sqlDiy" style="display:none;">
+		<tr><th style="width:10em;">{lang sql_query}</th><td><textarea id="blocksql" name="blocksql" style="width:98%;" rows="6">$block[blocksql]</textarea>
+			<br />{lang sql_query_intro1}
+			<br />{lang sql_query_intro2}
+			<br />{lang sql_statement_intro1}:
+			<br />{lang sql_statement_intro2}
+			<br />SELECT * FROM uchome_blog ORDER BY dateline DESC
+			<br />{lang sql_statement_intro3}
+			<br />SELECT * FROM discuz.cdb_threads ORDER BY dateline DESC
+			</td></tr>
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="bid" value="$block[bid]">
+		<input type="submit" name="valuesubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	<script language="javascript" type="text/javascript">
+	var curMod = '';
+	var tableFields = ['uid', 'feedid', 'tagid', 'albumid'];
+	var sqls = [];
+	var tablePre = '{$_SC['tablepre']}';
+	<!--{loop $sqls $key $value}-->
+	sqls['$key'] = '$value';
+	<!--{/loop}-->
+	$('sqlform').onsubmit = function() {
+		var frmObj = $('sqlform');
+		var eLen = frmObj.elements.length;
+		var whereArr = [];
+		var orderKeys = [];
+		var orderValues = [];
+		var orderArr = [];
+		var tmpArr = [];
+		var groupidArr = [];
+		var fieldidArr = [];
+		var preReg = new RegExp(tablePre, 'ig');
+		var tableName = curMod.replace(preReg, '');
+		var timeFields = ['dateline', 'updatetime'];
+		var str = '';
+		var whereOrder = '';
+		if('' == curMod || 'undefined' == typeof(sqls[tableName])) {
+			return;
+		}
+		var tReg = new RegExp('_([a-zA-Z0-9]*)', 'ig');
+		for(var i = 0; i < eLen; i ++) {
+			if('' == frmObj.elements[i].value || 'null' == frmObj.elements[i].value) {
+				continue;
+			}
+			tmpArr.length = 0;
+			str = (frmObj.elements[i].id).replace(curMod, '');
+			if(frmObj.elements[i].id != str) {
+				str.replace(tReg, function($0, $1) {
+					tmpArr[tmpArr.length] = $1;
+				});
+				if('where' == tmpArr[0]) {
+					if('min' == tmpArr[2]) {
+						minv = parseInt(frmObj.elements[i].value);
+						if(isNaN(minv)) {
+							continue;
+						}
+						whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`>'" + minv + "'");
+					} else if('max' == tmpArr[2]) {
+						maxv = parseInt(frmObj.elements[i].value);
+						if(isNaN(maxv)) {
+							continue;
+						}
+						whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`<'" + maxv + "'");
+					} else {
+						if(-1 != in_array(tmpArr[1], tableFields)) {
+							whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "` in ('" + ((frmObj.elements[i].value).split(',')).join("','") + "')");
+						} else if('groupid' == tmpArr[1]) {
+							groupid = parseInt(tmpArr[2]);
+							if(isNaN(groupid) || !frmObj.elements[i].checked) {
+								continue;
+							}
+							groupidArr.push(tmpArr[2]);
+						} else if('fieldid' == tmpArr[1]) {
+							fieldid = parseInt(tmpArr[2]);
+							if(isNaN(fieldid) || !frmObj.elements[i].checked) {
+								continue;
+							}
+							fieldidArr.push(tmpArr[2]);
+						} else if('appid' == tmpArr[1]) {
+							appid = parseInt(frmObj.elements[i].value);
+							if(isNaN(appid)) {
+								continue;
+							}
+							if(0 == appid) {
+								whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`='0'");
+							} else {
+								whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`>'0'");
+							}
+						} else if('sex' == tmpArr[1]) {
+							whereArr.push("`spacefield`.`sex`='" + parseInt(frmObj.elements[i].value) + "'");
+						} else if(-1 != in_array(tmpArr[1], timeFields)) {
+							if(0 < frmObj.elements[i].value) {
+								whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`>'[" + frmObj.elements[i].value + "]'");
+							}
+						} else {
+							whereArr.push("`" + tableName + "`.`" + tmpArr[1] + "`='" + frmObj.elements[i].value + "'");
+						}
+					}
+				} else if('order' == tmpArr[0]) {
+					if('key' == tmpArr[1]) {
+						orderKeys[frmObj.elements[i].value] = tmpArr[2];
+					} else if('value' == tmpArr[1]) {
+						orderValues[tmpArr[2]] = frmObj.elements[i].value;
+					}
+				}
+			}
+		}
+		if(0 < groupidArr.length) {
+			whereArr.push("`" + tableName + "`.`groupid` in ('" + groupidArr.join("','") + "')");
+		}
+		if(0 < fieldidArr.length) {
+			whereArr.push("`" + tableName + "`.`fieldid` in ('" + fieldidArr.join("','") + "')");
+		}
+		for(var i in orderKeys) {
+			if(null != orderValues[orderKeys[i]]) {
+				orderArr.push("`" + tableName + "`.`" + i + "` " + orderValues[orderKeys[i]]);
+			}
+		}
+		// If you are using only ID, put the empty WHERE
+		if($(curMod + '_ids') && 'none' != $(curMod + '_ids').style.display) {
+			whereArr.length = 0;
+			var whereId = $(curMod + '_where_' + $(curMod + '_id').value).value;
+			if('' != whereId) {
+				whereArr.push("`" + tableName + "`.`" + $(curMod + '_id').value + "` in ('" + (whereId.split(",")).join("','") + "')");
+			}
+		}
+		if(0 < whereArr.length) {
+			whereOrder += ' WHERE ' + whereArr.join(' AND ');
+		}
+		if(0 < orderArr.length) {
+			whereOrder += " ORDER BY " + orderArr.join(", ");
+		}
+		$('blocksql').value = sqls[tableName].replace(/WHEREORDER/g, whereOrder);
+	}
+	function in_array(ineedle, haystack, caseinsensitive) {
+		var needle = new String(ineedle);
+		if(needle.Length == 0) return -1;
+		if(caseinsensitive) {
+			needle = needle.toLowerCase();
+			for(var i in haystack)	{
+				if(haystack[i].toLowerCase() == needle) {
+					return i;
+				}
+			}
+		} else {
+			for(var i in haystack)	{
+				if(haystack[i] == needle) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+	function setRadioValue(showid, hiddenid) {
+		if($(showid)) {
+			$(showid).style.display = '';
+		}
+		if($(hiddenid)) {
+			$(hiddenid).style.display = 'none';
+		}
+	}
+	function showSQLDiv(sid) {
+		var sObj = $(sid);
+		if('' != curMod) {
+			$(curMod).style.display = 'none';
+			$('li_' + curMod).className = '';
+		}
+		$('li_' + sid).className = 'active';
+		sObj.style.display = '';
+		curMod = sid;
+	}
+	<!--{if 'blocksql' == $_GET['op']}-->
+	$('sqlDiy').style.display = '';
+	<!--{else}-->
+	$('sqlGuide').style.display = '';
+	showSQLDiv('{$sqlTables['blog']}');
+	<!--{/if}-->
+	</script>
+	</form>
+	
+	<br />
+	<div class="bdrcontent">
+		<div class="title">
+			<h3>{lang data_dictionary}</h3>
+			<p>{lang data_dictionary_intro}</p>
+		</div>
+	
+		<!--{loop $tables $key $value}-->
+		<br />
+		<ul class="listcol list4col">
+			<b>$key</b>
+			<!--{loop $value $subkey $subvalue}-->
+			<li>$subvalue</li>
+			<!--{/loop}-->
+		</ul>
+		<!--{/loop}-->
+
+	</div>
+	
+<!--{elseif $_GET['op'] == 'code'}-->
+
+	<form method="post" action="$turl">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr><th style="width:10em;">{lang sql_query_statement}</th><td>
+	$block[blocksql]
+	<br />[<a href="$turl&op=blocksql&id=$block[bid]">{lang sql_edit}</a>]
+	</td></tr>
+	
+	<tr><th>{lang variable_name}</th><td>{$phptag}_SBLOCK['<input type="text" name="cachename" id="cachename" value="$block[cachename]" style="width: 60px;">']</td></tr>
+	<tr><th>{lang cache_time}</th><td><input type="text" name="cachetime" value="$block[cachetime]" size="5"> {lang second}
+		<br />{lang cache_time_intro1}
+		<br />{lang cache_time_intro2}
+		<br />{lang cache_time_intro3}</td></tr>
+	<tr><th>{lang retrive_data_parameters}</th><td>
+		<input id="ra_start_num" name="num_option" type="radio" onclick="show_num_option()"<!--{if !$block[perpage]}--> checked="checked"<!--{/if}-->><label for="ra_start_num">{lang retrive_data_start_num}</label>
+		&nbsp;&nbsp;
+		<input id="ra_perpage" name="num_option" type="radio" onclick="show_num_option()"<!--{if $block[perpage]}--> checked="checked"<!--{/if}-->><label for="ra_perpage">{lang retrive_data_per_page}</label><br />
+		<p id="op_start_num"<!--{if $block[perpage]}--> style="display:none"<!--{/if}-->>
+			{lang record_start_num} <input type="text" name="startnum" value="$block[startnum]" size="5"> {lang until} <input type="text" name="num" value="$block[num]" size="5"> {lang record_number}
+		</p>
+		<p id="op_perpage"<!--{if !$block[perpage]}--> style="display:none"<!--{/if}-->>
+			{lang per_page} <input type="text" name="perpage" value="$block[perpage]" size="5"> {lang rows}
+		</p>
+		</td></tr>
+	<tr><th>{lang html_code}</th><td>
+		<textarea name="htmlcode" id="htmlcode" style="width:98%;" rows="10">$block[htmlcode]</textarea>
+		<br />{lang html_code_intro1}
+		<br />{lang html_code_intro2}
+	</td></tr>
+	
+	<!--{if $colnames}-->
+	<tr><th>{lang data_preview}</th><td>
+		<input type="button" class="submit" id="preview" name="preview" value="{lang preview}" />
+		<div id="previewBlock" style="border:1px solid #BBB;padding:2px;margin-top:3px;">{lang data_preview}</div></td></tr>
+	
+	<tr><th>{lang field_list_help}</th>
+	<td>
+		<table cellspacing="1" cellpadding="0" bgcolor="#CCCCCC">
+		<tr bgcolor="#F3F3F3"><th>&nbsp;{lang field_name} </th><th>&nbsp;{lang data_example}&nbsp;</th></tr>
+		<!--{loop $colnames $key $value}-->
+		<tr><td bgcolor="#F5F5F5">&nbsp;$key&nbsp;</td><td bgcolor="#FFFFFF">&nbsp;$value&nbsp;</td></tr>
+		<!--{/loop}-->
+		</table>
+	</td></tr>
+	<!--{/if}-->
+
+	</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="bid" value="$block[bid]">
+		<input type="submit" name="codesubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+	<script language="javascript" type="text/javascript">
+	$('cachename').onkeyup = function() {
+		var blockReg = new RegExp('\\$\\_SBLOCK\\[(.*?)\\]', 'ig');
+		var cname = $('cachename').value;
+		var htmvalue = $('htmlcode').value;
+		htmvalue = htmvalue.replace(blockReg, function($0, $1) {
+			$1 = cname;
+			return '$' + '_SBLOCK[' + $1 + ']';
+		});
+		$('htmlcode').value = htmvalue;
+	}
+	<!--{if $colnames}-->
+	var colname = {};
+	<!--{loop $colnames $key $value}-->
+	colname['$key'] = '<!--{eval echo addcslashes($value, '\'\\');}-->';
+	<!--{/loop}-->
+	$('preview').onclick = function() {
+		var html = $('htmlcode').value;
+		var loopReg2 = /\<\!\-\-\{loop\s+(\S+)\s+\$(\S+)\}\-\-\>/ig;
+		var loopReg3 = /\<\!\-\-\{loop\s+(\S+)\s+\$(\S+)\s+\$(\S+)\}\-\-\>/ig;
+		var varReg = /\$(([a-zA-Z_]+)(\[[a-zA-Z0-9_\-\.\"\'\[\]\$]+\])*)/ig;
+		var reg = '';
+		html = html.replace(loopReg2, function($0, $1, $2) {
+			reg = $2;
+			return '';
+		});
+		if('' == reg) {
+			html = html.replace(loopReg3, function($0, $1, $2, $3) {
+				reg = $3;
+				return '';
+			})
+		}
+		eval(reg + ' = colname');
+		html = html.replace(varReg, function($0, $1, $2, $3) {
+			key = $3.match(/(\w+)/ig);
+			return eval($2 + '["' + key + '"]');
+		});
+		$('previewBlock').innerHTML = html;
+	}
+	<!--{/if}-->
+	
+	function show_num_option(){
+		if($('ra_perpage').checked) {
+			var inputs = $('op_start_num').getElementsByTagName('input');
+			for(var i = 0, L=inputs.length; i < L; i++) {
+				inputs[i].value = '0';
+			}
+			$('op_perpage').style.display = "";
+			$('op_start_num').style.display = "none";
+		} else {
+			var inputs = $('op_perpage').getElementsByTagName('input');
+			for(var i = 0, L=inputs.length; i < L; i++) {
+				inputs[i].value = '0';
+			}
+			$('op_perpage').style.display = "none";
+			$('op_start_num').style.display = "";	
+		}
+	}
+	
+	</script>
+
+<!--{elseif $_GET['op'] == 'tpl'}-->
+	<div class="bdrcontent">
+	<div class="title"><h3>{lang template_code_tune}</h3></div>
+
+	<table cellspacing="0" cellpadding="0" width="100%">
+	<tr><td>{lang template_paste}</td></tr>
+	<tr><td><input type="text" name="blockcode" value="$code" size="80"></td></tr>
+	</table>
+	</div>
+
+<!--{elseif $_GET['op'] == 'js'}-->
+
+	<div class="bdrcontent">
+	<div class="title"><h3>{lang javascript_code_tune}</h3></div>
+
+	<table cellspacing="0" cellpadding="0" width="100%">
+	<tr><td><textarea name="blockcode" style="width:98%;" rows="5">$code</textarea></td></tr>
+	</table>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

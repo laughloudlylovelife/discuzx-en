@@ -1,0 +1,53 @@
+
+<div class="affiche">
+	<table width="100%">
+	<tr>
+		<!--{if $topic[pic]}-->
+		<td width="160" id="event_icon" valign="top">
+			<img src="$topic[pic]" width="150">
+		</td>
+		<!--{/if}-->
+		<td valign="top">
+			<h2>
+				<a href="space.php?do=topic&topicid=$topic[topicid]">$topic[subject]</a>
+			</h2>
+		
+			<div style="padding:5px 0;">$topic[message]</div>
+			<ul>
+				<li class="gray">{lang topic_author}: <a href="space.php?uid=$topic[uid]">{$_SN[$topic[uid]]}</a></li>
+				<li class="gray">{lang topic_start_time}: $topic[dateline]</li>
+				<!--{if $topic[endtime]}--><li class="gray">{lang topic_end_time}: $topic[endtime]</li><!--{/if}-->
+				<!--{if $topic[joinnum]}-->
+				<li class="gray">{lang topic_members}: $topic[joinnum]</li>
+				<!--{/if}-->
+				<li class="gray">{lang topic_last_post}: $topic[lastpost]</li>
+			</ul>
+			
+			<!--{if $topic[allowjoin]}-->
+			<a href="$topic[joinurl]" class="feed_po" id="hot_add" onmouseover="showMenu(this.id)">{lang topic_join}</a>
+			<ul id="hot_add_menu" class="dropmenu_drop" style="display:none;">
+				<!--{if in_array('blog', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=blog&topicid=$topicid">{lang topic_reply}</a></li>
+				<!--{/if}-->
+				<!--{if in_array('pic', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=upload&topicid=$topicid">{lang upload_image}</a></li>
+				<!--{/if}-->
+				<!--{if in_array('thread', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=thread&topicid=$topicid">{lang topic_init}</a></li>
+				<!--{/if}-->
+				<!--{if in_array('poll', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=poll&topicid=$topicid">{lang topic_poll}</a></li>
+				<!--{/if}-->
+				<!--{if in_array('event', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=event&topicid=$topicid">{lang topic_event}</a></li>
+				<!--{/if}-->
+				<!--{if in_array('share', $topic['jointype'])}-->
+				<li><a href="cp.php?ac=share&topicid=$topicid">{lang topic_share}</a></li>
+				<!--{/if}-->
+			</ul>
+			<!--{else}-->
+			<p class="r_option">{lang topic_finished}</p>
+			<!--{/if}-->
+		</td>
+	</tr></table>
+</div>

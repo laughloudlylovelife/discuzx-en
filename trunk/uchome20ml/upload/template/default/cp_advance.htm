@@ -1,0 +1,29 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<form method="post" action="admincp.php" class="c_form">
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2><!--{lang admin_center}--></h2>
+		<p><!--{lang admin_center_info}--></p>
+	</caption>
+	<tr>
+		<th width="120">{lang user_name}</th>
+		<td>$_SGLOBAL[username] (<a href="cp.php?ac=common&op=logout">{lang logout}</a>)</td>
+	</tr>
+	<tr>
+		<th>{lang password}</th>
+		<td><input type="password" name="password" class="t_input" /></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<input type="hidden" name="loginsubmit" value="true" />
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="submit" name="btnsubmit" value="{lang admin_go}" class="submit" />
+		</td>
+	</tr>
+</table>
+</form>
+<!--{template footer}-->

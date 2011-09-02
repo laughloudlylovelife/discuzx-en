@@ -1,0 +1,43 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<div class="c_form">
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2><!--{if $space[videostatus]}-->{lang my_certified_photo}<!--{else}-->{lang apply_video_certification}<!--{/if}--></h2>
+		<p>
+		<!--{if $space[videostatus]}-->
+		{lang your_certified_photo}, {lang you_can} <a href="userapp.php?id=1036584">{lang restart_video_certification}</a>.
+		<!--{else}-->
+		{lang prepare_vide_camera}
+		<!--{/if}-->
+		</p>
+	</caption>
+	<tr>
+		<td>
+			<!--{if $space[videostatus]}-->
+			<img src="$videophoto" id="avatar" alt="" width="400" />
+			<!--{elseif $_SCONFIG['videophoto']}-->
+			<a href="userapp.php?id=1036584&my_suffix=Lw%3D%3D"><img src="image/videophoto_btn.gif" alt=""></a>
+			<!--{/if}-->
+		</td>
+	</tr>
+</table>
+
+<!--{if checkperm('managevideophoto')}-->
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>{lang video_certification}</h2>
+		<p>{lang video_certification_intro}</p>
+	</caption>
+	<tr>
+		<td>
+			<a href="userapp.php?id=1036584" class="submit">{lang video_certification_manage}</a>
+		</td>
+	</tr>
+</table>
+<!--{/if}-->
+	
+</div>
+<!--{template footer}-->

@@ -1,0 +1,48 @@
+<!--{template header}-->
+
+<!--{if $op == "use"}-->
+
+	<!--{if !$frombuy}-->
+	<h1>{lang using_magic}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<!--{/if}-->
+	<div class="toolly popupmenu_inner" id="__magicuse_form_$mid">
+		<form method="post" id="magicuse_form_$mid" action="magic.php?mid=$mid&idtype=$idtype&id=$id">
+			<div class="magic_img">
+				<img src="image/magic/{$mid}.gif" alt="$magic[name]" />
+			</div>
+			<div class="magic_info">
+				<h3>$magic[name]</h3>
+				<p class="gray">$magic[description]</p>
+				<p>{lang has_number}: $usermagic[count]</p>
+				<div>
+					<h4>{lang set_gift}</h4>
+					<p>
+						{lang your_current_points}: $space[credit]
+					</p>
+					<label for="credit">{lang gift_cost}: </label>
+					<input type="text" name="credit" id="credit" size="4" maxlength="4">
+					<font class="gray">{lang points_cannot_exceed}</font>
+					<br />
+					<label for="chunk">{lang each_chunk_points}: </label>
+					<input type="text" name="chunk" id="chunk" size="4" maxlength="3">
+					<font class="gray">{lang can_not_exceed} $magic[custom][maxchunk]</font>
+					<!--{if $leftcredit}-->
+					<p style="color:#00663A; font-size:11px; padding:10px 0;">
+						{lang points_remain_for_gift} $leftcredit {lang points_num}, {lang gifts_will_returned}
+					</p>
+					<!--{/if}-->
+				</div>
+				<p class="btn_line">
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+					<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+					<input type="hidden" name="usesubmit" value="1" />
+					<input type="button" name="usesubmit_btn" value="{lang use_it}" class="submit" onclick="ajaxpost('magicuse_form_$mid', '', 1000)" />
+				</p>
+			</div>
+		</form>
+	</div>
+
+<!--{/if}-->
+
+<!--{template footer}-->

@@ -1,0 +1,271 @@
+<!--{eval $_TPL['titles'] = array(lang('friends'));}-->
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_friend">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=friend&op=search" class="r_option">{lang find_more_friends}</a>
+			{lang friends} ({lang total} $count {lang units})
+		</h3><br>
+
+		<!--{if $list}-->
+		<div id="friend_ul">
+			<ul class="line_list">
+			<!--{loop $list $key $value}-->
+				<li>
+				<table width="100%">
+					<tr>
+					<td width="70">
+						<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+					</td>
+					<td>
+					<div class="thumbTitle"><p<!--{if $ols[$value[uid]]}--> class="online_icon_p"<!--{/if}-->><a href="space.php?uid=$value[uid]"<!--{eval g_color($value[groupid]);}-->>{$_SN[$value[uid]]}</a> <!--{eval g_icon($value[groupid]);}--></p></div>
+
+					<!--{if $value[note]}--><div>$value[note]</div><!--{/if}-->
+
+					<!--{if $ols[$value[uid]]}--><div class="gray"><!--{date('H:i',$ols[$value[uid]],1)}--></div><!--{/if}-->
+					<div class="setti">
+
+					<!--{if !$value['isfriend']}-->
+					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">{lang friend_add}</a>
+					<!--{/if}-->
+					</div>
+					</td></tr></table>
+				</li>
+			<!--{/loop}-->
+			</ul>
+		</div>
+		<div class="page">$multi</div>
+
+		<!--{else}-->
+		<div class="c_form">
+			{lang user_groups_no}
+		</div>
+		<!--{/if}-->
+	</div><br />
+
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+<!--{if $_GET[view]=='me'}-->
+<form method="get" action="space.php">
+	<input type="hidden" name="do" value="friend">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang find_friends}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+</form>
+<!--{else}-->
+<form method="get" action="cp.php">
+	<input type="hidden" name="ac" value="friend" />
+	<input type="hidden" name="op" value="search" />
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang find_people}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+</form>
+<!--{/if}-->
+</div>
+<h2 class="title"><img src="image/icon/friend.gif" />{lang friends}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=friend"><span>{lang friend_list}</span></a></li>
+		<li><a href="cp.php?ac=friend&op=search"><span>{lang friends_find}</span></a></li>
+		<li><a href="cp.php?ac=friend&op=find"><span>{lang who_might_know}</span></a></li>
+		<!--{if empty($_SCONFIG['closeinvite'])}-->
+		<li><a href="cp.php?ac=invite"><span>{lang event_invite_friends}</span></a></li>
+		<!--{/if}-->
+		<li><a href="cp.php?ac=friend&op=request"><span>{lang friend_requests_me}</span></a></li>
+		<li><a href="space.php?do=top"><span>{lang members_top_list}</span></a></li>
+	</ul>
+</div>
+<div id="content" style="width: 640px;">
+
+	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+		<!--{if $_GET['view']=='blacklist'}-->
+			{lang blacklist_intro}
+		<!--{elseif $_GET['view']=='me'}-->
+
+			{lang current_total} $space[friendnum] {lang friends_num}.
+
+
+			<!--{if $maxfriendnum}-->
+			({lang max_friends_add} $maxfriendnum {lang friends_num})
+			<p>
+				<!--{if $_SGLOBAL[magic][friendnum]}-->
+				<img src="image/magic/friendnum.small.gif" class="magicicon" />
+				<a id="a_magic_friendnum" href="magic.php?mid=friendnum" onclick="ajaxmenu(event, this.id, 1)">{lang friend_limit_expand}</a>
+				({lang can_buy_props} &ldquo;{$_SGLOBAL[magic][friendnum]}&rdquo; {lang for_expand_friends})
+				<!--{/if}-->
+			</p>
+			<!--{/if}-->
+
+			<p style="padding-top:10px;">
+			{lang friends_sorted_by_heat}
+			<br>
+			{lang friends_heat_intro}
+			</p>
+		<!--{elseif $_GET['view']=='online'}-->
+			<!--{if $_GET['type'] == 'friend'}-->
+			{lang friends_online_go_visit}
+			<!--{elseif $_GET['type']=='near'}-->
+			{lang friends_near_you}
+			<!--{else}-->
+			{lang all_online_users}
+			<!--{/if}-->
+		<!--{elseif $_GET['view']=='visitor'}-->
+			{lang users_visited_you}
+		<!--{elseif $_GET['view']=='trace'}-->
+			{lang users_visited_by_you}
+		<!--{/if}-->
+	</div></div></div></div></div>
+
+	<!--{if $_GET['view']=='blacklist'}-->
+	<div class="h_status">
+		<h2>{lang blacklist_new_user}</h2>
+		<form method="post" name="blackform" action="cp.php?ac=friend&op=blacklist&start=$_GET[start]">
+			{lang user_name}: <input type="text" name="username" value="" size="15" class="t_input">
+			<input type="submit" name="blacklistsubmit_btn" id="moodsubmit_btn" value="{lang add_new}" class="submit">
+			<input type="hidden" name="blacklistsubmit" value="true" />
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		</form>
+	</div>
+	<!--{/if}-->
+
+	<!--{if $list}-->
+	<div class="thumb_list" id="friend_ul">
+		<ul>
+		<!--{loop $list $key $value}-->
+			<li id="friend_{$value[uid]}_li">
+				<!--{if $value[username] == ''}-->
+				<div class="avatar48"><img src="image/magic/hidden.gif" alt="{lang hidden_username}" /></div>
+				<div class="thumbTitle"><p>{lang hidden_username}</p></div>
+				<!--{else}-->
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<div class="thumbTitle">
+				<p<!--{if $ols[$value[uid]]}--> class="online_icon_p"<!--{/if}-->>
+					<a href="space.php?uid=$value[uid]"<!--{eval g_color($value[groupid]);}-->>{$_SN[$value[uid]]}</a> 
+					<!--{eval g_icon($value[groupid]);}-->
+					<!--{if $value['videostatus']}-->
+					<img src="image/videophoto.gif" align="absmiddle">
+					<!--{/if}-->
+				</p></div>
+				<!--{if $value[note]}--><div>$value[note]</div><!--{/if}-->
+				<!--{/if}-->
+
+				<!--{if $_GET['view']=='blacklist'}-->
+					<div class="gray"><a href="cp.php?ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">{lang blacklist_remove}</a></div>
+				<!--{elseif $_GET['view']=='visitor' || $_GET['view'] == 'trace'}-->
+					<div class="gray"><!--{date('d.m.Y',$value[dateline],1)}--></div>
+				<!--{elseif $_GET['view']=='online'}-->
+					<div class="gray"><!--{date('H:i',$ols[$value[uid]],1)}--></div>
+				<!--{else}-->
+					<!--{if $ols[$value[uid]]}--><div class="gray"><!--{date('H:i',$ols[$value[uid]],1)}--></div><!--{/if}-->
+					<div class="gray">
+					<!--{if $value['num']}--><a href="cp.php?ac=friend&op=changenum&uid=$value[uid]" id="friendnum_$value[uid]" onclick="ajaxmenu(event, this.id)">{lang hot_edit} (<span id="spannum_$value[uid]">$value[num]</span>)</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if !$value['isfriend']}-->
+					<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_$key" onclick="ajaxmenu(event, this.id, 1)">{lang friend_add}</a>
+					<!--{else}-->
+					<a href="cp.php?ac=friend&op=changegroup&uid=$value[uid]" id="friend_group_$value[uid]" onclick="ajaxmenu(event, this.id)">{lang group_select}</a><span class="pipe">|</span>
+					<a href="cp.php?ac=friend&op=ignore&uid=$value[uid]" id="a_ignore_$key" onclick="ajaxmenu(event, this.id)">{lang delete}</a>
+					<!--{/if}-->
+					</div>
+				<!--{/if}-->
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="page">$multi</div>
+
+	<!--{else}-->
+	<div class="c_form">
+		{lang user_groups_no}
+	</div>
+	<!--{/if}-->
+
+</div>
+
+<div id="sidebar" style="width: 150px;">
+	<!--{if $_SCONFIG['my_status']}-->
+	<!-- {lang manyou_friends_synchronize} -->
+	<script type="text/javascript">
+		function my_sync_tip(msg, close_time) {;
+			var my_tip = document.getElementById("my_tip");
+			if (!my_tip) {
+				my_tip = document.createElement("div");
+				document.getElementsByTagName("body")[0].appendChild(my_tip);
+				my_tip.id = "my_tip";
+			}
+			my_tip.style.display = 'block';
+			my_tip.innerHTML = '<div class="popupmenu_centerbox" style="position: absolute; top: 200px; right: 500px; padding: 20px; width: 300px; height: 15px; z-index:9999;">' + msg + '</div>';
+			if (close_time) {
+				setTimeout("document.getElementById('my_tip').style.display = 'none';", close_time);
+			}
+		}
+		function my_sync_friend() {
+			my_sync_tip('{lang manyou_friends_synchronized}...', 0);
+			var my_scri = document.createElement("script");
+			document.getElementsByTagName("head")[0].appendChild(my_scri);
+			my_scri.charset = "UTF-8";
+			my_scri.src = "http://uchome.manyou.com/user/syncFriends?sId=$_SCONFIG[my_siteid]&uUchId=$space[uid]&ts=$_SGLOBAL[timestamp]&key=<!--{eval echo md5($_SCONFIG[my_siteid] . $_SCONFIG[my_sitekey] . $space[uid] . $_SGLOBAL[timestamp]);}-->";
+		}
+	</script>
+
+	<div class="c_mgs"><div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+		<p>{lang can_not_find_friends}</p>
+		<p style="text-align: center;padding: 20px 0 0;"> <a href="#" onclick="my_sync_friend(); return false;" title="{lang manyou_synchronize}"><img alt="{lang manyou_refresh}" src="image/syncfriend.gif"/></a> </p>
+	</div></div></div></div></div>
+	<!-- end of Manyou Friends synchronization -->
+	<!--{/if}-->
+
+	<div class="cat">
+		<h3>
+			{lang friends_menu}
+		</h3>
+		<ul>
+			<li{$a_actives[me]}><a href="space.php?uid=$space[uid]&do=friend">{lang all_friend_list}</a></li>
+			<li{$a_actives[onlinefriend]}><a href="space.php?uid=$space[uid]&do=friend&view=online&type=friend">{lang online_friends}</a></li>
+			<li{$a_actives[onlinenear]}><a href="space.php?uid=$space[uid]&do=friend&view=online&type=near">{lang friends_near_location}</a></li>
+			<li{$a_actives[visitor]}><a href="space.php?uid=$space[uid]&do=friend&view=visitor">{lang my_visitors}</a></li>
+			<li{$a_actives[trace]}><a href="space.php?uid=$space[uid]&do=friend&view=trace">{lang my_tracers}</a></li>
+			<li{$a_actives[blacklist]}><a href="space.php?uid=$space[uid]&do=friend&view=blacklist">{lang my_blacklist}</a></li>
+		</ul>
+	</div>
+
+	<!--{if $groups}-->
+	<div class="cat">
+		<h3>
+			<span class="r_option"><a href="cp.php?ac=friend&op=group">{lang more_friend_groups}</a></span>
+			{lang friends_groups}
+		</h3>
+		<ul class="post_list line_list">
+			<li><a href="space.php?do=friend&group=-1">{lang friends_all}</a></li>
+			<!--{loop $groups $key $value}-->
+			<li{$groupselect[$key]}>
+				<a href="cp.php?ac=friend&op=groupignore&group=$key" id="c_ignore_$key" onclick="ajaxmenu(event, this.id)" title="{lang ignore_group_dynamic}" class="c_delete">{lang shield}</a>
+				<!--{if $key}-->
+				<a href="cp.php?ac=friend&op=groupname&group=$key" id="c_edit_$key" onclick="ajaxmenu(event, this.id, 1)" title="{lang edit_group_name}" class="c_edit">{lang edit}</a>
+				<!--{/if}-->
+				<!--{if isset($space['privacy']['filter_gid'][$key])}--><span class="gray">[{lang shield}]</span><!--{/if}--> <a href="space.php?do=friend&group=$key"><span id="friend_groupname_$key">$value</span></a>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+
+</div>
+
+
+<!--{else}-->
+<!--{eval
+	$_TPL['spacetitle'] = "{lang friends}";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=friend&view=me\">{lang author_friend_list}</a>";
+}-->
+	<!--{template space_menu}-->
+	<div class="h_status">{lang total_of} $space[friendnum] {lang friends_num}</div>
+	<!--{template space_list}-->
+
+<!--{/if}-->
+
+<!--{/if}-->
+
+<!--{template footer}-->

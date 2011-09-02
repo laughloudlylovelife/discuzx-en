@@ -1,0 +1,245 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<div class="l_status c_form">
+	<a href="cp.php?ac=credit"$cat_actives[base]>{lang credit_my}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=rule"$cat_actives[rule]>{lang credit_manage}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=usergroup"$cat_actives[usergroup]>{lang group_rules}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=credit&op=exchange"$cat_actives[exchange]>{lang redeem}</a>
+</div>
+
+<!--{eval
+	$_TPL['cycletype'] = array(
+		'0' => lang('cycle_off'),
+		'1' => lang('cycle_day'),
+		'2' => lang('cycle_hour'),
+		'3' => lang('cycle_minutes'),
+		'4' => lang('cycle_unlimited')
+	);
+}-->
+
+<div class="c_form">
+<!--{if empty($_GET['op'])}-->	
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th width="150">{lang experience_value}:</th>
+			<td><span style="color:green;font-size:14px;">$space[experience]</span> <!--{eval echo getstar($space[experience]);}--></td>
+		</tr>
+		<tr><th width="150">&nbsp;</th><td class="gray">
+			{lang icon_every_points} <strong>$_SCONFIG[starcredit]</strong> {lang points_num}, {lang icon_will_add} <img src="image/star_level1.gif" align="absmiddle"><br>
+			{lang icon_every_level} <strong>$_SCONFIG[starlevelnum]</strong> {lang icon_will_upgrade} <strong>1</strong> {lang icon_will_upgrade_next}<br>
+			{lang icon_all_levels}: <!--{eval for($i=1;$i<11;$i++){}--><img src="image/star_level{$i}.gif"><!--{eval }}--></td></tr>
+		<tr>
+			<th width="150">{lang user_group}:</th>
+			<td>
+				<span<!--{eval g_color($space[groupid]);}-->>$space[grouptitle]</span>
+				<!--{eval g_icon($space[groupid]);}-->
+			</td>
+		</tr>
+		<tr>
+			<th width="150">{lang credit_number}:</th>
+			<td>
+			<img src="image/credit.gif">
+			<span style="color:red;font-size:14px;">$space[credit]</span>
+			<span class="gray">(<a href="space.php?do=top&view=credit">{lang ranking_see}</a>)</span>
+			</td>
+		</tr>
+		<tr><th>{lang visits_number}:</th>
+			<td>$space[viewnum] 
+			<span class="gray">(<a href="space.php?do=top&view=viewnum">{lang ranking_see}</a>)</span>
+			</td></tr>
+		<tr><th>{lang create_date}:</th><td><!--{date('Y-m-d',$space[dateline],1)}--></td></tr>
+		<tr><th>{lang last_logged}:</th><td><!--{date('Y-m-d',$space[lastlogin],1)}--></td></tr>
+		<tr><th>{lang last_updated}:</th><td><!--{date('Y-m-d',$space[updatetime],1)}--></td></tr>
+
+		<tr>
+			<th>{lang space_capacity}:</th>
+			<td> {lang maximum_is} $maxattachsize, {lang in_use} $space[attachsize] ({$percent}%)</td>
+		</tr>
+		<!--{if $space[haveattachsize]}--><tr><th>{lang space_capacity_left}:</th><td>$space[haveattachsize]</td></tr><!--{/if}-->
+	</table>
+	<br>
+
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>{lang credit_history}</h2>
+			<p>{lang credit_history_intro}</p>
+		</caption>
+		<thead>
+		<tr class="title">
+			<td>{lang action_name}</td>
+			<td align="center">{lang total_summ}</td>
+			<td align="center">{lang cycles}</td>
+			<td align="center">{lang single_summ}</td>
+			<td align="center">{lang single_empirical}</td>
+			<td align="center">{lang award_time}</td>
+		</tr>
+		</thead>
+		<!--{if $list}-->
+		<!--{loop $list $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td><a href="cp.php?ac=credit&op=rule&rid=$value[rid]">$value[rulename]</a></td>
+			<td align="center">$value[total]</td>
+			<td align="center">$value[cyclenum]</td>
+			<td align="center">$value[credit]</td>
+			<td align="center">$value[experience]</td>
+			<td align="center"><!--{date('m-d H:i',$value[dateline])}--></td>
+		</tr>
+		<!--{/loop}-->
+		<!--{else}-->
+		<tr>
+			<td colspan="6">{lang credits_no}</td>
+		</tr>
+		<!--{/if}-->
+		<!--{if $multi}-->
+		<tr>
+			<td colspan="6"><div class="page">$multi</div></td>
+		</tr>
+		<!--{/if}-->
+	</table>
+
+<!--{elseif $_GET['op'] == 'exchange'}-->
+
+	<form method="post" action="cp.php?ac=credit&op=exchange">
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>{lang redeem}</h2>
+		<p>{lang redeem_intro}</p>
+	</caption>
+	<tr><th width="150">{lang credit_current}:</th><td> $space[credit]</td></tr>
+	<tr>
+		<th><label for="password">{lang password}</label>:</th>
+		<td><input type="password" name="password" class="t_input" /></td>
+	</tr>
+	<tr>
+		<th>{lang credit_expend}:</th>
+		<td><input type="text" id="amount" name="amount" value="0" class="t_input" onkeyup="calcredit();" /></td>
+	</tr>
+	<tr>
+		<th>{lang credit_convert}:</th>
+		<td>
+			<input type="text" id="desamount" value="0" class="t_input" disabled />&nbsp;&nbsp;
+			<select name="tocredits" id="tocredits" onChange="calcredit();">
+			<!--{loop $_CACHE['creditsettings'] $id $ecredits}-->
+				<!--{if $ecredits[ratio]}-->
+					<option value="$id" unit="$ecredits[unit]" title="$ecredits[title]" ratio="$ecredits[ratio]">$ecredits[title]</option>
+				<!--{/if}-->
+			<!--{/loop}-->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>{lang exchange_ratio}:</th>
+		<td><span class="bold">1</span>&nbsp;<span id="orgcreditunit">{lang credit}</span><span id="orgcredittitle"></span>&nbsp;{lang exchange}&nbsp;<span class="bold" id="descreditamount"></span>&nbsp;<span id="descreditunit"></span><span id="descredittitle"></span></td>
+	</tr>
+	<tr><th>&nbsp;</th><td><input type="submit" name="exchangesubmit" value="{lang credit_exchange}" class="submit"></td></tr>
+	</table>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	<script type="text/javascript">
+		function calcredit() {
+			tocredit = $('tocredits')[$('tocredits').selectedIndex];
+			$('descreditunit').innerHTML = tocredit.getAttribute('unit');
+			$('descredittitle').innerHTML = tocredit.getAttribute('title');
+			$('descreditamount').innerHTML = Math.round(1/tocredit.getAttribute('ratio') * 100) / 100;
+			$('amount').value = $('amount').value.toInt();
+			if($('amount').value != 0) {
+				$('desamount').value = Math.floor(1/tocredit.getAttribute('ratio') * $('amount').value);
+			} else {
+				$('desamount').value = $('amount').value;
+			}
+		}
+		String.prototype.toInt = function() {
+			var s = parseInt(this);
+			return isNaN(s) ? 0 : s;
+		}
+		calcredit();
+	</script>
+
+<!--{elseif $_GET['op'] == 'rule'}-->
+
+	<!--{if $list}-->
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>{lang reward_rules}</h2>
+			<p>{lang reward_rules_intro}</p>
+		</caption>
+		<tr class="title">
+			<td>{lang action_name}</td>
+			<td align="center">{lang cycle_range}</td>
+			<td align="center">{lang cycle_times_to_reward}</td>
+			<td align="center" width="100">{lang single_award_score}</td>
+		</tr>
+		<!--{loop $list $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td>$value[rulename]</td>
+			<td align="center">$_TPL[cycletype][$value[cycletype]]</td>
+			<td align="center"><!--{if $value[rewardnum]}-->$value[rewardnum]<!--{else}-->{lang award_unlimited}<!--{/if}--></td>
+			<td align="center">$value[credit]</td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	<!--{/if}-->
+	
+	<!--{if $list2}-->
+	<br>
+	<table cellspacing="0" cellpadding="0" class="listtable">
+		<caption>
+			<h2>{lang credit_decrease_rules}</h2>
+			<p>{lang credit_decrease_rules_intro}</p>
+		</caption>
+		<tr class="title">
+			<th>{lang action_name}</th>
+			<th align="center">{lang credit_decrease_score}</th>
+		</tr>
+		<!--{loop $list2 $key $value}-->
+		<tr<!--{if $key%2==0}--> class="line"<!--{/if}-->>
+			<td>$value[rulename]</td>
+			<td align="center" width="100">$value[credit]</td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	<!--{/if}-->
+	
+<!--{elseif $_GET['op'] == 'usergroup'}-->
+
+	<table cellspacing="0" cellpadding="0" class="listtable">
+	<caption>
+		<h2>{lang user_group_general}</h2>
+		<p>{lang user_group_general_intro}</p>
+	</caption>
+	<tr class="title">
+		<th width="150">{lang user_group_name}</th>
+		<td>{lang experience_range}</td>
+	</tr>
+	<!--{loop $groups $value}-->
+	<tr>
+		<th><span<!--{eval g_color($value[gid]);}-->>{$value[grouptitle]}</span><!--{eval g_icon($value[gid]);}--></th>
+		<td>$value[explower] ~ $value[exphigher]</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	
+	<table cellspacing="0" cellpadding="0" class="listtable">
+	<caption>
+		<h2>{lang user_group_special}</h2>
+		<p>{lang group_special_norestricts}</p>
+	</caption>
+	<tr class="title">
+		<th width="150">{lang user_group_name}</th>
+		<td>{lang experience_range}</td>
+	</tr>
+	<!--{loop $s_groups $value}-->
+	<tr>
+		<th><span<!--{eval g_color($value[gid]);}-->>{$value[grouptitle]}</span><!--{eval g_icon($value[gid]);}--></th>
+		<td>-</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+
+<!--{/if}-->
+
+</div>
+
+<!--{template footer}-->

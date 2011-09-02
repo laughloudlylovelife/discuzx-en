@@ -1,0 +1,16 @@
+<!-- ========================================= -->
+<!-- //vot !!!!!!!!!! LANGUAGE !!!!!! -->
+
+		<!--{if $_TPL['languages']}-->
+
+		<div class="chostlp" title="{lang lang_switch}"><img id="choslng" src="{$_TPL['default_language']['icon']}" onmouseover="showMenu(this.id)" alt="{$_TPL['default_language']['name']}" /></div>
+		<ul id="choslng_menu" class="chostlp_drop" style="display: none">
+		<!--{loop $_TPL['languages'] $value}-->
+			<li><a href="cp.php?ac=common&op=changelng&name=$value[name]" title="$value[title]"><img src="$value[icon]" alt="$value[name]" /></a></li>
+		<!--{/loop}-->
+		</ul>
+
+		<!--{/if}-->
+<!-- //vot !!!!!!!!!! LANGUAGE !!!!!! -->		
+<!-- ========================================= -->
+
