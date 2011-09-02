@@ -1,0 +1,815 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=usergroup"><span>{lang user_groups_all}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=usergroup&op=add">{lang user_group_add}</a></li>
+	</ul>
+</div>
+
+<!--{if $list }-->
+	<form method="post" action="admincp.php?ac=usergroup">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+
+	<div class="title">
+	<h3>{lang user_group_general}</h3>
+	<p>{lang user_group_ordinary_intro}</p>
+	</div>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+	<th>{lang user_group_title}</th>
+	<td>{lang experience_greater_than}</td>
+	<td width="130">{lang operation}</td>
+	</tr>
+	<!--{loop $list[0] $value}-->
+	<tr>
+	<th><span<!--{eval g_color($value[gid]);}-->>$value[grouptitle]</span><!--{eval g_icon($value[gid]);}--></th>
+	<!--{if $value['explower'] == -999999999}-->
+	<td><input type="text" size="15" value="$value[explower]" name="explower[{$value[gid]}]" readonly></td>
+	<!--{else}-->
+	<td><input type="text" size="15" value="$value[explower]" name="explower[{$value[gid]}]"></td>
+	<!--{/if}-->
+	<td width="130">
+	<a href="admincp.php?ac=usergroup&op=edit&gid=$value[gid]">{lang edit}</a> |
+	<a href="admincp.php?ac=usergroup&op=copy&gid=$value[gid]">{lang copy}</a> |
+	<a href="admincp.php?ac=usergroup&op=delete&gid=$value[gid]">{lang delete}</a>
+	</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	</div>
+	<div class="footactions">
+		<input type="submit" name="updatesubmit" value="{lang submit_update}" class="submit">
+	</div>
+	</form>
+
+	<div class="bdrcontent">
+	<br />
+	<div class="title">
+	<h3>{lang user_group_special}</h3>
+	<p>{lang user_group_special_intro}</p>
+	</div>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="formtable">
+	<!--{loop $list[1] $value}-->
+	<tr>
+	<th><span<!--{eval g_color($value[gid]);}-->>$value[grouptitle]</span><!--{eval g_icon($value[gid]);}--></th>
+	<td width="130">
+	<a href="admincp.php?ac=usergroup&op=edit&gid=$value[gid]">{lang edit}</a> |
+	<a href="admincp.php?ac=usergroup&op=copy&gid=$value[gid]">{lang copy}</a> |
+	<a href="admincp.php?ac=usergroup&op=delete&gid=$value[gid]">{lang delete}</a>
+	</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+
+	<br />
+	<div class="title">
+	<h3>{lang user_group_system}</h3>
+	<p>{lang user_group_system_intro}</p>
+	</div>
+
+	<table border="0" cellspacing="0" cellpadding="0" class="formtable">
+	<!--{loop $list[-1] $value}-->
+	<tr>
+	<th><span<!--{eval g_color($value[gid]);}-->>$value[grouptitle]</span><!--{eval g_icon($value[gid]);}--></th>
+	<td width="130">
+	<a href="admincp.php?ac=usergroup&op=edit&gid=$value[gid]">{lang edit}</a> |
+	<a href="admincp.php?ac=usergroup&op=copy&gid=$value[gid]">{lang copy}</a>
+	</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	</div>
+
+
+<!--{/if}-->
+<!--{if $_GET[op]=='copy'}-->
+	<form method="post" action="admincp.php?ac=usergroup&gid=$gid">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		<div class="bdrcontent">
+
+			<div class="title">
+				<h3>{lang copy_rights}</h3>
+				<p>{lang copy_rights_to_selected_groups}</p>
+			</div>
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<tr>
+					<th style="width:12em;">{lang user_group_source}</th>
+					<td>$from</td>
+				</tr>
+				<tr>
+					<th>{lang user_group_targed}</th>
+					<td>
+						<select name="aimgroup[]" size="10" multiple="multiple" style="width: 80%">
+							<!--{loop $grouparr $key $value}-->
+							<option value="$value[gid]">$value[grouptitle]</option>
+							<!--{/loop}-->
+						</select>
+						<p>{lang user_group_select_multi}</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="footactions">
+		<input type="hidden" name="gid" value="$gid">
+		<input type="submit" name="copysubmit" value="{lang submit_button}" class="submit">
+		</div>
+
+	</form>
+<!--{/if}-->
+<!--{if $thevalue}-->
+	<script type="text/javascript">
+	function credisshow(value) {
+		if(value=='0') {
+			document.getElementById('tr_credit').style.display = '';
+		} else {
+			document.getElementById('tr_credit').style.display = 'none';
+		}
+	}
+	</script>
+<!--{eval
+	$_TPL['discount'] = array(
+		'0' => lang('disount_no'),
+		'1' => lang('discount1'),
+		'2' => lang('discount2'),
+		'3' => lang('discount3'),
+		'4' => lang('discount4'),
+		'5' => lang('discount5'),
+		'6' => lang('discount6'),
+		'7' => lang('discount7'),
+		'8' => lang('discount8'),
+		'9' => lang('discount9'),
+		'-1' => lang('free')
+	);
+}-->
+	<form method="post" action="admincp.php?ac=usergroup&gid=$thevalue[gid]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+
+	<div class="title">
+		<h3>$thevalue[grouptitle] {lang group_space_permissions}</h3>
+		<p>{lang group_space_permissions_intro}</p>
+	</div>
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr><th style="width:12em;">{lang name}</th><td><input type="text" name="set[grouptitle]" value="$thevalue[grouptitle]"></td></tr>
+
+	<!--{if !isset($thevalue['system'])}-->
+	<tr>
+		<th>{lang user_group_type}</th>
+		<td>
+			<input type="radio" name="set[system]" value="0" onclick="credisshow(0)" checked> {lang user_group_general}
+			<input type="radio" name="set[system]" value="1" onclick="credisshow(1)"> {lang user_group_special} ({lang experience_not_limited})
+		</td>
+	</tr>
+	<!--{/if}-->
+	<tr>
+		<th>{lang user_group_disable_access}</th>
+		<td>
+			<input type="radio" name="set[banvisit]" value="0"<!--{if $thevalue['banvisit']!=1}--> checked<!--{/if}-->> {lang access_enable}
+			<input type="radio" name="set[banvisit]" value="1"<!--{if $thevalue['banvisit']==1}--> checked<!--{/if}-->> {lang access_disable}
+		</td>
+	</tr>
+	<!--{if empty($thevalue['system'])}-->
+	<tr id="tr_credit"><th>{lang experience_minimal}</th><td>
+	<!--{if $thevalue['explower'] > -999999999}-->
+	<input type="text" name="set[explower]" value="$thevalue[explower]" size="20">
+	<!--{else}-->
+	<input type="hidden" name="set[explower]" value="$thevalue[explower]" size="20">
+	$thevalue[explower] ({lang experience_minimal_warn})
+	<!--{/if}-->
+	{lang user_group_minimal_points}</td></tr>
+	<!--{/if}-->
+
+	<tr><th>{lang user_name_color}</th><td><input type="text" name="set[color]" value="$thevalue[color]" size="10"> {lang for_example}: #FF0000</td></tr>
+	<tr><th>{lang user_group_icon}</th><td><input type="text" name="set[icon]" value="$thevalue[icon]" size="40"> {lang user_group_icon_intro}</td></tr>
+
+	<tr><th>{lang attach_size_max}</th><td><input type="text" name="set[maxattachsize]" value="$thevalue[maxattachsize]" size="10"> {lang attach_size_max_intro}</td></tr>
+	<tr><th>{lang friends_num_max}</th><td><input type="text" name="set[maxfriendnum]" value="$thevalue[maxfriendnum]" size="10"> {lang friends_num_max_intro}</td></tr>
+	<tr>
+		<th>{lang next_posting_interval}</th>
+		<td><input type="text" name="set[postinterval]" value="$thevalue[postinterval]" size="10">
+			{lang next_posting_interval_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang captcha_postings_require}</th>
+		<td>
+			<input type="radio" name="set[seccode]" value="0"<!--{if $thevalue['seccode']!=1}--> checked<!--{/if}-->> {lang captcha_not_required}
+			<input type="radio" name="set[seccode]" value="1"<!--{if $thevalue['seccode']==1}--> checked<!--{/if}-->> {lang captcha_is_required}
+			<br>{lang captcha_postings_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang next_search_interval}</th>
+		<td><input type="text" name="set[searchinterval]" value="$thevalue[searchinterval]" size="10"> {lang search_interval_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang search_payment}</th>
+		<td>
+			<input type="radio" name="set[searchignore]" value="1"<!--{if $thevalue['searchignore']==1}--> checked<!--{/if}-->> {lang search_is_free}
+			<input type="radio" name="set[searchignore]" value="0"<!--{if $thevalue['searchignore']!=1}--> checked<!--{/if}-->> {lang search_discount}
+		</td>
+	</tr>
+	
+	<tr>
+		<th>{lang domain_length_min}</th>
+		<td><input type="text" name="set[domainlength]" value="$thevalue[domainlength]" size="10">
+			{lang domain_length_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang anti_spam_use}</th>
+		<td>
+			<input type="radio" name="set[spamignore]" value="0"<!--{if $thevalue['spamignore']!=1}--> checked<!--{/if}-->> {lang restriction_use}
+			<input type="radio" name="set[spamignore]" value="1"<!--{if $thevalue['spamignore']==1}--> checked<!--{/if}-->> {lang restriction_ignore}
+		</td>
+	</tr>
+	
+	<tr>
+		<th>{lang doing_enable}</th>
+		<td>
+			<input type="radio" name="set[allowdoing]" value="1"<!--{if $thevalue['allowdoing']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowdoing]" value="0"<!--{if $thevalue['allowdoing']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang topic_reply}</th>
+		<td>
+			<input type="radio" name="set[allowblog]" value="1"<!--{if $thevalue['allowblog']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowblog]" value="0"<!--{if $thevalue['allowblog']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang upload_image}</th>
+		<td>
+			<input type="radio" name="set[allowupload]" value="1"<!--{if $thevalue['allowupload']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowupload]" value="0"<!--{if $thevalue['allowupload']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang share_postings_enable}</th>
+		<td>
+			<input type="radio" name="set[allowshare]" value="1"<!--{if $thevalue['allowshare']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowshare]" value="0"<!--{if $thevalue['allowshare']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang messages_comments_publish}</th>
+		<td>
+			<input type="radio" name="set[allowcomment]" value="1"<!--{if $thevalue['allowcomment']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowcomment]" value="0"<!--{if $thevalue['allowcomment']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang top_recommend_allow}</th>
+		<td>
+			<input type="radio" name="set[allowclick]" value="1"<!--{if $thevalue['allowclick']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowclick]" value="0"<!--{if $thevalue['allowclick']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang group_create_new}</th>
+		<td>
+			<input type="radio" name="set[allowmtag]" value="1"<!--{if $thevalue['allowmtag']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowmtag]" value="0"<!--{if $thevalue['allowmtag']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang group_topic_publish}</th>
+		<td>
+			<input type="radio" name="set[allowthread]" value="1"<!--{if $thevalue['allowthread']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowthread]" value="0"<!--{if $thevalue['allowthread']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang group_topic_edit}</th>
+		<td>
+			<input type="radio" name="set[edittrail]" value="1"<!--{if $thevalue['edittrail']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[edittrail]" value="0"<!--{if $thevalue['edittrail']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang group_topic_replies_enable}</th>
+		<td>
+			<input type="radio" name="set[allowpost]" value="1"<!--{if $thevalue['allowpost']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowpost]" value="0"<!--{if $thevalue['allowpost']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang topic_poll}</th>
+		<td>
+			<input type="radio" name="set[allowpoll]" value="1"<!--{if $thevalue['allowpoll']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowpoll]" value="0"<!--{if $thevalue['allowpoll']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang events_create_allow}</th>
+		<td>
+			<input type="radio" name="set[allowevent]" value="1"<!--{if $thevalue['allowevent']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowevent]" value="0"<!--{if $thevalue['allowevent']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang events_require_verification}</th>
+		<td>
+			<input type="radio" name="set[verifyevent]" value="1"<!--{if $thevalue['verifyevent']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[verifyevent]" value="0"<!--{if $thevalue['verifyevent']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang pm_send_allow}</th>
+		<td>
+			<input type="radio" name="set[allowpm]" value="1"<!--{if $thevalue['allowpm']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowpm]" value="0"<!--{if $thevalue['allowpm']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang greetings_allow}</th>
+		<td>
+			<input type="radio" name="set[allowpoke]" value="1"<!--{if $thevalue['allowpoke']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowpoke]" value="0"<!--{if $thevalue['allowpoke']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang friends_add_allow}</th>
+		<td>
+			<input type="radio" name="set[allowfriend]" value="1"<!--{if $thevalue['allowfriend']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowfriend]" value="0"<!--{if $thevalue['allowfriend']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang video_restrictions_ignore}</th>
+		<td>
+			<input type="radio" name="set[videophotoignore]" value="1"<!--{if $thevalue['videophotoignore']==1}--> checked<!--{/if}-->> {lang video_restrictions_not_use}
+			<input type="radio" name="set[videophotoignore]" value="0"<!--{if $thevalue['videophotoignore']!=1}--> checked<!--{/if}-->> {lang restriction_use}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang video_certification_view}</th>
+		<td>
+			<input type="radio" name="set[allowviewvideopic]" value="1"<!--{if $thevalue['allowviewvideopic']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowviewvideopic]" value="0"<!--{if $thevalue['allowviewvideopic']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang applications_use_allow}</th>
+		<td>
+			<input type="radio" name="set[allowmyop]" value="1"<!--{if $thevalue['allowmyop']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowmyop]" value="0"<!--{if $thevalue['allowmyop']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang magic_use_allow}</th>
+		<td>
+			<input type="radio" name="set[allowmagic]" value="1"<!--{if $thevalue['allowmagic']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowmagic]" value="0"<!--{if $thevalue['allowmagic']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang magic_discount_allow}</th>
+		<td>
+			<select name="set[magicdiscount]">
+				<!--{loop $_TPL[discount] $key $val}-->
+				<option value="$key" <!--{if $thevalue['magicdiscount'] == $key}--> selected<!--{/if}-->>$val</option>
+				<!--{/loop}-->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>{lang global_topic_create_allow}</th>
+		<td>
+			<input type="radio" name="set[allowtopic]" value="1"<!--{if $thevalue['allowtopic']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowtopic]" value="0"<!--{if $thevalue['allowtopic']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang css_custom_allow}</th>
+		<td>
+			<input type="radio" name="set[allowcss]" value="1"<!--{if $thevalue['allowcss']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowcss]" value="0"<!--{if $thevalue['allowcss']!=1}--> checked<!--{/if}-->> {lang no}
+			<br>{lang css_custom_warn}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang blog_html_allow}</th>
+		<td>
+			<input type="radio" name="set[allowhtml]" value="1"<!--{if $thevalue['allowhtml']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowhtml]" value="0"<!--{if $thevalue['allowhtml']!=1}--> checked<!--{/if}-->> {lang no}
+			<br>{lang blog_html_warn}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang stats_allow}</th>
+		<td>
+			<input type="radio" name="set[allowstat]" value="1"<!--{if $thevalue['allowstat']==1}--> checked<!--{/if}-->> {lang yes}
+			<input type="radio" name="set[allowstat]" value="0"<!--{if $thevalue['allowstat']!=1}--> checked<!--{/if}-->> {lang no}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang ip_closure_restrictions}</th>
+		<td>
+			<input type="radio" name="set[closeignore]" value="1"<!--{if $thevalue['closeignore']==1}--> checked<!--{/if}-->> {lang ip_closure_use}
+			<input type="radio" name="set[closeignore]" value="0"<!--{if $thevalue['closeignore']!=1}--> checked<!--{/if}-->> {lang restriction_use}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang level_upgrade_magic}</th>
+		<td>
+			<select id="newmagicaward">
+				<!--{loop $_SGLOBAL['magic'] $key $value}-->
+				<option value="$key">$value</option>
+				<!--{/loop}-->				
+			</select>
+			<input type="text" id="newmagicawardnum" value="1" />
+			<input class="button" type="button" onclick="addMagicAward()" value="{lang add_new}" />
+			<ul id="magicawards">
+			<!--{loop $thevalue[magicaward] $value}-->
+			<li id="magicaward_$value[mid]">
+				<input type="hidden" name="magicaward[]" value="$value[mid],$value[num]">
+				$_SGLOBAL[magic][$value[mid]] &nbsp;&nbsp; 
+				$value[num] &nbsp;&nbsp; 
+				<a href="#" onclick="removeMagicAward(this);return false;">{lang delete}</a>
+			</li>
+			<!--{/loop}-->
+			</ul>
+			<script type="text/javascript">
+			function addMagicAward(){
+				var mid = $('newmagicaward').value;
+				var id = "magicaward_" + mid;
+				var num = $('newmagicawardnum').value;
+				var name = $('newmagicaward').options[$('newmagicaward').selectedIndex].text;
+				if($(id)) {
+					removeMagicAward($(id).getElementsByTagName("a")[0]);
+				}
+				var s = '<li id="' + id + '">';
+				s += '<input type="hidden" name="magicaward[]" value="' + mid + ',' + num + '" />';
+				s += name + ' &nbsp;&nbsp;' + "\n";
+				s += num + ' &nbsp;&nbsp;' + "\n";
+				s += '<a href="#" onclick="removeMagicAward(this);return false;">{lang delete}</a>';
+				s += '</li>';
+				$('magicawards').innerHTML += s;
+			}
+			function removeMagicAward(o) {
+				$('magicawards').removeChild(o.parentNode);
+			}
+			</script>
+		</td>
+	</tr>
+	</table>
+
+	<!--{if $thevalue[system]}-->
+	<br />
+	<div class="title">
+	<h3>$thevalue[grouptitle] {lang site_manage_permission}</h3>
+	<p>{lang site_manage_permission_warn}</p>
+	</div>
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th style="width:12em;">{lang users_status_manage}</th>
+		<td>
+			<input type="radio" name="set[manageconfig]" value="1"<!--{if $thevalue['manageconfig']==1}--> checked<!--{/if}-->> {lang users_status_manage_enable}
+			<input type="radio" name="set[manageconfig]" value="0"<!--{if $thevalue['manageconfig']!=1}--> checked<!--{/if}-->> {lang disable}
+			<br>{lang users_status_manage_warn}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang batch_allow}</th>
+		<td>
+			<input type="radio" name="set[managebatch]" value="1"<!--{if $thevalue['managebatch']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managebatch]" value="0"<!--{if $thevalue['managebatch']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang tags}</th>
+		<td>
+			<input type="radio" name="set[managetag]" value="1"<!--{if $thevalue['managetag']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managetag]" value="0"<!--{if $thevalue['managetag']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang groups}</th>
+		<td>
+			<input type="radio" name="set[managemtag]" value="1"<!--{if $thevalue['managemtag']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managemtag]" value="0"<!--{if $thevalue['managemtag']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang events}</th>
+		<td>
+			<input type="radio" name="set[manageevent]" value="1"<!--{if $thevalue['manageevent']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageevent]" value="0"<!--{if $thevalue['manageevent']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang feeds}</th>
+		<td>
+			<input type="radio" name="set[managefeed]" value="1"<!--{if $thevalue['managefeed']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managefeed]" value="0"<!--{if $thevalue['managefeed']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang doings}</th>
+		<td>
+			<input type="radio" name="set[managedoing]" value="1"<!--{if $thevalue['managedoing']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managedoing]" value="0"<!--{if $thevalue['managedoing']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang shares}</th>
+		<td>
+			<input type="radio" name="set[manageshare]" value="1"<!--{if $thevalue['manageshare']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageshare]" value="0"<!--{if $thevalue['manageshare']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang blogs}</th>
+		<td>
+			<input type="radio" name="set[manageblog]" value="1"<!--{if $thevalue['manageblog']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageblog]" value="0"<!--{if $thevalue['manageblog']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang albums}</th>
+		<td>
+			<input type="radio" name="set[managealbum]" value="1"<!--{if $thevalue['managealbum']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managealbum]" value="0"<!--{if $thevalue['managealbum']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang comments}</th>
+		<td>
+			<input type="radio" name="set[managecomment]" value="1"<!--{if $thevalue['managecomment']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managecomment]" value="0"<!--{if $thevalue['managecomment']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang thread}</th>
+		<td>
+			<input type="radio" name="set[managethread]" value="1"<!--{if $thevalue['managethread']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managethread]" value="0"<!--{if $thevalue['managethread']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang polls}</th>
+		<td>
+			<input type="radio" name="set[managepoll]" value="1"<!--{if $thevalue['managepoll']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managepoll]" value="0"<!--{if $thevalue['managepoll']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang magic_log}</th>
+		<td>
+			<input type="radio" name="set[managemagiclog]" value="1"<!--{if $thevalue['managemagiclog']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managemagiclog]" value="0"<!--{if $thevalue['managemagiclog']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang network}</th>
+		<td>
+			<input type="radio" name="set[managenetwork]" value="1"<!--{if $thevalue['managenetwork']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managenetwork]" value="0"<!--{if $thevalue['managenetwork']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang user_group}</th>
+		<td>
+			<input type="radio" name="set[manageusergroup]" value="1"<!--{if $thevalue['manageusergroup']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageusergroup]" value="0"<!--{if $thevalue['manageusergroup']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang credit_manage}</th>
+		<td>
+			<input type="radio" name="set[managecredit]" value="1"<!--{if $thevalue['managecredit']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managecredit]" value="0"<!--{if $thevalue['managecredit']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang profile_fields}</th>
+		<td>
+			<input type="radio" name="set[manageprofilefield]" value="1"<!--{if $thevalue['manageprofilefield']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageprofilefield]" value="0"<!--{if $thevalue['manageprofilefield']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang profield}</th>
+		<td>
+			<input type="radio" name="set[manageprofield]" value="1"<!--{if $thevalue['manageprofield']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageprofield]" value="0"<!--{if $thevalue['manageprofield']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang event_types}</th>
+		<td>
+			<input type="radio" name="set[manageeventclass]" value="1"<!--{if $thevalue['manageeventclass']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageeventclass]" value="0"<!--{if $thevalue['manageeventclass']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang censor}</th>
+		<td>
+			<input type="radio" name="set[managecensor]" value="1"<!--{if $thevalue['managecensor']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managecensor]" value="0"<!--{if $thevalue['managecensor']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang ads}</th>
+		<td>
+			<input type="radio" name="set[managead]" value="1"<!--{if $thevalue['managead']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managead]" value="0"<!--{if $thevalue['managead']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang report_management}</th>
+		<td>
+			<input type="radio" name="set[managereport]" value="1"<!--{if $thevalue['managereport']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managereport]" value="0"<!--{if $thevalue['managereport']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang cache_update}</th>
+		<td>
+			<input type="radio" name="set[managecache]" value="1"<!--{if $thevalue['managecache']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managecache]" value="0"<!--{if $thevalue['managecache']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang myop_applications_manage}</th>
+		<td>
+			<input type="radio" name="set[manageapp]" value="1"<!--{if $thevalue['manageapp']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageapp]" value="0"<!--{if $thevalue['manageapp']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang blocks}</th>
+		<td>
+			<input type="radio" name="set[manageblock]" value="1"<!--{if $thevalue['manageblock']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageblock]" value="0"<!--{if $thevalue['manageblock']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang templates}</th>
+		<td>
+			<input type="radio" name="set[managetemplate]" value="1"<!--{if $thevalue['managetemplate']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managetemplate]" value="0"<!--{if $thevalue['managetemplate']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang backup}</th>
+		<td>
+			<input type="radio" name="set[managebackup]" value="1"<!--{if $thevalue['managebackup']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managebackup]" value="0"<!--{if $thevalue['managebackup']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang stats_update}</th>
+		<td>
+			<input type="radio" name="set[managestat]" value="1"<!--{if $thevalue['managestat']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managestat]" value="0"<!--{if $thevalue['managestat']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang cron_tasks}</th>
+		<td>
+			<input type="radio" name="set[managecron]" value="1"<!--{if $thevalue['managecron']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managecron]" value="0"<!--{if $thevalue['managecron']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang ip_settings}</th>
+		<td>
+			<input type="radio" name="set[manageip]" value="1"<!--{if $thevalue['manageip']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageip]" value="0"<!--{if $thevalue['manageip']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang hot_users}</th>
+		<td>
+			<input type="radio" name="set[managehotuser]" value="1"<!--{if $thevalue['managehotuser']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managehotuser]" value="0"<!--{if $thevalue['managehotuser']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang default_users}</th>
+		<td>
+			<input type="radio" name="set[managedefaultuser]" value="1"<!--{if $thevalue['managedefaultuser']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managedefaultuser]" value="0"<!--{if $thevalue['managedefaultuser']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang users_remove_allow}</th>
+		<td>
+			<input type="radio" name="set[managedelspace]" value="1"<!--{if $thevalue['managedelspace']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managedelspace]" value="0"<!--{if $thevalue['managedelspace']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang real_name_verification}</th>
+		<td>
+			<input type="radio" name="set[managename]" value="1"<!--{if $thevalue['managename']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managename]" value="0"<!--{if $thevalue['managename']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang video_certify}</th>
+		<td>
+			<input type="radio" name="set[managevideophoto]" value="1"<!--{if $thevalue['managevideophoto']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managevideophoto]" value="0"<!--{if $thevalue['managevideophoto']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang users_protection_manage}</th>
+		<td>
+			<input type="radio" name="set[managespacegroup]" value="1"<!--{if $thevalue['managespacegroup']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managespacegroup]" value="0"<!--{if $thevalue['managespacegroup']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang user_basic_manage}</th>
+		<td>
+			<input type="radio" name="set[managespaceinfo]" value="1"<!--{if $thevalue['managespaceinfo']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managespaceinfo]" value="0"<!--{if $thevalue['managespaceinfo']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang user_points}</th>
+		<td>
+			<input type="radio" name="set[managespacecredit]" value="1"<!--{if $thevalue['managespacecredit']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managespacecredit]" value="0"<!--{if $thevalue['managespacecredit']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang user_notice_sending}</th>
+		<td>
+			<input type="radio" name="set[managespacenote]" value="1"<!--{if $thevalue['managespacenote']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managespacenote]" value="0"<!--{if $thevalue['managespacenote']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang task_types}</th>
+		<td>
+			<input type="radio" name="set[managetask]" value="1"<!--{if $thevalue['managetask']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managetask]" value="0"<!--{if $thevalue['managetask']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang magic_types}</th>
+		<td>
+			<input type="radio" name="set[managemagic]" value="1"<!--{if $thevalue['managemagic']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managemagic]" value="0"<!--{if $thevalue['managemagic']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang hot_status_manage}</th>
+		<td>
+			<input type="radio" name="set[manageclick]" value="1"<!--{if $thevalue['manageclick']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[manageclick]" value="0"<!--{if $thevalue['manageclick']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang global_topic_manage}</th>
+		<td>
+			<input type="radio" name="set[managetopic]" value="1"<!--{if $thevalue['managetopic']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managetopic]" value="0"<!--{if $thevalue['managetopic']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang blogs_management}</th>
+		<td>
+			<input type="radio" name="set[managelog]" value="1"<!--{if $thevalue['managelog']==1}--> checked<!--{/if}-->> {lang can_manage}
+			<input type="radio" name="set[managelog]" value="0"<!--{if $thevalue['managelog']!=1}--> checked<!--{/if}-->> {lang disable}
+		</td>
+	</tr>
+	</table>
+	<!--{/if}-->
+
+	</div>
+
+	<div class="footactions">
+	<input type="hidden" name="set[gid]" value="$thevalue[gid]">
+	<input type="submit" name="thevaluesubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

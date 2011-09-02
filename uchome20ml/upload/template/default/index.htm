@@ -1,0 +1,106 @@
+<!--{eval $_TPL['titles'] = array(); $_TPL['nosidebar']=1;}-->
+<!--{template header}-->
+<div id="network">
+<style type="text/css">
+#radomuser .nbox_c { width: 970px; w\idth: 966px; }
+	#radomuser ul { padding: 10px 0 0 10px; }
+		#radomuser li { float: left; width: 190px; height: 70px; color: #999; overflow: hidden; }
+</style>
+<script type="text/javascript">
+function setintro(type) {
+	var intro = '';
+	var bPosition = '';
+	if(type == 'doing') {
+		intro = '{lang intro1}';
+		bPosition = '0';
+	} else if(type == 'mtag') {
+		intro = '{lang intro2}';
+		bPosition = '175px';
+	} else if(type == 'pic') {
+		intro = '{lang intro3}';
+		bPosition = '55px';
+	} else if(type == 'app') {
+		intro = '{lang intro4}';
+		bPosition = '118px';
+	} else {
+		intro = '{lang intro5}';
+		bPosition = '0';
+	}
+	$('guest_intro').innerHTML = intro + '...';
+	$('guest_intro').style.backgroundPosition = bPosition + ' 100%'
+}
+</script>
+
+<div id="guestbar" class="nbox">
+	<div class="nbox_c">
+		<p id="guest_intro">{lang intro5}......</p>
+		<a href="do.php?ac=$_SCONFIG[register_action]" id="regbutton" onmouseover="setintro('register');">{lang signup}</a>
+		<p id="guest_app">
+			<a href="javascript:;" class="appdoing"  onmouseover="setintro('doing');">{lang doing}</a>
+			<a href="javascript:;" class="appphotos" onmouseover="setintro('pic');">{lang photos}</a>
+			<a href="javascript:;" class="appgames"  onmouseover="setintro('app');">{lang games}</a>
+			<a href="javascript:;" class="appgroups" onmouseover="setintro('mtag');">{lang groups}</a> 
+		</p>
+	</div>	
+	<div class="nbox_s side_rbox" id="nlogin_box">
+		<h3 class="ntitle">{lang login_please}</h3>
+		<div class="side_rbox_c">
+			<form name="loginform" action="do.php?ac=$_SCONFIG[login_action]&$url_plus&ref" method="post">
+				<p><label for="username">{lang user_name}</label> <input type="text" name="username" id="username" class="t_input" value="$membername" /></p>
+				<p><label for="password">{lang password}</label> <input type="password" name="password" id="password" class="t_input" value="$password" /></p>
+				<p class="checkrow"><input type="checkbox" id="cookietime" name="cookietime" value="315360000" $cookiecheck style="margin-bottom: -2px;" /><label for="cookietime">{lang remember_me}</label></p>
+				<p class="submitrow">
+					<input type="hidden" name="refer" value="space.php?do=home" />
+					<input type="submit" id="loginsubmit" name="loginsubmit" value="{lang login}" class="submit" />
+					<a href="do.php?ac=lostpasswd">{lang forgot}</a>
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+				</p>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--{if $myappcount}-->
+<div class="nbox">
+	<div class="nbox_c" style="border: none;">
+		<ul class="applist">
+		<!--{loop $myapplist $value}-->
+			<li>
+				<p class="aimg"><a href="userapp.php?id=$value[appid]" target="_blank"><img src="http://appicon.manyou.com/logos/$value[appid]" alt="$value[appname]" /></a></p>
+				<p><a href="userapp.php?id=$value[appid]" target="_blank">$value[appname]</a></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="susb">
+		<div class="ye_r_t"><div class="ye_l_t"><div class="ye_r_b"><div class="ye_l_b">
+			<div class="appmo">
+				<p>{lang total_of} <span>$myappcount</span> {lang appsnum}</p>
+				<p class="appmobutton"><a href="cp.php?ac=userapp&my_suffix=%2Fapp%2Flist">{lang apps_more}</a></p>
+			</div>
+		</div></div></div></div>	
+	</div>
+</div>
+<!--{/if}-->
+
+
+<div id="radomuser" class="nbox">
+	<div class="nbox_c">
+		<h2 class="ntitle">{lang welcome_exchange}</h2>
+		<ul class="s_clear">
+		<!--{loop $spacelist $value}-->
+			<li>
+				<div class="d_avatar avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+				<p>$value[resideprovince] $value[residecity]</p>
+				<p>$value[friendnum] {lang friend_num}</p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+
+
+</div>
+
+<!--{template footer}-->

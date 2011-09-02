@@ -1,0 +1,57 @@
+<!--{eval $_TPL['titles'] = array($fieldtitle, lang('groups'));}-->
+<!--{template header}-->
+
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang search_groups}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="mtag" />
+	<input type="hidden" name="view" value="hot" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/mtag.gif">{lang groups}</h2>
+
+<!--{if $space[self]}-->
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="space.php?uid=$space[uid]&do=thread"><span>{lang group_topics}</span></a></li>
+		<li><a href="space.php?do=mtag&view=me"><span>{lang member_of_groups}</span></a></li>
+		<li><a href="space.php?do=mtag&view=manage"><span>{lang i_manage_groups}</span></a></li>
+		<li class="active"><a href="space.php?do=mtag&view=hot"><span>{lang popular_groups}</span></a></li>
+		<li><a href="space.php?do=mtag&view=recommend"><span>{lang recommended_groups}</span></a></li>
+		<li class="null"><a href="cp.php?ac=thread">{lang topic_start}</a></li>
+		<li class="null"><a href="cp.php?ac=mtag">{lang group_create}</a></li>
+	</ul>
+</div>
+<!--{/if}-->
+
+<div class="h_status">
+ {lang group_category}: 
+<a href="space.php?do=mtag&view=hot"{$sub_actives[0]}>{lang all}</a>
+<!--{loop $_SGLOBAL['profield'] $value}-->
+<span class="pipe">|</span><a href="space.php?do=mtag&id=$value[fieldid]"{$sub_actives[$value[fieldid]]}>$value[title]</a>
+<!--{/loop}-->
+</div>
+
+<div class="box">
+	<!--{if $list}-->
+	<ul class="thread_list">
+	<!--{loop $list $value}-->
+		<li>
+			<div class="threadimg60"><a href="space.php?do=mtag&tagid=$value[tagid]"><img src="$value[pic]" style="width:60px;"></a></div>
+			<a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a><br />
+			{lang has} <span class="num">$value[membernum]</span> {lang members_joined}
+			<div class="gray">
+				{lang thread}: $value[threadnum], {lang posts}: $value[postnum]
+			</div>
+		</li>
+	<!--{/loop}-->
+	</ul>
+	<div class="page">$multi</div>
+	<!--{else}-->
+	<p>{lang no_groups_found}</p>
+	<!--{/if}-->
+</div>
+
+<!--{template footer}-->

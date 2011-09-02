@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+* {
+	word-break:break-all;
+	word-wrap:break-word;
+	font-family: "Verdana", "Arial", "sans-serif";
+	font-size:12px;
+	color:#000;
+	background-position:left top;
+}
+body {
+	margin:0; padding:0;
+	background-color: #FFF;
+	font-size:12px;
+	color:#000;
+	overflow:hidden;
+}
+div,form,img,p,ul,ol,li,dl,dt,dd,embed,fieldset,h1,h2,h3,h4,h5,h6 {
+	margin:0;
+	padding:0;
+	border:0;
+}
+select {margin:0; padding:0;}
+img {display:block;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;}
+table,td,tr,th{font-size:12px;}
+table {border-collapse:collapse; border-spacing:0;}
+.pagePart {width:460px; margin:0 auto 0 auto; clear:both;}
+.baseContainer {clear:both; overflow:hidden;}
+.beLeft {float:left; display:inline;}
+.beRight {float:right; display:inline;}
+.noFlout {float:none; clear:both;}
+.noBorder {border:none;}
+
+#header {
+	background:url(/uchome/widgets/misc/images/ab/bk_1.jpg) no-repeat 0 0;
+}
+#header .inner {
+	height:50px;
+	margin-top:13px;
+	background:url(/uchome/widgets/misc/images/ab/bk_2.jpg) repeat-y 0 0;
+}
+#header h1 {font-size:26px; font-weight:bold; padding:12px 0 0 30px;}
+#body {
+	height:345px;
+	background:url(/uchome/widgets/misc/images/ab/bk_3.jpg) repeat-y 0 0;
+}
+#body .inner {padding-left:18px;}
+#footer {
+	background:url(/uchome/widgets/misc/images/ab/bk_4.jpg) no-repeat 0 0;
+}
+#footer .inner {height:45px; margin-top:6px;}
+#note {
+	height:55px;
+	margin-right:20px;
+	padding:9px 0 0 17px;
+	line-height:25px;
+	color:#555;
+	background-color:#FFFFB0;
+}
+.chooser {height:278px;}
+
+#services {}
+#services ul {list-style-type:none; margin-top:7px;}
+#services li {display:block; width:140px; height:55px; float:left;}
+#services dl {clear:both;}
+#services dt {width:20px; margin-top:20px; float:left;}
+#services dd {width:110px; margin:6px 0 0 3px; float:left;}
+#services #next_btn {margin-left:315px}
+
+#enter_email {}
+#enter_email .logo {text-align:center;}
+#enter_email .logo img {/*modify at 081225*/ margin:0 auto 0 auto;}
+#enter_email #other_spacer {/*modify at 081225*/ height:9px;}
+#enter_email ul {list-style-type:none; margin-top:25px;}
+#enter_email li {display:block; /*modify at 090217*/ height:31px;}
+#enter_email dl {clear:both;}
+#enter_email dt {width:125px; padding-top:4px; text-align:right; float:left;}
+#enter_email dt label {color:#666;}
+#enter_email dd {width:300px; margin-left:5px; float:left;}
+#enter_email dd .ipt {width:208px;}
+#enter_email #btns {margin:12px 105px 0 70px;}
+
+#list {}
+#list .col1 {width:20px;}
+#list .col2 {width:20px;}
+#list .col3 {width:160px;}
+#list .col4 {}
+#list #table_container {
+	height:232px;
+	width:400px;
+	margin:15px 0 0 10px;
+	border:1px solid #ccc;
+}
+#list #table_container .headOfTbl {height:20px; background-color:#B4D3EF;}
+#list #table_container .bodyOfTbl {height:212px; overflow-y:scroll;}
+#list table {width:400px; margin-top:3px;}
+#list table td {padding:3px 0 2px 0; border-bottom:1px solid #f0f0f0;}
+#list table .col3 {padding-left:5px;}
+#list table .color td {/*background:#F0F0F0;*/}
+#list table .added {color:#999; font-weight:bold;}
+#list #btns {margin:25px 45px 0 20px;}
+#list #ab_data_count {color:#555; padding:4px 0 0 3px;}
+#list #append_func {margin:12px 30px 0 10px;}
+#list #append_func .func {padding-top:3px;}
+#list #append_func .func a {color:#666;}
+#list #append_func .seek {}
+#list #append_func .seek label {color:#666}
+#list #append_func .seek input {width:129px;}
+
+/*add at 081225*/
+#errorField {height:30px;}
+#errorField .error_msg {
+	text-align:center;
+	color:red;
+	font-size:14px;
+	padding-top:15px;
+	margin-right:30px;
+}

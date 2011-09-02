@@ -1,0 +1,63 @@
+<!--{template header}-->
+<!--{eval 
+	//if no friends
+	$space['isfriend'] = $space['self'];
+	if(in_array($_SGLOBAL['supe_uid'], $space['friends'])) {
+		$space['isfriend'] = 1;//At list one friend
+	}
+}-->
+
+<div class="c_form">
+
+<h2 class="l_status title">
+	<!--{if $_SGLOBAL['realname_privacy']}-->
+		{$_SN[$space[uid]]} {lang real_name_verification_required}
+	<!--{else}-->
+		{lang because_of} {$_SN[$space[uid]]} {lang privacy_you_have_no_access}
+	<!--{/if}-->
+</h2>
+
+<div class="thumb_list">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="image">
+				<div class="ar_r_t"><div class="ar_l_t"><div class="ar_r_b"><div class="ar_l_b">
+				<a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],big)}--></a>
+				</div></div></div></div>
+			</td>
+			<td>
+				<h6><a href="space.php?uid=$space[uid]">{$_SN[$space[uid]]}</a></h6>
+				<p class="l_status">
+					<a href="space.php?uid=$space[uid]&do=friend">{lang view_friend_list}</a>
+					<!--{if $space['isfriend']}-->
+					<span class="pipe">|</span><a href="cp.php?ac=friend&op=ignore&uid=$space[uid]" id="a_ignore" onclick="ajaxmenu(event, this.id)">{lang friend_remove_this}</a>
+					<!--{else}-->
+					<span class="pipe">|</span><a href="cp.php?ac=friend&op=add&uid=$space[uid]" id="a_friend" onclick="ajaxmenu(event, this.id, 1)">{lang friend_add}</a>
+					<!--{/if}-->
+					<span class="pipe">|</span><a href="cp.php?ac=poke&op=send&uid=$space[uid]" id="a_poke" onclick="ajaxmenu(event, this.id, 1)">{lang send_hello}</a>
+					<span class="pipe">|</span><a href="cp.php?ac=pm&uid=$space[uid]" id="a_pm" onclick="ajaxmenu(event, this.id, 1)">{lang message_send}</a>
+					<span class="pipe">|</span><a href="cp.php?ac=common&op=report&idtype=uid&id=$space[uid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">{lang report_abuse}</a>
+					<!--{if checkperm('managename')||checkperm('managespacegroup')||checkperm('managespaceinfo')||checkperm('managespacecredit')||checkperm('managespacenote')}-->
+					<span class="pipe">|</span><a id="a_manage" href="admincp.php?ac=space&op=manage&uid=$space[uid]">{lang profile_edit}</a>
+					<!--{/if}-->
+				</p>
+				<!--{if $space[note]}-->
+				<p>$space[note]</p>
+				<!--{/if}-->
+				<!--{if $space[resideprovince] || $space[residecity]}-->
+				<p><span class="gray">{lang location_place}: </span>$space[resideprovince] $space[residecity]</p>
+				<!--{/if}-->
+				
+				<!--{if !$space['isfriend']}-->
+				<p style="padding:20px 0 0 0;font-weight:bold;">{$_SN[$space[uid]]} {lang have} $space[friendnum] {lang number_of_friends}, $space[credit] {lang points_num}, $space[viewnum] {lang space_views_num}</p>
+				<p>{lang and} {$_SN[$space[uid]]} {lang can_become_friend} {$_SN[$space[uid]]} {lang is_interesting_to_you}</p>
+				<p style="padding:10px 0 0 0;"><a href="cp.php?ac=friend&op=add&uid=$space[uid]" id="a_friend" onclick="ajaxmenu(event, this.id, 1)" class="submit">{lang friend_add}</a></p>
+				<!--{/if}-->
+			</td>
+		</tr>
+	</table>
+</div>
+
+</div>
+
+<!--{template footer}-->

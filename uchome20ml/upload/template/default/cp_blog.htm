@@ -1,0 +1,251 @@
+<!--{template header}-->
+
+<!--{if $_GET[op] == 'delete'}-->
+
+<h1>{lang blog_delete}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=blog&op=delete&blogid=$blogid">
+	<p>{lang blog_delete_sure}</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="deletesubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET[op] == 'edithot'}-->
+
+<h1>{lang hot_adjust}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=blog&op=edithot&blogid=$blogid">
+	<p class="btn_line">
+		{lang hot_new}: <input type="text" name="hot" value="$blog[hot]" size="5"> 
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="hotsubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{else}-->
+
+<script language="javascript" src="image/editor/editor_function.js"></script>
+<script language="javascript" src="source/script_blog.js"></script>
+
+<!--{if $topic}-->
+	<!--{template cp_topic_menu}-->
+<!--{else}-->
+	<h2 class="title"><img src="image/app/blog.gif" />{lang blogs}</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<!--{if $blog[blogid]}-->
+			<li class="active"><a href="cp.php?ac=blog&blogid=$blog[blogid]"><span>{lang blog_edit}</span></a></li>
+			<!--{/if}-->
+			<li<!--{if empty($blog[blogid])}--> class="active"<!--{/if}-->><a href="cp.php?ac=blog"><span>{lang blog_new_publish}</span></a></li>
+			<li><a href="cp.php?ac=import"><span>{lang blog_import}</span></a></li>
+			<li><a href="space.php?uid=$space[uid]&do=blog&view=me"><span>{lang back_my_blog}</span></a></li>
+		</ul>
+	</div>
+<!--{/if}-->
+
+<div class="c_form">
+
+	<style type="text/css">
+		.userData {behavior:url(#default#userdata);}
+	</style>
+
+
+	<form method="post" action="cp.php?ac=blog&blogid=$blog[blogid]" enctype="multipart/form-data">
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<td>
+					<select name="classid" id="classid" onchange="addSort(this)">
+						<option value="0">{lang category_select}</option>
+						<!--{loop $classarr $value}-->
+						<!--{if $value['classid'] == $blog['classid']}-->
+						<option value="$value[classid]" selected>$value[classname]</option>
+						<!--{else}-->
+						<option value="$value[classid]">$value[classname]</option>
+						<!--{/if}-->
+						<!--{/loop}-->
+						<!--{if !$blog['uid'] || $blog['uid']==$_SGLOBAL['supe_uid']}--><option value="addoption" style="color:red;">{lang category_add}</option><!--{/if}-->
+					</select>
+					<input type="text" class="t_input" id="subject" name="subject" value="$blog[subject]" size="60" onblur="relatekw();" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<a id="doodleBox" href="magic.php?mid=doodle&showid=blog_doodle&target=uchome-ttHtmlEditor&from=editor" style="display:none"></a>
+				<textarea class="userData" name="message" id="uchome-ttHtmlEditor" style="height:100%;width:100%;display:none;border:0px">$blog[message]</textarea>
+				<iframe src="editor.php?charset=$_SC[charset]&allowhtml=$allowhtml&doodle=<!--{if isset($_SGLOBAL[magic][doodle])}-->1<!--{/if}-->" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="width:100%;border: 1px solid #C5C5C5;" height="400"></iframe>
+				</td>
+			</tr>
+		</table>
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<th width="100">{lang tags}</th>
+				<td><input type="text" class="t_input" size="40" id="tag" name="tag" value="$blog[tag]"> <input type="button" name="clickbutton[]" value="{lang tags_auto}" class="button" onclick="relatekw();"></td>
+			</tr>
+			
+			<!--{if $blog['uid'] && $blog['uid']!=$_SGLOBAL['supe_uid']}-->
+			<!--{eval $selectgroupstyle='display:none';}-->
+			<tbody style="display:none;">
+			<!--{/if}-->
+			<tr>
+				<th>{lang security}</th>
+				<td>
+					<select name="friend" onchange="passwordShow(this.value);">
+						<option value="0"$friendarr[0]>{lang visible_to_all}</option>
+						<option value="1"$friendarr[1]>{lang visible_to_friends}</option>
+						<option value="2"$friendarr[2]>{lang visible_to_some_friends}</option>
+						<option value="3"$friendarr[3]>{lang visible_to_me}</option>
+						<option value="4"$friendarr[4]>{lang visible_by_password}</option>
+					</select>
+					<span id="span_password" style="$passwordstyle">{lang password}: <input type="text" name="password" value="$blog[password]" size="10" onkeyup="value=value.replace(/[^\w\.\/]/ig,'')"></span>
+					<input type="checkbox" name="noreply" value="1"<!--{if $blog[noreply]}--> checked<!--{/if}-->> {lang comments_disable}
+				</td>
+			</tr>
+			<!--{if $blog['uid'] && $blog['uid']!=$_SGLOBAL['supe_uid']}--></tbody><!--{/if}-->
+			<tbody id="tb_selectgroup" style="$selectgroupstyle">
+			<tr>
+				<th>{lang friends_designated}</th>
+				<td><select name="selectgroup" onchange="getgroup(this.value);">
+					<option value="">{lang friends_select_some}</option>
+					<!--{loop $groups $key $value}-->
+					<option value="$key">$value</option>
+					<!--{/loop}-->
+					</select> {lang friends_select_multi}</td>
+			</tr>
+			<tr>
+				<th>&nbsp;</th>
+				<td>
+				<textarea name="target_names" id="target_names" style="width:85%;" rows="3">$blog[target_names]</textarea>
+				<br>{lang friends_separate_multi}</td>
+			</tr>
+			</tbody>
+			
+			
+			<!--{if checkperm('manageblog')}-->
+			<tr>
+				<th width="100">{lang hot_edit}</th>
+				<td>
+					<input type="text" class="t_input" name="hot" id="hot" value="$blog[hot]" size="5">
+				</td>
+			</tr>
+			<!--{/if}-->
+			
+			<!--{if checkperm('seccode')}-->
+			<!--{if $_SCONFIG['questionmode']}-->
+			<tr>
+				<th style="vertical-align: top;">{lang answer_please}</th>
+				<td>
+					<p><!--{eval question();}--></p>
+					<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+				</td>
+			</tr>
+			<!--{else}-->
+			<tr>
+				<th style="vertical-align: top;">{lang answer_fill}</th>
+				<td>
+					<script>seccode();</script>
+					<p>{lang verification_enter_code} <a href="javascript:updateseccode()">{lang verification_reload}</a></p>
+					<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+				</td>
+			</tr>
+			<!--{/if}-->
+			<!--{/if}-->
+
+			<tr>
+				<th width="100">{lang feed_options}</th>
+				<td>
+					<input type="checkbox" name="makefeed" id="makefeed" value="1"<!--{if ckprivacy('blog', 1)}--> checked<!--{/if}-->> {lang feed_generate} (<a href="cp.php?ac=privacy#feed">{lang feed_default}</a>)
+				</td>
+			</tr>			
+		</table>
+		<input type="hidden" name="blogsubmit" value="true" />
+		<input type="button" id="blogbutton" name="blogbutton" value="{lang publish_submit}" onclick="validate(this);" style="display: none;" />
+		<input type="hidden" name="topicid" value="$_GET[topicid]" />
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+
+	<!--{if !$_SGLOBAL[inajax] && (!$blog['uid'] || $blog['uid']==$_SGLOBAL['supe_uid'])}-->
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+		<tr><th width="100">{lang images}</th><td>
+		<input type="button" name="clickbutton[]" value="{lang upload_image}" class="button" onclick="edit_album_show('pic')">
+		<input type="button" name="clickbutton[]" value="{lang image_insert}" class="button" onclick="edit_album_show('album')">
+		</td></tr>
+	</table>
+	<!--{/if}-->
+
+	<table cellspacing="4" cellpadding="4" width="100%" id="uchome-edit-pic" class="infotable" style="display:none;">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+				<strong>{lang image_select}</strong>: 
+				<table summary="Upload" cellspacing="2" cellpadding="0">
+					<tbody id="attachbodyhidden" style="display:none">
+						<tr>
+							<td>
+								<form method="post" id="upload" action="cp.php?ac=upload" enctype="multipart/form-data" target="uploadframe" style="background: transparent;">
+									<input type="file" name="attach" style="border: 1px solid #CCC;" />
+									<span id="localfile"></span>
+									<input type="hidden" name="uploadsubmit" id="uploadsubmit" value="true" />
+									<input type="hidden" name="albumid" id="albumid" value="0" />
+									<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+								</form>
+							</td>
+						</tr>
+					</tbody>
+					<tbody id="attachbody"></tbody>
+				</table>
+				<strong>{lang album_storage}</strong>: 
+				<table cellspacing="2" cellpadding="0">
+					<tr>
+						<td>
+							<select name="albumid" id="uploadalbum" onchange="addSort(this)">
+								<option value="-1">{lang album_select_please}</option>
+								<option value="-1">{lang default_albumname}</option>
+								<!--{loop $albums $value}-->
+								<option value="$value[albumid]">$value[albumname]</option>
+								<!--{/loop}-->
+								<option value="addoption" style="color:red;">{lang album_create_new}</option>
+							</select>
+							<script src="source/script_upload.js" type="text/javascript"></script>
+							<iframe id="uploadframe" name="uploadframe" width="0" height="0" marginwidth="0" frameborder="0" src="about:blank"></iframe>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable" id="uchome-edit-album" style="display:none;">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+				{lang album_select}: <select name="view_albumid" onchange="picView(this.value)">
+					<option value="none">{lang album_choose}</option>
+					<option value="0">{lang default_albumname}</option>
+					<!--{loop $albums $value}-->
+					<option value="$value[albumid]">$value[albumname]</option>
+					<!--{/loop}-->
+				</select> {lang image_click_insert}
+				<div id="albumpic_body"></div>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+		<tr>
+			<th width="100">&nbsp;</th>
+			<td>
+			<input type="button" id="issuance" onclick="document.getElementById('blogbutton').click();" value="{lang publication_save}" class="submit" /></td>
+		</tr>
+	</table>
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

@@ -1,0 +1,230 @@
+<!--{eval 
+	$_TPL['pagetypes'] = array('header'=>lang('page_header'), 'rightside'=>lang('page_content'), 'footer'=>lang('page_footer'), 'couplet'=>lang('page_couplet'), 'contenttop'=>lang('page_content_top'), 'contentbottom'=>lang('page_content_bottom'), 'feedbox'=>lang('page_feed_box'));
+	$_TPL['availables'] = array('0'=>'-', '1'=>lang('is_on'));
+}-->
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=ad"><span>{lang ads_browse}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=ad&op=add">{lang ads_add}</a></li>
+	</ul>
+</div>
+
+		
+<!--{if empty($_GET['op'])}-->
+
+	<form method="post" action="admincp.php?ac=ad">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		
+		<div class="title">
+			<h3>{lang ads_internal}</h3>
+			<p>{lang ads_internal_intro}</p>
+		</div>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang title}</th>
+			<th width="24%">{lang page_location}</th>
+			<th width="8%">{lang is_on}</th>
+			<th width="8%">{lang edit}</th>
+		</tr>
+		<!--{loop $listvalue[1] $key $value}-->
+		<tr>
+			<td><input type="checkbox" name="adids[]" value="$value[adid]"> $value[title]</td>
+			<td><a href="admincp.php?ac=ad&pagetype=$value[pagetype]">$_TPL[pagetypes][$value[pagetype]]</a></td>
+			<td>$_TPL[availables][$value[available]]</td>
+			<td><a href="admincp.php?ac=ad&op=edit&adid=$value[adid]">{lang edit}</a></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+
+		<br />
+		<div class="title">
+			<h3>{lang ads_list_customize}</h3>
+			<p>{lang ads_list_intro}</p>
+		</div>
+	
+
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang title}</th>
+			<th width="32%">{lang ads_tune}</th>
+			<th width="8%">{lang operation}</th>
+		</tr>
+		<!--{loop $listvalue[0] $key $value}-->
+		<tr>
+			<td><input type="checkbox" name="adids[]" value="$value[adid]"> $value[title]</td>
+			<td><a href="admincp.php?ac=ad&op=tpl&adid=$value[adid]">{lang ads_template_code}</a> | 
+				<a href="admincp.php?ac=ad&op=js&adid=$value[adid]">{lang js_code}</a></td>
+			<td><a href="admincp.php?ac=ad&op=edit&adid=$value[adid]">{lang edit}</a></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="checkbox" name="chkall" onclick="checkAll(this.form, 'adid')">{lang check_all}
+		<input type="submit" name="delsubmit" value="{lang delete_bulk}" class="submit">
+	</div>
+	
+	</form>
+
+<!--{elseif $_GET['op'] == 'add' || $_GET['op'] == 'edit'}-->
+	<script type="text/JavaScript">
+	function style_show(theobj) {
+		var styles,key;
+		styles = new Array('html','flash','image','text');
+		for(key in styles){
+			var obj=$('style_'+styles[key]);
+			obj.style.display = styles[key]==theobj.options[theobj.selectedIndex].value?'':'none';
+		}
+	}
+	</script>
+
+	<form method="post" action="admincp.php?ac=ad">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang ads_type}</th>
+		<td><input type="radio" name="system" value="1" $systems[1] onclick="$('style_system').style.display='';">{lang ads_internal} 
+			<input type="radio" name="system" value="0" $systems[0] onclick="$('style_system').style.display='none';">{lang ads_user_defined}
+		</td></tr>
+		<tr><th>{lang ads_title}</th>
+		<td><input name="title" value="$advalue[title]" class="t_input"></td>
+		</tr>
+		
+		<tbody id="style_system" style="display:<!--{if $advalue['system']==0}-->none<!--{/if}-->">
+		<tr>
+		<th>{lang page_location}</th>
+		<td>
+		<select name="pagetype">
+		<option value="header"{$pagetypes[header]}>{lang page_top} ({lang width} 970px)</option>
+		<option value="footer"{$pagetypes[footer]}>{lang page_footer} ({lang width} 970px)</option>
+		<option value="contenttop"{$pagetypes[contenttop]}>{lang page_content_top} ({lang width} 800px)</option>
+		<option value="contentbottom"{$pagetypes[contentbottom]}>{lang page_content_bottom} ({lang width} 800px)</option>
+		<option value="rightside"{$pagetypes[rightside]}>{lang page_content_area} ({lang width} 300px)</option>
+		<option value="couplet"{$pagetypes[couplet]}>{lang page_couplet_area} ({lang width} 90px)</option>
+		<option value="feedbox"{$pagetypes[feedbox]}>{lang page_feed_top} ({lang width} 500px)</option>
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<th>{lang state}</th>
+		<td>
+		<input type="radio" name="available" value="1" $availables[1]>{lang is_on}
+		<input type="radio" name="available" value="0" $availables[0]>{lang is_off}
+		</td></tr>
+		</tbody>
+
+		<tr><th>{lang ads_content_type}</th><td>
+		<select name="adcode[type]" onchange="style_show(this)">
+		<option value="html" $adcodes[html]>{lang code}</option>
+		<option value="flash" $adcodes[flash]>{lang flash}</option>
+		<option value="image" $adcodes[image]>{lang image}</option>
+		<option value="text" $adcodes[text]>{lang text}</option>
+		</select>
+		</td></tr>
+		<tbody id="style_html" style="display:<!--{if $advalue['adcode']['type']!='html'}-->none<!--{/if}-->">
+		<tr>
+		<th>{lang ads_code} ({lang must_fill})</th>
+		<td><textarea rows="10" style="width:98%;" name="adcode[html]">$advalue[adcode][html]</textarea></td>
+		</tr>
+		</tbody>
+	
+		<tbody id="style_flash" style="display:<!--{if $advalue['adcode']['type']!='flash'}-->none<!--{/if}-->">
+		<tr>
+		<th>{lang flash_width} ({lang must_fill})</th>
+		<td><input name="adcode[flashwidth]" value="$advalue[adcode][flashwidth]" size="5"></td>
+		</tr>
+		<tr>
+		<th>{lang flash_height} ({lang must_fill})</th>
+		<td><input name="adcode[flashheight]" value="$advalue[adcode][flashheight]" size="5"></td>
+		</tr>
+		<tr>
+		<th>{lang flash_url} ({lang must_fill})</th>
+		<td><input name="adcode[flashurl]" value="$advalue[adcode][flashurl]" size="50"></td>
+		</tr>
+		</tbody>
+		
+		<tbody id="style_image" style="display:<!--{if $advalue['adcode']['type']!='image'}-->none<!--{/if}-->">
+		<tr>
+		<th>{lang image_url} ({lang must_fill})</th>
+		<td><input name="adcode[imagesrc]" value="$advalue[adcode][imagesrc]" size="50"></td>
+		</tr>
+		<tr>
+		<th>{lang image_link_to} ({lang must_fill})</th>
+		<td><input name="adcode[imageurl]" value="$advalue[adcode][imageurl]" size="50"></td>
+		</tr>
+		<tr>
+		<th>{lang image_width} ({lang optional})</th>
+		<td><input name="adcode[imagewidth]" value="$advalue[adcode][imagewidth]" size="5"></td>
+		</tr>
+		<tr>
+		<th>{lang image_height} ({lang optional})</th>
+		<td><input name="adcode[imageheight]" value="$advalue[adcode][imageheight]" size="5"></td>
+		</tr>
+		<tr>
+		<th>{lang image_replace_text} ({lang optional})</th>
+		<td><input name="adcode[imagealt]" value="$advalue[adcode][imagealt]"></td>
+		</tr>
+		</tbody>
+	
+		<tbody id="style_text" style="display:<!--{if $advalue['adcode']['type']!='text'}-->none<!--{/if}-->">
+		<tr>
+		<th>{lang text_content} ({lang must_fill})</th>
+		<td><input name="adcode[textcontent]" value="$advalue[adcode][textcontent]" size="50"></td>
+		</tr>
+		<tr>
+		<th>{lang text_url} ({lang must_fill})</th>
+		<td><input name="adcode[texturl]" value="$advalue[adcode][texturl]" size="50"></td>
+		</tr>
+		<tr>
+		<th>{lang text_size} ({lang optional})</th>
+		<td><input name="adcode[textsize]" value="$advalue[adcode][textsize]" size="5"> px</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="adid" value="$advalue[adid]">
+		<input type="submit" name="adsubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+	
+<!--{elseif $_GET['op'] == 'tpl'}-->
+	<div class="bdrcontent">
+	<div class="title"><h3>{lang template_code_tune}</h3></div>
+	
+	<table class="formtable">
+	<tr><td>{lang template_paste}</td></tr>
+	<tr><td><input type="text" name="blockadcode" value="$adcode" size="80"></td></tr>
+	</table>
+	</div>
+
+<!--{elseif $_GET['op'] == 'js'}-->
+
+	<div class="bdrcontent">
+	<div class="title"><h3>{lang javascript_code_tune}</h3></div>
+	
+	<table class="formtable">
+	<tr><td><textarea name="blockadcode" style="width:98%;" rows="5">$adcode</textarea></td></tr>
+	</table>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

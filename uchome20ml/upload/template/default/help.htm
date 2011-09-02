@@ -1,0 +1,123 @@
+<!--{eval $_TPL['titles'] = array(lang('help'));}-->
+<!--{template header}-->
+
+	<div id="content">
+		<table cellpadding="0" cellspacing="0" class="formtable">
+		
+<!--{if $_GET['ac']=='register'}-->
+		<caption>
+			<h2>{lang register}</h2>
+		</caption>
+		<tr><td>
+		{lang help_register}<br /><br />
+		<img src="image/help/register.gif" alt="" /><br /><br />
+		</td></tr>
+		
+<!--{elseif $_GET['ac']=='home'}-->
+		<caption>
+			<h2>{lang help_home}</h2>
+		</caption>
+		<tr><td>
+		<h2>{lang friends_latest_activity}</h2>
+		{lang friends_latest_activity_intro}<br /><br />
+		<img src="image/help/home.gif"><br /><br />
+		</td></tr>
+		<tr><td>
+		<h2>{lang new_notices}</h2>
+		{lang new_notices_intro}<br /><br />
+		<img src="image/help/home2.gif"><br /><br />
+		</td></tr>
+		
+<!--{elseif $_GET['ac']=='space'}-->
+		<caption>
+			<h2>{lang my_homepage}</h2>
+		</caption>
+		<tr><td>
+		{lang my_homepage_intro}<br /><br />
+		<img src="image/help/space.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='doing'}-->
+		<caption>
+			<h2>{lang doing}</h2>
+		</caption>
+		<tr><td>
+		{lang help_doing_intro}<br /><br />
+		<img src="image/help/doing.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='blog'}-->
+		<caption>
+			<h2>{lang blogs}</h2>
+		</caption>
+		<tr><td>
+		{lang help_blog_intro}<br /><br />
+		<img src="image/help/blog.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='album'}-->
+		<caption>
+			<h2>{lang albums}</h2>
+		</caption>
+		<tr><td>
+		{lang help_album_intro}<br /><br />
+		<img src="image/help/album.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='share'}-->
+		<caption>
+			<h2>{lang shares}</h2>
+		</caption>
+		<tr><td>
+		{lang help_share_intro}<br /><br />
+		<img src="image/help/share1.gif"><br /><br />
+		{lang help_share_url}<br /><br />
+		<img src="image/help/share2.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='mtag'}-->
+		<caption>
+			<h2>{lang groups}</h2>
+		</caption>
+		<tr><td>
+		{lang help_groups}<br /><br />
+		<img src="image/help/mtag1.gif" /><br /><br />
+		{lang help_groups_intro}<br /><br />
+		<img src="image/help/mtag2.gif"><br /><br />
+		{lang help_groups_intro2}<br /><br />
+		<img src="image/help/mtag3.gif"><br /><br />
+		</td></tr>
+
+<!--{elseif $_GET['ac']=='cp'}-->
+		<caption>
+			<h2>{lang control_panel}</h2>
+		</caption>
+		<tr><td>
+		{lang control_panel_intro1}<br /><br />
+		<img src="image/help/cp.gif"><br /><br />
+		{lang control_panel_intro2}<br /><br />
+		<img src="image/help/cp2.gif"><br /><br />
+		</td></tr>
+<!--{/if}-->
+		</table>
+	</div>
+	
+	<div id="sidebar">
+		<div class="sidebox">
+		<h2 class="title">{lang help}</h2>
+		<ul class="line_list">
+			<li$actives[register]><a href="help.php?ac=register">{lang register}</a></li>
+			<li$actives[home]><a href="help.php?ac=home">{lang my_home}</a></li>
+			<li$actives[space]><a href="help.php?ac=space">{lang my_homepage}</a></li>
+			<li$actives[doing]><a href="help.php?ac=doing">{lang doing}</a></li>
+			<li$actives[blog]><a href="help.php?ac=blog">{lang blogs}</a></li>
+			<li$actives[album]><a href="help.php?ac=album">{lang albums}</a></li>
+			<li$actives[share]><a href="help.php?ac=share">{lang shares}</a></li>
+			<li$actives[mtag]><a href="help.php?ac=mtag">{lang mtag}</a></li>
+			<li$actives[cp]><a href="help.php?ac=cp">{lang control_panel}</a></li>
+		</ul>
+		</div>
+	</div>
+
+
+<!--{template footer}-->

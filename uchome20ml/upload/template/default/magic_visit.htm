@@ -1,0 +1,115 @@
+<!--{template header}-->
+
+<!--{if $op == 'use'}-->
+
+	<!--{if !$frombuy}-->
+	<h1>{lang using_magic}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<!--{/if}-->
+	<div class="toolly" id="__magicuse_form_$mid">
+		<form method="post" id="magicuse_form_$mid" action="magic.php?mid=$mid&idtype=$idtype&id=$id">
+			<div class="magic_img">
+				<img src="image/magic/{$mid}.gif" alt="$magic[name]" />
+			</div>
+			<div class="magic_info">
+				<h3>$magic[name]</h3>
+				<p class="gray">$magic[description]</p>
+				<p>{lang has_number}: $usermagic[count]</p>
+				<div>
+					<h4>{lang access_method}</h4>
+					<input id="way_visit" type="radio" name="visitway" value="visit" checked onclick="$('visitmsgs').style.display='none';$('visitpokes').style.display='none';" />
+					<label for="way_visit">{lang visit_space}</label>
+					<input id="way_poke" type="radio" name="visitway" value="poke" onclick="$('visitmsgs').style.display='none';$('visitpokes').style.display='';" />
+					<label for="way_poke">{lang send_hello}</label>
+					<input id="way_comment" type="radio" name="visitway" value="comment" onclick="$('visitmsgs').style.display='';$('visitpokes').style.display='none';" />
+					<label for="way_comment">{lang space_message}</label>
+					<ul id="visitmsgs" style="display:none;">
+						<li>{lang select_message}</li>
+						<li>
+							<input id="visitmsg_1" type="radio" name="visitmsg" value="{lang cnock_cnock}" checked>
+							<label for="visitmsg_1">{lang cnock_cnock}</label>
+						</li>
+						<li>
+							<input id="visitmsg_2" type="radio" name="visitmsg" value="{lang not_seen_long_time}">
+							<label for="visitmsg_2">{lang not_seen_long_time}</label>
+						</li>
+						<li>
+							<input id="visitmsg_3" type="radio" name="visitmsg" value="{lang remember_to_return}">
+							<label for="visitmsg_3">{lang remember_to_return}</label>
+						</li>
+						<li>
+							<input id="visitmsg_4" type="radio" name="visitmsg" value="{lang i_back_again}">
+							<label for="visitmsg_4">{lang i_back_again}</label>
+						</li>
+						<li>
+							<input id="visitmsg_5" type="radio" name="visitmsg" value="{lang space_beautiful}">
+							<label for="visitmsg_5">{lang space_beautiful}</label>
+						</li>
+						<li>
+							<input id="visitmsg_6" type="radio" name="visitmsg" value="{lang most_near_busy}">
+							<label for="visitmsg_6">{lang most_near_busy}</label>
+						</li>
+					</ul>
+					<!--{eval
+					$icons = array(
+						1 => '<img src="image/poke/cyx.gif" /> {lang icon_1}',
+						2 => '<img src="image/poke/wgs.gif" /> {lang icon_2}',
+						3 => '<img src="image/poke/wx.gif" /> {lang icon_3}',
+						4 => '<img src="image/poke/jy.gif" /> {lang icon_4}',
+						5 => '<img src="image/poke/pmy.gif" /> {lang icon_5}',
+						6 => '<img src="image/poke/yb.gif" /> {lang icon_6}',
+						7 => '<img src="image/poke/fw.gif" /> {lang icon_7}',
+						8 => '<img src="image/poke/nyy.gif" /> {lang icon_8}',
+						9 => '<img src="image/poke/gyq.gif" /> {lang icon_9}',
+						10 => '<img src="image/poke/dyx.gif" /> {lang icon_10}',
+						11 => '<img src="image/poke/yw.gif" /> {lang icon_11}',
+						12 => '<img src="image/poke/ppjb.gif" /> {lang icon_12}',
+						13 => '<img src="image/poke/yyk.gif" /> {lang icon_13}'
+					);
+					}-->
+					<table id="visitpokes" style="width:100%; display:none;">
+					<thead>
+					<td colspan="2">{lang select_poke_icon}</td>
+					</thead>
+					<tbody>
+					<tr>
+					<!--{loop $icons $key $value}-->
+					<td>
+					<input id="visitpoke_$key" type="radio" name="visitpoke" value="$key"<!--{if $key==1}--> checked<!--{/if}-->>
+					<label for="visitpoke_$key">$value</label>
+					</td>
+					<!--{if $key % 2 == 0}--></tr><tr><!--{/if}-->
+					<!--{/loop}-->
+					</tr>
+					</tbody>
+					</table>
+				</div>
+				<p class="btn_line">
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+					<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+					<input type="hidden" name="usesubmit" value="1" />
+					<input type="button" value="{lang use_it}" class="submit" onclick="ajaxpost('magicuse_form_$mid')" />
+				</p>
+			</div>
+		</form>
+	</div>
+
+<!--{elseif $op == 'show'}-->
+	<div style="width:400px;">
+		<p>
+			<!--{if $_POST['visitway'] == "poke"}-->{lang friends_said_hello}
+			<!--{elseif $_POST['visitway'] == 'comment'}-->{lang friends_sent_message}
+			<!--{else}-->{lang friends_visited}<!--{/if}-->
+		</p>
+		<ul class="avatar_list">
+			<!--{loop $users $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+<!--{/if}-->
+
+<!--{template footer}-->

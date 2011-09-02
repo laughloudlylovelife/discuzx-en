@@ -1,0 +1,210 @@
+<!--{eval $_TPL['titles'] = array($mtag['tagname'], $mtag['title'], lang('home'));}-->
+<!--{template header}-->
+
+<h2 class="title">
+	<img src="image/app/mtag.gif"><a href="space.php?do=mtag&id=$mtag[fieldid]">$mtag[title]</a> -
+	<a href="space.php?do=mtag&tagid=$mtag[tagid]">$mtag[tagname]</a>
+</h2>
+<div class="tabs_header">
+	<a href="cp.php?ac=share&type=mtag&id=$mtag[tagid]" id="a_share" class="a_share" onclick="ajaxmenu(event, this.id, 1)">{lang shares}</a>
+	<div class="r_option">
+		<!--{if checkperm('managemtag')}-->
+		<a href="admincp.php?ac=mtag&tagid=$mtag[tagid]" target="_blank">{lang group_manage}</a><span class="pipe">|</span>
+		<!--{/if}-->
+		<a href="cp.php?ac=common&op=report&idtype=tagid&id=$mtag[tagid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">{lang report}</a><span class="pipe">|</span>
+	</div>
+	<ul class="tabs">
+		<li class="active"><a href="javascript:;"><span>{lang home}</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list"><span>{lang topic_list}</span></a></li>
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=digest"><span>{lang digest_area}</span></a></li>
+		<!--{if $eventnum}-->
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=event"><span>{lang group_events}</span></a></li>
+		<!--{/if}-->
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member"><span>{lang member_list}</span></a></li>
+		<!--{if $mtag['allowthread']}-->
+		<li class="null"><a href="cp.php?ac=thread&tagid=$mtag[tagid]">{lang topic_start}</a></li>
+		<!--{/if}-->
+		<!--{if empty($mtag['ismember']) && $mtag['joinperm'] < 2}-->
+		<li class="null"><a href="cp.php?ac=mtag&op=join&tagid=$mtag[tagid]" id="mtag_join_$mtag[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_this_join}</a></li>	
+		<!--{/if}-->
+	</ul>
+</div>
+
+<div id="content">
+
+	<div class="affiche">
+		<div id="space_avatar" class="floatleft"><img src="$mtag[pic]" alt="$mtag[tagname]" width="48" /></div>
+		<h3>{lang annotation}</h3>
+		<div class="article">
+			<!--{if $mtag[announcement]}-->$mtag[announcement]<!--{else}-->{lang no_annotation}<!--{/if}-->
+		</div>
+	</div>
+
+	<div class="topic_list">
+	<!--{if $list}-->
+		<table cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<td class="subject">{lang topic}</td>
+					<td class="author"><!--{if $_GET[view]!='me'}-->{lang author} <!--{/if}-->{lang replies_views}</td>
+					<td class="lastpost">{lang last_updated}</td>
+				</tr>
+			</thead>
+			<tbody>
+				<!--{loop $list $key $value}-->
+					<!--{eval $magicegg = ""}-->							
+					<!--{eval if($value[magicegg]) for($i=0; $i<$value[magicegg]; $i++) $magicegg .= '<img src="image/magic/egg/'.mt_rand(1,6).'.gif" />';}-->
+				<tr <!--{if $key%2==1}--> class="alt"<!--{/if}-->>
+					<td class="subject">
+					<!--<div style="width:290px;word-break:break-all;">-->
+					<!--{if $value[displayorder]}--> [{lang has_display_order}] <!--{/if}-->
+					<!--{if $value[digest]}--> [{lang has_digest}] <!--{/if}-->
+					<!--{if $value[eventid]}--> [{lang has_event}] <!--{/if}-->
+					$magicegg
+					<a href="space.php?uid=$value[uid]&do=thread&id=$value[tid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a>
+					<!--{if $value[hot]}-->
+					<br><span class="gray">$value[hot] {lang hot_value}</span>
+					<!--{/if}-->
+					<!--</div>-->
+					</td>
+					<td class="author"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a><br>$value[replynum]/$value[viewnum]</td>
+					<td class="lastpost"><a href="space.php?uid=$value[lastauthorid]" title="{$_SN[$value[lastauthorid]]}">{$_SN[$value[lastauthorid]]}</a><br><!--{date('m-d H:i',$value[lastpost],1)}--></td>
+				</tr>
+				<!--{/loop}-->
+			</tbody>
+		</table>
+		<div class="r_option">
+		<a href="space.php?do=mtag&tagid=$mtag[tagid]&view=list">{lang view_all_topics}</a>
+		</div>
+	<!--{else}-->
+		<div class="c_form">
+		<!--{if empty($mtag[allowview])}-->
+			{lang group_is_not_open}<br>
+		<!--{if $mtag['grade'] == -2}-->
+			{lang wait_for_approve}
+		<!--{elseif $mtag[joinperm]==1}-->
+			{lang you_can} <a href="cp.php?ac=mtag&op=join&tagid=$mtag[tagid]" id="a_mtag_join_$mtag[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_choose_to_join}</a>, {lang need_for_approve}
+		<!--{elseif $mtag[joinperm]==2}-->
+			{lang need_invite}
+		<!--{else}-->
+			{lang you_can_now} <a href="cp.php?ac=mtag&op=join&tagid=$mtag[tagid]" id="a_mtag_join_$mtag[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_choose_to_join}</a>.
+		<!--{/if}-->
+		<!--{else}-->
+			{lang no_topics}
+		<!--{/if}-->
+		</div>
+	<!--{/if}-->
+	</div>
+	
+</div>
+
+<div id="sidebar">
+
+
+
+	<div class="sidebox">
+		<h2 class="title">{lang group_menu}</h2>
+		<ul class="menu_list">
+			<!--{if $mtag['allowthread']}-->
+			<li><a href="cp.php?ac=thread&tagid=$mtag[tagid]">{lang topic_init}</a></li>
+			<!--{/if}-->
+			<!--{if empty($mtag['ismember']) && $mtag['joinperm'] < 2}-->
+			<li><a href="cp.php?ac=mtag&op=join&tagid=$mtag[tagid]" id="a_mtag_join_$mtag[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_join}</a></li>	
+			<!--{/if}-->
+			
+			<!--{if $mtag['grade'] == 9}-->
+			<li><a href="cp.php?ac=event&tagid=$mtag[tagid]">{lang topic_event}</a></li>
+			<!--{/if}-->
+			<!--{if $mtag['grade'] >= 8}-->
+			<li><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=base">{lang group_settings}</a></li>
+			<!--{/if}-->
+			<!--{if $mtag['grade'] >= 8}-->
+			<li><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members">{lang event_members_manage}</a></li>
+			<li><a href="admincp.php?ac=thread&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" target="_blank">{lang topic_manage}</a></li>
+			<li><a href="admincp.php?ac=post&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1">{lang reply_management}</a></li>
+			<!--{elseif $mtag['ismember'] && !$mtag['closeapply']}-->
+			<li><a href="cp.php?ac=mtag&op=apply&tagid=$mtag[tagid]" id="a_apply" onclick="ajaxmenu(event, this.id)">{lang group_apply}</a></li>
+			<!--{/if}-->
+			<!--{if $mtag['allowinvite']}-->
+			<li><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=invite">{lang event_invite_friends}</a></li>
+			<!--{/if}-->
+			<!--{if $mtag['ismember']}-->
+			<li><a href="cp.php?ac=mtag&op=out&tagid=$mtag[tagid]" id="a_ignore_top" onclick="ajaxmenu(event, this.id)">{lang group_exit}</a></li>
+			<!--{/if}-->
+		</ul>
+	</div>
+
+
+	<div class="sidebox">
+		<h2 class="title">{lang group_overview}</h2>
+		<div style="padding:0 0 0 40px;">
+			<p>{lang number_of_members}: $mtag[membernum]</p>
+			<p>{lang number_of_topics}: $mtag[threadnum]</p>
+			<p>{lang number_of_replies}: $mtag[postnum]</p>
+		</div>
+	</div>
+
+	<!--{if $modlist}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<span class="r_option"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member">{lang all}</a></span>
+			{lang group_master}
+		</h2>
+		<ul class="avatar_list">
+		<!--{loop $modlist $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+<!--{if $checklist}-->
+	<div class="sidebox">
+		<h2 class="title">
+		<span class="r_option"><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-2">{lang pending_manage}</a></span>
+		{lang pending_members}
+		</h2>
+		<ul class="avatar_list">
+		<!--{loop $checklist $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+<!--{/if}-->
+<!--{if $starlist}-->
+	<div class="sidebox">
+		<h2 class="title">{lang member_starred}</h2>
+		<ul class="avatar_list s_clear">
+		<!--{loop $starlist $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+<!--{/if}-->
+	<!--{if $memberlist}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<span class="r_option"><a href="space.php?do=mtag&tagid=$mtag[tagid]&view=member">{lang all} ($mtag[membernum])</a></span>
+			{lang members_ordinary}
+		</h2>
+		<ul class="avatar_list">
+		<!--{loop $memberlist $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p></li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+
+</div>
+
+<!--{template footer}-->

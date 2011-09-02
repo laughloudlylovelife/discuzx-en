@@ -1,0 +1,824 @@
+<!--{template header}-->
+
+<!--{if $op == 'syn' || $op == 'find' || $op == 'search' || $op == 'group' || $op == 'request'}-->
+<div class="searchbar floatright">
+<form method="get" action="cp.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang find_people}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="ac" value="friend" />
+	<input type="hidden" name="op" value="search" />
+</form>
+</div>
+<h2 class="title"><img src="image/icon/friend.gif">{lang friends}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="space.php?uid=$space[uid]&do=friend"><span>{lang friend_list}</span></a></li>
+		<li$actives[search]><a href="cp.php?ac=friend&op=search"><span>{lang friends_find}</span></a></li>
+		<li$actives[find]><a href="cp.php?ac=friend&op=find"><span>{lang who_might_know}</span></a></li>
+		<!--{if empty($_SCONFIG['closeinvite'])}-->
+		<li><a href="cp.php?ac=invite"><span>{lang event_invite_friends}</span></a></li>
+		<!--{/if}-->
+		<li$actives[request]><a href="cp.php?ac=friend&op=request"><span>{lang friend_requests_me}</span></a></li>
+		<li><a href="space.php?do=top"><span>{lang members_top_list}</span></a></li>
+		<!--{if $op=='group'}-->
+		<li$actives[group]><a href="cp.php?ac=friend&op=group"><span>{lang friends_group}</span></a></li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $op =='ignore'}-->
+
+<h1>{lang friends_ignored}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__friendform_{$uid}">
+<form method="post" id="friendform_{$uid}" name="friendform_{$uid}" action="cp.php?ac=friend&op=ignore&uid=$uid&confirm=1">
+	<p>{lang friends_ignore_sure}</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="friendsubmit" value="true" />
+		<button name="friendsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('friendform_{$uid}', 'friend_delete', 2000)">{lang form_sure_yes}</button>
+		<!--{else}-->
+		<button name="friendsubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+		<!--{/if}-->
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op == 'find'}-->
+
+<!--{if $nearlist}-->
+<div class="c_form">
+	<h2 class="l_status title">{lang friends_near}</h2>
+	<ul class="avatar_list">
+		<!--{loop $nearlist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_near_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">{lang friend_add}</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $friendlist}-->
+<div class="c_form">
+	<h2 class="l_status title">{lang friends_friends}</h2>
+	<ul class="avatar_list">
+		<!--{loop $friendlist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_friend_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">{lang friend_add}</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $onlinelist}-->
+<div class="c_form">
+	<h2 class="l_status title">{lang friends_online}</h2>
+	<ul class="avatar_list">
+		<!--{loop $onlinelist $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+			<p class="gray"><a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="a_online_friend_$key" onclick="ajaxmenu(event, this.id, 1)" class="addfriend">{lang friend_add}</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{elseif $op == 'search'}-->
+
+<div class="c_form">
+
+	<!--{if !empty($_GET['searchsubmit'])}-->
+	
+	<!--{if empty($list)}-->
+		<div class="c_form">{lang users_relevant_not_found} <a href="cp.php?ac=friend&op=search">{lang search_another_criteria}</a></div>
+	<!--{else}-->
+		<div style="padding:0 0 20px 0;">{lang users_found} <a href="cp.php?ac=friend&op=search">{lang search_another_criteria}</a>.</div>
+		<!--{template space_list}-->
+	<!--{/if}-->
+	
+	<!--{else}-->
+	<table cellspacing="2" cellpadding="2" class="search_table">
+
+<!--{if $_GET['all']}-->
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang member_id}: </td><td><input type="text" name="uid" value="" class="t_input"></td></tr>
+		<tr>
+			<td align="right" width="100">{lang gender}: </td>
+			<td>
+				<select id="sex" name="sex">
+					<option value="0">{lang any}</option>
+					<option value="1">{lang man}</option>
+					<option value="2">{lang woman}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">{lang marriage_status}: </td>
+			<td>
+				<select id="marry" name="marry">
+					<option value="0">{lang any}</option>
+					<option value="1">{lang unmarried}</option>
+					<option value="2">{lang married}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">{lang age}: </td>
+			<td>
+				<input type="text" name="startage" value="" size="10" class="t_input" /> ~ <input type="text" name="endage" value="" size="10" class="t_input" />
+			</td>
+		</tr>
+		<!--{if $_SCONFIG['videophoto']}-->
+		<tr>
+			<td align="right">{lang video_certify}: </td>
+			<td>
+				<input type="checkbox" name="videostatus" value="1">{lang video_certified}
+			</td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<td align="right">{lang avatar_upload}: </td>
+			<td>
+				<input type="checkbox" name="avatar" value="1">{lang avatar_uploaded}
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">{lang residence}: </td>
+			<td id="residecitybox"></td>
+		</tr>
+		
+		<tr>
+			<td align="right">{lang birth_place}: </td>
+			<td id="birthcitybox"></td>
+		</tr>
+		
+		<!--script type="text/javascript" src="source/script_city.js"></script-->
+		<script type="text/javascript" src="language/$_SCONFIG['language']/script_city.js" charset="$_SC[charset]"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('resideprovince', 'residecity', '', 'residecitybox');
+		showcity('residecity', '', 'resideprovince', 'residecitybox');
+		showprovince('birthprovince', 'birthcity', '', 'birthcitybox');
+		showcity('birthcity', '', 'birthprovince', 'birthcitybox');
+		//-->
+		</script>	
+		
+		<tr>
+			<td align="right">{lang birthday}: </td>
+			<td>
+			<select id="birthyear" name="birthyear" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthyeayhtml
+			</select> {lang year} 
+			<select id="birthmonth" name="birthmonth" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthmonthhtml
+			</select> {lang month} 
+			<select id="birthday" name="birthday">
+				<option value="0">&nbsp;</option>
+				$birthdayhtml
+			</select> {lang day}
+			</td>
+		</tr>
+		
+		<tr><td align="right">{lang school}: </td><td><input type="text" name="title" value="" class="t_input"> <select name="startyear">
+			<option value="">{lang school_year}</option>
+			$yearhtml
+			</select></td></tr>
+		<tr><td align="right">{lang school_class}: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+	
+		<tr><td align="right">{lang company}: </td><td><input type="text" name="title" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang department}: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			
+		
+		<tr>
+			<td align="right">{lang blood_type}: </td>
+			<td>
+				<select id="blood" name="blood">
+					<option value="">{lang any}</option>
+					$bloodhtml
+				</select>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<td align="right">{lang icq}: </td>
+			<td>
+				<input type="text" name="qq" value="" class="t_input" />
+			</td>
+		</tr>
+		<tr>
+			<td align="right">{lang msn}: </td>
+			<td>
+				<input type="text" name="msn" value="" class="t_input" />
+			</td>
+		</tr>
+	
+		<!--{loop $fields $fkey $fvalue}-->
+		<!--{if $fvalue[allowsearch]}-->
+		<tr>
+			<td align="right">{$fvalue[title]}: </td>
+			<td>
+				$fvalue[html]
+			</td>
+		</tr>
+		<!--{/if}-->
+		<!--{/loop}-->
+		
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="all">
+		</form>	
+	</td></tr>
+<!--{else}-->
+	<tr>
+		<th style="border-top: none;"><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('sex');">{lang search_by_gender}</a></th>
+	</tr>
+	<tbody id="s_sex" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="100">{lang gender}: </td>
+			<td>
+				<select id="sex" name="sex">
+					<option value="0">{lang any}</option>
+					<option value="1"$sexarr[1]>{lang man}</option>
+					<option value="2"$sexarr[2]>{lang woman}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">{lang marriage_status}: </td>
+			<td>
+				<select id="marry" name="marry">
+					<option value="0">{lang any}</option>
+					<option value="1"$marryarr[1]>{lang unmarried}</option>
+					<option value="2"$marryarr[2]>{lang married}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">{lang age}: </td>
+			<td>
+				<input type="text" name="startage" value="" size="10" class="t_input" /> ~ <input type="text" name="endage" value="" size="10" class="t_input" />
+			</td>
+		</tr>
+		<!--{if $_SCONFIG['videophoto']}-->
+		<tr>
+			<td align="right" width="100">{lang video_certify}: </td>
+			<td>
+				<input type="checkbox" name="videostatus" value="1">{lang video_certified}
+			</td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<td align="right" width="100">{lang avatar_upload}: </td>
+			<td>
+				<input type="checkbox" name="avatar" value="1">{lang avatar_uploaded}
+			</td>
+		</tr>
+		<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('reside');">{lang find_same_city_people}</a></th>
+	</tr>
+	<tbody id="s_reside" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">{lang residence}: </td>
+			<td id="residecitybox"></td>
+		</tr>
+		<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<script type="text/javascript" src="source/script_city.js"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
+		showcity('residecity', '$space[residecity]', 'resideprovince', 'residecitybox');
+		//-->
+		</script>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('birth');">{lang find_fellow}</a></th>
+	</tr>
+	<tbody id="s_birth" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">{lang birth_place}: </td>
+			<td id="birthcitybox"></td>
+		</tr>
+		<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<script type="text/javascript" src="source/script_city.js"></script>
+		<script type="text/javascript">
+		<!--
+		showprovince('birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
+		showcity('birthcity', '$space[birthcity]', 'birthprovince', 'birthcitybox');
+		//-->
+		</script>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('birthyear');">{lang find_birth_day_month}</a></th>
+	</tr>
+	<tbody id="s_birthyear" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr>
+			<td align="right" width="150">{lang birthday}: </td>
+			<td>
+			<select id="birthyear" name="birthyear" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthyeayhtml
+			</select> {lang year} 
+			<select id="birthmonth" name="birthmonth" onchange="showbirthday();">
+				<option value="0">&nbsp;</option>
+				$birthmonthhtml
+			</select> {lang month} 
+			<select id="birthday" name="birthday">
+				<option value="0">&nbsp;</option>
+				$birthdayhtml
+			</select> {lang day}
+			</td>
+		</tr>
+		<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th>
+			<img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('edu');">{lang find_classmates}</a>
+		</th>
+	</tr>
+	<tbody id="s_edu" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+			<tr><td align="right" width="150">{lang school}: </td><td><input type="text" name="title" value="" class="t_input"> <select name="startyear">
+				<option value="">{lang school_year}</option>
+				$yearhtml
+				</select></td></tr>
+			<tr><td align="right">{lang school_class}: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+			<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+			<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="edu">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('work');">{lang find_colleagues}</a></th>
+	</tr>
+	<tbody id="s_work" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+			<tr><td align="right" width="150">{lang company}: </td><td><input type="text" name="title" value="" class="t_input"></td></tr>
+			<tr><td align="right">{lang department}: </td><td><input type="text" name="subtitle" value="" class="t_input"></td></tr>
+			<tr><td align="right">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+			<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+			<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="work">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="javascript:;" onclick="showtbody('name');">{lang find_name}</a></th>
+	</tr>
+	<tbody id="s_name" style="display:none;">
+	<tr>
+		<td>
+		<form action="cp.php" method="get">
+		<table>
+		<tr><td align="right" width="150">{lang realname}: </td><td><input type="text" name="name" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang user_name}: </td><td><input type="text" name="username" value="" class="t_input"></td></tr>
+		<tr><td align="right">{lang member} UID: </td><td><input type="text" name="uid" value="" class="t_input"></td></tr>
+		<tr><td></td><td><input type="submit" name="searchsubmit" value="{lang search_button}" class="submit"></td></tr>
+		</table>
+		<input type="hidden" name="ac" value="friend">
+		<input type="hidden" name="op" value="search">
+		<input type="hidden" name="type" value="base">
+		</form>
+		</td>
+	</tr>
+	</tbody>
+	
+	<tr>
+		<th><img src="image/search.gif" align="absmiddle">
+			<a href="cp.php?ac=friend&op=search&all=yes">{lang search_advanced}</a></th>
+	</tr>
+<!--{/if}-->
+
+	</table>
+	<!--{/if}-->
+</div>
+
+<script>
+function showtbody(id) {
+	var obj = $('s_'+id);
+	if(obj.style.display == 'none') {
+		obj.style.display = '';
+	} else {
+		obj.style.display = 'none';
+	}
+}
+<!--{if $_GET['view']}-->showtbody('$_GET[view]');<!--{/if}-->
+</script>
+
+<!--{elseif $op=='changenum'}-->
+
+<h1>{lang friends_hot}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__changenumform_{$uid}">
+<form method="post" id="changenumform_{$uid}" name="changenumform_{$uid}" action="cp.php?ac=friend&op=changenum&uid=$uid">
+	<p>{lang friends_hot_adjust}</p>
+	<p>
+		{lang hot_new}: <input type="text" name="num" value="$friend[num]" size="5"> {lang friends_hot_diapazone}
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<button name="changenumsubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='changegroup'}-->
+
+<h1>{lang friends_group}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__changegroupform_{$uid}">
+<form method="post" id="changegroupform_{$uid}" name="changegroupform_{$uid}" action="cp.php?ac=friend&op=changegroup&uid=$uid">
+	<p>{lang friends_set_group}</p>
+	<table cellspacing="2" cellpadding="2"><tr>
+	<!--{eval $i=0;}-->
+	<!--{loop $groups $key $value}-->
+	<td><input type="radio" name="group" value="$key"$groupselect[$key]> $value</td>
+	<!--{if $i%2==1}--></tr><tr><!--{/if}-->
+	<!--{eval $i++;}-->
+	<!--{/loop}-->
+	</tr></table>
+
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="changegroupsubmit" value="true" />
+		<button name="changegroupsubmit_btn" type="button" class="submit" value="true" onclick="ajaxpost('changegroupform_{$uid}', 'friend_changegroup', 2000)">{lang form_sure_yes}</button>
+		<!--{else}-->
+		<button name="changegroupsubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+		<!--{/if}-->
+	</p>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+
+
+<!--{elseif $op=='group'}-->
+
+<div class="h_status">
+{lang friends_grouping}
+</div>
+
+<div id="content" style="width: 640px;">
+	<form method="post" action="cp.php?ac=friend&op=group&ref">
+<!--{if $list}-->
+	<div class="thumb_list" id="friend_ul">
+		<ul>
+		<!--{loop $list $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<div class="thumbTitle"><input type="checkbox" name="fuids[]" value="$value[uid]" /><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></div>
+				<div class="gray">{lang hot_edit}: $value[num]</div>
+				<div class="gray">$value[group]</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="page">$multi</div>
+	<div style="padding:20px 0 0 0;">
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'fuids')" /><label for="chkall">{lang check_all}</label></td>
+		{lang set_user_group}: <select name="group">
+			<!--{loop $groups $key $value}-->
+				<option value="$key">$value</option>
+			<!--{/loop}-->
+			</select>
+			<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+	</div>
+<!--{else}-->
+	<div class="c_form">
+		{lang user_groups_no}
+	</div>
+<!--{/if}-->
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<input type="hidden" name="groupsubmin" value="true" />
+	</form>
+</div>
+
+<div id="sidebar" style="width: 150px;">
+	<div class="cat">
+	<h3>{lang friends_group}</h3>
+	<ul class="post_list line_list">
+		<li<!--{if !isset($_GET[group])}--> class="current"<!--{/if}-->><a href="cp.php?ac=friend&op=group">{lang friends_all}</a></li>
+		<!--{loop $groups $key $value}-->
+		<li<!--{if isset($_GET[group]) && $_GET[group]==$key}--> class="current"<!--{/if}-->><a href="cp.php?ac=friend&op=group&group=$key">$value</a></li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+</div>
+
+<!--{elseif $op=='groupname'}-->
+
+<h1>{lang friends_groups}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="__groupnameform_{$group}">
+<form method="post" id="groupnameform_{$group}" name="groupnameform_{$group}" action="cp.php?ac=friend&op=groupname&group=$group">
+	<p>{lang set_friends_group_name}</p>
+	<div class="c_form">
+		{lang new_name}: <input type="text" name="groupname" value="$groups[$group]" size="15" class="t_input">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="groupnamesubmit" value="true" />
+		<input type="button" name="groupnamesubmit_btn" value="{lang form_sure_yes}" class="submit" onclick="ajaxpost('groupnameform_{$group}', 'friend_changegroupname', 2000)" />
+		<!--{else}-->
+		<input type="submit" name="groupnamesubmit" value="{lang form_sure_yes}" class="submit" />
+		<!--{/if}-->
+	</div>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+
+<!--{elseif $op=='groupignore'}-->
+
+<h1>{lang groups_ignored}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="$group">
+<form method="post" id="groupignoreform" name="groupignoreform" action="cp.php?ac=friend&op=groupignore&group=$group">
+	<!--{if !isset($space['privacy']['filter_gid'][$group])}-->
+	<p>{lang group_news_not_show}</p>
+	<!--{else}-->
+	<p>{lang group_news_show}</p>
+	<!--{/if}-->
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<!--{if $_SGLOBAL[inajax]}-->
+		<input type="hidden" name="groupignoresubmit" value="true" />
+		<button name="groupignoresubmit_btn" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+		<!--{else}-->
+		<button name="groupignoresubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+		<!--{/if}-->
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='request'}-->
+
+<div class="l_status">
+	<div class="r_option">
+		<a href="cp.php?ac=friend&op=ignore&confirm=1&key=$space[key]" onclick="return confirm('{lang ignore_friends_apps_sure}');">{lang ignore_friends_apps}</a>
+		 | <a href="cp.php?ac=friend&op=addconfirm&key=$space[key]">{lang approve_friends_apps}</a>
+	</div>
+	<span id="add_friend_div">{lang select_friends_apps}</span>
+	<!--{if $maxfriendnum}-->
+	({lang max_friends_add} $maxfriendnum {lang friends_num})
+	<p>
+		<!--{if $_SGLOBAL[magic][friendnum]}-->
+		<img src="image/magic/friendnum.small.gif" class="magicicon" />
+		<a id="a_magic_friendnum" href="magic.php?mid=friendnum" onclick="ajaxmenu(event, this.id, 1)">{lang friend_limit_expand}</a>
+		({lang can_buy_props} &ldquo; {$_SGLOBAL[magic][friendnum]} &rdquo; {lang for_expand_friends})
+		<!--{/if}-->
+	</p>
+	<!--{/if}-->
+</div>
+<!--{if $list}-->
+<div class="thumb_list" id="friend_ul">
+<table cellspacing="6" cellpadding="0">
+<!--{loop $list $key $value}-->
+<tbody id="friend_tbody_$value[uid]">
+<tr>
+	<td class="thumb <!--{if $ols[$value[uid]]}-->online<!--{/if}-->">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="image">
+				<div class="ar_r_t"><div class="ar_l_t"><div class="ar_r_b"><div class="ar_l_b">
+				<a href="space.php?uid=$value[uid]" class="avatarlink"><!--{avatar($value[uid],middle)}--></a>
+				</div></div></div></div>
+				</td>
+				<td>
+					<h6 class="l_status">
+						<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+						<!--{if $value['videostatus']}-->
+						<img src="image/videophoto.gif" align="absmiddle"> <span class="gray">{lang video_passed}</span>
+						<!--{/if}-->
+					</h6>
+					<div id="friend_$value[uid]">
+					<!--{if $value[note]}--><div class="quote"><span id="quote" class="q">$value[note]</span></div><!--{/if}-->
+					<p><!--{date('m-d H:i',$value[dateline],1)}--></p>
+					<!--{if $value['cfcount']}--><p><a href="cp.php?ac=friend&op=getcfriend&fuid=$value[cfriend]" id="a_cfriend_$key" onclick="ajaxmenu(event, this.id, 1)">{lang do_you_have} $value[cfcount] {lang sub_friends}</a></p><!--{/if}-->
+					<p style="margin-top:1em;">
+						<a href="cp.php?ac=friend&op=add&uid=$value[uid]" id="afr_$value[uid]" onclick="ajaxmenu(event, this.id, 1)" class="submit a">{lang app_approve}</a>
+						<a href="cp.php?ac=friend&op=ignore&uid=$value[uid]&confirm=1" id="afi_$value[uid]" onclick="ajaxmenu(event, this.id, 1)" class="button a">{lang ignore}</a>
+					</p>
+					</div>
+				</td>
+			</tr>
+			<tbody id="cf_$value[uid]"></tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+<!--{/loop}-->
+</table>
+</div>
+<div class="page">$multi</div>
+<!--{else}-->
+<div class="c_form">
+	{lang friends_no_new}
+</div>
+<!--{/if}-->
+
+<!--{elseif $op=='getcfriend'}-->
+
+
+<h1>{lang friends_common}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="cfriend">
+	<div class="h_status">{lang friends_common_max}</div>
+	<ul class="avatar_list">
+		<!--{loop $list $key $value}-->
+		<li>
+			<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+			<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+		</li>
+		<!--{/loop}-->
+	</ul>
+</div>
+
+<!--{elseif $op=='add'}-->
+
+<h1>{lang add_friends}</h1>
+<a href="javascript:hideMenu();" title="{lang close}" class="float_del">{lang close}</a>
+<div class="popupmenu_inner" id="__addform_{$tospace[uid]}">
+<form method="post" id="addform_{$tospace[uid]}" name="addform_{$tospace[uid]}" action="cp.php?ac=friend&op=add&uid=$tospace[uid]">
+	<table cellspacing="0" cellpadding="3">
+		<tr>
+			<th width="52"><a href="space.php?uid=$tospace[uid]"><!--{avatar($tospace[uid],small)}--></th>
+			<td>{lang add} <strong>{$_SN[$tospace[uid]]}</strong> {lang to_friends_with_statement}: <br />
+				<input type="text" name="note" value="" size="20" class="t_input" style="width: 300px;"  onkeydown="ctrlEnter(event, 'addsubmit_btn', 1);" />
+				<p class="gray">({lang statement_optional}, {$_SN[$tospace[uid]]} {lang statement_will_see})</p>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+				{lang group_select}: <select name="gid">
+				<!--{loop $groups $key $value}-->
+				<option value="$key">$value</option>
+				<!--{/loop}-->
+				</select>
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+				<input type="hidden" name="addsubmit" value="true" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="button" name="addsubmit_btn" id="addsubmit_btn" value="{lang form_sure_yes}" class="submit" onclick="ajaxpost('addform_{$tospace[uid]}','',2000)" />
+				<!--{else}-->
+				<input type="submit" name="addsubmit_btn" id="addsubmit_btn" value="{lang form_sure_yes}" class="submit" />
+				<!--{/if}-->
+			</td>
+	</table>
+	
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+
+<!--{elseif $op=='add2'}-->
+
+<h1>{lang requests_approving}</h1>
+<a href="javascript:hideMenu();" title="{lang close}" class="float_del">{lang close}</a>
+<div class="popupmenu_inner" id="__addratifyform_{$tospace[uid]}">
+<form method="post" id="addratifyform_{$tospace[uid]}" name="addratifyform_{$tospace[uid]}" action="cp.php?ac=friend&op=add&uid=$tospace[uid]">
+	<table cellspacing="0" cellpadding="3">
+		<tr>
+			<th width="52"><a href="space.php?uid=$tospace[uid]"><!--{avatar($tospace[uid],small)}--></th>
+			<td>
+			<div class="l_status">{lang approve} <strong>{$_SN[$tospace[uid]]}</strong> {lang this_request_and_group}: </div>
+				<table cellspacing="2" cellpadding="2"><tr>
+				<!--{eval $i=0;}-->
+				<!--{loop $groups $key $value}-->
+				<td><input type="radio" name="gid" id="group_$key" value="$key"$groupselect[$key]> <label for="group_$key">$value</label></td>
+				<!--{if $i%2==1}--></tr><tr><!--{/if}-->
+				<!--{eval $i++;}-->
+				<!--{/loop}-->
+				</tr></table>
+				
+				<p>
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="hidden" name="add2submit" value="true" />
+				<input type="button" name="add2submit_btn" value="{lang approve}" class="submit" onclick="ajaxpost('addratifyform_{$tospace[uid]}', 'myfriend_post', 2000)" />
+				<!--{else}-->
+				<input type="submit" name="add2submit" value="{lang approve}" class="submit" />
+				<!--{/if}-->
+				</p>
+			</td>
+	</table>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

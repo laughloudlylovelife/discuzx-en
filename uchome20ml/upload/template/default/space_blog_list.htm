@@ -1,0 +1,204 @@
+<!--{eval $_TPL['titles'] = array(lang('blogs'));}-->
+<!--{eval $friendsname = array(1 => lang('visible_to_friends_only'),2 => lang('friends_designated_only'),3 => lang('visible_to_me'),4 => lang('visible_by_password_only'));}-->
+
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_blog" class="feed">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=blog" class="r_option">{lang topic_reply}</a>
+			{lang blogs} ({lang total} $count {lang articles_num})
+		</h3>
+		<!--{if $count}-->
+		<ul class="line_list">
+		<!--{loop $list $value}-->
+			<li>
+				<span class="gray r_option"><!--{date('m-d H:i',$value[dateline],1)}--></span>
+				<h4><a href="space.php?uid=$space[uid]&do=blog&id=$value[blogid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a></h4>
+				<div class="detail">
+					$value[message]
+				</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<!--{if $pricount}-->
+		<div class="c_form">{lang page_has_hidden1} $pricount {lang blogs_because_privacy}</div>
+		<!--{/if}-->
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">{lang blogs_related_no}</div>
+		<!--{/if}-->
+	</div>
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+<form method="get" action="space.php">
+	<input name="searchkey" value="" size="15" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang search_blogs}" class="submit" type="submit">
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="blog" />
+	<input type="hidden" name="view" value="all" />
+	<input type="hidden" name="orderby" value="dateline" />
+</form>
+</div>
+<h2 class="title"><img src="image/app/blog.gif" />{lang blogs}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>{lang friends_last_blogs}</span></a></li><!--{/if}-->
+		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>{lang friends_all_blogs}</span></a></li>
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>{lang blogs_my}</span></a></li>
+		<li$actives[click]><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>{lang blogs_my_clicks}</span></a></li>
+		<li class="null"><a href="cp.php?ac=blog">{lang blog_new_publish}</a></li>
+	</ul>
+</div>		
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "{lang blogs}";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=$do&view=me\">{lang author_all_blogs}</a>";
+}-->
+<!--{template space_menu}-->
+<div class="h_status">{lang sorted_by_time}</div>
+<!--{/if}-->
+		
+<div id="content" style="width:640px;">
+	<!--{if $_GET['orderby'] && $_GET['orderby'] != 'dateline'}-->
+	<div class="h_status">
+		{lang show_time_period}: 
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]"{$day_actives[0]}>{lang all}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=1"{$day_actives[1]}>{lang last_day}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=2"{$day_actives[2]}>{lang last_2days}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=7"{$day_actives[7]}>{lang last_week}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=30"{$day_actives[30]}>{lang last_month}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=90"{$day_actives[90]}>{lang last_3month}</a><span class="pipe">|</span>
+		<a href="space.php?do=blog&view=all&orderby=$_GET[orderby]&day=120"{$day_actives[120]}>{lang last_6month}</a>
+	</div>
+	<!--{/if}-->
+	
+	<!--{if $searchkey}-->
+	<div class="h_status">{lang searching_blog} <span style="color:red;font-weight:bold;">$searchkey</span> {lang results_list}</div>
+	<!--{/if}-->
+	
+	<!--{if $count}-->
+	<div class="entry_list">
+		<ul>
+		<!--{loop $list $value}-->
+			<li>
+				<div class="avatardiv">
+					<div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+					<!--{if $value['hot']}--><div class="digb">$value[hot]</div><!--{/if}-->
+				</div>
+				
+				<div class="title">
+					<a href="cp.php?ac=share&type=blog&id=$value[blogid]" id="a_share_$value[blogid]" onclick="ajaxmenu(event, this.id, 1)" class="a_share">{lang shares}</a>
+					<h4><a href="space.php?uid=$value[uid]&do=$do&id=$value[blogid]" <!--{if $value[magiccolor]}--> class="magiccolor$value[magiccolor]"<!--{/if}-->>$value[subject]</a></h4>
+					<div>
+					<!--{if $value['friend']}-->
+					<span class="r_option locked gray"><a href="$theurl&friend=$value[friend]" class="gray">{$friendsname[$value[friend]]}</a></span>
+					<!--{/if}-->
+					<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a> <span class="gray"><!--{date('Y-m-d H:i',$value[dateline],1)}--></span>
+					</div>
+				</div>
+				<div class="detail image_right l_text s_clear" id="blog_article_$value[blogid]">
+					<!--{if $value[pic]}--><p class="image"><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]"><img src="$value[pic]" alt="$value[subject]" /></a></p><!--{/if}-->
+					$value[message]
+				</div>
+				<div class="gray">
+					<!--{if $classarr[$value[classid]]}-->{lang category}: <a href="space.php?uid=$value[uid]&do=blog&classid=$value[classid]">{$classarr[$value[classid]]}</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if $value[viewnum]}--><a href="space.php?uid=$value[uid]&do=$do&id=$value[blogid]">$value[viewnum] {lang views_numb}</a><span class="pipe">|</span><!--{/if}-->
+					<!--{if $value[replynum]}--><a href="space.php?uid=$value[uid]&do=$do&id=$value[blogid]#comment">$value[replynum] {lang comments_num}</a><!--{else}-->{lang comments_no}<!--{/if}-->
+				</div>
+			</li>
+		<!--{/loop}-->
+		<!--{if $pricount}-->
+			<li>
+				<div class="title">{lang page_has_hidden1} $pricount {lang blog_posts_because_privacy}</div>
+			</li>
+		<!--{/if}-->
+		</ul>
+	</div>
+	
+	<div class="page">$multi</div>
+	
+	<!--{else}-->
+	<div class="c_form">{lang blogs_related_no}</div>
+	<!--{/if}-->
+
+</div>
+
+<div id="sidebar" style="width:150px;">
+
+<!--{if $userlist}-->
+	<div class="cat">
+	<h3>{lang viewed_by_friends}</h3>
+	<ul class="post_list line_list">
+		<li>
+			{lang select_friends}:<br>
+			<select name="fuidsel" onchange="fuidgoto(this.value);">
+			<option value="">{lang friends_all}</option>
+			<!--{loop $userlist $value}-->
+			<option value="$value[fuid]"{$fuid_actives[$value[fuid]]}>{$_SN[$value[fuid]]}</option>
+			<!--{/loop}-->
+			</select>
+		</li>
+	</ul>
+	</div>
+<!--{/if}-->
+	
+<!--{if $classarr}-->
+	<div class="cat">
+	<h3>{lang blog_category}</h3>
+	<ul class="post_list line_list">
+		<li<!--{if !$_GET[classid]}--> class="current"<!--{/if}-->><a href="space.php?uid=$space[uid]&do=blog&view=me">{lang blogs_all}</a></li>
+		<!--{loop $classarr $classid $classname}-->
+		<li<!--{if $_GET[classid]==$classid}--> class="current"<!--{/if}-->>
+			<!--{if $space[self]}-->
+				<a href="cp.php?ac=class&op=edit&classid=$classid" id="c_edit_$classid" onclick="ajaxmenu(event, this.id)" class="c_edit">{lang edit}</a>
+				<a href="cp.php?ac=class&op=delete&classid=$classid" id="c_delete_$classid" onclick="ajaxmenu(event, this.id)" class="c_delete">{lang delete}</a>
+			<!--{/if}-->
+			<a href="space.php?uid=$space[uid]&do=blog&classid=$classid&view=me">$classname</a>
+		</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{/if}-->
+
+<!--{if $_GET['view'] == 'click'}-->
+	<div class="cat">
+	<h3>{lang clicks}</h3>
+	<ul class="post_list line_list">
+		<li$click_actives[all]><a href="space.php?do=blog&view=click">{lang all_actions}</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$click_actives[$value[clickid]]}>
+			<a href="space.php?do=blog&view=click&clickid=$value[clickid]">$value[name]</a>
+		</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{elseif $_GET['view'] == 'all'}-->
+	<div class="cat">
+	<h3>{lang members_top_list}</h3>
+	<ul class="post_list line_list">
+		<li$all_actives[all]><a href="space.php?do=blog&view=all">{lang recommended_reading}</a></li>
+		<li$all_actives[dateline]><a href="space.php?do=blog&view=all&orderby=dateline">{lang recently_published}</a></li>
+		<li$all_actives[hot]><a href="space.php?do=blog&view=all&orderby=hot&day=$_GET[hotday]">{lang top_ranked}</a></li>
+		<li$all_actives[replynum]><a href="space.php?do=blog&view=all&orderby=replynum&day=$_GET[hotday]">{lang most_replied}</a></li>
+		<li$all_actives[viewnum]><a href="space.php?do=blog&view=all&orderby=viewnum&day=$_GET[hotday]">{lang most_viewed}</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=blog&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{$value[name]} {lang top_rank}</a></li>
+		<!--{/loop}-->
+	</ul>
+	
+	</div>
+<!--{/if}-->
+
+</div>
+
+<script>
+function fuidgoto(fuid) {
+	window.location.href = "space.php?do=blog&view=we&fuid="+fuid;
+}
+</script>
+<!--{/if}-->
+	
+<!--{template footer}-->

@@ -1,0 +1,127 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="post" action="admincp.php?ac=spam">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+	<div class="title">
+		<h3>{lang anti_spam}</h3>
+		<p>{lang anti_spam_intro}</p>
+	</div>
+	
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang custom_login_identification}</th>
+		<td>
+			<input type="text" name="config[login_action]" value="$configs[login_action]" size="10"> ({lang custom_ident_note})<br>
+			{lang custom_login_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang custom_register_identification}</th>
+		<td>
+			<input type="text" name="config[register_action]" value="$configs[register_action]" size="10"> ({lang custom_ident_note})<br>
+			{lang custom_register_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang verification_feature_enable}</th>
+		<td>
+			<input type="checkbox" name="config[seccode_login]" value="1"<!--{if $configs[seccode_login]}--> checked<!--{/if}-->>{lang login_page}
+			<input type="checkbox" name="config[seccode_register]" value="1"<!--{if $configs[seccode_register]}--> checked<!--{/if}-->>{lang register_page}
+			<br>{lang verification_feature_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang personal_questions_mode}</th>
+		<td>
+			<input type="radio" name="config[questionmode]" value="1"<!--{if $configs[questionmode] == 1}--> checked<!--{/if}-->>{lang use_custom_q_a}
+			<input type="radio" name="config[questionmode]" value="0"<!--{if $configs[questionmode] != '1'}--> checked<!--{/if}-->>{lang use_captcha}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang personal_questions_set}</th>
+		<td id="q_td">
+			<!--{loop $datas[question] $key $value}-->
+			<div style="margin-bottom:0.5em;">
+				{lang question}: <input type="text" name="data[question][]" value="{$datas[question][$key]}" size="20">&nbsp;
+				{lang answer}: <input type="text" name="data[answer][]" value="{$datas[answer][$key]}" size="20">
+			</div>
+			<!--{/loop}-->
+			<a href="javascript:;" onclick="new_q();">{lang q_a_add}</a> ({lang answer_must_not_empty})
+			<div id="new_div" style="margin-bottom:0.5em;margin-top:0.5em;">
+				{lang question}: <input type="text" name="data[question][]" value="" size="20">&nbsp;
+				{lang answer}: <input type="text" name="data[answer][]" value="" size="20">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>{lang new_user_email_verify}</th>
+		<td>
+			<input type="radio" name="config[need_email]" value="1"<!--{if $configs[need_email] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[need_email]" value="0"<!--{if $configs[need_email] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang new_user_email_verify_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang check_email_unique}</th>
+		<td>
+			<input type="radio" name="config[uniqueemail]" value="1"<!--{if $configs[uniqueemail] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[uniqueemail]" value="0"<!--{if $configs[uniqueemail] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang check_email_unique_intro}
+		</td>
+	</tr>	
+	<tr>
+		<th>{lang new_user_probe_period}</th>
+		<td>
+			<input type="text" name="config[newusertime]" value="$configs[newusertime]" size="10"> {lang hours}
+			<br>{lang new_user_probe_period_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang new_user_avatar_require}</th>
+		<td>
+			<input type="radio" name="config[need_avatar]" value="1"<!--{if $configs[need_avatar] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[need_avatar]" value="0"<!--{if $configs[need_avatar] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang new_user_avatar_require_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang user_friends_minimum}</th>
+		<td>
+			<input type="text" name="config[need_friendnum]" value="$configs[need_friendnum]" size="10">
+			<br>{lang user_friends_minimum_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang anti_spam_other_settings}</th>
+		<td>
+			1. {lang you_can_use} <a href="admincp.php?ac=config">{lang config}</a>{lang disable_reg_enable_invites}<br>
+			2. {lang you_can_use} <a href="admincp.php?ac=privacy">{lang security}</a>{lang disable_guest_browse}<br>
+		</td>
+	</tr>
+	</table>
+	</div>
+
+	<div class="footactions">
+		<input type="submit" name="spamsubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<script>
+function new_q() {
+	$('q_td').innerHTML += '<div style="margin-bottom:0.5em;">'+$('new_div').innerHTML+'</div>';
+}
+</script>
+
+<!--{template admin/tpl/footer}-->

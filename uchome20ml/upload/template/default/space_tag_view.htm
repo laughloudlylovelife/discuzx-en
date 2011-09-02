@@ -1,0 +1,38 @@
+<!--{eval $_TPL['titles'] = array($tag['tagname'], lang('tags'));}-->
+<!--{template header}-->
+
+<h2 class="title">{lang tag} - $tag[tagname] ($tag[blognum] {lang tag_used_num})</h2>
+<div class="tabs_header">
+	<a href="cp.php?ac=share&type=tag&id=$tag[tagid]" id="a_share" onclick="ajaxmenu(event, this.id, 1)" class="a_share">{lang share}</a>
+	<ul class="tabs">
+		<li class="active"><a href="space.php?do=tag&id=$tag[tagid]"><span>{lang blog_list}</span></a></li>
+		<li><a href="space.php?do=tag"><span>{lang return_to_taglist}</span></a></li>
+	</ul>
+</div>
+
+<div class="topic_list">
+	<table cellspacing="0" cellpadding="0" class="infotable">
+		<thead>
+			<tr>
+				<td class="subject">{lang title}</td>
+				<td class="author">{lang author_replies}</td>
+				<td class="lastpost">{lang publish_time}</td>
+			</tr>
+		</thead>
+		<!--{loop $list $key $value}-->
+		<tr<!--{if $key%2==1}--> class="alt"<!--{/if}-->>
+			<td class="subject"><a href="space.php?uid=$value[uid]&do=blog&id=$value[blogid]">$value[subject]</a></td>
+			<td class="author"><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a><em>($value[replynum])</em></td>
+			<td class="lastpost"><!--{date('m-d H:i',$value[dateline],1)}--></td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	
+	<!--{if $prinum}-->
+	<div class="notice">{lang page_has_hidden1} $prinum {lang page_has_hidden2}</div>
+	<!--{/if}-->
+	
+	<div class="page">$multi</div>
+</div>
+
+<!--{template footer}-->

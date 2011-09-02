@@ -1,0 +1,130 @@
+<!--{template admin/tpl/header}-->
+<style type="text/css">
+	.poster{
+	max-width: 240px; max-height: 180px;}
+</style>
+
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[view]><a href="admincp.php?ac=eventclass"><span>{lang all_categories}</span></a></li>
+			<li class="null"><a href="admincp.php?ac=eventclass&op=add">{lang event_category_add}</a></li>
+		</ul>
+	</div>
+		
+	<form method="post" action="admincp.php?ac=eventclass" enctype="multipart/form-data">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+
+<!--{if "add" == $_GET['op'] || "edit" == $_GET['op']}-->
+
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th style="width:15em;">{lang category_name}</th>
+				<td><input type="text" name="classname" value="$thevalue[classname]"></td>
+			</tr>
+			<tr>
+				<th>{lang default_poster}</th>
+				<td>
+					{lang default_poster_intro}<br />
+					<img id="posterview" class="poster" src="$thevalue[poster]?v=$_SGLOBAL[timestamp]" alt="{lang default_poster}" onerror="this.src='image/event/default.jpg'" />
+					<a href="#" onclick="$('posterview').src='image/event/default.jpg'; $('delposter').value='1'; return false;">{lang delete}</a>
+					<br />
+					<input type="hidden" id="delposter" name="delposter" value="0" />
+					<input type="file" name="poster" value="">
+				</td>
+			</tr>
+			<tr>
+				<th>{lang template_default}</th>
+				<td>
+					{lang template_default_intro}<br />
+					<textarea name="template" rows="8" cols="80">$thevalue[template]</textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>{lang display_order}</th>
+				<td>
+					<input type="text" name="displayorder" value="$thevalue[displayorder]" />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="hidden" name="classid" value="$thevalue[classid]" />
+		<input type="submit" name="eventclasssubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+
+<!--{elseif "delete" == $_GET['op']}-->
+
+		<div class="topactions">
+			{lang category_deleted_choose_moving_to}
+		</div>
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th width="150">{lang select_category_to_move}</th>
+				<td>
+				<select name="newclassid">
+				<!--{loop $list $key $value}-->
+					<!--{if $value}-->
+					<option value="$value[classid]">$value[classname]</option>
+					<!--{/if}-->
+				<!--{/loop}-->
+				</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="hidden" name="classid" value="$thevalue[classid]" />
+		<input type="submit" name="deletesubmit" value="{lang confirm}" class="submit">
+	</div>
+
+	</form>
+
+<!--{else}-->
+
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th>{lang name}</th>
+				<th>{lang poster_set}</th>
+				<th>{lang template_set}</th>
+				<th>{lang display_order}</th>
+				<th width="80">{lang operation}</th>
+			</tr>
+			<!--{loop $list $key=>$value}-->
+			<tr>
+				<th>$value[classname]</th>
+				<td><!--{if $value[poster]=='image/event/default.jpg'}-->{lang no}<!--{else}-->{lang yes}<!--{/if}--></td>
+				<td><!--{if empty($value[template])}-->{lang no}<!--{else}-->{lang yes}<!--{/if}--></td>
+				<td><input type="text" name="displayorder[$key]" value="$value[displayorder]" size="5"></td>
+				<td width="80">
+				<a href="admincp.php?ac=eventclass&op=edit&classid=$key">{lang edit}</a> |
+				<a onclick="return confirm('{lang delete_confirmation}');" href="admincp.php?ac=eventclass&op=delete&classid=$key">{lang delete}</a></td>
+			</tr>
+			<!--{/loop}-->
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="submit" name="ordersubmit" value="{lang order_update}" class="submit">
+	</div>
+
+	</form>
+
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

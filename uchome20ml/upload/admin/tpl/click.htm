@@ -1,0 +1,95 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=click"><span>{lang all_visit_actions}</span></a></li>
+		<li$actives[blogid]><a href="admincp.php?ac=click&idtype=blogid"><span>{lang blog_actions}</span></a></li>
+		<li$actives[picid]><a href="admincp.php?ac=click&idtype=picid"><span>{lang photo_actions}</span></a></li>
+		<li$actives[tid]><a href="admincp.php?ac=click&idtype=tid"><span>{lang topic_actions}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=click&op=add">{lang add_new_action}</a></li>
+	</ul>
+</div>
+
+<!--{if empty($_GET['op'])}-->
+
+	<!--{eval $idtypename=array('blogid'=>lang('blogs'),'picid'=>lang('images'),'tid'=>lang('thread'))}-->
+	
+	<form method="post" action="admincp.php?ac=click">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang icon}</th>
+			<th>{lang action_name}</th>
+			<th>{lang system_type}</th>
+			<th>{lang display_order}</th>
+			<th>&nbsp;</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<td><img src="image/click/$value[icon]"></td>
+			<td>$value[name]</td>
+			<td>{$idtypename[$value[idtype]]}</td>
+			<td><input type="text" name="displayorder[{$value[clickid]}]" value="$value[displayorder]" size="5"></td>
+			<td>
+				<a href="admincp.php?ac=click&op=edit&clickid=$value[clickid]">{lang edit}</a> | 
+				<a href="admincp.php?ac=click&op=delete&clickid=$value[clickid]" onclick="return confirm('{lang delete_click_sure}');">{lang delete}</a>
+			</td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+	<div class="footactions">
+		<input type="submit" name="ordersubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+
+<!--{elseif $_GET['op'] == 'add' || $_GET['op'] == 'edit'}-->
+
+	<form method="post" action="admincp.php?ac=click">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:12em;">{lang action_name}</th>
+			<td><input type="text" name="name" value="$click[name]"></td></tr>
+		<tr><th>{lang action_icon}</th>
+			<td>./image/click/<input type="text" name="icon" value="$click[icon]" size="15">
+			<br>{lang action_icon_intro}
+			</td></tr>
+		<!--{if $_GET['op'] == 'add'}-->
+		<tr><th>{lang system_type}</th>
+			<td>
+			<select name="idtype">
+			<option value="blogid"$idtypearr[blogid]>{lang blogs}</option>
+			<option value="picid"$idtypearr[picid]>{lang images}</option>
+			<option value="tid"$idtypearr[tid]>{lang thread}</option>
+			</select>
+			</td></tr>
+		<!--{/if}-->
+		<tr><th>{lang display_order}</th>
+			<td><input type="text" name="displayorder" value="$click[displayorder]"></td></tr>
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="hidden" name="clickid" value="$click[clickid]">
+		<input type="submit" name="clicksubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

@@ -1,0 +1,157 @@
+<!--{template admin/tpl/header}-->
+<!--{eval
+	$_TPL['rewardtype'] = array(
+		'0' => lang('points_discount'),
+		'1' => lang('points_award')
+	);
+	$_TPL['cycletype'] = array(
+		'0' => lang('cycle_off'),
+		'1' => lang('cycle_day'),
+		'2' => lang('cycle_hour'),
+		'3' => lang('cycle_minutes'),
+		'4' => lang('cycle_unlimited')
+	);
+	$_TPL['norepeat'] = array(
+		'1' => lang('norepeat_info'),
+		'2' => lang('norepeat_people'),
+		'3' => lang('norepeat_apps')
+	);
+}-->
+<div class="mainarea">
+	<div class="maininner">
+		<div class="tabs_header">
+			<ul class="tabs">
+				<li$actives[1]><a href="admincp.php?ac=credit&rewardtype=1"><span>{lang award_rules}</span></a></li>
+				<li$actives[0]><a href="admincp.php?ac=credit&rewardtype=0"><span>{lang discount_rules}</span></a></li>
+			</ul>
+		</div>
+		<!--{if $_GET[op]=='edit'}-->
+		<div class="bdrcontent">
+			<form method="post" action="admincp.php?ac=credit">
+				<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+				<div class="title">
+					<h3>{lang rule_settings}</h3>
+				</div>
+				<table cellspacing="0" cellpadding="0" class="formtable">
+					<tr>
+						<th style="width:10em;">{lang rule_name}</th>
+						<td>$rule[rulename]</td>
+					</tr>
+					<tr>
+						<td>{lang award_method}</td>
+						<td>
+							$_TPL[rewardtype][$rule[rewardtype]]
+						</td>
+					</tr>
+					<tbody id="otherrule" <!--{if $rule[rewardtype] == 0}--> style="display:none"<!--{/if}-->>
+						<tr>
+							<td style="width:10em;">{lang award_cycle}</td>
+							<td>
+								<!--{loop $_TPL[cycletype] $key $desc}-->
+								<input type="radio" name="cycletype" value="$key" onclick="showoption($key);" <!--{if $key == $rule[cycletype]}-->checked<!--{/if}-->>$desc 
+								<!--{/loop}-->
+							</td>
+						</tr>
+						<tr id="cycletimetr" <!--{if in_array($rule[cycletype], array(0, 1, 4))}--> style="display:none"<!--{/if}-->>
+							<td>{lang cycle_time}</td>
+							<td><input type="text" name="cycletime" value="$rule[cycletime]"></td>
+						</tr>
+						<tr id="rewardnumtr"<!--{if $rule[cycletype] == 0}--> style="display:none"<!--{/if}-->>
+							<td>{lang award_frequency_number}</td>
+							<td>
+								<input type="text" name="rewardnum" value="$rule[rewardnum]"> {lang award_frequency_intro}
+							</td>
+						</tr>
+					</tbody>
+					<tr>
+						<td><!--{if $rule[rewardtype]}-->{lang increase}<!--{else}-->{lang decrease}<!--{/if}--> {lang points_amount}</td>
+						<td><input type="text" name="credit" value="$rule[credit]"></td>
+					</tr>
+					<tr>
+						<td><!--{if $rule[rewardtype]}-->{lang increase}<!--{else}-->{lang decrease}<!--{/if}--> {lang experience_value}</td>
+						<td><input type="text" name="experience" value="$rule[experience]"></td>
+					</tr>
+					<!--{if $rule[norepeat]}-->
+					<tr>
+						<td>{lang norepeat_rule}</td>
+						<td>
+							<!--{if $rule[norepeat]==1}-->
+							{lang norepeat_info_rule}
+							<!--{elseif $rule[norepeat]==2}-->
+							{lang norepeat_people_rule}
+							<!--{else}-->
+							{lang norepeat_apps_rule}
+							<!--{/if}-->
+						</td>
+					</tr>
+					<!--{/if}-->
+				</table>
+				<br/>
+				<input type="submit" name="creditsubmit" value="{lang submit_button}" class="submit">
+				<input type="hidden" name="rid" value="$_GET[rid]" />
+				<script type="text/javascript">
+					function showoption(id) {
+						switch(id) {
+							case 0:
+								$('cycletimetr').style.display = "none";
+								$('rewardnumtr').style.display = "none";
+								break;
+							case 1:
+							case 4:
+								$('cycletimetr').style.display = "none";
+								$('rewardnumtr').style.display = "";
+								break;
+							case 2:
+							case 3:
+								$('cycletimetr').style.display = "";
+								$('rewardnumtr').style.display = "";
+								break;
+						}
+					}
+				</script>
+			</form>
+		</div>
+		<!--{else}-->
+		<div class="bdrcontent">
+			<table cellspacing="0" cellpadding="0" class="formtable">
+				<tr>
+					<th>{lang action_name}</th>
+					<!--{if $_GET[rewardtype]!='0'}-->
+					<th width="80">{lang award_cycle}</th>
+					<th width="80">{lang award_frequency_number}</th>
+					<th width="80">{lang award_method}</th>
+					<!--{/if}-->
+					<th width="80"><!--{if $_GET[rewardtype]=='0'}-->{lang points_descrease}<!--{else}-->{lang points_increase}<!--{/if}--></th>
+					<th width="80"><!--{if $_GET[rewardtype]=='0'}-->{lang experience_decrease}<!--{else}-->{lang experience_increase}<!--{/if}--></th>
+					<th width="80">{lang operation}</th>
+				</tr>
+				<!--{if $list}-->
+				<!--{loop $list $value}-->
+				<tr>
+					<td>$value[rulename]</td>
+					<!--{if $_GET[rewardtype]!='0'}-->
+					<td>$_TPL[cycletype][$value[cycletype]]</td>
+					<td><!--{if $value[rewardnum]=='0'}-->{lang award_unlimited}<!--{else}-->$value[rewardnum]<!--{/if}--></td>
+					<td>$_TPL[rewardtype][$value[rewardtype]]</td>
+					<!--{/if}-->
+					<td>$value[credit]</td>
+					<td>$value[experience]</td>
+					<td><a href="admincp.php?ac=credit&op=edit&rid=$value[rid]">{lang edit}</a></td>
+				</tr>
+				<!--{/loop}-->
+				<!--{else}-->
+				<tr>
+					<td colspan="6">{lang no_award_rules}</td>
+				</tr>
+				<!--{/if}-->
+			</table>
+		</div>
+		<!--{/if}-->
+	</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

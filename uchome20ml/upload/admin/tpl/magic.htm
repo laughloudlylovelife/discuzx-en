@@ -1,0 +1,400 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[enabled]><a href="admincp.php?ac=magic&view=enabled"><span>{lang magic_enabled}</span></a></li>
+			<li$actives[disabled]><a href="admincp.php?ac=magic&view=disabled"><span>{lang magic_disabled}</span></a></li>
+		</ul>
+	</div>
+
+<!--{if "edit" == $_GET['op']}-->
+	
+	<form method="post" action="admincp.php?ac=magic&op=$_GET[op]&mid=$_GET[mid]&view=$_GET[view]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+	
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th style="width:15em;">{lang name}</th>
+				<td>$thevalue[name]</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang magic_description}</th>
+				<td>
+					<textarea name="description" cols="80" rows="2">$thevalue[description]</textarea>					
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang item_price}</th>
+				<td>
+					<input type="text" name="charge" value="$thevalue[charge]" />
+					{lang item_price_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang experience_grow}</th>
+				<td>
+					<input type="text" name="experience" value="$thevalue[experience]" />
+					{lang experience_grow_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang replenishment_period}</th>
+				<td>
+					<select name="provideperoid">
+						<option value="0"<!--{if $thevalue[provideperoid]==0}--> selected<!--{/if}-->>{lang always}</option>
+						<option value="3600"<!--{if $thevalue[provideperoid]==3600}--> selected<!--{/if}-->>{lang interval_1h}</option>
+						<option value="86400"<!--{if $thevalue[provideperoid]==86400}--> selected<!--{/if}-->>{lang interval_24h}</option>
+						<option value="604800"<!--{if $thevalue[provideperoid]==604800}--> selected<!--{/if}-->>{lang interval_7d}</option>
+					</select>
+					{lang replenishment_period_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang replenishment_number}</th>
+				<td>
+					<input type="text" name="providecount" value="$thevalue[providecount]" maxlength="6" />
+					{lang replenishment_number_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang life_period}</th>
+				<td>
+					<select name="useperoid">
+						<option value="0"<!--{if $thevalue[useperoid]==0}--> selected<!--{/if}-->>{lang always}</option>
+						<option value="3600"<!--{if $thevalue[useperoid]==3600}--> selected<!--{/if}-->>{lang interval_1h}</option>
+						<option value="86400"<!--{if $thevalue[useperoid]==86400}--> selected<!--{/if}-->>{lang interval_24h}</option>
+						<option value="604800"<!--{if $thevalue[useperoid]==604800}--> selected<!--{/if}-->>{lang interval_7d}</option>
+					</select>
+					{lang life_period_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang using_times}</th>
+				<td>
+					<input type="text" name="usecount" value="$thevalue[usecount]" maxlength="6" />
+					{lang using_times_intro}
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang magic_groups_disable}</th>
+				<td>
+					{lang magic_groups_disable_intro}<br />
+					<!--{loop $usergroups $groups}-->
+					<!--{loop $groups $gid $value}-->
+					<input id="ckgid_$gid" type="checkbox" name="forbiddengid[]" value="$gid"<!--{if in_array($gid, $thevalue[forbiddengid])}-->checked<!--{/if}--> />
+					<label for="ckgid_$gid">$value[grouptitle]</label>
+					<!--{/loop}-->
+					<br />
+					<!--{/loop}-->
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang stock_number}</th>
+				<td>
+					<input type="text" name="storage" value="$thevalue[storage]" size="5" maxlength="5" />
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang display_order}</th>
+				<td>
+					<input type="text" name="displayorder" value="$thevalue[displayorder]" size="5" maxlength="5" />
+				</td>
+			</tr>
+			<tr>
+				<th style="width:15em;">{lang disable_magic}</th>
+				<td>
+					<input type="checkbox" id="magicclose" name="close" value="1"<!--{if $thevalue[close]}--> checked<!--{/if}--> />
+					<label for="magicclose">{lang disable_magic_intro}</label>
+				</td>
+			</tr>
+			<!--{if $_GET[mid] == 'invisible'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang invisible_time}</th>
+							<td>
+								<select name="custom[effectivetime]">
+									<option value="">{lang default}</option>
+									<option value="86400"<!--{if $thevalue[custom][effectivetime]==86400}--> selected<!--{/if}-->>{lang days1}</option>
+									<option value="259200"<!--{if $thevalue[custom][effectivetime]==259200}--> selected<!--{/if}-->>{lang days3}</option>
+									<option value="432000"<!--{if $thevalue[custom][effectivetime]==432000}--> selected<!--{/if}-->>{lang days5}</option>
+									<option value="604800"<!--{if $thevalue[custom][effectivetime]==604800}--> selected<!--{/if}-->>{lang days7}</option>
+								</select>
+								{lang invisible_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'superstar'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang superstar_duration}</th>
+							<td>
+								<select name="custom[effectivetime]">
+									<option value="">{lang default}</option>
+									<option value="86400"<!--{if $thevalue[custom][effectivetime]==86400}--> selected<!--{/if}-->>{lang days1}</option>
+									<option value="259200"<!--{if $thevalue[custom][effectivetime]==259200}--> selected<!--{/if}-->>{lang days3}</option>
+									<option value="432000"<!--{if $thevalue[custom][effectivetime]==432000}--> selected<!--{/if}-->>{lang days5}</option>
+									<option value="604800"<!--{if $thevalue[custom][effectivetime]==604800}--> selected<!--{/if}-->>{lang days7}</option>
+								</select>							
+							</td>
+							{lang superstar_default}
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'friendnum'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang increase_friends}</th>
+							<td>
+								<select name="custom[addnum]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][addnum]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][addnum]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][addnum]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][addnum]==50}--> selected<!--{/if}-->>50</option>
+									<option value="100"<!--{if $thevalue[custom][addnum]==100}--> selected<!--{/if}-->>100</option>
+								</select>
+								{lang increase_friends_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'attachsize'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang increase_attach_capacity}</th>
+							<td>
+								<select name="custom[addsize]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][addsize]==5}--> selected<!--{/if}-->>5M</option>
+									<option value="10"<!--{if $thevalue[custom][addsize]==10}--> selected<!--{/if}-->>10M</option>
+									<option value="20"<!--{if $thevalue[custom][addsize]==20}--> selected<!--{/if}-->>20M</option>
+									<option value="50"<!--{if $thevalue[custom][addsize]==50}--> selected<!--{/if}-->>50M</option>
+									<option value="100"<!--{if $thevalue[custom][addsize]==100}--> selected<!--{/if}-->>100M</option>
+								</select>
+								{lang increase_attach_capacity_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'visit'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang visit_friends_number}</th>
+							<td>
+								<select name="custom[maxvisit]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxvisit]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxvisit]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxvisit]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxvisit]==50}--> selected<!--{/if}-->>50</option>
+								</select>
+								{lang visit_friends_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'gift'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang chank_max}</th>
+							<td>
+								<select name="custom[maxchunk]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxchunk]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxchunk]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxchunk]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxchunk]==50}--> selected<!--{/if}-->>50</option>
+									<option value="100"<!--{if $thevalue[custom][maxchunk]==100}--> selected<!--{/if}-->>100</option>
+									<option value="999"<!--{if $thevalue[custom][maxchunk]=='999'}--> selected<!--{/if}-->>{lang unlimited}</option>
+								</select>
+								{lang chank_max_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'viewmagic'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang max_views}</th>
+							<td>
+								<select name="custom[maxview]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxview]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxview]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxview]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxview]==50}--> selected<!--{/if}-->>50</option>
+									<option value="999"<!--{if $thevalue[custom][maxview]=='999'}--> selected<!--{/if}-->>{lang unlimited}</option>
+								</select>
+								{lang max_views_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'viewvisitor'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang max_views}</th>
+							<td>
+								<select name="custom[maxview]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxview]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxview]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxview]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxview]==50}--> selected<!--{/if}-->>50</option>
+								</select>
+								{lang max_views_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'detector'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang detector_max}</th>
+							<td>
+								<select name="custom[maxdetect]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxdetect]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxdetect]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxdetect]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxdetect]==50}--> selected<!--{/if}-->>50</option>
+								</select>
+								{lang detector_max_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{elseif $_GET[mid] == 'call'}-->
+			<tr>
+				<th style="width:15em;">{lang effect_lifetime}</th>
+				<td>
+					{lang effect_lifetime_intro}<br />
+					<table>
+						<tr>
+							<th width="100">{lang max_call}</th>
+							<td>
+								<select name="custom[maxcall]">
+									<option value="">{lang default}</option>
+									<option value="5"<!--{if $thevalue[custom][maxcall]==5}--> selected<!--{/if}-->>5</option>
+									<option value="10"<!--{if $thevalue[custom][maxcall]==10}--> selected<!--{/if}-->>10</option>
+									<option value="20"<!--{if $thevalue[custom][maxcall]==20}--> selected<!--{/if}-->>20</option>
+									<option value="50"<!--{if $thevalue[custom][maxcall]==50}--> selected<!--{/if}-->>50</option>
+								</select>
+								{lang max_call_default}
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<!--{/if}-->
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="hidden" name="mid" value="$thevalue[mid]" />
+		<input type="submit" name="editsubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+	
+<!--{else}-->
+	<form method="post" action="admincp.php?ac=magic&view=$_GET[view]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr>
+				<th width="100">{lang icon}</th>
+				<th>{lang magic}</th>
+				<!--{if $_GET[view] != 'disabled'}-->
+				<th width="80">{lang item_price}</th>
+				<th width="80">{lang display_order}</th>
+				<!--{/if}-->
+				<th width="80">{lang operation}</th>
+			</tr>
+			<!--{loop $list $key $value}-->
+			<tr>
+				<th><img src="image/magic/{$value[mid]}.gif" alt="$value[name]" /></th>
+				<td>
+					<b>$value[name]</b>
+					<p>$value[description]</p>				
+				</td>
+				<!--{if $_GET[view] != 'disabled'}-->
+				<td><input type="text" name="charge[$key]" value="$value[charge]" size="5" maxlength="5" /></td>
+				<td><input type="text" name="displayorder[$key]" value="$value[displayorder]" size="5" maxlength="5" /></td>
+				<!--{/if}-->
+				<td><a href="admincp.php?ac=magic&op=edit&mid=$key&view=$_GET[view]">{lang edit}</a></td>
+			</tr>
+			<!--{/loop}-->
+		</table>
+	</div>
+
+	<!--{if $_GET[view] != 'disabled'}-->
+	<div class="footactions">
+		<input type="submit" name="ordersubmit" value="{lang update_data}" class="submit">
+	</div>
+	<!--{/if}-->
+
+	</form>
+
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

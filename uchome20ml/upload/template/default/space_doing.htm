@@ -1,0 +1,126 @@
+<!--{eval $_TPL['titles'] = array(lang('doing'));}-->
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_doing">
+		<h3 class="feed_header">
+			<a href="space.php?do=doing&view=me" class="r_option">{lang write_record}</a>
+			{lang total_articles1} $count {lang total_articles2}
+		</h3><br>
+
+		<!--{if $dolist}-->
+		<div class="doing_list">
+			<ol>
+			<!--{loop $dolist $dv}-->
+			<!--{eval $doid = $dv[doid];}-->
+				<li id="dl{$doid}">
+					<div class="doing">
+						<div class="doingcontent"><a href="space.php?uid=$dv[uid]">{$_SN[$dv[uid]]}</a>:
+						<span class="gray">(<!--{date('m-d H:i',$dv[dateline],1)}-->)</span>
+						<!--{if $dv[uid]==$_SGLOBAL[supe_uid]}--> <a href="cp.php?ac=doing&op=delete&doid=$doid&id=$dv[id]" id="doing_delete_{$doid}_{$dv[id]}" onclick="ajaxmenu(event, this.id)" class="re gray">{lang delete}</a> &nbsp;<!--{/if}-->
+						<a href="javascript:;" onclick="docomment_form($doid, 0);">{lang reply}</a>
+						<br><span>$dv[message]</span>
+						</div>
+						
+						<!--{eval $list = $clist[$doid];}-->
+						<div class="sub_doing" id="docomment_$doid"<!--{if !$list}--> style="display:none;"<!--{/if}-->>
+							<span id="docomment_form_{$doid}_0"></span>
+							<!--{template space_doing_li}-->
+						</div>
+						
+					</div>
+				</li>
+			<!--{/loop}-->
+			</ol>
+			<div class="page">$multi</div>
+		</div>
+		<!--{else}-->
+		<div class="c_form">{lang records_no_yet}</div>
+		<!--{/if}-->
+	</div><br>
+	
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<h2 class="title"><img src="image/app/doing.gif">{lang doings}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>{lang new_friends_records}</span></a></li><!--{/if}-->
+		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>{lang all_records}</span></a></li>
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>{lang my_records}</span></a></li>
+		<li$actives[mood]><a href="space.php?uid=$space[uid]&do=mood"><span>{lang friend_moods}</span></a></li>
+	</ul>
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = "{lang doing}";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=doing&view=me\">{lang author_records}</a>";
+}-->
+<!--{template space_menu}-->
+<div class="h_status">{lang sorted_by_time}</div>
+<!--{/if}-->
+
+<div id="content">	
+
+	<!--{if $space[self]}-->
+	<!--{template space_doing_form}-->
+	<br>
+	<!--{/if}-->
+	
+
+	<!--{if $dolist}-->
+	<div class="doing_list">
+		<ol>
+		<!--{loop $dolist $dv}-->
+		<!--{eval $doid = $dv[doid];}-->
+			<li id="dl{$doid}">
+				<div class="avatar48"><a href="space.php?uid=$dv[uid]"><!--{avatar($dv[uid],small)}--></a></div>
+				<div class="doing">
+					<div class="doingcontent"><a href="space.php?uid=$dv[uid]">{$_SN[$dv[uid]]}</a>:
+					<span class="gray">(<!--{date('m-d H:i',$dv[dateline],1)}-->)</span>
+					<!--{if $dv[uid]==$_SGLOBAL[supe_uid]}--> <a href="cp.php?ac=doing&op=delete&doid=$doid&id=$dv[id]" id="doing_delete_{$doid}_{$dv[id]}" onclick="ajaxmenu(event, this.id)" class="re gray">{lang delete}</a> &nbsp;<!--{/if}-->
+					<a href="javascript:;" onclick="docomment_form($doid, 0);">{lang reply}</a>
+					<br><span>$dv[message]</span>
+					</div>
+					
+					<!--{eval $list = $clist[$doid];}-->
+					<div class="sub_doing" id="docomment_$doid"<!--{if !$list}--> style="display:none;"<!--{/if}-->>
+						<span id="docomment_form_{$doid}_0"></span>
+						<!--{template space_doing_li}-->
+					</div>
+					
+				</div>
+			</li>
+		<!--{/loop}-->
+		</ol>
+		<div class="page">$multi</div>
+	</div>
+	
+	<!--{else}-->
+	<div class="c_form">{lang records_no_yet}.<!--{if $space[self]}-->{lang you_can_wtite_now}<!--{/if}--></div>
+	<!--{/if}-->
+	
+</div>
+
+<div id="sidebar">
+	<!--{if $moodlist}-->
+	<div class="sidebox">
+		<h2 class="title">
+			<p class="r_option"><a href="space.php?uid=$space[uid]&do=mood">{lang all}</a></p>
+			{lang with} <!--{if $space[self]}-->{lang me}<!--{else}-->{$_SN[$space[uid]]}<!--{/if}--> {lang same_mood_friends}
+		</h2>
+		<ul class="avatar_list">
+			<!--{loop $moodlist $key $value}-->
+			<li>
+				<div class="avatar48"><a href="space.php?uid=$value[uid]&do=doing"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]" title="{$_SN[$value[uid]]}">{$_SN[$value[uid]]}</a></p>
+				<p class="gray"><!--{date('d.m.Y',$value[updatetime],1)}--></p>
+			</li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<!--{/if}-->
+</div>
+<!--{/if}-->
+
+<!--{template footer}-->

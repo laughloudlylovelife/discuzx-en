@@ -1,0 +1,121 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+			<th>{lang comment_type}</th>
+			<td>
+				<select name="idtype">
+					<option value="">{lang all}</option>
+					<option value="uid"$idtype[uid]>{lang wall}</option>
+					<option value="blogid"$idtype[blogid]>{lang blogs}</option>
+					<option value="picid"$idtype[picid]>{lang images}</option>
+					<option value="eventid"$idtype[eventid]>{lang events}</option>
+					<option value="sid"$idtype[sid]>{lang shares}</option>
+				</select>
+			<th>{lang comment_id}</th><td><input type="text" name="id" value="$_GET[id]"></td>
+		</tr>
+		<tr><th>{lang comment_author_uid}</th><td><input type="text" name="authorid" value="$_GET[authorid]"></td>
+			<th>{lang comment_author_name}</th><td><input type="text" name="author" value="$_GET[author]"></td>
+		</tr>
+		<!--{if $allowmanage}-->
+		<tr><th>{lang comment_uid}</th><td colspan="3"><input type="text" name="uid" value="$_GET[uid]"></td></tr>
+		<!--{/if}-->
+		<tr><th>{lang publish_time}</th><td colspan="3">
+			<input type="text" name="dateline1" value="$_GET[dateline1]" size="10"> ~
+			<input type="text" name="dateline2" value="$_GET[dateline2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		<tr><th>{lang content} *</th><td><input type="text" name="message" value="$_GET[message]"></td>
+			<th>{lang ip_posted}</th><td><input type="text" name="ip" value="$_GET[ip]"></td>
+		</tr>
+
+		<tr><th>{lang sort_results}</th>
+		<td colspan="3">
+		<select name="orderby">
+		<option value="">{lang sort_default}</option>
+		<option value="dateline"$orderby[dateline]>{lang comment_time}</option>
+		</select>
+		<select name="ordersc">
+		<option value="desc"$ordersc[desc]>{lang descending}</option>
+		<option value="asc"$ordersc[asc]>{lang ascending}</option>
+		</select>
+		<select name="perpage">
+		<option value="20"$perpages[20]>{lang per_page_20}</option>
+		<option value="50"$perpages[50]>{lang per_page_50}</option>
+		<option value="100"$perpages[100]>{lang per_page_100}</option>
+		<option value="1000"$perpages[1000]>{lang per_page_1000}</option>
+		</select>
+		<input type="hidden" name="ac" value="comment">
+		<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+		</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+
+<!--{if $list}-->
+
+	<form method="post" action="admincp.php?ac=comment">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+
+<!--{if $perpage>100}-->
+	<p>{lang total_data_by_conditions} <strong>$count</strong> {lang units}</p>
+	<!--{loop $list $value}-->
+	<input type="hidden" name="ids[]" value="$value[cid]">
+	<!--{/loop}-->
+
+<!--{else}-->
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<!--{loop $list $value}-->
+	<tr>
+		<td width="25"><input type="<!--{if $allowbatch}-->checkbox<!--{else}-->radio<!--{/if}-->" name="ids[]" value="$value[cid]"></td>
+		<td>
+		$value[message] <!--{if $wheresql == 1 }--><a href="admincp.php?ac=comment&cid=$value[cid]">...</a><!--{/if}-->
+
+		<p>
+		<!--{if $value[author]}-->
+		{lang author}: <a href="admincp.php?ac=comment&author=$value[author]">$_SN[$value[authorid]]</a>
+		<!--{else}-->
+		{lang author}: <a href="space.php?uid=$value[authorid]" target="_blank">{lang hidden_username}</a>
+		<!--{/if}-->
+		{lang comment_object}: <a href="admincp.php?ac=comment&id=$value[id]&idtype=$value[idtype]">{$value[idtype]}-$value[id]</a>
+		<!--{if $value[idtype] == 'uid'}-->
+		(<a href="space.php?uid=$value[id]&do=wall" target="_blank">{lang visit}</a>)
+		<!--{/if}-->
+		IP: <a href="admincp.php?ac=comment&ip=$value[ip]">$value[ip]</a>
+		<!--{date('Y-m-d H:i',$value[dateline])}-->
+		</p>
+		</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+<!--{/if}-->
+	</div>
+
+	<div class="footactions">
+		<!--{if $allowbatch && $perpage<=100}--><input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all}<!--{/if}-->
+		<input type="hidden" name="mpurl" value="$mpurl">
+		<input type="submit" name="deletesubmit" value="{lang delete_bulk}" onclick="return confirm('{lang action_not_recoverable}');" class="submit">
+		<div class="pages">$multi</div>
+	</div>
+
+	</form>
+<!--{else}-->
+	<div class="bdrcontent">
+		<p>{lang no_data_by_conditions}</p>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

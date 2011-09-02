@@ -1,0 +1,17 @@
+<!--{template admin/tpl/header}-->
+
+<div class="bdrcontent">
+	<div class="message">
+	<!--{if $url_forward}-->
+	<a href="$url_forward">$message</a>
+	<!--{else}-->
+	$message
+	<!--{/if}-->
+	</div>
+</div>
+
+<div class="footactions">
+	&nbsp; <!--{if $url_forward}--><a href="$url_forward">{lang form_sure_yes}</a> &nbsp; <!--{/if}--><a href="javascript:history.back(-1)">{lang go_back}</a> &nbsp; <a href="admincp.php">{lang admin_index}</a>
+</div>
+
+<!--{template admin/tpl/footer}-->

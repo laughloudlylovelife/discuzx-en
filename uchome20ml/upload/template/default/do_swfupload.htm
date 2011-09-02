@@ -1,0 +1,118 @@
+<!--{if !empty($uploadResponse)}-->
+<uploadResponse>
+	<message><!--{if $status=="success"}-->{lang completed}<!--{else}-->$uploadfiles<!--{/if}--></message>
+	<status>$status</status>
+	<proid>$proid</proid>
+	<albumid>$albumid</albumid>
+	<picid>$picid</picid>
+	<!--{if $fileurl}--><filepath>$fileurl</filepath><!--{/if}-->
+</uploadResponse>
+<!--{else}-->
+<parameter>
+	<!--{if $iscamera}-->
+		<images>
+			<!--{loop $dirarr $key $val}-->
+			<categories name="$val[0]" directory="$val[1]">
+				<!--{loop $val[2] $ikey $value}-->
+					<img name="$value"/>
+				<!--{/loop}-->
+			</categories>
+			<!--{/loop}-->
+		</images>
+	<!--{elseif $isdoodle}-->
+		<background>
+			<!--{loop $filearr $key $filename}-->
+			<bg url="./image/doodle/big/{$filename}" thumb="./image/doodle/thumb/{$filename}"/>
+			<!--{/loop}-->
+		</background>
+	<!--{elseif $isupload}-->
+		<allowsExtend>
+			<extend depict="All Image File(*.jpg,*.jpeg,*.gif,*.png)">*.jpg,*.gif,*.png,*.jpeg</extend>
+		</allowsExtend>
+	<!--{/if}-->
+	<language>
+			<create>{lang register_date}</create>
+			<notCreate>{lang cancel}</notCreate>
+			<albumName>{lang album_name}</albumName>
+			<createTitle>{lang create_new_album}</createTitle>
+		<!--{if !$isdoodle}-->
+			<okbtn>{lang continue}</okbtn>
+			<cancelbtn>{lang view}</cancelbtn>
+			<!--{if $isupload}-->
+				<fileName>{lang file_name}</fileName>
+				<depict>{lang description_modify}</depict>
+				<size>{lang file_size}</size>
+				<stat>{lang upload_progress}</stat>
+				<aimAlbum>{lang upload_to}:</aimAlbum>
+				<browser>{lang browse}</browser>
+				<delete>{lang delete}</delete>
+				<upload>{lang upload}</upload>
+				<okTitle>{lang upload_completed}</okTitle>
+				<okMsg>{lang all_files_uploaded}</okMsg>
+				<uploadTitle>{lang uploading}</uploadTitle>
+				<uploadMsg1>{lang total_common_of}</uploadMsg1>
+				<uploadMsg2>{lang wait_for_upload}</uploadMsg2>
+				<uploadMsg3>{lang files}</uploadMsg3>
+				<bigFile>{lang file_too_large}</bigFile>
+				<uploaderror>{lang upload_failed}</uploaderror>
+			<!--{elseif $iscamera}-->
+				<desultory>{lang capture}</desultory>
+				<series>{lang series}</series>
+				<save>{lang save}</save>
+				<pageup>{lang prev_page}</pageup>
+				<pagedown>{lang next_page}</pagedown>
+				<clearbg>{lang remove_photo_frame}</clearbg>
+				<reload>{lang reload}</reload>
+				<cancel>{lang cancel}</cancel>
+				<siteerror>{lang parameter_error}</siteerror>
+				<ver1>{lang flash_version_msg1}</ver1>
+				<ver2>{lang update_please}</ver2>
+				<refuse>{lang video_detected_but_refused}</refuse>
+				<countdown>{lang count_down}</countdown>
+				<second>{lang second}</second>
+				<nocam>{lang no_camera}</nocam>
+				<autoShooting>{lang auto_shooting}</autoShooting>
+				<explain>{lang preferences_explain}: </explain>
+				<okTitle>{lang upload_completed}</okTitle>
+				<okMsg>{lang large_photo_upload_completed}</okMsg>
+				<saveTitle>{lang uploading}</saveTitle>
+				<saveToNote>{lang save_to}</saveToNote>
+				<saveMsg1>{lang total_common_of}</saveMsg1>
+				<saveMsg2>{lang shots_saved_first}</saveMsg2>
+				<saveMsg3>{lang shots}</saveMsg3>
+			<!--{/if}-->
+		<!--{else}-->
+			<reload>{lang reload_this}</reload>
+			<save>{lang save}</save>
+			<notDraw>{lang no_graffiti_no_save}</notDraw>
+		<!--{/if}-->
+	</language>
+	<config>
+		<userid>$_SGLOBAL[supe_uid]</userid>
+		<hash>$hash</hash>
+		<maxupload>$max</maxupload>
+		<!--{if $iscamera}-->
+			<countdown>3</countdown>
+			<countBy>2000</countBy>
+		<!--{/if}-->
+	</config>
+	<!--{if $isdoodle}-->
+	<filters>
+		<filter id="0">{lang not_use}</filter>
+		<filter id="1">{lang shadow}</filter>
+		<filter id="2">{lang fuzzy}</filter>
+		<filter id="3">{lang light}</filter>
+		<filter id="4">{lang water}</filter>
+		<filter id="5">{lang splash}</filter>
+		<filter id="6">{lang grain}</filter>
+	</filters>
+	<!--{/if}-->
+	<albums>
+		<album id="-1">{lang album_select_please}</album>
+		<!--{loop $albums $key $value}-->
+			<album id="$value[albumid]">$value['albumname']</album>
+		<!--{/loop}-->
+		<album id="add">{lang album_create_new}</album>
+	</albums>
+</parameter>
+<!--{/if}-->

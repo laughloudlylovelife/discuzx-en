@@ -1,0 +1,147 @@
+<!--{eval 
+	$_TPL['formtypes'] = array('text'=>lang('input_text'), 'select'=>lang('input_radio'), 'multi'=>lang('input_select'));
+}-->
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li$actives[view]><a href="admincp.php?ac=profield"><span>{lang group_categories_browse}</span></a></li>
+		<li class="null"><a href="admincp.php?ac=profield&op=add">{lang group_category_add}</a></li>
+	</ul>
+</div>
+
+<!--{if $_GET['op'] == 'delete'}-->
+	<form method="post" action="admincp.php?ac=profield&op=delete&fieldid=$_GET[fieldid]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+	<div class="topactions">
+		{lang group_category_deleted_select_new}
+	</div>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th width="150">{lang group_category_new_select}</th>
+		<td>
+		<select name="newfieldid">
+		<!--{loop $newfield $value}-->
+		<option value="$value[fieldid]">$value[title]</option>
+		<!--{/loop}-->
+		</select>
+		</td>
+	</tr>
+	</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="submit" name="deletesubmit" value="delete_confirm" class="submit">
+	</div>
+
+<!--{else}-->
+
+	<form method="post" action="admincp.php?ac=profield&fieldid=$thevalue[fieldid]">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<div class="bdrcontent">
+
+<!--{if empty($thevalue)}-->
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr>
+			<th>{lang field}</th>
+			<th>{lang field_fill_type}</th>
+			<th>{lang display_order}</th>
+			<th width="80">{lang operation}</th>
+		</tr>
+		<!--{loop $list $value}-->
+		<tr>
+			<th>$value[title]</th>
+			<td>{$_TPL[formtypes][$value[formtype]]}</td>
+			<td><input type="text" name="displayorder[{$value[fieldid]}]" value="$value[displayorder]" size="5"></td>
+			<td width="80">
+			<a href="admincp.php?ac=profield&op=edit&fieldid=$value[fieldid]">{lang edit}</a> | 
+			<a href="admincp.php?ac=profield&op=delete&fieldid=$value[fieldid]">{lang delete}</a></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="submit" name="ordersubmit" value="{lang order_update}" class="submit">
+	</div>
+	
+	</form>
+	
+<!--{else}-->
+
+	<script language="javascript">
+		function formtypeShow(value) {
+			if(value != 'select') {
+				$('tb_inputnum').style.display = '';
+				$('tb_choice').style.display = (value=='text'?'none':'');
+			} else {
+				$('tb_inputnum').style.display = 'none';
+				$('tb_choice').style.display = '';
+			}
+		}
+	</script>
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+		<tr><th style="width:15em;">{lang field_title}</th><td><input type="text" name="title" value="$thevalue[title]"></td></tr>
+		<tr><th>{lang field_descr}</th><td><input type="text" name="note" value="$thevalue[note]" size="60"></td></tr>
+		<tr><th>{lang field_type_select}</th><td>
+			<select name="formtype" onchange="formtypeShow(this.value)">
+			<option value="text"$formtypearr[text]>{lang input_text_box}</option>
+			<option value="select"$formtypearr[select]>{lang input_radio_box}</option>
+			<option value="multi"$formtypearr[multi]>{lang input_select_box}</option>
+			</select>
+		</td></tr>
+
+		<tbody id="tb_inputnum"<!--{if $thevalue[formtype]=='select'}--> style="display:none;"<!--{/if}-->>
+		<tr><th>{lang group_members_maximum}</th><td><input type="text" name="inputnum" value="$thevalue[inputnum]" size="5"></td></tr>
+		</tbody>
+	
+		<tbody id="tb_choice"<!--{if $thevalue[formtype]=='text'}--> style="display:none;"<!--{/if}-->>
+		<tr><th>{lang optional_value}</th><td><textarea name="choice" rows="5" cols="20">$thevalue[choice]</textarea>
+			<br />{lang optional_value_intro}
+			</td></tr>
+		</tbody>
+	
+		<tr>
+			<th>{lang group_members_minimum}</th>
+			<td><input type="text" name="mtagminnum" value="$thevalue[mtagminnum]" size="5"> {lang group_members_minimum_intro}</td>
+		</tr>
+		<tr>
+			<th>{lang group_master_manual}</th>
+			<td>
+				<input type="radio" name="manualmoderator" value="1"<!--{if $thevalue[manualmoderator] == 1}--> checked<!--{/if}-->>{lang manually}
+				<input type="radio" name="manualmoderator" value="0"<!--{if $thevalue[manualmoderator] != '1'}--> checked<!--{/if}-->>{lang automatic}
+				<br>{lang group_master_manual_intro}</td>
+		</tr>
+		<tr>
+			<th>{lang join_control}</th>
+			<td>
+				<input type="radio" name="manualmember" value="1"<!--{if $thevalue[manualmember] == 1}--> checked<!--{/if}-->>{lang join_control_by_master}
+				<input type="radio" name="manualmember" value="0"<!--{if $thevalue[manualmember] != '1'}--> checked<!--{/if}-->>{lang join_control_free}
+				<br>{lang join_control_intro}</td>
+		</tr>
+		<tr><th>{lang display_order}</th><td><input type="text" name="displayorder" value="$thevalue[displayorder]" size="5"></td></tr>
+		</table>
+	</div>
+		
+	<div class="footactions">
+		<input type="submit" name="fieldsubmit" value="{lang submit_button}" class="submit">
+	</div>
+	
+	</form>
+<!--{/if}-->
+
+<!--{/if}-->
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

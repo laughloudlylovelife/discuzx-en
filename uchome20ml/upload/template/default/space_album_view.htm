@@ -1,0 +1,63 @@
+<!--{eval $_TPL['titles'] = array($album['albumname'], lang('albums'));}-->
+<!--{eval $friendsname = array(1 => lang('visible_to_friends_only'),2 => lang('friends_designated_only'),3 => lang('visible_to_me'),4 => lang('visible_by_password_only'));}-->
+<!--{template header}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+	<input name="key" value="" size="26" class="t_input" type="text">
+	<input name="searchsubmit" value="{lang search_images}" class="submit" type="submit">
+</div>
+<h2 class="title"><img src="image/app/album.gif"> {lang albums} - $album[albumname]</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="space.php?uid=$album[uid]&do=album&id=$album[albumid]"><span>{lang view_image_list}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=album&view=me"><span>{lang back_to_my_album}</span></a></li>
+		<li class="null"><a href="cp.php?ac=album&op=edit&albumid=$album[albumid]">{lang photos_manage}</a></li>
+		<li class="null"><a href="cp.php?ac=upload&albumid=$album[albumid]">{lang upload_new_photo}</a></li>
+	</ul>
+	<!--{if $_SGLOBAL[refer]}-->
+	<div class="r_option">
+		<a  href="$_SGLOBAL[refer]">&laquo; {lang go_back}</a>
+	</div>
+	<!--{/if}-->
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = lang('albums').' - '.$album[albumname];
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&view=me\">".lang('author_all_albums')."</a>";
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&id=$_GET[id]\">$album[albumname]</a>";
+}-->
+<!--{template space_menu}-->
+<!--{/if}-->
+
+<div class="h_status">
+	<a href="cp.php?ac=share&type=album&id=$album[albumid]" id="a_share" onclick="ajaxmenu(event, this.id, 1)" class="a_share">{lang shares}</a>
+	<div class="r_option">
+		<!--{if $_SGLOBAL[supe_uid] == $album[uid] || checkperm('managealbum')}--><a href="admincp.php?ac=album&albumid=$album[albumid]" target="_blank">{lang delete}</a><span class="pipe">|</span><!--{/if}-->
+		<a href="cp.php?ac=common&op=report&idtype=albumid&id=$album[albumid]" id="a_report" onclick="ajaxmenu(event, this.id, 1)">{lang report}</a><span class="pipe">|</span>
+	</div>
+	$album[albumname] - 
+	<!--{if $album[picnum]}-->{lang total} $album[picnum] {lang images_num}<!--{/if}-->
+	<!--{if $album['friend']}-->
+	<span class="locked gray">{$friendsname[$value[friend]]}</span>
+	<!--{/if}-->
+</div>
+
+
+<!--{if $list}-->
+<table cellspacing="6" cellpadding="0" width="100%" class="photo_list">
+	<tr>
+		<!--{loop $list $key $value}-->
+			<td align="center">
+				<a href="space.php?uid=$value[uid]&do=$do&picid=$value[picid]"><img src="$value[pic]" alt="" /></a>
+			</td>
+			<!--{if $key%4==3}--></tr><tr><!--{/if}-->
+		<!--{/loop}-->
+	</tr>
+</table>
+<div class="page">$multi</div>
+<!--{else}-->
+<div class="c_form">{lang album_no_images}</div>
+<!--{/if}-->
+
+<!--{template footer}-->

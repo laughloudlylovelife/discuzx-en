@@ -1,0 +1,36 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<script type="text/javascript">
+	function updateavatar() {
+		window.location.reload();
+	}
+</script>
+<form method="post" action="cp.php?ac=avatar&ref" class="c_form">
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang avatar_current}</h2>
+			{lang avatar_current_info}
+		</caption>
+		<tr>
+			<td>
+				<!--{avatar($space[uid],big)}-->
+			</td>
+		</tr>
+	</table>
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang avatar_set_my}</h2>
+			{lang avatar_set_info}
+		</caption>
+		<tr>
+			<td>$uc_avatarflash</td>
+		</tr>
+		<tr>
+			<td>{lang avatar_set_note}</td>
+		</tr>
+	</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+<!--{template footer}-->

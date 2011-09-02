@@ -1,0 +1,276 @@
+<!--{eval $_TPL['nosidebar']=1;}-->
+<!--{template header}-->
+
+<script>
+	function register(id, result) {
+		if(result) {
+			$('registersubmit').disabled = true;
+			window.location.href = "$jumpurl";
+		} else {
+			updateseccode();
+		}
+	}
+</script>
+
+<form id="registerform" name="registerform" action="do.php?ac=$_SCONFIG[register_action]&$url_plus&ref" method="post" class="c_form">
+<table cellpadding="0" cellspacing="0" class="formtable">
+	<caption>
+		<h2>{lang register_new_account}</h2>
+		<p>{lang register_intro1}<br>{lang register_intro2}</p>
+	</caption>
+	<!--{if $invitearr}-->
+	<tr>
+		<th width="150">{lang friend_invited}</th>
+		<td>
+			<a href="space.php?$url_plus"><!--{avatar($invitearr[uid],small)}--></a>
+			<a href="space.php?$url_plus">{$_SN[$invitearr[uid]]}</a>
+		</td>
+	</tr>
+	<!--{/if}-->
+	
+	<!--{if $_SCONFIG['seccode_register']}-->
+	<!--{if $_SCONFIG['questionmode']}-->
+	<tr>
+		<th style="vertical-align: top;">{lang enter_code}</th>
+		<td>
+			<p><!--{eval question();}--></p>
+			<input type="text" id="seccode" name="seccode" value="" class="t_input" onBlur="checkSeccode()" tabindex="1" autocomplete="off" />&nbsp;<span id="checkseccode">&nbsp;</span>
+		</td>
+	</tr>
+	<!--{else}-->
+	<tr>
+		<th style="vertical-align: top;">{lang verification_code}</th>
+		<td>
+			<script>seccode();</script>
+			<p>{lang verification_enter_code} <a href="javascript:updateseccode()">{lang verification_reload}</a></p>
+			<input type="text" id="seccode" name="seccode" value="" class="t_input" onBlur="checkSeccode()" tabindex="1" autocomplete="off" />&nbsp;<span id="checkseccode">&nbsp;</span>
+		</td>
+	</tr>
+	<!--{/if}-->
+	<!--{/if}-->
+	
+	<tr><th width="150">{lang user_name}</th><td><input type="text" id="username" name="username" value="" class="t_input" onBlur="checkUserName()" tabindex="2" />&nbsp;<span id="checkusername">&nbsp;</span></td></tr>
+	<tr>
+		<th>{lang register_password}</th>
+		<td>
+			<input type="password" name="password" id="password" value="" class="t_input" onBlur="checkPassword()" onkeyup="checkPwd(this.value);" tabindex="3" />&nbsp;<span id="checkpassword">&nbsp;</span><br/>
+			<style>
+				.psdiv0,.psdiv1,.psdiv2,.psdiv3,.psdiv4{position:relative;height:30px;color:#666}/*Password strength container*/
+				.strongdepict{position:absolute; width:300px;left:0px;top:3px}/*Password Strength Fixed text*/
+				.strongbg{position:absolute;left:0px;top:22px;width:235px!important;width:234px;height:10px;background-color:#E0E0E0; font-size:0px;line-height:0px}/*Background gray intensity*/
+				.strong{float:left;font-size:0px;line-height:0px;height:10px}/*Background block color*/
+				
+				.psdiv0 span{display:none}
+				.psdiv1 span{display:inline;color:#F00}
+				.psdiv2 span{display:inline;color:#C48002}
+				.psdiv3 span{display:inline;color:#2CA4DE}
+				.psdiv4 span{display:inline;color:#063}
+				
+				.psdiv0 .strong{ width:0px}
+				.psdiv1 .strong{ width:25%;background-color:#F00}
+				.psdiv2 .strong{ width:50%;background-color:#F90}
+				.psdiv3 .strong{ width:75%;background-color:#2CA4DE}
+				.psdiv4 .strong{ width:100%;background-color:#063}
+			</style>
+			<div class="psdiv0" id="chkpswd">
+				<div class="strongdepict">{lang password_safety}: <span id="chkpswdcnt">{lang too_short}</span></div>
+				<div class="strongbg">
+					<div class="strong"></div>			
+				</div>		
+			</div>
+		</td>
+	</tr>
+	<tr><th>{lang re_enter_password}</th><td><input type="password" id="password2" name="password2" value="" class="t_input"  onBlur="checkPassword2()" tabindex="4" />&nbsp;<span id="checkpassword2">&nbsp;</span></td></tr>
+	<tr valign="top"><th>{lang mailbox}</th><td><input type="text" id="email" name="email" value="@" class="t_input" tabindex="5" />
+		<br>{lang password_accurately}</td></tr>
+	
+	<!--{if $register_rule}-->
+	<tr><th>{lang terms}</th>
+		<td><div name="rule" style="border:1px solid #C3C3C3;width:500px;height:100px;overflow:auto;padding:5px;">$register_rule</div>
+		<input type="checkbox" name="accede" id="accede" value="1">{lang terms_agree}
+		<script type="text/javascript">
+			function checkClause() {
+				if($('accede').checked) {
+					return true;
+				} else {
+					alert("{lang terms_agree_required}");
+					return false;
+				}
+			}
+		</script>
+		</td>
+	</tr>
+	<!--{/if}-->
+
+	<tr><th>&nbsp;</th>
+		<td>
+		<input type="hidden" name="refer" value="space.php?do=home" />
+		<input type="submit" id="registersubmit" name="registersubmit" value="{lang register_new_user}" class="submit" onclick="<!--{if $register_rule}-->if(!checkClause()){return false;}<!--{/if}-->ajaxpost('registerform', 'register');" tabindex="6" />
+		</td>
+	</tr>
+	<tr><th>&nbsp;</th><td id="__registerform" style="color:red; font-weight:bold;"></td></tr>
+</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" /></form>
+
+<script type="text/javascript">
+<!--
+	$('username').focus();
+	var lastUserName = lastPassword = lastEmail = lastSecCode = '';
+	function checkUserName() {
+		var userName = $('username').value;
+		if(userName == lastUserName) {
+			return;
+		} else {
+			lastUserName = userName;
+		}
+		var cu = $('checkusername');
+		var unLen = userName.replace(/[^\x00-\xff]/g, "**").length;
+
+		if(unLen < 3 || unLen > 15) {
+			warning(cu, unLen < 3 ? '{lang user_name_short}' : '{lang user_name_long}');
+			return;
+		}
+		ajaxresponse('checkusername', 'op=checkusername&username=' + (is_ie && document.charset == 'utf-8' ? encodeURIComponent(userName) : userName));
+	}
+	function checkPassword(confirm) {
+		var password = $('password').value;
+		if(!confirm && password == lastPassword) {
+			return;
+		} else {
+			lastPassword = password;
+		}
+		var cp = $('checkpassword');
+		if(password == '' || /[\'\"\\]/.test(password)) {
+			warning(cp, '{lang password_bad_chars}');
+			return false;
+		} else {
+			cp.style.display = '';
+			cp.innerHTML = '<img src="image/check_right.gif" width="13" height="13">';
+			if(!confirm) {
+				checkPassword2(true);
+			}
+			return true;
+		}
+	}
+	function checkPassword2(confirm) {
+		var password = $('password').value;
+		var password2 = $('password2').value;
+		var cp2 = $('checkpassword2');
+		if(password2 != '') {
+			checkPassword(true);
+		}
+		if(password == '' || (confirm && password2 == '')) {
+			cp2.style.display = 'none';
+			return;
+		}
+		if(password != password2) {
+			warning(cp2, '{lang passwords_not_equal}');
+		} else {
+			cp2.style.display = '';
+			cp2.innerHTML = '<img src="image/check_right.gif" width="13" height="13">';
+		}
+	}
+	function checkSeccode() {
+		var seccodeVerify = $('seccode').value;
+		if(seccodeVerify == lastSecCode) {
+			return;
+		} else {
+			lastSecCode = seccodeVerify;
+		}
+		ajaxresponse('checkseccode', 'op=checkseccode&seccode=' + (is_ie && document.charset == 'utf-8' ? encodeURIComponent(seccodeVerify) : seccodeVerify));
+	}
+	function ajaxresponse(objname, data) {
+		var x = new Ajax('XML', objname);
+		x.get('do.php?ac=$_SCONFIG[register_action]&' + data, function(s){
+			var obj = $(objname);
+			s = trim(s);
+			if(s.indexOf('succeed') > -1) {
+				obj.style.display = '';
+				obj.innerHTML = '<img src="image/check_right.gif" width="13" height="13">';
+				obj.className = "warning";
+			} else {
+				warning(obj, s);
+			}
+		});
+	}
+	function warning(obj, msg) {
+		if((ton = obj.id.substr(5, obj.id.length)) != 'password2') {
+			$(ton).select();
+		}
+		obj.style.display = '';
+		obj.innerHTML = '<img src="image/check_error.gif" width="13" height="13"> &nbsp; ' + msg;
+		obj.className = "warning";
+	}
+
+	function checkPwd(pwd){
+
+		if (pwd == "") {
+			$("chkpswd").className = "psdiv0";
+			$("chkpswdcnt").innerHTML = "";
+		} else if (pwd.length < 3) {
+			$("chkpswd").className = "psdiv1";
+			$("chkpswdcnt").innerHTML = "{lang too_short}";
+		} else if(!isPassword(pwd) || !/^[^%&]*$/.test(pwd)) {
+			$("chkpswd").className = "psdiv0";
+			$("chkpswdcnt").innerHTML = "";
+		} else {
+			var csint = checkStrong(pwd);
+			switch(csint) {
+				case 1:
+					$("chkpswdcnt").innerHTML = "{lang password_weak}";
+					$( "chkpswd" ).className = "psdiv"+(csint + 1);
+					break;
+				case 2:
+					$("chkpswdcnt").innerHTML = "{lang password_general}";
+					$( "chkpswd" ).className = "psdiv"+(csint + 1);
+					break;
+				case 3:		
+					$("chkpswdcnt").innerHTML = "{lang password_strong}";
+					$("chkpswd").className = "psdiv"+(csint + 1);
+					break;
+			}
+		}
+	}
+	function isPassword(str){
+		if (str.length < 3) return false;
+		var len;
+		var i;
+		len = 0;
+		for (i=0;i<str.length;i++){
+			if (str.charCodeAt(i)>255) return false;
+		}
+		return true;
+	}
+	function charMode(iN){ 
+		if (iN>=48 && iN <=57) //Digits
+		return 1; 
+		if (iN>=65 && iN <=90) //Capital letters
+		return 2; 
+		if (iN>=97 && iN <=122) //Lower case
+		return 4; 
+		else 
+		return 8; //Special characters
+	} 
+	//Calculate the total number of current password models
+	function bitTotal(num){ 
+		modes=0; 
+		for (i=0;i<4;i++){ 
+			if (num & 1) modes++; 
+			num>>>=1; 
+		} 
+		return modes; 
+	} 
+
+	//Return the password strength level
+	function checkStrong(pwd){ 
+		modes=0; 
+		for (i=0;i<pwd.length;i++){ 
+			//Test each character class and a number of statistical models
+			modes|=charMode(pwd.charCodeAt(i)); 
+		} 
+		return bitTotal(modes);
+	}
+//-->
+</script>
+
+<!--{template footer}-->

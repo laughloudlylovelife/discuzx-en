@@ -1,0 +1,442 @@
+<!--{template header}-->
+<!--{template cp_header}-->
+
+<div class="l_status c_form">
+	<a href="cp.php?ac=privacy"$cat_actives[base]>{lang security}</a><span class="pipe">|</span>
+	<a href="cp.php?ac=privacy&op=view"$cat_actives[view]>{lang dynamic_filter}</a>
+</div>
+
+
+<form method="post" action="cp.php?ac=privacy" class="c_form">
+
+<!--{if empty($_GET['op'])}-->
+	<table border="0" cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang privacy_settings}</h2>
+			<p>{lang privacy_intro}</p>
+		</caption>
+		<tr>
+			<th width="150">{lang profile}</th>
+			<td><select name="privacy[view][index]">
+				<option value="0"$sels[view][index][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][index][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][index][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang friend_list}</th>
+			<td><select name="privacy[view][friend]">
+				<option value="0"$sels[view][friend][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][friend][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][friend][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang wall_board}</th>
+			<td><select name="privacy[view][wall]">
+				<option value="0"$sels[view][wall][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][wall][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][wall][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang personal_dynamic}</th>
+			<td><select name="privacy[view][feed]">
+				<option value="0"$sels[view][feed][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][feed][1]>{lang visible_to_friends_only}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang doing}</th>
+			<td><select name="privacy[view][doing]">
+				<option value="0"$sels[view][doing][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][doing][1]>{lang visible_to_friends_only}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				{lang privacy_settings_effect}
+				<br>{lang your_records_may_appear}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang blogs}</th>
+			<td><select name="privacy[view][blog]">
+				<option value="0"$sels[view][blog][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][blog][1]>{lang visible_to_friends_only}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">{lang privacy_settings_effect}
+				<br>{lang blog_privacy_each}
+				</td>
+		</tr>
+		<tr>
+			<th>{lang albums}</th>
+			<td><select name="privacy[view][album]">
+				<option value="0"$sels[view][album][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][album][1]>{lang visible_to_friends_only}</option>
+				</select>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">{lang privacy_settings_effect}
+				<br>{lang album_privacy_each}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang shares}</th>
+			<td><select name="privacy[view][share]">
+				<option value="0"$sels[view][share][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][share][1]>{lang visible_to_friends_only}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				{lang privacy_settings_effect}
+				<br>{lang share_may_appear}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang events}</th>
+			<td><select name="privacy[view][event]">
+				<option value="0"$sels[view][event][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][event][1]>{lang visible_to_friends_only}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				{lang privacy_settings_effect}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang polls}</th>
+			<td><select name="privacy[view][poll]">
+				<option value="0"$sels[view][poll][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][poll][1]>{lang visible_to_friends_only}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td class="gray">
+				{lang privacy_settings_effect}
+			</td>
+		</tr>
+		<tr>
+			<th>{lang groups}</th>
+			<td><select name="privacy[view][mtag]">
+				<option value="0"$sels[view][mtag][0]>{lang visible_to_all}</option>
+				<option value="1"$sels[view][mtag][1]>{lang visible_to_friends_only}</option>
+				<option value="2"$sels[view][mtag][2]>{lang visible_to_me}</option>
+				</select></td>
+		</tr>
+		<!--{if $_SCONFIG[videophoto] && $space[videostatus]}-->
+		<tr>
+			<th></th>
+			<td><img src="image/videophoto.gif" align="absmiddle"> {lang video_certified_permission}: </td>
+		</tr>
+		<tr>
+			<th>{lang view_my_certification_photo}</th>
+			<td><select name="privacy[view][videoviewphoto]">
+				<option value="0"$sels[view][videoviewphoto][0]>{lang site_default_settings}</option>
+				<option value="1"$sels[view][videoviewphoto][1]>{lang enable}</option>
+				<option value="2"$sels[view][videoviewphoto][2]>{lang disable}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang friend_offers_for_me}</th>
+			<td><select name="privacy[view][videofriend]">
+				<option value="0"$sels[view][videofriend][0]>{lang site_default_settings}</option>
+				<option value="1"$sels[view][videofriend][1]>{lang enable}</option>
+				<option value="2"$sels[view][videofriend][2]>{lang disable}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang greetings_to_me}</th>
+			<td><select name="privacy[view][videopoke]">
+				<option value="0"$sels[view][videopoke][0]>{lang site_default_settings}</option>
+				<option value="1"$sels[view][videopoke][1]>{lang enable}</option>
+				<option value="2"$sels[view][videopoke][2]>{lang disable}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang wall_write}</th>
+			<td><select name="privacy[view][videowall]">
+				<option value="0"$sels[view][videowall][0]>{lang site_default_settings}</option>
+				<option value="1"$sels[view][videowall][1]>{lang enable}</option>
+				<option value="2"$sels[view][videowall][2]>{lang disable}</option>
+				</select></td>
+		</tr>
+		<tr>
+			<th>{lang comment_my_postings}</th>
+			<td><select name="privacy[view][videocomment]">
+				<option value="0"$sels[view][videocomment][0]>{lang site_default_settings}</option>
+				<option value="1"$sels[view][videocomment][1]>{lang enable}</option>
+				<option value="2"$sels[view][videocomment][2]>{lang disable}</option>
+				</select></td>
+		</tr>
+		<!--{/if}-->
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="submit" name="privacysubmit" value="{lang save_settings}" class="submit"></td>
+		</tr>
+	</table>
+	
+	<table cellspacing="0" cellpadding="0" class="formtable" id="feed">
+		<caption>
+			<h2>{lang home_dynamic_settings}</h2>
+			<p>{lang show_your_dynamics}
+                           <br>{lang control_your_dynamics}</p>
+		</caption>
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td><img src="image/icon/doing.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][doing]" value="1"$sels[feed][doing]>{lang doing}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/blog.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][blog]" value="1"$sels[feed][blog]>{lang blog_writing}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/album.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][upload]" value="1"$sels[feed][upload]>{lang upload_image}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/share.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][share]" value="1"$sels[feed][share]>{lang topic_share}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/poll.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][poll]" value="1"$sels[feed][poll]>{lang topic_poll}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/poll.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][joinpoll]" value="1"$sels[feed][joinpoll]>{lang voting}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/thread.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][thread]" value="1"$sels[feed][thread]>{lang topic_init}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/post.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][post]" value="1"$sels[feed][post]>{lang topic_replying}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/mtag.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][mtag]" value="1"$sels[feed][mtag]>{lang group_join}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/event.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][event]" value="1"$sels[feed][event]>{lang topic_event}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/mtag.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][join]" value="1"$sels[feed][join]>{lang event_joining}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/friend.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][friend]" value="1"$sels[feed][friend]>{lang friend_adding}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/comment.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][comment]" value="1"$sels[feed][comment]>{lang commenting}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/show.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][show]" value="1"$sels[feed][show]>{lang top_members}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/credit.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][credit]" value="1"$sels[feed][credit]>{lang points_consumption}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/mtag.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][invite]" value="1"$sels[feed][invite]>{lang event_invite_friends}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/task.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][task]" value="1"$sels[feed][task]>{lang task_completing}</td>
+		</tr>				
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/profile.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][profile]" value="1"$sels[feed][profile]>{lang update_profile}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><img src="image/icon/click.gif" align="absmiddle">
+			<input type="checkbox" name="privacy[feed][click]" value="1"$sels[feed][click]>{lang visiting_blog_image_topic}</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td><input type="submit" name="privacysubmit" value="{lang save_settings}" class="submit"></td>
+		</tr>
+	</table>
+	
+<!--{else}-->
+	<!--{eval
+			$iconnames['activity']	= lang('activity');//vot ????? Activity?
+			$iconnames['album']	= lang('albums');
+			$iconnames['blog']	= lang('blogs');
+			$iconnames['comment']	= lang('comment');
+			$iconnames['blogcomment'] = lang('blog_comment');
+			$iconnames['clickblog'] = lang('clickblog');
+			$iconnames['clickpic']	= lang('clickpic');
+			$iconnames['clickthread'] = lang('clickthread');
+			$iconnames['piccomment'] = lang('pic_comment');
+			$iconnames['sharecomment'] = lang('share_comment');
+			$iconnames['debate']	= lang('forum_discussion');
+			$iconnames['discuz']	= lang('forum');
+			$iconnames['doing']	= lang('doing');
+			$iconnames['friend']	= lang('friends');
+			$iconnames['goods']	= lang('products');
+			$iconnames['mood']	= lang('moods');
+			$iconnames['mtag']	= lang('groups');
+			$iconnames['event']	= lang('events');
+			$iconnames['eventcomment'] = lang('event_comment');
+			$iconnames['eventmember'] = lang('event_member');
+			$iconnames['eventmemberstatus'] = lang('event_memberstatus');
+			$iconnames['network']	= lang('network');
+			$iconnames['poll']	= lang('forum_votes');
+			$iconnames['post']	= lang('forum_posts');
+			$iconnames['profile']	= lang('update_profile');
+			$iconnames['reward']	= lang('forum_rewards');
+			$iconnames['share']	= lang('shares');
+			$iconnames['sharenotice'] = lang('share_notices');
+			$iconnames['show']	= lang('members_top_list');
+			$iconnames['task']	= lang('task_types');
+			$iconnames['thread']	= lang('thread');
+			$iconnames['post']	= lang('thread_comment');
+			$iconnames['video']	= lang('video');
+			$iconnames['wall']	= lang('wall');
+			$iconnames['credit']	= lang('send_points_gift');
+			$iconnames['poll']	= lang('polls');
+			$iconnames['pollcomment'] = lang('poll_comment');
+			$iconnames['pollinvite'] = lang('poll_invite');
+		}-->
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang filter_rule1}</h2>
+			<p>{lang filter_rule1_intro}</p>
+		</caption>
+		<!--{loop $groups $key $value}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td><input type="checkbox" name="privacy[filter_gid][$key]" value="$key"<!--{if isset($space['privacy']['filter_gid'][$key])}--> checked<!--{/if}-->>
+				$value</td>
+		</tr>
+		<!--{/loop}-->
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="{lang save_settings}" class="submit">
+			<br>{lang can_go_to_your} <a href="space.php?do=friend">{lang friend_list}</a>, {lang groups_can_be_renamed}
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang filter_rule2}</h2>
+			<p>{lang filter_rule2_intro}
+			   <br>
+			   {lang filter_rule2_intro2}</p>
+		</caption>
+		<!--{if $icons}-->
+		
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>
+			<ul>
+			<!--{loop $icons $key $icon}-->
+			<!--{eval $uid = $uids[$key];$icon_uid="$icon|$uid";}-->
+			<li>
+			<!--{if is_numeric($icon)}-->
+				<img src="http://appicon.manyou.com/icons/{$icon}" align="absmiddle">
+			<!--{else}-->
+				<img src="image/icon/{$icon}.gif" align="absmiddle">
+			<!--{/if}-->
+				<input type="checkbox" name="privacy[filter_icon][$icon_uid]" value="1" checked> 
+				<span class="type_$icon"> <!--{if isset($iconnames[$icon])}-->$iconnames[$icon]<!--{else}-->$icon<!--{/if}--> (<!--{if $users[$uid]}--><a href="space.php?uid=$uid">$users[$uid]</a><!--{else}-->{lang all_friends}<!--{/if}-->)</span>
+			</li>
+			<!--{/loop}-->
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="{lang save_settings}" class="submit">
+			</td>
+		</tr>
+		<!--{else}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>{lang filters_type_no}</td>
+		</tr>
+		<!--{/if}-->
+	</table>
+	<br>
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang filter_rule3}</h2>
+			<p>{lang filter_rule3_intro}
+			<br>{lang filter_rule3_intro2}</p>
+		</caption>
+		<!--{if $types}-->
+		
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>
+				<ul>
+				<!--{loop $types $key $type}-->
+				<!--{eval $uid = $uids[$key];$type_uid="$type|$uid";}-->
+					<li>
+						<input type="checkbox" name="privacy[filter_note][$type_uid]" value="1" checked>
+						<span class="type_$type"> <!--{if isset($iconnames[$type])}-->$iconnames[$type]<!--{else}-->$type<!--{/if}--> (<!--{if $users[$uid]}--><a href="space.php?uid=$uid">$users[$uid]</a><!--{else}-->{lang all_friends}<!--{/if}-->)</span>
+					</li>
+				<!--{/loop}-->
+				</ul>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td>
+			<input type="submit" name="privacy2submit" value="{lang save_settings}" class="submit">
+			</td>
+		</tr>
+		<!--{else}-->
+		<tr>
+			<th width="150">&nbsp;</th>
+			<td>{lang filter_notices_no}</td>
+		</tr>
+		<!--{/if}-->
+	</table>
+<!--{/if}-->
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+
+<!--{template footer}-->

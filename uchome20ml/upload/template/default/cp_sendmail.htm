@@ -1,0 +1,75 @@
+<!--{template header}-->
+
+<!--{template cp_header}-->
+<form action="cp.php?ac=sendmail&ref" method="post" class="c_form" >
+<!--{if empty($space['emailcheck']) }-->
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<caption>
+				<h2>{lang activate_mailbox_first}</h2>
+				<p>{lang activate_mailbox_intro}</p>
+			</caption>
+			<tr>
+				<td><a href="cp.php?ac=profile&op=contact">{lang click_to_verify_mailbox} $space[email]</a></td>
+			</tr>
+		</table>
+<!--{else}-->
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang email_alert_settings}</h2>
+			<p>{lang email_alert_settings_intro1} $_SCONFIG[sendmailday] {lang email_alert_settings_intro2}</p>
+		</caption>
+		<tr>
+			<td>
+				<div><b>{lang friends_communications}</b> </div>
+				<div ><input type="checkbox" name="sendmail[friend_pm]" value="1" $sendmail[friend_pm]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang send_pm_to_me}</div>
+				<div ><input type="checkbox" name="sendmail[comment_friend]" value="1" $sendmail[comment_friend]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang wall_write}</div>
+				<div ><input type="checkbox" name="sendmail[comment_friend_reply]" value="1" $sendmail[comment_friend_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang reply_to_my_message}</div>
+				<div ><input type="checkbox" name="sendmail[poke]" value="1" $sendmail[poke]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang send_greeting_to_me}</div>
+				<div ><input type="checkbox" name="sendmail[friend_add]" value="1" $sendmail[friend_add]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang add_as_friend_invite}</div>
+				<br />
+				<div><b>{lang blogs}</b></div>
+				<div ><input type="checkbox" name="sendmail[blog_comment]"  value="1" $sendmail[blog_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang new_comment_in_my_blog}</div>
+				<div ><input type="checkbox" name="sendmail[blog_comment_reply]"  value="1" $sendmail[blog_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang new_reply_on_my_blog_comment}</div>
+				<br />
+				<div><b>{lang albums}</b></div>
+				<div ><input type="checkbox" name="sendmail[photo_comment]"  value="1" $sendmail[photo_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_photo_new_comment}</div>
+				<div ><input type="checkbox" name="sendmail[photo_comment_reply]"  value="1" $sendmail[photo_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_photo_new_comment_reply}</div>
+				<br />
+				<div><b>{lang shares}</b></div>
+				<div ><input type="checkbox" name="sendmail[share_comment]"  value="1" $sendmail[share_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_share_new_comment}</div>
+				<div ><input type="checkbox" name="sendmail[share_comment_reply]"  value="1" $sendmail[share_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_share_new_comment_reply}</div>
+				<br />
+				<div><b>{lang thread}</b></div>
+				<div ><input type="checkbox" name="sendmail[mtag_reply]"  value="1" $sendmail[mtag_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_topic_new_reply}</div>						
+				<br />
+				<div><b>{lang events}</b></div>
+				<div ><input type="checkbox" name="sendmail[event]"  value="1" $sendmail[event]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_event_new_pending}</div>						
+				<br />
+				<div><b>{lang polls}</b></div>
+				<div ><input type="checkbox" name="sendmail[poll_comment]"  value="1" $sendmail[poll_comment]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_vote_new_comment}</div>
+				<div ><input type="checkbox" name="sendmail[poll_comment_reply]"  value="1" $sendmail[poll_comment_reply]<!--{if !$sendmail}-->checked<!--{/if}--> />{lang my_vote_new_comment_reply}</div>
+				<br />
+				<div>{lang mailing_frequency} 
+				<select name="sendmail[frequency]">
+				<option value="0">{lang send_real_time}</option>
+				<option value="86400" $sendmail[frequency][86400]>{lang send_daily}</option>
+				<option value="604800" $sendmail[frequency][604800] <!--{if !$sendmail}-->selected<!--{/if}-->>{lang send_weekly}</option>
+				</select>
+				</div>
+				<br />
+			</td>
+		</tr>
+		<tr><td>
+			<input type="submit" name="setsendemailsubmit" value="{lang save_settings}" class="submit" />
+			<div class="gray">
+				{lang will_send_to_email} $space[email] 
+				(<a href="cp.php?ac=profile&op=contact">{lang modify_email}</a>)
+			</div>
+		</td></tr>
+	</table>
+<!--{/if}-->
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+
+<!--{template footer}-->

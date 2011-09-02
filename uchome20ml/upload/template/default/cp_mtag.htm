@@ -1,0 +1,568 @@
+<!--{template header}-->
+
+<!--{if $_GET[op]=='manage'}-->
+
+	<!--{if $_GET['subop'] != 'member'}-->
+	<h2 class="title"><img src="image/app/mtag.gif" />{lang groups} - $mtag[tagname]</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+		<!--{if $mtag['grade'] >= 8}-->
+			<li$actives[base]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=base"><span>{lang base_settings}</span></a></li>
+		<!--{/if}-->
+		<!--{if $mtag['allowinvite']}-->
+			<li$actives[invite]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=invite"><span>{lang event_invite_friends}</span></a></li>
+		<!--{/if}-->
+		<!--{if $mtag['grade'] >= 8}-->
+			<li$actives[members]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members"><span>{lang event_members_manage}</span></a></li>
+			<li$actives[thread]><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=thread"><span>{lang topic_batch}</span></a></li>
+		<!--{/if}-->
+		<li><a href="space.php?do=mtag&tagid=$mtag[tagid]"><span>{lang back_group_home}</span></a></li>
+		</ul>
+		<!--{if ($actives[members] || $mtag['allowinvite']) && ($_GET['subop'] == 'invite' || $_GET['subop'] == 'members')}-->
+		<script>
+			function searchUser() {
+				$('searchform').submit();
+			}
+		</script>
+		<form name="searchform" id="searchform" method="get" action="cp.php">
+			<div style="float:right;margin:0 6px 5px 0;">
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<td style="padding: 0;"><input type="text" id="key" name="key" value="{lang members_search}" onfocus="if(this.value=='{lang members_search}')this.value='';" class="t_input" tabindex="1" style="width: 160px; border-right: none;" /></td>
+						<td style="padding: 0;"><a href="javascript:searchUser();"><img src="image/search_btn.gif" alt="{lang search_submit}" /></a></td>
+					</tr>
+				</table>
+			</div>
+			<input type="hidden" name="ac" value="mtag">
+			<input type="hidden" name="op" value="manage">
+			<input type="hidden" name="tagid" value="$mtag[tagid]">
+			<input type="hidden" name="subop" value="$_GET[subop]">
+			<input type="hidden" name="uid" value="$_GET[uid]">
+			<input type="hidden" name="grade" value="$_GET[grade]">
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		</form>
+		<!--{/if}-->
+	</div>
+	<!--{/if}-->
+	
+	<form id="manageform" name="manageform" method="post" action="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=$_GET[subop]&uid=$_GET[uid]&grade=$_GET[grade]&group=$_GET[group]&page=$_GET[page]&start=$_GET[start]">
+	
+	<!--{if $_GET['subop'] == 'base'}-->
+	
+	<table cellspacing="4" cellpadding="4" class="formtable">
+	<tr>
+		<th width="100">{lang group_name}</th>
+		<td>$mtag[tagname]</td>
+	</tr>
+	<tr>
+		<th width="100"><label for="pic">{lang cover_image}</label></th>
+		<td><input id="pic" type="text" name="pic" value="$mtag[pic]" size="80" class="t_input" /><br />{lang enter} http:// {lang image_url_enter}</td>
+	</tr>
+	<tr>
+		<th>
+			<label for="announcement">{lang group_announce}</label>
+		</th>
+		<td>
+			<textarea id="announcement" name="announcement" cols="80" rows="5">$mtag[announcement]</textarea>
+			<p class="gray">{lang can_enter_max} <strong>5000</strong> {lang characters}, {lang others_trim}</p>	
+		</td>
+	</tr>
+	
+	<!--{if $mtag[grade]==9}-->
+	<!--{if $field['manualmember']}-->
+	<tr>
+		<th width="100">{lang join_permissions}</th>
+		<td>
+			<select name="joinperm">
+			<option value="0"$joinperms[0]>{lang group_open}</option>
+			<option value="1"$joinperms[1]>{lang group_approval}</option>
+			<option value="2"$joinperms[2]>{lang group_private}</option>
+			</select>
+		</td>
+	</tr>
+	<!--{else}-->
+	<tr>
+		<th width="100">{lang join_permissions}</th>
+		<td>{lang group_open}</td>
+	</tr>
+	<!--{/if}-->
+	<tr>
+		<th width="100">{lang browse_permissions}</th>
+		<td>
+			<select name="viewperm">
+			<option value="0"$viewperms[0]>{lang group_is_open}</option>
+			<option value="1"$viewperms[1]>{lang group_is_closed}</option>
+			</select>
+			<br>{lang group_protect}
+		</td>
+	</tr>
+	<tr>
+		<th width="100">{lang new_topic_permission}</th>
+		<td>
+			<select name="threadperm">
+			<option value="0"$threadperms[0]>{lang new_topic_perm_member}</option>
+			<option value="1"$threadperms[1]>{lang new_topic_perm_all}</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th width="100">{lang reply_permission}</th>
+		<td>
+			<select name="postperm">
+			<option value="0"$postperms[0]>{lang reply_perm_member}</option>
+			<option value="1"$postperms[1]>{lang reply_perm_all}</option>
+			</select>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>{lang group_recruitment}</th>
+		<td>
+			<input type="radio" name="closeapply" value="0" $closeapply[0]/> {lang open}
+			<input type="radio" name="closeapply" value="1" $closeapply[1]/> {lang close}
+		</td>
+	</tr>
+	<!--{/if}-->
+	
+	<tr>
+		<th>&nbsp;</th>
+		<td>
+		<input type="submit" name="basesubmit" value="{lang submit_save}" class="submit" />&nbsp;
+		</td>
+	</tr>
+	</table>
+	
+	<!--{elseif $_GET['subop'] == 'thread'}-->
+	
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<td>
+		{lang the_group_manage}<br>
+		<br><a href="admincp.php?ac=thread&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" class="submit">{lang topic_manage}</a> &nbsp; 
+		<a href="admincp.php?ac=post&&perpage=20&tagid=$mtag[tagid]&searchsubmit=1" class="submit">{lang reply_management}</a>
+		</td>
+	</tr>
+	</table>
+	
+	<!--{elseif $_GET['subop'] == 'invite'}-->
+	
+	<div id="content" style="width: 640px;">
+		<div class="h_status">
+			{lang you_can_not_join}
+		</div>
+	
+	<!--{if $list}-->
+		<div class="h_status">
+			<ul class="avatar_list">
+			<!--{loop $list $value}-->
+				<li><div class="avatar48"><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}"><!--{avatar($value[fuid],small)}--></a></div>
+					<p><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a></p>
+					<p><!--{if empty($joins[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">{lang select}<!--{else}-->{lang invited}<!--{/if}--></p>
+				</li>
+			<!--{/loop}-->
+			</ul>
+			<div class="page">$multi</div>
+		</div>
+		<p>
+			<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all} &nbsp;
+			<input type="submit" name="invitesubmit" value="{lang invite}" class="submit" />
+		</p>
+	
+	<!--{else}-->
+		<div class="c_form">{lang friends_no}</div>
+	<!--{/if}-->
+
+	</div>
+	
+	<div id="sidebar" style="width: 150px;">
+	<div class="cat">
+		<h3>{lang friends_category}</h3>
+		<ul class="post_list line_list">
+			<li<!--{if $_GET[group]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&tagid=$mtag[tagid]&op=manage&subop=invite&group=-1">{lang friends_all}</a></li>
+			<!--{loop $groups $key $value}-->
+			<li<!--{if $_GET[group]==$key}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&tagid=$mtag[tagid]&op=manage&subop=invite&group=$key">$value</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	</div>
+		
+	<!--{elseif $_GET['subop'] == 'members'}-->
+	
+	<div id="content" style="width: 640px;">
+	
+	<div class="h_status">
+		{lang select_user_to_change_level}
+	</div>
+	
+	<div class="h_status">
+		<!--{if $list}-->
+		<ul class="avatar_list">
+		<!--{loop $list $value}-->
+			<li><div class="avatar48"><a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a></div>
+				<p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
+				<p><input type="checkbox" name="ids[]" value="$value[uid]">{lang select}</p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">{lang no_members}</div>
+		<!--{/if}-->
+	</div>
+	<p>
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all} &nbsp;
+		{lang status_set}: 
+		<select name="newgrade">
+			<!--{if $mtag[grade]==9}-->
+			<option value="9">{lang member_master}</option>
+			<option value="8">{lang members_vice_master}</option>
+			<!--{/if}-->
+			<option value="1">{lang member_starred}</option>
+			<option value="0">{lang member_ordinary}</option>
+			<option value="-1">{lang member_r_o}</option>
+			<option value="-2">{lang member_pending}</option>
+			<option value="-9">{lang member_kicked}</option>
+		</select>  &nbsp;
+		<input type="submit" name="memberssubmit" value="{lang submit_button}" class="submit" />
+	</p>
+	</div>
+	
+	<div id="sidebar" style="width: 150px;">
+	<div class="cat">
+		<h3>{lang group_members}</h3>
+		<ul class="post_list line_list">
+			<li<!--{if $_GET[grade]==-2}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-2">{lang pending}</a></li>
+			<li<!--{if $_GET[grade]==0}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=0">{lang member_ordinary}</a></li>
+			<li<!--{if $_GET[grade]==9}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=9">{lang group_master}</a></li>
+			<li<!--{if $_GET[grade]==8}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=8">{lang member_vice_master}</a></li>
+			<li<!--{if $_GET[grade]==1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=1">{lang member_starred}</a></li>
+			<li<!--{if $_GET[grade]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=mtag&op=manage&tagid=$mtag[tagid]&subop=members&grade=-1">{lang members_r_o}</a></li>
+		</ul>
+	</div>
+	</div>
+	
+	<!--{elseif $_GET['subop'] == 'member'}-->
+	
+	<h1>{lang manage_members}</h1>
+	<a href="javascript:hideMenu();" title="{lang close}" class="float_del">{lang close}</a>
+	<div id="$_GET[uid]" class="popupmenu_inner">
+	<p>{lang choose_member_status}: </p>
+	<p>
+		<select name="grade">
+			<option value="9"$grades[9]>{lang member_master}</option>
+			<option value="8"$grades[8]>{lang member_vice_master}</option>
+			<option value="1"$grades[1]>{lang member_starred}</option>
+			<option value="0"$grades[0]>{lang member_ordinary}</option>
+			<option value="-1"$grades[-1]>{lang member_r_o}</option>
+			<option value="-2"$grades[-2]>{lang member_pending}</option>
+			<option value="-9">{lang member_kicked}</option>
+		</select>
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		<button name="membersubmit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>
+	</p>
+	</div>
+	
+	<!--{/if}-->
+
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+
+<!--{elseif $_GET[op]=='mtaginvite'}-->
+	
+	<h2 class="title"><img src="image/app/mtag.gif" />{lang group_invites}</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li class="active"><a href="cp.php?ac=mtag&op=mtaginvite"><span>{lang group_invites}</span></a></li>
+			<li><a href="space.php?do=mtag&view=me"><span>{lang back_to_my_group}</span></a></li>
+		</ul>
+	</div>
+	
+	<div class="h_status">
+		{lang invites_following_groups}
+		<!--{if $invites}-->
+			<span class="pipe">|</span>
+			<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=0&r=0"><span>{lang invites_ignore_all}</span></a>
+		<!--{/if}-->
+	</div>
+	
+	<div class="c_form">
+		<!--{if $invites}-->
+		<table cellspacing="4" cellpadding="4" class="formtable">
+		<!--{loop $invites $value}-->
+		<tr>
+			<td width="80">
+			<div class="threadimg60"><a href="space.php?do=mtag&tagid=$value[tagid]"><img src="$value[pic]" width="60"></a></div></td>
+			<td class="h_status">
+				<p><a href="space.php?do=mtag&tagid=$value[tagid]" style="font-size:14px;font-weight:bold;">$value[tagname]</a></p>
+				<div id="tag_$value[tagid]" style="padding:0.5em 0 0.5em 0;">
+					<p>{lang has} $value[membernum] {lang members_number} <!--{if $value[viewperm]}-->, {lang only_members_can_view}<!--{/if}-->, {lang category}: $value[title]</p>
+					{lang event_invite_friends}: <a href="space.php?uid=$value[fromuid]">{$_SN[$value[fromuid]]}</a>
+					<br>{lang invite_time}: <!--{date('Y-m-d H:i', $value[dateline], 1)}-->
+					<p style="padding:1em 0 0 0;">
+					<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=$value[tagid]&r=1" class="submit" onclick="ajaxget(this.href, 'tag_$value[tagid]');return false;">{lang accept_the_invite}</a> 
+					<a href="cp.php?ac=mtag&op=inviteconfirm&tagid=$value[tagid]&r=0" class="button" onclick="ajaxget(this.href, 'tag_$value[tagid]');return false;">{lang ignore}</a>
+					</p>
+				</div>
+			</td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+		<!--{else}-->
+		{lang no_group_invites}
+		<!--{/if}-->
+	
+	</div>	
+
+<!--{elseif $_GET[op]=='join'}-->
+	
+	<h1>{lang group_join}</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+	<div class="popupmenu_inner" id="__joinform_{$tagid}">
+	<form id="joinform_{$tagid}" name="joinform_{$tagid}" method="post" action="cp.php?ac=mtag&op=join&tagid=$tagid">
+		<p>{lang group_join_sure}</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="submit" name="joinsubmit" value="{lang join}" class="submit" />
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	</div>
+
+<!--{elseif $_GET[op]=='out'}-->
+	
+	<h1>{lang group_exit}</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+	<div class="popupmenu_inner" id="__outform">
+	<form id="outform" name="outform" method="post" action="cp.php?ac=mtag&op=out&tagid=$mtag[tagid]">
+		<p>{lang group_exit_sure}</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="submit" name="outsubmit" value="{lang exit}" class="submit" />
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+	</div>
+
+<!--{elseif $_GET[op]=='apply'}-->
+	
+	<h1>{lang message_to_group_master}</h1>
+	<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+	<div class="popupmenu_inner" id="__pmapplyform_{$tagid}">
+	<form id="pmapplyform_{$tagid}" name="pmapplyform_{$tagid}" method="post" action="cp.php?ac=mtag&op=apply&tagid=$tagid">
+		<table cellspacing="0" cellpadding="3">
+			<tr><td>{lang message_to_group_master_intro}</td></tr>
+			<tr>
+				<td><textarea id="message" name="message" cols="40" rows="4" tabindex="3" style="width: 400px; height: 150px;" onkeydown="ctrlEnter(event, 'pmsubmit_btn');"></textarea></td>
+			</tr>
+			<tr>
+				<td>
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+				<input type="hidden" name="pmsubmit" value="true" />
+				<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="button" name="pmsubmit_btn" id="pmsubmit_btn" value="{lang send_message}" class="submit" onclick="ajaxpost('pmapplyform_{$tagid}','',2000)" />
+				<!--{else}-->
+				<input type="submit" name="pmsubmit_btn" id="pmsubmit_btn" value="{lang send_message}" class="submit" />
+				<!--{/if}-->
+				</td>
+			</tr>
+		</table>
+	</form>
+	</div>
+
+
+<!--{else}-->
+	
+	<h2 class="title"><img src="image/app/mtag.gif" />{lang groups}</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li class="active"><a href="cp.php?ac=mtag"><span>{lang group_create_new}</span></a></li>
+			<li><a href="space.php?do=mtag&view=me"><span>{lang back_to_my_group}</span></a></li>
+		</ul>
+	</div>
+
+	<!--{if $_GET[op]=='multiresult'}-->
+
+	<div class="c_form">
+	<table cellspacing="0" cellpadding="0" class="formtable">
+		<caption>
+			<h2>{lang group_join_ok}</h2>
+			<p>{lang group_join_ok_intro}</p>
+		</caption>
+		<!--{loop $mtags $value}-->
+		<tr>
+			<td><a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a></td>
+			<td>{$value[title]}</td>
+			<td>$value[membernum] {lang members_number}</td>
+			<td><a href="space.php?do=mtag&tagid=$value[tagid]" class="submit">{lang visit_group_now}</a></td>
+		</tr>
+		<!--{/loop}-->
+	</table>
+	</div>
+
+	<!--{elseif $_GET[op]=='confirm'}-->
+
+		<!--{if $findmtag}-->
+	
+		<div class="c_form">
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<tr><td width="90"><div class="threadimg60"><img src="$findmtag[pic]" width="60" height="60"></div></td><td>
+				{lang groups} <a href="space.php?do=mtag&tagid=$findmtag[tagid]">$findmtag[tagname]</a> {lang allready_exists}
+				<br>{lang has} $findmtag[membernum] {lang participants}
+				<br><br><a href="space.php?do=mtag&tagid=$findmtag[tagid]" class="submit">{lang visit_group}</a>
+			</td></tr>
+		</table>
+		</div>
+		
+		<!--{else}-->
+	
+		<form method="post" action="cp.php?ac=mtag" class="c_form">
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		<!--{if $likemtags}-->
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<caption>
+				<h2>{lang similar_groups}</h2>
+				<p>{lang similar_group_warn}</p>
+			</caption>
+			<!--{loop $likemtags $value}-->
+			<tr>
+				<td><a href="space.php?do=mtag&tagid=$value[tagid]">$value[tagname]</a></td>
+				<td>$value[membernum] {lang members_number}</td>
+				<td>
+					<a href="space.php?do=mtag&tagid=$value[tagid]">{lang visit_group_now}</a>
+					<span class="pipe">|</span>
+					<!--{if $value['joinperm'] < 2}-->
+					<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_choose_to_join}</a>
+					<!--{else}-->
+					<strong>{lang group_require_invite}</strong>
+					<!--{/if}-->
+				</td>
+			</tr>
+			<!--{/loop}-->
+		</table>
+		<!--{/if}-->
+		
+		<table cellspacing="0" cellpadding="0" class="formtable">
+			<caption>
+				<h2>{lang group_create_sure}</h2>
+			</caption>
+			<tr>
+				<th width="120">{lang group_create_name_new}</th>
+				<td>$newtagname</td>
+			</tr>
+			<tr>
+				<th width="120">{lang group_category}</th>
+				<td>$profield[title]</td>
+			</tr>
+			<tr>
+				<td></td><td>
+					<input type="hidden" name="tagname" value="$newtagname">
+					<input type="hidden" name="fieldid" value="$fieldid">
+					<input type="hidden" name="joinmode" value="1">
+					<input type="submit" id="textsubmit" name="textsubmit" value="{lang group_create}" class="submit"></td>
+			</tr>
+		</table>
+		</form>
+		<!--{/if}-->
+
+	<!--{else}-->
+
+	<!--{if $textarr}-->
+	<form method="post" action="cp.php?ac=mtag" class="c_form">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<table cellspacing="6" cellpadding="6" class="formtable">
+	<caption>
+		<h2>{lang group_create_your_own}</h2>
+		<p>{lang group_create_you_can}</p>
+	</caption>
+	<tr>
+		<th width="120">{lang group_create_name}</th>
+		<td><input type="text" name="tagname" value="" class="t_input"></td>
+	</tr>
+	<tr>
+		<th>{lang group_create_category}</th>
+		<td>
+		<select name="fieldid">
+		<!--{loop $textarr $value}-->
+		<option value="$value[fieldid]">$value[title]</option>
+		<!--{/loop}-->
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td><input type="submit" name="textsubmit" value="{lang group_create}" class="submit"></td>
+	</tr>
+	</table>
+	</form>
+	<!--{/if}-->
+	
+	<!--{if $choicearr}-->
+	<form method="post" action="cp.php?ac=mtag" class="c_form">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	<table cellspacing="6" cellpadding="6" class="formtable">
+	<caption>
+		<h2>{lang group_join_existed}</h2>
+		<p>{lang group_join_intro1}
+                <br>
+                {lang group_join_intro2}
+                </p>
+	</caption>
+	<!--{loop $choicearr $fid $value}-->
+	<tr>
+		<th width="120">$value[title]</th>
+		<td>
+		<!--{if $value['formtype']=='multi'}-->
+			<table><tr>
+			<!--{loop $value['choice'] $sk $sv}-->
+			<td><input type="checkbox" name="tagname[$fid][]" value="$sv" <!--{if $existmtag[$fid] && in_array($sv, $existmtag[$fid])}-->checked disabled<!--{/if}-->> <a href="space.php?do=mtag&fieldid=$fid&tagname=<!--{eval echo urlencode($sv);}-->">$sv</a></td>
+			<!--{if $sk%3==2}--></tr><tr><!--{/if}-->
+			<!--{/loop}-->
+			</tr></table>
+		<!--{else}-->
+			<table><tr>
+			<!--{loop $value['choice'] $sk $sv}-->
+			<td><input type="radio" name="tagname[$fid]" value="$sv" <!--{if $existmtag[$fid] && in_array($sv, $existmtag[$fid])}--> checked <!--{/if}--> <!--{if $existmtag[$fid]}-->disabled<!--{/if}-->> <a href="space.php?do=mtag&fieldid=$fid&tagname=<!--{eval echo urlencode($sv);}-->">$sv</a></td>
+			<!--{if $sk%3==2}--></tr><tr><!--{/if}-->
+			<!--{/loop}-->
+			</tr></table>
+		<!--{/if}-->
+		</td>
+	</tr>
+	<!--{/loop}-->
+	<tr>
+		<th>&nbsp;</th>
+		<td><input type="submit" name="choicesubmit" value="{lang group_join}" class="submit"></td>
+	</tr>
+	</table>
+	</form>
+	<!--{/if}-->
+	
+	<form method="get" action="space.php" class="c_form">
+	<table cellspacing="6" cellpadding="6" class="formtable">
+	<caption>
+		<h2>{lang groups_existing_search}</h2>
+		<p>{lang groups_search_intro}</p>
+	</caption>
+	<tr>
+		<th width="120">{lang group_name_search}</th>
+		<td>
+		<input name="searchkey" value="" class="t_input" type="text">
+		</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td><input name="searchsubmit" value="{lang search_groups}" class="submit" type="submit"></td>
+	</tr>
+	</table>
+	<input type="hidden" name="searchmode" value="1" />
+	<input type="hidden" name="do" value="mtag" />
+	<input type="hidden" name="view" value="hot" />
+	</form>
+
+	<!--{/if}-->
+
+<!--{/if}-->
+<!--{template footer}-->

@@ -1,0 +1,71 @@
+<!--{template header}-->
+
+<h2 class="title"><img src="image/app/mtag.gif" />{lang groups}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li class="active"><a href="#"><span>{lang visit_group}</span></a></li>
+		<li><a href="space.php?do=mtag&view=me"><span>{lang back_to_my_group}</span></a></li>
+	</ul>
+</div>
+
+<!--{if $taglist}-->
+
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>{lang select_group_to_access}</h2>
+		<p>{lang select_group_intro}</p>
+	</caption>
+	<!--{loop $taglist $value}-->
+	<tr>
+		<td><a href="space.php?do=mtag&tagid=$value[tagid]" style="font-size:14px;">$value[tagname]</a></td>
+		<td>{$_SGLOBAL[profield][$value[fieldid]][title]}</td>
+		<td>$value[membernum] {lang members_number}</td>
+		<td>
+			<a href="space.php?do=mtag&tagid=$value[tagid]">{lang visit_group_now}</a>
+			<span class="pipe">|</span>
+			<!--{if $value['joinperm'] < 2}-->
+			<a href="cp.php?ac=mtag&op=join&tagid=$value[tagid]" id="mtag_like_$value[tagid]" onclick="ajaxmenu(event, this.id)">{lang group_choose_to_join}</a>
+			<!--{else}-->
+			<strong>{lang group_require_invite}</strong>
+			<!--{/if}-->
+		</td>
+	</tr>
+	<!--{/loop}-->
+</table>
+
+<!--{else}-->
+
+<form method="post" action="cp.php?ac=mtag" class="c_form">
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<caption>
+		<h2>{lang group_create}: $tagname</h2>
+		<p>{lang can_create_own_group}</p>
+	</caption>
+	<tr>
+		<th width="120">{lang group_title}</th>
+		<td>$tagname</td>
+	</tr>
+	<tr>
+		<th width="120">{lang group_category}</th>
+		<td>
+		<select name="fieldid">
+		<!--{loop $fields $value}-->
+		<option value="$value[fieldid]">$value[title]</option>
+		<!--{/loop}-->
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td></td><td>
+			<input type="hidden" name="tagname" value="$tagname">
+			<input type="submit" name="textsubmit" value="{lang group_create}" class="submit">
+		</td>
+	</tr>
+</table>
+</form>
+
+<!--{/if}-->
+
+
+<!--{template footer}-->

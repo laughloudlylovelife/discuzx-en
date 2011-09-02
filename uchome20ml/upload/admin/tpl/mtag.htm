@@ -1,0 +1,196 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+		
+		<table cellspacing="3" cellpadding="3">
+		<tr><th>{lang group_name} *</th><td><input type="text" name="tagname" value="$_GET[tagname]"></td>
+			<th>{lang group_id_enter}</th>
+			<td>
+				<input type="text" name="tagid" value="$_GET[tagid]" />
+			</td>
+		</tr>
+		
+		<tr>
+			<th>{lang lock_status}</th><td>
+			<select name="close">
+			<option value="">{lang without_limits}</option>
+			<option value="1"<!--{if $_GET[close]==1}--> selected<!--{/if}-->>{lang is_locked}</option>
+			</select>
+			</td>
+			<th>{lang recommend_status}</th><td>
+			<select name="recommend">
+			<option value="">{lang without_limits}</option>
+			<option value="1"<!--{if $_GET[recommend]==1}--> selected<!--{/if}-->>{lang recommended}</option>
+			</select>
+			</td>
+		</tr>
+		
+		<tr>
+			
+			<th>{lang join_permissions}</th>
+			<td>
+				<select name="joinperm">
+					<option value="">{lang all}</option>
+					<option value="0"$joinperms[0]>{lang public}</option>
+					<option value="1"$joinperms[1]>{lang verify_need}</option>
+					<option value="2"$joinperms[2]>{lang private}</option>
+				</select>
+			</td>
+			<th>{lang view_permissions}</th>
+			<td>
+				<select name="viewperm">
+					<option value="">{lang all}</option>
+					<option value="0"$viewperms[0]>{lang public}</option>
+					<option value="1"$viewperms[1]>{lang not_public}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			
+			<th>{lang post_permissions}</th>
+			<td>
+				<select name="threadperm">
+					<option value="">{lang all}</option>
+					<option value="0"$threadperms[0]>{lang post_members_only}</option>
+					<option value="1"$threadperms[1]>{lang post_everyone}</option>
+				</select>
+			</td>
+			<th>{lang reply_permission}</th>
+			<td>
+				<select name="postperm">
+					<option value="">{lang all}</option>
+					<option value="0"$postperms[0]>{lang reply_members_only}</option>
+					<option value="1"$postperms[1]>{lang reply_everyone}</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang owned_by_user_level}</th><td colspan="3">
+			<select name="fieldid">
+			<option value="">{lang all}</option>
+			<!--{loop $_SGLOBAL[profield] $value}-->
+			<option value="$value[fieldid]"<!--{if $_GET[fieldid]==$value[fieldid]}--> selected<!--{/if}-->>$value[title]</option>
+			<!--{/loop}-->
+			</select>
+			</td>
+		</tr>
+		<tr><th>{lang user_number}</th><td colspan="3">
+			<input type="text" name="membernum1" value="$_GET[membernum1]" size="10"> ~
+			<input type="text" name="membernum2" value="$_GET[membernum2]" size="10">
+		</td></tr>
+		<tr><th>{lang number_of_topics}</th><td colspan="3">
+			<input type="text" name="threadnum1" value="$_GET[threadnum1]" size="10"> ~
+			<input type="text" name="threadnum2" value="$_GET[threadnum2]" size="10">
+		</td></tr>
+		<tr><th>{lang number_of_replies}</th><td colspan="3">
+			<input type="text" name="postnum1" value="$_GET[postnum1]" size="10"> ~
+			<input type="text" name="postnum2" value="$_GET[postnum2]" size="10">
+		</td></tr>
+	
+		<tr><th>{lang sort_results}</th>
+		<td colspan="3">
+		<select name="orderby">
+		<option value="">{lang sort_default}</option>
+		<option value="membernum"$orderby[membernum]>{lang number_of_members}</option>
+		<option value="threadnum"$orderby[threadnum]>{lang number_of_topics}</option>
+		<option value="postnum"$orderby[postnum]>{lang number_of_replies}</option>
+		</select>
+		<select name="ordersc">
+		<option value="desc"$ordersc[desc]>{lang descending}</option>
+		<option value="asc"$ordersc[asc]>{lang ascending}</option>
+		</select>
+		<select name="perpage">
+		<option value="20"$perpages[20]>{lang per_page_20}</option>
+		<option value="50"$perpages[50]>{lang per_page_50}</option>
+		<option value="100"$perpages[100]>{lang per_page_100}</option>
+		</select>
+		<input type="hidden" name="ac" value="mtag">
+		<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+		</td>
+		</tr>
+		</table>
+
+	</div>
+	</form>
+
+<!--{if $list}-->
+
+	<form method="post" action="admincp.php?ac=mtag">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th>{lang group_name}</th>
+		<th>{lang category}</th>
+		<th width="80">{lang user_number}</th>
+		<th width="80">{lang number_of_topics}</th>
+		<th width="80">{lang number_of_replies}</th>
+		<th width="100">{lang group_master}</th>
+	</tr>
+	<!--{loop $list $value}-->
+	<tr>
+		<td><input type="<!--{if $managebatch}-->checkbox<!--{else}-->radio<!--{/if}-->" name="ids[]" value="$value[tagid]">
+		<a href="space.php?do=mtag&tagid=$value[tagid]" target="_blank">$value[tagname]</a>
+			<!--{if $value[close]}-->(<a href="admincp.php?ac=mtag&close=$value[close]">{lang is_locked}</a>)<!--{/if}-->
+			<!--{if $value[recommend]}-->(<a href="admincp.php?ac=mtag&recommend=$value[recommend]">{lang recommended}</a>)<!--{/if}-->
+		</td>
+		<td><a href="admincp.php?ac=mtag&fieldid=$value[fieldid]">{$_SGLOBAL[profield][$value[fieldid]][title]}</a></td>
+		<td>$value[membernum]</td>
+		<td>$value[threadnum]</td>
+		<td>$value[postnum]</td>
+		<td>[<a href="cp.php?ac=mtag&op=manage&tagid=$value[tagid]&subop=base" target="_blank">{lang group_manage}</a>]</td>
+	</tr>
+	<!--{/loop}-->
+	</table>
+	</div>
+	
+	<div class="footactions" style="text-align:left;line-height:2.5em;">
+		<input type="hidden" name="mpurl" value="$mpurl">
+		<!--{if $managebatch}-->
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all} <br>&nbsp; <strong>{lang select_action_for_checked}</strong>: <br>
+		<!--{/if}-->
+		<input type="radio" name="optype" value="delete"> {lang delete} ({lang delete_group_warn})<br>
+		<input type="radio" name="optype" value="close"> {lang is_locked}
+		<input type="radio" name="optype" value="open"> {lang disclose}<br>
+		<input type="radio" name="optype" value="recommend"> {lang recommended}
+		<input type="radio" name="optype" value="unrecommend"> {lang un_recommend}
+		<br>
+		<input type="radio" name="optype" value="move"> {lang move_to_new_category}:
+			<select name="move_newfieldid">
+			<!--{loop $_SGLOBAL[profield] $value}-->
+			<option value="$value[fieldid]">$value[title]</option>
+			<!--{/loop}-->
+			</select>
+		<br>
+		<input type="radio" name="optype" value="merge"> {lang merge_with_other_group}:
+			<select name="merge_newfieldid">
+			<!--{loop $_SGLOBAL[profield] $value}-->
+			<option value="$value[fieldid]">$value[title]</option>
+			<!--{/loop}-->
+			</select>
+			{lang group_new_name}: <input type="text" name="newtagname" value="" size="5">
+		<br>
+		<input type="submit" name="opsubmit" value="{lang action_perform}" onclick="return confirm('{lang action_confirm}');" class="submit">
+	
+		<div class="pages">$multi</div>
+	</div>
+
+	</form>
+<!--{else}-->
+	<div class="bdrcontent">
+		<p>{lang no_data_by_conditions}</p>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

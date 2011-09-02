@@ -1,0 +1,345 @@
+<!--{template header}-->
+
+<!--{if $op == "buy"}-->
+
+	<h1>{lang buy_magic}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="toolly" id="__magicbuy_$mid">
+	<!--{if $ac=='magic'}-->	
+		<form id="magicbuy_$mid" action="cp.php?ac=magic&mid=$mid&op=buy" method="post">
+	<!--{else}-->		
+		<form id="magicbuy_$mid" action="magic.php?mid=$mid&op=buy&idtype=$idtype&id=$id{$extra}" method="post">
+	<!--{/if}-->
+			<div class="magic_img">
+				<img src="image/magic/{$mid}.gif" alt="$magic[name]" />
+			</div>
+			<div class="magic_info">
+				<h3>$magic[name]</h3>
+				<p class="gray">$magic[description]</p>
+				<!--{if $magic[experience]}-->
+				<p>{lang increase_experience}: <span>$magic[experience]</span></p>
+				<!--{/if}-->
+				<p>
+					{lang item_price}: <span>$magic[charge]</span> {lang credit}
+					<!--{if $discount > 0}-->
+					({lang enjoy} $discount {lang benefit} <span>$charge</span> {lang credit} )
+					<!--{elseif $discount < 0}-->
+					({lang enjoy} <span>{lang free}</span> {lang discount} )
+					<!--{/if}-->				
+				</p>
+				<p>{lang in_stock}: <span>$magicstore[storage]</span> {lang units}</p>
+				<p>{lang quantity}: <input class="t_input" type="text" name="buynum" value="1" style="width:40px;" /> {lang units} ({lang can_buy_max} $magicstore[maxbuy] {lang units})</p>
+				<!--{if $coupon[count]}-->
+				<p>{lang with_coupon}: <input class="t_input" type="text" name="coupon" value="0" style="width:40px;" /> ({lang each_coupon_gives} 100 {lang points}, {lang owned} {$coupon[count]} {lang ones})</p>
+				<!--{/if}-->
+				<p class="btn_line">
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+					<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+					<input type="hidden" name="buysubmit" value="1" />
+				<!--{if $_SGLOBAL[inajax]}-->
+					<!--{if $ac=='magic'}-->
+					<input type="button" class="submit" id="buysubmit_btn" value="{lang buy}" onclick="ajaxpost('magicbuy_$mid', 'magicBought', 2000)" />
+					<!--{else}-->
+					<input type="button" class="submit" id="buysubmit_btn" value="{lang buy}" onclick="ajaxpost('magicbuy_$mid')" />
+					<!--{/if}-->
+				<!--{else}-->
+					<input type="submit" class="submit" id="buysubmit_btn" value="{lang buy}">
+				<!--{/if}-->
+				</p>
+			</div>
+		</form>
+	</div>
+
+<!--{elseif $op == "present"}-->
+
+	<h1>{lang giving_magic}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="popupmenu_inner" id="__magicpresent_$mid">
+		<form id="magicpresent_$mid" action="cp.php?ac=magic&mid=$mid" method="post">
+			<p>
+				{lang magic_to_present}: $magic[name]
+			</p>
+			<p>
+				{lang friend_user_name}: 
+				<input type="text" name="fusername" />
+			</p>
+			<p class="btn_line">
+				<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+				<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+				<input type="hidden" name="presentsubmit" value="1" />
+				<!--{if $_SGLOBAL[inajax]}-->
+				<input type="button" class="submit" name="presentsubmit_btn" value="{lang present}" onclick="ajaxpost('magicpresent_$mid', 'magicPresent', 2000)" />
+				<!--{else}-->
+				<input type="submit" class="submit" name="presentsubmit_btn" value="{lang present}">
+				<!--{/if}-->
+			</p>
+		</form>
+	</div>
+<!--{elseif $op == "showusage"}-->
+
+	<h1>{lang magic_sample}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="popupmenu_inner">
+		<img src="image/magic/usage/{$mid}.gif" />		
+	</div>
+	
+<!--{elseif $op == 'appear'}-->
+
+	<h1>{lang resume_online_status}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="popupmenu_inner" id="__appearform">
+	<form action="cp.php?ac=magic&op=$op" method="post" id="appearform">
+		<p>
+			{lang resume_online_sure}
+		</p>
+		<p class="btn_line">
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+			<input type="hidden" name="appearsubmit" value="1" />
+			<input type="submit" class="submit" value="{lang form_sure_yes}" />
+		</p>
+	</form>
+	</div>
+
+<!--{elseif $op == 'retrieve'}-->
+
+	<h1>{lang return_gift}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="popupmenu_inner" id="__retrieveform">
+	<form action="cp.php?ac=magic&op=$op" method="post" id="retrieveform">
+		<p>
+			{lang Current gift remaining points} $leftcredit, {lang return_gift_sure}
+		</p>
+		<p class="btn_line">
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+			<input type="hidden" name="retrievesubmit" value="1" />
+			<input type="submit" class="submit" value="{lang form_sure_yes}" />
+		</p>
+	</form>
+	</div>
+
+<!--{elseif in_array($op, array('cancelsuperstar', 'cancelflicker', 'cancelcolor', 'cancelframe', 'cancelbgimage'))}-->
+
+	<h1>{lang cancel_magic}</h1>
+	<a class="float_del" title="{lang close}" href="javascript:hideMenu();">{lang close}</a>
+	<div class="popupmenu_inner" id="__cancelform">
+	<form action="cp.php?ac=magic&op=$op&id=$_GET[id]&idtype=$_GET[idtype]" method="post" id="cancelform">
+		<p>
+			{lang cancel_magic_sure1} $_SGLOBAL[magic][$mid] {lang cancel_magic_sure2}
+		</p>
+		<p class="btn_line">
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash()}-->" />
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]"/>
+			<input type="hidden" name="cancelsubmit" value="1" />
+			<input type="submit" class="submit" value="{lang form_sure_yes}" />
+		</p>
+	</form>
+	</div>
+	
+<!--{else}-->
+
+	<h2 class="title"><img src="image/icon/magic.gif">{lang magic_center}</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[store]><a href="cp.php?ac=magic&view=store"><span>{lang magic_store}</span></a></li>
+			<li$actives[me]><a href="cp.php?ac=magic&view=me"><span>{lang my_magics}</span></a></li>
+			<li$actives[log]><a href="cp.php?ac=magic&view=log"><span>{lang magic_log}</span></a></li>
+		</ul>
+	</div>
+
+	<div style="float:none;">
+
+	<!--{if $_GET['view'] == "me"}-->
+			
+		<!--{if $mid}-->
+		<p class="notice">
+			{lang magics_shown}
+			<a href="cp.php?ac=magic&view=$_GET[view]">{lang see_full_magic}</a>
+		</p>
+		<p>&nbsp;</p>
+		<!--{/if}-->
+
+		<!--{if $list}-->
+		<ul id="magiclist" class="magic_list">
+		<!--{loop $list $key=>$value}-->
+			<li id="magic_$key">
+				<div class="magic_img">
+					<img src="image/magic/{$key}.gif" alt="$magics[$key][name]" />
+				</div>
+				<div class="magic_info">
+					<h3>$magics[$key][name]</h3>
+					<p class="gray">
+					$magics[$key][description]
+					</p>
+					<p>
+						<a id="a_present_$key" href="cp.php?ac=magic&op=present&mid=$key" onclick="ajaxmenu(event, this.id, 1)" class="m_button<!--{if $key=='license'}--> m_off<!--{/if}-->">{lang present}</a>
+						{lang have} <span id="magiccount_$key">$value[count]</span> {lang units}
+					</p>
+				</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<!--{else}-->
+		<p>{lang magics_not_buyed}, <a href="cp.php?ac=magic&view=store">{lang look_magic_store}</a></p>
+		<!--{/if}-->
+	<!--{elseif $_GET['view'] == 'log'}-->
+
+		<div class="h_status">
+		{lang view}: 
+		<a $types[in] href="cp.php?ac=magic&view=$_GET['view']&type=in">{lang incoming_records}</a>
+		<span class="pipe">|</span>
+		<a $types[present] href="cp.php?ac=magic&view=$_GET['view']&type=present">{lang gift_records}</a>
+		<span class="pipe">|</span>
+		<a $types[out] href="cp.php?ac=magic&view=$_GET['view']&type=out">{lang use_records}</a>
+		</div>
+
+		<!--{if $_GET[type] == 'in'}-->
+			<!--{if $list}-->
+			<ul class="line_list">
+				<!--{loop $list $value}-->
+				<li>
+					
+					<!--{if $value[type] == '3'}-->
+					{lang upgrade_access}
+					<!--{elseif $value[type] == '2'}-->
+					{lang obtained}
+					<!--{if $value[fromid]}-->
+					<a href="space.php?uid=$value[fromid]">$_SN[$value[fromid]]</a>
+					<!--{else}-->
+					{lang administrator}
+					<!--{/if}-->
+					{lang gift_sent}
+					<!--{else}-->
+					{lang purchased}
+					<!--{/if}-->
+					<a href="cp.php?ac=magic&view=store&mid=$value[mid]">
+						$_SGLOBAL[magic][$value[mid]]
+					</a>
+					$value[count]
+					{lang units}
+					<span class="gray">(<!--{eval echo sgmdate('m-d H:i', $value[dateline], true)}-->)</span>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<div class="page">$multi</div>
+			<!--{else}-->
+			<p>{lang magics_income_no}</p>
+			<!--{/if}-->
+		<!--{elseif $_GET[type] == 'present'}-->
+			<!--{if $list}-->
+			<ul class="line_list">
+				<!--{loop $list $value}-->
+				<li>
+					{lang to}
+					<a href="space.php?uid=$value[uid]">$_SN[$value[uid]]</a>
+					{lang presented}
+					<a href="cp.php?ac=magic&view=store&mid=$value[mid]">
+						$_SGLOBAL[magic][$value[mid]]
+					</a>
+					<span class="gray">(<!--{eval echo sgmdate('m-d H:i', $value[dateline], true)}-->)</span>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<div class="page">$multi</div>
+			<!--{else}-->
+			<p>{lang magic_presented_no}</p>
+			<!--{/if}-->		
+		<!--{else}-->
+			<!--{if $list}-->
+			<ul class="line_list">
+				<!--{loop $list $value}-->
+				<li>
+					{lang used}
+					<a href="cp.php?ac=magic&view=store&mid=$value[mid]">
+						$_SGLOBAL[magic][$value[mid]]
+					</a>
+					$value[count] {lang times}
+				<!--{if $value['mid'] == 'invisible'}-->
+					; &nbsp;{lang end_effect_time}: <!--{eval echo sgmdate('m-d H:i', $value[expire])}-->
+				<!--{elseif $value['mid'] == 'gift'}-->
+					; &nbsp;{lang points_remained}: $value[data][left]
+				<!--{elseif $value['mid'] == 'superstar'}-->
+					; &nbsp;{lang end_effect_time}: <!--{eval echo sgmdate('m-d H:i', $value[expire])}-->
+				<!--{/if}-->
+					<span class="gray">(<!--{eval echo sgmdate('m-d H:i', $value[dateline], true)}-->)</span>
+				</li>
+				<!--{/loop}-->
+			</ul>
+			<div class="page">$multi</div>
+			<!--{else}-->
+			<p>{lang magic_used_no}</p>
+			<!--{/if}-->
+		<!--{/if}-->
+
+	<!--{else}-->
+		<div class="h_status">
+		{lang order_by}: 
+		<a $orders['default'] href="cp.php?ac=magic&view=$view&order=default">{lang default}</a>
+		<span class="pipe">|</span>
+		<a $orders['hot'] href="cp.php?ac=magic&view=$view&order=hot">{lang top}</a>
+		</div>
+
+		<!--{if $mid}-->
+		<p class="notice">
+			{lang magics_shown}
+			<a href="cp.php?ac=magic&view=$_GET[view]">{lang see_full_magic}</a>
+		</p>
+		<p>&nbsp;</p>
+		<!--{/if}-->
+
+		<ul id="magiclist" class="magic_list">
+		<!--{loop $list $key=>$value}-->
+			<li id="magic_$key">
+				<div class="magic_img">
+					<a id="a_i_buy_$key" href="cp.php?ac=magic&op=buy&mid=$key" onclick="ajaxmenu(event, this.id, 1)">
+					<img src="image/magic/{$key}.gif" alt="$magics[$key][name]" />
+					</a>
+				</div>
+				<div class="magic_info">
+					<h3>
+						$magics[$key][name]
+						<!--{if $_GET[order] == 'hot'}-->
+						<small class="gray" style="margin-left:10px;">{lang sold} $value[sellcount] {lang ones}</small>
+						<!--{/if}-->
+					</h3>
+					<p class="gray">$magics[$key][description]</p>
+					<p>
+						<!--{if in_array($space[groupid], $magics[$key][forbiddengid]) || in_array($mid, $blacklist)}-->
+						<a id="a_buy_$key" href="cp.php?ac=magic&op=buy&mid=$key" onclick="ajaxmenu(event, this.id, 1)" class="m_button m_off">{lang do_not_by}</a><span>$magics[$key][charge]</span> {lang credit}/{lang credit_unit}
+						<!--{else}-->
+						<a id="a_buy_$key" href="cp.php?ac=magic&op=buy&mid=$key" onclick="ajaxmenu(event, this.id, 1)" class="m_button">{lang buy}</a><span>$magics[$key][charge]</span> {lang credit}/{lang credit_unit}
+						<!--{/if}-->
+					</p>
+				</div>
+			</li>
+		<!--{/loop}-->
+		</ul>
+	<!--{/if}-->
+
+	</div><!--//<div id="content" style="float:none;width:690px;">//-->
+	<script type="text/javascript">
+	<!--
+	function magicBought(id, result) {
+		var ids = explode('_', id);
+		var mid = ids[1];
+		if($('a_buy_'+mid)) {
+			$('a_buy_'+mid).innerHTML = '{lang continue_purchase}';
+		}
+	}
+	function magicPresent(id, result) {
+		var ids = explode('_', id);
+		var mid = ids[1];
+		if($('a_present_'+mid)) {
+			$('a_present_'+mid).innerHTML = '{lang continue_send_gifts}';
+		}
+		if($('magiccount_'+mid)) {
+			$('magiccount_'+mid).innerHTML = parseInt($('magiccount_'+mid).innerHTML) - 1;
+		}
+	}
+	-->
+	</script>
+
+<!--{/if}-->
+
+<!--{template footer}-->

@@ -1,0 +1,231 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li$actives[all]><a href="admincp.php?ac=$ac"><span>{lang users_all}</span></a></li>
+			<!--{if checkperm('managename')}-->
+			<li$actives[0]><a href="admincp.php?ac=$ac&perpage=20&namestatus=0&searchsubmit=1&tab=0"><span>{lang realname_nonchecked}</span></a></li>
+			<li$actives[1]><a href="admincp.php?ac=$ac&perpage=20&namestatus=1&searchsubmit=1&tab=1"><span>{lang realname_checked}</span></a></li>
+			<!--{/if}-->
+			<li$actives[2]><a href="admincp.php?ac=$ac&perpage=20&videostatus=0&searchsubmit=1&tab=2"><span>{lang video_nonpassed}</span></a></li>
+			<li$actives[3]><a href="admincp.php?ac=$ac&perpage=20&videostatus=1&searchsubmit=1&tab=3"><span>{lang video_is_passed}</span></a></li>
+		</ul>
+	</div>
+
+	
+	<form method="get" action="admincp.php">
+	<div class="block style4">
+		<table cellspacing="3" cellpadding="3">
+		<tr>
+			<th>{lang user_id}</th><td><input type="text" name="uid" value="$_GET[uid]" size="10"></td>
+			<th>{lang user_name}</th><td><input type="text" name="username" value="$_GET[username]"></td>
+		</tr>
+		<tr>
+			<th>{lang realname} *</th><td><input type="text" name="name" value="$_GET[name]"></td>
+			<th>{lang avatar}</th><td>
+			<select name="avatar">
+			<option value="">{lang unlimited}</option>
+			<option value="1"<!--{if $_GET[avatar] == '1'}--> selected<!--{/if}-->>{lang avatar_upload}</option>
+			<option value="0"<!--{if $_GET[avatar] == '0'}--> selected<!--{/if}-->>{lang no_avatar}</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>{lang real_name_verification}</th><td>
+			<select name="namestatus">
+			<option value="">{lang unlimited}</option>
+			<option value="1"<!--{if $_GET[namestatus] == '1'}--> selected<!--{/if}-->>{lang certified}</option>
+			<option value="0"<!--{if $_GET[namestatus] == '0'}--> selected<!--{/if}-->>{lang not_verified}</option>
+			</select></td>
+			<th>{lang video_certify}</th><td>
+			<select name="videostatus">
+			<option value="">{lang unlimited}</option>
+			<option value="1"<!--{if $_GET[videostatus] == '1'}--> selected<!--{/if}-->>{lang certified}</option>
+			<option value="0"<!--{if $_GET[videostatus] == '0'}--> selected<!--{/if}-->>{lang not_verified}</option>
+			</select></td>
+		</tr>
+		<tr>
+			<th>{lang user_group}</th><td>
+			<select name="groupid">
+			<option value="">{lang without_limits}</option>
+			<!--{loop $usergroups $gid $value}-->
+			<option value="$value[gid]"<!--{if $_GET[groupid] == $value[gid]}--> selected<!--{/if}-->>$value[grouptitle]</option>
+			<!--{/loop}-->
+			</select>
+			</td>
+			<th>{lang user_status}</th><td>
+			<select name="flag">
+			<option value="">{lang unlimited}</option>
+			<option value="1"<!--{if $_GET[flag] == '1'}--> selected<!--{/if}-->>{lang user_protected}</option>
+			<option value="0"<!--{if $_GET[flag] == '0'}--> selected<!--{/if}-->>{lang user_ordinary}</option>
+			<option value="-1"<!--{if $_GET[flag] == '-1'}--> selected<!--{/if}-->>{lang user_locked}</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<th>{lang user_experience}</th><td>
+			<input type="text" name="experience1" value="$_GET[experience1]" size="10"> ~
+			<input type="text" name="experience2" value="$_GET[experience2]" size="10">
+			</td>
+		</tr>
+		<tr>
+			<th>{lang user_points}</th><td>
+			<input type="text" name="credit1" value="$_GET[credit1]" size="10"> ~
+			<input type="text" name="credit2" value="$_GET[credit2]" size="10">
+			</td>
+		</tr>
+		<tr><th>{lang space_create_date}</th><td colspan="3">
+			<input type="text" name="dateline1" value="$_GET[dateline1]" size="10"> ~
+			<input type="text" name="dateline2" value="$_GET[dateline2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		<tr><th>{lang last_update_time}</th><td colspan="3">
+			<input type="text" name="updatetime1" value="$_GET[updatetime1]" size="10"> ~
+			<input type="text" name="updatetime2" value="$_GET[updatetime2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		
+		<tr><th>{lang last_visit_time}</th><td colspan="3">
+			<input type="text" name="lastlogin1" value="$_GET[lastlogin1]" size="10"> ~
+			<input type="text" name="lastlogin2" value="$_GET[lastlogin2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		<tr><th>{lang last_posting_time}</th><td colspan="3">
+			<input type="text" name="lastpost1" value="$_GET[lastpost1]" size="10"> ~
+			<input type="text" name="lastpost2" value="$_GET[lastpost2]" size="10"> (YYYY-MM-DD)
+		</td></tr>
+		<tr><th>{lang sort_results}</th>
+		<td colspan="3">
+		<select name="orderby">
+		<option value="">{lang sort_default}</option>
+		<option value="dateline"$orderby[dateline]>{lang setup_time}</option>
+		<option value="updatetime"$orderby[updatetime]>{lang time_update}</option>
+		<option value="viewnum"$orderby[viewnum]>{lang visits_number}</option>
+		<option value="experience"$orderby[experience]>{lang experience_value}</option>
+		<option value="credit"$orderby[credit]>{lang credit_number}</option>
+		<option value="friendnum"$orderby[friendnum]>{lang friends_number}</option>
+		</select>
+		<select name="ordersc">
+		<option value="desc"$ordersc[desc]>{lang descending}</option>
+		<option value="asc"$ordersc[asc]>{lang ascending}</option>
+		</select>
+		<select name="perpage">
+		<option value="20"$perpages[20]>{lang per_page_20}</option>
+		<option value="50"$perpages[50]>{lang per_page_50}</option>
+		<option value="100"$perpages[100]>{lang per_page_100}</option>
+		</select>
+		<input type="hidden" name="ac" value="$ac">
+		<!--{if isset($_GET[tab])}-->
+		<input type="hidden" name="tab" value="$_GET[tab]">
+		<!--{/if}-->
+		<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+		</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+
+<!--{if $list}-->
+
+
+	<!--{eval 
+	$flagarr = array(
+		'-1' => '<span style="color:blue;">{lang is_locked}</span>',
+		'0' => '{lang normal}',
+		'1' => '<span style="color:red;">{lang protected}</span>'
+	);
+	}-->
+	<div class="bdrcontent">
+	
+	<form method="post" action="admincp.php?ac=$ac&perpage=$perpage&page=$page">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		<table cellspacing="2" cellpadding="2" class="listtable">
+		<tr class="line">
+			<th width="30">{lang choose}</th>
+			<th width="55">{lang member}</th>
+			<th>{lang user_name}/{lang realname}</th>
+			<th>{lang user_group}</th>
+			<th>{lang experience_points_friends}</th>
+			<th>{lang attachments}</th>
+			<th>{lang registered_updated}</th>
+			<th>{lang note_status}</th>
+			<th>{lang operation}</th>
+		</tr>
+		<!--{loop $list $key $value}-->
+			<tr<!--{if $key%2==1}--> class="line"<!--{/if}-->>
+			<td>
+				<input type="checkbox" name="uids[]" value="$value[uid]">
+			</td>
+			<td>
+				<a href="space.php?uid=$value[uid]" target="_blank"><!--{avatar($value[uid],small)}--></a>
+			</td>
+			<td>
+				<a href="space.php?uid=$value[uid]">$value[username]</a>
+				<!--{if $value[name]}-->
+					<!--{if $value[namestatus]}-->
+					<p style="color:red;">$value[name]</p>
+					<!--{else}-->
+					<p class="gray">$value[name]</p>
+					<!--{/if}-->
+				<!--{/if}-->
+			</td>
+			<td>
+				$value[grouptitle]
+				<!--{if $fusers[$value[uid]]}-->
+				<p>{lang deadline}: {$fusers[$value[uid]][expiration]}</p>
+				<p>{lang operation}: <a href="space.php?uid={$fusers[$value[uid]][opuid]}">{$fusers[$value[uid]][opusername]}</a></p>
+				<!--{/if}-->
+			</td>
+			<td class="gray">
+				$value[experience] / $value[credit] / $value[friendnum]</td>
+			<td>$value[attachsize]</td>
+			<td>
+				<!--{date('Y-m-d H:i', $value[dateline])}--><br>
+				<!--{if $value[updatetime]}--><!--{date('Y-m-d H:i', $value[updatetime])}--><!--{else}-->-<!--{/if}-->
+			</td>
+			<td>
+				{$flagarr[$value[flag]]}
+			</td>
+			<td><a href="admincp.php?ac=space&op=manage&uid=$value[uid]">{lang manage}</a><br></td>
+		</tr>
+		<!--{/loop}-->
+		</table>
+	</div>
+
+	<div class="footactions">
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'uids')">{lang check_all} &nbsp;&nbsp;
+		<!--{if checkperm('managename')}-->
+		<input type="radio" name="optype" value="1"> {lang real_name_link}
+		<input type="radio" name="optype" value="2"> {lang real_name_cancel}
+		<input type="radio" name="optype" value="3"> {lang real_name_empty}
+		<!--{/if}-->
+
+		<!--{if $managespacenote}-->
+		<input type="radio" name="optype" value="4"> {lang send_email}
+		<input type="radio" name="optype" value="5"> {lang send_hello}
+		<!--{/if}-->
+		<!--{if checkperm('manageconfig')}-->
+		<input type="radio" name="optype" value="7"> {lang giving_magic}
+		<!--{/if}-->
+		<!--{if $managespaceinfo}-->
+		<input type="radio" name="optype" value="6"> {lang css_cleanup}
+		<!--{/if}-->
+		
+		<input type="submit" name="listsubmit" value="{lang submit_button}" class="submit">
+		<div class="pages">$multi</div>
+	</div>
+
+	</form>
+<!--{else}-->
+	<div class="bdrcontent">
+		<p>{lang no_data_by_conditions}</p>
+	</div>
+<!--{/if}-->
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

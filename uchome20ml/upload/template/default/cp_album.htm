@@ -1,0 +1,184 @@
+<!--{template header}-->
+
+<!--{if $_GET['op']=='edit' || $_GET['op']=='editpic'}-->
+<h2 class="title"><img src="image/app/album.gif" /> {lang albums}<!--{if $album[albumname]}--> - $album[albumname]<!--{/if}--></h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li<!--{if $_GET['op']=='edit'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=edit&albumid=$albumid"><span>{lang album_edit}</span></a></li>
+		<li<!--{if $_GET['op']=='editpic'}--> class="active"<!--{/if}-->><a href="cp.php?ac=album&op=editpic&albumid=$albumid"><span>{lang image_edit}</span></a></li>
+		<li><a href="space.php?uid=$space[uid]&do=album&view=me"><span>{lang back_to_my_album}</span></a></li>
+	</ul>
+</div>
+<!--{/if}-->
+
+<!--{if $_GET['op'] == 'edit'}-->
+
+<form method="post" id="theform" name="theform" action="cp.php?ac=album&op=edit&albumid=$albumid" class="c_form">
+<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr>
+		<th width="80"><label for="albumname">{lang album_name}</label></th>
+		<td><input type="text" id="albumname" name="albumname" value="$album[albumname]" size="20" class="t_input" /></td>
+	</tr>
+	<tr>
+		<th>{lang security}</th>
+		<td>
+			<select name="friend" onchange="passwordShow(this.value);">
+				<option value="0"$friendarr[0]>{lang visible_to_all}</option>
+				<option value="1"$friendarr[1]>{lang visible_to_friends}</option>
+				<option value="2"$friendarr[2]>{lang visible_to_some_friends}</option>
+				<option value="3"$friendarr[3]>{lang visible_to_me}</option>
+				<option value="4"$friendarr[4]>{lang visible_by_password}</option>
+			</select>
+			<span id="span_password" style="$passwordstyle">{lang password}: <input type="text" name="password" value="$album[password]" size="10"></span>
+		</td>
+	</tr>
+	<tbody id="tb_selectgroup" style="$selectgroupstyle">
+	<tr>
+		<th>{lang friends_designated}</th>
+		<td><select name="selectgroup" onchange="getgroup(this.value);">
+			<option value="">{lang friends_select_some}</option>
+			<!--{loop $groups $key $value}-->
+			<option value="$key">$value</option>
+			<!--{/loop}-->
+			</select> {lang friends_select_multi}</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td>
+		<textarea name="target_names" id="target_names" style="width:85%;" rows="3">$album[target_names]</textarea>
+		<br>{lang friends_separate_multi}</td>
+	</tr>
+	</tbody>
+	<tr>
+		<th>&nbsp;</th>
+		<td>
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="editsubmit" value="true" />
+		<button name="submit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td><a href="cp.php?ac=album&op=delete&albumid=$album[albumid]" id="album_delete_$album[albumid]" onclick="ajaxmenu(event, this.id)">{lang album_delete}</a></td>
+	</tr>
+
+</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+
+
+<!--{elseif $_GET['op'] == 'editpic'}-->
+
+<div class="notice">
+{lang album_cover_note}
+</div>
+
+<!--{if $list}-->
+<div class="album_list">
+	<form method="post" id="theform" name="theform" action="cp.php?ac=album&op=editpic&albumid=$albumid">
+	
+	<table cellspacing="6" cellpadding="0">
+		<!--{loop $list $value}-->
+		<tr>
+			<td class="album">
+				<table cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="20"><input type="checkbox" name="ids[{$value[picid]}]" value="{$value[picid]}"></td>
+						<td class="image">
+							<a href="$value[bigpic]" target="_blank"><img src="$value[pic]" alt="" /></a>
+							<!--{if $album[albumname]}--><p style="text-align: center;"><a href="cp.php?ac=album&op=setpic&picid=$value[picid]" id="a_picid_$value[picid]" onclick="ajaxmenu(event, this.id, 0, 2000)">{lang album_cover_set}</a></p><!--{/if}-->
+						</td>
+						<td>
+							<textarea name="title[{$value[picid]}]" rows="4" cols="70">$value[title]</textarea>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<!--{/loop}-->
+		<tr>
+			<td style="padding:10px;">
+				<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')"><label for="chkall"> {lang check_all}</label>
+				<input type="submit" name="editpicsubmit" value="{lang image_update}" class="submit" onclick="this.form.action+='&subop=update';">
+				<input type="submit" name="editpicsubmit" value="{lang delete}" class="submit" onclick="this.form.action+='&subop=delete';return ischeck('theform', 'ids')">
+				<input type="submit" name="editpicsubmit" value="{lang image_move_to}:" class="submit" onclick="this.form.action+='&subop=move';return ischeck('theform', 'ids')">
+				<select name="newalbumid">
+				<!--{loop $albumlist $key $value}-->
+				<!--{if $albumid != $value[albumid]}--><option value="$value[albumid]">$value[albumname]</option><!--{/if}-->
+				<!--{/loop}-->
+				<!--{if $albumid>0}--><option value="0">{lang default_albumname}</option><!--{/if}-->
+				</select>
+				<br>{lang image_delete_note}
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="page" value="$page" />
+	<input type="hidden" name="editpicsubmit" value="true" />
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+<div class="page">$multi</div>
+<!--{else}-->
+<div class="c_form">{lang album_no_images}</div>
+<!--{/if}-->
+
+
+<!--{elseif $_GET['op'] == 'delete'}-->
+
+<h1>{lang album_delete}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+<form method="post" id="theform" name="theform" action="cp.php?ac=album&op=delete&albumid=$albumid">
+	<p>{lang album_delete_sure}</p>
+	<p>
+		{lang photo_album}
+		<select name="moveto">
+			<option value="-1">{lang remove_completely}</option>
+			<option value="0">{lang image_move_to} {lang default_albumname}</option>
+			<!--{loop $albums $value}-->
+			<option value="$value[albumid]">{lang image_move_to} $value[albumname]</option>
+			<!--{/loop}-->
+		</select>
+	</p>
+	<p class="btn_line">
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="deletesubmit" value="true" />
+		<button name="submit" type="submit" class="submit" value="true">{lang form_sure_yes}</button>&nbsp;
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $_GET['op'] == 'edittitle'}-->
+
+<h1>{lang image_edit_title}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+	<form id="titleform" name="titleform" action="cp.php?ac=album&op=editpic&subop=update&albumid=$pic[albumid]" method="post">
+		<textarea name="title[{$pic[picid]}]" cols="50" rows="7">$pic[title]</textarea>
+		<p class="btn_line">
+			<input type="submit" name="editpicsubmit" class="submit" value="{lang update}">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]">
+		</p>
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<!--{elseif $_GET[op] == 'edithot'}-->
+
+<h1>{lang hot_adjust}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=album&op=edithot&picid=$picid">
+	<p class="btn_line">
+		{lang hot_new}: <input type="text" name="hot" value="$pic[hot]" size="5"> 
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="hotsubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+	</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{/if}-->
+<!--{template footer}-->

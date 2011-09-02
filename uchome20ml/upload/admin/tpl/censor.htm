@@ -1,0 +1,43 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+	<form method="post" action="admincp.php?ac=censor">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	
+	<div class="bdrcontent">
+
+	<table cellspacing="0" cellpadding="0" class="formtable">
+	<tr><td>
+	<textarea name="censor" style="width:98%;" rows="12">$censor</textarea>
+	</td></tr>
+	<tr><td>
+	{lang add_format}: <br />
+	{lang censor_intro1}<br />
+	{lang censor_intro2}<br />
+	{lang censor_intro3}<br />
+	{lang censor_intro4}<br />
+	{lang censor_intro5}<br />
+	{lang for_example}: <br />
+	{lang censor_example1}<br />
+	{lang censor_example2}<br />
+	{lang censor_example3}<br />
+	</td></tr>
+	</table>
+	</div>
+	
+	<div class="footactions">
+		<input type="submit" name="censorsubmit" value="{lang submit_button}" class="submit">
+	</div>
+		
+	</form>
+
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

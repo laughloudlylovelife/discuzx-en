@@ -1,0 +1,205 @@
+<!--{eval $_TPL['titles'] = array(lang('albums'));}-->
+<!--{eval $friendsname = array(1 => lang('visible_to_friends_only'), 2 => lang('friends_designated_only'), 3 => lang('visible_to_me'), 4 => lang('visible_by_password_only'));}-->
+
+<!--{template header}-->
+
+<!--{if !empty($_SGLOBAL[inajax])}-->
+	<div id="space_photo">
+		<h3 class="feed_header">
+			<a href="cp.php?ac=upload" class="r_option">{lang upload_image}</a>
+			{lang albums} ({lang total} $count {lang units})</h3>
+		<!--{if $count}-->
+		<table cellspacing="4" cellpadding="4" width="100%">
+		<tr>
+			<!--{loop $list $key $value}-->
+			<td width="85" align="center"><a href="space.php?uid=$space[uid]&do=album&id=$value[albumid]"><img src="$value[pic]" alt="$value[albumname]" width="70" /></a></td>
+			<td width="165">
+				<h6><a href="space.php?uid=$space[uid]&do=album&id=$value[albumid]" title="$value[albumname]">$value[albumname]</a></h6>
+				<p class="gray">$value[picnum] {lang photos_number}</p>
+				<p class="gray">{lang update_time} <!--{date('m-d',$value[dateline],1)}--></p>
+			</td>
+			<!--{if $key%2==1}--></tr><tr><!--{/if}-->
+			<!--{/loop}-->
+		</tr>
+		</table>
+		<!--{if $pricount}-->
+		<div class="c_form">{lang page_has_hidden1} $pricount {lang albums_because_privacy}</div>
+		<!--{/if}-->
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">{lang albums_no}</div>
+		<!--{/if}-->
+	</div><br>
+<!--{else}-->
+
+<!--{if $space[self]}-->
+<div class="searchbar floatright">
+	<form method="get" action="space.php">
+		<input name="searchkey" value="" size="15" class="t_input" type="text">
+		<input name="searchsubmit" value="{lang photos_search}" class="submit" type="submit">
+		<input type="hidden" name="do" value="album" />
+		<input type="hidden" name="view" value="all" />
+		<input type="hidden" name="orderby" value="dateline" />
+	</form>
+</div>
+<h2 class="title"><img src="image/app/album.gif">{lang albums}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<!--{if $space[friendnum]}--><li$actives[we]><a href="space.php?uid=$space[uid]&do=$do&view=we"><span>{lang friends_last_albums}</span></a></li><!--{/if}-->
+		<li$actives[all]><a href="space.php?uid=$space[uid]&do=$do&view=all"><span>{lang members_albums}</span></a></li>
+		<li$actives[me]><a href="space.php?uid=$space[uid]&do=$do&view=me"><span>{lang albums_my}</span></a></li>
+		<li$actives[click]><a href="space.php?uid=$space[uid]&do=$do&view=click"><span>{lang photo_positioning}</span></a></li>
+		<li class="null"><a href="cp.php?ac=upload">{lang upload_new_photo}</a></li>
+	</ul>
+</div>
+<!--{else}-->
+<!--{eval 
+	$_TPL['spacetitle'] = lang('albums');
+	$_TPL['spacemenus'][] = "<a href=\"space.php?uid=$space[uid]&do=album&view=me\">".lang('author_all_albums')."</a>";
+}-->
+<!--{template space_menu}-->
+<!--{/if}-->
+
+<!--{if $_GET['view'] == 'me'}-->
+<div>
+<!--{else}-->
+<div id="content" style="width:640px;">
+<!--{/if}-->
+
+
+<!--{if $_GET['orderby'] && $_GET['orderby'] != 'dateline'}-->
+<div class="h_status">
+	{lang show_time_period}: 
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]"{$day_actives[0]}>{lang all}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=1"{$day_actives[1]}>{lang last_day}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=2"{$day_actives[2]}>{lang last_2days}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=7"{$day_actives[7]}>{lang last_week}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=30"{$day_actives[30]}>{lang last_month}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=90"{$day_actives[90]}>{lang last_3month}</a><span class="pipe">|</span>
+	<a href="space.php?do=album&view=all&orderby=$_GET[orderby]&day=120"{$day_actives[120]}>{lang last_6month}</a>
+</div>
+<!--{/if}-->
+
+<!--{if $space[self] && $_GET['view']=='me'}-->
+<div class="h_status">
+{lang your_albums_below}<br>
+{lang upload_default_to} <a href="space.php?uid=$space[uid]&do=album&id=-1">{lang album_default}</a> {lang album_inside}.
+</div>
+<!--{/if}-->
+	
+	
+<!--{if $picmode}-->
+
+	<!--{if $pricount}-->
+	<div class="h_status">{lang page_has_hidden1} $pricount {lang images_because_privacy}</div>
+	<!--{/if}-->
+	
+	<!--{if $count}-->
+	<table cellspacing="0" cellpadding="0" width="100%" class="pic_list">
+		<tr>
+		<!--{loop $list $key $value}-->
+		<td align="center">
+			<div class="pic_bg"><a href="space.php?uid=$value[uid]&do=album&picid=$value[picid]"><img src="$value[pic]" alt="" /></a></div>
+			<a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]">$value[albumname]</a><br>
+			<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+		</td>
+		<!--{if $key%4==3}--></tr><tr><!--{/if}-->
+		<!--{/loop}-->
+		</tr>
+	</table>
+	<div class="page">$multi</div>
+	<!--{else}-->
+	<div class="c_form">{lang albums_no}</div>
+	<!--{/if}-->
+	
+<!--{else}-->
+
+	<!--{if $searchkey}-->
+	<div class="h_status">{lang album_search_follow} <span style="color:red;font-weight:bold;">$searchkey</span> {lang results_list}</div>
+	<!--{/if}-->
+	
+	<!--{if $pricount}-->
+	<div class="h_status">{lang note}: {lang page_has_hidden1} $pricount {lang albums_because_privacy}</div>
+	<!--{/if}-->
+
+	<!--{if $count}-->
+	<table class="album_list" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<!--{loop $list $key $value}-->
+		<td style="padding-bottom: 20px;">
+			<div class="album_bg"><a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]"><img src="$value[pic]" alt="$value[albumname]" /></a></div>
+			<p><a href="space.php?uid=$value[uid]&do=$do&id=$value[albumid]"><!--{if $value[albumname]}-->$value[albumname]<!--{else}-->{lang default_albumname}<!--{/if}--></a> <!--{if $value[picnum]}--><span class="gray">($value[picnum])</span><!--{/if}--></p>
+			<!--{if $_GET[view]!='me'}--><p><a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p><!--{/if}-->
+			<!--{if $value[uid]==$_SGLOBAL[supe_uid]}--><p class="gray"><a href="cp.php?ac=album&op=editpic&albumid=$value[albumid]">{lang photos_manage}</a><span class="pipe">|</span><a href="cp.php?ac=upload&albumid=$value[albumid]">{lang upload_image}</a></p><!--{/if}-->
+			<!--{if $_GET[view]!='me'}--><p class="gray">{lang updated}: <!--{date('d.m.Y H:i', $value[updatetime], 1)}--></p><!--{/if}-->
+		</td>
+		<!--{if $key%4==3}--></tr><tr><!--{/if}-->
+		<!--{/loop}-->
+		</tr>
+	</table>
+	<div class="page">$multi</div>
+	<!--{else}-->
+	<div class="c_form">{lang albums_no}</div>
+	<!--{/if}-->
+	
+<!--{/if}-->
+
+</div>
+
+<!--{if $_GET['view'] != 'me'}-->
+<div id="sidebar" style="width:150px;">
+	
+<!--{if $userlist}-->
+	<div class="cat">
+	<h3>{lang viewed_by_friends}</h3>
+	<ul class="post_list line_list">
+		<li>
+			{lang select_friends}:<br>
+			<select name="fuidsel" onchange="fuidgoto(this.value);">
+			<option value="">{lang friends_all}</option>
+			<!--{loop $userlist $value}-->
+			<option value="$value[fuid]"{$fuid_actives[$value[fuid]]}>{$_SN[$value[fuid]]}</option>
+			<!--{/loop}-->
+			</select>
+		</li>
+	</ul>
+	</div>
+<!--{/if}-->
+
+<!--{if $_GET['view'] == 'click'}-->
+	<div class="cat">
+	<h3>{lang clicks}</h3>
+	<ul class="post_list line_list">
+		<li$click_actives[all]><a href="space.php?do=album&view=click">{lang all_actions}</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$click_actives[$value[clickid]]}>
+			<a href="space.php?do=album&view=click&clickid=$value[clickid]">$value[name]</a>
+		</li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{elseif $_GET['view'] == 'all'}-->
+	<div class="cat">
+	<h3>{lang members_top_list}</h3>
+	<ul class="post_list line_list">
+		<li$all_actives[all]><a href="space.php?do=album&view=all">{lang hot_map_recommend}</a></li>
+		<li$all_actives[dateline]><a href="space.php?do=album&view=all&orderby=dateline">{lang last_update}</a></li>
+		<li$all_actives[hot]><a href="space.php?do=album&view=all&orderby=hot&day=$_GET[hotday]">{lang top_ranked}</a></li>
+		<!--{loop $clicks $value}-->
+		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=album&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{$value[name]} {lang top_rank}</a></li>
+		<!--{/loop}-->
+	</ul>
+	</div>
+<!--{/if}-->
+
+</div>
+<!--{/if}-->
+
+<script>
+function fuidgoto(fuid) {
+	window.location.href = "space.php?do=album&view=we&fuid="+fuid;
+}
+</script>
+<!--{/if}-->
+
+<!--{template footer}-->

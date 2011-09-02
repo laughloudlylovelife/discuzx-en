@@ -1,0 +1,235 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+	<div class="maininner">
+	
+		<div class="tabs_header">
+			<ul class="tabs">
+				<li$actives[1]><a href="admincp.php?ac=$ac&perpage=20&status=1&searchsubmit=1"><span>{lang reports_pending}</span></a></li>
+				<li$actives[0]><a href="admincp.php?ac=$ac&perpage=20&status=0&searchsubmit=1"><span>{lang reports_ignored}</span></a></li>
+			</ul>
+		</div>
+
+		<form method="get" action="admincp.php">
+			<div class="block style4">
+				
+				<table cellspacing="3" cellpadding="3">
+				
+				<tr>
+					<th>{lang report_type}</th><td>
+					<select name="idtype">
+					<option value="">{lang unlimited}</option>
+					<option value="picid"<!--{if $_GET[idtype] == 'picid'}--> selected<!--{/if}-->>{lang images}</option>
+					<option value="albumid"<!--{if $_GET[idtype] == 'albumid'}--> selected<!--{/if}-->>{lang albums}</option>
+					<option value="blogid"<!--{if $_GET[idtype] == 'blogid'}--> selected<!--{/if}-->>{lang blogs}</option>
+					<option value="tagid"<!--{if $_GET[idtype] == 'tagid'}--> selected<!--{/if}-->>{lang groups}</option>
+					<option value="tid"<!--{if $_GET[idtype] == 'tid'}--> selected<!--{/if}-->>{lang thread}</option>
+					<option value="uid"<!--{if $_GET[idtype] == 'uid'}--> selected<!--{/if}-->>{lang space}</option>
+					<option value="sid"<!--{if $_GET[idtype] == 'sid'}--> selected<!--{/if}-->>{lang shares}</option>
+					<option value="pid"<!--{if $_GET[idtype] == 'pid'}--> selected<!--{/if}-->>{lang polls}</option>
+					<option value="eventid"<!--{if $_GET[idtype] == 'eventid'}--> selected<!--{/if}-->>{lang events}</option>
+					<option value="comment"<!--{if $_GET[idtype] == 'comment'}--> selected<!--{/if}-->>{lang comments}</option>
+					<option value="post"<!--{if $_GET[idtype] == 'post'}--> selected<!--{/if}-->>{lang thread_comment}</option>
+					</select>
+					</td>
+					<th>{lang report_status}</th><td>
+					<select name="status">
+					<option value="2">{lang unlimited}</option>
+					<option value="0"<!--{if $_GET[status] == '0'}--> selected<!--{/if}-->>{lang ignored}</option>
+					<option value="1"<!--{if $_GET[status] == '1'}--> selected<!--{/if}-->>{lang pended}</option>
+					</select></td>
+				</tr>
+				
+				<tr><th>{lang report_times_number}</th><td colspan="3">
+					<input type="text" name="num1" value="$_GET[num1]" size="10"> ~
+					<input type="text" name="num2" value="$_GET[num2]" size="10">
+				</td></tr>
+				
+		
+				<tr><th>{lang sort_results}</th>
+				<td colspan="3">
+				<select name="orderby">
+				<option value="">{lang sort_default}</option>
+				<option value="dateline"$orderby[dateline]>{lang report_time}</option>
+				<option value="num"$orderby[viewnum]>{lang report_number}</option>
+				</select>
+				<select name="ordersc">
+				<option value="desc"$ordersc[desc]>{lang descending}</option>
+				<option value="asc"$ordersc[asc]>{lang ascending}</option>
+				</select>
+				<select name="perpage">
+				<option value="20"$perpages[20]>{lang per_page_20}</option>
+				<option value="50"$perpages[50]>{lang per_page_50}</option>
+				<option value="100"$perpages[100]>{lang per_page_100}</option>
+				<option value="1000"$perpages[1000]>{lang per_page_1000}</option>
+				</select>
+				<input type="hidden" name="ac" value="report">
+				<input type="submit" name="searchsubmit" value="{lang search_submit}" class="submit">
+				</td>
+				</tr>
+				</table>
+		
+			</div>
+		</form>
+	
+	<!--{if $list}-->
+	
+		<form method="post" action="admincp.php?ac=report">
+		<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		<div class="bdrcontent">
+
+		<!--{if $perpage>100}-->
+			<p>{lang total_data_by_conditions} <strong>$count</strong> {lang units}</p>
+			<!--{loop $list $value}-->
+			<input type="hidden" name="ids[]" value="$value[rid]">
+			<!--{/loop}-->
+		
+		<!--{else}-->
+			<table cellspacing="0" cellpadding="0" class="formtable" border="0">
+			<tr>
+				<td width="25">&nbsp;</td>
+				<th>{lang content}</th>
+				<th width="50"><a href="admincp.php?ac=$ac&perpage=20&orderby=num&ordersc=$scstr&status=$_GET[status]&searchsubmit=1">{lang times_number}</a></th>
+				<th width="120"><a href="admincp.php?ac=$ac&perpage=20&orderby=dateline&ordersc=$scstr&status=$_GET[status]&searchsubmit=1">{lang time}</a></th>
+				<th width="140">{lang operation}</th>
+			</tr>
+			
+			<!--{loop $list $key $report}-->
+				<!--{loop $report $value}-->
+				<tr <!--{if $value[new]}-->bgcolor="#F2F9FD"<!--{/if}-->>
+					<td>
+						<input type="checkbox" name="ids[]" value="$value[rid]">
+					</td>
+					<td>
+						<!--{if empty($value[info])}-->
+							{lang information_to_remove}<br>
+						<!--{else}-->
+						<!--{if $key=='blog'}-->
+						<a href="space.php?uid=$value[info][uid]&do=blog&id=$value[info][blogid]" target="_blank">$value[info][subject]</a><br>
+						<!--{elseif $key=='pic'}-->
+						<a href="space.php?uid=$value[info][uid]&do=album&picid=$value[info][picid]" target="_blank"><img src="$value[info][pic]" width="90" alt="$value[info][filename]"></a><br>
+						$value[info][title]<br>
+						<!--{elseif $key=='album'}-->
+						<a href="space.php?uid=$value[info][uid]&do=album&id=$value[info][albumid]" target="_blank"><img src="$value[info][pic]" alt="$value[info][albumname]" width="100" height="90"></a><br>
+						$value[info][albumname]<br>
+						<!--{elseif $key=='thread'}-->
+						<a href="space.php?do=thread&id=$value[info][tid]" target="_blank">$value[info][subject]</a><br>
+						<!--{elseif $key=='mtag'}-->
+						<a href="space.php?do=mtag&tagid=$value[info][tagid]" target="_blank">$value[info][tagname]</a><br>
+						<!--{elseif $key=='share'}-->
+						<p><a href="admincp.php?ac=share&uid=$value[info][uid]">$value[info][username]</a> <a href="space.php?uid=$value[info][uid]&do=share&id=$value[info][sid]">$value[info][title_template]</a> &nbsp;<!--{date('Y-m-d H:i', $value[info][dateline])}--></p>
+							$value[info][body_template]<br>
+						<!--{elseif $key=='space'}-->
+						<a href="space.php?uid=$value[info][uid]" target="_blank"><!--{avatar($value[info][uid],middle)}--></a><br>
+						{lang user_name}: <a href="space.php?uid=$value[info][uid]">$value[info][username]</a><br>
+						<!--{elseif $key=='poll'}-->
+						<a href="space.php?uid=$value[info][uid]&do=poll&pid=$value[info][pid]" target="_blank">$value[info][subject]</a><br>
+						<!--{elseif $key=='event'}-->
+						<a href="space.php?uid=$value[info][uid]&do=event&id=$value[info][eventid]" target="_blank">$value[info][title]</a><br>
+						<!--{elseif $key=='comment'}-->
+						<a href="$value[info][url]" target="_blank">$value[info][message] ({lang see_details})</a><br>
+						<!--{elseif $key=='post'}-->
+						<a href="space.php?do=thread&id=$value[info][tid]&pid=$value[info][pid]" target="_blank">$value[info][message] ({lang see_details})</a><br>
+						<!--{/if}-->
+						<!--{/if}-->
+						<strong>{lang report_reason}:</strong><br>
+						<ul>$value[reason]</ul>
+					</td>
+					<td>$value[num]</td>
+					<td>
+						{lang type}:
+						<!--{if $key=='blog'}-->
+						{lang blogs}
+						<!--{elseif $key=='pic'}-->
+						{lang images}
+						<!--{elseif $key=='album'}-->
+						{lang albums}
+						<!--{elseif $key=='thread'}-->
+						{lang thread}
+						<!--{elseif $key=='mtag'}-->
+						{lang groups}
+						<!--{elseif $key=='share'}-->
+						{lang shares}
+						<!--{elseif $key=='space'}-->
+						{lang space}
+						<!--{elseif $key=='poll'}-->
+						{lang polls}
+						<!--{elseif $key=='event'}-->
+						{lang events}
+						<!--{elseif $key=='comment'}-->
+						{lang comments}
+						<!--{elseif $key=='post'}-->
+						{lang thread_comment}
+						<!--{/if}-->
+						<br>
+						{lang access_state}: <!--{if $value[new]}-->{lang unread}<!--{else}-->{lang read}<!--{/if}--><br>
+						<!--{date('Y-m-d',$value[dateline])}-->
+					</td>
+					<td>
+						<a href="admincp.php?ac=report&rid=$value[rid]&op=ignore">{lang report_ignore}</a><br>
+						<a href="admincp.php?ac=report&rid=$value[rid]&op=delete" onclick="return confirm('{lang action_confirm}');">{lang report_delete}</a><br>
+						<a href="admincp.php?ac=report&rid=$value[rid]&op=delete&subop=delinfo" onclick="return confirm('{lang action_confirm}');">{lang report_delete_with}
+							<!--{if $key=='blog'}-->
+							{lang blog_post_info}
+							<!--{elseif $key=='pic'}-->
+							{lang image_info}
+							<!--{elseif $key=='album'}-->
+							{lang album_info}
+							<!--{elseif $key=='thread'}-->
+							{lang topic_info}
+							<!--{elseif $key=='mtag'}-->
+							{lang groups}
+							<!--{elseif $key=='share'}-->
+							{lang share_info}
+							<!--{elseif $key=='space'}-->
+							{lang space}
+							<!--{elseif $key=='poll'}-->
+							{lang poll_info}
+							<!--{elseif $key=='event'}-->
+							{lang event_info}
+							<!--{elseif $key=='comment'}-->
+							{lang comment_info}
+							<!--{elseif $key=='post'}-->
+							{lang reply_info}
+							<!--{/if}-->
+						</a>
+					</td>
+				</tr>
+				<!--{/loop}-->
+			<!--{/loop}-->
+			</table>
+		<!--{/if}-->
+		</div>
+		
+		<div class="footactions">
+			<!--{if $perpage<=100}--><input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all}<!--{/if}-->
+			<input type="hidden" name="mpurl" value="$mpurl">
+			{lang action_type}: 
+			<input type="radio" name="optype" value="1" checked>{lang report_ignore}
+			<input type="radio" name="optype" value="2">{lang report_delete}
+			<input type="radio" name="optype" value="3">{lang delete_report_and_related_object}
+			<input type="submit" name="listsubmit" value="{lang batch_submit}" class="submit" onclick="return confirm('{lang action_confirm}');">
+		
+			<div class="pages">$multi</div>
+		</div>
+		</form>
+	<!--{else}-->
+		<div class="bdrcontent">
+			<div class="title" id="base">
+				<h3>
+					<a href="admincp.php?ac=$ac&perpage=20&status=1&searchsubmit=1">{lang reports_pending}</a> | 
+					<a href="admincp.php?ac=$ac&perpage=20&status=0&searchsubmit=1">{lang reports_ignored}</a>
+				</h3>
+			</div>
+			<p>{lang no_data_by_conditions}</p>
+		</div>
+	<!--{/if}-->
+	</div>
+</div>
+
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->

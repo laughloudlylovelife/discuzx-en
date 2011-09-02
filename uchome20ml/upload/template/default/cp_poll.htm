@@ -1,0 +1,512 @@
+<!--{template header}-->
+
+<!--{if $op == 'addopt'}-->
+
+<h1>{lang poll_add_option}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="$pid">
+	<form id="add_option_{$pid}" name="add_option_{$pid}" method="post" action="cp.php?ac=poll&op=addopt&pid=$pid">
+		<div id="__add_option_{$pid}">
+			<table>
+				<tr>
+					<td>
+			
+						<label for="newoption">{lang poll_enter_option} </label><br />
+						<input type="text" class="t_input" id="newoption" name="newoption" value="" size="50"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+					<input type="hidden" name="addopt" value="true" />
+					<input type="submit" name="addopt_btn" id="addopt_btn" value="{lang submit_button}" class="submit" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		</div>
+	</form>
+</div>
+
+<!--{elseif $op=='delete'}-->
+
+<h1>{lang poll_delete}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+	<form method="post" action="cp.php?ac=poll&op=delete&pid=$pid">
+		<p>{lang poll_delete_sure}</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="hidden" name="deletesubmit" value="true" />
+			<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+		</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<!--{elseif $op=='endreward'}-->
+
+<h1>{lang remove_reward}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+	<form method="post" action="cp.php?ac=poll&op=endreward&pid=$pid">
+		<p>{lang remove_reward_intro}
+		<br>{lang ok_to_continue}</p>
+		<p class="btn_line">
+			<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+			<input type="hidden" name="endrewardsubmit" value="true" />
+			<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+		</p>
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+	</form>
+</div>
+
+<!--{elseif $op == 'edithot'}-->
+
+<h1>{lang hot_adjust}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner">
+<form method="post" action="cp.php?ac=poll&op=edithot&pid=$pid">
+	<p class="btn_line">
+		{lang hot_new}: <input type="text" name="hot" value="$poll[hot]" size="5"> 
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="hotsubmit" value="true" />
+		<input type="submit" name="btnsubmit" value="{lang form_sure_yes}" class="submit" />
+	</p>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op == 'addreward'}-->
+
+<h1>{lang poll_reward_add}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="$pid">
+	<form id="add_addreward_{$pid}" name="add_addreward_{$pid}" method="post" action="cp.php?ac=poll&op=addreward&pid=$pid">
+		<div id="__add_addreward_{$pid}">
+			<table>
+				<tr>
+					<td>
+			
+						<label for="addcredit">{lang reward_total_add}: </label>
+						<input type="text" class="t_input" id="addcredit" name="addcredit" value="" size="10"/> {lang range}: 0~$space[credit]
+					</td>
+				</tr>
+				<!--{if $maxreward}-->
+				<tr>
+					<td>
+						<label for="addpercredit">{lang reward_per_person_add}: </label>
+						<input type="text" class="t_input" id="addpercredit" name="addpercredit" value="" size="10"/> {lang range}: 0~$maxreward
+					</td>
+				</tr>
+				<!--{/if}-->
+				<tr>
+					<td>
+					<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+					<input type="hidden" name="addrewardsubmit" value="true" />
+					<input type="submit" name="addopt_btn" id="addopt_btn" value="{lang submit_button}" class="submit" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+		</div>
+	</form>
+</div>
+
+<!--{elseif $op=='modify'}-->
+
+
+<h1>{lang poll_expire_modify}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="expiration_$pid">
+<form id="modify_expiration_{$pid}" name="modify_expiration_{$pid}" method="post" action="cp.php?ac=poll&op=modify&pid=$pid">
+<table>
+	<tr>
+		<td>
+			<label for="expiration">{lang poll_expire_time}: </label><br />
+			<input type="text" class="t_input" id="expiration" name="expiration" readonly value="<!--{date('Y-m-d', $poll[expiration]?$poll[expiration]:$_SGLOBAL[timestamp]+2592000)}-->" size="30" onclick="showcalendar(event, this, 0, '<!--{date('Y-m-d',$_SGLOBAL[timestamp])}-->')"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="modifysubmit" value="true" />
+		<input type="submit" name="modifysubmit_btn" id="modifysubmit_btn" value="{lang submit_button}" class="submit" />
+		</td>
+	</tr>
+</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op=='summary'}-->
+
+
+<h1>{lang poll_summary}</h1>
+<a href="javascript:hideMenu();" class="float_del" title="{lang close}">{lang close}</a>
+<div class="popupmenu_inner" id="summary_$pid">
+<form id="edit_summary_{$pid}" name="edit_summary_{$pid}" method="post" action="cp.php?ac=poll&op=summary&pid=$pid">
+<table>
+	<tr>
+		<td>
+
+			<label for="message">{lang poll_summary_enter} </label>
+			<a href="###" id="editface_{$pid}" onclick="showFace(this.id, 'summary');return false;"><img src="image/facelist.gif" align="absmiddle" /></a>
+			<img src="image/zoomin.gif" onmouseover="this.style.cursor='pointer'" onclick="zoomTextarea('summary', 1)">
+
+			<img src="image/zoomout.gif" onmouseover="this.style.cursor='pointer'" onclick="zoomTextarea('summary', 0)">
+
+			<br />
+			<textarea id="summary" name="summary" cols="70" onkeydown="ctrlEnter(event, 'summarysubmit_btn');" rows="8">$poll[summary]</textarea></td>
+	</tr>
+	<tr>
+		<td>
+		<input type="hidden" name="refer" value="$_SGLOBAL[refer]" />
+		<input type="hidden" name="summarysubmit" value="true" />
+		<input type="submit" name="summarysubmit_btn" id="summarysubmit_btn" value="{lang submit_button}" class="submit" />
+		</td>
+	</tr>
+</table>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+</div>
+
+<!--{elseif $op == 'get'}-->
+	<ul id="vote_list" class="voter_list">
+	<!--{if $voteresult}-->
+	<!--{loop $voteresult $value}-->
+		<li>
+			<!--{if $value[uid]==$_SGLOBAL[supe_uid]}-->
+			<img class="meicon" alt="{lang i_own}" src="image/arrow.gif"/>
+			<!--{/if}-->
+			<!--{if empty($value[username])}-->
+			{lang hidden_username}
+			<!--{else}-->
+			<a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a>
+			<!--{/if}-->
+			<!--{date('Y-m-d H:i:s',$value[dateline],1)}--> {lang voted_for} $value[option]
+		</li>
+	<!--{/loop}-->
+	<!--{else}-->
+		<li>{lang no_related} <!--{if $_GET[filtrate]=='we'}-->{lang friends}<!--{/if}--> {lang vote_records}</li>
+	<!--{/if}-->
+	</ul>
+	<!--{if $multi}--><div class="page">$multi</div><br/><!--{/if}-->
+	
+<!--{elseif $op == 'invite'}-->
+
+<form id="inviteform" name="inviteform" method="post" action="cp.php?ac=poll&op=invite&pid=$poll[pid]&uid=$_GET[uid]&grade=$_GET[grade]&group=$_GET[group]&page=$_GET[page]&start=$_GET[start]">
+
+<h2 class="title"><img src="image/app/poll.gif" />{lang polls}</h2>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="cp.php?ac=poll"><span>{lang poll_start_new}</span></a></li>
+		<li class="active"><a href="cp.php?ac=poll&op=invite&pid=$poll[pid]"><span>{lang event_invite_friends}</span></a></li>
+		<li><a href="space.php?uid=$poll[uid]&do=poll&pid=$poll[pid]"><span>{lang back_to_poll}</span></a></li>
+	</ul>
+</div>
+<div id="content" style="width: 640px;">
+	<div class="h_status">
+		{lang poll_can_invite_friends} <a href="space.php?uid=$poll[uid]&do=poll&pid=$poll[pid]">&laquo;$poll[subject]&raquo;</a> {lang polls}
+	</div>
+	
+	<div class="h_status">
+		<!--{if $list}-->
+		<ul class="avatar_list">
+		<!--{loop $list $value}-->
+			<li><div class="avatar48"><a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}"><!--{avatar($value[fuid],small)}--></a></div>
+				<p>
+				<a href="space.php?uid=$value[fuid]" title="{$_SN[$value[fuid]]}">{$_SN[$value[fuid]]}</a>
+				</p>
+				<p><!--{if empty($invitearr[$value[fuid]])}--><input type="checkbox" name="ids[]" value="$value[fuid]">{lang select}<!--{else}-->{lang invited}<!--{/if}--></p>
+			</li>
+		<!--{/loop}-->
+		</ul>
+		<div class="page">$multi</div>
+		<!--{else}-->
+		<div class="c_form">{lang friends_no}</div>
+		<!--{/if}-->
+	</div>
+	<p>
+		<input type="checkbox" id="chkall" name="chkall" onclick="checkAll(this.form, 'ids')">{lang check_all} &nbsp;
+		<input type="submit" name="invitesubmit" value="{lang invite}" class="submit" />
+	</p>
+</div>
+
+<div id="sidebar" style="width: 150px;">
+	<div class="cat">
+		<h3>{lang friends_category}</h3>
+		<ul class="post_list line_list">
+			<li<!--{if $_GET[group]==-1}--> class="current"<!--{/if}-->><a href="cp.php?ac=poll&pid=$poll[pid]&op=invite&group=-1">{lang friends_all}</a></li>
+			<!--{loop $groups $key $value}-->
+			<li<!--{if $_GET[group]==$key}--> class="current"<!--{/if}-->><a href="cp.php?ac=poll&pid=$poll[pid]&op=invite&group=$key">$value</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+</div>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+<!--{else}-->
+
+
+<!--{if $topic}-->
+	<!--{template cp_topic_menu}-->
+<!--{else}-->
+	<h2 class="title"><img src="image/app/poll.gif" />{lang polls}</h2>
+	<div class="tabs_header">
+		<ul class="tabs">
+			<li class="active"><a href="cp.php?ac=poll"><span>{lang poll_start_new}</span></a></li>
+			<li><a href="space.php?do=poll&view=me"><span>{lang back_to_my_polls}</span></a></li>
+		</ul>
+	</div>
+<!--{/if}-->
+
+<div class="c_form">
+	
+	<form id="addnewpoll" name="addnewpoll" method="post" action="cp.php?ac=poll">
+		<table cellspacing="4" cellpadding="4" width="100%" class="infotable">
+			<tr>
+				<th width="80">{lang poll_title}</th>
+				<td>
+					<input type="text" class="t_input" style="width:450px;" id="subject" name="subject" value=""> <br/>
+					<a id="addtip" href="javascript:;" onclick="initIntro();" onfocus="this.blur();">{lang poll_details_here}</a>
+				</td>
+			</tr>
+			<tr id="intropoll" style="display:none">
+				<th>{lang poll_details}</th>
+				<td><textarea id="message" style="padding: 3px 2px;width:450px;height:50px;" name="message"></textarea> </td>
+			</tr>
+			<tr>
+				<td colspan="2" height="1px"><div style="width: 550px; height:1px; border-bottom:1px solid #DDDDDD;"></div></td>
+			</tr>
+			<!--{eval $option=array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20); }-->
+			<!--{loop $option $key $val}-->
+			<!--{if $val==11}-->
+			<tbody id="moreoption" style="display: none;">
+			<!--{/if}-->
+			<tr>
+				<th>{lang option_modify} {$val}</th>
+				<td>
+					<input type="text" class="t_input"  style="width:450px;" name="option[]" value="" maxlength="120">
+					<!--{if $val==10}-->
+					<div><a id="moretip" href="javascript:;" onclick="showMoreOption();" onfocus="this.blur();">{lang add_more_options}</a></div>
+					<!--{/if}-->
+				</td>
+			</tr>
+			<!--{/loop}-->
+			</tbody>
+			<tr>
+				<th>{lang option_type_available}</th>
+				<td>
+					<select name="maxchoice">
+						<!--{loop $option $key $val}-->
+							<option value="$val">
+								<!--{if $val==1}-->
+								{lang poll_single}
+								<!--{else}-->
+								{lang option_multi} {$val} {lang items}
+								<!--{/if}-->
+							</option>
+						<!--{/loop}-->
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>{lang poll_deadline}</th>
+				<td>
+					<script type="text/javascript" src="source/script_calendar.js" charset="$_SC[charset]"></script>
+					<input type="text" class="t_input" size="16" id="expiration" readonly name="expiration" value="" onclick="showcalendar(event, this, 0, '<!--{date('Y-m-d',$_SGLOBAL[timestamp])}-->')" />
+				</td>
+			</tr>
+			<tr>
+				<th>{lang poll_restrictions}</th>
+				<td>
+					<input type="radio" name="sex" value="0" checked />{lang without_limits} 
+					<input type="radio" name="sex" value="1" />{lang man}
+					<input type="radio" name="sex" value="2" />{lang woman} 
+				</td>
+			</tr>
+			<tr>
+				<th>{lang poll_comments_restrictions}</th>
+				<td>
+					<input type="radio" name="noreply" value="0" checked />{lang without_limits} 
+					<input type="radio" name="noreply" value="1" />{lang friends_only_enable}
+				</td>
+			</tr>
+			<tr>
+				<th>{lang poll_reward}</th>
+				<td>
+					<input type="radio" name="reward" value="0" checked onclick="initReward(this.value);" />{lang no}
+					<input type="radio" name="reward" value="1" onclick="initReward(this.value);" />{lang yes}
+				</td>
+			</tr>
+			<tbody id="rewardlist" style="display: none;">
+				<tr>
+					<th>{lang total_reward}</th>
+					<td>
+						<input type="text" class="t_input" size="16" id="credit" name="credit" value="" maxlength="60"> {lang range}: 1~$space[credit]
+					</td>
+				</tr>
+				<tr>
+					<th>{lang reward_per_person}</th>
+					<td>
+						<input type="text" class="t_input" size="16" id="percredit" name="percredit" value="" maxlength="60"> {lang range}: 1~$_SCONFIG[maxreward]
+					</td>
+				</tr>
+			</tbody>
+			<!--{if checkperm('seccode')}-->
+				<!--{if $_SCONFIG['questionmode']}-->
+				<tr>
+					<th style="vertical-align: top;" width="90">{lang answer_please}</th>
+					<td>
+						<p><!--{eval question();}--></p>
+						<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+					</td>
+				</tr>
+				<!--{else}-->
+				<tr>
+					<th style="vertical-align: top;" width="90">{lang answer_fill}</th>
+					<td>
+						<script>seccode();</script>
+						<p>{lang verification_enter_code} <a href="javascript:updateseccode()">{lang verification_reload}</a></p>
+						<input type="text" id="seccode" name="seccode" value="" size="15" class="t_input" />
+					</td>
+				</tr>
+				<!--{/if}-->
+			<!--{/if}-->
+			
+			<tr>
+				<th>{lang feed_options}</th>
+				<td>
+					<input type="checkbox" name="makefeed" id="makefeed" value="1"<!--{if ckprivacy('poll', 1)}--> checked<!--{/if}-->> {lang feed_generate} (<a href="cp.php?ac=privacy#feed">{lang feed_default}</a>)
+				</td>
+			</tr>
+			
+			<tr>
+				<th></th>
+				<td>
+					<input type="hidden" name="pollsubmit" id="pollsubmit" value="true" />
+					<input type="hidden" name="topicid" value="$_GET[topicid]" />
+					<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+					<input type="submit" name="addpollsubmit" id="addpollsubmit" value="{lang topic_poll}" class="submit" onclick="validate(this);return false;" />
+					<div id="__addnewpoll"></div>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript" charset="$_SC[charset]">
+		function initIntro() {
+			var introObj = $('intropoll');
+			var tipObj = $('addtip');
+			if(introObj.style.display == 'none') {
+				introObj.style.display = '';
+				
+				tipObj.innerHTML = "{lang poll_details_hide}";
+			} else {
+				if (($('message').value.length == 0) || (confirm("{lang poll_details_hide_sure}"))) {
+					introObj.style.display = 'none';
+					$('message').value = '';
+					tipObj.innerHTML = "{lang poll_details_here}";
+				}
+			}
+		}
+		function initReward(status) {
+			var rewardObj = $('rewardlist');
+			if(status == 1) {
+				rewardObj.style.display = '';
+			} else {
+				rewardObj.style.display = 'none';
+				$("credit").value = '';
+				$("percredit").value = '';
+			}
+		}
+		function showMoreOption() {
+			$("moreoption").style.display = '';
+			$("moretip").style.display = 'none';
+		}
+		function validate(obj) {
+		    var subject = $('subject');
+		    if (subject) {
+		    	var slen = strlen(subject.value);
+		        if (slen < 1 || slen > 80) {
+		            alert("{lang title_length_invalid}");
+		            subject.focus();
+		            return false;
+		        }
+		    }
+		    
+		    var makefeed = $('makefeed');
+		    if(makefeed) {
+		    	if(makefeed.checked == false) {
+		    		if(!confirm("{lang poll_feed_enable_note}")) {
+		    			return false;
+		    		}
+		    	}
+		    }
+		    
+			var optionCount = 0;
+			var optionObj = document.getElementsByName("option[]");
+			for(var i=0;i<optionObj.length;i++) {
+				if(optionObj[i].value.Trim()!="") {
+					optionCount++;
+				}
+			}
+			if(optionCount<2) {
+				alert('{lang poll_min_2_options}');
+				return false;
+			}
+			var maxCredit = $space[credit];
+			var maxPercredit = $_SCONFIG[maxreward];
+			//Verify poll reward settings
+			var credit = parseInt($('credit').value.Trim());
+			var percredit = parseInt($('percredit').value.Trim());
+			if(credit || percredit) {
+				if(!credit) {
+					alert("{lang total_reward_fill}");
+					return false;
+				} else if(!percredit) {
+					alert("{lang reward_per_person_fill}");
+					return false;
+				} else if(credit > maxCredit) {
+					alert("{lang reward_range_must_be}: 1~"+maxCredit+" {lang range_value}");
+					return false;
+				} else if(maxPercredit && percredit > maxPercredit) {
+					alert("{lang reward_per_person_must_be}: 1~"+maxPercredit+" {lang range_value}");
+					return false;
+				} else if(credit < percredit) {
+					alert("{lang reward_per_person_large}");
+					return false;
+				}
+			}
+			var nowDate = parsedate("<!--{date('Y-m-d',$_SGLOBAL[timestamp])}-->");
+			
+			
+			if($('expiration').value.Trim() != "") {
+				var expiration = parsedate($('expiration').value.Trim());
+				if(expiration < nowDate) {
+					alert("{lang poll_expire_low}");
+					return false;
+				}
+			}
+		    if($('seccode')) {
+				var code = $('seccode').value;
+				var x = new Ajax();
+				x.get('cp.php?ac=common&op=seccode&code=' + code, function(s){
+					s = trim(s);
+					if(s.indexOf('succeed') == -1) {
+						alert(s);
+						$('seccode').focus();
+		           		return false;
+					}
+				});
+		    }
+		    ajaxpost('addnewpoll', 'poll_post_result');
+		}
+		String.prototype.Trim = function() { 
+			return this.replace(/(^\s*)|(\s*$)/g, ""); 
+		}
+	</script>
+</div>
+<!--{/if}-->
+
+<!--{template footer}-->

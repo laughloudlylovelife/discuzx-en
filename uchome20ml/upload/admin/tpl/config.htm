@@ -1,0 +1,927 @@
+<!--{template admin/tpl/header}-->
+
+<div class="mainarea">
+<div class="maininner">
+
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="#base"><span>{lang base_settings}</span></a></li>
+		<li><a href="#register"><span>{lang register_show}</span></a></li>
+		<li><a href="#uch"><span>{lang system_functions}</span></a></li>
+		<li><a href="#name"><span>{lang real_name_settings}</span></a></li>
+		<li><a href="#video"><span>{lang video_verification_settings}</span></a></li>
+		<li><a href="#upload"><span>{lang upload_image_settings}</span></a></li>
+		<li><a href="#remote"><span>{lang remote_upload_settings}</span></a></li>
+		<li><a href="#email"><span>{lang mail_settings}</span></a></li>
+	</ul>
+</div>
+	
+	<form method="post" action="admincp.php?ac=config">
+	<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+
+	<div class="bdrcontent">
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang site_name}</th>
+		<td><input type="text" name="config[sitename]" value="$configs[sitename]" size="50"></td>
+	</tr>
+	<tr>
+		<th>{lang site_url}</th>
+		<td>
+		<input type="text" name="config[siteallurl]" value="$configs[siteallurl]" size="50">
+		<br>{lang site_url_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang site_template}</th>
+		<td>
+			<select name="config[template]">
+			<!--{loop $templatearr $value}-->
+			<option value="$value"{$templateselect[$value]}>$value</option>
+			<!--{/loop}-->
+			</select>
+			<br>{lang site_template_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang site_contact_email}</th>
+		<td><input type="text" name="config[adminemail]" value="$configs[adminemail]" size="50"></td>
+	</tr>
+	<tr>
+		<th>{lang server_timezone_settings}</th>
+		<td>
+			<select name="config[timeoffset]">
+			<option value="-12" $toselect[-12]>(GMT -12:00) Eniwetok, Kwajalein</option>
+			<option value="-11" $toselect[-11]>(GMT -11:00) Midway Island, Samoa</option>
+			<option value="-10" $toselect[-10]>(GMT -10:00) Hawaii</option>
+			<option value="-9" $toselect[-9]>(GMT -09:00) Alaska</option>
+			<option value="-8" $toselect[-8]>(GMT -08:00) Pacific Time (US &amp; Canada), Tijuana</option>
+			<option value="-7" $toselect[-7]>(GMT -07:00) Mountain Time (US &amp; Canada), Arizona</option>
+			<option value="-6" $toselect[-6]>(GMT -06:00) Central Time (US &amp; Canada), Mexico City</option>
+			<option value="-5" $toselect[-5]>(GMT -05:00) Eastern Time (US &amp; Canada), Bogota, Lima, Quito</option>
+			<option value="-4" $toselect[-4]>(GMT -04:00) Atlantic Time (Canada), Caracas, La Paz</option>
+			<option value="-3.5" $toselect[-3.5]>(GMT -03:30) Newfoundland</option>
+			<option value="-3" $toselect[-3]>(GMT -03:00) Brassila, Buenos Aires, Georgetown, Falkland Is</option>
+			<option value="-2" $toselect[-2]>(GMT -02:00) Mid-Atlantic, Ascension Is., St. Helena</option>
+			<option value="-1" $toselect[-1]>(GMT -01:00) Azores, Cape Verde Islands</option>
+			<option value="0"  $toselect[0]>(GMT) Casablanca, Dublin, Edinburgh, London, Lisbon, Monrovia</option>
+			<option value="1" $toselect[1]>(GMT +01:00) Amsterdam, Berlin, Brussels, Madrid, Paris, Rome</option>
+			<option value="2" $toselect[2]>(GMT +02:00) Cairo, Helsinki, Kaliningrad, South Africa</option>
+			<option value="3" $toselect[3]>(GMT +03:00) Baghdad, Riyadh, Moscow, Nairobi</option>
+			<option value="3.5" $toselect[3.5]>(GMT +03:30) Tehran</option>
+			<option value="4" $toselect[4]>(GMT +04:00) Abu Dhabi, Baku, Muscat, Tbilisi</option>
+			<option value="4.5" $toselect[4.5]>(GMT +04:30) Kabul</option>
+			<option value="5" $toselect[5]>(GMT +05:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+			<option value="5.5" $toselect[5.5]>(GMT +05:30) Bombay, Calcutta, Madras, New Delhi</option>
+			<option value="5.75" $toselect[5.75]>(GMT +05:45) Katmandu</option>
+			<option value="6" $toselect[6]>(GMT +06:00) Almaty, Colombo, Dhaka, Novosibirsk</option>
+			<option value="6.5" $toselect[6.5]>(GMT +06:30) Rangoon</option>
+			<option value="7" $toselect[7]>(GMT +07:00) Bangkok, Hanoi, Jakarta</option>
+			<option value="8" $toselect[8]>(GMT +08:00) Beijing, Hong Kong, Perth, Singapore, Taipei</option>
+			<option value="9" $toselect[9]>(GMT +09:00) Osaka, Sapporo, Seoul, Tokyo, Yakutsk</option>
+			<option value="9.5" $toselect[9.5]>(GMT +09:30) Adelaide, Darwin</option>
+			<option value="10" $toselect[10]>(GMT +10:00) Canberra, Guam, Melbourne, Sydney, Vladivostok</option>
+			<option value="11" $toselect[11]>(GMT +11:00) Magadan, New Caledonia, Solomon Islands</option>
+			<option value="12" $toselect[12]>(GMT +12:00) Auckland, Wellington, Fiji, Marshall Island</option>
+			</select>
+			<br>{lang server_timezone_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang show_licensed}</th>
+		<td>
+			<input type="radio" name="config[licensed]" value="1"<!--{if $configs[licensed] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[licensed]" value="0"<!--{if $configs[licensed] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang show_debug_info}</th>
+		<td>
+			<input type="radio" name="config[debuginfo]" value="1"<!--{if $configs[debuginfo] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[debuginfo]" value="0"<!--{if $configs[debuginfo] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang show_company_reg_info}</th>
+		<td><input type="text" name="config[miibeian]" value="$configs[miibeian]" size="20"> ({lang show_company_reg_intro})</td>
+	</tr>
+	<tr>
+		<th>{lang force_http_charset}</th>
+		<td><input type="radio" name="config[headercharset]" value="1"<!--{if $configs[headercharset] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[headercharset]" value="0"<!--{if $configs[headercharset] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang force_http_charset_intro}</td>
+	</tr>
+	<tr>
+		<th>URL Rewrite</th>
+		<td>
+			<input type="radio" name="config[allowrewrite]" value="1"<!--{if $configs[allowrewrite] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[allowrewrite]" value="0"<!--{if $configs[allowrewrite] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang url_rewrite_intro1}
+			<br>{lang url_rewrite_intro2}
+		</td>
+	</tr>
+	<tr>
+		<th style="width:15em;">{lang online_time_record}</th>
+		<td><input type="text" name="config[onlinehold]" value="$configs[onlinehold]" size="5"> ({lang in seconds})</td>
+	</tr>
+
+	<tr>
+		<th>{lang site_stats_enable}</th>
+		<td>
+			<input type="radio" name="config[updatestat]" value="1"<!--{if $configs[updatestat] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[updatestat]" value="0"<!--{if $configs[updatestat] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang site_stats_enable_intro}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang avatar_store}</th>
+		<td>
+			<input type="radio" name="config[avatarreal]" value="0"<!--{if $configs[avatarreal] != '1'}--> checked<!--{/if}-->>{lang avatar_store_type1}
+			<input type="radio" name="config[avatarreal]" value="1"<!--{if $configs[avatarreal] == '1'}--> checked<!--{/if}-->>{lang avatar_store_type2}
+			<br>{lang avatar_store_intro1}
+			<br>{lang avatar_store_intro2}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang ucenter_path}</th>
+		<td><input type="text" name="config[uc_dir]" value="$configs[uc_dir]" size="40">
+			<br>{lang ucenter_path_intro1}
+			<br>{lang ucenter_path_intro2}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang myop_ip}</th>
+		<td><input type="text" name="config[my_ip]" value="$configs[my_ip]" size="40">
+			<br>{lang myop_ip_intro}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang close_site_access}</th>
+		<td>
+			<input type="radio" name="config[close]" value="1"<!--{if $configs[close] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[close]" value="0"<!--{if $configs[close] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang close_site_reason}</th>
+		<td>
+			<textarea name="config[closereason]" cols="80" rows="4">$configs[closereason]</textarea>
+		</td>
+	</tr>
+	<tr>
+		<th>{lang close_reason_additional}</th>
+		<td>
+			<textarea name="dataset[reason]" cols="80" rows="4">$datasets[reason]</textarea>
+			<br>{lang close_reason_additional_intro}
+		</td>
+	</tr>
+
+	</table>
+
+	<br />
+	<div class="title" id="register">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang register_enable}</h3>
+	</div>
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang register_close}</th>
+		<td>
+			<input type="radio" name="config[closeregister]" value="1"<!--{if $configs[closeregister] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[closeregister]" value="0"<!--{if $configs[closeregister] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang invite_close}</th>
+		<td>
+			<input type="radio" name="config[closeinvite]" value="1"<!--{if $configs[closeinvite] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[closeinvite]" value="0"<!--{if $configs[closeinvite] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang register_check_email}</th>
+		<td>
+			<input type="radio" name="config[checkemail]" value="1"<!--{if $configs[checkemail] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[checkemail]" value="0"<!--{if $configs[checkemail] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang ip_reg_interval}</th>
+		<td>
+			<input type="text" name="config[regipdate]" value="$configs[regipdate]" size="5"> ({lang in_hours})
+			<br>{lang ip_reg_interval_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang term_of_services}</th>
+		<td>
+			<textarea name="dataset[registerrule]" cols="80" rows="4">$datasets[registerrule]</textarea>
+			<br>{lang term_of_services_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang max_page_num}</th>
+		<td><input type="text" name="config[maxpage]" value="$configs[maxpage]" size="5"> ({lang max_page_num_default})
+		<br>{lang max_page_num_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang feed_store_days}</th>
+		<td><input type="text" name="config[feedday]" value="$configs[feedday]" size="5"> {lang feed_store_default}
+		<br>{lang feed_store_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang feed_max_number}</th>
+		<td><input type="text" name="config[feedmaxnum]" value="$configs[feedmaxnum]" size="5"> ({lang feed_max_number_default})
+		<br>{lang feed_max_number_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang home_tab_settings}</th>
+		<td>
+			{lang friend_num_limit} <input type="text" name="config[showallfriendnum]" value="$configs[showallfriendnum]" size="5">
+			{lang friend_num_limit_intro1}
+			<br>{lang friend_num_limit_intro2}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang home_feeds_folding}</th>
+		<td>
+			<input type="text" name="config[feedhiddenicon]" value="$configs[feedhiddenicon]" size="60"><br>
+			{lang home_feeds_folding_intro1}<br>
+			{lang home_feeds_folding_intro2}<br>
+			{lang home_feeds_folding_intro3}:<br>
+			{lang home_feeds_folding_intro4}<br>
+			{lang home_feeds_folding_intro5}:<br>
+			http://xxx.com/space.php?uid=&do=feed&view=we&appid=3&<b>icon=blog</b>,<br>
+			{lang home_feeds_folding_intro6}<br>
+			{lang home_feeds_folding_myop}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang hot_spot_limit}</th>
+		<td><input type="text" name="config[feedhotnum]" value="$configs[feedhotnum]" size="5"> ({lang hot_spot_limit_default})
+		<br>{lang hot_spot_intro1}
+		<br>{lang hot_spot_intro2}
+		</td>
+	</tr>
+	
+	<tr>
+		<th>{lang home_new_users}</th>
+		<td>
+			{lang show} <input type="text" name="config[newspacenum]" value="$configs[newspacenum]" size="5"> {lang home_new_users_number}<br>
+			{lang home_new_user_conditions}:<br>
+			<input type="checkbox" name="config[newspaceavatar]" value="1"<!--{if $configs[newspaceavatar]}--> checked<!--{/if}-->> {lang avatar_uploaded}<br>
+			<!--{if $_SCONFIG['realname']}-->
+			<input type="checkbox" name="config[newspacerealname]" value="1"<!--{if $configs[newspacerealname]}--> checked<!--{/if}-->> {lang real_name_authenticated}<br>
+			<!--{/if}-->
+			<!--{if $_SCONFIG['videophoto']}-->
+			<input type="checkbox" name="config[newspacevideophoto]" value="1"<!--{if $configs[newspacevideophoto]}--> checked<!--{/if}-->> {lang video_authenticated}
+			<!--{/if}-->
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang hot_feed_days_range}</th>
+		<td><input type="text" name="config[feedhotday]" value="$configs[feedhotday]" size="5"> ({lang hot_feed_days_default})
+		<br>{lang hot_feed_days_intro}</td>
+	</tr>
+	<tr>
+		<th>{lang feed_hot_min}</th>
+		<td><input type="text" name="config[feedhotmin]" value="$configs[feedhotmin]" size="5">
+		<br>{lang feed_hot_min_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang open_feeds_mode}</th>
+		<td>
+			<input type="radio" name="config[feedtargetblank]" value="1"<!--{if $configs[feedtargetblank] == '1'}--> checked<!--{/if}-->>{lang open_new_window}
+			<input type="radio" name="config[feedtargetblank]" value="0"<!--{if $configs[feedtargetblank] != '1'}--> checked<!--{/if}-->>{lang open_same_window}
+			<br>{lang open_feeds_mode_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang feed_read_state}</th>
+		<td>
+			<input type="radio" name="config[feedread]" value="1"<!--{if $configs[feedread] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[feedread]" value="0"<!--{if $configs[feedread] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang feed_read_state_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang myop_close_check_update}</th>
+		<td>
+		<input type="radio" name="config[my_closecheckupdate]" value="1"<!--{if $configs[my_closecheckupdate] == '1'}--> checked<!--{/if}-->>{lang yes}
+		<input type="radio" name="config[my_closecheckupdate]" value="0"<!--{if $configs[my_closecheckupdate] != '1'}--> checked<!--{/if}-->>{lang no}
+		<br>{lang myop_close_check_update_intro}
+		</td>
+	</tr>
+	
+	<tr>
+		<th>{lang home_show_gift}</th>
+		<td>
+		<input type="radio" name="config[my_showgift]" value="1"<!--{if $configs[my_showgift] == '1'}--> checked<!--{/if}-->>{lang yes}
+		<input type="radio" name="config[my_showgift]" value="0"<!--{if $configs[my_showgift] != '1'}--> checked<!--{/if}-->>{lang no}
+		<br>{lang home_show_gift_intro}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang rank_list_allow}</th>
+		<td>
+			<input type="radio" name="config[networkpage]" value="1"<!--{if $configs[networkpage]==1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[networkpage]" value="0"<!--{if $configs[networkpage] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang rank_list_intro}
+		</td>
+	</tr>
+
+	
+	<tr>
+		<th>{lang top_member_list_cache_time}</th>
+		<td>
+			<input type="text" name="config[topcachetime]" value="$configs[topcachetime]" size="5"> ({lang in_minutes})
+			<br>{lang top_member_list_cache_time_intro1}
+			<br>{lang top_member_list_cache_time_intro2}
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang show_ext_links}</th>
+		<td>
+			<input type="radio" name="config[linkguide]" value="1"<!--{if $configs[linkguide]==1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[linkguide]" value="0"<!--{if $configs[linkguide] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang experience_star_credit}</th>
+		<td><input type="text" name="config[starcredit]" value="$configs[starcredit]" size="5"> ({lang experience_star_default})
+		<br>{lang experience_star_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang star_level_num}</th>
+		<td><input type="text" name="config[starlevelnum]" value="$configs[starlevelnum]" size="5"> ({lang star_level_num_default})
+		<br>{lang star_level_num_intro}
+		</td>
+	</tr>
+	</table>
+
+	<br />
+	<div class="title" id="uch">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang system_functions}</h3>
+	</div>
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang friend_categories_number}</th>
+		<td><input type="text" name="config[groupnum]" value="$configs[groupnum]" size="5"> ({lang friend_categories_default})
+		<br>{lang friend_categories_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang import_blog_num}</th>
+		<td><input type="text" name="config[importnum]" value="$configs[importnum]" size="5"> ({lang import_blog_num_default})
+		<br>{lang import_blog_num_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang max_reward}</th>
+		<td><input type="text" name="config[maxreward]" value="$configs[maxreward]" size="5"> ({lang max_reward_default})
+		<br>{lang max_reward_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang sendmail_days}</th>
+		<td><input type="text" name="config[sendmailday]" value="$configs[sendmailday]" size="5">({lang sendmail_days_default})
+		<br>{lang sendmail_days_intro1}
+		<br>{lang sendmail_days_intro2}
+		<br>{lang sendmail_days_intro3}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang xmlrpc_enable}</th>
+		<td>
+			<input type="radio" name="config[openxmlrpc]" value="1"<!--{if $configs[openxmlrpc] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[openxmlrpc]" value="0"<!--{if $configs[openxmlrpc] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang xmlrpc_enable_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang uc_tags_related}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang feature_enable}</td>
+			<td>
+			<input type="radio" name="config[uc_tagrelated]" value="1"<!--{if $configs[uc_tagrelated] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[uc_tagrelated]" value="0"<!--{if $configs[uc_tagrelated] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang uc_tags_intro1}
+			<br>{lang uc_tags_intro2}
+			</td>
+			</tr>
+			<tr>
+			<td>{lang cache_update_interval}</td>
+			<td>
+			<input type="text" name="config[uc_tagrelatedtime]" value="$configs[uc_tagrelatedtime]" size="10"> ({lang cache_update_interval_default})
+			<br>{lang cache_update_interval_intro}
+			</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang cache_block_settings}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang feature_enable}</td>
+			<td><input type="radio" name="config[allowcache]" value="1"<!--{if $configs[allowcache] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[allowcache]" value="0"<!--{if $configs[allowcache] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang cache_block_intro}
+			</td></tr>
+			<tr>
+			<td>{lang cache_mode}</td>
+			<td>
+			<input type="radio" name="config[cachemode]" value="file"<!--{if $configs[cachemode] == 'file'}--> checked<!--{/if}-->>{lang store_in_text}
+			<input type="radio" name="config[cachemode]" value="database"<!--{if $configs[cachemode] == 'database'}--> checked<!--{/if}-->>{lang store_in_database}
+			</td></tr>
+			<tr>
+			<td>{lang cache_grade}</td>
+			<td>
+			<select name="config[cachegrade]">
+			<option value="0"<!--{if $configs[cachegrade] == '0'}--> selected<!--{/if}-->>{lang cache_grade_0}</option>
+			<option value="1"<!--{if $configs[cachegrade] == '1'}--> selected<!--{/if}-->>{lang cache_grade_1}</option>
+			<option value="2"<!--{if $configs[cachegrade] == '2'}--> selected<!--{/if}-->>{lang cache_grade_2}</option>
+			</select>
+			<br>{lang cache_grade_intro}
+			</td></tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<th>{lang domains_allow}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang feature_enable}</td>
+			<td>
+			<input type="radio" name="config[allowdomain]" value="1"<!--{if $configs[allowdomain] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[allowdomain]" value="0"<!--{if $configs[allowdomain] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang domains_allow_intro}
+			</td></tr>
+			<tr>
+			<td>{lang hold_domains}</td>
+			<td>
+			<input type="text" name="config[holddomain]" value="$configs[holddomain]" size="50">
+			<br>{lang hold_domains_intro}
+			</td></tr>
+			<tr>
+			<td>{lang domain_root}</td>
+			<td>
+			<input type="text" name="config[domainroot]" value="$configs[domainroot]" size="50">
+			</td></tr>
+			</table>
+		</td>
+	</tr>
+
+	</table>
+
+
+	<br />
+	<div class="title" id="name">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang real_name_settings}</h3>
+	</div>
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang real_name_enable}</th>
+		<td><input type="radio" name="config[realname]" value="1"<!--{if $configs[realname] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[realname]" value="0"<!--{if $configs[realname] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang real_name_enable_intro1}
+			<br>{lang real_name_enable_intro2}
+			</td>
+	</tr>
+	<tr>
+		<th>{lang real_name_check}</th>
+		<td><input type="radio" name="config[namecheck]" value="1"<!--{if $configs[namecheck] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[namecheck]" value="0"<!--{if $configs[namecheck] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang real_name_check_intro}
+			</td>
+	</tr>
+	<tr>
+		<th>{lang real_name_modify_enable}</th>
+		<td><input type="radio" name="config[namechange]" value="1"<!--{if $configs[namechange] == '1'}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[namechange]" value="0"<!--{if $configs[namechange] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang real_name_modify_intro}
+			</td>
+	</tr>
+	<tr>
+		<th>{lang no_real_name_permission}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang real_name_view_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowviewspace]" value="1"<!--{if $configs[name_allowviewspace] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowviewspace]" value="0"<!--{if $configs[name_allowviewspace] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang friends_add_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowfriend]" value="1"<!--{if $configs[name_allowfriend] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowfriend]" value="0"<!--{if $configs[name_allowfriend] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang greetings_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowpoke]" value="1"<!--{if $configs[name_allowpoke] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowpoke]" value="0"<!--{if $configs[name_allowpoke] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang doing_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowdoing]" value="1"<!--{if $configs[name_allowdoing] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowdoing]" value="0"<!--{if $configs[name_allowdoing] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang blog_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowblog]" value="1"<!--{if $configs[name_allowblog] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowblog]" value="0"<!--{if $configs[name_allowblog] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang albums_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowalbum]" value="1"<!--{if $configs[name_allowalbum] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowalbum]" value="0"<!--{if $configs[name_allowalbum] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang topic_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowthread]" value="1"<!--{if $configs[name_allowthread] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowthread]" value="0"<!--{if $configs[name_allowthread] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang poll_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowpoll]" value="1"<!--{if $configs[name_allowpoll] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowpoll]" value="0"<!--{if $configs[name_allowpoll] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang events_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowevent]" value="1"<!--{if $configs[name_allowevent] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowevent]" value="0"<!--{if $configs[name_allowevent] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang share_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowshare]" value="1"<!--{if $configs[name_allowshare] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowshare]" value="0"<!--{if $configs[name_allowshare] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang comments_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowcomment]" value="1"<!--{if $configs[name_allowcomment] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowcomment]" value="0"<!--{if $configs[name_allowcomment] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang group_posts_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowpost]" value="1"<!--{if $configs[name_allowpost] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowpost]" value="0"<!--{if $configs[name_allowpost] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang apps_allow}</td>
+			<td>
+			<input type="radio" name="config[name_allowuserapp]" value="1"<!--{if $configs[name_allowuserapp] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[name_allowuserapp]" value="0"<!--{if $configs[name_allowuserapp] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+
+
+	<br />
+	<div class="title" id="video">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang video_verification_settings}</h3>
+	</div>
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang video_verification_enable}</th>
+		<td>
+		<!--{if $_SCONFIG[my_status]}-->
+		<input type="radio" name="config[videophoto]" value="1"<!--{if $configs[videophoto] == '1'}--> checked<!--{/if}-->>{lang yes}
+		<input type="radio" name="config[videophoto]" value="0"<!--{if $configs[videophoto] != '1'}--> checked<!--{/if}-->>{lang no}
+		<!--{else}-->
+		{lang video_verification_enable_intro1}
+		<!--{/if}-->
+			<br>{lang video_verification_enable_intro2}
+			</td>
+	</tr>
+	<tr>
+		<th>{lang no_video_permissions}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang view_images_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowviewphoto]" value="1"<!--{if $configs[video_allowviewphoto] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowviewphoto]" value="0"<!--{if $configs[video_allowviewphoto] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang add_friends_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowfriend]" value="1"<!--{if $configs[video_allowfriend] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowfriend]" value="0"<!--{if $configs[video_allowfriend] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang send_greeting_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowpoke]" value="1"<!--{if $configs[video_allowpoke] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowpoke]" value="0"<!--{if $configs[video_allowpoke] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			
+			<tr>
+			<td width="150">{lang wall_write_enable}</td>
+			<td>
+			<input type="radio" name="config[video_allowwall]" value="1"<!--{if $configs[video_allowwall] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowwall]" value="0"<!--{if $configs[video_allowwall] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			
+			<tr>
+			<td width="150">{lang comment_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowcomment]" value="1"<!--{if $configs[video_allowcomment] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowcomment]" value="0"<!--{if $configs[video_allowcomment] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			
+			<tr>
+			<td width="150">{lang doing_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowdoing]" value="1"<!--{if $configs[video_allowdoing] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowdoing]" value="0"<!--{if $configs[video_allowdoing] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang blog_post_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowblog]" value="1"<!--{if $configs[video_allowblog] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowblog]" value="0"<!--{if $configs[video_allowblog] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang albums_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowalbum]" value="1"<!--{if $configs[video_allowalbum] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowalbum]" value="0"<!--{if $configs[video_allowalbum] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang topic_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowthread]" value="1"<!--{if $configs[video_allowthread] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowthread]" value="0"<!--{if $configs[video_allowthread] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang poll_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowpoll]" value="1"<!--{if $configs[video_allowpoll] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowpoll]" value="0"<!--{if $configs[video_allowpoll] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang events_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowevent]" value="1"<!--{if $configs[video_allowevent] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowevent]" value="0"<!--{if $configs[video_allowevent] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang share_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowshare]" value="1"<!--{if $configs[video_allowshare] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowshare]" value="0"<!--{if $configs[video_allowshare] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang group_posts_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowpost]" value="1"<!--{if $configs[video_allowpost] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowpost]" value="0"<!--{if $configs[video_allowpost] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			<tr>
+			<td width="150">{lang apps_allow}</td>
+			<td>
+			<input type="radio" name="config[video_allowuserapp]" value="1"<!--{if $configs[video_allowuserapp] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[video_allowuserapp]" value="0"<!--{if $configs[video_allowuserapp] != '1'}--> checked<!--{/if}-->>{lang no}
+			</td></tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+	
+	
+	<br />
+	<div class="title" id="upload">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang upload_image_settings}</h3>
+	</div>
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang thumbnail_size}</th>
+		<td>{lang width} <input type="text" name="data[thumbwidth]" value="$datas[thumbwidth]" size="5">px &nbsp;
+			{lang height} <input type="text" name="data[thumbheight]" value="$datas[thumbheight]" size="5">px
+			<br>{lang gd_required}
+			<br>{lang thumbnail_intro}
+		</td>
+	</tr>
+	<tr>
+		<th style="width:15em;">{lang thumbnal_max_size}</th>
+		<td>{lang width} <input type="text" name="data[maxthumbwidth]" value="$datas[maxthumbwidth]" size="5">px &nbsp;
+			{lang height} <input type="text" name="data[maxthumbheight]" value="$datas[maxthumbheight]" size="5">px
+			<br>{lang gd_required}
+			<br>{lang thumbnail_max_size_intro}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang watermark_settings}</th>
+		<td>
+			<table>
+			<tr>
+			<td width="150">{lang feature_enable}</td>
+			<td>
+			<input type="radio" name="config[allowwatermark]" value="1"<!--{if $configs[allowwatermark] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[allowwatermark]" value="0"<!--{if $configs[allowwatermark] != '1'}--> checked<!--{/if}-->>{lang no}
+			<br>{lang gd_required}
+			<br>{lang watermark_intro}
+			</td></tr>
+			<tr>
+			<td>{lang watermark_address}</td>
+			<td>
+			<input type="text" name="data[watermarkfile]" value="$datas[watermarkfile]">
+			<br>{lang watermark_default}
+			</td></tr>
+			<tr>
+			<td>{lang watermark_position}</td>
+			<td>
+			<input type="radio" name="data[watermarkpos]" value="1"<!--{if $datas[watermarkpos] == 1}--> checked<!--{/if}-->>{lang top_left}
+			<input type="radio" name="data[watermarkpos]" value="2"<!--{if $datas[watermarkpos] == 2}--> checked<!--{/if}-->>{lang top_right}
+			<input type="radio" name="data[watermarkpos]" value="3"<!--{if $datas[watermarkpos] == 3}--> checked<!--{/if}-->>{lang bottom_left}
+			<input type="radio" name="data[watermarkpos]" value="4"<!--{if $datas[watermarkpos] == 4}--> checked<!--{/if}-->>{lang bottom_right}
+			</td></tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+
+	<br />
+	<div class="title" id="remote">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang remote_upload_settings}</h3>
+	</div>
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang ftp_enable}</th>
+		<td><input type="radio" name="config[allowftp]" value="1"<!--{if $configs[allowftp] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="config[allowftp]" value="0"<!--{if $configs[allowftp] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang ssl_enable}</th>
+		<td>
+			<input type="radio" name="data[ftpssl]" value="1"<!--{if $datas[ftpssl] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="data[ftpssl]" value="0"<!--{if $datas[ftpssl] != '1'}--> checked<!--{/if}-->>{lang no}
+		</td>
+	</tr>
+	<tr>
+		<th>{lang ftp_info}</th>
+		<td>
+			<table>
+			<tr><td width="150">{lang ftp_host}</td>
+			<td><input type="text" name="data[ftphost]" value="$datas[ftphost]"> ({lang ftp_host_intro})</td>
+			</tr>
+			<tr><td>{lang ftp_port}</td>
+			<td><input type="text" name="data[ftpport]" value="$datas[ftpport]" size="5"> ({lang ftp_port_default})</td>
+			</tr>
+			<tr><td>{lang ftp_user}</td>
+			<td><input type="text" name="data[ftpuser]" value="$datas[ftpuser]"></td>
+			</tr>
+			<tr><td>{lang ftp_password}</td>
+			<td><input type="password" name="data[ftppassword]" value="$datas[ftppassword]"></td>
+			</tr>
+			<tr><td>{lang ftp_passive}</td>
+			<td><input type="radio" name="data[ftppasv]" value="1"<!--{if $datas[ftppasv] == 1}--> checked<!--{/if}-->>{lang yes}
+			<input type="radio" name="data[ftppasv]" value="0"<!--{if $datas[ftppasv] != '1'}--> checked<!--{/if}-->>{lang no}
+			({lang ftp_passive_intro})
+			</td>
+			</tr>
+			<tr><td>{lang ftp_directory}</td>
+			<td><input type="text" name="data[ftpdir]" value="$datas[ftpdir]">
+			<br>{lang ftp_directory_intro1}
+			<br>{lang ftp_directory_intro2}
+			</td>
+			</tr>
+			<tr><td>{lang remote_url}</td>
+			<td><input type="text" name="config[ftpurl]" value="$configs[ftpurl]">
+			<br>{lang remote_url_intro}
+			</td>
+			</tr>
+			<tr><td>{lang ftp_timeout}</td>
+			<td><input type="text" name="data[ftptimeout]" value="$datas[ftptimeout]" size="5">
+			({lang ftp_timeout_default})
+			</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+	</table>
+
+
+	<br />
+	<div class="title" id="email">
+		<a class="r_option" href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">{lang go_page_top}</a>
+		<h3>{lang mail_settings}</h3>
+	</div>
+
+	<table class="formtable">
+	<tr>
+		<th style="width:15em;">{lang send_mail_method}</th>
+		<td><input class="radio" name="mail[mailsend]" value="1"<!--{if $mails[mailsend] == 1}--> checked<!--{/if}--> onclick="$('tb_smtp1').style.display = 'none';$('tb_smtp2').style.display = 'none';" type="radio"> {lang send_mail_php}<br>
+			<input class="radio" name="mail[mailsend]" value="2"<!--{if $mails[mailsend] == 2}--> checked<!--{/if}--> onclick="$('tb_smtp1').style.display = '';$('tb_smtp2').style.display = '';" type="radio"> {lang send_mail_smtp}<br>
+			<input class="radio" name="mail[mailsend]" value="3"<!--{if $mails[mailsend] == 3}--> checked<!--{/if}--> onclick="$('tb_smtp1').style.display = '';$('tb_smtp2').style.display = 'none';" type="radio">
+			{lang send_mail_php_function}
+		</td>
+	</tr><tr>
+		<th>{lang email_header_delimiter}</th>
+		<td><input class="radio" name="mail[maildelimiter]" value="0"<!--{if $mails[maildelimiter] == 0}--> checked<!--{/if}--> type="radio"> {lang use_lf}<br>
+			<input class="radio" name="mail[maildelimiter]" value="1"<!--{if $mails[maildelimiter] == 1}--> checked<!--{/if}--> type="radio"> {lang use_crlf}<br>
+			<input class="radio" name="mail[maildelimiter]" value="2"<!--{if $mails[maildelimiter] == 2}--> checked<!--{/if}--> type="radio"> {lang use_cr}
+		</td>
+	</tr><tr>
+		<th>{lang smtp_recipient_name}</th>
+		<td><input class="radio" name="mail[mailusername]" value="1"<!--{if $mails[mailusername] == 1}--> checked<!--{/if}--> type="radio"> {lang yes} &nbsp; &nbsp;
+			<input class="radio" name="mail[mailusername]" value="0"<!--{if $mails[mailusername] != '1'}--> checked<!--{/if}--> type="radio"> {lang no}
+		</td>
+	</tr>
+
+	<tbody id="tb_smtp1"<!--{if $mails[mailsend] < 2}--> style="display:none;"<!--{/if}-->>
+	<th>&nbsp;</th>
+	<td>
+		<table>
+		<tr>
+			<td width="150">{lang smtp_server}</td>
+			<td><input type="text" name="mail[server]" value="$mails[server]"></td>
+		</tr><tr>
+			<td>{lang smtp_port}</td>
+			<td><input type="text" name="mail[port]" value="$mails[port]" size="5"> {lang smtp_port_default}</td>
+		</tr>
+	</tbody>
+
+	<tbody id="tb_smtp2"<!--{if $mails[mailsend] != 2}--> style="display:none;"<!--{/if}-->>
+		<tr>
+			<td>{lang smtp_authentication}</td>
+			<td><input class="radio" name="mail[auth]" value="1"<!--{if $mails[auth] == 1}--> checked<!--{/if}--> type="radio"> {lang yes} &nbsp; &nbsp;
+			<input class="radio" name="mail[auth]" value="0"<!--{if $mails[auth] != '1'}--> checked<!--{/if}--> type="radio"> {lang no}</td>
+		</tr><tr>
+			<td>{lang smtp_sender}</td>
+			<td><input type="text" name="mail[from]" value="$mails[from]">
+			<br>{lang sender_format}
+			</td>
+		</tr><tr>
+			<td>{lang smtp_user_name}</td>
+			<td><input type="text" name="mail[auth_username]" value="$mails[auth_username]"></td>
+		</tr><tr>
+			<td>{lang smtp_password}</td>
+			<td><input type="password" name="mail[auth_password]" value="$mails[auth_password]"></td>
+		</tr>
+		</table>
+	</td></tr>
+	</tbody>
+
+	</tr>
+
+	</table>
+	</div>
+
+	<div class="footactions">
+		<input type="submit" name="thevaluesubmit" value="{lang submit_button}" class="submit">
+	</div>
+
+	</form>
+</div>
+</div>
+
+<div class="side">
+	<!--{template admin/tpl/side}-->
+</div>
+
+<!--{template admin/tpl/footer}-->
