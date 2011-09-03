@@ -590,7 +590,7 @@ Translated by Valery Votintsev
 		#pl_top .pls { text-indent: 15px; }
 
 /* Posts of the time, the floor where the block and some properties */
-	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; height: 16px; border-bottom: 1px dashed {COMMONBORDER}; }
+	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; /*height: 16px;*/ border-bottom: 1px dashed {COMMONBORDER}; }
 		.pi strong a { float: right; margin-top: -6px; padding: 4px 6px; border: 1px solid {WRAPBG}; font-weight: 400; }
 			.pi strong a:hover { border-color: {COMMONBORDER}; }
 		.pls .pi { padding-left: 15px; }
