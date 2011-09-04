@@ -655,11 +655,9 @@ Note on the CSS Hack:
 						#qmenu_menu ul a:hover { background-color: {SPECIALBG}; color: {HIGHLIGHTLINK}; text-shadow: none; }
 
 /* Page main area */
-	#ct { min-height: 300px;
-border: 1px solid green; }
+	#ct { min-height: 300px; }
 		.ie6 #ct { height: 300px; }
-		.mn { overflow: hidden;
-border: 1px solid red; }
+		.mn { overflow: hidden; }
 		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
 		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
 
