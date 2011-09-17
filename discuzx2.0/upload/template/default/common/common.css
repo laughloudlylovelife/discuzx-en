@@ -661,16 +661,15 @@ Note on the CSS Hack:
 		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
 		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
 
-		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 0 6px 10px; width: 180px; }
+		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 0 6px 10px; width: 117px; }
 
 		.ct2_a, .ct3_a { border: 1px solid {WRAPBORDERCOLOR}; {SIDEBGCODE} }
 			.ct2_a_r { border: none; background-image: none; }
 			 .ct2_a h1.mt { display: none; }
 			 .ct2_a .tb { margin-top: 3px; }
-		.ct2_a .mn { float: right; /*width: 810px; */}
-		.ct2_a .mn { display: inline; margin-right: 10px; padding-top: 10px; width: 750px/*800px*/; }
-			#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0;/* width: 810px;*/ }
-
+		.ct2_a .mn { float: right; width: 810px; }
+		.ct2_a .mn { display: inline; /*margin-right: 10px;*/ padding-top: 10px; width: 800px; }
+			#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; width: 810px; }
 		.ct3_a .mn { float: left; margin-left: 20px; width: 565px; }
 		.ct3_a .sd { float: right; width: 220px; }
 			#nv_home .ct3_a .sd .bm { margin-right: 10px; border: none; }
@@ -1273,6 +1272,7 @@ Note on the CSS Hack:
 /* Action buttons */
 .bac {margin: 0; padding: 0; width: 70px; height: 30px;line-height: 30px; color: {LINK}; overflow: hidden; text-decoration: none; background: url({IMGDIR}/pg_arw.png) no-repeat 0 0; text-align: center; text-indent: -7px; display: block;}
 
+#psd,appl { width: 136px; }
 #psd .bn .mbn input, #postbox input { margin-right: 4px; }
 #postbox .mbn, #psd .mbn { height: 1.6em; line-height: 1.6em; }
 
