@@ -1300,7 +1300,7 @@ Note on the CSS Hack:
 			#fjump_menu li.current a { background-color: {COMMONBG}; }
 
 /* List of available magics by lushnis */
-	.mgcmn { width: 100px; }
+	.mgcmn { width: 200px; }
 		.mgcmn a { padding-left: 25px; line-height: 16px !important; }
 			.mgcmn img { position: absolute; margin-left: -20px; }
 
