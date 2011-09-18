@@ -201,7 +201,7 @@ $lang = array (
 	'no_privilege_avatar'			=> 'You need to set your avatar can perform this operation after, <a href="home.php?mod=spacecp&ac=avatar">Click here to set</a>',//'您需要设置自己的头像后才能进行本操作，<a href="home.php?mod=spacecp&ac=avatar">点这里设置</a>',
 	'no_privilege_email'			=> 'You need to verify that activate only after his mailbox this operation, <a href="home.php?mod=spacecp&ac=profile&op=password">Click here to activate Email</a>',//'您需要验证激活自己的邮箱后才能进行本操作，<a href="home.php?mod=spacecp&ac=profile&op=password">点这里激活邮箱</a>',
 	'no_privilege_friendnum'		=> 'You need to add (friendnum) friends before perform this operation, <a href="home.php?mod=spacecp&ac=friend&op=find">Click here to Add Friend</a>',//'您需要添加 {friendnum}个好友之后，才能进行本操作，<a href="home.php?mod=spacecp&ac=friend&op=find">点这里添加好友</a>',
-	'login_succeed'				=> 'Welcome {usergroup} {username}! Now redirecting to the previous page. {ucsynlogin} ',//'欢迎您回来，{username}。现在将转入登录前页面。 {ucsynlogin} ',
+	'login_succeed'				=> 'Welcome {usergroup} {username}!<br />Now redirecting to the previous page.',//'欢迎您回来，{username}。现在将转入登录前页面。 {ucsynlogin} ',
 	'logout_succeed'			=> 'Logout successfully, now redirecting to the previous page as guest.<br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ Clear Cookies ]</a> {ucsynlogout} ',//'您已退出站点，现在将以游客身份转入退出前页面。 <br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ 清除痕迹 ]</a> {ucsynlogout} ',
 	'register_activation_invalid'		=> 'Activation failed, please try to login again.',//'激活失败，请重新登录验证需要激活的用户。',
 	'profile_username_tooshort'		=> 'Sorry, your username is shorter than 3 characters.',//'对不起，您输入的用户名小于 3 个字符, 请返回输入一个较长的用户名。',
