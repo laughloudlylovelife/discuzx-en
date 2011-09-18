@@ -47,7 +47,7 @@ $lang = array
 	'blog_comment'		=> '{actor} commented your blog <a href="{url}" target="_blank">{subject}</a>',//'{actor} 评论了你的日志 <a href="{url}" target="_blank">{subject}</a>',
 	'share_comment'		=> '{actor} commented your <a href="{url}" target="_blank">share</a>',//'{actor} 评论了你的 <a href="{url}" target="_blank">分享</a>',
 	'click_blog'		=> '{actor} ratedon your blog <a href="{url}" target="_blank">{subject}</a> made a statement',//'{actor} 对你的日志 <a href="{url}" target="_blank">{subject}</a> 做了表态',
-	'click_pic'		=> '{actor} rated your blog <a href="{url}" target="_blank">{subject}</a>',//'{actor} 对你的 <a href="{url}" target="_blank">图片</a> 做了表态',
+	'click_pic'		=> '{actor} rated your blog <a href="{url}" target="_blank">image</a>',//'{actor} 对你的 <a href="{url}" target="_blank">图片</a> 做了表态',
 	'click_article'		=> '{actor} rated your <a href="{url}" target="_blank">article</a>',//'{actor} 对你的 <a href="{url}" target="_blank">文章</a> 做了表态',
 	'show_out'		=> '{actor} visited your home page, this showed your final bid point also consumed',//'{actor} 访问了你的主页后，你在竞价排名榜中最后一个积分也被消费掉了',
 	'puse_article'		=> 'Congratulations, your article <a href="{url}" target="_blank">{subject}</a> has been pushed to portal, <a href="{newurl}" target="_blank">click here to view</a>',//'恭喜你，你的<a href="{url}" target="_blank">{subject}</a>已被推送到门户， <a href="{newurl}" target="_blank">点击查看</a>',
