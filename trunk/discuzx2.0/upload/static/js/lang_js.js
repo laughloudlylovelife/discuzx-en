@@ -255,7 +255,7 @@ var lng = {
 	'autosave_disabled'	: 'Data auto-saving disabled',//'数据自动保存已关闭',
 	'data_saved_at'		: 'Data saved at',//'数据已于',
 	'saved_time'		: '',//NOT REQUIRED IN ENGLISH!//'保存',
-	'sec_before_saving'	: 'seconds before auto-saving',//'秒后保存',
+	'sec_before_saving'	: 's before autosave',//'秒后保存',
 	'insert_quote'		: 'Insert the Quote',//'请输入要插入的引用',
 	'insert_code'		: 'Insert the Code',//'请输入要插入的代码',
 //	'enter_image_url'	: 'Enter the image URL',//'请输入图片地址',
