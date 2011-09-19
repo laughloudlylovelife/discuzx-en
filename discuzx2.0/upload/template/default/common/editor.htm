@@ -24,15 +24,15 @@
 <div id="{$editorid}_bbar" class="bbar">
 	<em id="{$editorid}_tip"></em>
 	<span id="{$editorid}_svdsecond"></span>
-	<a href="javascript:;" onclick="discuzcode('svd');return false;" id="{$editorid}_svd">{lang post_savedata}</a> |
-	<a href="javascript:;" onclick="discuzcode('rst');return false;" id="{$editorid}_rst">{lang post_autosave_restore}</a> &nbsp;&nbsp;
+	| <a href="javascript:;" onclick="discuzcode('svd');return false;" id="{$editorid}_svd">{lang post_savedata}</a>
+	| <a href="javascript:;" onclick="discuzcode('rst');return false;" id="{$editorid}_rst">{lang post_autosave_restore}</a>
 	<!--{if $editor[allowchecklength]}-->
-		<a href="javascript:;" onclick="discuzcode('chck');return false;" id="{$editorid}_chck">{lang post_check_length}</a> |
+		| <a href="javascript:;" onclick="discuzcode('chck');return false;" id="{$editorid}_chck">{lang post_check_length}</a>
 	<!--{/if}-->
 	<!--{if $editor[allowtopicreset]}-->
-		<a href="javascript:;" onclick="discuzcode('tpr');return false;" id="{$editorid}_tpr">{lang post_topicreset}</a> &nbsp;&nbsp;
+		| <a href="javascript:;" onclick="discuzcode('tpr');return false;" id="{$editorid}_tpr">{lang post_topicreset}</a>
 	<!--{/if}-->
 	<!--{if $editor[allowresize]}-->
-		<span id="{$editorid}_resize"><a href="javascript:;" onclick="editorsize('+');return false;">{lang editor_increase}</a> | <a href="javascript:;" onclick="editorsize('-');return false;">{lang editor_narrow}</a><img src="{STATICURL}image/editor/resize.gif" onmousedown="editorresize(event)" /></span>
+		| <span id="{$editorid}_resize"><a href="javascript:;" onclick="editorsize('+');return false;">{lang editor_increase}</a> | <a href="javascript:;" onclick="editorsize('-');return false;">{lang editor_narrow}</a><img src="{STATICURL}image/editor/resize.gif" onmousedown="editorresize(event)" /></span>
 	<!--{/if}-->
 </div>
