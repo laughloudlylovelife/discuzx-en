@@ -1034,7 +1034,7 @@ function show_step($step) {
 			<li class="$stepclass[3]">$step_title_3</li>
 			<li class="$stepclass[4]">$step_title_4</li>
 		</ul>
-		<div class="stepstatbg stepstat1"></div>
+		<div class="stepstatbg stepstat{$step}"></div>
 	</div>
 </div>
 <div class="main">
@@ -1243,22 +1243,6 @@ function install_data($username, $uid) {
 	}
 }
 function install_testdata($username, $uid) {
-	global $_G, $db, $tablepre;
-	showjsmessage(lang('install_test_data')." ... ".lang('succeed'));
-
-	$arr = array(
-			0=> array('importfile'=>'./data/portal_index.xml','primaltplname'=>'portal/index', 'targettplname'=>'portal/index'),
-	);
-	$_G = array('db'=>$db,'tablepre'=>$tablepre, 'uid'=>$uid, 'username'=>$username);
-	foreach ($arr as $v) {
-		import_diy($v['importfile'], $v['primaltplname'], $v['targettplname']);
-	}
-
-}
-
-//----------------------------------------
-//vot added for regional data
-function install_regiondata($username, $uid) {
 	global $_G, $db, $tablepre;
 	showjsmessage(lang('install_region_data')." ... ".lang('succeed'));
 

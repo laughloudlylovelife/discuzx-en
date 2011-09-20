@@ -15,8 +15,8 @@ em, cite, strong, th{ font-style:normal; font-weight:normal; }
 table{ border-collapse:collapse; }
 
 /* box */
-.container{ overflow:hidden; margin:0 auto; width:700px; height:auto !important;text-align:left; border:1px solid #B5CFD9; }
-.header{ height:194px; background:url(bg_repx.gif) repeat-x; }
+.container{ overflow:hidden; margin:0 auto; width:900px; height:auto !important;text-align:left; border:1px solid #B5CFD9; }
+.header{ height:204px; background:url(bg_repx.gif) repeat-x; }
 	.header h1{ text-indent:-9999px; width:270px; height:48px; background:url(bg_repno.gif) no-repeat 26px 22px; }
 	.header span { float: right; padding-right: 10px; }
 .main{ padding:20px 20px 0; background:#F7FBFE url(bg_repx.gif) repeat-x 0 -194px; }
@@ -53,17 +53,17 @@ table{ border-collapse:collapse; }
 .step4{ background:url(stepnum.gif) no-repeat 0 -292px; }
 
 /* step status */
-.stepstat{ position:relative; bottom:-15px; left:80px; *width:593px; height:30px; }
-	.stepstatbg{ position:absolute; top:18px; z-index:90; width:535px; height:9px; overflow:hidden; background:#81C6F0 url(bg_stepstatus.gif) no-repeat; }
-	.stepstat ul{ position:absolute; top:3px; left:-2px; z-index:100; list-style:none; width:600px; white-space:nowrap; overflow:hidden; }
-		.stepstat li{ float:left; text-indent:20px; width:175px; height:30px; line-height:14px; font-size:12px; background:url(bg_repno.gif) no-repeat 0 -38px; }
+.stepstat{ position:relative; bottom:-15px; margin:0 40px; height:30px; }
+	.stepstatbg{ position:absolute; top:18px; z-index:90; width:750px; height:9px; overflow:hidden; background:#81C6F0 url(bg_stepstatus.gif) no-repeat; }
+	.stepstat ul{ position:absolute; top:3px; left:-2px; z-index:100; list-style:none; width:100%; white-space:nowrap; overflow:hidden; }
+		.stepstat li{ float:left; text-indent:20px; width:250px; height:30px; line-height:14px; font-size:12px; background:url(bg_repno.gif) no-repeat 0 -38px; }
 		.stepstat .current{ background:url(bg_repno.gif) no-repeat 0 -71px; font-weight:700; }
 		.stepstat .unactivated{ background:url(bg_repno.gif) no-repeat 0 -103px; }
 		.stepstat .last{ width:50px; }
 .stepstat1{ background-position:-750px 0; }
-.stepstat2{ background-position:-570px 0; }
-.stepstat3{ background-position:-390px 0; }
-.stepstat4{ background-position:-210px 0; }
+.stepstat2{ background-position:-500px 0; }
+.stepstat3{ background-position:-250px 0; }
+.stepstat4{ background-position:-0px 0; }
 
 /* file status */
 .w{ background:url(bg_repno.gif) no-repeat 45px -148px;  }

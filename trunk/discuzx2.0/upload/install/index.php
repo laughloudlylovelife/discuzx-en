@@ -385,7 +385,7 @@ if($method == 'show_license') {
 
 		install_data($username, $uid);
 
-		if($testdata) {
+		if($regiondata) { //vot
 			install_testdata($username, $uid);
 		}
 
@@ -452,7 +452,8 @@ if($method == 'show_license') {
 		show_header();
 		echo '</div><div class="main" style="margin-top: -123px;"><ul style="line-height: 200%; margin-left: 30px;">';
 		echo '<li><a href="../">'.lang('install_succeed').'</a><br>';
-		echo '<script>setTimeout(function(){window.location=\'../\'}, 2000);</script>'.lang('auto_redirect').'</li>';
+//vot		echo '<script>setTimeout(function(){window.location=\'../\'}, 2000);</script>'.lang('auto_redirect').'</li>';
+		echo '</li>';//vot
 		echo '</ul></div>';
 		show_footer();
 	}
