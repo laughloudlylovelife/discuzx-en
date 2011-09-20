@@ -804,7 +804,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.spvimg em.hot { width: 120px; height: 102px; background-position: 0 -104px; }
 		.spi { margin-left: 315px;}
 			.spi dl { font-size: 14px; }
-				.spi dl dt { float: left; padding: 2px 0; width: 80px; height: 1em; }
+				.spi dl dt { float: left; padding: 2px 0; width: 140px; height: 1em; }
 				.spi dl dd { margin-left: 90px; padding: 2px 0; min-height: 21px; height: auto !important; height: 21px; }
 				.spi dl dd em { color: #F30; }
 			dl.nums {}
