@@ -78,8 +78,8 @@ Translated by Valery Votintsev
 	#an { margin-bottom: 5px; }
 		#an dt { display: none; }
 		#an li { float: right; clear: both; width: 526px; text-align: right; }
-			#an li span { float: left; width: 450px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-			#an li em { float: left; width: 75px; color: {LIGHTTEXT}; }
+			#an li span { float: left; width: 430px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+			#an li em { float: left; width: 95px; color: {LIGHTTEXT}; }
 			#anc, #an li { height: 29px; overflow: hidden; }
 
 /* Online member list */
