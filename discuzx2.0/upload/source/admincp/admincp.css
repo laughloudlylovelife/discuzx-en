@@ -240,7 +240,7 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.tb2 .td27{ padding:3px 0 3px 5px; font-weight:700; }
 		.tb2 .td27:hover { background: none; }
 	.td27m { font-weight:700; padding-bottom:5px; }
-	.td28 .txt{ width:40px; }
+	.td28 .txt{ /*width:40px;*/ }
 	.td29 .txt{ width:200px; }
 	.td30 { width:30px; }
 	.td31 { width:200px; }
