@@ -1314,7 +1314,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 
 /* View profile by lushnis */
 	#pprl li { clear: both; padding: 3px 0 3px 90px; }
-		#pprl li em { float: left; margin-left: -90px; width: 85px; white-space: nowrap; overflow: hidden; }
+		#pprl li em { float: left; margin-left: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
 	#pbbs li, #psts li, #pntc li { clear: none; float: left; width: 270px }
 
 /* Reminded of the content will be used. This stand-alone class, so personalized. To make the content more visible reminder, the span can be defined under the summary */
