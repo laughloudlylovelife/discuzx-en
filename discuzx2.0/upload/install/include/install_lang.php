@@ -29,8 +29,8 @@ $lang = array(
 	'install_wizard'	=> 'Setup Wizard',//'安装向导',
 	'config_nonexistence'	=> 'Configuration file does not exist',//'配置文件不存在',
 	'nodir'			=> 'Directory does not exist',//'目录不存在',
-	'redirect'		=> 'Browser will automatically redirext the page, without a human intervention.<br>Except when your browser does not support frames, please click here',//'浏览器会自动跳转页面，无需人工干预。<br>除非当您的浏览器没有自动跳转时，请点击这里',
-	'auto_redirect'		=> 'Browser will automatically redirext the page, without a human intervention.',//'浏览器会自动跳转页面，无需人工干预',
+	'redirect'		=> 'Browser will automatically redirect the page, without a human intervention.<br>Except when your browser does not support frames, please click here',//'浏览器会自动跳转页面，无需人工干预。<br>除非当您的浏览器没有自动跳转时，请点击这里',
+	'auto_redirect'		=> 'Browser will automatically redirect the page, without a human intervention.',//'浏览器会自动跳转页面，无需人工干预',
 	'database_errno_2003'	=> 'Can not connect to the database, check whether the database is run and the database server address is correct.',//'无法连接数据库，请检查数据库是否启动，数据库服务器地址是否正确',
 	'database_errno_1044'	=> 'Unable to create a new database, please check the database name is correct.',//'无法创建新的数据库，请检查数据库名称填写是否正确',
 	'database_errno_1045'	=> 'Can not connect to the database, check the database user name and password are correct.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
@@ -56,8 +56,8 @@ $lang = array(
 	'database_errno_1045'	=> 'Can not connect to the database, check the database user name and password are correct.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
 	'database_connect_error'	=> 'Database connection error.',//'数据库连接错误',
 
-	'step_title_1'		=> 'Check the installation environment',//'检查安装环境',
-	'step_title_2'		=> 'Set the operating environment',//'设置运行环境',
+	'step_title_1'		=> 'Check environment',//'检查安装环境',
+	'step_title_2'		=> 'Set environment',//'设置运行环境',
 	'step_title_3'		=> 'Create Database',//'创建数据库',
 	'step_title_4'		=> 'Install',//'安装',
 	'step_env_check_title'	=> 'Start Installation',//'开始安装',
@@ -81,7 +81,7 @@ $lang = array(
 	'install_locked'	=> 'Install lock has been installed.<br><br>If you sure you want to re-install, go to the server and delete the file<br />'.str_replace(ROOT_PATH, '', $lockfile),//'安装锁定，已经安装过了，如果您确定要重新安装，请到服务器上删除<br /> '.str_replace(ROOT_PATH, '', $lockfile),
 	'error_quit_msg'	=> 'You must solve the above problems, before the installation can continue.',//'您必须解决以上问题，安装才可以继续',
 
-	'step_app_reg_title'	=> 'Setting the environment',//'设置运行环境',
+	'step_app_reg_title'	=> 'Setting environment',//'设置运行环境',
 	'step_app_reg_desc'	=> 'Check the server environment, and set UCenter',//'检测服务器环境以及设置 UCenter',
 	'tips_ucenter'		=> 'Please fill in the information for UCenter',//'请填写 UCenter 相关信息',
 	'tips_ucenter_comment'	=> 'UCenter is the Comsenz inc. core service program. Discuz! Board and other Comsenz applications rely on this program. If you have already installed UCenter, please fill in the information below. Otherwise, please go to <a href="http://www.discuz.com/" target="blank">Comsenz Products</a> to download and install UCenter, and then continue.',//'UCenter 是 Comsenz 公司产品的核心服务程序，Discuz! Board 的安装和运行依赖此程序。如果您已经安装了 UCenter，请填写以下信息。否则，请到 <a href="http://www.discuz.com/" target="blank">Comsenz 产品中心</a> 下载并且安装，然后再继续。',
@@ -140,7 +140,7 @@ $lang = array(
 	'install_dzfull'		=> '<br><label><input type="radio"'.(getgpc('install_ucenter') != 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="yes" onclick="if(this.checked)$(\'form_items_2\').style.display=\'none\';" /> New Discuz! X installation (including UCenter Server)</label>',//'<br><label><input type="radio"'.(getgpc('install_ucenter') != 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="yes" onclick="if(this.checked)$(\'form_items_2\').style.display=\'none\';" /> 全新安装 Discuz! X (含 UCenter Server)</label>',
 	'install_dzonly'		=> '<br><label><input type="radio"'.(getgpc('install_ucenter') == 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="no" onclick="if(this.checked)$(\'form_items_2\').style.display=\'\';" /> Install Discuz! X only (specify manually allready installed UCenter Server)</label>',//'<br><label><input type="radio"'.(getgpc('install_ucenter') == 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="no" onclick="if(this.checked)$(\'form_items_2\').style.display=\'\';" /> 仅安装 Discuz! X (手工指定已经安装的 UCenter Server)</label>',
 
-	'username'			=> 'administrator username',//'管理员账号',
+	'username'			=> 'Administrator username',//'管理员账号',
 	'email'				=> 'Administrator Email',//'管理员 Email',
 	'password'			=> 'Administrator password',//'管理员密码',
 	'password_comment'		=> 'Administrator password can not be empty',//'管理员密码不能为空',
@@ -170,7 +170,7 @@ $lang = array(
 	'init_credits_karma'	=> 'Rating',//'威望',//!!! The same in install_var.php
 	'init_credits_money'	=> 'Money',//'金钱',//!!! The same in install_var.php
 
-	'init_postno0'		=> 'Senior member',//'楼主',//!!! The same in install_var.php 
+	'init_postno0'		=> 'Senior Member',//'楼主',//!!! The same in install_var.php 
 	'init_postno1'		=> 'Full Member',//'沙发',    //!!! The same in install_var.php
 	'init_postno2'		=> 'Member',//'板凳',   //!!! The same in install_var.php
 	'init_postno3'		=> 'Newbie',//'地板',   //!!! The same in install_var.php
@@ -221,8 +221,8 @@ $lang = array(
 	'init_bbcode_6'	=> 'Embedded Windows media audio',//'嵌入 Windows media 音频',
 	'init_bbcode_7'	=> 'Embedded Windows media audio or video',//'嵌入 Windows media 音频或视频',
 
-	'init_qihoo_searchboxtxt'		=> 'Input key words, Quick Search this forum',//'输入关键词,快速搜索本论坛',
-	'init_threadsticky'			=> 'Stick object: Global top, Category Top, This home top',//'全局置顶,分类置顶,本版置顶',
+	'init_qihoo_searchboxtxt'		=> 'Input keywords for quick search this forum',//'输入关键词,快速搜索本论坛',
+	'init_threadsticky'			=> 'Stick object: Global top, Category Top, This forum top',//'全局置顶,分类置顶,本版置顶',
 
 	'init_default_style'			=> 'Default Style',//'默认风格',
 	'init_default_forum'			=> 'Default Forum',//'默认版块',
@@ -253,7 +253,7 @@ $lang = array(
 
 <p>This License applies and only applies Discuz! X version, Hong Sing Imagination (Beijing) Technology Co., Ltd. has the power of final interpretation of the licensing agreement.</p>
 
-<h3>I. licensing agreement the right</h3>
+<h3>I. Licensing agreement rights</h3>
 <ol>
 <li>You can fully comply with the end user license agreement, based on the software used in this non-commercial use, without having to pay for software copyright licensing fees.</Li>
 <li>Agreement you can within the constraints and limitations modify Discuz! source code (if provided) or interface styles to suit your site requirements.</Li>
@@ -261,7 +261,7 @@ $lang = array(
 <li>A commercial license, you can use this software for commercial applications, while according to the type of license purchased to determine the period of technical support, technical support, technical support form and content, from the moment of purchase, within the period of technical support have a way to get through the specified designated areas of technical support services. Business authorized users have the power to reflect and comment, relevant comments will be a primary consideration, but not necessarily be accepted promise or guarantee.</Li>
 </ol>
 
-<h3>II. agreement constraints and limitations</h3>
+<h3>II. Agreement constraints and limitations</h3>
 <ol>
 <li>Business license has not been before, may not use this software for commercial purposes (including but not limited to business sites, business operations, for commercial purpose or profit web site). Purchase of commercial license, please visit http://www.discuz.com reference instructions, call 8610-51657885 for more details.</Li>
 <li>May not associated with the software or business license for rental, sale, mortgage or grant sub-licenses.</Li>
@@ -283,8 +283,8 @@ $lang = array(
 
 <p>Hong Sing products on the end user license agreement, business license and technical services to the details provided by the Hong Sing exclusive. Sing the company has without prior notice, modify the license agreement and services price list right to the modified agreement or price list from the change of the date of the new authorized user to take effect.</p>
 <p>Once you start the installation Hong Sing products, shall be deemed to fully understand and accept the terms of this Agreement, the terms in the enjoyment of the rights granted at the same time, by the relevant constraints and restrictions. Licensing agreement outside the scope of acts would be a direct violation of this License Agreement and constitute an infringement, we have the right to terminate the authorization, shall be ordered to stop the damage, and retain the power to investigate related responsibilities.</p>
-<p>the interpretation of the terms of the license agreement, validity, and dispute resolution, applicable to the mainland People\'s Republic of law.</p>
-<p>between Hong Sing if you and any dispute or controversy, should first be settled through friendly consultations, the consultation fails, you hereby agree to submit the dispute or controversy Sing Haidian District People\'s Court where jurisdiction. Hong Sing Company has the right to interpret the above terms and discretion.</p>
+<p>The interpretation of the terms of the license agreement, validity, and dispute resolution, applicable to the mainland People\'s Republic of law.</p>
+<p>Between Hong Sing if you and any dispute or controversy, should first be settled through friendly consultations, the consultation fails, you hereby agree to submit the dispute or controversy Sing Haidian District People\'s Court where jurisdiction. Hong Sing Company has the right to interpret the above terms and discretion.</p>
 </div>',
 
 	'uc_installed'		=> 'You have installed the UCenter. If you need to re-install, delete the data/install.lock file',//'您已经安装过 UCenter，如果需要重新安装，请删除 data/install.lock 文件',
@@ -296,18 +296,18 @@ $lang = array(
 	'ucenter_required'	=> 'Required',//'Discuz! 所需配置',
 	'ucenter_best'		=> 'Preferred',//'Discuz! 最佳',
 	'curr_server'		=> 'Current server',//'当前服务器',
-	'env_check'		=> 'Check for environments',//'环境检查',
+	'env_check'		=> 'Check environment',//'环境检查',
 	'os'			=> 'Operating System',//'操作系统',
 	'php'			=> 'PHP Version',//'PHP 版本',
 	'attachmentupload'	=> 'Attachment upload',//'附件上传',
-	'unlimit'		=> 'no limit',//'不限制',
+	'unlimit'		=> 'No limit',//'不限制',
 	'version'		=> 'Version',//'版本',
 	'gdversion'		=> 'GD Library',//'GD 库',
 	'allow'			=> 'Allow',//'允许',
 	'unix'			=> 'Unix-like',//'类Unix',
 	'diskspace'		=> 'Disk Space',//'磁盘空间',
-	'priv_check'		=> 'Check for directory/file permissions',//'目录、文件权限检查',
-	'func_depend'		=> 'Check for function dependency',//'函数依赖性检查',
+	'priv_check'		=> 'Check directory/file permissions',//'目录、文件权限检查',
+	'func_depend'		=> 'Check function dependency',//'函数依赖性检查',
 	'func_name'		=> 'Function name',//'函数名称',
 	'check_result'		=> 'Check result',//'检查结果',
 	'suggestion'		=> 'Recommendation',//'建议',
@@ -326,11 +326,11 @@ $lang = array(
 	'ucfounderpw'		=> 'UCenter admin password',//'创始人密码',
 	'ucfounderpw2'		=> 'Repeat UCenter admin password',//'重复创始人密码',
 
-	'init_log'		=> 'Initialize the records',//'初始化记录',
+	'init_log'		=> 'Initialize log',//'初始化记录',
 	'clear_dir'		=> 'Clear directory',//'清空目录',
 	'select_db'		=> 'Select the database',//'选择数据库',
 	'create_table'		=> 'Create table',//'建立数据表',
-	'succeed'		=> 'success',//'成功 ',
+	'succeed'		=> 'Success',//'成功 ',
 
 	'testdata'			=> 'Add test data',//'附加数据',
 	'testdata_check_label'		=> 'Install 4 demo pages for testing',//'Install demo page templates (4)',
