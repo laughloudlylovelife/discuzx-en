@@ -581,7 +581,7 @@ Note on the CSS Hack:
 
 			.hdc { min-height: 70px; }
 				.ie6 .hdc { height: 70px; }
-			#hd h2 { padding: 0 20px 8px 0;}
+			#hd h2 { padding: 0 20px 8px 0; float: left; }
 				#space #hd h2 { margin-top: 0; }
 			#hd .fastlg { padding-top: 10px; }
 
