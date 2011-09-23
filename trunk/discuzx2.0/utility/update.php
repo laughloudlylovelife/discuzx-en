@@ -64,16 +64,20 @@ if($_POST['delsubmit']) {
 		}
 	}
 
-	show_msg(lang('update','table_delete_completed'), $theurl.'?step=style');/vot
+	show_msg(lang('update','table_delete_completed'), $theurl.'?step=style');//vot
 }
 
 if(empty($_GET['step'])) $_GET['step'] = 'start';
 
+//DEBUG
+echo "step=".$_GET['step']."<br>";
 if($_GET['step'] == 'start') {
 	include_once('../config/config_ucenter.php');
 	include_once('../uc_client/client.php');
 	$version = uc_check_version();
 	$version = $version['db'];
+//DEBUG
+echo "version=".$version."<br>";
 	if(!DB::result_first('SELECT svalue FROM '.DB::table('common_setting')." WHERE skey='bbclosed' LIMIT 1")) {
 		show_msg(lang('update','close_before_update'));//vot
 	}
@@ -81,8 +85,9 @@ if($_GET['step'] == 'start') {
 		show_msg(lang('update','ucenter160update'));//vot
 	} else {
 		show_msg(lang('update','db_will_upgrade').'<br>' //vot
-			.lang('update','check_latest_version').'<br><br>
-			<a href="'.$theurl.'?step=prepare">'.lang('update','update_start').'</a>');//vot
+			.lang('update','check_latest_version').'<br><br>'
+			.lang('update','check_plugins').'<br><br>'
+			.'<a href="'.$theurl.'?step=prepare">'.lang('update','update_start').'</a>');//vot
 	}
 
 } elseif ($_GET['step'] == 'prepare') {
@@ -267,7 +272,7 @@ if($_GET['step'] == 'start') {
 		$value = DB::result_first('SELECT count(*) FROM '.DB::table('common_member_profile_setting')." WHERE fieldid = 'birthdist'");
 		if(!$value) {
 			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthdist', 1, 0, 0, 'Birth District', 'Birth District/County', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
-			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthcommunity', 1, 0, 0, 'Birt Community', '', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
+			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthcommunity', 1, 0, 0, 'Birth Community', '', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
 			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Birth City' WHERE fieldid = 'birthcity'");
 			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Reside City' WHERE fieldid = 'residecity'");
 		}
@@ -657,6 +662,10 @@ if($_GET['step'] == 'start') {
 			}
 		}
 
+		if(!isset($settings['lazyload'])) {
+			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('lazyload', '0')");
+		}
+
 		if(!DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_addon')." WHERE `key` = '25z5wh0o00' AND siteurl = 'http://addons.discuz.com' LIMIT 1")) {
 			DB::query("REPLACE INTO ".DB::table('common_addon')." (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', lang('update','plugin_center'), 'http://addons.discuz.com', lang('update','plugin_forum'), 'http://addons.discuz.com/contact', 'http://www.comsenz.com/addon/logo.gif', 1)");//vot
 		}
@@ -851,7 +860,7 @@ if($_GET['step'] == 'start') {
 			!DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_usergroup_field')." WHERE allowmediacode>'0'")) {
 			DB::update('common_usergroup_field', array('allowmediacode' => 1), "groupid<'4' OR groupid>'9'");
 		}
-		show_msg(lang('update','users_completed'), "$theurl?step=data&op=$nextop");
+		show_msg(lang('update','users_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'creditrule') {
 		$nextop = 'bbcode';
 		$delrule = array('register', 'realname', 'invitefriend', 'report', 'uploadimage', 'editrealname', 'editrealemail', 'delavatar');
@@ -859,7 +868,7 @@ if($_GET['step'] == 'start') {
 		if($count) {
 			DB::query("DELETE FROM ".DB::table('common_credit_rule')." WHERE action IN(".dimplode($delrule).")");
 		}
-		DB::update('common_credit_rule', array('rulename' => lang('update','daylogin'), "action='daylogin'");//vot
+		DB::update('common_credit_rule',array('rulename' => lang('update','daylogin')),"action='daylogin'");//vot
 		$count = DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_credit_rule')." WHERE action='portalcomment'");
 		if(!$count) {
 			DB::query("INSERT INTO ".DB::table('common_credit_rule')." (`rulename`, `action`, `cycletype`, `cycletime`, `rewardnum`, `norepeat`, `extcredits1`, `extcredits2`, `extcredits3`, `extcredits4`, `extcredits5`, `extcredits6`, `extcredits7`, `extcredits8`, `fids`) VALUES ('".lang('update','portalcomment')."','portalcomment','1','0','40','1','0','1','0','0','0','0','0','0','')");//vot
@@ -1268,14 +1277,14 @@ if($_GET['step'] == 'start') {
 			} else {
 				$data = @file($cachefile);
 				if(!$data) {
-					show_msg(lang('update','topic_image_skip), "$theurl?step=data&op=$nextop");
+					show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
 				}
 				$data = explode('|', $data[0]);
 			}
 			$tids = array_slice($data, $start, $limit);
 			if(!$tids) {
 				@unlink($cachefile);
-				show_msg(, "$theurl?step=data&op=$nextop");//vot
+				show_msg(lang('update','topic_image_upgraded'), $theurl.'?step=data&op='.$nextop);//vot
 			}
 			$query = DB::query("SELECT tid, pid FROM ".DB::table('forum_post')." WHERE tid IN (".dimplode($tids).") AND first='1'");
 			$insertsql = array();
@@ -1292,7 +1301,7 @@ if($_GET['step'] == 'start') {
 			$start += $limit;
 			show_msg(lang('update','topic_image_upgrade') . $start, "$theurl?step=data&op=threadimage&start=$start");//vot
 		} else {
-			show_msg(lang('update','topic_image_skip), "$theurl?step=data&op=$nextop");//vot
+			show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
 		}
 	} elseif($_GET['op'] == 'moderate') {
 
