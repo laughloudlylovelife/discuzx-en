@@ -55,8 +55,9 @@ with this one!
    Ensure that the /install/ directory contains the latest installer!
 
 4. Copy the files:
-   /instal/convert/language/lang_update.php
-   /instal/convert/language/lang_convert.php
+   /instal/lang_update.php
+   /instal/lang_restore.php
+???   /instal/convert/language/lang_convert.php
    into the /source/language/ directory at your site.
 
 5. Visit http://your_domain/install/update.php
