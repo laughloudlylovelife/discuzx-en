@@ -1,3 +1,4 @@
+//	English by Valery Votintsev at sources.ru
 var controlid = null;
 var currdate = null;
 var startdate = null;
