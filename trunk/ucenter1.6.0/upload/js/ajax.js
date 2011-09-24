@@ -1,3 +1,4 @@
+//	English by Valery Votintsev at sources.ru
 var Ajaxs = new Array();
 function Ajax(waitId) {
 	var aj = new Object();

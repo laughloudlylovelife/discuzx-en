@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum.func.php 14122 2008-08-20 06:06:33Z cnteacher $
+	English by Valery Votintsev at sources.ru
 */
 
 if(!defined('IN_COMSENZ')) {
@@ -29,7 +30,7 @@ $sqlfile = ROOT_PATH.'./install/uc.sql';
 
 $lockfile = ROOT_PATH.'./data/install.lock';
 
-define('CHARSET', 'utf-8');
+define('CHARSET', 'UTF-8');
 define('DBCHARSET', 'utf8');
 
 define('ORIG_TABLEPRE', 'uc_');
