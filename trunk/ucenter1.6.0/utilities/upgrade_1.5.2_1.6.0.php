@@ -214,7 +214,7 @@ EOT;
 
 if(file_exists($lock_file)) {
 	showheader();
-	showerror('Upgrade is locked, you have been upgrade, to continue the upgrade need to remove the '.str_replace(UC_ROOT, '', $lock_file).' File, then restart the operation');
+	showerror('Upgrade is locked!<br>For continue the upgrade you need to remove the '.str_replace(UC_ROOT, '', $lock_file).' file, and then restart the operation');
 	showfooter();
 }
 
@@ -224,10 +224,10 @@ if(!$action) {
 
 ?>
 
-	<p>This procedure is used t oupgrade UCenter 1.5.2 to UCenter 1.6.0</p>
+	<p>This procedure is used to upgrade UCenter 1.5.2 to UCenter 1.6.0</p>
 	<p>Before running the upgrade process, make sure you have uploaded UCenter 1.6.0 all files and directories</p>
-	<p>Strongly recommend that you backup the database before upgrade</p>
-	<p><a href="<?php echo $PHP_SELF;?>?action=db">If you have confirmed completion of the above steps, please click here to upgrade</a></p>
+	<p>Strongly recommended to backup the UCenter database before upgrade!</p>
+	<p>If you confirm completion of the above step, <a href="<?php echo $PHP_SELF;?>?action=db">please click here to start upgrade</a></p>
 
 <?php
 	showfooter();
@@ -239,7 +239,7 @@ if(!$action) {
 	echo "<h4>Table structure update</h4>";
 
 	@touch(UC_ROOT.'./data/install.lock');
-	@unlink(UC_ROOT.'./install/index.php');
+//vot	@unlink(UC_ROOT.'./install/index.php');
 
 	$db = new ucserver_db();
 	$db->connect(UC_DBHOST, UC_DBUSER, UC_DBPW, UC_DBNAME, UC_DBCHARSET);

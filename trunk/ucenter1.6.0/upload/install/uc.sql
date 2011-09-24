@@ -21,7 +21,7 @@ CREATE TABLE uc_applications (
 DROP TABLE IF EXISTS uc_members;
 CREATE TABLE uc_members (
   uid int(11) unsigned NOT NULL AUTO_INCREMENT,
-  username varchar(255) NOT NULL DEFAULT '',
+  username varchar(64) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
   email varchar(255) NOT NULL DEFAULT '',
   myid varchar(255)  NOT NULL DEFAULT '',
@@ -119,7 +119,7 @@ REPLACE INTO uc_settings(k, v) VALUES ('version', '1.6.0');
 DROP TABLE IF EXISTS uc_badwords;
 CREATE TABLE uc_badwords (
   id int(11) unsigned NOT NULL auto_increment,
-  admin varchar(255) NOT NULL default '',
+  admin varchar(64) NOT NULL default '',
   find varchar(255) NOT NULL default '',
   replacement varchar(255) NOT NULL default '',
   findpattern varchar(255) NOT NULL default '',
@@ -130,7 +130,7 @@ CREATE TABLE uc_badwords (
 DROP TABLE IF EXISTS uc_notelist;
 CREATE TABLE uc_notelist (
   noteid int(11) unsigned NOT NULL auto_increment,
-  operation char(32) NOT NULL,
+  operation varchar(32) NOT NULL,
   closed int(11) NOT NULL default '0',
   totalnum int(11) unsigned NOT NULL default '0',
   succeednum int(11) unsigned NOT NULL default '0',
@@ -157,7 +157,7 @@ CREATE TABLE uc_feeds (
   appid varchar(255) NOT NULL default '',
   icon varchar(255) NOT NULL default '',
   uid int(11) unsigned NOT NULL default '0',
-  username varchar(255) NOT NULL default '',
+  username varchar(64) NOT NULL default '',
   dateline int(11) unsigned NOT NULL default '0',
   hash_template varchar(255) NOT NULL default '',
   hash_data varchar(255) NOT NULL default '',
@@ -182,7 +182,7 @@ CREATE TABLE uc_feeds (
 DROP TABLE IF EXISTS uc_admins;
 CREATE TABLE uc_admins (
   uid int(11) unsigned NOT NULL auto_increment,
-  username varchar(255) NOT NULL default '',
+  username varchar(64) NOT NULL default '',
   allowadminsetting tinyint(1) NOT NULL default '0',
   allowadminapp tinyint(1) NOT NULL default '0',
   allowadminuser tinyint(1) NOT NULL default '0',
@@ -210,24 +210,24 @@ CREATE TABLE uc_failedlogins (
 DROP TABLE IF EXISTS uc_protectedmembers;
 CREATE TABLE uc_protectedmembers (
   uid int(11) unsigned NOT NULL default '0',
-  username varchar(255) NOT NULL default '',
+  username varchar(64) NOT NULL default '',
   appid tinyint(1) unsigned NOT NULL default '0',
   dateline int(11) unsigned NOT NULL default '0',
-  admin varchar(255) NOT NULL default '0',
+  admin varchar(64) NOT NULL default '0',
   UNIQUE KEY(username, appid)
 ) Type=MyISAM;
 
 DROP TABLE IF EXISTS uc_mergemembers;
 CREATE TABLE uc_mergemembers (
   appid int(11) unsigned NOT NULL,
-  username varchar(255) NOT NULL,
+  username varchar(64) NOT NULL,
   PRIMARY KEY  (appid,username)
 ) Type=MyISAM;
 
 DROP TABLE IF EXISTS uc_vars;
 CREATE TABLE uc_vars (
   name varchar(32) NOT NULL default '',
-  value char(255) NOT NULL default '',
+  value varchar(255) NOT NULL default '',
   PRIMARY KEY(name)
 ) Type=HEAP;
 
