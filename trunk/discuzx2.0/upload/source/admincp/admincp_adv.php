@@ -236,9 +236,9 @@ if($operation == 'ad') {
 		$advclass = new $advclass;
 		$advsetting = $advclass->getsetting();
 		$advtitle = lang('adv/'.$type, $advclass->name).($type != 'custom' ? '' : ' '.$advclass->customname);
-		$returnurl = 'action=adv&operation=ad'.(empty($_G['gp_from']) ? '&type='.$type.($type != 'custom' ? '' : '&customid='.$_G['gp_customid']) : '');
+/*vot*/		$returnurl = ADMINSCRIPT.'?'.'action=adv&operation=ad'.(empty($_G['gp_from']) ? '&type='.$type.($type != 'custom' ? '' : '&customid='.$_G['gp_customid']) : '');
 
-		$return = '<a href="'.ADMINSCRIPT.'?'.$returnurl.'">'.cplang('adv_list').(empty($_G['gp_from']) ? ' - '.$advtitle : '').'</a>';
+/*vot*/		$return = '<a href="'.$returnurl.'">'.cplang('adv_list').(empty($_G['gp_from']) ? ' - '.$advtitle : '').'</a>';
 		shownav('extended', 'adv_admin');
 		showsubmenu($root.' &raquo; '.$return.' &raquo; '.($operation == 'edit' ? cplang('adv_edit') : cplang('adv_add')));
 		echo '<br />';
@@ -393,7 +393,6 @@ if($operation == 'ad') {
 		echo '</script>';
 
 	} else {
-
 		if($operation == 'edit') {
 			$advid = $_G['gp_advid'];
 			$adv = DB::fetch_first("SELECT * FROM ".DB::table('common_advertisement')." WHERE advid='$advid'");
