@@ -31,7 +31,7 @@ $lang = array
 
 	'feed_showcredit'	=> '{actor} presented {credit} points to {fusername} for raise in <a href="home.php?mod=space&do=top">Top list</a>',//'{actor} 赠送给 {fusername} 竞价积分 {credit} 个，帮助好友提升在<a href="home.php?mod=space&do=top" target="_blank">竞价排行榜</a>中的名次',
 	'feed_showcredit_self'	=> '{actor} spent {credit} points to raise himself in <a href="home.php?mod=space&do=top">Top list</a>',//'{actor} 增加竞价积分 {credit} 个，提升自己在<a href="home.php?mod=space&do=top" target="_blank">竞价排行榜</a>中的名次',
-	'feed_doing_title'	=> '{actor} doing: {message}',//'{actor}：{message}',
+	'feed_doing_title'	=> '{actor} wrote doing: {message}',//'{actor}：{message}',
 	'feed_friend_title'	=> '{actor} and {touser} become friends',//'{actor} 和 {touser} 成为了好友',
 
 
@@ -45,13 +45,13 @@ $lang = array
 	'feed_task'			=> '{actor} completed the task {task}',//'{actor} 完成了有奖任务 {task}',
 	'feed_task_credit'		=> '{actor} completed the task {task} and get bonus {credit} points',//'{actor} 完成了有奖任务 {task}，领取了 {credit} 个奖励积分',
 
-	'feed_profile_update_base'	=> '{actor} updated profile information',//'{actor} 更新了自己的基本资料',
+	'feed_profile_update_base'	=> '{actor} updated profile info',//'{actor} 更新了自己的基本资料',
 	'feed_profile_update_contact'	=> '{actor} updated contact info',//'{actor} 更新了自己的联系方式',
 	'feed_profile_update_edu'	=> '{actor} updated education info',//'{actor} 更新了自己的教育情况',
 	'feed_profile_update_work'	=> '{actor} updated work info',//'{actor} 更新了自己的工作信息',
 	'feed_profile_update_info'	=> '{actor} updated personal data, hobbies, etc.',//'{actor} 更新了自己的兴趣爱好等个人信息',
-	'feed_profile_update_bbs'	=> '{actor} updated personal information',//'{actor} 更新了自己的个人信息',
-	'feed_profile_update_verify'	=> '{actor} updated verified personal information',//'{actor} 更新了自己的认证信息',
+	'feed_profile_update_bbs'	=> '{actor} updated personal info',//'{actor} 更新了自己的个人信息',
+	'feed_profile_update_verify'	=> '{actor} updated verified personal info',//'{actor} 更新了自己的认证信息',
 
 	'feed_add_attachsize'		=> '{actor} spent {credit} points to enlarge the upload space on {size}. Now more images may be uploaded. (<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want this too!</a>)',//'{actor} 用 {credit} 个积分兑换了 {size} 附件空间，可以上传更多的图片啦(<a href="home.php?mod=spacecp&ac=credit&op=addsize">我也来兑换</a>)',
 

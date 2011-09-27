@@ -4,7 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id:$
+ *      $Id: lang_thread.php by Valery Votintsev at sources.ru
+
  */
 
 if(!defined('IN_DISCUZ')) {
