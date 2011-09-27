@@ -353,7 +353,7 @@ Translated by Valery Votintsev
 */
 .bdl { float: left; overflow: hidden; border: 1px solid #BDD7E3; background-color: #F5F9FB; }
 	.ie6 .bdl { position: relative; }
-	.bdl_h { height: 32px; line-height: 22px; }
+	.bdl_h { height: 32px; line-height: 22px; width: 100%; }
 .bdl .tbn { margin: 10px; }
 	/* Zoning */
 	.bdl dl { margin: -1px -10px 0; }
@@ -569,7 +569,7 @@ Translated by Valery Votintsev
 		.pls .avatar { margin: 10px 15px; }
 			.pls .avatar img { padding: 5px 5px 8px; background: #FFF url({IMGDIR}/midavt_shadow.gif) 0 100% repeat-x; }
 
-		.pls p, .pls .pil, .pls .o { margin: 5px /*10px*/ 5px */20px*/; }
+		.pls p, .pls .pil, .pls .o { /*margin: 10px 20px;*/ padding: 2px 6px; }
 			.pls p em, .pls dt em { color: {NOTICETEXT}; padding-left: 10px; }
 			.pls dd, .pls dt { float: left; overflow: hidden; height: 1.6em; line-height: 1.6em; }
 				.pls dt { margin-right: 3px; width: 60px; }
