@@ -65,7 +65,7 @@ $lang = array (
 	'login_switch_invisible_mode'	=> 'Toggle online status',//'切换在线状态',
 	'logout'			=> 'Logout',//'退出',
 	'my_nav'			=> 'My Center',//'我的中心',
-	'my_nav_login'			=> 'Please after <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>Login</strong></a> use the quick navigation<br />Have no account? <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',//'请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
+	'my_nav_login'			=> 'Please <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>Login</strong></a> for use a quick navigation<br />Have no account? <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',//'请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
 	'open_diy'			=> 'Open Layout Panel',//'打开 DIY 面板',
 	'pm_center'			=> 'Private Messages',//'短消息',
 	'portal_block_manage'		=> 'Block Management',//'模块管理',
