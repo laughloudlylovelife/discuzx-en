@@ -165,20 +165,20 @@ $lang = array(
 	'config_unwriteable'		=> 'Setup Wizard can not write the configuration file. Enable the config.inc.php write permissions (666 or 777)',//'安装向导无法写入配置文件, 请设置 config.inc.php 程序属性为可写状态(777)',
 
 	'install_in_processed'		=> 'Installing ...',//'正在安装...',
-	'install_succeed'		=> 'Installation successfully completed! Click here to enter your Discuz! X1',//'安装成功，点击进入',
+	'install_succeed'		=> 'Installation successfully completed! Click here to enter your Discuz! X2',//'安装成功，点击进入',
 
-	'init_credits_karma'	=> 'Rating',//'威望',//!!! The same in install_var.php
-	'init_credits_money'	=> 'Money',//'金钱',//!!! The same in install_var.php
+	'init_credits_karma'	=> 'Reputation',//'威望',//!!! The same in install_var.php
+	'init_credits_money'	=> 'Points',//'金钱',//!!! The same in install_var.php
 
-	'init_postno0'		=> 'Senior Member',//'楼主',//!!! The same in install_var.php 
-	'init_postno1'		=> 'Full Member',//'沙发',    //!!! The same in install_var.php
-	'init_postno2'		=> 'Member',//'板凳',   //!!! The same in install_var.php
-	'init_postno3'		=> 'Newbie',//'地板',   //!!! The same in install_var.php
+	'init_postno0'		=> '#1',//'楼主',//!!! The same in install_var.php 
+	'init_postno1'		=> '#2',//'沙发',    //!!! The same in install_var.php
+	'init_postno2'		=> '#3',//'板凳',   //!!! The same in install_var.php
+	'init_postno3'		=> '#4',//'地板',   //!!! The same in install_var.php
 
 	'init_support'		=> 'Digg',//'支持',   //!!! The same in install_var.php
 	'init_opposition'	=> 'Bury',//'反对',//!!! The same in install_var.php
 
-	'init_group_0'	=> 'Will member',//'会员',//???????????
+	'init_group_0'	=> 'Member',//'会员',
 	'init_group_1'	=> 'Administrator',//'管理员',
 	'init_group_2'	=> 'Super Moderator',//'超级版主',
 	'init_group_3'	=> 'Moderator',//'版主',
@@ -195,27 +195,27 @@ $lang = array(
 	'init_group_14'	=> 'Gold Member',//'金牌会员',
 	'init_group_15'	=> 'Veteran',//'论坛元老',
 
-	'init_rank_1'	=> 'New Schooler',//'新生入学',
-	'init_rank_2'	=> 'Small scale chopper',//'小试牛刀',
-	'init_rank_3'	=> 'Attachment reporter',//'实习记者',
+	'init_rank_1'	=> 'Beginner',//'新生入学',
+	'init_rank_2'	=> 'Apprentice',//'小试牛刀',
+	'init_rank_3'	=> 'Intern',//'实习记者',
 	'init_rank_4'	=> 'Freelance writer',//'自由撰稿人',
 	'init_rank_5'	=> 'Distinguished Writer',//'特聘作家',
 
-	'init_cron_1'	=> 'Empty today posted a few',//'清空今日发帖数',
-	'init_cron_2'	=> 'Empty month online time',//'清空本月在线时间',
+	'init_cron_1'	=> 'Empty today\'s post count',//'清空今日发帖数',
+	'init_cron_2'	=> 'Empty this month\'s online time',//'清空本月在线时间',
 	'init_cron_3'	=> 'Daily data cleaning',//'每日数据清理',
-	'init_cron_4'	=> 'Statistics and e-mail birthday wishes',//'生日统计与邮件祝福',
-	'init_cron_5'	=> 'Topic Reply informers',//'主题回复通知',
+	'init_cron_4'	=> 'Birthday statistics and e-mail subscriptions',//'生日统计与邮件祝福',
+	'init_cron_5'	=> 'Topic reply notifications',//'主题回复通知',
 	'init_cron_6'	=> 'Daily bulletin clean up',//'每日公告清理',
 	'init_cron_7'	=> 'Time-limited operation clean-up',//'限时操作清理',
 	'init_cron_8'	=> 'Promotion messages clean-up',//'论坛推广清理',
-	'init_cron_9'	=> 'Monthly theme clean-up',//'每月主题清理',
+	'init_cron_9'	=> 'Monthly topic clean-up',//'每月主题清理',
 	'init_cron_10'	=> 'Daily update X-Space users',//'每日 X-Space更新用户',
-	'init_cron_11'	=> 'Weekly theme update',//'每周主题更新',
+	'init_cron_11'	=> 'Weekly topic update',//'每周主题更新',
 
 	'init_bbcode_1'	=> 'So that the contents of horizontal scrolling, the effect is similar to the marquee HTML tags, Note: This effect only valid under Internet Explorer browser.',//'使内容横向滚动，这个效果类似 HTML 的 marquee 标签，注意：这个效果只在 Internet Explorer 浏览器下有效。',
 	'init_bbcode_2'	=> 'Embedded Flash animation',//'嵌入 Flash 动画',
-	'init_bbcode_3'	=> 'Show ICQ online status, click to this icon and chat with him/her',//'显示 QQ 在线状态，点这个图标可以和他（她）聊天',
+	'init_bbcode_3'	=> 'Show QQ online status, click to this icon and chat with him/her',//'显示 QQ 在线状态，点这个图标可以和他（她）聊天',
 	'init_bbcode_4'	=> 'Superscript',//'上标',
 	'init_bbcode_5'	=> 'Subscript',//'下标',
 	'init_bbcode_6'	=> 'Embedded Windows media audio',//'嵌入 Windows media 音频',
@@ -243,7 +243,7 @@ $lang = array(
 
 <p>Copyright (c) 2001-2010, Hong Sing Imagination (Beijing) Technology Co., Ltd. All rights reserved.</p>
 
-<p>Thank you for choosing Discuz! forum product. We hope that our efforts to provide you with a fast and efficient and powerful community forum solution.</p>
+<p>Thank you for choosing Discuz! forum product. We hope that our product will be able to provide you with a fast, efficient and powerful community forum solution.</p>
 
 <p>Discuz! English full name Crossday Discuz! Board, Chinese full name Discuz! Forum, hereinafter referred to as Discuz!.</p>
 
