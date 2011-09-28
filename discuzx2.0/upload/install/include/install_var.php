@@ -152,7 +152,7 @@ $serialize_sql_setting = array (
     1 =>
     array (
       'img' => '',
-      'title'	=> 'Rating',//'威望',
+      'title'	=> 'Reputation',//'威望',
       'unit' => '',
       'ratio' => 0,
       'available' => '1',
@@ -240,10 +240,10 @@ $serialize_sql_setting = array (
   ),
   'postnocustom' =>
   array (
-    0 => 'Senior member',//'楼主',
-    1 => 'Full Member',//'沙发',
-    2 => 'Member',//'板凳',
-    3 => 'Newbie',//'地板',
+    0 => '#1',//'楼主',
+    1 => '#2',//'沙发',
+    2 => '#3',//'板凳',
+    3 => '#4',//'地板',
   ),
   'recommendthread' =>
   array (
@@ -274,7 +274,7 @@ $serialize_sql_setting = array (
     1 => 'Original',//'原创',
     2 => 'Hot',//'热点',
     3 => 'Photos',//'组图',
-    4 => 'Broken News',//'爆料',
+    4 => 'Breaking News',//'爆料',
     5 => 'Headline',//'头条',
     6 => 'Slideshow',//'幻灯',
     7 => 'Scroll',//'滚动',
