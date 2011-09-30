@@ -380,7 +380,7 @@ $lang = array (
 	'friend_message'	=> 'Ordered by <a href="javascript:;" class="xw1" onmouseover="showTip(this)" tip="Friends heat is a system based on the interaction between you and your friends act as a reference value automatically accumulated, the greater the value that you are the more frequent interaction with the friends">Friends heat</a>',//'按照<a href="javascript:;" class="xw1" onmouseover="showTip(this)" tip="好友热度是系统根据您与好友之间交互的动作自动累计的一个参考值，数值越大，表示您与这位好友互动越频繁">好友热度</a>排序',
 	'friends'		=> 'Friends',//'好友',
 	'ignore_group_feed'	=> 'Ignore user group feeds',//'屏蔽用户组动态',
-	'interactive'		=> 'Interactive',//'互动',
+	'interactive'		=> 'Do',//'互动',
 	'manage'		=> 'Manage',//'管理',
 	'max_friend_num'	=> 'You can add up to $maxfriendnum friends',//'最多可以添加 $maxfriendnum 个好友',
 	'month'			=> 'Month',//'月',
