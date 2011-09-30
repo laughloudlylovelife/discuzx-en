@@ -132,6 +132,7 @@ if(!submitcheck('topicsubmit', 0, $seccodecheck, $secqaacheck)) {
 		showmessage('post_sm_isnull');
 	}
 
+	$subject=stripslashes($subject); //vot
 	if($post_invalid = checkpost($subject, $message, ($special || $sortid))) {
 		showmessage($post_invalid, '', array('minpostsize' => $_G['setting']['minpostsize'], 'maxpostsize' => $_G['setting']['maxpostsize']));
 	}
