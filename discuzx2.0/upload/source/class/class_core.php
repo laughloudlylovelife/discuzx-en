@@ -292,6 +292,12 @@ class discuz_core {
 
 	function _init_output() {
 
+		setglobal('charset', $this->config['output']['charset']);
+		define('CHARSET', $this->config['output']['charset']);
+if(strtolower(CHARSET)=='utf-8') { //vot
+  ini_set('mbstring.internal_encoding','UTF-8'); //vot
+//echo 'mbstring.internal_encoding = ' . ini_get('mbstring.internal_encoding') . "<br>\n";
+} //vot
 		if($this->config['security']['urlxssdefend'] && $_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_SERVER['REQUEST_URI'])) {
 			$this->_xss_check();
 		}
@@ -308,8 +314,6 @@ class discuz_core {
 		setglobal('gzipcompress', $allowgzip);
 		ob_start($allowgzip ? 'ob_gzhandler' : null);
 
-		setglobal('charset', $this->config['output']['charset']);
-		define('CHARSET', $this->config['output']['charset']);
 		if($this->config['output']['forceheader']) {
 			@header('Content-Type: text/html; charset='.CHARSET);
 		}

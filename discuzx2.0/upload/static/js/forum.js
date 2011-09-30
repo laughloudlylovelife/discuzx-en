@@ -219,7 +219,8 @@ function fastpostvalidate(theform, noajaxpost) {
 	if(theform.message.value == '' && theform.subject.value == '') {
 		s = lng['enter_content']+'.';
 		theform.message.focus();
-	} else if(mb_strlen(theform.subject.value) > 80) {
+//vot	} else if(mb_strlen(theform.subject.value) > 80) {
+	} else if(theform.subject.value.length > 80 ) { //vot
 		s = lng['title_long']+'.';
 		theform.subject.focus();
 	}
