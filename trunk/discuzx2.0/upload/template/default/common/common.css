@@ -169,7 +169,7 @@ Note on the CSS Hack:
 	/* Page header */ .ph { font-size: 20px; }
 	/* Main title */ .mt { padding: 10px 0; font-size: 16px; }
 
-/* vertical line within a section */	.pipe { margin: 0 5px; color: #CCC; }
+/* vertical line within a section */	.pipe { margin: 0 2px; color: #CCC; } /*vot*/
 
 /* Text attributes: size, color, thickness */
 /*
