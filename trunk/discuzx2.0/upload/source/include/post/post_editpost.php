@@ -247,6 +247,7 @@ if(!submitcheck('editsubmit')) {
 
 	if(empty($_G['gp_delete'])) {
 
+$subject=stripslashes($subject); //vot
 		if($post_invalid = checkpost($subject, $message, $isfirstpost && ($special || $sortid))) {
 			showmessage($post_invalid, '', array('minpostsize' => $_G['setting']['minpostsize'], 'maxpostsize' => $_G['setting']['maxpostsize']));
 		}
