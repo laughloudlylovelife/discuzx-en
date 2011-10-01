@@ -69,7 +69,8 @@ function validate(theform) {
 	if(($('postsubmit').name != 'replysubmit' && !($('postsubmit').name == 'editsubmit' && !isfirstpost) && theform.subject.value == "") || !sortid && !special && trim(message) == "") {
 		showDialog(lng['enter_content']);
 		return false;
-	} else if(mb_strlen(theform.subject.value) > 80) {
+//vot	} else if(mb_strlen(theform.subject.value) > 80) {
+	} else if(theform.subject.value.length > 80) { //vot
 		showDialog(lng['title_long']);
 		return false;
 	}
