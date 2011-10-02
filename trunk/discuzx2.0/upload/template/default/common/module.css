@@ -1614,7 +1614,7 @@ body { background: #FFF none !important; }
 		.td_srchtxt { background: url({IMGDIR}/searchbar.png) no-repeat 0 -35px; }
 		.td_srchbtn { background: url({IMGDIR}/searchbar.png) no-repeat 0 -70px; }
 		#scform_srchtxt { padding: 0 10px; width: 460px; background: transparent; outline: none; }
-		#scform_submit { width: 107px; opacity: 0; filter: alpha(opacity=0); cursor: pointer; }
+		#scform_submit { width: 107px; /*opacity: 0; filter: alpha(opacity=0);*/ cursor: pointer; color: white; background: transparent; }
 		#scform_srchtxt, #scform_submit { height: 35px; border: none; line-height: 35px; }
 		.ie6 #scform_srchtxt, .ie6 #scform_submit, .ie7 #scform_srchtxt, .ie7 #scform_submit { height: 33px; border: none; line-height: 33px; }
 	.sttl { margin: 10px 0; padding: 5px; border-bottom: 1px solid #CCC; background: #F5F5F5; }
