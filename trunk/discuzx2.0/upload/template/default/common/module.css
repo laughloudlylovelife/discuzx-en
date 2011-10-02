@@ -399,13 +399,15 @@ Translated by Valery Votintsev
 /** forum::forumdisplay,forum::viewthread,forum::modcp,group,home::space,home::task,search::forum,search::group,member::groupexpiry,misc::ranklist,misc::stat **/
 /* fct --> froumatction Function Button */
 	.fct a { float: left; margin-left: 8px; }
-	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt { padding-left: 20px; background: no-repeat 0 50%; }
+	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt, .fa_mng, .fa_pend { padding-left: 16px; background: no-repeat 0 50%; }
 		.fa_fav_0 { background-image: url({IMGDIR}/fav_grey.gif); }
 		.fa_fav { background-image: url({IMGDIR}/fav.gif); }
 		.fa_rss { background-image: url({IMGDIR}/feed.gif); }
 		.fa_achv { background-image: url({IMGDIR}/clock.gif); }
 		.fa_bin { background-image: url({IMGDIR}/recyclebin.gif); }
 		.fa_ivt { background-image: url({IMGDIR}/user_add.gif); }
+		.fa_mng { background-image: url({IMGDIR}/manage.png); }
+		.fa_pend { background-image: url({IMGDIR}/notice.gif); }
 
 /* List of related topics */
 	/*.tl .th th a { float: left; margin-right: 10px; padding-right: 17px; background: url({IMGDIR}/arw_d2.gif) no-repeat 100% 50%; }*/
