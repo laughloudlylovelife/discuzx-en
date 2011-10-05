@@ -136,7 +136,7 @@ function getblockhtml($blockname,$parameters = array()) {
 				$managehtml .= "<li><a href=\"forum.php?mod=modcp&action=thread&op=post&do=search&searchsubmit=1&users=$encodeusername\" id=\"umanageli\" onmouseover=\"showMenu(this.id)\" class=\"showmenu\">".lang('home/template', 'content_manage')."</a></li>";
 			}
 			if(!empty($managehtml)) {
-				$html .= '<hr class="da mtn m0" /><ul class="ptn xl xl2 cl">'.$managehtml.'</ul><ul id="usermanageli_menu" class="p_pop" style="width: 80px; display:none;">';
+				$html .= '<hr class="da mtn m0" /><ul class="ptn xl xl2 cl">'.$managehtml.'</ul><ul id="usermanageli_menu" class="p_pop" style="display:none;">';
 				if(checkperm('allowbanuser')) {
 					$html .= '<li><a href="'.($_G['adminid'] == 1 ? "admin.php?action=members&operation=ban&username=$encodeusername&frames=yes" : "forum.php?mod=modcp&action=member&op=ban&uid=$space[uid]").'" target="_blank">'.lang('home/template', 'user_ban').'</a></li>';
 				}
@@ -145,7 +145,7 @@ function getblockhtml($blockname,$parameters = array()) {
 				}
 				$html .= '</ul>';
 				if($_G['adminid'] == 1) {
-					$html .= '<ul id="umanageli_menu" class="p_pop" style="width: 80px; display:none;">';
+					$html .= '<ul id="umanageli_menu" class="p_pop" style="display:none;">';
 					$html .= '<li><a href="forum.php?mod=modcp&action=thread&op=post&searchsubmit=1&do=search&users='.$encodeusername.'" target="_blank">'.lang('space', 'manage_post').'</a></li>';
 					$html .= '<li><a href="admin.php?action=doing&searchsubmit=1&search=true&fromumanage=1&users='.$encodeusername.'" target="_blank">'.lang('space', 'manage_doing').'</a></li>';
 					$html .= '<li><a href="admin.php?action=blog&searchsubmit=1&search=true&fromumanage=1&uid='.$uid.'" target="_blank">'.lang('space', 'manage_blog').'</a></li>';
