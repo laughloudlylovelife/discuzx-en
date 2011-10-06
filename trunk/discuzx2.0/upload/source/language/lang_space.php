@@ -150,18 +150,18 @@ $lang = array(
 					</script>' : '').'
 					</div>',
 	'wall_li'		=> '<dl class="bbda cl" id="comment_{cid}_li">
-				<dd class="m avt">
-				{author_avatar}
-				</dd>
-				<dt>
-				{author}
-				<span class="y xw0">{op}</span>
-				<span class="xg1 xw0">{date}</span>
-				<span class="xgl">{moderated}</span>
-				</dt>
-				<dd id="comment_{cid}">{message}</dd>
-				</dl>',
-	'wall_more'		=> '<dl><dt><span class="y xw0"><a href="home.php?mod=space&uid={uid}&do=wall">查看全部</a></span><dt></dl>',
+					<dd class="m avt">
+					{author_avatar}
+					</dd>
+					<dt>
+					{author}
+					<span class="y xw0">{op}</span>
+					<span class="xg1 xw0">{date}</span>
+					<span class="xgl">{moderated}</span>
+					</dt>
+					<dd id="comment_{cid}">{message}</dd>
+					</dl>',
+	'wall_more'		=> '<dl><dt><span class="y xw0"><a href="home.php?mod=space&uid={uid}&do=wall">Write to Wall</a></span><dt></dl>',//'<dl><dt><span class="y xw0"><a href="home.php?mod=space&uid={uid}&do=wall">查看全部</a></span><dt></dl>',
 	'wall_edit'		=> '<a href="home.php?mod=spacecp&ac=comment&op=edit&cid={cid}&handlekey=editcommenthk_{cid}" id="c_{cid}_edit" onclick="showWindow(this.id, this.href, \'get\', 0);">Edit</a> ',//'<a href="home.php?mod=spacecp&ac=comment&op=edit&cid={cid}&handlekey=editcommenthk_{cid}" id="c_{cid}_edit" onclick="showWindow(this.id, this.href, \'get\', 0);">编辑</a> ',
 	'wall_del'		=> '<a href="home.php?mod=spacecp&ac=comment&op=delete&cid={cid}&handlekey=delcommenthk_{cid}" id="c_{cid}_delete" onclick="showWindow(this.id, this.href, \'get\', 0);">Delete</a> ',//'<a href="home.php?mod=spacecp&ac=comment&op=delete&cid={cid}&handlekey=delcommenthk_{cid}" id="c_{cid}_delete" onclick="showWindow(this.id, this.href, \'get\', 0);">删除</a> ',
 	'wall_reply'		=> '<a href="home.php?mod=spacecp&ac=comment&op=reply&cid={cid}&handlekey=replycommenthk_{cid}" id="c_{cid}_reply" onclick="showWindow(this.id, this.href, \'get\', 0);">Reply</a>',//'<a href="home.php?mod=spacecp&ac=comment&op=reply&cid={cid}&handlekey=replycommenthk_{cid}" id="c_{cid}_reply" onclick="showWindow(this.id, this.href, \'get\', 0);">回复</a>',
@@ -201,7 +201,7 @@ $lang = array(
 	'block_myapp_no_content'		=> 'No applications yet',//'现在还没有应用',
 	'block_myapp_no_content_publish'	=> ', <a href ="userapp.php?mod=manage&my_suffix=/app/list">I want to play applications</a>',//'，<a href ="userapp.php?mod=manage&my_suffix=/app/list">我要玩应用</a>',
 	'block_view_noperm'			=> 'No prmissions to view',//'无权查看',
-	'block_view_profileinfo_noperm'	=> 'No data or no permission to view',//'暂无资料项或无权查看',
+	'block_view_profileinfo_noperm'		=> 'No data or no permission to view',//'暂无资料项或无权查看',
 	'click_play'				=> 'Click to Play',//'点击播放',
 	'click_view'				=> 'Click to view',//'点击查看',
 	'feed_view_only'			=> 'Just look at these feeds',//'只看此类动态',
