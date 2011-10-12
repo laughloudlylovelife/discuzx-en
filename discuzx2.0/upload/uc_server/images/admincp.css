@@ -24,7 +24,7 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 .btn{ margin:3px 0; padding:2px 5px; *padding:4px 5px 1px; border-color:#ddd #666 #666 #ddd; background:#DDD; color:#000; cursor:pointer; }
 .sgbtn{ margin-left:20px; padding:3px 7px; *padding:4px 7px 2px; border:1px solid #B5CFD9; background:#F2F9FD; color:#666; font-size:12px; font-weight:400; }
 	.sgbtn:hover{ text-decoration:none; }
-.bigarea{ margin-left:5px; width:320px; height:120px; }
+/*vot*/ .bigarea{ margin-left:5px; width:320px; height:120px; }
 
 /* main header */
 .mainhd{ text-align:left; height:69px; line-height:69px; background:url(bg_repx.gif) repeat-x; }
@@ -59,7 +59,7 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 	.opt td{ padding-bottom:10px; }
 	.opt .txt, .opt textarea{ vertical-align:middle; margin-right:10px; width:250px; }
 	.opt select{ vertical-align:middle; margin-right:10px; }
-	.opt .area{ height:120px; }
+/*vot*/	.opt .area{ height:120px; }
 	.opt .bigarea { width: 500px; height: 80px; }
 	.opt label{ margin-right:20px; }
 	.opt p{ float:left; line-height:180%; }
@@ -114,7 +114,7 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 .footer{ display:block; line-height:25px; }
 
 /* tabmenu */
-.hastabmenu{ position:relative; height:90px; /*width: 580px;*/ }
+/*vot*/ .hastabmenu{ position:relative; height:90px; /*width: 580px;*/ }
 	.tabmenu{ position:absolute; z-index:80; list-style:none; }
 		.tabmenu li{ float:left; margin-right:5px; }
 		.tabmenu li a, .tabmenu .tabcurrent a{ display:block; padding: 0 7px; height: 21px; line-height: 21px; border:1px solid #CCC; border-bottom:1px solid #B5CFD9; color:#666; }
@@ -122,14 +122,14 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 		*+html .tabmenu li a { height: 20px; line-height: 20px; }
 		.tabmenu li a:hover{ text-decoration:none; }
 		.tabmenu .tabcurrent a{ border:1px solid #B5CFD9; border-bottom:1px solid #F2F9FD; background:#F2F9FD; }
-	.tabcontent, .tabcontentcur{ position:absolute; top:22px; *top:21px; z-index:70; padding:10px; /*width:580px;*/ border:1px solid #CCC; }
+/*vot*/	.tabcontent, .tabcontentcur{ position:absolute; top:22px; *top:21px; z-index:70; padding:10px; /*width:580px;*/ border:1px solid #CCC; }
 	.tabcontentcur{ border:1px solid #B5CFD9; background:#F2F9FD; }
 	.tabcontent .txt, .tabcontentcur .txt{ margin-right:10px; width:110px; }
 	.tabcontent .btn, .tabcontentcur .btn{ margin-left:5px; }
 
 /* table */
 .dbtb{ clear:both; width:100%; }
-	.tbtitle{ padding:5px 0; width:140px; }
+/*vot*/	.tbtitle{ padding:5px 0; width:140px; }
 	.dbtb .btn{ margin-left:0; }
 
 /* pages */
@@ -149,7 +149,7 @@ h3{ font-size:14px; }
 	.dblist li{ float:left; margin:0 0 0 -3px; *margin:0 0 5px -3px; width:25%; height:auto; *height:16px; }
 .memlist{ list-style:none; margin:7px 0 25px; padding-top:2px; border-top:2px solid #B5CFD9; }
 	.memlist li{ clear:both; overflow:hidden; zoom:1; padding:5px 0; *padding:1px 0 5px; line-height:150%; background:url(bg_repx.gif) repeat-x 0 bottom; }
-		.memlist em{ float:left; width:140px; }
+/*vot*/		.memlist em{ float:left; width:140px; }
 			.memlist .memcont{ width:480px; }
 .tiplist{ float:right; list-style:none; width:320px; }
 	.tiplist li{ line-height:160%; }

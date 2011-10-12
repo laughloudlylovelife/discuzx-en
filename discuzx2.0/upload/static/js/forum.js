@@ -284,7 +284,7 @@ function loadData(quiet, formobj) {
 
 	if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
 		if(!quiet) {
-			showDialog(lng['recover_no']);
+			showDialog(lng['recover_no'], 'info');
 		}
 		return;
 	}

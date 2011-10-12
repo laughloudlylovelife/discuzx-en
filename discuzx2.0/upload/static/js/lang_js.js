@@ -95,8 +95,16 @@ var lng = {
 	'wysiwyg_only'		: 'This operation is effective only for WYSIWYG mode',//'本操作只在多媒体编辑模式下才有效',
 
 //---------------------------
+//static/image/admincp/cloud/cloud.js
+	'int_cloud_test'	: 'Testing other cloud platform interface',//'云平台其他接口测试',
+	'int_roaming_test'	: 'Testing other Roaming interface',//'漫游其他接口测试',
+	'int_qq_test'		: 'Testing QQ Internet interface',//'QQ互联接口测试',
+
+//---------------------------
 //static/image/admincp/cloud/qqgroup.js
-	'select_topic_to_push'	: 'Select at least one topic to Push',//'请至少推送一条头条主题和一条列表主题',
+	'select_topic_to_push'	: 'Select at least one topic for push to Articles',//'请至少推送一条头条主题和一条列表主题',
+	'select_item_to_push'	: 'Select at least one item for push to Articles',//'请至少推送一条信息到列表区域',
+	''	: '',//'内部错误，无法显示此内容',
 
 //---------------------------
 //static/image/admincp/cloud/qqgroup.js
@@ -557,6 +565,9 @@ var lng = {
 	'temp_action'		: 'Click the "Continue" button to load the temporary data into current style,<br />Click the "Delete" button for delete temporary data.',//'按继续按钮将打开暂存数据并DIY，<br />按删除按钮将删除暂存数据。',
 	'continue'		: 'Continue',//'继续',
 
+//--------------------------------
+//static/js/qshare.js
+	'from_tencent'		: 'I come from Tencent microblogging an open platform',//"\u6211\u6765\u81EA\u4E8E\u817E\u8BAF\u5FAE\u535A\u5F00\u653E\u5E73\u53F0",
 
 //--------------------------------
 //static/js/register.js

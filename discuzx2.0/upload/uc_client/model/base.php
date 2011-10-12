@@ -88,7 +88,7 @@ class base {
 		if(!$this->settings) {
 			$this->settings = $this->cache('settings');
 		}
-		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-m-d') : '';
+/*vot*/		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-m-d') : '';
 		$format[] = $type & 1 ? (!empty($this->settings['timeformat']) ? $this->settings['timeformat'] : 'H:i') : '';
 		return gmdate(implode(' ', $format), $time + $this->settings['timeoffset']);
 	}

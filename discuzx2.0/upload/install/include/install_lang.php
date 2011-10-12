@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -166,6 +166,9 @@ $lang = array(
 
 	'install_in_processed'		=> 'Installing ...',//'正在安装...',
 	'install_succeed'		=> 'Installation successfully completed! Click here to enter your Discuz! X2',//'安装成功，点击进入',
+	'install_cloud'			=> 'After successful installation, Welcome to the opening Discuz! Cloud platform<br>Discuz! Cloud platform dedicated to help website owners to increase their websites traffic, enhance the ability of Web site operators, and increase a website revenue.<br>Discuz! Cloud platform currently provides a free QQ Internet, Tencent analysis, Cloud search, QQ Group Community,Roaming,SOSO emoticon services.Discuz! Cloud platform will continue to provide more quality services to the project.<br>Before open the Discuz! Platform make sure that your website (Discuz!, UCHome or SupeSite) has been upgraded to Discuz! X2.',//'安装成功，欢迎开通Discuz!云平台<br>Discuz!云平台致力于帮助站长提高网站流量，增强网站运营能力，增加网站收入。<br>Discuz!云平台目前免费提供了QQ互联、腾讯分析、纵横搜索、社区QQ群、漫游应用、SOSO表情服务。Discuz!云平台将陆续提供更多优质服务项目。<br>开通Discuz!平台之前，请确保您的网站（Discuz!、UCHome或SupeSite）已经升级到Discuz!X2。',
+	'to_install_cloud'		=> 'Open Admin-Center',//'到后台开通',
+	'to_index'			=> 'Temporarily not open',//'暂不开通',
 
 	'init_credits_karma'	=> 'Reputation',//'威望',//!!! The same in install_var.php
 	'init_credits_money'	=> 'Points',//'金钱',//!!! The same in install_var.php
@@ -332,8 +335,8 @@ $lang = array(
 	'create_table'		=> 'Create table',//'建立数据表',
 	'succeed'		=> 'Success',//'成功 ',
 
-	'testdata'			=> 'Add test data',//'附加数据',
-	'testdata_check_label'		=> 'Install 4 demo pages for testing',//'Install demo page templates (4)',
+	'testdata'			=> 'Add regions data',//'附加数据',
+	'testdata_check_label'		=> 'Install additional regional data (countries/regions/cities)',//'Install demo page templates (4)',
 	'portalstatus'			=> 'Portal status',
 	'portalstatus_check_label'	=> '',
 	'groupstatus'			=> 'Groups status',
@@ -341,7 +344,7 @@ $lang = array(
 	'homestatus'			=> 'Home Status',
 	'homestatus_check_label'	=> '',
 	'install_data'			=> 'Data installed successfully',//'正在安装数据',
-	'install_test_data'		=> 'Install additional data',//'正在安装附加数据',
+	'install_test_data'		=> 'Install regional data',//'正在安装附加数据',
 
 	'method_undefined'		=> 'Undefined method',//'未定义方法',
 	'database_nonexistence'		=> 'Database object does not exist',//'数据库操作对象不存在',
@@ -352,9 +355,9 @@ $lang = array(
 	'welcome'			=> 'Welcome to Discuz! X Installation!',
 	'select_language'		=> '<b>Select the installation language</b>:',
 //vot !!!Translate to Chinese!!!
-	'regiondata'			=> 'Add regions data',//'Add location data',
-	'regiondata_check_label'	=> 'Install additional regional data (countries/regions/cities)',//'Install additional regional data (countries/regions/cities)',
-	'install_region_data'		=> 'Install regional data',//'Install regional data',
+//vot	'regiondata'			=> 'Add regions data',//'Add location data',
+//vot	'regiondata_check_label'	=> 'Install additional regional data (countries/regions/cities)',//'Install additional regional data (countries/regions/cities)',
+//vot	'install_region_data'		=> 'Install regional data',//'Install regional data',
 
 //---------------------------------------------------------------
 

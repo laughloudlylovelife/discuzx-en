@@ -45,7 +45,7 @@
 					<!--{/if}-->
 				</ul>
 				<!--{if checkperm('allowbanuser') || checkperm('allowedituser')}-->
-				<ul id="usermanageli_menu" class="p_pop" style="display:none;">
+<!--vot-->			<ul id="usermanageli_menu" class="p_pop" style="display:none;">
 					<!--{if checkperm('allowbanuser')}-->
 						<li><a href="{if $_G[adminid] == 1}admin.php?action=members&operation=ban&username=$encodeusername&frames=yes{else}forum.php?mod=modcp&action=member&op=ban&uid=$space[uid]{/if}" target="_blank">{lang user_ban}</a></li>
 					<!--{/if}-->
@@ -55,7 +55,7 @@
 				</ul>
 				<!--{/if}-->
 				<!--{if $_G['adminid'] == 1}-->
-					<ul id="umanageli_menu" class="p_pop" style="display:none;">
+<!--vot-->				<ul id="umanageli_menu" class="p_pop" style="display:none;">
 						<li><a href="forum.php?mod=modcp&action=thread&op=post&searchsubmit=1&do=search&users=$encodeusername" target="_blank">{lang manage_post}</a></li>
 						<!--{if $_G['setting']['homestatus']}-->
 							<li><a href="admin.php?action=doing&searchsubmit=1&search=true&fromumanage=1&users=$encodeusername" target="_blank">{lang manage_doing}</a></li>

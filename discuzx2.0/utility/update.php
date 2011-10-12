@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -70,14 +70,14 @@ if($_POST['delsubmit']) {
 if(empty($_GET['step'])) $_GET['step'] = 'start';
 
 //DEBUG
-echo "step=".$_GET['step']."<br>";
+//echo "step=".$_GET['step']."<br>";
 if($_GET['step'] == 'start') {
 	include_once('../config/config_ucenter.php');
 	include_once('../uc_client/client.php');
 	$version = uc_check_version();
 	$version = $version['db'];
 //DEBUG
-echo "version=".$version."<br>";
+//echo "version=".$version."<br>";
 	if(!DB::result_first('SELECT svalue FROM '.DB::table('common_setting')." WHERE skey='bbclosed' LIMIT 1")) {
 		show_msg(lang('update','close_before_update'));//vot
 	}
@@ -1002,8 +1002,8 @@ echo "version=".$version."<br>";
 				$sql = implode("\r\n", $data);
 				runquery($sql);
 			}
-			DB::query("UPDATE  `pre_common_block_style` SET name = replace(`name`, 'X1.5', 'Built-in')");
-			DB::query("UPDATE  `pre_common_block_style` SET name = replace(`name`, 'X2.0', 'Built-in')");
+			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X1.5', 'Built-in')");
+			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X2.0', 'Built-in')");
 		}
 		show_msg(lang('update','blocks_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'block_script') {
@@ -1389,7 +1389,7 @@ echo "version=".$version."<br>";
 
 	} elseif($_GET['op'] == 'plugin') {
 
-		$nextop = 'connect';
+		$nextop = 'end';
 
 		loadcache('pluginlanguage_script');
 		loadcache('pluginlanguage_template');

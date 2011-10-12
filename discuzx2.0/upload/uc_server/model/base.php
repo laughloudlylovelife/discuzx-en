@@ -141,10 +141,10 @@ class base {
 
 	function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
-		$ckey_length = 4;	// random key length value 0-32;
-							// Add random key, the ciphertext can make no law, even if exactly the same text and key, encrypt the result will be different each time, increasing the difficulty is.
-							// Value the greater the change in the law the greater the ciphertext, ciphertext change = 16, $ ckey_length th power
-							// When this value is 0, not generate random keys
+/*vot*/		$ckey_length = 4;	// random key length value 0-32;
+/*vot*/					// Add random key, the ciphertext can make no law, even if exactly the same text and key, encrypt the result will be different each time, increasing the difficulty is.
+/*vot*/					// Value the greater the change in the law the greater the ciphertext, ciphertext change = 16, $ ckey_length th power
+/*vot*/					// When this value is 0, not generate random keys
 
 		$key = md5($key ? $key : UC_KEY);
 		$keya = md5(substr($key, 0, 16));
@@ -297,7 +297,7 @@ class base {
 	}
 
 	function date($time, $type = 3) {
-		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-m-d') : '';
+/*vot*/		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-m-d') : '';
 		$format[] = $type & 1 ? (!empty($this->settings['timeformat']) ? $this->settings['timeformat'] : 'H:i') : '';
 		return gmdate(implode(' ', $format), $time + $this->settings['timeoffset']);
 	}

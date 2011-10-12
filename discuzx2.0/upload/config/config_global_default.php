@@ -29,12 +29,12 @@ $_config = array();
  *
  */
 $_config['db'][1]['dbhost']  	= 'localhost';	// DB Server address
-$_config['db'][1]['dbuser']  	= 'root';		// DB User Name
-$_config['db'][1]['dbpw'] 	 	= 'root';		// DB User Password
-$_config['db'][1]['dbcharset'] 	= 'utf8';		// DB Charset
-$_config['db'][1]['pconnect'] 	= 0;			// Enable DB persistent connection
-$_config['db'][1]['dbname']  	= 'ultrax';		// DB Name
-$_config['db'][1]['tablepre'] 	= 'pre_';		// DB Table Prefix
+$_config['db'][1]['dbuser']  	= 'root';	// DB User Name
+$_config['db'][1]['dbpw'] 	= 'root';	// DB User Password
+$_config['db'][1]['dbcharset'] 	= 'utf8';	// DB Charset
+$_config['db'][1]['pconnect'] 	= 0;		// Enable DB persistent connection
+$_config['db'][1]['dbname']  	= 'ultrax';	// DB Name
+$_config['db'][1]['tablepre'] 	= 'pre_';	// DB Table Prefix
 
 /**
  * Database from the server settings (slave, read-only), support for multiple sets of server settings, when set to multiple servers, the system using each random
@@ -88,9 +88,9 @@ $_config['db']['common']['slave_except_table'] = '';
 //Memory variable prefix, change, to avoid reference to the same server process disorder
 $_config['memory']['prefix'] = 'discuz_';
 
-$_config['memory']['eaccelerator'] = 1;				// Start the support for eaccelerator
-$_config['memory']['apc'] = 1;							// Start support for apc
-$_config['memory']['xcache'] = 1;					// Start the support for xcache
+$_config['memory']['eaccelerator'] = 1;			// Start the support for eaccelerator
+$_config['memory']['apc'] = 1;				// Start support for apc
+$_config['memory']['xcache'] = 1;			// Start the support for xcache
 $_config['memory']['memcache']['server'] = '';		// memcache server address
 $_config['memory']['memcache']['port'] = 11211;		// memcache server port
 $_config['memory']['memcache']['pconnect'] = 1;		// memcache persistent connection
@@ -112,12 +112,12 @@ $_config['download']['xsendfile']['type'] = 0;
 $_config['download']['xsendfile']['dir'] = '/down/';
 
 //  CONFIG CACHE
-$_config['cache']['type'] 			= 'sql';	// Cache type: file = file cache, sql = database cache
+$_config['cache']['type'] 		= 'sql';	// Cache type: file = file cache, sql = database cache
 
 // Page output settings
 $_config['output']['charset'] 		= 'utf-8';	// Page character set
 $_config['output']['forceheader']	= 1;		// Force the output in defined character set, used to avoid page content garbled
-$_config['output']['gzip'] 			= 0;		// Use Gzip compression for output
+$_config['output']['gzip'] 		= 0;		// Use Gzip compression for output
 $_config['output']['tplrefresh'] 	= 1;		// Automatically refresh templates: 0 = off, 1 = On
 $_config['output']['language'] 		= 'en';		// Page language en/zh_cn/zh_tw
 $_config['output']['staticurl'] 	= 'static/';	// Path to the site static files, use "/" at the end
@@ -125,24 +125,24 @@ $_config['output']['ajaxvalidate']	= 0;		// Strictly verify the authenticity for
 $_config['output']['iecompatible']	= 0;		// IE compatibility mode
 
 // COOKIE settings
-$_config['cookie']['cookiepre'] 		= 'uchome_'; 	// COOKIE prefix
-$_config['cookie']['cookiedomain'] 		= ''; 		// COOKIE domain
-$_config['cookie']['cookiepath'] 		= '/'; 		// COOKIE path
+$_config['cookie']['cookiepre'] 	= 'uchome_'; 	// COOKIE prefix
+$_config['cookie']['cookiedomain'] 	= ''; 		// COOKIE domain
+$_config['cookie']['cookiepath'] 	= '/'; 		// COOKIE path
 
 // Site Security Settings
-$_config['security']['authkey']			= 'asdfasfas';	// Site encryption key
+$_config['security']['authkey']		= 'asdfasfas';	// Site encryption key
 $_config['security']['urlxssdefend']	= true;		// Use own URL XSS defense
 $_config['security']['attackevasive']	= 0;		// CC Attack Defense 1 | 2 | 4
 
 $_config['security']['querysafe']['status']	= 1;		// Enable the SQL security detection, prevent the SQL injection attacks automatically
 $_config['security']['querysafe']['dfunction']	= array('load_file','hex','substring','if','ord','char');
-$_config['security']['querysafe']['daction']	= array('intooutfile','intodumpfile','unionselect','(select');
+$_config['security']['querysafe']['daction']	= array('intooutfile','intodumpfile','unionselect','(select', 'unionall', 'uniondistinct');
 $_config['security']['querysafe']['dnote']	= array('/*','*/','#','--','"');
 $_config['security']['querysafe']['dlikehex']	= 1;
 $_config['security']['querysafe']['afullnote']	= 0;
 
 $_config['admincp']['founder']		= '1';	// Site Founder: site management background with the highest authority, each site can be set to one or more founders
-											// You can use the user uid ore user name. Separate multiple users with a comma;
+						// You can use the user uid or user name. Separate multiple users with a comma;
 $_config['admincp']['forcesecques']	= 0;	// Force managers to set the security question for access to the system settings: 0 = no, 1 = yes [secure]
 $_config['admincp']['checkip']		= 1;	// Back office operations are verified administrator IP, 1 = yes [secure], 0 = no. Only the administrator can not log in from time to set 0.
 $_config['admincp']['runquery']		= 1;	// Allow to run SQL statements in the background: 1 = yes, 0 = no [secure]
@@ -159,7 +159,7 @@ $_config['remote']['on'] = 0;
 $_config['remote']['dir'] = 'remote';
 
 // remote call: Communication key. for the client and the server communication encryption. length of not less than 32
-//          default value is $ _config ['security'] ['authkey'] of md5, you can also manually specify the$_config['remote']['appkey'] = md5($_config['security']['authkey']);
+//          default value is $_config ['security']['authkey']   of md5, you can also manually specify the$_config['remote']['appkey'] = md5($_config['security']['authkey']);
 $_config['remote']['appkey'] = md5($_config['security']['authkey']);
 
 // Remote call: Open external cron task. within the system no longer running cron, cron task activated by an external program

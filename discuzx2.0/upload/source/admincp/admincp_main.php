@@ -22,6 +22,7 @@ $header_welcome = cplang('header_welcome');
 $header_logout = cplang('header_logout');
 $header_bbs = cplang('header_bbs');
 $cpadmingroup = isfounder() ? cplang('founder_admin') : ($GLOBALS['admincp']->adminsession['cpgroupid'] ? DB::result_first("SELECT cpgroupname FROM ".DB::table('common_admincp_group')." WHERE cpgroupid='".$GLOBALS['admincp']->adminsession['cpgroupid']."'") : cplang('founder_master'));
+$admincp = lang('admincp');
 
 require './source/admincp/admincp_menu.php';
 $basescript = ADMINSCRIPT;
@@ -40,7 +41,7 @@ echo <<<EOT
  <tr>
   <td colspan="2" height="90">
    <div class="mainhd">
-    <a href="admin.php?action=index" class="logo">Discuz! Admin Center</a>
+    <a href="admin.php?action=index" class="logo">Discuz! $admincp</a>
     <div class="uinfo" id="frameuinfo">
       <p>$header_welcome, $cpadmingroup <em>{$_G['member']['username']}</em> [<a href="$basescript?action=logout" target="_top">$header_logout</a>]</p>
       <p class="btnlink"><a href="index.php" target="_blank">$header_bbs</a></p>
@@ -113,7 +114,7 @@ echo <<<EOT
 <div class="copyright">
 <!-- vot -->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> {$_G['setting']['version']},<br>Release {$_G['setting']['release']}</p>
 	<p>&copy; 2001-2011, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
-<!-- vot -->	<p><strong>English version</strong> by:<br><a href="http://china.sources.ru/" target="_blank">Valery Votintsev</a></p>
+<!-- vot -->	<p><strong>English version</strong> by:<br><a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
 </div>
 
 <div id="cpmap_menu" class="custom" style="display: none">

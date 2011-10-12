@@ -43,25 +43,25 @@
 							<!--{if $space[sightml]}--><li><em>{lang personal_signature}</em><table><tr><td>$space[sightml]</td></tr></table></li><!--{/if}-->
 							<li>
 								<em>{lang stat_info}</em>
-								<a href="home.php?mod=space&uid=$space[uid]&do=friend&view=me&from=space" target="_blank">{lang friends_num}: $space[friends]</a>
+<!--vot-->							<a href="home.php?mod=space&uid=$space[uid]&do=friend&view=me&from=space" target="_blank">{lang friends_num}: $space[friends]</a>
 								<!--{if $_G['setting']['homestatus']}-->
 									<span class="pipe">|</span>
-									<a href="home.php?mod=space&uid=$space[uid]&do=doing&view=me&from=space" target="_blank">{lang doings_num}: $space[doings]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=doing&view=me&from=space" target="_blank">{lang doings_num}: $space[doings]</a>
 									<span class="pipe">|</span>
-									<a href="home.php?mod=space&uid=$space[uid]&do=blog&view=me&from=space" target="_blank">{lang blogs_num}: $space[blogs]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=blog&view=me&from=space" target="_blank">{lang blogs_num}: $space[blogs]</a>
 									<span class="pipe">|</span>
-									<a href="home.php?mod=space&uid=$space[uid]&do=album&view=me&from=space" target="_blank">{lang albums_num}: $space[albums]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=album&view=me&from=space" target="_blank">{lang albums_num}: $space[albums]</a>
 								<!--{/if}-->						
 								<!--{if $_G['setting']['allowviewuserthread'] !== false}-->
 									<span class="pipe">|</span>
 									<!--{eval $space['posts'] = $space['posts'] - $space['threads'];}-->
-									<a href="home.php?mod=space&uid=$space[uid]&do=thread&view=me&type=reply&from=space" target="_blank">{lang replay_num}: $space[posts]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=thread&view=me&type=reply&from=space" target="_blank">{lang replay_num}: $space[posts]</a>
 									<span class="pipe">|</span>
-									<a href="home.php?mod=space&uid=$space[uid]&do=thread&view=me&type=thread&from=space" target="_blank">{lang threads_num}: $space[threads]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=thread&view=me&type=thread&from=space" target="_blank">{lang threads_num}: $space[threads]</a>
 								<!--{/if}-->
 								<!--{if $_G['setting']['homestatus']}-->
 									<span class="pipe">|</span>
-									<a href="home.php?mod=space&uid=$space[uid]&do=share&view=me&from=space" target="_blank">{lang shares_num}: $space[sharings]</a>
+<!--vot-->								<a href="home.php?mod=space&uid=$space[uid]&do=share&view=me&from=space" target="_blank">{lang shares_num}: $space[sharings]</a>
 								<!--{/if}-->
 							</li>
 						</ul>

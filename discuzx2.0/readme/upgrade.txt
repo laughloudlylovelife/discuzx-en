@@ -10,7 +10,6 @@ of any Comsenz product (not Discuz!X Series) to the latest Discuz! X version.
 This upgrade program can also be used for upgrading any previous Discuz!X
 versions to the latest version.
 
-The latest Discuz!X version for now is Discuz!X v.1.5 25-NOV-2010.
 Before you start the upgrade process, be sure to read step by step
 the following instructions:
 
@@ -57,7 +56,10 @@ the following instructions:
  If you encounter any problems during the upgrade process,
  this can be resolved using the following channels:
 
-1. Our official help and support forum
+0. This English version support:
+   http://codersclub.org/discuzx/
+
+1. Official Discuz help and support forum
    http://www.discuz.net
 
 2. View detailed update guidance documents

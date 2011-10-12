@@ -78,8 +78,8 @@ Translated by Valery Votintsev
 	#an { margin-bottom: 5px; }
 		#an dt { display: none; }
 		#an li { float: right; clear: both; width: 526px; text-align: right; }
-			#an li span { float: left; width: 430px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-			#an li em { float: left; width: 95px; color: {LIGHTTEXT}; }
+/*vot*/			#an li span { float: left; width: 430px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/*vot*/			#an li em { float: left; width: 95px; color: {LIGHTTEXT}; }
 			#anc, #an li { height: 29px; overflow: hidden; }
 
 /* Online member list */
@@ -353,7 +353,7 @@ Translated by Valery Votintsev
 */
 .bdl { float: left; overflow: hidden; border: 1px solid #BDD7E3; background-color: #F5F9FB; }
 	.ie6 .bdl { position: relative; }
-	.bdl_h { height: 32px; line-height: 22px; width: 100%; }
+/*vot*/	.bdl_h { height: 32px; line-height: 22px; width: 100%; }
 .bdl .tbn { margin: 10px; }
 	/* Zoning */
 	.bdl dl { margin: -1px -10px 0; }
@@ -399,15 +399,15 @@ Translated by Valery Votintsev
 /** forum::forumdisplay,forum::viewthread,forum::modcp,group,home::space,home::task,search::forum,search::group,member::groupexpiry,misc::ranklist,misc::stat **/
 /* fct --> froumatction Function Button */
 	.fct a { float: left; margin-left: 8px; }
-	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt, .fa_mng, .fa_pend { padding-left: 16px; background: no-repeat 0 50%; }
+/*vot*/	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt, .fa_mng, .fa_pend { padding-left: 16px; background: no-repeat 0 50%; }
 		.fa_fav_0 { background-image: url({IMGDIR}/fav_grey.gif); }
 		.fa_fav { background-image: url({IMGDIR}/fav.gif); }
 		.fa_rss { background-image: url({IMGDIR}/feed.gif); }
 		.fa_achv { background-image: url({IMGDIR}/clock.gif); }
 		.fa_bin { background-image: url({IMGDIR}/recyclebin.gif); }
 		.fa_ivt { background-image: url({IMGDIR}/user_add.gif); }
-		.fa_mng { background-image: url({IMGDIR}/manage.png); }
-		.fa_pend { background-image: url({IMGDIR}/notice.gif); }
+/*vot*/		.fa_mng { background-image: url({IMGDIR}/manage.png); }
+/*vot*/		.fa_pend { background-image: url({IMGDIR}/notice.gif); }
 
 /* List of related topics */
 	/*.tl .th th a { float: left; margin-right: 10px; padding-right: 17px; background: url({IMGDIR}/arw_d2.gif) no-repeat 100% 50%; }*/
@@ -571,8 +571,8 @@ Translated by Valery Votintsev
 		.pls .avatar { margin: 10px 15px; }
 			.pls .avatar img { padding: 5px 5px 8px; background: #FFF url({IMGDIR}/midavt_shadow.gif) 0 100% repeat-x; }
 
-		.pls p, .pls .pil, .pls .o { /*margin: 10px 20px;*/ padding: 2px 6px; }
-			.pls p em, .pls dt em { color: {NOTICETEXT}; padding-left: 10px; }
+/*vot*/		.pls p, .pls .pil, .pls .o { /*margin: 10px 20px;*/ padding: 2px 6px; }
+/*vot*/			.pls p em, .pls dt em { color: {NOTICETEXT}; padding-left: 10px; }
 			.pls dd, .pls dt { float: left; overflow: hidden; height: 1.6em; line-height: 1.6em; }
 				.pls dt { margin-right: 3px; width: 60px; }
 				.pls dd { width: 65px; }
@@ -592,7 +592,7 @@ Translated by Valery Votintsev
 		#pl_top .pls { text-indent: 15px; }
 
 /* Posts of the time, the floor where the block and some properties */
-	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; /*height: 16px;*/ border-bottom: 1px dashed {COMMONBORDER}; }
+/*vot*/	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; /*height: 16px;*/ border-bottom: 1px dashed {COMMONBORDER}; }
 		.pi strong a { float: right; margin-top: -6px; padding: 4px 6px; border: 1px solid {WRAPBG}; font-weight: 400; }
 			.pi strong a:hover { border-color: {COMMONBORDER}; }
 		.pls .pi { padding-left: 15px; }
@@ -798,7 +798,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		Level:			Function
 		Explain:		spvimg,spi Activity, public part of the goods
 		Author:			dfox
-		Last Modify:	Pony 11053010
+		Last Modify:	Pony 11082510
 	*/
 	.act {}
 		.act .c { line-height: 28px; font-size: 14px; }
@@ -806,15 +806,16 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.spvimg em.hot { width: 120px; height: 102px; background-position: 0 -104px; }
 		.spi { margin-left: 315px;}
 			.spi dl { font-size: 14px; }
-				.spi dl dt { float: left; padding: 2px 0; width: 140px; height: 1em; }
+/*vot*/				.spi dl dt { float: left; padding: 2px 0; width: 140px; height: 1em; }
 				.spi dl dd { margin-left: 90px; padding: 2px 0; min-height: 21px; height: auto !important; height: 21px; }
 				.spi dl dd em { color: #F30; }
 			dl.nums {}
 				.spi dl.nums dt { padding-top: 15px; }
 				.spi dl.nums dd em { font-size: 26px; }
-		.actl { table-layout: fixed; margin: 10px 0; width: 320px; border-top: 3px solid {COMMONBORDER}; }
+/*vot*/		.actl { table-layout: fixed; margin: 10px 0; width: 320px; border-top: 3px solid {COMMONBORDER}; }
 			.actl th, .actl td { padding: 8px 2px; border-top: 1px dashed {COMMONBORDER}; }
 			.actl th { width: 60px; }
+		.actfm { height: auto !important; height: 220px; max-height: 220px; overflow-x: hidden; overflow-y: auto; }
 		.actl_pop { overflow: auto; max-width: 200px; max-height: 300px; }
 			.ie6 .actl_pop { width: 200px !important; height: expression(this.offsetHeight > 300 ? 300 : 'auto'); }
 			.actl_pop li { display: block; padding: 3px 0; border-bottom: 1px dashed {COMMONBORDER}; }
@@ -1019,8 +1020,8 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 				.zoominner p a.imgclose:hover { background-position: -80px -39px; }
 
 .zimg_c { position: relative; }
-.zimg_prev, .zimg_next { display: block; position: absolute; width: 45%; height: 100%; background: url({IMGDIR}/pic-prev.gif) no-repeat 0 -100px; cursor: pointer; }
-.zimg_next { right: 10px; background-image: url({IMGDIR}/pic-next.gif); background-position: 100% -100px; }
+/*vot*/ .zimg_prev, .zimg_next { display: block; position: absolute; width: 45%; height: 100%; background: url({IMGDIR}/pic-prev.gif) no-repeat 0 -100px; cursor: pointer; }
+/*vot*/ .zimg_next { right: 10px; background-image: url({IMGDIR}/pic-next.gif); background-position: 100% -100px; }
 .zimg_c img { margin: 0 auto; }
 .zimg_p strong { display: none; }
 /** end **/
@@ -1316,7 +1317,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 
 /* View profile by lushnis */
 	#pprl li { clear: both; padding: 3px 0 3px 90px; }
-		#pprl li em { float: left; margin-left: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
+/*vot*/		#pprl li em { float: left; margin-left: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
 	#pbbs li, #psts li, #pntc li { clear: none; float: left; width: 270px }
 
 /* Reminded of the content will be used. This stand-alone class, so personalized. To make the content more visible reminder, the span can be defined under the summary */
@@ -1616,7 +1617,7 @@ body { background: #FFF none !important; }
 		.td_srchtxt { background: url({IMGDIR}/searchbar.png) no-repeat 0 -35px; }
 		.td_srchbtn { background: url({IMGDIR}/searchbar.png) no-repeat 0 -70px; }
 		#scform_srchtxt { padding: 0 10px; width: 460px; background: transparent; outline: none; }
-		#scform_submit { width: 107px; /*opacity: 0; filter: alpha(opacity=0);*/ cursor: pointer; color: white; background: transparent; }
+/*vot*/		#scform_submit { width: 107px; /*opacity: 0; filter: alpha(opacity=0);*/ cursor: pointer; color: white; background: transparent; }
 		#scform_srchtxt, #scform_submit { height: 35px; border: none; line-height: 35px; }
 		.ie6 #scform_srchtxt, .ie6 #scform_submit, .ie7 #scform_srchtxt, .ie7 #scform_submit { height: 33px; border: none; line-height: 33px; }
 	.sttl { margin: 10px 0; padding: 5px; border-bottom: 1px solid #CCC; background: #F5F5F5; }

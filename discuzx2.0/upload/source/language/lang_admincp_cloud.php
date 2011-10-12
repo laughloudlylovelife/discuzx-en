@@ -68,6 +68,8 @@ $extend_lang = array
 	'cloud_api_ip_comment'	=> 'If the site server can not connect to the cloud platform interface because of DNS resolution issues, please fill out the IP address of api.discuz.qq.com, <a href="http://cp.discuz.qq.com/faq?fId=1304068911" target="_blank">View Help</a>',//'若站点服务器由于DNS解析问题无法连接到云平台接口，请填写api.discuz.qq.com的IP地址，<a href="http://cp.discuz.qq.com/faq?fId=1304068911" target="_blank">查看帮助</a>',
 	'cloud_manyou_ip'	=> 'Application Interface IP',//'漫游接口IP',
 	'cloud_manyou_ip_comment'	=> 'If DNS server have a resolution problem and the site can not connect to the Application interface, Please fill api.manyou.com IP address, Use <a href="admin.php?action=cloud&operation=doctor">Diagnostic tools</a> for check, <a href="http://faq.comsenz.com/viewnews-400" target="_blank">View Help</a>',//'若站点服务器由于DNS解析问题无法连接到漫游接口，请填写api.manyou.com的IP地址，使用<a href="admin.php?action=cloud&operation=doctor">诊断工具</a>检测，<a href="http://faq.comsenz.com/viewnews-400" target="_blank">查看帮助</a>',
+	'cloud_connect_api_ip'	=> 'QQ Internet interface IP',//'QQ互联接口IP',
+	'cloud_connect_api_ip_comment'	=> 'If your site have problems in DNS resolving the QQ IP interface address openapi.qzone.qq.com, use the <a href="admin.php?action=cloud&operation=doctor">Diagnostic tool</a> for testing, <a href="http://cp.discuz.qq.com/faq?fId=1316571929&ADTAG=CP.CLOUD.FAQ.FID" target="_blank">View Help</a>',//'若站点服务器由于DNS解析问题无法连接到QQ互联接口，请填写openapi.qzone.qq.com的IP地址，使用<a href="admin.php?action=cloud&operation=doctor">诊断工具</a>检测，<a href="http://cp.discuz.qq.com/faq?fId=1316571929&ADTAG=CP.CLOUD.FAQ.FID" target="_blank">查看帮助</a>',
 	'cloud_ipsetting_success'	=> 'Cloud platform interface IP set successfully',//'云平台接口IP设置成功',
 	'cloud_open_first'	=> 'Please open Discuz! cloud platform first',//'请先开通Discuz!云平台',
 	'cloud_sync'		=> 'Synchronize site information',//'同步站点信息',
@@ -97,6 +99,7 @@ $extend_lang = array
 
 	'cloud_doctor_api_test_other'	=> 'Test the cloud platform other interface IP',//'测试云平台其他接口IP',
 	'cloud_doctor_manyou_test_other'	=> 'Testing Manyou other interface IP',//'测试漫游其他接口IP',
+	'cloud_doctor_qzone_test_other'	=> 'Testing Another QQ Internet interface IP',//'测试QQ互联其他接口IP',
 	'cloud_doctor_api_test_success'	=> 'Interface requests: %s, successfully: %s, Took %01.3f seconds %s',//'%s 请求接口 %s 成功，耗时 %01.3f 秒 %s',
 	'cloud_doctor_api_test_failure'	=> 'Interface requests: %s, failed: %s, Please consult the space provider %s',//'%s 请求接口 %s 失败，请咨询空间商 %s',
 	'cloud_doctor_status_0'		=> 'The cloud platform is not opened yet',//'尚未开通云平台',
@@ -126,6 +129,9 @@ $extend_lang = array
 	'cloud_doctor_dns_manyou'	=> 'Manyou Domain Name',//'漫游域名解析',
 	'cloud_doctor_dns_manyou_test'	=> 'Manyou main interface testing',//'漫游主接口测试',
 	'cloud_doctor_other_manyou_test'	=> 'Manyou other interface testing',//'漫游其他接口测试',
+	'cloud_doctor_dns_qzone'	=> 'QQ Internet Domain Name',//'QQ互联域名解析',
+	'cloud_doctor_dns_qzone_test'	=> 'QQ Internet interface host test',//'QQ互联主接口测试',
+	'cloud_doctor_other_qzone_test' => 'Testing other QQ Internet interfaces',//'QQ互联其他接口测试',
 
 	'cloud_doctor_setting_ip'	=> 'Manually set the IP:',//'手动设置的IP：',
 
@@ -213,6 +219,10 @@ $extend_lang = array
 	'connect_setting_turl_qq'		=> 'Official microblog QQ number',//'官方微博QQ号码',
 	'connect_setting_turl_qq_comment'	=> 'Set the official microblog QQ number',//'设置官方微博的QQ号码',
 	'connect_setting_turl_qq_failed'	=> 'Setting the official microblog QQ number is failed, make sure that the QQ is valid.',//'官方微博QQ号码设置失败，请确保该QQ号的有效性',
+	'connect_setting_qshare_allow'		=> 'Allow the Q-Share Functions',//'开启Q-Share功能',
+	'connect_setting_qshare_allow_comment'	=> 'Users post content in the selected text in any period of time, can be convenient to the selected text and images broadcast to the region Tencent microblogging',//'用户选中帖子内容中的任何一段文本时，可方便快捷的将选中的文本内容和区域内图片转播到腾讯微博',
+	'connect_setting_qshare_appkey'		=> 'Tencent open microblogging platform AppKey',//'腾讯微博开放平台AppKey',
+	'connect_setting_qshare_appkey_comment'	=> 'Fill AppKey Tencent microblogging in the source field in the display settings information, it is a time to fill out. How to apply AppKey? Visit Tencent open microblogging platform, <a href="http://open.t.qq.com/apps_welcome.php" target="_blank">Request for your AppKey</a>',//'填写AppKey将在腾讯微博中显示设置的来源字段信息，可不填写。怎样申请AppKey？请访问腾讯微博开放平台，<a href="http://open.t.qq.com/apps_welcome.php" target="_blank">创建应用获取AppKey</a>',
 	'connect_member_info'			=> 'User Information',//'用户信息',
 	'connect_member_bindlog'		=> 'QQ Bind log',//'QQ绑定日志',
 	'connect_member_bindlog_type'		=> 'Action',//'操作',
@@ -275,11 +285,6 @@ $extend_lang = array
 	'qqgroup_preview_shortname'	=> 'Page card title',//'页卡标题',
 	'qqgroup_preview_button'	=> 'Push information',//'推送信息',
 	'attach_img'			=> 'Image Attachment',//'图片附件',
-//-----------------------
-//	'cloud_open'		=> 'Open Discuz! cloud platform',//'开通Discuz!云平台',
-//	'cloud_upgrade'		=> 'Upgrade Discuz! cloud platform',//'开通Discuz!云平台',
-//	'cloud_applist'		=> 'Discuz! cloud platform',//'Discuz!云平台',
-//	'cloud_siteinfo'	=> 'Site information',//'站点信息',
 
 );
 

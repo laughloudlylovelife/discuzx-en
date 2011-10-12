@@ -312,8 +312,8 @@ if(!$operation) {
 /*vot*/					$extratxt = 'Traditional Chinese';
 					} elseif(preg_match('/^TC\_UTF8$/i', $extra)) {
 /*vot*/						$extratxt = 'Traditional Chinese UTF8';
-/*vot*/				} else {
-///*vot*/					$extratxt = 'English UTF8';
+/*vot*/					} else {
+/*vot*/						$extratxt = 'English UTF8';
 					}
 					$url = ADMINSCRIPT.'?action=plugins&operation=import&dir='.$_G['gp_dir'].'&installtype='.rawurlencode($extra).(!empty($referer) ? '&referer='.rawurlencode($referer) : '');
 					$xmls .= '&nbsp;<input type="button" class="btn" onclick="location.href=\''.$url.'\'" value="'.($extra ? $extratxt : $lang['plugins_import_default']).'">&nbsp;';
@@ -471,15 +471,15 @@ if(!$operation) {
 				if(preg_match('/^discuz\_plugin\_'.$plugin['identifier'].'(\_\w+)?\.xml$/', $f, $a)) {
 					$extratxt = $extra = substr($a[1], 1);
 					if(preg_match('/^SC\_GBK$/i', $extra)) {
-/*vot*/					$extratxt = 'Simplified Chinese';
+/*vot*/						$extratxt = 'Simplified Chinese';
 					} elseif(preg_match('/^SC\_UTF8$/i', $extra)) {
-/*vot*/					$extratxt = 'Simplified Chinese UTF-8';
+/*vot*/						$extratxt = 'Simplified Chinese UTF-8';
 					} elseif(preg_match('/^TC\_BIG5$/i', $extra)) {
-/*vot*/					$extratxt = 'Traditional Chinese';
+/*vot*/						$extratxt = 'Traditional Chinese';
 					} elseif(preg_match('/^TC\_UTF8$/i', $extra)) {
-/*vot*/					$extratxt = 'Traditional Chinese UTF-8';
-/*vot*/				} else {
-///*vot*/				$extratxt = 'English UTF8';
+/*vot*/						$extratxt = 'Traditional Chinese UTF-8';
+/*vot*/					} else {
+/*vot*/						$extratxt = 'English UTF8';
 					}
 					if($modules['extra']['installtype'] == $extratxt) {
 						continue;
@@ -1370,8 +1370,8 @@ if(!$operation) {
 /*vot*/							$extratxt = 'Traditional Chinese';
 							} elseif(preg_match('/^TC\_UTF8$/i', $extra)) {
 /*vot*/							$extratxt = 'Traditional Chinese UTF-8';
-/*vot*/						} else {
-///*vot*/						$extratxt = 'English UTF8';
+/*vot*/							} else {
+/*vot*/							$extratxt = 'English UTF8';
 							}
 							if($modules['extra']['installtype'] == $extratxt) {
 								continue;

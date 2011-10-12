@@ -386,7 +386,7 @@ $lang = array (
 	'plugins_validator_newversion'		=> '<h4 class="infotitle2">以下插件存在新版本，点击更新</h4>',
 	'plugins_validator_error'		=> '<h4 class="infotitle3">以下插件不是原版插件，点击下载原版</h4>',
 
-	'portalcategory_update_succeed	'	=> 'Category updated successfully.',//'更新分类成功。',
+	'portalcategory_update_succeed'		=> 'Category updated successfully.',//'更新分类成功。',
 	'portal_delete_confirm'			=> 'This action can not be restored. Are you sure you want to delete the category article?',//'本操作不可恢复，你确定要删除该分类下文章吗？',
 	'portalcategory_move_empty_error'	=> 'This category has no articles',//'该分类下没有任何文章',
 	'portalcategory_move_succeed'		=> 'Portal Articles category moved successfully.',//'移动文章成功。',

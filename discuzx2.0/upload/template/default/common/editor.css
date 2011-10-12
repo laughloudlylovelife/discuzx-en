@@ -8,7 +8,7 @@ http://www.comsenz.com
 	.edt .bar { padding: 4px; height: 44px; border-bottom: 1px solid #DDD; background: {COMMONBG}; }
 		.edt .bbar { height: 20px; border-top: 1px solid #DDD; text-align: right; background: {COMMONBG}; }
 			.edt .bbar img { vertical-align: bottom; *margin-right: -4px; cursor: row-resize; }
-			.edt .bbar em { width: 150px; height: 20px; overflow: hidden; white-space: nowrap; float: left; text-align: left; }
+/*vot*/			.edt .bbar em { width: 150px; height: 20px; overflow: hidden; white-space: nowrap; float: left; text-align: left; }
 		.edt .bbar, .edt .bbar a { color: #999; }
 		.edt .btn { float: left; border-left: 1px solid #DDD; border-right: 1px solid #FEFEFE; }
 			.edt .b1r, .edt .b2r { position: relative; float: left; padding: 0 3px; height: 44px; border-right: 1px solid #DDD; border-left: 1px solid #FEFEFE; }
@@ -97,7 +97,7 @@ http://www.comsenz.com
 	#e_simple, #e_fullswitcher { padding: 0 2px; text-align: right; border: 1px solid {SPECIALBORDER}; background: url({IMGDIR}/card_btn.png) repeat-x 0 100%; }
 		#e_fullswitcher { margin-right: 3px; }
 /* Narrow editor shows the size of the input box menu */
-.popupfix .px { margin-bottom: 4px; padding: 2px; }/* vot */
+.popupfix .px { margin-bottom: 4px; padding: 2px; } /* vot */
 
 #e_body { display: block !important; }
 #e_body_loading { display: none; }

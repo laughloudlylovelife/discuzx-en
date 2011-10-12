@@ -974,7 +974,7 @@ function showEditorMenu(tag, params) {
 			case 'pasteword':
 				stitle = lng['paste_from_word'];
 /*vot*/				str = '<p class="px" style="height:300px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'550px\';this.contentWindow.document.body.contentEditable=true;this.contentWindow.document.body.focus();this.onload=null"></iframe></p>';
-/*vot*/				str = '<p class="xg2 pbn">'+lng['paste_word_tip']+'</p>';
+/*vot*/				str += '<p class="xg2 pbn">'+lng['paste_word_tip']+'</p>';
 				menuwidth = 600;
 				menupos = '00';
 				menutype = 'win';
