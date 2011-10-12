@@ -1468,7 +1468,6 @@ $lang = array (
 	'video_cer_audit_manage'	=> 'Video Certification Management',//'视频认证审核管理',
 	'video_cer_audit_message'	=> 'You can access the video certification tool to manage your certificated images',//'你可以进入视频认证平台，自行进行设置认证审核管理',
 	'video_certification_audit'	=> 'Video certification audit',//'视频认证审核',
-//	'return'			=> 'Return',//'返回',
 );
 
 ?>

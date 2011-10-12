@@ -1,7 +1,7 @@
 +--------------------------------------------------------------------------+
  Discuz!X v.2.0 ENGLISH VERSION
 
- Release 20110817
+ Release 20111010
 
  by Valery Votintsev from sources.ru
 
@@ -12,7 +12,7 @@ ATTENTION!
 This package IS NOT ORIGINAL Discuz!X Release!!!
 
 This is a modified ENGLISH VERSION
-based on original Discuz!X v.2. Release 20110817
+based on original Discuz!X v.2. Release 20111010
 
 
 +--------------------------------------------------------------------------+

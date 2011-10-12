@@ -14,8 +14,8 @@ $lang = array(
 	'browser_jump'		=> 'Browser will automatically jump page, without human intervention. Unless a long time when your browser does not support frames, please click here',//'浏览器会自动跳转页面，无需人工干预。除非当您的浏览器长时间没有自动跳转时，请点击这里',
 	'ok'			=> 'OK',//'确定',
 	'cancel'		=> 'Cancel',//'取消',
-
 	'filename'		=> 'File Name',//'文件名称',
+
 	'director'		=> 'Directory',//'所在目录',
 	'version'		=> 'Version',//'版本',
 	'time'			=> 'Backup Time',//'备份时间',

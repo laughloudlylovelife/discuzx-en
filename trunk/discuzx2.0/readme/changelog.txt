@@ -1,8 +1,60 @@
 +======================================================+
-   Discuz! X2 English, UTF-8, Release 20110817
+   Discuz! X2 English, UTF-8, Release 20111010
 
    by Valery Votintsev from sources.ru
+   http://codersclub.org/discuzx/
 
++======================================+
+   Discuz! X2 Release 20111010
++======================================+
+FIX: connectivity token to detect defective repair QQ after the posting page still shows "this topic will be synchronized to the QQ space ..." the question
+ADD: QC Tencent analysis of submitted data
+FIX: QQ Internet changes the floating window buttons and quick post to share the button calls the same method to share the problem of conflict
+ADD: New Cloud search plug-in (cloudsearch), and set the system plug-in
+ADD: Operation to remove the associated search plug-in
+FIX: Amend the Share button in the floating window display bug
+FIX: Delete the temporary aspect to add search plug-in, plug-in support system and to consider the existing users to upgrade
+FIX: Modify the cookie log to report the number of errors, does not meet expectations (4) of the bug
+FIX: Repair forum search fId aspect within the parameters the wrong question
+FIX: Fixed cloud search when my_search_data log records to determine the bug and the opening of the callback return value wrong bug
+FIX: Connectivity and aspect modify search QQ test problems found
+FIX: DIY from simple mode to advanced mode, the style does not force the issue
+FIX: Repair self:: keyword is not compatible with php4 problem
+FIX: Cloud search plug-in mechanisms to increase
+FIX: QQ Internet to increase the effectiveness and verify the access token cookie log reporting mechanism
+FIX: View the deleted theme, plus a table in threadlog record action = redelete
+FIX: Increase the user search criteria filtering method to remove the original condition may lead to unconditionally remove the user
+FIX: Confirm uniqueid open cloud platform exists, according to the rules if you do not exist to generate a
+FIX: Increase IN_UC judge
+FIX: Attachment types to modify the settings, the extension caused attachments to be excluded from the case of the BUG
+FIX: Code order details, to prevent the growth of the template cache meaningless
+FIX: Posts set invalid user privacy page content
+FIX: IE6/7 does not refresh the page to submit their vote
+FIX: Goods subject audit of view
+FIX: Scheduled tasks to delete useless files
+FIX: Repair editing articles prohibiting comment on the issue does not display the checkbox
+FIX: Cloud platform diagnostic tools in the list of IP addresses from the cloud platform to dynamically obtain JS
+FIX: Update attachment attachment logic amendment to delete the old
+FIX: Fix the problem module thumbnails do not take effect
+ADD: QQ increased interconnection plan to see the word to share posts page microblogging (Q-share) function
+FIX: Compliant browser user dual-core
+FIX: Bulk delete a post, update subject Replies: lack of single quotes cause field overflow
+FIX: Repair module was born and live in the city can not choose the city's problems
+FIX: Repair Forum attachment inserted into the article download address error
+FIX: Modify data in a single module editing, review, push the character length of the intercept when
+FIX: Fix single-user single-channel or multi-channel publishing a list of files displayed incorrectly channel part of the problem
+FIX: Article published in the repair button in the portal management rights to determine the error
+FIX: Cancel the cloud search jump, modified to directly submit data (cloud # 556, tid # 9586)
+FIX: Activity derived tail wrapping question
+FIX: Affixed to the activities page to see posts, "I want to participate in" pop the maximum height limit
+FIX: Modify the floating window Click to share space, microblogging button invalid bug
+FIX: Update attachment size image attachment storage of non-zero
+FIX: Post merger tableid not updated
+FIX: SELECT classified information to retrieve the text field appear to modify the re-election issue
+FIX: Background content review search criteria lost bug fixes
+FIX: QQ group compatibility issues IE9 push back
+FIX: Group inside the back post to see a list of links, click back to the Forum Home
+FIX: Modify Replies bonus points of the BUG, ??issues that need further follow-up
 
 +======================================+
    Discuz! X2 Release 20110817
@@ -190,246 +242,246 @@ For more details see: http://dev.discuz.org/doing.php
    Discuz! X1.5 Release 20101228
 +======================================+
 
-FIX DIY Administrative Templates path problem
-FIX Application API call problem fix
-FIX repair permissions determine the channel part
-FIX diy call and ranking member of the module where PPC PPC inconsistent
-FIX IE6 compatibility part of the page
+FIX: DIY Administrative Templates path problem
+FIX: Application API call problem fix
+FIX: repair permissions determine the channel part
+FIX: diy call and ranking member of the module where PPC PPC inconsistent
+FIX: IE6 compatibility part of the page
 
-FIX personal space Home space available to the domain name wrong BUG
-FIX background classification of bulk mobile album
-FIX export csv file, if not to convert the GBK gbk encoding X1.5
-FIX remove the "group membership" Statistics
-FIX Replies judge allowed View topic permissions
+FIX: personal space Home space available to the domain name wrong BUG
+FIX: background classification of bulk mobile album
+FIX: export csv file, if not to convert the GBK gbk encoding X1.5
+FIX: remove the "group membership" Statistics
+FIX: Replies judge allowed View topic permissions
 
-FIX only one top group
-FIX after the roaming user is locked to the search can search BUG
-FIX draft time limits are not edited
-FIX Access to the promotion parameters
-FIX GP variable filname single quotes in a filter
+FIX: only one top group
+FIX: after the roaming user is locked to the search can search BUG
+FIX: draft time limits are not edited
+FIX: Access to the promotion parameters
+FIX: GP variable filname single quotes in a filter
 
-FIX is a reply to show two fields related to the processing: status and invisible
-FIX the problem quickly flash Replies
-FIX dress space music box can not be removed
-FIX repair review classified information is not displayed
-FIX groupicon cache
+FIX: is a reply to show two fields related to the processing: status and invisible
+FIX: the problem quickly flash Replies
+FIX: dress space music box can not be removed
+FIX: repair review classified information is not displayed
+FIX: groupicon cache
  
-FIX toll free and hide in the annex to the question combinations
-FIX repair problems with DIY when it is capitalized into script execution
-FIX zodiac and the constellations of the user part of the problem automatically calculated
-FIX {parity} tag parsing
-FIX administrators edit the member has successfully posted the log page, you can not return to the previous changes BUG
+FIX: toll free and hide in the annex to the question combinations
+FIX: repair problems with DIY when it is capitalized into script execution
+FIX: zodiac and the constellations of the user part of the problem automatically calculated
+FIX: {parity} tag parsing
+FIX: administrators edit the member has successfully posted the log page, you can not return to the previous changes BUG
  
-FIX Member stealth circumstances, personal information and business card page also displays online changes BUG
-FIX problem with group name with quotes can not be edited
-FIX link inner tube "@" symbol and the link with parameters related to the regular URL-site matching
-FIX multiple operations shield, warning PID duplication
-FIX a succession of new forum to deal with subject classification
+FIX: Member stealth circumstances, personal information and business card page also displays online changes BUG
+FIX: problem with group name with quotes can not be edited
+FIX: link inner tube "@" symbol and the link with parameters related to the regular URL-site matching
+FIX: multiple operations shield, warning PID duplication
+FIX: a succession of new forum to deal with subject classification
 
-FIX Question quote edit is moved, the synchronization shift reservation of title (including the group recommended to the forum posts)
-FIX Expiration time issue activity posts
-FIX Contact the problem after the upgrade
-FIX allows administrators to modify the ban to modify the user data item
-FIX module does not update property set no function never updated x.15
+FIX: Question quote edit is moved, the synchronization shift reservation of title (including the group recommended to the forum posts)
+FIX: Expiration time issue activity posts
+FIX: Contact the problem after the upgrade
+FIX: allows administrators to modify the ban to modify the user data item
+FIX: module does not update property set no function never updated x.15
 
-FIX error when determine the task period (week, month)
-FIX increase restrictions stand remove invalid data
-FIX application when roaming the version number changes, the re-obtain the application icon
-FIX Alipay return notification interface updates
-FIX viewthread the extra parameters page
+FIX: error when determine the task period (week, month)
+FIX: increase restrictions stand remove invalid data
+FIX: application when roaming the version number changes, the re-obtain the application icon
+FIX: Alipay return notification interface updates
+FIX: viewthread the extra parameters page
 
 
 +======================================+
    Discuz! X1.5 Release 20101125
 +======================================+
 
-FIX clean up the monthly online schedule task
-FIX implementation of individual sub-Ajax update did not bother BUG
-FIX Advanced Search link to the previous page
-FIX BUG in the  medal up time
-FIX Fixed the second page of the special theme plug-ins
+FIX: clean up the monthly online schedule task
+FIX: implementation of individual sub-Ajax update did not bother BUG
+FIX: Advanced Search link to the previous page
+FIX: BUG in the  medal up time
+FIX: Fixed the second page of the special theme plug-ins
 
-FIX call log and photo album system classification problems
-FIX enrollment activities
-FIX removed transcoding to UCS-2LE
-FIX task duplication Medal Award
-FIX the bug when you change the deleted theme
+FIX: call log and photo album system classification problems
+FIX: enrollment activities
+FIX: removed transcoding to UCS-2LE
+FIX: task duplication Medal Award
+FIX: the bug when you change the deleted theme
 
-FIX modify the statistics, review by scrolling statistics are counted
-FIX Tips added to the list of forums
-FIX remove redundant code
-FIX BUG modify the integration points as clear strategy to restore the default time
-FIX Re-Login
+FIX: modify the statistics, review by scrolling statistics are counted
+FIX: Tips added to the list of forums
+FIX: remove redundant code
+FIX: BUG modify the integration points as clear strategy to restore the default time
+FIX: Re-Login
 
-FIX Remove the cover picture
-FIX improve the user name associated with Ajax error
-FIX when the root is not found when the secondary domain name, let jump
-FIX html2bbcode the <p>xx</p> converted to xx<br />
-FIX closed user part can not complete the task
+FIX: Remove the cover picture
+FIX: improve the user name associated with Ajax error
+FIX: when the root is not found when the secondary domain name, let jump
+FIX: html2bbcode the <p>xx</p> converted to xx<br />
+FIX: closed user part can not complete the task
 
-FIX separate set points Rule Forum
-FIX The modified forum hot cache
-FIX fixed channel name in the navigation ban
-FIX language pack, and classification of display problems
-FIX charts reveal hidden
+FIX: separate set points Rule Forum
+FIX: The modified forum hot cache
+FIX: fixed channel name in the navigation ban
+FIX: language pack, and classification of display problems
+FIX: charts reveal hidden
 
-FIX reconstruction does not include the number of reviews posted
-FIX bug visitors can send the draft
-FIX forum merger combined plus an array of lead
-FIX Tenpay upgrade, can not test
-FIX Member lastip conversion error
+FIX: reconstruction does not include the number of reviews posted
+FIX: bug visitors can send the draft
+FIX: forum merger combined plus an array of lead
+FIX: Tenpay upgrade, can not test
+FIX: Member lastip conversion error
 
-FIX expression changes are caused by the problem resolution
-FIX Fixed HTML is not allowed when the hair removed strict action on all
+FIX: expression changes are caused by the problem resolution
+FIX: Fixed HTML is not allowed when the hair removed strict action on all
     things HTML
-FIX off site in case of verification code BUG
-FIX for the specified post topics cancel the Recycle Bin,
+FIX: off site in case of verification code BUG
+FIX: for the specified post topics cancel the Recycle Bin,
     and other types of restrictions pending
-FIX Posted by js error group
+FIX: Posted by js error group
 
-FIX member_count table does not exist when uid field is empty the return value
-FIX group permissions and view pending logic
-FIX data backup back up a few more tables
-FIX DIY problem called post attachments
-FIX group has no rules of the
+FIX: member_count table does not exist when uid field is empty the return value
+FIX: group permissions and view pending logic
+FIX: data backup back up a few more tables
+FIX: DIY problem called post attachments
+FIX: group has no rules of the
 
-FIX Reviews of pop recovery mode
-FIX Fixed commodity display valid
-FIX can reset the tourists visit the page misc
-FIX Color Editor popup when dragging the scroll bar problem
-FIX sub domain names with non-set visit, under the domain name directly to
+FIX: Reviews of pop recovery mode
+FIX: Fixed commodity display valid
+FIX: can reset the tourists visit the page misc
+FIX: Color Editor popup when dragging the scroll bar problem
+FIX: sub domain names with non-set visit, under the domain name directly to
     the default location
 
-FIX forum upload banner background without interception,
+FIX: forum upload banner background without interception,
     suggesting that the two width
-FIX privacy of personal information project and determine the revised conflict
-FIX some of the new module initialization options are not displayed
-FIX statistical trends do not appear after the closure of navigation
-FIX classified information may be options to determine the error
+FIX: privacy of personal information project and determine the revised conflict
+FIX: some of the new module initialization options are not displayed
+FIX: statistical trends do not appear after the closure of navigation
+FIX: classified information may be options to determine the error
 
-FIX users to update the cache list
-FIX unified forum for the use of a global integration strategy blank
+FIX: users to update the cache list
+FIX: unified forum for the use of a global integration strategy blank
 
 +======================================+
    Discuz! X1.5 Release 20101020
 +======================================+
-FIX posts and groups can post attachments pushed to the post module
+FIX: posts and groups can post attachments pushed to the post module
     and the module
-FIX Repair Job Order
-FIX Fixed topic list filtering
-FIX to the home page at the beginning of personal space,
+FIX: Repair Job Order
+FIX: Fixed topic list filtering
+FIX: to the home page at the beginning of personal space,
     no penalty to resolve the issue ranked
-FIX Firefox Up to jump referer modified 
-FIX download download the attachment tool support
-FIX Repair DIY classified information items displayed in the
+FIX: Firefox Up to jump referer modified 
+FIX: download download the attachment tool support
+FIX: Repair DIY classified information items displayed in the
     template image problem.
-FIX plus fine, sticky and other topics set period of time,
+FIX: plus fine, sticky and other topics set period of time,
     over a period of roaming the log after the log
-FIX fix the problem anonymous Replies
-FIX does not move Fid
-FIX forum can not exist when the custom diy style
-FIX fixed tab problem within the framework of the module title style
-FIX Add Copy themes copy of the classified information
-FIX Anonymous posts fix the problem in the article mode
-FIX repair Manage group of editors to allow a search by 6 binary bits
+FIX: fix the problem anonymous Replies
+FIX: does not move Fid
+FIX: forum can not exist when the custom diy style
+FIX: fixed tab problem within the framework of the module title style
+FIX: Add Copy themes copy of the classified information
+FIX: Anonymous posts fix the problem in the article mode
+FIX: repair Manage group of editors to allow a search by 6 binary bits
     wrong with BUG,
-FIX cleanup scheduled task to modify the test
-FIX repair Plaza - a module into the top of the list of posts,
+FIX: cleanup scheduled task to modify the test
+FIX: repair Plaza - a module into the top of the list of posts,
     "the essence and recommended" the theme switching loss and solve the
     problem of paging
-FIX combined untreated subject classification Forum
-FIX fixed on the main navigation channel is not displayed,
+FIX: combined untreated subject classification Forum
+FIX: fixed on the main navigation channel is not displayed,
     the secondary navigation channel as with the Home
-FIX each natural months, the same evaluation between buyers and sellers
+FIX: each natural months, the same evaluation between buyers and sellers
     maximum points
-FIX modify the application data is hidden extra BUG
-FIX Under the post into the album IE6 compatibility
-FIX Fixed card records
-FIX Global integration strategies and sector strategies conflict points
-FIX the same IP in 24 hours can only be up for revision XX
-FIX fix multi-forum search
-FIX repair Gateway Management Module Management Module does not display
+FIX: modify the application data is hidden extra BUG
+FIX: Under the post into the album IE6 compatibility
+FIX: Fixed card records
+FIX: Global integration strategies and sector strategies conflict points
+FIX: the same IP in 24 hours can only be up for revision XX
+FIX: fix multi-forum search
+FIX: repair Gateway Management Module Management Module does not display
     non-DIY
-FIX Audit issued a notice to fix the background
-FIX Forum Moderators can manage cross-"activities posts" within the list
+FIX: Audit issued a notice to fix the background
+FIX: Forum Moderators can manage cross-"activities posts" within the list
     of participants BUG.
-FIX each natural months, the same evaluation between buyers and sellers
+FIX: each natural months, the same evaluation between buyers and sellers
     maximum points
-FIX BUG Fixed Star Member
-FIX Fixed the administrator to delete posts will be deducted visitors
-FIX modify multiple attachments is complete,
+FIX: BUG Fixed Star Member
+FIX: Fixed the administrator to delete posts will be deducted visitors
+FIX: modify multiple attachments is complete,
     return to the list of attachments not sorted the problem
-FIX delete a post after the transfer back to the message list page,
+FIX: delete a post after the transfer back to the message list page,
     not the original pages of the
-FIX article big picture will be under center when the chaos out in IE8
-FIX fix duplicate error to determine the directory name
-FIX IIS6 rewrite rules for repair, compatible? After the parameters
-FIX BUG fixed membership search
-FIX fix the comments page link in the problem of comment
-FIX user search user lock background, video authentication, picture
-FIX audit users by sharing the feed error
-FIX users export data, gender data processing
-FIX handling of array parameter
-FIX uninitialized variables result in the removal of the data is not updated
-FIX interface version will be changed to 0.2 Roaming
-FIX classified information and the language pack bug check parameters
+FIX: article big picture will be under center when the chaos out in IE8
+FIX: fix duplicate error to determine the directory name
+FIX: IIS6 rewrite rules for repair, compatible? After the parameters
+FIX: BUG fixed membership search
+FIX: fix the comments page link in the problem of comment
+FIX: user search user lock background, video authentication, picture
+FIX: audit users by sharing the feed error
+FIX: users export data, gender data processing
+FIX: handling of array parameter
+FIX: uninitialized variables result in the removal of the data is not updated
+FIX: interface version will be changed to 0.2 Roaming
+FIX: classified information and the language pack bug check parameters
     of digital transmission
-FIX IE6 browser under the floating window caused the problem of
+FIX: IE6 browser under the floating window caused the problem of
     illegal operations
-FIX modify the UC passed over the delete user link errors BUG
-FIX certification icon change does not accumulate when the prefix is empty
-FIX user multi column selection list box data problem can not be saved
-FIX personal space in a custom dress,
+FIX: modify the UC passed over the delete user link errors BUG
+FIX: certification icon change does not accumulate when the prefix is empty
+FIX: user multi column selection list box data problem can not be saved
+FIX: personal space in a custom dress,
     head of the color of the text invalid problem set
 
 +======================================+
    Discuz! X1.5 Release 20101001
 +======================================+
-FIX some problems can not be installed server environment
-FIX forum access control permissions to upload an image problem
-FIX the background theme of recycling operations do not accurately
-FIX ie browsers diy vote can not be displayed after clicking on the
+FIX: some problems can not be installed server environment
+FIX: forum access control permissions to upload an image problem
+FIX: the background theme of recycling operations do not accurately
+FIX: ie browsers diy vote can not be displayed after clicking on the
     virtual memory or tips php
-FIX upload flash ads void, the front desk but the address is empty
+FIX: upload flash ads void, the front desk but the address is empty
     advertising spaces
-FIX recover password page, account, mailbox not an error when the system
-FIX when setting forum signature [b] labeling
-FIX the background - the user - the user did not change after editor of order
-FIX up the same number of IP issues 24-hour limit
-FIX misplaced records changes in the background integral
-FIX conversion from 7.2 to X1.5, collection of data loss problem
-FIX No Photo DIY goods in the call, the picture is not the correct path
+FIX: recover password page, account, mailbox not an error when the system
+FIX: when setting forum signature [b] labeling
+FIX: the background - the user - the user did not change after editor of order
+FIX: up the same number of IP issues 24-hour limit
+FIX: misplaced records changes in the background integral
+FIX: conversion from 7.2 to X1.5, collection of data loss problem
+FIX: No Photo DIY goods in the call, the picture is not the correct path
     resolution
-FIX Top keyword searches Problems
-FIX IE8 click Add under the Application of no response, blank page
-FIX classified information fields for multiple selection (checkbox)
+FIX: Top keyword searches Problems
+FIX: IE8 click Add under the Application of no response, blank page
+FIX: classified information fields for multiple selection (checkbox)
     is not normally involved in the search
-FIX the dynamic setting invalid mask friends
-FIX Generation post article [align =] does not resolve the problem
+FIX: the dynamic setting invalid mask friends
+FIX: Generation post article [align =] does not resolve the problem
     also exists in the group post
-FIX the part of the upgrade to 1.5 after the Web site of the feed
+FIX: the part of the upgrade to 1.5 after the Web site of the feed
     can not resolve the {subject}, etc.
-FIX change forum rules will clear the front profile Forum
-FIX PHP v4.3.9 version can not DIY
-FIX residence option four is empty, the event will set the election
+FIX: change forum rules will clear the front profile Forum
+FIX: PHP v4.3.9 version can not DIY
+FIX: residence option four is empty, the event will set the election
     to be wrong paste
-FIX cancel the style editor to set the width in the reading area
-FIX forum contains the name of 8 characters <symbols can not display the full
-FIX the task can not complete the picture
-FIX registration records can not be deleted invite
-FIX up a new installation or upgrade of site optimization settings
+FIX: cancel the style editor to set the width in the reading area
+FIX: forum contains the name of 8 characters <symbols can not display the full
+FIX: the task can not complete the picture
+FIX: registration records can not be deleted invite
+FIX: up a new installation or upgrade of site optimization settings
     in the Square, a problem description
-FIX Online Member time display always shows 8:00 when stealth
-FIX Delay update issues Post Views
-FIX header points can be hidden
-FIX repair permissions determine user module
-FIX prompt box to modify an invitation code
-FIX constant IMGDIR replace $ _G ['style'] ['imgdir']
-FIX editor WYSIWYG mode, the default font size with the value of
+FIX: Online Member time display always shows 8:00 when stealth
+FIX: Delay update issues Post Views
+FIX: header points can be hidden
+FIX: repair permissions determine user module
+FIX: prompt box to modify an invitation code
+FIX: constant IMGDIR replace $ _G ['style'] ['imgdir']
+FIX: editor WYSIWYG mode, the default font size with the value of
     go {MSGFONTSIZE}
-FIX ad -> ad content centered lattice
-FIX the search field box display problem classification information
-FIX the other adjustment is not to list more details ...
+FIX: ad -> ad content centered lattice
+FIX: the search field box display problem classification information
+FIX: the other adjustment is not to list more details ...
 
 +======================================+
    Discuz! X1.5 Release 20100920

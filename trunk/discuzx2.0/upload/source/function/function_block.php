@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_block.php 22934 2011-06-02 06:17:44Z zhangguosheng $
+ *      $Id: function_block.php 24525 2011-09-23 02:34:43Z zhangguosheng $
  *	English by Valery Votintsev at sources.ru
  */
 
@@ -388,10 +388,10 @@ function block_template($bid) {
 									@unlink($_G['setting']['attachdir'].'./'.$thumbpath);
 								}
 							} elseif(file_exists($_G['setting']['attachdir'].$thumbpath) || ($return = $image->Thumb($replacevalue, $thumbpath, $block['picwidth'], $block['picheight'], 2))) {
-/*vot*/							$picflag = 0; //common_block_pic table: picflag identity (0 = local, 1 = remote)
+/*vot*/								$picflag = 0; //common_block_pic table: picflag identity (0 = local, 1 = remote)
 								$_G['block_makethumb'] = true;
 							}
-							if($_G['block_akethumb']) {
+							if($_G['block_makethumb']) {
 								DB::update('common_block_item', array('makethumb'=>1, 'thumbpath' => $thumbpath), $where);
 								$thumbdata = array('bid' => $block['bid'], 'itemid' => $blockitem['itemid'], 'pic' => $thumbpath, 'picflag' => $picflag, 'type' => '0');
 								DB::insert('common_block_pic', $thumbdata);
@@ -536,13 +536,14 @@ function block_makeform($blocksetting, $values){
 					$districthtml .= $values[$fieldid].'<input type="hidden" name="parameter['.$fieldid.']" value="'.$values[$fieldid].'" /> ';
 				}
 			}
+			$containertype = strpos($setting['title'], 'birthcity') !== false ? 'birth' : 'reside';
 			$containerid = 'randomid_'.(++$randomid);
 			if($districthtml) {
 				$s .= $districthtml;
-				$s .= '&nbsp;&nbsp;<a href="javascript:;" onclick="showdistrict(\''.$containerid.'\', ['.dimplode($elems).'], '.count($elems).'); return false;">'.lang('spacecp', 'profile_edit').'</a>';
+				$s .= '&nbsp;&nbsp;<a href="javascript:;" onclick="showdistrict(\''.$containerid.'\', ['.dimplode($elems).'], '.count($elems).', \'\', \''.$containertype.'\'); return false;">'.lang('spacecp', 'profile_edit').'</a>';
 				$s .= '<p id="'.$containerid.'"></p>';
 			} else {
-				$s .= "<div id=\"$containerid\">".showdistrict($vals, $elems, $containerid).'</div>';
+				$s .= "<div id=\"$containerid\">".showdistrict($vals, $elems, $containerid, null, $containertype).'</div>';
 			}
 		} elseif($type == 'file') {
 			$s .= '<input type="'.$type.'" name="'.$varname.'" class="pf" value="'.dhtmlspecialchars($value).'" />';
@@ -629,7 +630,7 @@ function block_updateitem($bid, $items=array()) {
 			$curitem['displayorder'] = $i;
 
 			$curitem['makethumb'] = 0;
-/*vot*/		if($block['picwidth'] && $block['picheight'] && $curitem['picflag']) { //picflag=0 for the local Url address
+/*vot*/			if($block['picwidth'] && $block['picheight'] && $curitem['picflag']) { //picflag=0 for the local Url address
 				$thumbpath = empty($curitem['thumbpath']) ? block_thumbpath($block, $curitem) : $curitem['thumbpath'];
 				if($_G['setting']['ftp']['on']) {
 					if(empty($ftp) || empty($ftp->connectid)) {

@@ -19,20 +19,24 @@ j(document).ready(function() {
 function previewFormSubmit() {
 	saveAllThread();
 
-		if (!selectedTopicId || selectedNormalIds.length < 1) {
-		alert(lng['select_topic_to_push']);//vot
-			return false;
-		}
+	if (!selectedTopicId) {
+/*vot*/		alert(lng['select_topic_to_push']);
+		return false;
+	}
+	if (selectedNormalIds.length < 1) {
+/*vot*/		alert(lng['select_item_to_push']);
+		return false;
+	}
 
-		var i = 1;
-		for (var k = 1; k <= 5; k++) {
-			var input_displayorder = j('#normal_thread_' + k).find('.preview_displayorder');
-			if (input_displayorder.size()) {
-				input_displayorder.val(i);
-				i++;
-			}
+	var i = 1;
+	for (var k = 1; k <= 5; k++) {
+		var input_displayorder = j('#normal_thread_' + k).find('.preview_displayorder');
+		if (input_displayorder.size()) {
+			input_displayorder.val(i);
+			i++;
 		}
-		return true;
+	}
+	return true;
 }
 
 function initSelect() {
@@ -63,7 +67,7 @@ function ajaxChangeSearch() {
 
 function ajaxGetSearchResultThreads() {
 	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
-	ajaxpost('search_form', 'search_result', null, null, null, function() {initSelect(); return false});
+	qqgroupajaxpost('search_form', 'search_result', 'search_result', null, null, function() {initSelect(); return false});
 	return false;
 }
 
@@ -304,7 +308,7 @@ function removeNormalThreadRecall(displayorder, inNormalEditor) {
 function ajaxUploadQQGroupImage() {
 	j('#uploadImageResult').parent().show();
 	j('#uploadImageResult').text(lng['wait_image_upload']);//vot
-	ajaxpost('uploadImage', 'uploadImageResult', null, null, null, 'uploadRecall()');
+	qqgroupajaxpost('uploadImage', 'uploadImageResult', 'uploadImageResult', null, null, 'uploadRecall()');
 }
 
 function uploadRecall() {
@@ -318,4 +322,83 @@ function uploadRecall() {
 		j('#topic_preview_thumb').attr('src', imageUrl + '?' + debug_rand);
 		setTimeout(function() {hideWindow('uploadImgWin');}, 2000);
 	}
+}
+
+function qqgroupajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
+	var waitid = typeof waitid == 'undefined' || waitid === null ? showid : (waitid !== '' ? waitid : '');
+	var showidclass = !showidclass ? '' : showidclass;
+	var ajaxframeid = 'ajaxframe';
+	var ajaxframe = $(ajaxframeid);
+	var formtarget = $(formid).target;
+
+	var handleResult = function() {
+		var s = '';
+		var evaled = false;
+
+		showloading('none');
+
+		ajaxResponse = j('#' + ajaxframeid).contents().text();
+		var regex = /<\!\[CDATA\[(.*)\]\]>/;
+		var regexed = regex.exec(ajaxResponse);
+		if (regexed && regexed[1]) {
+			s = regexed[1];
+		} else {
+			s = ajaxResponse;
+		}
+		if (!s) {
+			s = lng['int_error'];//vot
+		}
+
+		if(s != '' && s.indexOf('ajaxerror') != -1) {
+			evalscript(s);
+			evaled = true;
+		}
+		if(showidclass) {
+			if(showidclass != 'onerror') {
+				j(showid).addClass(showidclass);
+			} else {
+				showError(s);
+				ajaxerror = true;
+			}
+		}
+		if(submitbtn) {
+			j(submitbtn).attr('disabled', false);
+		}
+		if(!evaled && (typeof ajaxerror == 'undefined' || !ajaxerror)) {
+			ajaxinnerhtml($(showid), s);
+		}
+		ajaxerror = null;
+		j('#' + formid).attr('target', formtarget);
+		if(typeof recall == 'function') {
+			recall();
+		} else {
+			eval(recall);
+		}
+		if(!evaled) evalscript(s);
+		ajaxframe.loading = 0;
+		j(ajaxframe.parentNode).remove();
+	};
+	if(!ajaxframe) {
+		var div = j('<div>');
+		div.css('display', 'none');
+		div.html('<iframe name="' + ajaxframeid + '" id="' + ajaxframeid + '" loading="1">');
+		j('#append_parent').append(div);
+		ajaxframe = $(ajaxframeid);
+	} else if(ajaxframe.loading) {
+		return false;
+	}
+
+	_attachEvent(ajaxframe, 'load', handleResult);
+
+	showloading();
+	j('#' + formid).attr('target', ajaxframeid);
+	var action = j('#' + formid).attr('action');
+	action = hostconvert(action);
+	j('#' + formid).attr('action', action.replace(/\&inajax\=1/g, '')+'&inajax=1');
+	$(formid).submit();
+	if(submitbtn) {
+		j(submitbtn).attr('disabled', true);
+	}
+	doane();
+	return false;
 }

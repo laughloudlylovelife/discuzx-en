@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_core.php 23920 2011-08-16 09:11:43Z cnteacher $
+ *      $Id: function_core.php 24580 2011-09-27 05:38:22Z zhengqingpeng $
  *		English by Valery Votintsev at sources.ru
  */
 
@@ -290,7 +290,7 @@ function dsetcookie($var, $value = '', $life = 0, $prefix = 1, $httponly = false
 
 	$_G['cookie'][$var] = $value;
 	$var = ($prefix ? $config['cookiepre'] : '').$var;
-	$_COOKIE[$var] = $var;
+	$_COOKIE[$var] = $value;
 
 	if($value == '' || $life < 0) {
 		$value = '';
@@ -513,7 +513,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 		$file = empty($clonefile) || STYLEID != $_G['cache']['style_default']['styleid'] ? $file : $file.'_'.$clonefile;
 		if($templateid == 'diy' && STYLEID == $_G['cache']['style_default']['styleid']) {
 			$_G['style']['prefile'] = '';
-/*vot*/		$diypath = DISCUZ_ROOT.'./data/diy/'; //DIY template file directory
+/*vot*/			$diypath = DISCUZ_ROOT.'./data/diy/'; //DIY template file directory
 			$preend = '_diy_preview';
 			$_G['gp_preview'] = !empty($_G['gp_preview']) ? $_G['gp_preview'] : '';
 			$curtplname = $oldfile;
@@ -527,7 +527,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 				$tpldir = 'data/diy';
 				!$gettplfile && $_G['style']['tplsavemod'] = $tplsavemod;
 				$curtplname = $file;
-/*vot*/			if($_G['gp_diy'] == 'yes' || $_G['gp_preview'] == 'yes') { //DIY mode or preview mode, do the following judge
+/*vot*/				if($_G['gp_diy'] == 'yes' || $_G['gp_preview'] == 'yes') { //DIY mode or preview mode, do the following judge
 					$flag = file_exists($diypath.$file.$preend.'.htm');
 					if($_G['gp_preview'] == 'yes') {
 						$file .= $flag ? $preend : '';
@@ -887,7 +887,7 @@ function dstrlen($str) {
 		return strlen($str);
 	}
 	return mb_strlen($str); //vot
-/*//vot
+/*vot
 	$count = 0;
 	for($i = 0; $i < strlen($str); $i++){
 		$value = ord($str[$i]);
@@ -1511,7 +1511,7 @@ function submitcheck($var, $allowget = 0, $seccodecheck = 0, $secqaacheck = 0) {
 			}
 		}
 		if($allowget || ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_G['gp_formhash']) && $_G['gp_formhash'] == formhash() && empty($_SERVER['HTTP_X_FLASH_VERSION']) && (empty($_SERVER['HTTP_REFERER']) ||
-			preg_replace("/https?:\/\/([^\:\/]+).*/i", "\\1", $_SERVER['HTTP_REFERER']) == preg_replace("/([^\:]+).*/", "\\1", $_SERVER['HTTP_HOST'])))) {
+		preg_replace("/https?:\/\/([^\:\/]+).*/i", "\\1", $_SERVER['HTTP_REFERER']) == preg_replace("/([^\:]+).*/", "\\1", $_SERVER['HTTP_HOST'])))) {
 			if(checkperm('seccode')) {
 				if($secqaacheck && !check_secqaa($_G['gp_secanswer'], $_G['gp_sechash'])) {
 					showmessage('submit_secqaa_invalid');
@@ -1759,13 +1759,13 @@ function dreferer($default = '') {
 	if(strpos($_G['referer'], 'member.php?mod=logging')) {
 		$_G['referer'] = $default;
 	}
-	$_G['referer'] = htmlspecialchars($_G['referer']);
+	$_G['referer'] = htmlspecialchars($_G['referer'], ENT_QUOTES);
 	$_G['referer'] = str_replace('&amp;', '&', $_G['referer']);
 	$reurl = parse_url($_G['referer']);
 	if(!empty($reurl['host']) && !in_array($reurl['host'], array($_SERVER['HTTP_HOST'], 'www.'.$_SERVER['HTTP_HOST'])) && !in_array($_SERVER['HTTP_HOST'], array($reurl['host'], 'www.'.$reurl['host']))) {
 		if(!in_array($reurl['host'], $_G['setting']['domain']['app']) && !isset($_G['setting']['domain']['list'][$reurl['host']])) {
 			$domainroot = substr($_SERVER['HTTP_HOST'], strpos($_SERVER['HTTP_HOST'], '.')+1);
-			if(is_array($_G['setting']['domain']['root']) && !in_array($domainroot, $_G['setting']['domain']['root'])) {
+			if(empty($_G['setting']['domain']['root']) || (is_array($_G['setting']['domain']['root']) && !in_array($domainroot, $_G['setting']['domain']['root']))) {
 				$_G['referer'] = $_G['setting']['domain']['defaultindex'] ? $_G['setting']['domain']['defaultindex'] : 'index.php';
 			}
 		}
@@ -2556,4 +2556,58 @@ function userappprompt() {
 	}
 }
 
+
+function makeSearchSignUrl() {
+	global $_G;
+
+	$url = '';
+	$params = array();
+	$my_search_data = unserialize($_G['setting']['my_search_data']);
+	$my_siteid = $_G['setting']['my_siteid'];
+	$my_sitekey= $_G['setting']['my_sitekey'];
+	require_once libfile('function/cloud');
+	if($my_search_data['status'] && getcloudappstatus('search') && $my_siteid) {
+		$my_extgroupids = array();
+		$_extgroupids = explode("\t", $_G['member']['extgroupids']);
+		foreach($_extgroupids as $v) {
+			if ($v) {
+				$my_extgroupids[] = $v;
+			}
+		}
+		$my_extgroupids_str = implode(',', $my_extgroupids);
+		$params = array('sId' => $my_siteid,
+							'ts' => time(),
+							'cuId' => $_G['uid'],
+							'cuName' => $_G['username'],
+							'gId' => intval($_G['groupid']),
+							'agId' => intval($_G['adminid']),
+							'egIds' => $my_extgroupids_str,
+							'fmSign' => '',
+						   );
+		$groupIds = array($params['gId']);
+		if ($params['agId']) {
+			$groupIds[] = $params['agId'];
+		}
+		if ($my_extgroupids) {
+			$groupIds = array_merge($groupIds, $my_extgroupids);
+		}
+
+		$groupIds = array_unique($groupIds);
+		foreach($groupIds as $v) {
+			$key = 'ugSign' . $v;
+			$params[$key] = '';
+		}
+		$params['sign'] = md5(implode('|', $params) . '|' . $my_sitekey);
+
+		$params['charset'] = $_G['charset'];
+		$mySearchData = unserialize($_G['setting']['my_search_data']);
+		if ($mySearchData['domain']) {
+			$domain = $mySearchData['domain'];
+		} else {
+			$domain = 'search.discuz.qq.com';
+		}
+		$url = 'http://' . $domain . '/f/discuz';
+	}
+	return !empty($url) ? array($url, $params) : array();
+}
 ?>

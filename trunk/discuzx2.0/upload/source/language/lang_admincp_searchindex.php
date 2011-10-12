@@ -5037,7 +5037,7 @@ $lang = array (
       38 => '(1) SPH_RANK_PROXIMITY_BM, the default mode, using phrases rank and BM25 rank, and will be a combination of both. [Default]
 						<br />(2) SPH_RANK_BM25, statistical correlation calculation mode, use only the BM25 rank calculation (full text search engine with most of the same). This mode is faster, but may contain more than the result of a query term decline in the quality.
 						<br />(3) SPH_RANK_NONE, Disable ranking mode, which is the fastest mode. Fact that the same model as a Boolean search. All the matches are given weight 1.',
-//'(1)SPH_RANK_PROXIMITY_BM25， 默认模式，同时使用词组评分和 BM25 评分，并且将二者结合。[默认]
+//      38 => '(1)SPH_RANK_PROXIMITY_BM25， 默认模式，同时使用词组评分和 BM25 评分，并且将二者结合。[默认]
 //(2)SPH_RANK_BM25，统计相关度计算模式，仅使用 BM25 评分计算(与大多数全文检索引擎相同)。这个模式比较快，但是可能使包含多个词的查询的结果质量下降。
 //(3)SPH_RANK_NONE，禁用评分的模式，这是最快的模式。实际上这种模式与布尔搜索相同。所有的匹配项都被赋予权重1',
     ),
@@ -5467,7 +5467,7 @@ $lang = array (
 				Template cache: Update forum templates, styles, and cache files when you have modified a template or style, but there is no visible effect immediately.
 				DIY blocks cache: update the DIY blocks, used when you have installed or modified a DIY block, but did not take see a visual effect immediately.
 				',
-//'当站点进行了数据恢复、升级或者工作出现异常的时候，你可以使用本功能重新生成缓存。更新缓存的时候，可能让服务器负载升高，请尽量避开会员访问的高峰时间
+//      2 => '当站点进行了数据恢复、升级或者工作出现异常的时候，你可以使用本功能重新生成缓存。更新缓存的时候，可能让服务器负载升高，请尽量避开会员访问的高峰时间
 //				数据缓存：更新站点的全部数据缓存
 //				模板缓存：更新论坛模板、风格等缓存文件，当你修改了模板或者风格，但是没有立即生效的时候使用
 //				DIY 模块分类缓存：更新 DIY 模块分类，当你安装或修改了 DIY 模块分类，但是没有立即生效的时候使用

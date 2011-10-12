@@ -280,7 +280,7 @@ class block_activity {
 /*vot*/		$sqlfrom = " INNER JOIN `".DB::table('forum_thread')."` t ON (t.tid=a.tid $sql AND t.displayorder>='0')";
 		$joinmethod = empty($tids) ? 'INNER' : 'LEFT';
 		if($recommend) {
-			$sqlfrom .= " $joinmethod JOIN `".DB::table('forum_forumrecommend')."` fc ON (fc.tid=tr.tid)";
+/*vot*/			$sqlfrom .= " $joinmethod JOIN `".DB::table('forum_forumrecommend')."` fc ON (fc.tid=tr.tid)";
 		}
 		$sqlfield = $highlight ? ', t.highlight' : '';
 		$query = DB::query("SELECT a.*, t.tid, t.subject, t.authorid, t.author$sqlfield

@@ -1073,9 +1073,6 @@ $lang = array (
 	'viewthread_trade_message4'	=> 'counter introduction',//'柜台介绍',
 	'warn_view_log'			=> '$warnuser Warning Log',//'$warnuser 警告记录',
 	'warn_view_prompt'		=> '$warnuser was warned $warnnum times. If you were warned {$_G[setting][warninglimit]} times in {$_G[setting][warningexpiration]} days, you would be banned to post {$_G[setting][warningexpiration]} days (R/O mode)',//'$warnuser 已被累计警告 $warnnum 次，{$_G[setting][warningexpiration]} 天内累计被警告 {$_G[setting][warninglimit]} 次，将被自动禁止发帖 {$_G[setting][warningexpiration]} 天',
-//vot
-//	'thread_closed'		=> 'The thread is closed',//'关闭的主题',
-//	'new_replies_exists'	=> 'There are new replies',//'有新回复',
 );
 
 ?>

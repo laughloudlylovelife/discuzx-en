@@ -12,7 +12,7 @@ to the latest Discuz! X version.
 This upgrade program can also be used for upgrading any previous
 Discuz!X versions to the latest version.
 
-The last Discuz!X version for now is Discuz!X v.2.0 29-Jun-2011.
+The last original Discuz!X version can be found at:
 http://download.comsenz.com/DiscuzX/2.0/
 
 Before you start the upgrade process,

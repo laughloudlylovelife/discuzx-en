@@ -392,7 +392,7 @@ function replyNotice() {
 		replynotice.setAttribute("status", 0);
 	} else {
 		replynotice.href = newurl + 'ignore';
-		$('replynotice').innerHTML = lng['notify_on_reply_cancel'];
+		replynotice.innerHTML = lng['notify_on_reply_cancel'];
 		replynotice.setAttribute("status", 1);
 	}
 }

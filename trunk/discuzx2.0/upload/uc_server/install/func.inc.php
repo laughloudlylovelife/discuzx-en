@@ -483,7 +483,7 @@ EOT;
 
 function show_footer($quit = true) {
 
-	echo <<<EOT
+/*vot*/	echo <<<EOT
 		<div class="footer">&copy;2001 - 2011 <a href="http://www.comsenz.com/">Comsenz</a> Inc.
 		  <div>English version by <a href="http://china.sources.ru">Valery Votintsev (aka "vot") at sources.ru</a></div>
                 </div>
@@ -579,10 +579,10 @@ function config_edit() {
 
 function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
-	$ckey_length = 4;	// random key length value 0-32; 
-						// Add random key, the ciphertext can make no law, even if exactly the same text and key, encrypt the result will be different each time, increasing the difficulty is. 
-						// Value the greater the change in the law the greater the ciphertext, ciphertext change = 16, $ ckey_length th power 
-						// When this value is 0, not generate random keys 
+/*vot*/	$ckey_length = 4;	// random key length value 0-32; 
+				// Add random key, the ciphertext can make no law, even if exactly the same text and key, encrypt the result will be different each time, increasing the difficulty is. 
+				// Value the greater the change in the law the greater the ciphertext, ciphertext change = 16, $ ckey_length th power 
+				// When this value is 0, not generate random keys 
 
 	$key = md5($key ? $key : UC_KEY);
 	$keya = md5(substr($key, 0, 16));
@@ -975,7 +975,7 @@ function check_adminuser($username, $password, $email) {
 	include ROOT_PATH.'./uc_client/client.php';
 	$error = '';
 	$uid = uc_user_register($username, $password, $email);
-	/*
+	/*vot comments:
 	-1 : The user name is not valid 
 	-2 : Contains not allowed words 
 	-3 : User name already exists 

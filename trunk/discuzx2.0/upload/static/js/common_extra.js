@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: common_extra.js 22925 2011-06-01 10:23:08Z liulanbo $
+	$Id: common_extra.js 24331 2011-09-08 08:29:58Z zhangguosheng $
 //	Modified by Valery Votintsev
 */
 
@@ -26,7 +26,7 @@ function _relatedlinks(rlinkmsgid) {
 	});
 	var relatedid = new Array();
 	msg = msg.replace(/(^|>)([^<]+)(?=<|$)/ig, function($1, $2, $3) {
-		for(var j = 0; j > -1; j++) {
+		for(var j = 0; j < relatedlink.length; j++) {
 			if(relatedlink[j] && !relatedid[j]) {
 				var ra = '<a href="'+relatedlink[j]['surl']+'" target="_blank" class="relatedlink">'+relatedlink[j]['sname']+'</a>';
 				var $rtmp = $3;
@@ -34,8 +34,6 @@ function _relatedlinks(rlinkmsgid) {
 				if($3 != $rtmp) {
 					relatedid[j] = 1;
 				}
-			} else {
-				break;
 			}
 		}
 		return $2 + $3;
@@ -102,9 +100,9 @@ function _checksec(type, idhash, showmsg, recall) {
 			obj.innerHTML = '<img src="'+ IMGDIR + '/check_error.gif" width="16" height="16" class="vm" />';
 			if(showmsg) {
 				if(type == 'code') {
-					showDialog(lng['code_invalid']);
+					showDialog(lng['code_invalid']);//vot
 				} else if(type == 'qaa') {
-					showDialog(lng['q&a_invalid']);
+					showDialog(lng['q&a_invalid']);//vot
 				}
 				recall(0);
 			}
@@ -137,7 +135,7 @@ function _setDoodle(fid, oid, url, tid, from) {
 	}
 }
 
-function _showdistrict(container, elems, totallevel, changelevel) {
+function _showdistrict(container, elems, totallevel, changelevel, containertype) {
 	var getdid = function(elem) {
 		var op = elem.options[elem.selectedIndex];
 		return op['did'] || op.getAttribute('did') || '0';
@@ -146,9 +144,9 @@ function _showdistrict(container, elems, totallevel, changelevel) {
 	var cid = changelevel >= 2 && elems[1] && $(elems[1]) ? getdid($(elems[1])) : 0;
 	var did = changelevel >= 3 && elems[2] && $(elems[2]) ? getdid($(elems[2])) : 0;
 	var coid = changelevel >= 4 && elems[3] && $(elems[3]) ? getdid($(elems[3])) : 0;
-	var url = "home.php?mod=misc&ac=ajax&op=district&container="+container
+	var url = "home.php?mod=misc&ac=ajax&op=district&container="+container+"&containertype="+containertype
 		+"&province="+elems[0]+"&city="+elems[1]+"&district="+elems[2]+"&community="+elems[3]
-		+"&pid="+pid + "&cid="+cid+"&did="+did+"&coid="+coid+'&level='+totallevel+'&handlekey='+container+'&inajax=1'+(isUndefined(changelevel) ? '&showdefault=1' : '');
+		+"&pid="+pid + "&cid="+cid+"&did="+did+"&coid="+coid+'&level='+totallevel+'&handlekey='+container+'&inajax=1'+(!changelevel ? '&showdefault=1' : '');
 	ajaxget(url, container, '');
 }
 
@@ -379,10 +377,10 @@ function _zoom(obj, zimg, nocover, pn) {
 		menu.id = menuid;
 		if(cover) {
 			menu.innerHTML = '<div class="zoominner" id="' + menuid + '_zoomlayer" style="display:none"><p><span class="y"><a id="' + menuid + '_imglink" class="imglink" target="_blank" title="'+lng['open_new_win']+'">'+lng['open_new_win']+'</a><a id="' + menuid + '_adjust" href="javascipt:;" class="imgadjust" title="'+lng['actual_size']+'">'+lng['actual_size']+'</a>' +
-				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="'+lng['close']+'">'+lng['close']+'</a></span>'+lng['wheel_zoom']+'</p>' +
+				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="'+lng['close']+'">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'</p>' +
 				'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		} else {
-			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">'+lng['close']+'</a></span>'+lng['wheel_zoom']+'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
+			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		}
 		if(BROWSER.ie || BROWSER.chrome){
 			menu.onmousewheel = adjust;
@@ -408,9 +406,9 @@ function _zoom(obj, zimg, nocover, pn) {
 			}
 			if(authorcurrent !== '') {
 				paid = authorcurrent > 0 ? authorimgs[authorcurrent - 1] : authorimgs[authorlength - 1];
-				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_prev"><strong>'+lng['prev']+'</strong></div> ';
+				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_prev"><strong>'+lng['prev']+'</strong></div> ';//vot
 				paid = authorcurrent < authorlength - 1 ? authorimgs[authorcurrent + 1] : authorimgs[0];
-				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_next"><strong>'+lng['next']+'</strong></div> ';
+				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_next"><strong>'+lng['next']+'</strong></div> ';//vot
 			}
 			if(picpage) {
 				$(menuid + '_picpage').innerHTML = picpage;
@@ -1014,12 +1012,12 @@ function _widthauto(obj) {
 		}
 		HTMLNODE.className += ' widthauto';
 		setcookie('widthauto', 1, 86400 * 30);
-		obj.innerHTML = lng['narrow_screen'];
+		obj.innerHTML = lng['narrow_screen'];//vot
 	} else {
 		$('css_widthauto').disabled = true;
 		HTMLNODE.className = HTMLNODE.className.replace(' widthauto', '');
 		setcookie('widthauto', -1, 86400 * 30);
-		obj.innerHTML = lng['wide_screen'];
+		obj.innerHTML = lng['wide_screen'];//vot
 	}
 	hideMenu();
 }
@@ -1030,7 +1028,7 @@ function _showCreditmenu() {
 		menu.id = 'extcreditmenu_menu';
 		menu.style.display = 'none';
 		menu.className = 'p_pop';
-		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> ' + lng['wait_please'] + '</div>';
+		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> ' + lng['wait_please'] + '</div>';//vot
 		$('append_parent').appendChild(menu);
 		ajaxget($('extcreditmenu').href, 'extcreditmenu_menu', 'ajaxwaitid');
 	}

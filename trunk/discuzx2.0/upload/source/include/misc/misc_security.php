@@ -73,15 +73,16 @@ if($attackevasive & 8) {
 
 function securitymessage($subject, $message, $reload = TRUE, $form = FALSE) {
 	global $_G;
-//vot: $scuritylang moved to /source/language/lang_core.php:
-//	$scuritylang = array(
-//		'attackevasive_1_subject' => 'Refresh frequency limit',
-//		'attackevasive_1_message' => 'You visit the site too fast, less than two seconds! Please wait a little...',
-//		'attackevasive_2_subject' => 'Access throug proxy servers is restricted',
-//		'attackevasive_2_message' => 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
-//		'attackevasive_4_subject' => 'Open the page reload',
-//		'attackevasive_4_message' => 'Welcome to the site, the page is re-loading, please wait ...'
-//	);
+/* vot: $scuritylang moved to /source/language/lang_core.php:
+	$scuritylang = array(
+		'attackevasive_1_subject' => 'Refresh frequency limit',
+		'attackevasive_1_message' => 'You visit the site too fast, less than two seconds! Please wait a little...',
+		'attackevasive_2_subject' => 'Access throug proxy servers is restricted',
+		'attackevasive_2_message' => 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
+		'attackevasive_4_subject' => 'Open the page reload',
+		'attackevasive_4_message' => 'Welcome to the site, the page is re-loading, please wait ...'
+	);
+*/
 
 /*vot*/	$subject = lang($subject) ? lang($subject) : $subject;
 /*vot*/	$message = lang($message) ? lang($message) : $message;

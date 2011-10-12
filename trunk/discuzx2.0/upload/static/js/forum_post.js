@@ -71,20 +71,20 @@ function validate(theform) {
 		return false;
 //vot	} else if(mb_strlen(theform.subject.value) > 80) {
 	} else if(theform.subject.value.length > 80) { //vot
-		showDialog(lng['title_long']);
+		showError(lng['title_long']);
 		return false;
 	}
 	if(ispicstyleforum == 1 && ATTACHORIMAGE == 0 && isfirstpost) {
-		showDialog(lng['should_upload_cover']);
+		showError(lng['should_upload_cover']);
 		return false;
 	}
 	if(in_array($('postsubmit').name, ['topicsubmit', 'editsubmit'])) {
 		if(theform.typeid && (theform.typeid.options && theform.typeid.options[theform.typeid.selectedIndex].value == 0) && typerequired) {
-			showDialog(lng['select_category']);
+			showError(lng['select_category']);
 			return false;
 		}
 		if(theform.sortid && (theform.sortid.options && theform.sortid.options[theform.sortid.selectedIndex].value == 0) && sortrequired) {
-			showDialog(lng['select_category_info']);
+			showError(lng['select_category_info']);
 			return false;
 		}
 	}
@@ -98,7 +98,7 @@ function validate(theform) {
 	}
 
 	if(!disablepostctrl && !sortid && !special && ((postminchars != 0 && mb_strlen(message) < postminchars) || (postmaxchars != 0 && mb_strlen(message) > postmaxchars))) {
-		showDialog(lng['content_long'] + lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']);
+		showError(lng['content_long'] + lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']);
 		return false;
 	}
 	if(UPLOADSTATUS == 0) {
@@ -131,7 +131,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') == -1) {
-					showDialog(lng['q&a_invalid']);
+					showError(lng['q&a_invalid']);
 					chk = 0;
 				}
 			}
@@ -141,7 +141,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') === -1) {
-					showDialog(lng['code_invalid']);
+					showError(lng['code_invalid']);
 					chk = 0;
 				}
 			}
@@ -328,12 +328,12 @@ function insertAttach(prefix, id) {
 	}
 	if(extensions != '' && (re.exec(extensions) == null || ext == '')) {
 		reAddAttach(prefix, id);
-		showDialog(lng['sorry_ext_not_supported']);
+		showError(lng['sorry_ext_not_supported']);
 		return;
 	}
 	if(prefix == 'img' && imgexts.indexOf(ext) == -1) {
 		reAddAttach(prefix, id);
-		showDialog(lng['select_image_files']+' (' + imgexts + ')');
+		showError(lng['select_image_files']+' (' + imgexts + ')');
 		return;
 	}
 

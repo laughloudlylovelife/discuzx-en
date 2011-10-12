@@ -297,9 +297,6 @@ $lang = array(
 					   <span class="xi1">New E-mail ({newemail}) wait for validation ...</span><br />
 						The system has sent a verification email to you, please check your mailbox for activate this e-maill.<br>
 						If you do not receive the verification message, you can replace a mailbox, or <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Re-send the verification message</a>',
-//'<img src="{imgdir}/mail_inactive.png" alt="未验证" class="vm" /> <span class="xi1">新邮箱({newemail})等待验证中...</span><br />
-//								系统已经向该邮箱发送了一封验证激活邮件，请查收邮件，进行验证激活。<br>
-//								如果没有收到验证邮件，你可以更换一个邮箱，或者<a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">重新接收验证邮件</a>',
 
 );
 

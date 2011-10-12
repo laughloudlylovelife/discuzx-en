@@ -129,27 +129,27 @@ if(!$operation) {
 		$Charset = explode(',', $row['Charset']);
 		foreach($Charset as $k => $v) {
 			if(preg_match('/^SC\_GBK$/i', $v)) {
-				$Charset[$k] = 'Simplified Chinese';
+/*vot*/				$Charset[$k] = 'Simplified Chinese';
 				if(strtoupper(CHARSET) == 'GBK') {
 					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
 				}
 			} elseif(preg_match('/^SC\_UTF8$/i', $v)) {
-				$Charset[$k] = 'Simplified Chinese UTF8';
+/*vot*/				$Charset[$k] = 'Simplified Chinese UTF8';
 				if(strtoupper(CHARSET) == 'UTF-8') {
 					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
 				}
 			} elseif(preg_match('/^TC\_BIG5$/i', $v)) {
-				$Charset[$k] = 'Traditional Chinese';
+/*vot*/				$Charset[$k] = 'Traditional Chinese';
 				if(strtoupper(CHARSET) == 'BIG5') {
 					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
 				}
 			} elseif(preg_match('/^TC\_UTF8$/i', $v)) {
-				$Charset[$k] = 'Traditional Chinese UTF8';
-				if(strtoupper(CHARSET) == 'UTF-8') {
-					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
-				}
-			} elseif(preg_match('/^EN\_UTF8$/i', $v)) {
-				$Charset[$k] = 'English UTF8';
+/*vot*/				$Charset[$k] = 'Traditional Chinese UTF8';
+/*vot*/				if(strtoupper(CHARSET) == 'UTF-8') {
+/*vot*/					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
+/*vot*/				}
+/*vot*/			} elseif(preg_match('/^EN\_UTF8$/i', $v)) {
+/*vot*/				$Charset[$k] = 'English UTF8';
 				if(strtoupper(CHARSET) == 'UTF-8') {
 					$Charset[$k] = '<b>'.$Charset[$k].'</b>';
 				}

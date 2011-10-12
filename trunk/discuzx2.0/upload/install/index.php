@@ -4,7 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: index.php 22348 2011-05-04 01:16:02Z monkey $
+ *      $Id: index.php 24668 2011-09-30 03:01:00Z svn_project_zhangjie $
+ *	English by Valery Votintsev
  */
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -47,6 +48,13 @@ if(file_exists($lockfile) && $method != 'ext_info') {
 timezone_set();
 
 $uchidden = getgpc('uchidden');
+
+if(in_array($method, array('app_reg', 'ext_info'))) {
+	$PHP_SELF = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
+	$bbserver = 'http://'.preg_replace("/\:\d+/", '', $_SERVER['HTTP_HOST']).($_SERVER['SERVER_PORT'] && $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : '');
+	$default_ucapi = $bbserver.'/ucenter';
+	$default_appurl = $bbserver.substr($PHP_SELF, 0, strpos($PHP_SELF, 'install/') - 1);
+}
 
 if($method == 'show_license') {
 
@@ -99,10 +107,6 @@ if($method == 'show_license') {
 		$submit = false;
 	}
 
-	$PHP_SELF = $_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
-	$bbserver = 'http://'.preg_replace("/\:\d+/", '', $_SERVER['HTTP_HOST']).($_SERVER['SERVER_PORT'] && $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : '');
-	$default_ucapi = $bbserver.'/ucenter';
-	$default_appurl = $bbserver.substr($PHP_SELF, 0, strpos($PHP_SELF, 'install/') - 1);
  	$ucapi = defined('UC_API') && UC_API ? UC_API : $default_ucapi;
 
 	if($submit) {
@@ -294,7 +298,7 @@ if($method == 'show_license') {
 			mysql_close($link);
 		}
 
-		if(strpos($tablepre, '.') !== false) {
+		if(strpos($tablepre, '.') !== false || intval($tablepre{0})) {
 			show_msg('tablepre_invalid', $tablepre, 0);
 		}
 
@@ -385,7 +389,7 @@ if($method == 'show_license') {
 
 		install_data($username, $uid);
 
-		if($regiondata) { //vot
+		if($testdata) {
 			install_testdata($username, $uid);
 		}
 
@@ -454,7 +458,9 @@ if($method == 'show_license') {
 		echo '<li><a href="../">'.lang('install_succeed').'</a><br>';
 //vot		echo '<script>setTimeout(function(){window.location=\'../\'}, 2000);</script>'.lang('auto_redirect').'</li>';
 		echo '</li>';//vot
+//vot		echo '<div id="platformIntro"></div>';
 		echo '</ul></div>';
+//vot		echo '<script type="text/javascript" src="http://cp.discuz.qq.com/cloud/platformIntroJS?siteurl='.urlencode($default_appurl).'&version='.DISCUZ_VERSION.'" charset="utf-8"></script>';
 		show_footer();
 	}
 

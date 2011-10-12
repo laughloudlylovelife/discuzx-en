@@ -147,6 +147,9 @@
 				<item id="connect_post_sync_no"><![CDATA[is not set]]></item>
 				<item id="connect_post_sync_unauthorized_title"><![CDATA[Authorization prompt]]></item>
 				<item id="connect_post_sync_unauthorized_desc"><![CDATA[Once improve the authorization, you will be able to synchronize posted topics to QQ space and Tencent microblog, and to share your forum fresh thing in the first time.]]></item>
+				<item id="connect_access_token_out_of_date_feed"><![CDATA[For your account security, Please log in again using the QQ account, Upgrade your account for security<br/><br/>Click <a href="{$_G[connect][login_url]}"><img src="static/image/common/qq_login.gif" class="vm" alt="QQ Login" /></a> Page jump will occur, Make sure you have saved your post data]]></item>
+				<item id="connect_access_token_out_of_date_share"><![CDATA[For your account security, Please log in again using the QQ account, Upgrade your account for security<br/><br/>Click <a href="{$_G[connect][login_url]}"><img src="static/image/common/qq_login.gif" class="vm" alt="QQ Login" /></a> Page jump will occur]]></item>
+				<item id="connect_access_token_outofdate_button"><![CDATA[I see]]></item>
 				<item id="connect_post_sync_not_bind_desc"><![CDATA[Once binding QQ account, you will be able to synchronize posted topics to the QQ space and Tencent microblog, and to share your fresh forum things in the the first time.]]></item>
 				<item id="connect_viewthread_share_to_qzone"><![CDATA[QQ space]]></item>
 				<item id="connect_viewthread_share_to_t"><![CDATA[Tencent microblog]]></item>

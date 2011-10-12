@@ -91,7 +91,7 @@ function html_login_footer($halt = true) {
 		<div class="copyright">
 <!-- vot -->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> $version, Release $release</p>
 			<p>&copy; 2001-2011, <a href="http://www.comsenz.com/" target="_blank">Comsenz</a> Inc.</p>
-<!-- vot -->	<p><br><strong>English version</strong> by <a href="http://china.sources.ru/" target="_blank">Valery Votintsev</a></p>
+<!-- vot -->	<p><br><strong>English version</strong> by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
 		</div>
 	</td>
 </tr>
