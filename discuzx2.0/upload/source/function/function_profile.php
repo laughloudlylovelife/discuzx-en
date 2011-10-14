@@ -62,9 +62,11 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 			$birthyeayhtml .= "<option value=\"$they\"$selectstr>$they</option>";
 		}
 		$birthmonthhtml = '';
+/*vot*/		$monthname = lang('core','month_name');
 		for ($i=1; $i<13; $i++) {
 			$selectstr = $i == $space['birthmonth']?' selected':'';
-			$birthmonthhtml .= "<option value=\"$i\"$selectstr>$i</option>";
+//vot			$birthmonthhtml .= "<option value=\"$i\"$selectstr>$i</option>";
+/*vot*/			$birthmonthhtml .= "<option value=\"$i\"$selectstr>".$monthname[$i]."</option>";
 		}
 		$birthdayhtml = '';
 		if(empty($space['birthmonth']) || in_array($space['birthmonth'], array(1, 3, 5, 7, 8, 10, 12))) {
