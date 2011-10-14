@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -209,6 +209,9 @@ $lang = array
 	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
 	'attackevasive_4_subject'	=> 'Open the page reload',
 	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
+
+//vot Months Names
+	'month_name'	=> array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
 
 );
 
