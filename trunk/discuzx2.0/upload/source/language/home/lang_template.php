@@ -596,7 +596,7 @@ $lang = array (
 	'pm_num'		=> 'Total $value[pmnum] messages',//'共 $value[pmnum] 条',
 	'pm_onlyacceptfriendpm'	=> 'Accept short messages from friends only',//'只接收好友的短消息',
 	'pm_setting'		=> 'Short message settings',//'短消息设置',
-	'pm_totail'		=> 'Total <span id="membernum" class="xi1">$count</span> members of <a href="home.php?mod=space&uid=$touid">$tousername</a> presents in a chat history &nbsp;',//'共有 <span id="membernum" class="xi1">$count</span> 条与 <a href="home.php?mod=space&uid=$touid">$tousername</a> 的交谈记录 &nbsp;',
+	'pm_totail'		=> 'Total <span id="membernum" class="xi1">$count</span> messages in a chat history with &quot;<a href="home.php?mod=space&uid=$touid">$tousername</a>&quot;',//'共有 <span id="membernum" class="xi1">$count</span> 条与 <a href="home.php?mod=space&uid=$touid">$tousername</a> 的交谈记录 &nbsp;',
 	'pmignore'		=> 'Ignore',//'忽略',
 	'private_pm'		=> 'Private messages',//'私人消息',
 	'quit_chatpm'		=> 'Exit group chat',//'退出群聊',
@@ -654,7 +654,7 @@ $lang = array (
 	'space_visits'		=> 'Space visits',//'空间访问量',
 	'threads_num'		=> 'Threads',//'主题数',
 	'time_offset'		=> 'Time offset',//'所在时区',
-	'timezone'			=> "
+	'timezone'		=> "
 		'9999'	=> 'The system default',//'',
 		'-12'	=> '(GMT -12:00) Eniwetok, Kwajalein',//'',
 		'-11'	=> '(GMT -11:00) Midway Island, Samoa',//'',
