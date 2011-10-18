@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[My Account Switcher]]></item>
+			<item id="identifier"><![CDATA[myrepeats]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[myrepeats/]]></item>
+			<item id="copyright"><![CDATA[Comsenz Inc.]]></item>
+			<item id="version"><![CDATA[2.3]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[memcp]]></item>
+					<item id="menu"><![CDATA[My Account Switcher]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[7]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[myrepeats]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admincp]]></item>
+					<item id="menu"><![CDATA[Management]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[1]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[Allow to use Aliases]]></item>
+				<item id="description"><![CDATA[Set which the user groups can use an Account switching]]></item>
+				<item id="variable"><![CDATA[usergroups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="intro"><![CDATA[The plug-in enable users to quickly switch between their multiple accounts]]></item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="login_strike"><![CDATA[Wrong password repeated too many times. Verify your accounts info and then try to switch after 15 minutes.]]></item>
+				<item id="login_succeed"><![CDATA[You have switched to {user} {comment} account, now reloading the page.]]></item>
+				<item id="login_succeed_rsnonexistence"><![CDATA[You have switched to {user} {comment} account, but this account was not set as your alias of {olduser} account.<br /><a href="home.php?mod=spacecp&ac=plugin&id=myrepeats:memcp&username={olduserenc}" target="_blank">[Set the {olduser}-based account aliases]</a><br /><a href="{referer}">[Return to the page before account switching]</a>]]></item>
+				<item id="login_activation"><![CDATA[{user} account is not active in this forum. Going to account activation page.]]></item>
+				<item id="login_invalid"><![CDATA[Account switching failed. You can try to swith account maximum {loginperm} times.]]></item>
+				<item id="login_question_empty"><![CDATA[You can reset the account security questions and correct answers.]]></item>
+				<item id="login_question_invalid"><![CDATA[Wrong security question choice, re-set.]]></item>
+				<item id="user_nonexistence"><![CDATA[Invalid alias account information, please reset.]]></item>
+				<item id="user_locked"><![CDATA[This alias account is locked by administrator. You can not switch to {user}, please contact with your administrator.]]></item>
+				<item id="switch"><![CDATA[Switch account]]></item>
+				<item id="memcp"><![CDATA[Set alias account]]></item>
+				<item id="usergroup_disabled"><![CDATA[Your user group can not use the Account Switcher function]]></item>
+				<item id="normal"><![CDATA[Normal]]></item>
+				<item id="lock"><![CDATA[Locked]]></item>
+				<item id="username"><![CDATA[User Name]]></item>
+				<item id="repeat"><![CDATA[Alias]]></item>
+				<item id="lastswitch"><![CDATA[Last switch time]]></item>
+				<item id="status"><![CDATA[Status]]></item>
+				<item id="search"><![CDATA[Search]]></item>
+				<item id="repeats"><![CDATA[Alias accounts]]></item>
+				<item id="repeatusers"><![CDATA[Aliased users]]></item>
+				<item id="statuss"><![CDATA[Status records]]></item>
+				<item id="viewall"><![CDATA[View all]]></item>
+				<item id="deleted"><![CDATA[- Deleted -]]></item>
+				<item id="adduser_succeed"><![CDATA[{usernamenew} alias account was successfully added.]]></item>
+				<item id="updateuser_succeed"><![CDATA[Alias account was successfully updated.]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="myrepeats"><![CDATA[My Aliases]]></item>
+				<item id="adduser"><![CDATA[Add Alias Account]]></item>
+				<item id="add"><![CDATA[Add]]></item>
+				<item id="lastswitch"><![CDATA[Last switch time]]></item>
+				<item id="nouse"><![CDATA[Not used]]></item>
+				<item id="locked"><![CDATA[Locked by administrator]]></item>
+				<item id="comment"><![CDATA[Comment]]></item>
+				<item id="commentrow"><![CDATA[Comment Row]]></item>
+				<item id="username"><![CDATA[User Name]]></item>
+				<item id="password"><![CDATA[Password]]></item>
+				<item id="security_question"><![CDATA[Security question]]></item>
+				<item id="security_question_1"><![CDATA[Mother\'s name]]></item>
+				<item id="security_question_2"><![CDATA[Grandpa\'s name]]></item>
+				<item id="security_question_3"><![CDATA[Father\'s birth city]]></item>
+				<item id="security_question_4"><![CDATA[First teacher name]]></item>
+				<item id="security_question_5"><![CDATA[Your Computer model]]></item>
+				<item id="security_question_6"><![CDATA[Your favorite restaurant]]></item>
+				<item id="security_question_7"><![CDATA[Last 4 digits of driver\'s license]]></item>
+				<item id="security_answer"><![CDATA[Secure Answer]]></item>
+				<item id="delete_check"><![CDATA[Delete?]]></item>
+				<item id="switch_title"><![CDATA[Please enter your password]]></item>
+				<item id="switch_tips"><![CDATA[Is you switch to this account for the first time, you have to enter your password]]></item>
+				<item id="confirm"><![CDATA[OK]]></item>
+				<item id="select_rrepeats"><![CDATA[Select Alias]]></item>				
+			</item>
+		</item>
+	</item>
+</root>
