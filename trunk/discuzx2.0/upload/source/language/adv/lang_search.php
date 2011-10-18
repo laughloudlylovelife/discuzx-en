@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'search_name' => 'Search for the right advertising',//'搜索 右侧广告',
-	'search_desc' => 'Show method: searching the right ads to appear in the search results page on the right.',//'展现方式: 搜索右侧广告展现于搜索结果页右侧。',
+	'search_name'	=> 'Search for the right advertising',//'搜索 右侧广告',
+	'search_desc'	=> 'Show method: searching the right ads to appear in the search results page on the right.',//'展现方式: 搜索右侧广告展现于搜索结果页右侧。',
 );
 
 ?>

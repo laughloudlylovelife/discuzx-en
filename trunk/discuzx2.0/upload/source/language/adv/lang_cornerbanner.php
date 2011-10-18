@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_cornerbanner.php 19237 2010-12-23 04:27:46Z monkey $
+ *      $Id: lang_cornerbanner.php by Valery Votintsev at sources.ru
  */
 
 $lang = array
