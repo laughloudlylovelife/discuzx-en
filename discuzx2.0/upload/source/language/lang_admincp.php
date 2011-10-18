@@ -461,7 +461,7 @@ $lang = array
 	'nav_logs_system'		=> 'System logs',//'系统记录',
 	'nav_logs_extended'		=> 'Extension logs',//'扩展记录',
 	'nav_logs_payment'		=> 'Payments',//'买卖主题',
-	
+
 	'nav_fileperms'			=> 'Check file permissions',//'文件权限检查',
 	'nav_fileperms_confirm'		=> 'Sure start checking',//'确认开始',
 	'nav_fileperms_verify'		=> 'Start check',//'开始检查',
@@ -6053,17 +6053,17 @@ $lang = array
 	'category_area'				=> 'Regions Management',//'地区管理',
 	'category_counter'			=> 'Statistical data',//'统计数据',
 
-	'category_channel'			=> 'Base settings',//'基本设置',
-	'category_channel_config'		=> 'Base settings',//'基本设置',
-	'category_channel_open'			=> 'Is open',//'是否开启',
-	'category_channel_title'		=> 'Title',//'名称',
-	'category_channel_identifier'		=> 'Identifier',//'标识',
-	'category_channel_identifier_comment'	=> 'Change unique module identifier. Do not modify if not necessary.',//'做为改模块的唯一标识，如无必要请勿修改',
+//	'category_channel'			=> 'Base settings',//'基本设置',
+//	'category_channel_config'		=> 'Base settings',//'基本设置',
+//	'category_channel_open'			=> 'Is open',//'是否开启',
+//	'category_channel_title'		=> 'Title',//'名称',
+//	'category_channel_identifier'		=> 'Idetifier',//'标识',
+//	'category_channel_identifier_comment'	=> 'Change unique module identifier. Do not modify if not necessary.',//'做为改模块的唯一标识，如无必要请勿修改',
 
-	'category_option'		=> 'Options Management',//'选项管理',
-	'category_sort'			=> 'Category management',//'分类管理',
-	'category_area'			=> 'Regions Management',//'地区管理',
-	'category_counter'		=> 'Statistical data',//'统计数据',
+//	'category_option'			=> 'Options Management',//'选项管理',
+//	'category_sort'				=> 'Category management',//'分类管理',
+//	'category_area'				=> 'Regions Management',//'地区管理',
+//	'category_counter'			=> 'Statistical data',//'统计数据',
 
 	'setting_manyou'		=> 'Manyou Settings',//'Manyou 设置',
 	'setting_manyou_tips'		=> '<li>After the application platform open, Users can choose at the server a variety of applications (Such as Happy farm, Happy manor, Texas hold-em, GloryhHospital, etc ...).</li>

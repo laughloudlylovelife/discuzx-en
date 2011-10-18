@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -136,7 +136,7 @@ P.S.
 If you are not a member of our forum, or have no birthday today,
 may be a mistake occure.
 Check for your email address and birthday in your profile.
-THis message will not be sent to this e-mail address, please ignore this 
+This message will not be sent to this e-mail address, please ignore this 
 Message.
 
 

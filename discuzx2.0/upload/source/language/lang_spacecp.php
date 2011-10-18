@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -204,7 +204,7 @@ $lang = array(
 	'do_stat_eventcomment'	=> 'Event comments',//'活动评论',
 	'do_stat_eventjoin'	=> 'Event joins',//'参加活动',
 	'do_stat_sharecomment'	=> 'Share comments',//'分享评论',
-	'do_stat_post'		=> 'Replies',//'主题回帖',
+//	'do_stat_post'		=> 'Replies',//'主题回帖',
 	'do_stat_click'		=> 'Sticks',//'表态',
 	'do_stat_wall'		=> 'Wall',//'留言',
 	'do_stat_poke'		=> 'Greetings',//'打招呼',

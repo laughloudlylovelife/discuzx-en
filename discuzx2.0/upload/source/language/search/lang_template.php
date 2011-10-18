@@ -41,7 +41,7 @@ $lang = array (
 	'search_older'		=> 'Older',//'以前',
 	'search_orderby'	=> 'Order by',//'排序类型',
 	'search_range'		=> 'Search Range',//'搜索范围',
-	'search_thread_higher'	=> 'Post Advanced Search',//'帖子高级搜索',
+	'search_thread_higher'		=> 'Post Advanced Search',//'帖子高级搜索',
 	'search_thread_range'		=> 'Thread Range',//'主题范围',
 	'search_thread_range_all'	=> 'All threads',//'全部主题',
 	'search_thread_range_digest'	=> 'Digests',//'精华主题',
@@ -84,7 +84,7 @@ $lang = array (
 	'lower_than'		=> 'Less than',//'小于',
 	'more_than'		=> 'More than',//'大于',
 	'unlimited'		=> 'Unlimited',//'不限',
-	'goto_memcp'	=> 'Go to Control Panel',//'进入管理面板',
+	'goto_memcp'		=> 'Go to Control Panel',//'进入管理面板',
 	'thread_list_message1'	=> 'Contain hidden threads, please click to view all',//'内容隐藏需要，请点击进去查看',
 );
 //	'search_return_normal'		=> 'Return to general search',//'返回普通搜索',

@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'forumstat_name'			=> 'Forum statistics',//'论坛统计',
-	'forumstat_desc'			=> 'Show forum data statistics',//'论坛统计数据调用',
+	'forumstat_name'		=> 'Forum statistics',//'论坛统计',
+	'forumstat_desc'		=> 'Show forum data statistics',//'论坛统计数据调用',
 	'forumstat_forums_allow'	=> 'Display forum statistics',//'显示版块数统计',
 	'forumstat_forums_order'	=> 'Show order number',//'版块数统计显示顺序',
 	'forumstat_forums_text'		=> 'Show forum tips',//'版块数统计提示文字',

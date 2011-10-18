@@ -92,7 +92,7 @@ $lang = array (
 	'user_mobile_pm_comment'	=> 'After the messages sent you will returned to previous page',//'短消息发出后将跳回上一页',
 	'reset'				=> 'Reset',//'重填',
 	'reg_username'			=> 'User name length must be in a range of 3-15 characters',//'用户名必须为大于3位小于15位',
-	'viewimg'		=> 'View image',//'查看图片',
+	'viewimg'			=> 'View image',//'查看图片',
 
 //	'nextpage'		=> 'Next',//'下一页',
 //	'prevpage'		=> 'Prev',//'上一页',
