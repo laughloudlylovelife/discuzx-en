@@ -54,8 +54,11 @@ $language = array(
 
 	'mysql_config_error'	=> 'MySQL configuration can not be empty',//'配置不能为空',
 	'mysql_connect_error'	=> 'MySQL connection failed',//'连接失败',
+
 	'config_success'	=> 'Server configured successfully, and now going to the next step',//'服务器配置成功,现在进行下一步',
+
 	'setting_tips'		=> 'Modifying the conversion settings may cause a lower conversion efficiency or fail to complete the conversion, so please be careful to modify',//'修改转换程序设置可能导致您的转换效率降低或者无法正常完成转换,所以请您务必小心修改',
+
 	'mysql_connect_error_1'	=> 'Database connection error, check whether the database account and password are correct.',//'数据库连接错误,请检查数据库密码和帐号是否正确',
 	'mysql_connect_error_2'	=> 'Data tables check failed. May be, you have not correctly filled out the "table prefix", or you have not installed the version of the program',//'数据表检查错误,您可能没有正确填写 “数据表前缀”或者您尚未安装该版本的程序',
 
@@ -220,5 +223,4 @@ $language = array(
 //convert/source/uch2.0_x1.0/table/home_space.php++
 
 	'space_home_error'	=> 'Error: empty space points. Configure the space corresponding points info',//'发生错误,请配置积分对应关系信息',
-
 );
