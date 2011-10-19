@@ -104,14 +104,10 @@ var lng = {
 //static/image/admincp/cloud/qqgroup.js
 	'select_topic_to_push'	: 'Select at least one topic for push to Articles',//'请至少推送一条头条主题和一条列表主题',
 	'select_item_to_push'	: 'Select at least one item for push to Articles',//'请至少推送一条信息到列表区域',
-	''	: '',//'内部错误，无法显示此内容',
-
-//---------------------------
-//static/image/admincp/cloud/qqgroup.js
-	'loading'	: 'Loading...',//'加载中...',
-	'push5reached'	: 'Push Post number has reached five, in the right to cancel a number and try again.',//'推送帖子已达到5条，请在右侧取消一些再重试。',
-	'click_left'	: 'Click on the left',//'点击左侧',
-	'push_to_list'	: 'Will push the information to the list',//'将信息推送到列表',
+	'loading'		: 'Loading...',//'加载中...',
+	'push5reached'		: 'Push Post number has reached five, in the right to cancel a number and try again.',//'推送帖子已达到5条，请在右侧取消一些再重试。',
+	'click_left'		: 'Click on the left',//'点击左侧',
+	'push_to_list'		: 'Will push the information to the list',//'将信息推送到列表',
 	'wait_image_upload'	: 'Upload image, please wait...',//'图片上传中，请稍后...',
 
 
@@ -254,7 +250,7 @@ var lng = {
 	'full_screen'		: 'Full Screen',//'全屏',
 	'restore_size'		: 'Restore size',//'恢复',
 	'general'		: 'General Mode',//'常用',
-	'simple'		: 'Simple Mode',//'高级',
+	'simple'		: 'Advanced Mode',//'高级',
 	'bad_browser'		: 'Your browser does not support this feature',//'你的浏览器不支持此功能',
 	'click_autosave_enable'	: 'Click here for enable the auto-saving',//'点击开启自动保存',
 	'autosave_enable'	: 'Enable the auto-saving',//'开启自动保存',
