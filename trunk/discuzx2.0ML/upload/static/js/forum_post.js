@@ -70,21 +70,21 @@ function validate(theform) {
 		showDialog(lng['enter_content']);
 		return false;
 //vot	} else if(mb_strlen(theform.subject.value) > 80) {
-	} else if(theform.subject.value.length > 80) { //vot
-		showError(lng['title_long']);
+/*vot*/	} else if(theform.subject.value.length > 80) {
+/*vot*/		showError(lng['title_long']);
 		return false;
 	}
 	if(ispicstyleforum == 1 && ATTACHORIMAGE == 0 && isfirstpost) {
-		showError(lng['should_upload_cover']);
+/*vot*/		showError(lng['should_upload_cover']);
 		return false;
 	}
 	if(in_array($('postsubmit').name, ['topicsubmit', 'editsubmit'])) {
 		if(theform.typeid && (theform.typeid.options && theform.typeid.options[theform.typeid.selectedIndex].value == 0) && typerequired) {
-			showError(lng['select_category']);
+/*vot*/			showError(lng['select_category']);
 			return false;
 		}
 		if(theform.sortid && (theform.sortid.options && theform.sortid.options[theform.sortid.selectedIndex].value == 0) && sortrequired) {
-			showError(lng['select_category_info']);
+/*vot*/			showError(lng['select_category_info']);
 			return false;
 		}
 	}
@@ -98,7 +98,7 @@ function validate(theform) {
 	}
 
 	if(!disablepostctrl && !sortid && !special && ((postminchars != 0 && mb_strlen(message) < postminchars) || (postmaxchars != 0 && mb_strlen(message) > postmaxchars))) {
-		showError(lng['content_long'] + lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']);
+/*vot*/		showError(lng['content_long'] + lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']);
 		return false;
 	}
 	if(UPLOADSTATUS == 0) {
@@ -131,7 +131,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') == -1) {
-					showError(lng['q&a_invalid']);
+/*vot*/					showError(lng['q&a_invalid']);
 					chk = 0;
 				}
 			}
@@ -141,7 +141,7 @@ function validate(theform) {
 					setTimeout(function () { validate(theform); }, 100);
 					chk = 0;
 				} else if(chkv.indexOf('check_right') === -1) {
-					showError(lng['code_invalid']);
+/*vot*/					showError(lng['code_invalid']);
 					chk = 0;
 				}
 			}
@@ -328,12 +328,12 @@ function insertAttach(prefix, id) {
 	}
 	if(extensions != '' && (re.exec(extensions) == null || ext == '')) {
 		reAddAttach(prefix, id);
-		showError(lng['sorry_ext_not_supported']);
+/*vot*/		showError(lng['sorry_ext_not_supported']);
 		return;
 	}
 	if(prefix == 'img' && imgexts.indexOf(ext) == -1) {
 		reAddAttach(prefix, id);
-		showError(lng['select_image_files']+' (' + imgexts + ')');
+/*vot*/		showError(lng['select_image_files']+' (' + imgexts + ')');
 		return;
 	}
 
