@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_post.php 24661 2011-09-29 10:23:26Z zhengqingpeng $
+ *      $Id: function_post.php 24761 2011-10-11 00:16:14Z monkey $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -262,7 +262,7 @@ function updateattach($modnewthreads, $tid, $pid, $attachnew, $attachupdate = ar
 	if($attachupdate) {
 		$query = DB::query("SELECT pid, aid, attachment, thumb, remote FROM ".DB::table(getattachtablebytid($tid))." WHERE aid IN (".dimplode(array_keys($attachupdate)).")");
 		while($attach = DB::fetch($query)) {
-			if($attach['pid'] == $pid) {
+			if(array_key_exists($attach['aid'], $attachupdate) && $attachupdate[$attach['aid']]) {
 				dunlink($attach);
 			}
 		}
