@@ -59,6 +59,10 @@
 					<!--{if $_G['basescript'] == 'forum' && empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']}-->
 						<a href="javascript:;" onclick="widthauto(this)"><!--{if !$_G['forum_widthauto']}-->{lang switch_wide}<!--{else}-->{lang switch_narrow}<!--{/if}--></a>
 					<!--{/if}-->
+
+					<!-- vot Multi-Lingual -->
+					<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}"><img style="margin-top: 4px;" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+
 					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}</a><!--{/if}-->
 					<!--{if CURMODULE != 'topic' && $_G['group']['allowdiy'] && !empty($_G['style']['tplfile']) || CURMODULE == 'topic' && !empty($_G['style']['tplfile']) && ($_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic'])}-->
 						<a id="diy-tg" href="javascript:openDiy();" title="{lang open_diy}" class="xi1 xw1">DIY</a>
@@ -68,6 +72,17 @@
 		</div>
 
 		<!--{if !IS_ROBOT}-->
+			<!-- vot Multi-Lingual -->
+			<div id="lslct_menu" class="cl p_pop" style="display: none; width:90px;">
+
+			<!--{loop $_G[config][languages] $lng $lngarray}-->
+
+				<a href="javascript:;" onclick="setlang('$lng')">
+					<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[title]}
+				</a>
+			<!--{/loop}-->
+			</div>
+
 			<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
 				<div id="sslct_menu" class="cl p_pop" style="display: none;">
 					<!--{if !$_G[style][defaultextstyle]}--><span class="sslct_btn" onclick="extstyle('')" title="{lang default}"><i></i></span><!--{/if}-->

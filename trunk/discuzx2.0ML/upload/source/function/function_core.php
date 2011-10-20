@@ -429,11 +429,11 @@ function lang($file, $langvar = null, $vars = array(), $default = null) {
 	if($path != 'plugin') {
 		$key = $path == '' ? $file : $path.'_'.$file;
 		if(!isset($_G['lang'][$key])) {
-			include DISCUZ_ROOT.'./source/language/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php';
+/*vot ML*/		include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php';
 			$_G['lang'][$key] = $lang;
 		}
 		if(defined('IN_MOBILE') && !defined('TPL_DEFAULT')) {
-			include DISCUZ_ROOT.'./source/language/mobile/lang_template.php';
+/*vot ML*/		include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/mobile/lang_template.php';
 			$_G['lang'][$key] = array_merge($_G['lang'][$key], $lang);
 		}
 		$returnvalue = &$_G['lang'];
@@ -441,6 +441,7 @@ function lang($file, $langvar = null, $vars = array(), $default = null) {
 		if(empty($_G['config']['plugindeveloper'])) {
 			loadcache('pluginlanguage_script');
 		} elseif(!isset($_G['cache']['pluginlanguage_script'][$file]) && preg_match("/^[a-z]+[a-z0-9_]*$/i", $file)) {
+//vot TODO: Separate languages for plugins
 			if(@include(DISCUZ_ROOT.'./data/plugindata/'.$file.'.lang.php')) {
 				$_G['cache']['pluginlanguage_script'][$file] = $scriptlang[$file];
 			} else {
@@ -596,7 +597,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 		}
 	}
 
-	$cachefile = './data/template/'.(defined('STYLEID') ? STYLEID.'_' : '_').$templateid.'_'.str_replace('/', '_', $file).'.tpl.php';
+/*vot ML*/	$cachefile = './data/template/'.DISCUZ_LANG.'_'.(defined('STYLEID') ? STYLEID.'_' : '_').$templateid.'_'.str_replace('/', '_', $file).'.tpl.php';
 
 	if($templateid != 1 && !file_exists(DISCUZ_ROOT.$tplfile)) {
 		$tplfile = './template/default/'.$filebak.'.htm';
