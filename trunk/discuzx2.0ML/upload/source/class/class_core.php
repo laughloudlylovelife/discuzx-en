@@ -397,8 +397,9 @@ class discuz_core {
 		}
 
 		//vot MultiLingual Support
-		// Reload current page if changed language
-		if($this->var['language'] != $this->var['oldlanguage']) {
+		// Reload current page if the language is changed
+//		if($this->var['language'] != $this->var['oldlanguage']) {
+		if(isset($this->var['gp_language'])) {
 			$url = $_SERVER['REQUEST_URI'];
 			$url = preg_replace("~[\?\&]language\=\w*~i",'',$url);
 			header('Location: '.$url);
