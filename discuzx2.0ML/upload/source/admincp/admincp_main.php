@@ -114,7 +114,7 @@ echo <<<EOT
 <div class="copyright">
 <!-- vot -->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> {$_G['setting']['version']},<br>Release {$_G['setting']['release']}</p>
 	<p>&copy; 2001-2011, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
-<!-- vot -->	<p><strong>English version</strong> by:<br><a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
+<!-- vot -->	<p><strong>MultiLingual version</strong><br>by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
 </div>
 
 <div id="cpmap_menu" class="custom" style="display: none">

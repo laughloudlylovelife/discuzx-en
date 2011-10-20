@@ -165,4 +165,16 @@ $_config['remote']['appkey'] = md5($_config['security']['authkey']);
 // Remote call: Open external cron task. within the system no longer running cron, cron task activated by an external program
 $_config['remote']['cron'] = 0;
 
+//vot: Multi-Lingual support
+// Enabled Language List
+// (Comment a language that is not required)
+
+$_config['languages'] = array(
+	'en' => array('icon'=>'en.gif', 'title'=>'English'),
+//	'cn' => array('icon'=>'cn.gif', 'title'=>'Chinese'),
+//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch'),
+//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian'),
+//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese'),
+);
+
 ?>

@@ -82,7 +82,7 @@ class discuz_core {
 			set_magic_quotes_runtime(0);
 		}
 
-		define('DISCUZ_ROOT', substr(dirname(__FILE__), 0, -12));
+/*vot*/		define('DISCUZ_ROOT', preg_replace("/^\w\:/i",'',str_replace("\\",'/',substr(dirname(__FILE__), 0, -12))));
 		define('MAGIC_QUOTES_GPC', function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc());
 		define('ICONV_ENABLE', function_exists('iconv'));
 		define('MB_ENABLE', function_exists('mb_convert_encoding'));
@@ -185,6 +185,9 @@ class discuz_core {
 			$_G['siteroot'] = str_replace(SUB_DIR, '/', $_G['siteroot']);
 		}
 
+/*vot*/		$_G['siteurl'] = str_replace("\\", '/', $_G['siteurl']);
+/*vot*/		$_G['siteroot'] = str_replace("\\", '/', $_G['siteroot']);
+
 		$this->var = & $_G;
 
 	}
@@ -252,6 +255,45 @@ class discuz_core {
 			dsetcookie('saltkey', $this->var['cookie']['saltkey'], 86400 * 30, 1, 1);
 		}
 		$this->var['authkey'] = md5($this->var['config']['security']['authkey'].$this->var['cookie']['saltkey']);
+
+		//---------------------------
+		//vot: Multi-Lingual Support
+
+		// set default
+		$lng = strtolower($this->var['config']['output']['language']);
+
+		// set from cookies
+		if($this->var['cookie']['language']) {
+			$lng = strtolower($this->var['cookie']['language']);
+		}
+
+		$this->var['oldlanguage'] = $lng; // Store Old Language Value for compare
+
+		// check if valid from GET
+		if(isset($this->var['gp_language'])) {
+			$tmp = strtolower($this->var['gp_language']);
+			if(isset($this->var['config']['languages'][$tmp])) {
+				// set from GET
+				$lng = $tmp;
+			}
+		}
+
+		// define DISCUZ_LANG
+		define('DISCUZ_LANG', $lng);
+
+		// set new language to cookie
+		dsetcookie('language', $lng);
+
+		// set new language variables
+		$this->var['language'] = $lng;
+		$this->var['langpath'] = DISCUZ_ROOT . 'source/language/'.$lng . '/';
+		$this->var['langurl']  = $this->var['siteroot'] . 'source/language/'.$lng . '/';
+		$this->var['langicon'] = $this->var['config']['languages'][$lng]['icon'];
+		$this->var['langtitle'] = $this->var['config']['languages'][$lng]['title'];
+
+		// set jspath (for include *.js)
+//		$this->var['setting']['jspath'] = $this->var['siteroot'] . 'static/js/';
+
 	}
 
 	function _init_config() {
@@ -264,6 +306,37 @@ class discuz_core {
 				exit;
 			} else {
 				system_error('config_notfound');
+			}
+		}
+
+		//vot: Set default language array (if not exists)
+		if(empty($_config['languages'])) {
+			$_config['languages'] = array(
+				'en' => array(
+					'icon' => 'en.gif',
+					'title' => 'English'
+					)
+			);
+		}
+
+		//vot: Set default language
+		if(empty($_config['output']['language'])) {
+			$_config['output']['language'] = 'en';
+		}
+
+		//vot: Check for default language is valid
+		$tmp = $_config['output']['language'];
+		if(!isset($this->var['config']['languages'][$tmp])) {
+			// set valid default language
+			// If English exists -> set English
+			if(isset($_config['languages']['en'])) {
+				$_config['output']['language'] = 'en';
+			} else {
+			// If English does not exists -> set the FIRST language
+				foreach($_config['languages'] AS $k => $val) {
+					$_config['output']['language'] = $k;
+					break;
+				}
 			}
 		}
 
@@ -321,6 +394,15 @@ class discuz_core {
 /*vot*/ }
 		if($this->config['output']['forceheader']) {
 			@header('Content-Type: text/html; charset='.CHARSET);
+		}
+
+		//vot MultiLingual Support
+		// Reload current page if changed language
+		if($this->var['language'] != $this->var['oldlanguage']) {
+			$url = $_SERVER['REQUEST_URI'];
+			$url = preg_replace("~[\?\&]language\=\w*~i",'',$url);
+			header('Location: '.$url);
+			exit;
 		}
 
 	}

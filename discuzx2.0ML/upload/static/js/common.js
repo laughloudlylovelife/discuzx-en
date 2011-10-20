@@ -1898,6 +1898,11 @@ function searchFocus(obj) {
 	}
 }
 
+//vot: MultiLingual support
+function setlang(lang) {
+	$F('_setlang', arguments);
+}
+
 function extstyle(css) {
 	$F('_extstyle', arguments);
 }

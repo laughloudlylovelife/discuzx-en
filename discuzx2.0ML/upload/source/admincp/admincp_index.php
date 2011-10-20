@@ -311,7 +311,7 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight team"'
 	<a href="http://www.discuz.net/home.php?mod=space&uid=7155" class="lightlink2 smallfont" target="_blank">Gregry</a>'
 ));
 /*vot*/ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), array(
-	'English version',
+	'MultiLingual version',
 	'<a href="http://codersclub.org/discuzx/" class="lightlink2" target="_blank">Valery Votintsev at sources.ru</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), array(
