@@ -357,7 +357,7 @@ var lng = {
 
 	'best_answer_sure'	: 'Are you sure you want to define this post as the "Best Answer"?',//'您确认要把该回复选为“最佳答案”吗？',
 //	'title_long'		: 'Title length exceeds the limit of 255 characters',//'您的标题超过 255 个字符的限制',
-//	'content_long'		' 'The content length does not meet the requirements.\n\nCurrent Length '//'您的帖子长度不符合要求。\n\n当前长度',
+//	'content_long'		: 'The content length does not meet the requirements.\n\nCurrent Length '//'您的帖子长度不符合要求。\n\n当前长度',
 //	'bytes'			: 'bytes',//'字节',
 //	'system_limit'		: 'System limit',//'系统限制',
 //	'up_to'			: 'to',//'到',
@@ -365,7 +365,7 @@ var lng = {
 //	'credit_confirm1'	: 'This costs ',//'下载积分将',
 	'credit_confirm1'	: 'Download costs ',//'下载需要消耗',
 	'credit_confirm2'	: ' points, are you sure to download?',//'，您是否要下载？',
-	'thread_to_clipboard'	: 'Thread address was copied to the clipboard',//'帖子地址已经复制到剪贴板'
+	'thread_to_clipboard'	: 'Thread address was copied to the clipboard',//'帖子地址已经复制到剪贴板',
 	'click_to_enlarge'	: 'Click to enlarge',//'点击放大',
 	'notify_on_reply'	: 'Receive reply notification',//'接收回复通知',
 	'notify_on_reply_cancel'	: 'Cancel reply notification',//'取消回复通知',
@@ -529,7 +529,7 @@ var lng = {
 //	'font'			: 'Font',//'字体',
 //	'size'			: 'Size',//'大小',
 //!!! mainly the same as 'color' !!!!!!
-//'colour'		: 'Colour',//'色',
+//	'colour'		: 'Colour',//'色',
 	'add_new_title'		: 'Add New Title',//'添加新标题',
 //	'edit'			: 'Edit',//'编辑',
 //	'title'			: 'Title',//'标题',
