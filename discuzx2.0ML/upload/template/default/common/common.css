@@ -591,7 +591,8 @@ Note on the CSS Hack:
 					#scbar_txt { width: 400px; border: 1px solid #FFF; outline: none; font-size: 14px; }
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
-				.scbar_type_td { background: url({IMGDIR}/search.png) no-repeat 0 -370px; }
+/*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
+				.scbar_type_td { background: url({IMGDIR}/search.png) repeat 0 -222px; }
 					#scbar_type { display: block; padding-left: 5px; text-align: left; text-decoration: none; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-left: 8px; height: 45px; overflow: hidden; }
