@@ -14,7 +14,7 @@ $lang = array
 	'friend_view'	=> '<strong>Follow the next steps below to complete the task:</strong>
 		<ul>
 		<li>1. <a href="home.php?mod=spacecp&ac=friend&op=find" target="_blank">Open a new window to find friends</a>;</li>
-		<li>2. In the page opebed, the system will automatically recommend you to find users and add them as friends. You can also set your own conditions to find and add friends;</li>
+		<li>2. In the page opened, the system will automatically recommend you to find users and add them as friends. You can also set your own conditions to find and add friends;</li>
 		<li>3. You have to wait for the approval from each your friends added.</li>
 		</ul>',
 );

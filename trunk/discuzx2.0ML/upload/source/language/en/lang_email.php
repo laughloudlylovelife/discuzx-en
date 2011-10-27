@@ -227,7 +227,7 @@ Administrator Message: {remark}<br />
 <strong>Audit results explanation</strong><br />
 ----------------------------------------------------------------------<br />
 
-<p>Approved: Your registration has been approved, you have become anofficial user of our forum.</p>
+<p>Approved: Your registration has been approved, you have become an official user of our forum.</p>
 
 <p>Rejected:
 Your registration information is incomplete,

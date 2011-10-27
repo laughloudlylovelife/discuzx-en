@@ -31,7 +31,7 @@ $lang = array
 	'share_space'		=> '{actor} shared your space.',//'{actor} 分享了你的空间',
 	'share_blog'		=> '{actor} shared your blog <a href="{url}" target="_blank">{subject}</a>',//'{actor} 分享了你的日志 <a href="{url}" target="_blank">{subject}</a>',
 	'share_album'		=> '{actor} shared your album <a href="{url}" target="_blank">{albumname}</a>.',//'{actor} 分享了你的相册 <a href="{url}" target="_blank">{albumname}</a>',
-	'share_pic'		=> '{actor} shared your album <a href="{url}" target="_blank">{albumname}</a>.',//'{actor} 分享了你的相册 {albumname} 中的 <a href="{url}" target="_blank"> 图片</a>',
+	'share_pic'		=> '{actor} shared your image from album <a href="{url}" target="_blank">{albumname}</a>.',//'{actor} 分享了你的相册 {albumname} 中的 <a href="{url}" target="_blank"> 图片</a>',
 	'share_thread'		=> '{actor} shared your thread <a href="{url}" target="_blank">{subject}</a>.',//'{actor} 分享了你的帖子 <a href="{url}" target="_blank">{subject}</a>',
 	'share_article'		=> '{actor} shared your article <a href="{url}" target="_blank">{subject}</a>',//'{actor} 分享了你的文章 <a href="{url}" target="_blank">{subject}</a>',
 	'magic_present_note'	=> ' presented to you a magic <a href="{url}" target="_blank">{name}</a>.',//'送给你一个道具 <a href="{url}" target="_blank">{name}</a>',
@@ -205,7 +205,7 @@ $lang = array
 	'report_change_credits'		=> '{actor} has deal with your report, your points {creditchange}',//'{actor} 处理了你的举报，你的 {creditchange}',
 	'new_report'			=> 'new report pending, <a href="admin.php?action=report" target="_blank">Click here to enter the background processing</a>.',//'有新的举报等待处理，<a href="admin.php?action=report" target="_blank">点此进入后台处理</a>。',
 	'new_post_report'		=> 'New pending report, <a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">Click here to enter the administration panel</a>.',//'有新的举报等待处理，<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">点此进入管理面版</a>。',
-	'magics_receive'		=> 'You have received the magic {magicname} from  {actor}.
+	'magics_receive'		=> 'You have received the magic {magicname} from {actor}.
 					<p class="summary">{actor} said: <span>{msg}</span></p>
 					<p class="mbn"><a href="home.php?mod=magic" target="_blank">Return the gift back!</a>
 					<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">View my magics</a></p>',

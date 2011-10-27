@@ -22,7 +22,7 @@ $lang = array
 	'couplebanner_position_right'		=> 'Right',//'右侧',
 	'couplebanner_coupleadid'		=> 'Second line Adv',//'上/下联广告',
 	'couplebanner_coupleadid_comment'	=> 'Set the paired advertising for  current advertising',//'设置和当前广告配对的上/下联广告',
-	'couplebanner_category'				=> 'Double Banner Portal Category',
+	'couplebanner_category'			=> 'Double Banner Portal Category',
 	'couplebanner_category_comment'		=> 'Set a portal category for show the Double Banner. This take effect only when Ads is assigned to the Portal',
 );
 
