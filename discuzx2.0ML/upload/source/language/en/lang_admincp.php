@@ -55,7 +55,7 @@ $lang = array
 	'author'		=> 'Author',//'作者',
 	'privacy'		=> 'Privacy',//'隐私',
 	'dateline'		=> 'Publish date',//'发表日期',
-	'dateline_7776000'	=> '3 monthes',//'三月',
+	'dateline_7776000'	=> '3 months',//'三月',
 	'dateline_2592000'	=> '1 month',//'一月',
 	'dateline_604800'	=> 'week',//'一周',
 	'dateline_all'		=> 'All',//'全部',
@@ -156,7 +156,7 @@ $lang = array
 	'search_higher'		=> 'Advanced Search',//'高级搜索',
 	'search_result'		=> 'Search Results',//'搜索结果',
 	'search_result_find'	=> 'Found {number} items',//'找到 {number} 条记录',
-	'search_result_item'	=> 'with {nimber} records',//'含 {number} 条记录',
+	'search_result_item'	=> 'with {number} records',//'含 {number} 条记录',
 	'sameinfo'		=> 'Related items',//'相关信息',
 	'newlist'		=> 'New list',//'最新列表',
 	'research'		=> 'New search',//'重新搜索',
@@ -259,7 +259,7 @@ $lang = array
 	'xml_http_load_failed'		=> 'Communication failure. Please refresh for try again!',//'通信失败，请刷新重新尝试！',
 	'xml_http_data_in_processed'	=> 'Communication success and data being processed ...',//'通信成功，数据正在处理中...',
 
-	'admincp_maptext'		=> 'Navigation Management Center (ESC key)',//'管理中心导航(ESC键)',
+	'admincp_maptext'		=> 'Navigation Management Center (ESC for exit)',//'管理中心导航(ESC键)',
 	'admincp_maptitle'		=> 'Navigation Management Center',//'管理中心导航',
 
 	'nav_newwin'			=> 'Open in a new window',//'新窗口打开',
@@ -314,7 +314,7 @@ $lang = array
 	'nav_magics_confer'		=> 'Make Gift',//'赠送',
 	'nav_magics_image'		=> 'Magic Image',//'道具图片',
 	'nav_magics_name'		=> 'Magic Name',//'道具名称',
-	'nav_magics_num'		=> 'Numer of items',//'赠送数量',
+	'nav_magics_num'		=> 'Number of items',//'赠送数量',
 
 	'nav_medals'			=> 'Medal Center',//'勋章中心',
 	'nav_medals_confer'		=> 'Confer',//'颁发',
@@ -1720,9 +1720,9 @@ $lang = array
 			'0'	=> '(GMT) Casablanca, Dublin, Edinburgh, London, Lisbon, Monrovia',//'(GMT) 卡萨布兰卡, 都柏林, 爱丁堡, 伦敦, 里斯本, 蒙罗维亚',
 			'1'	=> '(GMT +01:00) Amsterdam, Berlin, Brussels, Madrid, Paris, Rome',//'(GMT +01:00) 柏林, 布鲁塞尔, 哥本哈根, 马德里, 巴黎, 罗马',
 			'2'	=> '(GMT +02:00) Cairo, Helsinki, Kaliningrad, South Africa',//'(GMT +02:00) 赫尔辛基, 加里宁格勒, 南非, 华沙',
-			'3'	=> '(GMT +03:00) Baghdad, Riyadh, Moscow, Nairobi',//'(GMT +03:00) 巴格达, 利雅得, 莫斯科, 奈洛比',
+			'3'	=> '(GMT +03:00) Baghdad, Riyadh, Nairobi',//'(GMT +03:00) 巴格达, 利雅得, 莫斯科, 奈洛比',
 			'3.5'	=> '(GMT +03:30) Tehran',//'(GMT +03:30) 德黑兰',
-			'4'	=> '(GMT +04:00) Abu Dhabi, Baku, Muscat, Tbilisi',//'(GMT +04:00) 阿布扎比, 巴库, 马斯喀特, 特比利斯',
+			'4'	=> '(GMT +04:00) Abu Dhabi, Baku, Moscow, Muscat, Tbilisi',//'(GMT +04:00) 阿布扎比, 巴库, 马斯喀特, 特比利斯',
 			'4.5'	=> '(GMT +04:30) Kabul',//'(GMT +04:30) 坎布尔',
 			'5'	=> '(GMT +05:00) Ekaterinburg, Islamabad, Karachi, Tashkent',//'(GMT +05:00) 叶卡特琳堡, 伊斯兰堡, 卡拉奇, 塔什干',
 			'5.5'	=> '(GMT +05:30) Bombay, Calcutta, Madras, New Delhi',//'(GMT +05:30) 孟买, 加尔各答, 马德拉斯, 新德里',
@@ -6219,7 +6219,7 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	@include $adminextendfile;
 	foreach($adminextend as $extend) {
 		$extend_lang = array();
-		@include DISCUZ_ROOT.'./source/language/lang_admincp_'.$extend;
+		@include DISCUZ_ROOT.'./source/language/en/lang_admincp_'.$extend;
 		$lang = array_merge($lang, $extend_lang);
 	}
 }

@@ -83,7 +83,7 @@ var lng = {
 	'plain_text_warn'	: 'Converting to the plain text will lose some formatting!\nAre you sure you want to continue?',//'转换为纯文本时将会遗失某些格式。\n您确定要继续吗？',
 	'browser_update'	: 'Your browser does not support this feature, please upgrade your browser version',//'你的浏览器不支持此功能，请升级浏览器版本',
 	'tips'			: 'Tips',//'小提示',
-//	'tips'			: 'Tips',//'友情提示',
+//	'show_tips'		: 'Show Tips',//'友情提示',
 
 //---------------------------
 //static/image/editor/editor_function.js
@@ -272,9 +272,9 @@ var lng = {
 	'width'			: 'Width',//'宽',
 	'height'		: 'Height',//'高',
 	'audio_support'		: 'Supported wma, mp3, ra, rm, and other music formats<br />Example: http://server/audio.wma',//'支持 wma mp3 ra rm 等音乐格式<br />示例: http://server/audio.wma',
-	'video_support'		: 'Support for Youku, potatoes, 56, 6, cool video and other video stations at <br /> support wmv avi rmvb mov swf flv video formats <br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
-	'flash_support'		: 'Flash web site and other support swf flv <br /> Example: http://server/flash.sw',//'支持 swf flv 等 Flash 网址<br />示例: http://server/flash.swf',
-	'paste_from_word'	: 'Paste content from Word',//'从 Word 粘贴内容',
+	'video_support'		: 'Supported for Youku, potatoes, 56, 6, cool video and other video stations at <br /> support wmv avi rmvb mov swf flv video formats <br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
+	'flash_support'		: 'Supported Flash formats: swf flv <br /> Example: http://server/flash.swf',//'支持 swf flv 等 Flash 网址<br />示例: http://server/flash.swf',
+	'paste_from_word'	: 'Paste a content from Word',//'从 Word 粘贴内容',
 	'paste_word_tip'	: 'Please use shortcut (Ctrl + V) to paste the content from Word document',//'请通过快捷键(Ctrl+V)把 Word 文件中的内容粘贴到上',
 //--------------------------------
 //static/js/forum.js

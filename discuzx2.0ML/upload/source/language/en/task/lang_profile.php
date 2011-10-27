@@ -14,7 +14,7 @@ $lang = array
 
 	'profile_fields'		=> array(
 		'mp.realname'		=> 'Real Name',//'姓名',
-		'mp.gender'			=> 'Gender',//'性别',
+		'mp.gender'		=> 'Gender',//'性别',
 		'mp.birthyear'		=> 'Birth year',//'生日(年)',
 		'mp.birthmonth'		=> 'Birth month',//'生日(月)',
 		'mp.birthday'		=> 'Birth Day',//'生日(日)',
