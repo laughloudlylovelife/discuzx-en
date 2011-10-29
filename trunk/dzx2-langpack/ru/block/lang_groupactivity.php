@@ -11,7 +11,7 @@ $lang = array
 (
 	'groupactivity_fids'			=> 'Форум',
 	'groupactivity_fids_comment'		=> 'Вы можете выбрать несколько значений, удерживая клавишу CTRL. Если ничего не выбрано - без ограничений',
-	'groupactivity_gtids'			=> 'Категория гуппы'
+	'groupactivity_gtids'			=> 'Категория гуппы',
 	'groupactivity_gtids_comment'		=> 'Вы можете выбрать несколько значений, удерживая клавишу CTRL. Если ничего не выбрано - без ограничений',
 	'groupactivity_uids'			=> 'UID пользователя',
 	'groupactivity_uids_comment'		=> 'Для нескольких значений, используйте запятую с пробелом',

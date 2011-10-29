@@ -135,7 +135,7 @@ $lang = array (
 	'to_view_the_photo_does_not_exist'	=> 'Указанный альбом не существуют или находится на премодерации',
 	'ban_view_other_thead'			=> 'Вам запрещен просмотр тем и сообщений других пользователей!',
 	'album_does_not_exist'			=> 'Указанный альбом не существует',
-	'operating_too_fast'			=> 'Слишком частая отправка сообщений! Попробуйте позже, через {waittime} сек.",
+	'operating_too_fast'			=> 'Слишком частая отправка сообщений! Попробуйте позже, через {waittime} сек.',
 	'content_is_too_short'			=> 'Текст должен содержать не менее 2 символов',
 	'no_privilege_comment'			=> 'Нет прав для отправки комментариев, <a href="home.php?mod=spacecp&ac=usergroup" target="_blank">Просмотр прав</a>',
 	'action_closed'				=> 'Данная функция запрещена администратором',

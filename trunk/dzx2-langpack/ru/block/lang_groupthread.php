@@ -11,7 +11,7 @@ $lang = array
 (
 	'groupthread_fids'			=> 'ID группы',
 	'groupthread_fids_comment'		=> 'Укажите ID через запятую',
-	'groupthread_gtids'			=> 'Категория гуппы'
+	'groupthread_gtids'			=> 'Категория гуппы',
 	'groupthread_gtids_comment'		=> 'Вы можете выбрать несколько значений, удерживая клавишу CTRL. Если ничего не выбрано - без ограничений',
 	'groupthread_uids'			=> 'UID пользователя',
 	'groupthread_uids_comment'		=> 'Для нескольких значений, используйте запятую с пробелом',
