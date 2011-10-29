@@ -401,6 +401,9 @@ $lang = array (
 //---------------------------
 //Change Language
 'change_language'	=> 'Change language',
+
+//vot:
+	'new'		=> 'جديد',//'全新',
 );
 
 ?>
