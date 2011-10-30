@@ -31,10 +31,10 @@ http://www.comsenz.com
 .tm_c { background: #{COMMONBG}; }
 .tm_c .o { background: #EEE; }
 .tpclg { padding: 8px 0 4px; }
-	.tpclg h4 { font-weight: 400; width: 222px; }
+/*vot*/	.tpclg h4 { font-weight: 400; /*width: 222px;*/ }
 	.tpclg h4 span { float: left; }
 	.tpclg h4 .dpbtn { border-width: 1px; }
-	.tpclg .pt { margin: 5px 0; width: 212px; overflow: hidden; }
+/*vot*/	.tpclg .pt { margin: 5px 0; width: 270px; overflow: hidden; }
 		.tpcl { margin: 10px 0; border-top: 1px solid #DDD; }
 			.tpcl li { *overflow:hidden; *margin-bottom: -2px; height: 28px; line-height: 18px; border-top: 1px solid {WRAPBG}; border-bottom: 1px solid #DDD; zoom: 1; }
 			.tpcl .copt { height: auto; }
@@ -50,7 +50,7 @@ http://www.comsenz.com
 			.tpcl .pc { margin: 3px; }
 				.ie7 .tpcl .pc { margin-top: -2px; }
 			.tpcl img { vertical-align: middle; }
-	.tahfx { overflow: hidden; white-space: nowrap; width: 217px; *border-right: 1px solid {WRAPBORDERCOLOR}; }
+/*vot*/	.tahfx { overflow: hidden; white-space: nowrap; width: 280px; *border-right: 1px solid {WRAPBORDERCOLOR}; }
 		.tahfx select { width: 160px; *width: expression(this.offsetWidth > 180 ? 'auto':'180'); }
 
 #toolbarroot { top: 0; left: 0; width: 96%; z-index: 9000; position: fixed; height: 30px; }
