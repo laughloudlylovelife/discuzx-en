@@ -125,15 +125,18 @@
 	<th>{lang birthplace}:</th>
 	<td id="birthcitybox">
 		<!--script type="text/javascript" src="source/script_city.js"></script-->
+<!--
+		<script type="text/javascript" src="language/$_SCONFIG['language']/script_country.js" charset="$_SC[charset]"></script>
+-->
 		<script type="text/javascript" src="language/$_SCONFIG['language']/script_city.js" charset="$_SC[charset]"></script>
-		<script type="text/javascript">
-		<!--
+		<script type="text/javascript"><!--
+//		showcountry('birthcountry', 'birthprovince', 'birthcity', '$space[birthcountry]', 'birthcitybox');
 		showprovince('birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
 		showcity('birthcity', '$space[birthcity]', 'birthprovince', 'birthcitybox');
-		
 		//-->
 		</script>
-		<br><a href="cp.php?ac=friend&op=search&view=birth">&raquo; {lang find_fellow}</a>
+		<br>
+		<a href="cp.php?ac=friend&op=search&view=birth">&raquo; {lang find_fellow}</a>
 	</td>
 	<td>
 		<select name="friend[birthcity]">
@@ -148,6 +151,7 @@
 	<td id="residecitybox">
 		<script type="text/javascript">
 		<!--
+//		showcountry('residecountry', 'resideprovince', 'residecity', '$space[residecountry]', 'residecitybox');
 		showprovince('resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
 		showcity('residecity', '$space[residecity]', 'resideprovince', 'residecitybox');
 		//-->

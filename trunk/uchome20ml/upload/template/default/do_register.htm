@@ -41,9 +41,11 @@
 	<tr>
 		<th style="vertical-align: top;">{lang verification_code}</th>
 		<td>
-			<script>seccode();</script>
-			<p>{lang verification_enter_code} <a href="javascript:updateseccode()">{lang verification_reload}</a></p>
+			{lang verification_enter_code}<br>
+			<a href="javascript:updateseccode()"><script>seccode();</script></a>
 			<input type="text" id="seccode" name="seccode" value="" class="t_input" onBlur="checkSeccode()" tabindex="1" autocomplete="off" />&nbsp;<span id="checkseccode">&nbsp;</span>
+			<p>{lang verification_reload}</p>
+			
 		</td>
 	</tr>
 	<!--{/if}-->

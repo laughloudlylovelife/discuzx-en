@@ -45,8 +45,9 @@
 						<!--{/if}-->						
 					</li>
 					<li><span class="gray">{lang event_location}:</span>
-						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&date=$_GET[date]">$event[province]</a>
-						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&province=$event[province]&city=$event[city]&date=$_GET[date]">$event[city]</a>
+						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&country=$event[country]&date=$_GET[date]">$event[province]</a>
+						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&country=$event[country]&province=$event[province]&date=$_GET[date]">$event[province]</a>
+						<a href="space.php?uid=$_GET[uid]&do=event&view=$view&type=$type&classid=$_GET[classid]&country=$event[country]&province=$event[province]&city=$event[city]&date=$_GET[date]">$event[city]</a>
 						$event[location]
 					</li>
 					<li><span class="gray">{lang member_starter}:</span> <a href="space.php?uid=$event[uid]">$_SN[$event[uid]]</a></li>

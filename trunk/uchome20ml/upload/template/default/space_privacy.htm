@@ -44,8 +44,8 @@
 				<!--{if $space[note]}-->
 				<p>$space[note]</p>
 				<!--{/if}-->
-				<!--{if $space[resideprovince] || $space[residecity]}-->
-				<p><span class="gray">{lang location_place}: </span>$space[resideprovince] $space[residecity]</p>
+				<!--{if $space[residecountry] || $space[resideprovince] || $space[residecity]}-->
+				<p><span class="gray">{lang location_place}: </span>$space[residecountry] / $space[resideprovince] / $space[residecity]</p>
 				<!--{/if}-->
 				
 				<!--{if !$space['isfriend']}-->

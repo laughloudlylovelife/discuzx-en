@@ -64,7 +64,7 @@ a.c_link { background-position: 0 -64px; }
 .float_more{ float: right; margin: 0 10px 0 0; padding: 0; width: 16px; height: 16px; background: url(image/settingicon.gif) no-repeat; color: #DABAA9; line-height: 200px; overflow: hidden; display: block; }
   .float_cancel { background-position: 0 -14px; }
   .float_delete { background-position: 0 -31px; }
-  .float_more { position: absolute; margin: 5px 0 0 505px; background: url(image/feedmoreicon.gif) no-repeat 0 0; color: #DABAA9; }
+  .float_more { position: absolute; margin: 5px 0 0 430px; background: url(image/feedmoreicon.gif) no-repeat 0 0; color: #DABAA9; }
 
 /*avatar bg*/
 .ar_r_t,
@@ -134,10 +134,10 @@ body { background: #FFF; }
       .app_more a.off { background-position: 0 50%; }
       .app_more a.on { background-position: -100px 50%; }
   #app_sidebar .t_input{ width: 110px; }
-  #mainarea { float: left; width: 800px; overflow: hidden; }
+#mainarea { float: left; width: 800px; overflow: hidden; }
 
 .chostlp { }
-  .chostlp img{ float: right; padding: 5px; border: 1px solid #FFF; vertical-align: middle; /*margin-top: 6px; margin-right: -14px;*/}
+  .chostlp img { /*margin-top: 6px; margin-right: -14px;*/ float: right; padding: 5px; border: 1px solid #FFF; vertical-align: middle; }
      .chostlp img.hover{ background: #FFF; border-color: #CCC;  }
         .chostlp_drop { background: #FFF; }
             .chostlp_drop { border: 1px solid #CCC;  }

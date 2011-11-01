@@ -20,7 +20,7 @@
 		<li><a href="cp.php?ac=invite"><span>{lang event_invite_friends}</span></a></li>
 		<!--{/if}-->
 		<li$actives[request]><a href="cp.php?ac=friend&op=request"><span>{lang friend_requests_me}</span></a></li>
-		<li><a href="space.php?do=top"><span>{lang members_top_list}</span></a></li>
+		<li><a href="space.php?do=top"><span>{lang top_list}</span></a></li>
 		<!--{if $op=='group'}-->
 		<li$actives[group]><a href="cp.php?ac=friend&op=group"><span>{lang friends_group}</span></a></li>
 		<!--{/if}-->
@@ -174,8 +174,10 @@
 		<script type="text/javascript" src="language/$_SCONFIG['language']/script_city.js" charset="$_SC[charset]"></script>
 		<script type="text/javascript">
 		<!--
+		showcountry('residecountry', 'resideprovince', 'residecity', '', 'residecitybox');
 		showprovince('resideprovince', 'residecity', '', 'residecitybox');
 		showcity('residecity', '', 'resideprovince', 'residecitybox');
+		showcountry('birthcountry', 'birthprovince', 'birthcity', '', 'birthcitybox');
 		showprovince('birthprovince', 'birthcity', '', 'birthcitybox');
 		showcity('birthcity', '', 'birthprovince', 'birthcitybox');
 		//-->
@@ -334,6 +336,7 @@
 		<script type="text/javascript" src="source/script_city.js"></script>
 		<script type="text/javascript">
 		<!--
+		showcountry('residecountry', 'resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
 		showprovince('resideprovince', 'residecity', '$space[resideprovince]', 'residecitybox');
 		showcity('residecity', '$space[residecity]', 'resideprovince', 'residecitybox');
 		//-->
@@ -367,6 +370,7 @@
 		<script type="text/javascript" src="source/script_city.js"></script>
 		<script type="text/javascript">
 		<!--
+		showprovince('birthcountry', 'birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
 		showprovince('birthprovince', 'birthcity', '$space[birthprovince]', 'birthcitybox');
 		showcity('birthcity', '$space[birthcity]', 'birthprovince', 'birthcitybox');
 		//-->

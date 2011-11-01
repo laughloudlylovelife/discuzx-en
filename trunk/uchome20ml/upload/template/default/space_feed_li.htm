@@ -1,3 +1,14 @@
+<table border="0" width="98%">
+  <tr>
+    <td valign="top" width="50px" align="left">
+      <div class="avatar48">
+        <a href="space.php?uid=$value[uid]"><!--{avatar($value[uid],small)}--></a>
+      </div>
+    </td>
+
+    <td valign="top">
+
+
 <li class="s_clear $value[magic_class]" id="feed_{$value[feedid]}_li" onmouseover="feed_menu($value[feedid],1);" onmouseout="feed_menu($value[feedid],0);">
 	<div style="width:100%;overflow:hidden;" {$value[style]}>
 		<!--{if $value[uid] && empty($_TPL[hidden_more])}-->
@@ -105,3 +116,7 @@
 	</div>
 	<!--{/if}-->
 </li>
+
+    </td>
+  </tr>
+</table>

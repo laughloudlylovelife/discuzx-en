@@ -98,8 +98,8 @@
 								</p>
 
 								<p><span class="gray">{lang gender}: </span><!--{if $value[sex]==2}-->{lang female}<!--{elseif $value[sex]==1}-->{lang male}<!--{else}-->{lang secret}<!--{/if}--></p>
-								<!--{if $value[resideprovince] || $value[residecity]}-->
-								<p><span class="gray">{lang location_place}: </span><a href="cp.php?ac=friend&op=search&resideprovince=$value[resideprovince]&residecity=&searchmode=1">$value[resideprovince]</a> <a href="cp.php?ac=friend&op=search&resideprovince=$value[resideprovince]&residecity=$value[residecity]&searchmode=1">$value[residecity]</a></p>
+								<!--{if $value[residecountry] || $value[resideprovince] || $value[residecity]}-->
+								<p><span class="gray">{lang location_place}: </span><a href="cp.php?ac=friend&op=search&residecountry=$value[residecountry]&resideprovince=$value[resideprovince]&residecity=&searchmode=1">$value[resideprovince]</a> <a href="cp.php?ac=friend&op=search&resideprovince=$value[resideprovince]&residecity=$value[residecity]&searchmode=1">$value[residecity]</a></p>
 								<!--{/if}-->
 								<!--{if $value[note]}-->
 								<p><span class="gray">{lang note_status}: </span>$value[note]</p>
@@ -286,7 +286,7 @@
 						<dt class="gray">{lang event_type}:</dt>
 						<dd>$_SGLOBAL[eventclass][$event[classid]][classname]</dd>
 						<dt class="gray">{lang event_location}:</dt>
-						<dd>$event[province] $event[city] $event[location]</dd>
+						<dd>$event[country] / $event[province] / $event[city] / $event[location]</dd>
 						<dt class="gray">{lang event_time}:</dt>
 						<dd><!--{eval echo sgmdate("d.m.Y H:i", $event[starttime])}--> - <!--{eval echo sgmdate("d.m.Y H:i", $event[endtime])}--></dd>
 						<dt class="gray">{lang event_deadline}:</dt>
