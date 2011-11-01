@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
