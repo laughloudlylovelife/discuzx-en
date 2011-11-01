@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -53,7 +53,7 @@ class feedcontrol extends base {
 		return $this->db->insert_id();
 	}
 
-	//note private  delete  event 
+	//note: delete private event
 	function ondelete() {
 		$start = $this->input('start');
 		$limit = $this->input('limit');
@@ -61,7 +61,7 @@ class feedcontrol extends base {
 		$this->db->query("DELETE FROM ".UC_DBTABLEPRE."feeds WHERE feedid>'$start' AND feedid<'$end'");
 	}
 
-	//note public È¡µÃ event µÄ½Ó¿Ú, È¡ÍêÒÔºóÊÇ·ñ delete ?
+	//note: public access event interface. Delete after full complete?
 	function onget() {
 		$this->load('misc');
 		$limit = intval($this->input('limit'));
@@ -75,7 +75,7 @@ class feedcontrol extends base {
 				$feedlist[$key] = $feed;
 			}
 		}
-		//note  delete ¹ýÆÚµÄfeed
+		//note  delete Overdue feed
 		if(!empty($feedlist)) {
 			if(!isset($delete) || $delete) {
 				$this->_delete(0, $maxfeedid);

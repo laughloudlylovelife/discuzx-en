@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -9,7 +9,7 @@
 
 !defined('IN_UC') && exit('Access Denied');
 
-define('UC_MAIL_REPEAT', 5);	//note ÓÊ¼þ·¢ËÍÊ§°ÜÖØ¸´´ÎÊý
+define('UC_MAIL_REPEAT', 5);	// E-mail failed to send the number of repetitions
 
 class mailmodel {
 
@@ -28,7 +28,7 @@ class mailmodel {
 	}
 
 	/**
-	 * Statistics notice µÄ×ÜÌõÊý
+	 * Statistics notice The total number of
 	 *
 	 */
 	function get_total_num() {
@@ -37,12 +37,12 @@ class mailmodel {
 	}
 
 	/**
-	 * Enter µÃµ½ÓÊ¼þ list 
+	 * Enter Get e-mail list 
 	 *
 	 * @param int	$page
 	 * @param int	$ppp
 	 * @param int	$totalnum
-	 * @return array ½á¹û¼¯
+	 * @return array Result set
 	 */
 	function get_list($page, $ppp, $totalnum) {
 		$start = $this->base->page_get_start($page, $ppp, $totalnum);
@@ -57,10 +57,10 @@ class mailmodel {
 	}
 
 	/**
-	 *  delete ÓÊ¼þÍ¨¹ýids
+	 *  delete E-mail by ids
 	 *
 	 * @param string/array $ids
-	 * @return ÊÜÓ°ÏìµÄÐÐÊý
+	 * @return The number of rows affected
 	 */
 	function delete_mail($ids) {
 		$ids = $this->base->implode($ids);
@@ -69,17 +69,17 @@ class mailmodel {
 	}
 
 	/**
-	 *  add ÓÊ¼þ list 
+	 *  add E-mail list 
 	 *
-	 * @param string ²Ù×÷
+	 * @param string Operating
 	 * @param string getdata
 	 * @param string postdata
-	 * @param array appids Ö¸¶¨ notice µÄ APPID
-	 * @param int pri ÓÅÏÈ¼¶£¬ÖµÔ½´ó±íÊ¾Ô½¸ß
-	 * @return int ²åÈëµÄID
+	 * @param array appids The notice specified APPID
+	 * @param int pri Priority, the higher value indicates greater
+	 * @return int Inserted ID
 	 */
 	function add($mail) {
-		//note ÏÈÈë¿â
+		// First storage
 		if($mail['level']) {
 			$sql = "INSERT INTO ".UC_DBTABLEPRE."mailqueue (touid, tomail, subject, message, frommail, charset, htmlon, level, dateline, failures, appid) VALUES ";
 			$values_arr = array();
@@ -96,7 +96,7 @@ class mailmodel {
 			$insert_id = $this->db->insert_id();
 			$insert_id && $this->db->query("REPLACE INTO ".UC_DBTABLEPRE."vars SET name='mailexists', value='1'");
 			return $insert_id;
-		} else {//note Ö±½Ó·¢ËÍ
+		} else {// Directly
 			$mail['email_to'] = array();
 			$uids = 0;
 			foreach($mail['uids'] as $uid) {
@@ -123,10 +123,10 @@ class mailmodel {
 
 	function _send() {
 
-		//note ²é¿´ÊÇ·ñÓÐÓÊ¼þ
+		// See if there is an e-mail
 		$mail = $this->_get_mail();
 		if(empty($mail)) {
-			//note ±êÊ¾Îª²»ÐèÒª·¢ËÍÓÊ¼þ
+			// Do not need to send a message marked
 			$this->db->query("REPLACE INTO ".UC_DBTABLEPRE."vars SET name='mailexists', value='0'");
 			return NULL;
 		} else {

@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -9,9 +9,9 @@
 
 !defined('IN_UC') && exit('Access Denied');
 
-define('UC_NOTE_REPEAT', 5);	//note  notice ÷ÿ∏¥¥Œ ˝
-define('UC_NOTE_TIMEOUT', 15);	//note  notice ≥¨ ± ±º‰(√Î)
-define('UC_NOTE_GC', 10000);	//note π˝∆⁄ notice µƒªÿ ’∏≈¬ £¨∏√÷µ‘Ω¥Û£¨∏≈¬ ‘ΩµÕ
+define('UC_NOTE_REPEAT', 5);	// notice Repeat Frequency
+define('UC_NOTE_TIMEOUT', 15);	// notice Timeout (seconds)
+define('UC_NOTE_GC', 10000);	// The probability of recovery of overdue notice, the larger the value, the lower the probability
 
 define('API_RETURN_FAILED', '-1');
 
@@ -21,7 +21,7 @@ class notemodel {
 	var $base;
 	var $apps;
 	var $operations = array();
-	var $notetype = 'HTTP';//note HTTP|INCLUDE
+	var $notetype = 'HTTP';// HTTP|INCLUDE
 
 	function __construct(&$base) {
 		$this->notemodel($base);
@@ -32,10 +32,10 @@ class notemodel {
 		$this->db = $base->db;
 		$this->apps = $this->base->cache('apps');
 		/** note
-		 * 1. ≤Ÿ◊˜µƒ name ≥∆£¨»Á£∫ delete  user £¨≤‚ ‘¡¨Õ®£¨ delete ∫√”—£¨»°TAG ˝æ›£¨ update øÕªß∂À cache 
-		 * 2. µ˜”√µƒ”¶”√µƒΩ”ø⁄≤Œ ˝£¨∆¥Ω”πÊ‘ÚŒ™ APP_URL/api/uc.php?action=test&ids=1,2,3
-		 * 3. ªÿµ˜µƒƒ£øÈ name ≥∆
-		 * 4. ªÿµ˜µƒƒ£øÈ∑Ω∑®£®$appid, $content£©
+		 * 1. Operation of name Said, such as: delete  user , Test connectivity, delete Friends, take TAG Data, update Clients cache 
+		 * 2. The application calls the interface parameters, splicing rules APP_URL/api/uc.php?action=test&ids=1,2,3
+		 * 3. Callback module name called
+		 * 4. Callback module method ($appid, $content)
 		 */
 		$this->operations = array(
 			'test'=>array('', 'action=test'),
@@ -56,7 +56,7 @@ class notemodel {
 	}
 
 	/**
-	 * Statistics notice µƒ◊‹Ãı ˝
+	 * Statistics notice The total number of
 	 *
 	 * @return int
 	 */
@@ -64,12 +64,12 @@ class notemodel {
 	}
 
 	/**
-	 * Enter µ√µΩ notice  list 
+	 * Enter Get notice  list 
 	 *
 	 * @param int $page
 	 * @param int$ppp
 	 * @param int $totalnum
-	 * @return array Ω·π˚ºØ
+	 * @return array Result set
 	 */
 	function get_list($page, $ppp, $totalnum, $all = TRUE) {
 	}
@@ -78,7 +78,7 @@ class notemodel {
 	 *  delete notice 
 	 *
 	 * @param string/array $ids
-	 * @return  ‹”∞œÏµƒ–– ˝
+	 * @return The number of rows affected
 	 */
 	function delete_note($ids) {
 	}
@@ -86,12 +86,12 @@ class notemodel {
 	/**
 	 *  add notice list 
 	 *
-	 * @param string ≤Ÿ◊˜
+	 * @param string Operating
 	 * @param string getdata
 	 * @param string postdata
-	 * @param array appids ÷∏∂® notice µƒ APPID
-	 * @param int pri ”≈œ»º∂£¨÷µ‘Ω¥Û±Ì æ‘Ω∏ﬂ
-	 * @return int ≤Â»ÎµƒID
+	 * @param array appids The notice specified APPID
+	 * @param int pri Priority, the higher value indicates greater
+	 * @return int Inserted ID
 	 */
 	function add($operation, $getdata='', $postdata='', $appids=array(), $pri = 0) {
 		$extra = $varextra = '';
@@ -128,22 +128,22 @@ class notemodel {
 	}
 
 	function _send() {
-		//note ≈–∂œ «∑Ò”– notice 
+		// Determine whether there is notice 
 
-		//note »Áπ˚ƒ⁄¥Ê±Ìº«¬º≤ª¥Ê‘⁄£¨ƒ«√¥ø…ƒ‹ mysql ±ª÷ÿ∆Ù£¨–Ë“™‘Ÿ¥Œ≈–∂œ notice  «∑Ò¥Ê‘⁄
+		// If the memory table records do not exist, it may mysql Was restarted, again to determine notice existence
 
-		//note ≤Èø¥ «∑Ò”– notice 
+		// See if there is notice 
 		$note = $this->_get_note();
 		if(empty($note)) {
-			//note ±Í æŒ™≤ª–Ë“™ notice 
+			// Marked as not notice 
 			$this->db->query("REPLACE INTO ".UC_DBTABLEPRE."vars SET name='noteexists".UC_APPID."', value='0'");
 			return NULL;
 		}
 
-		//note mysql÷ª∑¢ÀÕ◊‘º∫µƒ notice 
+		// mysql Sent only their own notice 
 		$this->sendone(UC_APPID, 0, $note);
 
-		//note ¿¨ª¯«Â¿Ì
+		// Garbage removal
 		$this->_gc();
 	}
 
@@ -174,7 +174,7 @@ class notemodel {
 			$response = trim($_ENV['misc']->dfopen2($url, 0, $note['postdata'], '', 1, $app['ip'], UC_NOTE_TIMEOUT, TRUE));
 		}
 
-		$returnsucceed = $response != '' && ($response == 1 || is_array(xml_unserialize($response)));//note µ±»∑ µ∑µªÿŒ™1µƒ ±∫Ú≤≈»œŒ™ « notice success 
+		$returnsucceed = $response != '' && ($response == 1 || is_array(xml_unserialize($response)));// When return 1 then it is considered notice success 
 
 		$closedsqladd = $this->_close_note($note, $this->apps, $returnsucceed, $appid) ? ",closed='1'" : '';//
 
@@ -203,7 +203,7 @@ class notemodel {
 		rand(0, UC_NOTE_GC) == 0 && $this->db->query("DELETE FROM ".UC_DBTABLEPRE."notelist WHERE closed='1'");
 	}
 
-	//note ≈–∂œ «∑Ò–Ë“™πÿ±’ notice 
+	// Determine whether the need to close notice 
 	function _close_note($note, $apps, $returnsucceed, $appid) {
 		$note['app'.$appid] = $returnsucceed ? 1 : $note['app'.$appid] - 1;
 		$appcount = count($apps);
