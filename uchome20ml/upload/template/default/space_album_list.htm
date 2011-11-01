@@ -180,13 +180,13 @@
 	</div>
 <!--{elseif $_GET['view'] == 'all'}-->
 	<div class="cat">
-	<h3>{lang members_top_list}</h3>
+	<h3>{lang top_list}</h3>
 	<ul class="post_list line_list">
 		<li$all_actives[all]><a href="space.php?do=album&view=all">{lang hot_map_recommend}</a></li>
 		<li$all_actives[dateline]><a href="space.php?do=album&view=all&orderby=dateline">{lang last_update}</a></li>
 		<li$all_actives[hot]><a href="space.php?do=album&view=all&orderby=hot&day=$_GET[hotday]">{lang top_ranked}</a></li>
 		<!--{loop $clicks $value}-->
-		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=album&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{$value[name]} {lang top_rank}</a></li>
+		<li{$all_actives['click_'.$value[clickid]]}><a href="space.php?do=album&view=all&orderby=click_$value[clickid]&day=$_GET[hotday]">{lang top_rank} &quot;{$value[name]}&quot;</a></li>
 		<!--{/loop}-->
 	</ul>
 	</div>

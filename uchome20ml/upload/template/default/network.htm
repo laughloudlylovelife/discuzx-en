@@ -348,7 +348,7 @@ style: {
 				<h3><a href="space.php?do=event&id=$value[eventid]">$value[title]</a></h3>
 				<p class="eimage"><a href="space.php?do=event&id=$value[eventid]"><img src="$value[pic]" alt=""/></a></p>
 				<p><span class="gray">{lang time}:</span> <!--{date('n-j H:i',$value[starttime])}--> - <!--{date('n-j H:i',$value[endtime])}--></p>
-				<p><span class="gray">{lang location}:</span> $value[province] $value[city] $value[location]</p>
+				<p><span class="gray">{lang location}:</span> $value[country] $value[province] $value[city] $value[location]</p>
 				<p><span class="gray">{lang launcher}:</span> <a href="space.php?uid=$value[uid]">{$_SN[$value[uid]]}</a></p>
 				<p class="egz">$value[membernum] {lang members_attending} <span class="pipe">|</span> $value[follownum] {lang members_concerned}</p>
 			</li>

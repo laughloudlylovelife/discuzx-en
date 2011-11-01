@@ -88,8 +88,8 @@ function searchFriend() {
 							<p><span class="gray">{lang action}: </span><!--{date('m-d H:i',$ols[$value[uid]],1)}--></p>
 							<!--{/if}-->
 
-							<!--{if $value[resideprovince] || $value[residecity]}-->
-							<p><span class="gray">{lang location_place}: </span><a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=&searchmode=1">$value[resideprovince]</a> <a href="cp.php?ac=friend&op=search&resideprovince=$value[p]&residecity=$value[c]&searchmode=1">$value[residecity]</a></p>
+							<!--{if $value[residecountry] || $value[resideprovince] || $value[residecity]}-->
+							<p><span class="gray">{lang location_place}: </span><a href="cp.php?ac=friend&op=search&residecountry=$value[cn]&searchmode=1">$value[residecountry]</a> / <a href="cp.php?ac=friend&op=search&residecountry=$value[cn]&resideprovince=$value[p]&searchmode=1">$value[resideprovince]</a> / <a href="cp.php?ac=friend&op=search&residecountry=$value[cn]&resideprovince=$value[p]&residecity=$value[c]&searchmode=1">$value[residecity]</a></p>
 							<!--{/if}-->
 	
 							<!--{if $value[note]}-->
