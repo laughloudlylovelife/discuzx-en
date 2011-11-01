@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -37,7 +37,7 @@ class base {
 	}
 
 	/**
-	 * ³õÊ¼»¯»ùÀà
+	 * Initialize the base class
 	 *
 	 */
 	function base() {
@@ -73,7 +73,7 @@ class base {
 	}
 
 	/**
-	 * ÊµÀý»¯Êý¾Ý¿âÀà
+	 * Instance of the database class
 	 *
 	 */
 	function init_db() {
@@ -83,11 +83,11 @@ class base {
 	}
 
 	/**
-	 * ¼ÓÔØÏàÓ¦µÄ Model, ´æÈë $_ENV ³¬¼¶È«¾Ö±äÁ¿
+	 * Load the appropriate Model, Into $_ENV Super-global variable
 	 *
-	 * @param string $model Ä£¿é name ³Æ
-	 * @param ¸ÃÄ£¿éÏà¶ÔµÄ»ùÀà $base Ä¬ÈÏÎª¸Ã»ùÀà
-	 * @return ´Ë´¦²»ÐèÒª·µ»Ø
+	 * @param string $model Module name called
+	 * @param Relative to the base class of the module $base The default for the base class
+	 * @return Do not need to return here
 	 */
 	function load($model, $base = NULL) {
 		$base = $base ? $base : $this;
@@ -99,10 +99,10 @@ class base {
 	}
 
 	/**
-	 * ÈÕÆÚ¸ñÊ½»¯ Ä¬ÈÏÎª¸ñÊ½»¯µ½·ÖÖÓ
+	 * The default is to format the date format to minutes
 	 *
 	 * @param int $time
-	 * @param int $type 	1£ºÖ»ÏÔÊ¾Ê±¼ä 2£ºÖ»ÏÔÊ¾ÈÕÆÚ 3£ºÈÕÆÚÊ±¼ä¾ùÏÔÊ¾
+	 * @param int $type 	1: Only Time, 2: only the date, 3: The date and time are displayed
 	 * @return string
 	 */
 	function date($time, $type = 3) {
@@ -115,11 +115,11 @@ class base {
 	}
 
 	/**
-	 * ¶Ô·­Ò³µÄÆðÊ¼Î»ÖÃ½øÐÐÅÐ¶ÏºÍµ÷Õû
+	 * On the next page to determine the starting position and adjust
 	 *
-	 * @param int $page Ò³Âë
-	 * @param int $ppp Ã¿Ò³´óÐ¡
-	 * @param int $totalnum ×Ü¼ÍÂ¼Êý
+	 * @param int $page Page number
+	 * @param int $ppp Page size
+	 * @param int $totalnum The total number of records
 	 * @return unknown
 	 */
 	function page_get_start($page, $ppp, $totalnum) {
@@ -129,17 +129,17 @@ class base {
 	}
 
 	/**
-	 * ¶Ô×Ö·û»òÕßÊý groups ¼Ó¶ººÅÁ¬½Ó, ÓÃÀ´
+	 * Split Several groups separated by comma
 	 *
-	 * @param string/array $arr ¿ÉÒÔ´«ÈëÊý×Ö»òÕß×Ö´®
-	 * @return string ÕâÑùµÄ¸ñÊ½: '1','2','3'
+	 * @param string/array $arr Number or string can be passed
+	 * @return string The format of this: '1','2','3'
 	 */
 	function implode($arr) {
 		return "'".implode("','", (array)$arr)."'";
 	}
 
 	/**
-	 * ¼ÓÔØ cache ÎÄ¼þ, Èç¹û²»´æÔÚ,ÔòÖØÐÂÉú³É
+	 * Load cache file, if does not exist, then re-generate
 	 *
 	 * @param string $cachefile
 	 */
@@ -158,11 +158,11 @@ class base {
 	}
 
 	/**
-	 * µÃµ½ÉèÖÃµÄÖµ
+	 * Set the value to be
 	 *
-	 * @param string $k ÉèÖÃµÄÏî
-	 * @param string $decode ÊÇ·ñ½øÐÐ·´ÐòÁÐ»¯£¬Ò»°ãÎªÊý groups Ê±£¬ÐèÒªÖ¸¶¨ÎªTRUE
-	 * @return string/array ÉèÖÃµÄÖµ
+	 * @param string $k Set of items
+	 * @param string $decode Whether deserialization, the general number of groups, you need to specify as TRUE
+	 * @return string/array Set the value of the
 	 */
 	function get_setting($k = array(), $decode = FALSE) {
 		$return = array();
@@ -177,7 +177,7 @@ class base {
 	}
 
 	function init_cache() {
-		//note È«¾ÖÉèÖÃ
+		// Global Settings
 		$this->settings = $this->cache('settings');
 		$this->cache['apps'] = $this->cache('apps');
 

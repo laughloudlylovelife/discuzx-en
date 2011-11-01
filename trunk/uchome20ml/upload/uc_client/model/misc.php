@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -124,7 +124,7 @@ class miscmodel {
 		}
 	}
 
-	//note ÔÝÊ±Ö»Ö§³Ö1Î¬Êý groups 
+	// Only supports one dimension groups 
 	function array2string($arr) {
 		$s = $sep = '';
 		if($arr && is_array($arr)) {
@@ -136,7 +136,7 @@ class miscmodel {
 		return $s;
 	}
 
-	//note ÔÝÊ±Ö»Ö§³Ö1Î¬Êý groups 
+	// Only supports one dimension groups 
 	function string2array($s) {
 		$arr = explode(UC_ARRAY_SEP_2, $s);
 		$arr2 = array();

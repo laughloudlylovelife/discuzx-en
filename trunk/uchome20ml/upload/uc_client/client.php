@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -16,9 +16,9 @@ error_reporting(0);
 define('IN_UC', TRUE);
 define('UC_CLIENT_VERSION', '1.5.0');
 define('UC_CLIENT_RELEASE', '20090121');
-define('UC_ROOT', substr(__FILE__, 0, -10));		//note  user ÖÐÐÄ¿Í»§¶ËµÄ¸ùÄ¿Â¼ UC_CLIENTROOT
-define('UC_DATADIR', UC_ROOT.'./data/');		//note  user ÖÐÐÄµÄÊý¾Ý cache Ä¿Â¼
-define('UC_DATAURL', UC_API.'/data');			//note  user ÖÐÐÄµÄÊý¾Ý URL
+define('UC_ROOT', substr(__FILE__, 0, -10));	// user Center of the root directory of the client UC_CLIENTROOT
+define('UC_DATADIR', UC_ROOT.'./data/');	// user The data center cache Directory
+define('UC_DATAURL', UC_API.'/data');		// user The data center URL
 define('UC_API_FUNC', UC_CONNECT == 'mysql' ? 'uc_api_mysql' : 'uc_api_post');
 $GLOBALS['uc_controls'] = array();
 
@@ -52,11 +52,11 @@ function uc_stripslashes($string) {
 }
 
 /**
- *  dfopen  mode È¡Ö¸¶¨µÄÄ£¿éºÍ¶¯×÷µÄÊý¾Ý
+ *  dfopen  mode Take the action specified data module and
  *
- * @param string $module	ÇëÇóµÄÄ£¿é
- * @param string $action 	ÇëÇóµÄ¶¯×÷
- * @param array $arg		²ÎÊý£¨»á¼ÓÃÜµÄ mode ´«ËÍ£©
+ * @param string $module	Request a module
+ * @param string $action 	Request for action
+ * @param array $arg		Parameters (transmission mode will be encrypted)
  * @return string
  */
 function uc_api_post($module, $action, $arg = array()) {
@@ -81,12 +81,12 @@ function uc_api_post($module, $action, $arg = array()) {
 }
 
 /**
- * ¹¹Ôì·¢ËÍ¸ø user ÖÐÐÄµÄÇëÇóÊý¾Ý
+ * Construct the center of a request sent to the user data
  *
- * @param string $module	ÇëÇóµÄÄ£¿é
- * @param string $action	ÇëÇóµÄ¶¯×÷
- * @param string $arg		²ÎÊý£¨»á¼ÓÃÜµÄ mode ´«ËÍ£©
- * @param string $extra		¸½¼Ó²ÎÊý£¨´«ËÍÊ±²»¼ÓÃÜ£©
+ * @param string $module	Request a module
+ * @param string $action	Request for action
+ * @param string $arg		Parameters (transmission mode will be encrypted)
+ * @param string $extra		Additional parameters (not encrypted when transmitted)
  * @return string
  */
 function uc_api_requestdata($module, $action, $arg='', $extra='') {
@@ -106,11 +106,11 @@ function uc_api_input($data) {
 }
 
 /**
- * MYSQL  mode È¡Ö¸¶¨µÄÄ£¿éºÍ¶¯×÷µÄÊý¾Ý
+ * MYSQL  mode Take the action specified data module and
  *
- * @param string $model		ÇëÇóµÄÄ£¿é
- * @param string $action	ÇëÇóµÄ¶¯×÷
- * @param string $args		²ÎÊý£¨»á¼ÓÃÜµÄ mode ´«ËÍ£©
+ * @param string $model		Request a module
+ * @param string $action	Request for action
+ * @param string $args		Parameters (transmission mode will be encrypted)
  * @return mix
  */
 function uc_api_mysql($model, $action, $args=array()) {
@@ -142,13 +142,13 @@ function uc_unserialize($s) {
 }
 
 /**
- * ×Ö·û´®¼ÓÃÜÒÔ¼°½âÃÜº¯Êý
+ * String encryption and decryption function
  *
- * @param string $string	Ô­ÎÄ»òÕßÃÜÎÄ
- * @param string $operation	²Ù×÷(ENCODE | DECODE), Ä¬ÈÏÎª DECODE
- * @param string $key		ÃÜÔ¿
- * @param int $expiry		ÃÜÎÄÓÐÐ§ÆÚ, ¼ÓÃÜÊ±ºòÓÐÐ§£¬ µ¥Î» Ãë£¬0 ÎªÓÀ¾ÃÓÐÐ§
- * @return string		´¦ÀíºóµÄ Ô­ÎÄ»òÕß ¾­¹ý base64_encode ´¦ÀíºóµÄÃÜÎÄ
+ * @param string $string	Text or ciphertext
+ * @param string $operation	Operation (ENCODE | DECODE), The default is  DECODE
+ * @param string $key		Key
+ * @param int $expiry		Ciphertext is valid, effective encryption time, in seconds, 0 for the permanent
+ * @return string		Original or after treatment after treatment after base64_encode ciphertext
  *
  * @example
  *
@@ -156,14 +156,14 @@ function uc_unserialize($s) {
  * 	$b = authcode($a, 'DECODE', 'key');  // $b(abc)
  *
  * 	$a = authcode('abc', 'ENCODE', 'key', 3600);
- * 	$b = authcode('abc', 'DECODE', 'key'); // ÔÚÒ»¸öÐ¡Ê±ÄÚ£¬$b(abc)£¬·ñÔò $b Îª¿Õ
+ * 	$b = authcode('abc', 'DECODE', 'key'); // In one hour, $b(abc), Or $b is empty
  */
 function uc_authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
-	$ckey_length = 4;	//note Ëæ»úÃÜÔ¿³¤¶È È¡Öµ 0-32;
-				//note ¼ÓÈëËæ»úÃÜÔ¿£¬¿ÉÒÔÁîÃÜÎÄÎÞÈÎºÎ¹æÂÉ£¬¼´±ãÊÇÔ­ÎÄºÍÃÜÔ¿ÍêÈ«ÏàÍ¬£¬¼ÓÃÜ½á¹ûÒ²»áÃ¿´Î²»Í¬£¬Ôö´óÆÆ½âÄÑ¶È¡£
-				//note È¡ÖµÔ½´ó£¬ÃÜÎÄ±ä¶¯¹æÂÉÔ½´ó£¬ÃÜÎÄ±ä»¯ = 16 µÄ $ckey_length ´Î·½
-				//note µ±´ËÖµÎª 0 Ê±£¬Ôò²»²úÉúËæ»úÃÜÔ¿
+	$ckey_length = 4;	// Random key length value of 0-32;
+				// Adding random key, the ciphertext can make no laws, even the original and the same key, encrypt the result will be different each time, increasing the difficulty of cracking.
+				// The greater the value, the greater the changes in the law ciphertext, ciphertext change = 16 $ckey_length th
+				// When this value is 0, the random key is not
 
 	$key = md5($key ? $key : UC_KEY);
 	$keya = md5(substr($key, 0, 16));
@@ -212,16 +212,16 @@ function uc_authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 }
 
 /**
- *  Ô¶³Ì´ò¿ªURL
- *  @param string $url		´ò¿ªµÄurl£¬¡¡Èç http://www.baidu.com/123.htm
- *  @param int $limit		È¡·µ»ØµÄÊý¾ÝµÄ³¤¶È
- *  @param string $post		Òª·¢ËÍµÄ POST Êý¾Ý£¬Èçuid=1&password=1234
- *  @param string $cookie	ÒªÄ£ÄâµÄ COOKIE Êý¾Ý£¬Èçuid=123&auth=a2323sd2323
- *  @param bool $bysocket	TRUE/FALSE ÊÇ·ñÍ¨¹ýSOCKET´ò¿ª
- *  @param string $ip		IPµØÖ·
- *  @param int $timeout		Á¬½Ó³¬Ê±Ê±¼ä
- *  @param bool $block		ÊÇ·ñÎª×èÈûÄ£Ê½
- *  @return			È¡µ½µÄ×Ö·û´®
+ *  open the Remote URL
+ *  @param string $url		Open url, such as http://www.baidu.com/123.htm
+ *  @param int $limit		Take the length of the returned data
+ *  @param string $post		To send POST Data, such as uid=1&password=1234
+ *  @param string $cookie	To simulate the COOKIE Data, such as uid=123&auth=a2323sd2323
+ *  @param bool $bysocket	TRUE/FALSEis by SOCKET opened
+ *  @param string $ip		IP Address
+ *  @param int $timeout		Connection timeout
+ *  @param bool $block		Whether the blocking mode
+ *  @return			Take the string
  */
 function uc_fopen2($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE, $ip = '', $timeout = 15, $block = TRUE) {
 	$__times__ = isset($_GET['__times__']) ? intval($_GET['__times__']) + 1 : 1;
@@ -267,7 +267,7 @@ function uc_fopen($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE,
 	}
 	$fp = @fsockopen(($ip ? $ip : $host), $port, $errno, $errstr, $timeout);
 	if(!$fp) {
-		return '';//note $errstr : $errno \r\n
+		return ''; // $errstr : $errno \r\n
 	} else {
 		stream_set_blocking($fp, $block);
 		stream_set_timeout($fp, $timeout);
@@ -301,25 +301,25 @@ function uc_app_ls() {
 }
 
 /**
- *  add  feed
+ *  add feed
  *
- * @param string $icon			Í¼±ê
+ * @param string $icon			Icon
  * @param string $uid			uid
- * @param string $username		 user  name 
- * @param string $title_template	±êÌâÄ£°å
- * @param array  $title_data		±êÌâÄÚÈÝ
- * @param string $body_template		ÄÚÈÝÄ£°å
- * @param array  $body_data		ÄÚÈÝÄÚÈÝ
- * @param string $body_general		±£Áô
- * @param string $target_ids		±£Áô
+ * @param string $username		user name 
+ * @param string $title_template	Title template
+ * @param array  $title_data		Title Content
+ * @param string $body_template		Content template
+ * @param array  $body_data		Content data
+ * @param string $body_general		Keep body
+ * @param string $target_ids		Keep
  * @param array $images			images
- * 	¸ñÊ½Îª:
+ * 	Format:
  * 		array(
  * 			array('url'=>'http://domain1/1.jpg', 'link'=>'http://domain1'),
  * 			array('url'=>'http://domain2/2.jpg', 'link'=>'http://domain2'),
  * 			array('url'=>'http://domain3/3.jpg', 'link'=>'http://domain3'),
  * 		)
- * 	Ê¾Àý:
+ * 	Example:
  * 		$feed['images'][] = array('url'=>$vthumb1, 'link'=>$vthumb1);
  * 		$feed['images'][] = array('url'=>$vthumb2, 'link'=>$vthumb2);
  * @return int feedid
@@ -349,7 +349,7 @@ function uc_feed_add($icon, $uid, $username, $title_template='', $title_data='',
 }
 
 /**
- * Ã¿´ÎÈ¡¶àÉÙÌõ
+ * How much of each to take
  *
  * @param int $limit
  * @return array()
@@ -360,34 +360,34 @@ function uc_feed_get($limit = 100, $delete = TRUE) {
 }
 
 /**
- *  add ºÃÓÑ
+ *  add å¥½å‹
  *
- * @param int $uid		 user ID
- * @param int $friendid		ºÃÓÑID
+ * @param int $uid		user ID
+ * @param int $friendid		Friend ID
  * @return
  * 	>0  success 
- * 	<=0 Ê§°Ü
+ * 	<=0 Failure
  */
 function uc_friend_add($uid, $friendid, $comment='') {
 	return call_user_func(UC_API_FUNC, 'friend', 'add', array('uid'=>$uid, 'friendid'=>$friendid, 'comment'=>$comment));
 }
 
 /**
- *  delete ºÃÓÑ
+ *  delete Friends
  *
- * @param int $uid		 user ID
- * @param array $friendids	ºÃÓÑID
+ * @param int $uid		user ID
+ * @param array $friendids	Friends ID
  * @return
  * 	>0  success 
- * 	<=0 Ê§°Ü,»òÕßºÃÓÑ allready ¾­ delete 
+ * 	<=0 Failure, or allready been delete friends
  */
 function uc_friend_delete($uid, $friendids) {
 	return call_user_func(UC_API_FUNC, 'friend', 'delete', array('uid'=>$uid, 'friendids'=>$friendids));
 }
 
 /**
- * ºÃÓÑ×ÜÊý
- * @param int $uid		 user ID
+ * The total number of friends
+ * @param int $uid		user ID
  * @return int
  */
 function uc_friend_totalnum($uid, $direction = 0) {
@@ -395,13 +395,13 @@ function uc_friend_totalnum($uid, $direction = 0) {
 }
 
 /**
- * ºÃÓÑ list 
+ * Friends list 
  *
- * @param int $uid		 user ID
- * @param int $page		µ±Ç°Ò³
- * @param int $pagesize		Ã¿Ò³ÌõÄ¿Êý
- * @param int $totalnum		×ÜÊý
- * @param int $direction	Ä¬ÈÏÎªÕýÏò. ÕýÏò:1 , ·´Ïò:2 , Ë«Ïò:3
+ * @param int $uid		user ID
+ * @param int $page		Current page
+ * @param int $pagesize		Number of entries per page
+ * @param int $totalnum		Total items
+ * @param int $direction	The default is Forward. Forward: 1 ,Reverse: 2 , Two-way: 3
  * @return array
  */
 function uc_friend_ls($uid, $page = 1, $pagesize = 10, $totalnum = 10, $direction = 0) {
@@ -410,40 +410,40 @@ function uc_friend_ls($uid, $page = 1, $pagesize = 10, $totalnum = 10, $directio
 }
 
 /**
- *  user  registration 
+ *  user registration 
  *
- * @param string $username 	 user  name 
- * @param string $password 	ÃÜÂë
+ * @param string $username 	user  name 
+ * @param string $password 	Password
  * @param string $email		Email
- * @param int $questionid	°²È«ÌáÎÊ
- * @param string $answer 	°²È«ÌáÎÊ´ð°¸
+ * @param int $questionid	Security Question id
+ * @param string $answer 	Security Question Answer
  * @return int
-	-1 :  user  name ²»ºÏ·¨
-	-2 : °üº¬²»ÔÊÐí registration µÄ´ÊÓï
-	-3 :  user  name  allready ¾­´æÔÚ
-	-4 : email ¸ñÊ½ÓÐÎó
-	-5 : email ²»ÔÊÐí registration 
-	-6 : ¸Ã email  allready ¾­±» registration 
-	>1 : ±íÊ¾ success £¬ÊýÖµÎª UID
+	-1 : user name Illegal
+	-2 : Contains does not allow registration Words
+	-3 : user name allready exists
+	-4 : email Malformed
+	-5 : email Not allowed for registration 
+	-6 : The email allready been registered
+	>1 : That success, the value for the UID
 */
 function uc_user_register($username, $password, $email, $questionid = '', $answer = '') {
 	return call_user_func(UC_API_FUNC, 'user', 'register', array('username'=>$username, 'password'=>$password, 'email'=>$email, 'questionid'=>$questionid, 'answer'=>$answer));
 }
 
 /**
- *  user µÇÂ½¼ì²é
+ * user Login check
  *
- * @param string $username	 user  name /uid
- * @param string $password	ÃÜÂë
- * @param int $isuid		ÊÇ·ñÎªuid
- * @param int $checkques	ÊÇ·ñÊ¹ÓÃ¼ì²é°²È«ÎÊ´ð
- * @param int $questionid	°²È«ÌáÎÊ
- * @param string $answer 	°²È«ÌáÎÊ´ð°¸
+ * @param string $username	user  name/uid
+ * @param string $password	Password
+ * @param int $isuid		Whether to use as uid
+ * @param int $checkques	Whether to use the check Safety Quiz
+ * @param int $questionid	Security Question
+ * @param string $answer 	Security Question Answer
  * @return array (uid/status, username, password, email)
- 	Êý groups µÚÒ»Ïî
+ 	number of groups First item
  	1  :  success 
-	-1 :  user ²»´æÔÚ,»òÕß±» delete 
-	-2 : ÃÜÂë´í
+	-1 :  user Does not exist, or is deleted
+	-2 : Password Wrong
 */
 function uc_user_login($username, $password, $isuid = 0, $checkques = 0, $questionid = '', $answer = '') {
 	$isuid = intval($isuid);
@@ -452,10 +452,10 @@ function uc_user_login($username, $password, $isuid = 0, $checkques = 0, $questi
 }
 
 /**
- * ½øÈëÍ¬²½µÇÂ¼´úÂë
+ * Log into the synchronization code
  *
- * @param int $uid		 user ID
- * @return string 		HTML´úÂë
+ * @param int $uid		user ID
+ * @return string 		HTML Code
  */
 function uc_user_synlogin($uid) {
 	$uid = intval($uid);
@@ -464,9 +464,9 @@ function uc_user_synlogin($uid) {
 }
 
 /**
- * ½øÈëÍ¬²½µÇ³ö´úÂë
+ * Logout the synchronization code
  *
- * @return string 		HTML´úÂë
+ * @return string 		HTML Code
  */
 function uc_user_synlogout() {
 	$return = uc_api_post('user', 'synlogout', array());
@@ -476,83 +476,83 @@ function uc_user_synlogout() {
 /**
  *  edit user 
  *
- * @param string $username	 user  name 
- * @param string $oldpw		¾ÉÃÜÂë
- * @param string $newpw		ÐÂÃÜÂë
+ * @param string $username	user  name 
+ * @param string $oldpw		Old Password
+ * @param string $newpw		New Password
  * @param string $email		Email
- * @param int $ignoreoldpw 	ÊÇ·ñºöÂÔ¾ÉÃÜÂë, ºöÂÔ¾ÉÃÜÂë, Ôò²»½øÐÐ¾ÉÃÜÂëÐ£Ñé.
- * @param int $questionid	°²È«ÌáÎÊ
- * @param string $answer 	°²È«ÌáÎÊ´ð°¸
+ * @param int $ignoreoldpw 	Ignore the Old Password, ignores the old Password, Password verification is not the old.
+ * @param int $questionid	Security Question id
+ * @param string $answer 	Security Question Answer
  * @return int
- 	1  : ÐÞ¸Ä success 
- 	0  : Ã»ÓÐÈÎºÎÐÞ¸Ä
-  	-1 : ¾ÉÃÜÂë²»ÕýÈ·
-	-4 : email ¸ñÊ½ÓÐÎó
-	-5 : email ²»ÔÊÐí registration 
-	-6 : ¸Ã email  allready ¾­±» registration 
-	-7 : Ã»ÓÐ×öÈÎºÎÐÞ¸Ä
-	-8 : ÊÜ±£»¤µÄ user £¬Ã»ÓÐ permissions ÐÞ¸Ä
+ 	1  : Modified success 
+ 	0  : Not modified
+  	-1 : Old Password is incorrect
+	-4 : email Malformed
+	-5 : email Not allowed for registration 
+	-6 : The email allready been registered
+	-7 : Did not make any modification
+	-8 : Protected user, no permissions for modification
 */
 function uc_user_edit($username, $oldpw, $newpw, $email, $ignoreoldpw = 0, $questionid = '', $answer = '') {
 	return call_user_func(UC_API_FUNC, 'user', 'edit', array('username'=>$username, 'oldpw'=>$oldpw, 'newpw'=>$newpw, 'email'=>$email, 'ignoreoldpw'=>$ignoreoldpw, 'questionid'=>$questionid, 'answer'=>$answer));
 }
 
 /**
- *  delete  user 
+ *  delete user
  *
- * @param string/array $uid	 user µÄ UID
+ * @param string/array $uid	 user UID
  * @return int
  	>0 :  success 
- 	0 : Ê§°Ü
+ 	0 : Failure
  */
 function uc_user_delete($uid) {
 	return call_user_func(UC_API_FUNC, 'user', 'delete', array('uid'=>$uid));
 }
 
 /**
- *  delete  user Í·Ïñ
+ *  delete user Avatar
  *
- * @param string/array $uid	 user µÄ UID
+ * @param string/array $uid	 user UID
  */
 function uc_user_deleteavatar($uid) {
 	uc_api_post('user', 'deleteavatar', array('uid'=>$uid));
 }
 
 /**
- * ¼ì²é user  name ÊÇ·ñÎªºÏ·¨
+ * Check the user name is legitimate
  *
  * @param string $username	 user  name 
  * @return int
- 	 1 : ºÏ·¨
-	-1 :  user  name ²»ºÏ·¨
-	-2 : °üº¬ÒªÔÊÐí registration µÄ´ÊÓï
-	-3 :  user  name  allready ¾­´æÔÚ
+ 	 1 : Legal
+	-1 : user  name Illegal
+	-2 : Contains the words disabled for registration
+	-3 :  user name allready exists
  */
 function uc_user_checkname($username) {
 	return call_user_func(UC_API_FUNC, 'user', 'check_username', array('username'=>$username));
 }
 
 /**
- * ¼ì²éEmailµØÖ·ÊÇ·ñÕýÈ·
+ * Check Email address is correct
  *
  * @param string $email		Email
  * @return
- *  	1  :  success 
- * 	-4 : email ¸ñÊ½ÓÐÎó
- * 	-5 : email ²»ÔÊÐí registration 
- * 	-6 : ¸Ã email  allready ¾­±» registration 
+ *  	1  : success 
+ * 	-4 : email Malformed
+ * 	-5 : email Not allowed for registration 
+ * 	-6 : The email allready been registered
  */
 function uc_user_checkemail($email) {
 	return call_user_func(UC_API_FUNC, 'user', 'check_email', array('email'=>$email));
 }
 
 /**
- *  add ±£»¤ user 
+ *  add Protected user 
  *
- * @param string/array $username ±£»¤ user  name 
- * @param string $admin    ²Ù×÷µÄ¹ÜÀíÔ±
+ * @param string/array $username Protected user name
+ * @param string $admin    Operation of manager
  * @return
- * 	-1 : Ê§°Ü
+ * 	-1 : Failure
  * 	 1 :  success 
  */
 function uc_user_addprotected($username, $admin='') {
@@ -560,23 +560,23 @@ function uc_user_addprotected($username, $admin='') {
 }
 
 /**
- *  delete ±£»¤ user 
+ *  delete Protected user
  *
- * @param string/array $username ±£»¤ user  name 
+ * @param string/array $username Protected user name 
  * @return
- * 	-1 : Ê§°Ü
- * 	 1 :  success 
+ * 	-1 : Failure
+ * 	 1 : success 
  */
 function uc_user_deleteprotected($username) {
 	return call_user_func(UC_API_FUNC, 'user', 'deleteprotected', array('username'=>$username));
 }
 
 /**
- * µÃµ½ÊÜ±£»¤µÄ user  name  list 
+ * Get protected user name list
  *
  * @param empty
  * @return
- * 	ÊÜµ½±£»¤µÄ user  name  list 
+ * 	Protected user name list
  *  	array()
  */
 function uc_user_getprotected() {
@@ -585,10 +585,10 @@ function uc_user_getprotected() {
 }
 
 /**
- * È¡µÃ user Êý¾Ý
+ * obtain user data
  *
- * @param string $username	 user  name 
- * @param int $isuid	ÊÇ·ñÎªUID
+ * @param string $username	user  name 
+ * @param int $isuid		Whether the UID
  * @return array (uid, username, email)
  */
 function uc_get_user($username, $isuid=0) {
@@ -597,25 +597,25 @@ function uc_get_user($username, $isuid=0) {
 }
 
 /**
- *  user ºÏ²¢×îºóµÄ´¦Àí
+ * merge user
  *
- * @param string $oldusername	ÀÏ user  name 
- * @param string $newusername	ÐÂ user  name 
- * @param string $uid		ÀÏUID
- * @param string $password	ÃÜÂë
+ * @param string $oldusername	Old user  name 
+ * @param string $newusername	New user  name 
+ * @param string $uid		Old UID
+ * @param string $password	Password
  * @param string $email		Email
  * @return int
-	-1 :  user  name ²»ºÏ·¨
-	-2 : °üº¬²»ÔÊÐí registration µÄ´ÊÓï
-	-3 :  user  name  allready ¾­´æÔÚ
-	>1 : ±íÊ¾ success £¬ÊýÖµÎª UID
+	-1 : user name is not valid
+	-2 : Contains words not allowed for registration
+	-3 : user name allready exists
+	>1 : That success, the value for the UID
  */
 function uc_user_merge($oldusername, $newusername, $uid, $password, $email) {
 	return call_user_func(UC_API_FUNC, 'user', 'merge', array('oldusername'=>$oldusername, 'newusername'=>$newusername, 'uid'=>$uid, 'password'=>$password, 'email'=>$email));
 }
 
 /**
- * ÒÆÈ¥ºÏ²¢ user ¼ÇÂ¼
+ * Remove merge user records
  * @param string $username	 user  name 
  */
 function uc_user_merge_remove($username) {
@@ -623,20 +623,20 @@ function uc_user_merge_remove($username) {
 }
 
 /**
- * »ñÈ¡Ö¸¶¨Ó¦ÓÃµÄÖ¸¶¨ user  points Öµ
- * @param int $appid	Ó¦ÓÃId
+ * Application to obtain the specified user points the specified value
+ * @param int $appid	Application Id
  * @param int $uid	 user Id
- * @param int $credit	 points ±àºÅ
+ * @param int $credit	 points Number
  */
 function uc_user_getcredit($appid, $uid, $credit) {
 	return uc_api_post('user', 'getcredit', array('appid'=>$appid, 'uid'=>$uid, 'credit'=>$credit));
 }
 
 /**
- * ½øÈë¶ÌÏûÏ¢½çÃæ
+ * short message Interface
  *
- * @param int $uid	 user ID
- * @param int $newpm	ÊÇ·ñÖ±½Ó½øÈënewpm
+ * @param int $uid	user ID
+ * @param int $newpm	Is direct access to newpm
  */
 function uc_pm_location($uid, $newpm = 0) {
 	$apiurl = uc_api_url('pm_client', 'ls', "uid=$uid", ($newpm ? '&folder=newbox' : ''));
@@ -647,14 +647,14 @@ function uc_pm_location($uid, $newpm = 0) {
 }
 
 /**
- * ¼ì²éÐÂ¶ÌÏûÏ¢
+ * Check for new message
  *
- * @param  int $uid	 user ID
- * @param  int $more	ÏêÏ¸ÐÅÏ¢
- * @return int	 	ÊÇ·ñ´æÔÚÐÂ¶ÌÏûÏ¢
- * 	2	ÏêÏ¸	(¶ÌÏûÏ¢Êý¡¢¹«¹²ÏûÏ¢Êý¡¢×îºóÏûÏ¢Ê±¼ä, ×îºóÏûÏ¢ÄÚÈÝ)
- * 	1	¼òµ¥	(¶ÌÏûÏ¢Êý¡¢¹«¹²ÏûÏ¢Êý¡¢×îºóÏûÏ¢Ê±¼ä)
- * 	0	·ñ
+ * @param  int $uid	user ID
+ * @param  int $more	Detailed information
+ * @return int	 	Whether there is new short message
+ * 	2	Detailed (short messages, public messages, last message time, and finally the message content)
+ * 	1	Simple (short messages, public messages, last message time)
+ * 	0	No messages
  */
 function uc_pm_checknew($uid, $more = 0) {
 	$return = call_user_func(UC_API_FUNC, 'pm', 'check_newpm', array('uid'=>$uid, 'more'=>$more));
@@ -662,18 +662,18 @@ function uc_pm_checknew($uid, $more = 0) {
 }
 
 /**
- * ·¢ËÍ¶ÌÏûÏ¢
+ * Send private message
  *
- * @param int $fromuid		·¢¼þÈËuid 0 Îª system ÏûÏ¢
- * @param mix $msgto		ÊÕ¼þÈË uid/username ¶à¸ö¶ººÅ·Ö¸î
- * @param mix $subject		±êÌâ
- * @param mix $message		ÄÚÈÝ
- * @param int $instantly	Á¢¼´·¢ËÍ 1 Á¢¼´·¢ËÍ(Ä¬ÈÏ)  0 ½øÈë¶ÌÏûÏ¢·¢ËÍ½çÃæ
- * @param int $replypid		 reply µÄÏûÏ¢Id
- * @param int $isusername	0 = $msgto Îª uid¡¢1 = $msgto Îª username
+ * @param int $fromuid		Uid=0 is the system sender
+ * @param mix $msgto		Recipient uid / username multiple comma-separated
+ * @param mix $subject		Subject
+ * @param mix $message		Content
+ * @param int $instantly	1 sent immediately sent immediately (default), 0 to enter a short message interface
+ * @param int $replypid		reply to the message Id
+ * @param int $isusername	0 = $msgto As uid, 1 = $msgto as username
  * @return
- * 	>1	·¢ËÍ success µÄÈËÊý
- * 	0	ÊÕ¼þÈË²»´æÔÚ
+ * 	>1	Sent the number of success
+ * 	0	Recipient does not exist
  */
 function uc_pm_send($fromuid, $msgto, $subject, $message, $instantly = 1, $replypmid = 0, $isusername = 0) {
 	if($instantly) {
@@ -695,52 +695,52 @@ function uc_pm_send($fromuid, $msgto, $subject, $message, $instantly = 1, $reply
 }
 
 /**
- *  delete ¶ÌÏûÏ¢
+ * delete message
  *
- * @param int $uid		 user Id
- * @param string $folder	´ò¿ªµÄÄ¿Â¼ inbox=ÊÕ¼þÏä£¬outbox=·¢¼þÏä
- * @param array	$pmids		Òª delete µÄÏûÏ¢IDÊý groups 
+ * @param int $uid		user Id
+ * @param string $folder	Open directory: inbox = Inbox, outbox = Outbox
+ * @param array	$pmids		To delete the message ID number of groups
  * @return
  * 	>0  success 
- * 	<=0 Ê§°Ü
+ * 	<=0 Failure
  */
 function uc_pm_delete($uid, $folder, $pmids) {
 	return call_user_func(UC_API_FUNC, 'pm', 'delete', array('uid'=>$uid, 'folder'=>$folder, 'pmids'=>$pmids));
 }
 
 /**
- * °´ÕÕ user  delete ¶ÌÏûÏ¢
+ * delete the user Short messages
  *
- * @param int $uid		 user Id
- * @param array	$uids		Òª delete µÄÏûÏ¢ user IDÊý groups 
+ * @param int $uid		user Id
+ * @param array	$uids		To delete the message user ID number of groups
  * @return
  * 	>0  success 
- * 	<=0 Ê§°Ü
+ * 	<=0 Failure
  */
 function uc_pm_deleteuser($uid, $touids) {
 	return call_user_func(UC_API_FUNC, 'pm', 'deleteuser', array('uid'=>$uid, 'touids'=>$touids));
 }
 
 /**
- * ±ê¼Ç allready ¶Á/Î´¶Á×´Ì¬
+ * Mark allready read / unread status
  *
- * @param int $uid		 user Id
- * @param array	$uids		Òª±ê¼Ç allready ¶Á×´Ì¬µÄ user IDÊý groups 
- * @param array	$pmids		Òª±ê¼Ç allready ¶Á×´Ì¬µÄÏûÏ¢IDÊý groups 
- * @param int $status		1  allready ¶Á 0 Î´¶Á
+ * @param int $uid		user Id
+ * @param array	$uids		To mark the state of the user ID allready read number of groups
+ * @param array	$pmids		To mark allready read the message ID number of state groups
+ * @param int $status		1 allready read, 0 unread
  */
 function uc_pm_readstatus($uid, $uids, $pmids = array(), $status = 0) {
 	return call_user_func(UC_API_FUNC, 'pm', 'readstatus', array('uid'=>$uid, 'uids'=>$uids, 'pmids'=>$pmids, 'status'=>$status));
 }
 
 /**
- * »ñÈ¡¶ÌÏûÏ¢ list 
+ * Short message list
  *
- * @param int $uid		 user Id
- * @param int $page 		µ±Ç°Ò³
- * @param int $pagesize 	Ã¿Ò³×î´óÌõÄ¿Êý
- * @param string $folder	´ò¿ªµÄÄ¿Â¼ newbox=Î´¶ÁÏûÏ¢£¬inbox=ÊÕ¼þÏä£¬outbox=·¢¼þÏä
- * @param string $filter	¹ýÂË mode newpm=Î´¶ÁÏûÏ¢£¬systempm= system ÏûÏ¢£¬announcepm=¹«¹²ÏûÏ¢
+ * @param int $uid		user Id
+ * @param int $page 		Current page
+ * @param int $pagesize 	Maximum number of entries per page
+ * @param string $folder	Open directory: newbox = unread messages, inbox = inbox, outbox = Outbox
+ * @param string $filter	Filter mode: newpm = unread messages, systempm = system messages, announcepm = public information
  				$folder		$filter
  				--------------------------
  				newbox
@@ -749,8 +749,8 @@ function uc_pm_readstatus($uid, $uids, $pmids = array(), $status = 0) {
  						announcepm
  				outbox		newpm
  				searchbox	*
- * @param string $msglen 	½ØÈ¡µÄÏûÏ¢ÎÄ×Ö³¤¶È
- * @return array('count' => ÏûÏ¢×ÜÊý, 'data' => ¶ÌÏûÏ¢Êý¾Ý)
+ * @param string $msglen 	Intercept length of the message text
+ * @return array('count' => Total number of messages, 'data' => Short message data)
  */
 function uc_pm_list($uid, $page = 1, $pagesize = 10, $folder = 'inbox', $filter = 'newpm', $msglen = 0) {
 	$uid = intval($uid);
@@ -761,7 +761,7 @@ function uc_pm_list($uid, $page = 1, $pagesize = 10, $folder = 'inbox', $filter 
 }
 
 /**
- * ºöÂÔÎ´¶ÁÏûÏ¢ÌáÊ¾
+ * Ignore prompts unread messages prompts
  *
  * @param int $uid		 user Id
  */
@@ -771,13 +771,13 @@ function uc_pm_ignore($uid) {
 }
 
 /**
- * »ñÈ¡¶ÌÏûÏ¢ÄÚÈÝ
+ * Get a short message content
  *
- * @param int $uid		 user Id
- * @param int $pmid		ÏûÏ¢Id
- * @param int $touid		ÏûÏ¢¶Ô·½ user Id
- * @param int $daterange	ÈÕÆÚ·¶Î§ 1=½ñÌì,2=×òÌì,3=Ç°Ìì,4=ÉÏÖÜ,5=¸üÔç
- * @return array() ¶ÌÏûÏ¢ÄÚÈÝÊý groups 
+ * @param int $uid		user Id
+ * @param int $pmid		Message Id
+ * @param int $touid		Message recepient user Id
+ * @param int $daterange	Date range: 1 = today, 2 = yesterday, day before yesterday, 3 = 4 = last week, 5 = earlier
+ * @return array()		number of groups the short message content
  */
 function uc_pm_view($uid, $pmid, $touid = 0, $daterange = 1) {
 	$uid = intval($uid);
@@ -788,14 +788,14 @@ function uc_pm_view($uid, $pmid, $touid = 0, $daterange = 1) {
 }
 
 /**
- * »ñÈ¡µ¥Ìõ¶ÌÏûÏ¢ÄÚÈÝ
+ * Access to the contents of a single a short message
  *
- * @param int $uid		 user Id
- * @param int $pmid		ÏûÏ¢Id
- * @param int $type		0 = »ñÈ¡Ö¸¶¨µ¥ÌõÏûÏ¢
- 				1 = »ñÈ¡Ö¸¶¨ user ·¢µÄ×îºóµ¥ÌõÏûÏ¢
- 				2 = »ñÈ¡Ö¸¶¨ user ÊÕµÄ×îºóµ¥ÌõÏûÏ¢
- * @return array() ¶ÌÏûÏ¢ÄÚÈÝÊý groups 
+ * @param int $uid		user Id
+ * @param int $pmid		Message Id
+ * @param int $type		0 = Specify a single message
+ 				1 = For specified user last single message sent
+ 				2 = From specified user last received a single message
+ * @return array() number of groups the short message content
  */
 function uc_pm_viewnode($uid, $type = 0, $pmid = 0) {
 	$uid = intval($uid);
@@ -805,10 +805,10 @@ function uc_pm_viewnode($uid, $type = 0, $pmid = 0) {
 }
 
 /**
- * »ñÈ¡Blacklist
+ * Get Blacklist
  *
- * @param int $uid		 user Id
- * @return string BlacklistÄÚÈÝ
+ * @param int $uid		user Id
+ * @return string 		Blacklist Content
  */
 function uc_pm_blackls_get($uid) {
 	$uid = intval($uid);
@@ -816,10 +816,10 @@ function uc_pm_blackls_get($uid) {
 }
 
 /**
- * ÉèÖÃBlacklist
+ * Set Blacklist
  *
  * @param int $uid		 user Id
- * @param int $blackls		BlacklistÄÚÈÝ
+ * @param int $blackls		Blacklist Content
  */
 function uc_pm_blackls_set($uid, $blackls) {
 	$uid = intval($uid);
@@ -827,7 +827,7 @@ function uc_pm_blackls_set($uid, $blackls) {
 }
 
 /**
- *  add BlacklistÏîÄ¿
+ *  add Blacklist entry
  *
  * @param int $uid		 user Id
  * @param int $username		 user  name 
@@ -838,7 +838,7 @@ function uc_pm_blackls_add($uid, $username) {
 }
 
 /**
- *  delete BlacklistÏîÄ¿
+ *  delete Blacklist entry
  *
  * @param int $uid		 user Id
  * @param int $username		 user  name 
@@ -849,7 +849,7 @@ function uc_pm_blackls_delete($uid, $username) {
 }
 
 /**
- * »ñÈ¡Óò name ½âÎö±í
+ * Get the domain name resolved table
  *
  * @return array()
  */
@@ -859,16 +859,16 @@ function uc_domain_ls() {
 }
 
 /**
- *  points ¶Ò»»ÇëÇó
+ * points exchange request
  *
- * @param int $uid		 user ID
- * @param int $from		Ô­ points 
- * @param int $to		Ä¿±ê points 
- * @param int $toappid		Ä¿±êÓ¦ÓÃID
- * @param int $amount		 points Êý¶î
+ * @param int $uid		user ID
+ * @param int $from		The original points
+ * @param int $to		target points
+ * @param int $toappid		Target application ID
+ * @param int $amount		the amount of points
  * @return
  *  	1  :  success 
- *	0  : Ê§°Ü
+ *	0  : Failure
  */
 function uc_credit_exchange_request($uid, $from, $to, $toappid, $amount) {
 	$uid = intval($uid);
@@ -880,11 +880,11 @@ function uc_credit_exchange_request($uid, $from, $to, $toappid, $amount) {
 }
 
 /**
- * ·µ»ØÖ¸¶¨µÄÏà¹ØTAGÊý¾Ý
+ * Returns the specified data related to TAG
  *
- * @param string $tagname	TAG name ³Æ
- * @param int $totalnum		·µ»ØÊý¾ÝµÄÌõÄ¿Êý
- * @return array() ÐòÁÐ»¯¹ýµÄÊý groups £¬Êý groups ÄÚÈÝÎªµ±Ç°»òÆäËûÓ¦ÓÃµÄÏà¹ØTAGÊý¾Ý
+ * @param string $tagname	TAG name
+ * @param int $totalnum		Returns number of of data entries
+ * @return array() Serialized number of groups, number of groups, or other applications for the current contents of the relevant TAG data
  */
 function uc_tag_get($tagname, $nums = 0) {
 	$return = call_user_func(UC_API_FUNC, 'tag', 'gettag', array('tagname'=>$tagname, 'nums'=>$nums));
@@ -892,10 +892,10 @@ function uc_tag_get($tagname, $nums = 0) {
 }
 
 /**
- * ÐÞ¸ÄÍ·Ïñ
+ * Modify Avatar
  *
  * @param	int		$uid	 user ID
- * @param	string	$type	Í·ÏñÀàÐÍ real OR virtual Ä¬ÈÏÎª virtual
+ * @param	string	$type	Avatar Type: real OR virtual, The default is  virtual
  * @return	string
  */
 function uc_avatar($uid, $type = 'virtual', $returnhtml = 1) {
@@ -932,31 +932,31 @@ function uc_avatar($uid, $type = 'virtual', $returnhtml = 1) {
 }
 
 /**
- * ÓÊ¼þ¶ÓÁÐ
+ * Message queue
  *
- * @param	string	$uids		user name id£¬¶à¸öÓÃ¶ººÅ(,)¸ô¿ª
- * @param	string	$emails		ÓÊ¼þµØÖ·£¬¶à¸öÓÃ¶ººÅ¸ô¿ª
- * @param	string	$subject	ÓÊ¼þ±êÌâ
- * @param	string	$message	ÓÊ¼þÄÚÈÝ
- * @param	string	$charset	ÓÊ¼þ×Ö·û¼¯£¬¿ÉÑ¡²ÎÊý£¬Ä¬ÈÏÎªgbk
- * @param	boolean	$htmlon		ÊÇ·ñ°´html¸ñÊ½·¢ËÍÓÊ¼þ£¬¿ÉÑ¡²ÎÊý£¬Ä¬ÈÏÎª·ñ
- * @param	integer $level		ÓÊ¼þ¼¶±ð£¬¿ÉÑ¡²ÎÊý£¬È¡Öµ0-127£¬Ä¬ÈÏÎª1£¬Ô½´ó·¢ËÍµÄÓÅÏÈ¼¶Ô½¸ß£¬Îª0Ê±²»Èë¿â£¬Ö±½Ó·¢ËÍ£¬»áÓ°Ïìµ±Ç°½ø³ÌËÙ¶È£¬É÷ÓÃ
+ * @param	string	$uids		user name id, Multiple separated with a comma (,)
+ * @param	string	$emails		E-mail addresses, separated by commas for multiple
+ * @param	string	$subject	The message subject
+ * @param	string	$message	Message content
+ * @param	string	$charset	E-mail character set, optional, The default is gbk
+ * @param	boolean	$htmlon		Whether the sending mail in html format, optional, The default is NO
+ * @param	integer $level		Message level, optional parameters, values â€‹â€‹0-127, The default is 1, the greater the higher the priority sending, 0 does not storage, directly, will affect the speed of the current process, caution
  * @return	integer
- *		=0 : Ê§°Ü
- *		>0 :  success £¬·µ»Ø²åÈë¼ÇÂ¼µÄid£¬Èç¹ûÊÇ¶àÌõÔò·µ»Ø×îºóÒ»Ìõ¼ÇÂ¼µÄid£¬ÈôlevelµÈÓÚ0£¬Ôò·µ»Ø1
+ *		=0 : Failure
+ *		>0 :  success, Return into the record id, If it is more than the last record is returned id, If the level is equal to 0, then return 1
  */
 function uc_mail_queue($uids, $emails, $subject, $message, $frommail = '', $charset = 'gbk', $htmlon = FALSE, $level = 1) {
 	return call_user_func(UC_API_FUNC, 'mail', 'add', array('uids' => $uids, 'emails' => $emails, 'subject' => $subject, 'message' => $message, 'frommail' => $frommail, 'charset' => $charset, 'htmlon' => $htmlon, 'level' => $level));
 }
 
 /**
- * ¼ì²âÊÇ·ñ´æÔÚÖ¸¶¨Í·Ïñ
- * @param	integer		$uid	 user id
- * @param	string		$size	Í·Ïñ³ß´ç£¬È¡Öµ·¶Î§(big,middle,small)£¬Ä¬ÈÏÎª middle
- * @param	string		$type	Í·ÏñÀàÐÍ£¬È¡Öµ·¶Î§(virtual,real)£¬Ä¬ÈÏÎªvirtual
+ * Detect the presence of the specified Avatar
+ * @param	integer		$uid	user id
+ * @param	string		$size	Avatar size in the range (big,middle,small) The default is middle
+ * @param	string		$type	Avatar type, range (virtual,real) The default is virtual
  * @return	boolean
- *		true : Í·Ïñ´æÔÚ
- *		false: Í·Ïñ²»´æÔÚ
+ *		true : There is Avatar
+ *		false: Avatar does not exist
  */
 function uc_check_avatar($uid, $size = 'middle', $type = 'virtual') {
 	$url = UC_API."/avatar.php?uid=$uid&size=$size&type=$type&check_file_exists=1";
@@ -969,11 +969,11 @@ function uc_check_avatar($uid, $size = 'middle', $type = 'virtual') {
 }
 
 /**
- * ¼ì²âuc_serverµÄÊý¾Ý¿â°æ±¾ºÍ³ÌÐò°æ±¾
+ * Detection uc_server version of the database and program version
  * @return mixd
  *		array('db' => 'xxx', 'file' => 'xxx');
- *		null ÎÞ·¨µ÷ÓÃµ½½Ó¿Ú
- *		string ÎÄ¼þ°æ±¾µÍÓÚ1.5
+ *		null Can not call to the interface
+ *		string File version is less than 1.5
  */
 function uc_check_version() {
 	$return = uc_api_post('version', 'check', array());

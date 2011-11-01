@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -26,12 +26,12 @@ class usercontrol extends base {
 	function usercontrol() {
 		parent::__construct();
 		$this->load('user');
-		//note client ½öÔÚĞèÒªÊ±³õÊ¼»¯ $this->app
+		// client Initialize only when needed $this->app
 		$this->app = $this->cache['apps'][UC_APPID];
 	}
 
-	//note public Íâ²¿½Ó¿Ú
-	// -1 Î´¿ªÆô
+	// public External Interface
+	// -1 = Is not open
 	function onsynlogin() {
 		$this->init_input();
 		$uid = $this->input('uid');
@@ -49,7 +49,7 @@ class usercontrol extends base {
 		return '';
 	}
 
-	//note public Íâ²¿½Ó¿Ú
+	// public External Interface
 	function onsynlogout() {
 		$this->init_input();
 		if($this->app['synlogin']) {
@@ -64,7 +64,7 @@ class usercontrol extends base {
 		return '';
 	}
 
-	//note public Íâ²¿½Ó¿Ú  registration Ğ£Ñé½Ó¿Ú
+	// public External Interface  registration Check the interface
 	function onregister() {
 		$this->init_input();
 		$username = $this->input('username');
@@ -83,7 +83,7 @@ class usercontrol extends base {
 		return $uid;
 	}
 
-	//note public Íâ²¿½Ó¿Ú edit ÕÊ»§ĞÅÏ¢
+	// public External Interface edit Account Information
 	function onedit() {
 		$this->init_input();
 		$username = $this->input('username');
@@ -107,7 +107,7 @@ class usercontrol extends base {
 		return $status;
 	}
 
-	//note public Íâ²¿½Ó¿Ú µÇÂ½½Ó¿Ú
+	// public External Interface Login Interface
 	function onlogin() {
 		$this->init_input();
 		$isuid = $this->input('isuid');
@@ -123,7 +123,7 @@ class usercontrol extends base {
 		}
 
 		$passwordmd5 = preg_match('/^\w{32}$/', $password) ? $password : md5($password);
-		//note  user  name ²»´æÔÚ
+		//  user name Does not exist
 		if(empty($user)) {
 			$status = -1;
 		} elseif($user['password'] != md5($passwordmd5.$user['salt'])) {
@@ -137,14 +137,14 @@ class usercontrol extends base {
 		return array($status, $user['username'], $password, $user['email'], $merge);
 	}
 
-	//note public Íâ²¿½Ó¿Ú ajax Ğ£Ñé EMAIL
+	// public External Interface ajax Check EMAIL
 	function oncheck_email() {
 		$this->init_input();
 		$email = $this->input('email');
 		return $this->_check_email($email);
 	}
 
-	//note public Íâ²¿½Ó¿Ú ajax Ğ£Ñé user  name 
+	// public External Interface ajax Check user  name 
 	function oncheck_username() {
 		$this->init_input();
 		$username = $this->input('username');
@@ -155,7 +155,7 @@ class usercontrol extends base {
 		}
 	}
 
-	//note public Íâ²¿½Ó¿Ú
+	// public External Interface
 	function onget_user() {
 		$this->init_input();
 		$username = $this->input('username');
@@ -172,13 +172,13 @@ class usercontrol extends base {
 	}
 
 
-	//note public µÃµ½±£»¤µÄ user  list 
+	// public Protected user  list 
 	function ongetprotected() {
 		$protectedmembers = $this->db->fetch_all("SELECT uid,username FROM ".UC_DBTABLEPRE."protectedmembers GROUP BY username");
 		return $protectedmembers;
 	}
 
-	//note  user ÖĞĞÄ, ·ÇÍâ²¿½Ó¿Ú.
+	// user Center, non-External Interface.
 	function ondelete() {
 		$this->init_input();
 		$uid = $this->input('uid');
@@ -233,7 +233,7 @@ class usercontrol extends base {
 		return NULL;
 	}
 
-	//note private Ğ£Ñé user name 
+	// private Check user name 
 	function _check_username($username) {
 		$username = addslashes(trim(stripslashes($username)));
 		if(!$_ENV['user']->check_username($username)) {
@@ -246,7 +246,7 @@ class usercontrol extends base {
 		return 1;
 	}
 
-	//note private Ğ£Ñéemail
+	// private Check email
 	function _check_email($email, $username = '') {
 		if(empty($this->settings)) {
 			$this->settings = $this->cache('settings');
@@ -263,15 +263,15 @@ class usercontrol extends base {
 	}
 
 	/**
-	 * -1 Éí·İ²»ºÏ·¨
-	 * -2 ÉÏ´«µÄÊı¾İÁ÷²»ºÏ·¨
-	 * -3 Ã»ÓĞÉÏ´«Í·Ïó
+	 * -1 Status is not valid
+	 * -2 Upload the data stream is not valid
+	 * -3 Avatar not uploaded
 	 */
-	//note public Íâ²¿½Ó¿Ú flash ÉÏ´«Í·Ïñ
+	// public External Interface flash Upload Avatar
 	function onuploadavatar() {
 	}
 
-	//note public Íâ²¿½Ó¿Ú flash mode ²Ã¼ôÍ·Ïñ COOKIE ÅĞ¶ÏÉí·İ
+	// public External Interface flash mode Crop Avatar COOKIE To determine the identity
 	function onrectavatar() {
 	}
 	function flashdata_decode($s) {

@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -9,10 +9,10 @@
 
 !defined('IN_UC') && exit('Access Denied');
 
-define('PMLIMIT1DAY_ERROR', -1);//note ³¬³öÁË24Ğ¡Ê±×î´óÔÊĞí·¢ËÍ¶ÌÏûÏ¢ÊıÄ¿
-define('PMFLOODCTRL_ERROR', -2);//note ²»Âú×ãÁ½´Î·¢ËÍ¶ÌÏûÏ¢×î¶Ì¼ä¸ô
-define('PMMSGTONOTFRIEND', -3);//note  group ·¢¶ÌÏûÏ¢£¬µ«ÊÇÄ¿±ê²¢·Ç·¢ĞÅÕßºÃÓÑ
-define('PMSENDREGDAYS', -4);//note ·¢¶ÌÏûÏ¢×îÉÙ registration ÌìÊı
+define('PMLIMIT1DAY_ERROR', -1);//Exceed the maximum allowable number to send a short message in 24-hours
+define('PMFLOODCTRL_ERROR', -2);//Send a short message does not meet the minimum interval of two times
+define('PMMSGTONOTFRIEND', -3);//group Send PM, But the recipient is not a friend
+define('PMSENDREGDAYS', -4);//Send PM minimum number of days after registration
 
 class pmcontrol extends base {
 
@@ -81,7 +81,7 @@ class pmcontrol extends base {
 				}
 			}
 			$this->load('friend');
-			if(count($msgto) > 1 && !($is_friend = $_ENV['friend']->is_friend($fromuid, $msgto, 3))) {//note Èç¹ûÓĞ group ·¢µ«ÊÇÄ¿±ê²¢·Ç·¢ĞÅÈËµÄºÃÓÑÔò²»ÔÊĞí·¢ËÍ
+			if(count($msgto) > 1 && !($is_friend = $_ENV['friend']->is_friend($fromuid, $msgto, 3))) { // If send PM to a group, but the recipient is not a friend
 				return PMMSGTONOTFRIEND;
 			}
 			$pmlimit1day = $this->settings['pmlimit1day'] && $_ENV['pm']->count_pm_by_fromuid($this->user['uid'], 86400) > $this->settings['pmlimit1day'];

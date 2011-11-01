@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 
 /*
 	[UCenter] (C)2001-2009 Comsenz Inc.
@@ -148,7 +148,7 @@ class usermodel {
 	function delete_user($uidsarr) {
 		$uidsarr = (array)$uidsarr;
 		$uids = $this->base->implode($uidsarr);
-		//note ±£»¤ user 
+		// Protected users
 		$arr = $this->db->fetch_all("SELECT uid FROM ".UC_DBTABLEPRE."protectedmembers WHERE uid IN ($uids)");
 		$puids = array();
 		foreach((array)$arr as $member) {
@@ -158,9 +158,9 @@ class usermodel {
 		if($uids) {
 			$this->db->query("DELETE FROM ".UC_DBTABLEPRE."members WHERE uid IN($uids)");
 			$this->db->query("DELETE FROM ".UC_DBTABLEPRE."memberfields WHERE uid IN($uids)");
-			//note  delete  user Í·Ïñ ×¢Òâ:´Ë´¦client ºÍserver ²»Í¬
+			// delete  user Avatar Note: here client And server Different
 			uc_user_deleteavatar($uidsarr);
-			//note ¼Óµ½ notice ¶ÓÁÐ
+			// Added to the notice queue
 			$this->base->load('note');
 			$_ENV['note']->add('deleteuser', "ids=$uids");
 			return $this->db->affected_rows();
