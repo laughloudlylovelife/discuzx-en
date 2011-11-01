@@ -1,10 +1,11 @@
 <?php
 /*
-	[UCenter Home] (C) 2007-2008 Comsenz Inc.
+	[UCenter Home] (C) 2007-2009 Comsenz Inc.
 	$Id: lang_cpmessage.php 12878 2009-07-24 05:59:38Z xupeng $
 
 	AdminCP Messages Language Sentences
 
+	Translated by Valery Votintsev, aka "vot" [at] sources.ru
 */
 
 if(!defined('IN_UCHOME')) {

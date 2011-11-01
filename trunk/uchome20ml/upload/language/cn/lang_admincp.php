@@ -17,7 +17,7 @@ if(!defined('IN_UCHOME')) {
 }
 
 
-$_SGLOBAL['admincplang'] = array (
+$_lang = array (
 
 //admin/tpl/header.php
 
@@ -32,7 +32,6 @@ $_SGLOBAL['admincplang'] = array (
 	'magic_types'	=> '道具设置',//'Magic',//
 	'anti_spam'	=> '防灌水设置',//'Anti-spam',//
 	'censor'	=> '词语屏蔽',//'Bad words',//
-
 	'ads'		=> /*'Ad Settings',*/'广告设置',
 	'user_apps'	=> /*'User Apps',*/'MYOP应用',
 	'uc_apps'	=> /*'UCenter apps',*/'UCenter应用',
@@ -439,6 +438,7 @@ $_SGLOBAL['admincplang'] = array (
 	'visit' => /*'Visit',*/'访问',
 
 //admin/tpl/config.htm
+'configuration' => 'Configure',//'基本设置',
 //'base_settings' => /*'Basic Settings',*/'基本设置',
 	'register_show' => /*'Registrations',*/'注册显示',
 	'system_functions' => /*'System functions',*/'系统功能',

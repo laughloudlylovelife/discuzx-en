@@ -5,6 +5,7 @@
 
 	User Control Panel (cp.php) FrontEnd Language Sentences
 
+	Translated by Valery Votintsev, aka "vot" [at] sources.ru
 */
 
 if(!defined('IN_UCHOME')) {

@@ -9,5 +9,10 @@
 
 */
 
+if(!defined('IN_UCHOME')) {
+	exit('Access Denied');
+}
+
 $_SGLOBAL['language_title'] = 'Chinese';
 $_SGLOBAL['language_icon'] = 'cn.gif';
+

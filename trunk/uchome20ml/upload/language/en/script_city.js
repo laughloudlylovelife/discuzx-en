@@ -190,7 +190,7 @@ function setcity(provinceid, cityid) {
             break;
         case "Hainan" :
             var cityOptions = new Array(
-            "Haikou(*)", "Haikou",
+          	"Haikou(*)", "Haikou",
 		"Sanya", "Sanya",
 		"Five Fingers", "Five Fingers",
 		"Qionghai", "Qionghai",
@@ -760,3 +760,4 @@ function showcity(cityid, city, provinceid, boxid) {
 		initprovcity(cityid, city);
 	}
 }
+

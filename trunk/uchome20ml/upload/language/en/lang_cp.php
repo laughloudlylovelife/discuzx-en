@@ -99,7 +99,7 @@ $_SGLOBAL['cplang'] = array(
 		<strong>If you have a \\3 account, please click the following link to see my personal home page:</strong><br>
 		<a href="\\6">\\6</a><br>
 		</td></tr></table>',
-		/*
+/*
 		'<table border="0">
 		<tr>
 		<td valign="top">\\1</td>
@@ -116,7 +116,7 @@ $_SGLOBAL['cplang'] = array(
 		<strong>如果你拥有\\3上面的账号，请点击以下链接查看我的个人主页：</strong><br>
 		<a href="\\6">\\6</a><br>
 		</td></tr></table>',
-		*/
+*/
 
 	'app_invite_subject'	=> '\\1 invite you to join the \\2, and play together with \\3',//'\\1邀请您加入\\2，一起来玩\\3',
 	'app_invite_message'	=> '<table border="0">
@@ -134,7 +134,7 @@ $_SGLOBAL['cplang'] = array(
 		<strong>If you have a \\3 account, please click the following link to see my personal home page:</strong><br>
 		<a href="\\6">\\6</a><br>
 		</td></tr></table>',
-		/*
+/*
 		'<table border="0">
 		<tr>
 		<td valign="top">\\1</td>
@@ -150,7 +150,7 @@ $_SGLOBAL['cplang'] = array(
 		<strong>如果你拥有\\3上面的账号，请点击以下链接查看我的个人主页：</strong><br>
 		<a href="\\6">\\6</a><br>
 		</td></tr></table>',
-		*/
+*/
 
 	'feed_mtag_add'		=> '{actor} created a new group {mtags}',//'{actor} 创建了新群组 {mtags}',
 	'note_members_grade_-9'	=> 'Note to you from the group <a href="space.php?do=mtag&tagid=\\1">\\2</a>: please go out.',//'将你从群组 <a href="space.php?do=mtag&tagid=\\1">\\2</a> 请出',
@@ -306,7 +306,7 @@ $_SGLOBAL['cplang'] = array(
 	'do_stat_eventjoin'	=> 'Event joins',//'参加活动',
 	'do_stat_sharecomment'	=> 'Share comments',//'分享评论',
 	'do_stat_post'		=> 'Topic posts',//'话题回帖',
-	'do_stat_click'		=> 'Clicks',//'表态',
+	'do_stat_click'		=> 'Rate Clicks',//'表态',
 	'do_stat_wall'		=> 'Wall messages',//'留言',
 	'do_stat_poke'		=> 'Greetings',//'打招呼'
 

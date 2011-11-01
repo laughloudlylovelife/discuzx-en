@@ -44,6 +44,16 @@ $_SGLOBAL['sourcelang'] = array (
 
 'uch_allready_installed' => 'UCHome уже установлен ранее. Если вы хотите переустановить UCenter Home заново, удалите приложение UCHome из UCenter, и затем перезапустите программу установки.',
 
+//----------------------------------
+'blog_title'	=> 'Blog title',
+'user_id'	=> 'User ID',
+'user_name'	=> 'User name',
+'date'		=> 'Date',
+'space_address'	=> 'Space address',
+'blog_address'	=> 'Blog address',
+'personal_home'	=> 'Personal home',
+//----------------------------------
+
 'uc_cannot_connect' => 'Не удается подключиться к серверу UCenter',
 
 'uc_admin_password_incorrect' => 'Неверный пароль администратора UCenter',
@@ -478,15 +488,15 @@ $_SGLOBAL['sourcelang'] = array (
 	
 //---------------------------	
 
-'click_icon1' => 'Pass',
-'click_icon2' => 'Ridiculous',
-'click_icon3' => 'Shake hands',
-'click_icon4' => 'Flowers',
-'click_icon5' => 'Eggs',
-'click_icon6' => 'Beautiful',
-'click_icon7' => 'Cool',
-'click_icon8' => 'Ridiculous',
-'click_icon9' => 'Flowers',
+'click_icon1'  => 'Pass',
+'click_icon2'  => 'Ridiculous',
+'click_icon3'  => 'HandShake',
+'click_icon4'  => 'Flowers',
+'click_icon5'  => 'Eggs',
+'click_icon6'  => 'Beautiful',
+'click_icon7'  => 'Cool',
+'click_icon8'  => 'Ridiculous',
+'click_icon9'  => 'Flowers',
 'click_icon10' => 'Eggs',
 'click_icon11' => 'Funny',
 'click_icon12' => 'Confused',
