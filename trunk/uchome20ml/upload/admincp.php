@@ -76,7 +76,7 @@ if(empty($_GET['ac']) || (!in_array($_GET['ac'], $acs[0]) && !in_array($_GET['ac
 //Referer
 if(!preg_match("/admincp\.php/", $_SGLOBAL['refer'])) $_SGLOBAL['refer'] = "admincp.php?ac=$ac";
 
-//Menu Active Punkt Class
+//Menu Active Punkt Style Class
 $menuactive = array($ac => ' class="active"');
 
 // Permissions
