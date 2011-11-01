@@ -65,43 +65,43 @@ $_SGLOBAL['msglang'] = array(
 	'failed_to_delete_operation'		=> 'Delete failed, check the operation details',//'删除失败，请检查操作',
 
 	'click_error'		=> 'Invalid positioning action!',//'没有进行正常的表态操作',
-	'click_item_error'	=> 'The item for positioning is not exists!',//
-	'click_no_self'		=> 'Positioning of your own item is disabled!',//
-	'click_have'		=> 'You have positioned this item allready',//
-	'click_success'		=> 'The item successfully positioned',//
+	'click_item_error'	=> 'The item for positioning is not exists!',//'要表态的对象不存在',
+	'click_no_self'		=> 'Positioning of your own item is disabled!',//'自己不能给自己表态',
+	'click_have'		=> 'You have positioned this item allready',//'您已经表过态了',
+	'click_success'		=> 'The item successfully positioned',//'参与表态完成了',
 
 //source/cp_class.php
-	'did_not_specify_the_type_of_operation'	=> 'Not properly specified the operation type',//
-	'enter_the_correct_class_name'		=> 'Please enter correct category name',//
+	'did_not_specify_the_type_of_operation'	=> 'Not properly specified the operation type',//'没有正确指定要操作的分类',
+	'enter_the_correct_class_name'		=> 'Please enter correct category name',//'请正确输入分类名',
 
-	'note_wall_reply_success'	=> 'Reply success. Had returned to \\1 wall',//
+	'note_wall_reply_success'	=> 'Reply success. Had returned to \\1 wall',//'已经回复到 \\1 的留言板',
 
 //source/cp_comment.php
 
-	'operating_too_fast'		=> "You are working too fast, wait \\1 seconds before next try",//
-	'content_is_too_short'		=> 'Conten must be not less than 2 characters',//
-	'comments_do_not_exist'		=> 'Specified comments does not exist',//
-	'do_not_accept_comments'	=> 'This blog does not accept comments',//
-	'sharing_does_not_exist'	=> 'Comment of the share does not exist',//
-	'non_normal_operation'		=> 'Non-normal operation',//
-	'the_vote_only_allows_friends_to_comment'	=> 'The poll allowed comments for friends only',//
+	'operating_too_fast'		=> "You are working too fast, wait \\1 seconds before next try",//'两次发布操作太快了，请等 \\1 秒钟再试',
+	'content_is_too_short'		=> 'Conten must be not less than 2 characters',//'输入的内容不能少于2个字符',
+	'comments_do_not_exist'		=> 'Specified comments does not exist',//'指定的评论不存在',
+	'do_not_accept_comments'	=> 'This blog does not accept comments',//'该日志不接受评论',
+	'sharing_does_not_exist'	=> 'Comment of the share does not exist',//'评论的分享不存在',
+	'non_normal_operation'		=> 'Non-normal operation',//'非正常操作',
+	'the_vote_only_allows_friends_to_comment'	=> 'The poll allowed comments for friends only',//'该投票只允许好友评论',
 
 //source/cp_common.php
-	'security_exit'		=> 'You have the security out of the \\1',//
+	'security_exit'		=> 'You have the security out of the \\1',//'你已经安全退出了\\1',
 
 //source/cp_doing.php
-	'should_write_that'	=> 'You should write at least a little something',//
-	'docomment_error'	=> 'Please specify the correct record of the comments',//
+	'should_write_that'	=> 'You should write at least a little something',//'至少应该写一点东西',
+	'docomment_error'	=> 'Please specify the correct record of the comments',//'请正确指定要评论的记录',
 
 //source/cp_invite.php
-	'mail_can_not_be_empty'	=> 'mailing list can not be empty',//
-	'send_result_1'	=> 'message has been sent, your friends may need a few minutes to receive e-mail',//
-	'send_result_2'	=> '<strong>failed to send the following message:</strong><br/>\\1',//
-	'send_result_3'	=> 'record not found the appropriate invitation, message retransmission failure.',//
-	'there_is_no_record_of_invitation_specified'	=> 'record of the invitation that you specify does not exist',//
+	'mail_can_not_be_empty'	=> 'mailing list can not be empty',//'邮件列表不能为空',
+	'send_result_1'	=> 'message has been sent, your friends may need a few minutes to receive e-mail',//'邮件已经送出，您的好友可能需要几分钟后才能收到邮件',
+	'send_result_2'	=> '<strong>failed to send the following message:</strong><br/>\\1',//'<strong>以下邮件发送失败:</strong><br/>\\1',
+	'send_result_3'	=> 'record not found the appropriate invitation, message retransmission failure.',//'未找到相应的邀请记录, 邮件重发失败.',
+	'there_is_no_record_of_invitation_specified'	=> 'record of the invitation that you specify does not exist',//'您指定的邀请记录不存在',
 
 //source/cp_import.php
-	'blog_import_no_result'	=> '"can not get the original data, make sure to enter the site URL and account information, the server returns:<br /><textarea name=\"tmp[]\" style=\"width:98%;\" rows=\"4\">\\1</textarea>"',//
+	'blog_import_no_result'	=> '"can not get the original data, make sure to enter the site URL and account information, the server returns:<br /><textarea name=\"tmp[]\" style=\"width:98%;\" rows=\"4\">\\1</textarea>"',//'"无法获取原数据，请确认已正确输入的站点URL和帐号信息，服务器返回:<br /><textarea name=\"tmp[]\" style=\"width:98%;\" rows=\"4\">\\1</textarea>"',
 	'blog_import_no_data'	=> 'failure to obtain data, please refer to the server returns:<br />\\1',//
 	'support_function_has_not_yet_opened fsockopen'	=> 'site is not supported the fsockopen function, it can not use the function',//
 	'integral_inadequate'	=> "You have only \\1 points. To perform this operation you must have at least: \\2",//
@@ -448,13 +448,12 @@ $_SGLOBAL['msglang'] = array(
 
 	'space_has_been_locked'	=> 'The space has been locked and can not be accessed. if in doubt please contact the administrator',//
 
-
 //-----------------------------------------------------
 // Added by vot [at] sources.ru
 
 //source/task/avatar.php
 
-	'uc_update_avatar'	=> 'This feature requires that your UCenter at Server side avatar.php need to be updated.<br> If you are the site administrator, please download the following address avatar.php file compression package, and cover your UCenter document root directory of the same name can be.<br><a href="http://u.discuz.net/download/avatar.zip"> http://u.discuz.net/download/avatar.zip</a>',//'这个功能要求您的UCenter的Server端的 avatar.php 程序需要进行升级.<br>如果您是本站管理员,请通过下面的地址下载 avatar.php 文件的压缩包,并覆盖您的UCenter根目录中的同名文件即可.<br><a href="http://u.discuz.net/download/avatar.zip">http://u.discuz.net/download/avatar.zip</a>'.//
+	'uc_update_avatar'	=> 'This feature requires that your UCenter Server avatar.php file to be updated.<br>If you are the site administrator, please download the following archive, uncompress it, and copy the avatar.php file to your UCenter document root directory with overwriting the old file.<br><a href="http://u.discuz.net/download/avatar.zip"> http://u.discuz.net/download/avatar.zip</a>',//'这个功能要求您的UCenter的Server端的 avatar.php 程序需要进行升级.<br>如果您是本站管理员,请通过下面的地址下载 avatar.php 文件的压缩包,并覆盖您的UCenter根目录中的同名文件即可.<br><a href="http://u.discuz.net/download/avatar.zip">http://u.discuz.net/download/avatar.zip</a>'.//
 
 	''	=> '',//''.
 

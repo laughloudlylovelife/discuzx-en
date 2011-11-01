@@ -15,17 +15,17 @@ if(!defined('IN_UCHOME')) {
 
 $_SGLOBAL['sourcelang'] = array (
 
-'submit' => 'Submit',//'提交',
+'submit'		=> 'Submit',//'提交',
 
-'rename_config' => 'You need first to rename the file "config.new.php" in a root directory to "config.php"',
+'rename_config'		=> 'You need first to rename the file "config.new.php" in a root directory to "config.php"',
 
-'upload_sql' => 'Please upload the latest database structure file install/install.sql to the ./install directory, and then re-run the installation program',
+'upload_sql'		=> 'Please upload the latest database structure file install/install.sql to the ./install directory, and then re-run the installation program',
 
-'allready_installed' => '<b>Warning! You have already installed the UCenter Home!</b><br>
-	To ensure of data security, please manually delete the install/index.php file<br>
-	If you want to re-install UCenter Home, please delete the file data/install.lock, remove the UCHome application from the UCenter, and then re-run the installation.',
+'allready_installed'	=> '<b>Warning! You have already installed the UCenter Home!</b><br>
+			To ensure of data security, please manually delete the install/index.php file<br>
+			If you want to re-install UCenter Home, please delete the file data/install.lock, remove the UCHome application from the UCenter, and then re-run the installation.',
 
-'config_nonwritable' => 'The file config.php have no read/write permissions. Set it to be written, and then continue the installation procedure',
+'config_nonwritable'	=> 'The file config.php have no read/write permissions. Set it to be written, and then continue the installation procedure',
 
 'ucenter_url_invalid' => 'UCenter URL address is incorrect',
 
@@ -43,6 +43,16 @@ $_SGLOBAL['sourcelang'] = array (
 'charset_different' => 'UCenter server character set and the UCHome character set are different, please download the UCenter Home installation with your encoding. Download address: http://download.comsenz.com/',
 
 'uch_allready_installed' => 'The UCenter Home Program is already installed. If you want to continue with the installation, please go to the UCenter Application Management and remove the existing UCenter Home!',
+
+//----------------------------------
+'blog_title'	=> 'Blog title',
+'user_id'	=> 'User ID',
+'user_name'	=> 'User name',
+'date'		=> 'Date',
+'space_address'	=> 'Space address',
+'blog_address'	=> 'Blog address',
+'personal_home'	=> 'Personal home',
+//----------------------------------
 
 'uc_cannot_connect' => 'Can not connect to the UCenter',
 
@@ -243,7 +253,7 @@ $_SGLOBAL['sourcelang'] = array (
 'get_uc_auto' => '<strong># Get the UCenter parameters automatically</strong>',
 
 'us_settings_submit' => 'UCenter relevant information has been secured,
-	please click the button below to submit the configuration',
+			please click the button below to submit the configuration',
 
 'uc_install_first' => 'For use the UCenter Home, you need first to register your 
       user account in the User center (UCenter).
@@ -301,9 +311,20 @@ $_SGLOBAL['sourcelang'] = array (
 'group_category_name2' => 'Regional alliance',
 'group_category_name3' => 'Interest in alliances',
 
-'group_titles' => array('Administrator', 'Moderator', 'VIP', 'Newbie', 'Member', 'Full Member', 'Senior member', 'Read Only', 'Banned'),
+'group_titles' => array(
+		'Administrator',
+		'Moderator',
+		'VIP',
+		'Newbie',
+		'Member',
+		'Full Member',
+		'Senior member',
+		'Read Only',
+		'Banned'
+		),
 
 //----------------------------	
+//Increase Money Rules
 'rule_register'	=> 'Create space',
 'rule_realname'	=> 'Real name verification',
 'rule_realemail' => 'E-mail verification',
@@ -335,6 +356,7 @@ $_SGLOBAL['sourcelang'] = array (
 'rule_installapp' => 'Install application',
 'rule_useapp' => 'Use application',
 'rule_click' => 'Rate',
+//Decrease Money Rules
 'rule_editrealname' => 'Edit the real name',
 'rule_editrealemail' => 'Change verified E-mail',
 'rule_delavatar' => 'Remove Avatar',
@@ -483,7 +505,7 @@ $_SGLOBAL['sourcelang'] = array (
 
 'click_icon1' => 'Pass',
 'click_icon2' => 'Ridiculous',
-'click_icon3' => 'Shake hands',
+'click_icon3' => 'HandShake',
 'click_icon4' => 'Flowers',
 'click_icon5' => 'Eggs',
 'click_icon6' => 'Beautiful',

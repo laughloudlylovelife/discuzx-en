@@ -17,7 +17,7 @@ if(!defined('IN_UCHOME')) {
 }
 
 
-$_SGLOBAL['admincplang'] = array (
+$_lang = array (
 
 //admin/tpl/header.php
 

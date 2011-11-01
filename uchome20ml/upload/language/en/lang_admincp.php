@@ -17,7 +17,7 @@ if(!defined('IN_UCHOME')) {
 }
 
 
-$_SGLOBAL['admincplang'] = array (
+$_lang = array (
 
 //admin/tpl/header.php
 
@@ -41,7 +41,7 @@ $_SGLOBAL['admincplang'] = array (
 	'spaces'	=> 'User spaces',//'用户管理',
 	'feeds'		=> 'News Feeds',//'动态(feed)',
 	'images'	=> 'Images',//'图片',
-	'comments_messages'	=> 'Comments/Messages',//'评论/留言',
+	'comments_messages'	=> 'Comments/Wall',//'评论/留言',
 	'posts'		=> 'Posts',//'回帖',
 	'tags'		=> 'Tags',//'标签',
 	'tag'		=> 'Tag',//'标签',
@@ -438,14 +438,15 @@ $_SGLOBAL['admincplang'] = array (
 	'visit' => 'Visit',//'访问',
 
 //admin/tpl/config.htm
-//'base_settings' => 'Basic Settings',//'基本设置',
-	'register_show' => 'Registrations',//'注册显示',
-	'system_functions' => 'System functions',//'系统功能',
-	'real_name_settings' => 'Real-name verification settings',//'实名认证设置',
-	'video_verification_settings' => 'Video verification settings',//'视频认证设置',
-	'upload_image_settings' => 'Image Upload settings',//'上传图片设置',
-	'remote_upload_settings' => 'Remote upload settings',//'远程上传设置',
-	'mail_settings' => 'Mail Settings',//'邮件设置',
+'configuration' => 'Configure',//'基本设置',
+'base_settings' => 'Basic Settings',//'基本设置',
+	'register_show' => 'Registration',//'注册显示',
+	'system_functions' => 'System',//'系统功能',
+	'real_name_settings' => 'Real-name verify',//'实名认证设置',
+	'video_verification_settings' => 'Video verify',//'视频认证设置',
+	'upload_image_settings' => 'Uploads',//'上传图片设置',
+	'remote_upload_settings' => 'Remote uploads',//'远程上传设置',
+	'mail_settings' => 'Mail',//'邮件设置',
 	'site_name' => 'Site name',//'站点名称',
 	'site_url' => 'Site URL',//'站点访问URL地址',
 	'site_url_intro' => 'Open the second level domain names to use, for example: http://u.discuz.net/, add a &quot;/&quot; at the end.',//'开启二级域名时需要使用,例如: http://u.discuz.net/ ,末尾要加&ldquo;/&rdquo;',
@@ -1244,8 +1245,8 @@ $_SGLOBAL['admincplang'] = array (
 	'comments_manage' => 'Management Comments',//'管理评论',
 
 //admin/tpl/side.htm
-	'batch_manage' => 'Batch Management',//'批量管理',
-	'advanced_settings' => 'Advanced Settings',//'高级设置',
+	'batch_manage' => 'Management',//'批量管理',
+	'advanced_settings' => 'Advanced',//'高级设置',
 
 //admin/tpl/space.htm
 	'users_all' => 'All users',//'浏览全部用户',
@@ -1255,7 +1256,7 @@ $_SGLOBAL['admincplang'] = array (
 	'video_is_passed' => 'Video has been certified',//'视频已认证',
 //'realname' => 'Real name',//'姓名',
 //'avatar' => 'Avatar',//'头像',//vot - may be "SMALL avatar"
-//'avatar_upload' => 'Upload picture',//'上传头像',
+//'avatar_upload' => 'Upload avatar',//'上传头像',
 	'no_avatar' => 'No avatar',//'没有头像',
 	'real_name_verification' => 'Real-name verification',//'实名认证',
 	'not_verified' => 'Not verified',//'未认证',

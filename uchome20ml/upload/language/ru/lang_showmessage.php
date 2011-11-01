@@ -169,19 +169,19 @@ $_SGLOBAL['msglang'] = array(
 
 //source/cp_share.php
 	'blog_does_not_exist'		=> 'Указанный блог не существует',//
-	'logs_can_not_share'		=> 'Указанный блог не может быть расшарен (запрет автора)',//
+	'logs_can_not_share'		=> 'Указанный блог не может быть добавлен в закладки (запрет автора)',//
 	'album_does_not_exist'		=> 'Указанный альбом не существует',//
-	'album_can_not_share'		=> 'Указанный альбом не может быть расшарен (запрет автора)',//
+	'album_can_not_share'		=> 'Указанный альбом не может быть добавлен в закладки (запрет автора)',//
 	'image_does_not_exist'		=> 'Указанное сообщение не существует',//
-	'image_can_not_share'		=> 'Указанное изображение не может быть расшарено (запрет автора)',//
+	'image_can_not_share'		=> 'Указанное изображение не может быть добавлено в закладки (запрет автора)',//
 	'topics_does_not_exist'		=> 'Указанный топик не существует',//
 	'mtag_fieldid_does_not_exist'	=> 'Указанная категория групп не существует',//
 	'tag_does_not_exist'		=> 'Указанный тэг не существует',//
-	'url_incorrect_format'		=> 'Некорректный URL для шаринга',//
-	'description_share_input'	=> 'Введите краткое описание шаринга',//
+	'url_incorrect_format'		=> 'Некорректный URL закладки',//
+	'description_share_input'	=> 'Введите краткое описание закладки',//
 	'poll_does_not_exist'		=> 'Указанный опрос не существует',//
-	'share_not_self'		=> 'Запрещено расшаривание своих собственных публикаций и изображений',//
-	'share_space_not_self'		=> 'Запрещено расшаривать свой собственный профиль',//
+	'share_not_self'		=> 'Запрещено добавление в закладки своих собственных публикаций и изображений',//
+	'share_space_not_self'		=> 'Запрещено добавление в закладки своего собственного профиля',//
 
 //source/cp_space.php
 	'domain_length_error'			=> 'Длина имени субдомена не может быть короче \\1 символов',//
@@ -303,7 +303,7 @@ $_SGLOBAL['msglang'] = array(
 	'set_the_correct_search_content'	=> 'Недопустимые ключевые слова для поиска',//
 
 //source/space_share.php
-	'share_does_not_exist'		=> 'Указанного шарина не существует',//
+	'share_does_not_exist'		=> 'Указанной закладки не существует',//
 
 //source/space_tag.php
 	'tag_locked'			=> 'Данный тэг заблокирован',//
@@ -450,15 +450,5 @@ $_SGLOBAL['msglang'] = array(
 	'space_has_been_locked'	=> 'Данный пользователь заблокирован. Если это ошибка, обратитесь к администратору сайта.',//
 
 
-//-----------------------------------------------------
-// Added by vot [at] sources.ru
-
-//source/task/avatar.php
-
-	'uc_update_avatar'	=> 'Для выполнения данной операции необходимо обновить в UCenter файл avatar.php.<br>Скачайте архив и обновите файл в корневой директории UCenter.<br><a href="http://u.discuz.net/download/avatar.zip" target="_blank"> http://u.discuz.net/download/avatar.zip</a>',//'这个功能要求您的UCenter的Server端的 avatar.php 程序需要进行升级.<br>如果您是本站管理员,请通过下面的地址下载 avatar.php 文件的压缩包,并覆盖您的UCenter根目录中的同名文件即可.<br><a href="http://u.discuz.net/download/avatar.zip" target="_blank">http://u.discuz.net/download/avatar.zip</a>'.//
-
-//	''	=> '',//''.
-
-	
 );
 

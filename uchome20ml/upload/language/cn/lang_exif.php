@@ -2,6 +2,8 @@
 /*
 	[UCenter Home] (C) 2007-2008 Comsenz Inc.
 	$Id: lang_exif.php 6565 2008-03-14 09:26:09Z liguode $
+
+	Translated by Valery Votintsev, aka "vot" [at] sources.ru
 */
 
 if(!defined('IN_UCHOME')) {
@@ -11,8 +13,23 @@ if(!defined('IN_UCHOME')) {
 $_SGLOBAL['exiflang'] = array(
 
 	'unknown'		=> '未知',//'Unknown',//
-	'resolutionunit'	=> array('', '', '英寸', '厘米'),//array('', '', 'inch', 'cm'),//
-	'exposureprogram'	=> array('未定义', '手动', '标准程序', '光圈先决', '快门先决', '景深先决', '运动模式', '肖像模式', '风景模式'),//array('Undefined', 'Manual', 'Standard procedure', 'Aperture Priority', 'Shutter Priority', 'Depth of field pre', 'Sports mode', 'Portrait Mode', 'Landscape mode'),//
+	'resolutionunit'	=> array(
+				'',
+				'',
+				'英寸',
+				'厘米'
+				),//array('', '', 'inch', 'cm'),//
+	'exposureprogram'	=> array(
+				'未定义',
+				'手动',
+				'标准程序',
+				'光圈先决',
+				'快门先决',
+				'景深先决',
+				'运动模式',
+				'肖像模式',
+				'风景模式'
+				),//array('Undefined', 'Manual', 'Standard procedure', 'Aperture Priority', 'Shutter Priority', 'Depth of field pre', 'Sports mode', 'Portrait Mode', 'Landscape mode'),//
 	'meteringmode'	=> array(
 		'0'	=> '未知',//'Unknown',//
 		'1'	=> '平均',//'Average',//
