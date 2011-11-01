@@ -17,7 +17,7 @@ if($_SGLOBAL['supe_uid']) {
 		showmessage('space_has_been_locked');
 	}
 	
-	//Ω˚÷π∑√Œ 
+	//No Access
 	if(checkperm('banvisit')) {
 		ckspacelog();
 		showmessage('you_do_not_have_permission_to_visit');

@@ -39,8 +39,8 @@ if(empty($space)) {
 	}
 }
 
-if(!in_array($ac, array('common', 'pm'))) {
 // Check for site closed
+if(!in_array($ac, array('common', 'pm'))) {
 	checkclose();
 	// Check for the Space is locked
 	if($space['flag'] == -1) {

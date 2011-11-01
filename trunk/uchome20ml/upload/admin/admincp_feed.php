@@ -155,7 +155,7 @@ if($_GET['op'] == 'add') {
 	$orderby = array($_GET['orderby']=>' selected');
 	$ordersc = array($_GET['ordersc']=>' selected');
 	
-	//¼¤»î
+	//
 	if(isset($_GET['uid']) && strlen($_GET['uid'])) {
 		$actives = array('site' => ' class="active"');
 	} elseif($_GET['orderby'] == 'hot') {

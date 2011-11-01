@@ -9,7 +9,7 @@ include_once('./common.php');
 // Get Space Info
 $space = getspace($_SGLOBAL['supe_uid']);
 
-//Update Las Activity
+//Update Last Activity
 updatetable('session', array('lastactivity' => $_SGLOBAL['timestamp']), array('uid'=>$_SGLOBAL['supe_uid']));
 
 $appid = empty($_GET['id'])?'':intval($_GET['id']);

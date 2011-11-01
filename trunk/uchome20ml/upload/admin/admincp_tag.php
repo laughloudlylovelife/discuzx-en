@@ -51,7 +51,7 @@ if(submitcheck('opsubmit')) {
 		// retrieve the new tag if there is
 		$newtagid = getcount('tag', array('tagname'=>$_POST['newtagname']), 'tagid');
 		if(empty($newtagid)) {
-			// add 新tag
+			// add tag
 			$setarr = array(
 				'tagname' => $_POST['newtagname'],
 				'uid' => $_SGLOBAL['supe_uid'],
@@ -59,7 +59,7 @@ if(submitcheck('opsubmit')) {
 			);
 			$newtagid = inserttable('tag', $setarr, 1);
 		}
-		//开始合并
+		//始喜
 		include_once(S_ROOT.'./source/function_op.php');
 		if(!empty($_POST['ids']) && mergetag($_POST['ids'], $newtagid)) {
 			cpmessage('do_success', $_POST['mpurl']);

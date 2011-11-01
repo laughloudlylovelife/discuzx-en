@@ -17,13 +17,13 @@ $tagid = empty($_GET['tagid'])?0:intval($_GET['tagid']);
 $fieldid = empty($_GET['fieldid'])?0:intval($_GET['fieldid']);
 $tagname = trim($_GET['tagname']);
 
-//查询
+//询
 if($tagname) {
 	
 	$fields = array();
 	foreach ($_SGLOBAL['profield'] as $value) {
 		if($value['formtype'] == 'text') {
-			$fields[] = $value;//自由输入的 category 
+			$fields[] = $value;// category 
 		}
 	}
 	
@@ -41,7 +41,7 @@ if($tagname) {
 	}
 	
 	if(empty($taglist)) {
-		// group  groups 创建
+		// group  groups 
 		$allowmk = 0;
 		if($field && $field['formtype'] != 'text') {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('profield')." WHERE fieldid='$fieldid'");
@@ -51,7 +51,7 @@ if($tagname) {
 				foreach ($field['choice'] as $subkey => $subvalue) {
 					$subvalue = trim($subvalue);
 					if($s == $subvalue) {
-						//自动创建
+						//远
 						$mtag = array(
 							'tagname' => addslashes($s),
 							'fieldid' => $fieldid
@@ -82,7 +82,7 @@ if($tagname) {
 	//Check start number
 	ckstart($start, $perpage);
 	
-	//栏目
+	//目
 	$list = array();
 	$count = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('mtag')." WHERE fieldid='$id'"),0);
 	if($count) {
@@ -110,7 +110,7 @@ if($tagname) {
 
 	$actives = array($_GET['view'] => ' class="active"');
 	
-	//指定的 group  groups 
+	//指 group  groups 
 	$mtag = getmtag($tagid);
 	if($mtag['close']) {
 		showmessage('mtag_close');
@@ -168,7 +168,7 @@ if($tagname) {
 		//Check start number
 		ckstart($start, $perpage);
 		
-		//检索
+		//
 		$wheresql = '';
 		$_GET['key'] = stripsearchkey($_GET['key']);
 		if($_GET['key']) {
@@ -189,6 +189,7 @@ if($tagname) {
 					// real name 
 					realname_set($value['uid'], $value['username']);
 					
+					$value['cn'] = rawurlencode($value['residecountry']);
 					$value['p'] = rawurlencode($value['resideprovince']);
 					$value['c'] = rawurlencode($value['residecity']);
 					$fuids[] = $value['uid'];
@@ -196,7 +197,7 @@ if($tagname) {
 				}
 			}
 			
-			//在线状态
+			//状态
 			$ols = array();
 			if($fuids) {
 				$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('session')." WHERE uid IN (".simplode($fuids).")");
@@ -246,7 +247,7 @@ if($tagname) {
 		
 	} else {
 
-		// group  groups 首页
+		// group  groups 页
 		$list = $starlist = $modlist = $memberlist = $checklist = array();
 		
 		if($mtag['allowview']) {
@@ -260,30 +261,30 @@ if($tagname) {
 				$list[] = $value;
 			}
 			
-			//明星会员
+			//腔员
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('tagspace')." WHERE tagid='$tagid' AND grade='1'");
 			while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 				realname_set($value['uid'], $value['username']);
 				$starlist[] = $value;
 			}
-			$starlist = sarray_rand($starlist, 12);//随机选择
+			$starlist = sarray_rand($starlist, 12);//选
 								
-			//会员
+			//员
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('tagspace')." WHERE tagid='$tagid' AND grade='0' LIMIT 0,12");
 			while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 				realname_set($value['uid'], $value['username']);
 				$memberlist[] = $value;
 			}
 		}
-		// group 主
+		// group 
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('tagspace')." WHERE tagid='$tagid' AND grade>'7' ORDER BY grade DESC LIMIT 0,12");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 			realname_set($value['uid'], $value['username']);
 			$modlist[] = $value;
 		}
-		//是 group 主
+		// group 
 		if($mtag['grade']>=8) {
-			//待审
+			//
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('tagspace')." WHERE tagid='$tagid' AND grade='-2' LIMIT 0,12");
 			while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 				realname_set($value['uid'], $value['username']);
@@ -317,7 +318,7 @@ if($tagname) {
 	}
 	$orderbyarr = array($_GET['orderby'] => ' class="active"');
 	
-	//查询
+	//询
 	$_GET['fieldid'] = intval($_GET['fieldid']);
 	if($_GET['fieldid']) {
 		$wherearr[] = "mt.fieldid='$_GET[fieldid]'";
@@ -355,7 +356,7 @@ if($tagname) {
 			$wherearr[] = "mt.recommend='1'";
 		}
 		
-		//搜索
+		//
 		if($searchkey = stripsearchkey($_GET['searchkey'])) {
 			$wherearr[] = "mt.tagname LIKE '%$searchkey%'";
 			$theurl .= "&searchkey=$_GET[searchkey]";

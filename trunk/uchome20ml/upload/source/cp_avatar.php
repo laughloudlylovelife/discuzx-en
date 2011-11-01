@@ -12,11 +12,11 @@ if(submitcheck('avatarsubmit')) {
 	showmessage('do_success', 'cp.php?ac=avatar', 0);
 }
 
-//头像
+//Avatar
 include_once S_ROOT.'./uc_client/client.php';
 $uc_avatarflash = uc_avatar($_SGLOBAL['supe_uid'], (empty($_SCONFIG['avatarreal'])?'virtual':'real'));
 
-//判断 user 是否设置了头像
+//determine whether user avatar Is set
 $setarr = array();
 $avatar_exists = ckavatar($space['uid']);
 if($avatar_exists) {
@@ -41,7 +41,7 @@ if($avatar_exists) {
 
 if($setarr) {
 	$_SGLOBAL['db']->query("UPDATE ".tname('space')." SET ".implode(',', $setarr)." WHERE uid='$space[uid]'");
-	//变更记录
+	//Change History
 	if($_SCONFIG['my_status']) {
 		inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp']), 0, true);
 	}

@@ -93,9 +93,9 @@ if(empty($_GET['op'])) {
 	$click = array();
 	
 } elseif ($_GET['op'] == 'delete') {
-	// delete 
+	//Delete
 	if($click) {		
-		// delete ×Ö¶Î
+		//Delete field
 		// increase the field
 		switch ($click['idtype']) {
 			case 'picid':

@@ -85,7 +85,7 @@ if(empty($_GET['op'])) {
 	
 	$_GET['fieldid'] = intval($_GET['fieldid']);
 	
-	//至少保留一个栏目
+	//Keep at least 1 group
 	if(count($_SGLOBAL['profield']) < 2) {
 		cpmessage('have_one_mtag');
 	}

@@ -4,24 +4,24 @@
 	$Id: uc.php 10988 2009-01-19 05:44:31Z zhengqingpeng $
 */
 
-define('UC_CLIENT_VERSION', '1.5.0');	//note UCenter 版本标识
+define('UC_CLIENT_VERSION', '1.5.0');	//note UCenter Version Identification
 define('UC_CLIENT_RELEASE', '20081212');
 
-define('API_DELETEUSER', 1);		// user delete API 接口开关
-define('API_RENAMEUSER', 1);		// user name 修改 API 接口开关
-define('API_GETTAG', 1);		//获取标签 API 接口开关
-define('API_SYNLOGIN', 1);		//同步登录 API 接口开关
-define('API_SYNLOGOUT', 1);		//同步登出 API 接口开关
-define('API_UPDATEPW', 1);		//更改 user 密码 开关
-define('API_UPDATEBADWORDS', 1);	// update 关键字 list  开关
-define('API_UPDATEHOSTS', 1);		// update HOST文件 开关
-define('API_UPDATEAPPS', 1);		// update 应用 list  开关
-define('API_UPDATECLIENT', 1);		// update 客户端 cache  开关
-define('API_UPDATECREDIT', 1);		// update  user  points  开关
-define('API_GETCREDIT', 1);	//向 UC 提供 points  开关
-define('API_GETCREDITSETTINGS', 1);	//向 UC 提供 points 设置 开关
-define('API_UPDATECREDITSETTINGS', 1);	// update 应用 points 设置 开关
-define('API_ADDFEED', 1);	//向 UCHome  add feed 开关
+define('API_DELETEUSER', 1);		// user delete API Interface switch
+define('API_RENAMEUSER', 1);		// user name Modify API Interface switch
+define('API_GETTAG', 1);		//Get tag API Interface switch
+define('API_SYNLOGIN', 1);		//Synchronization login API Interface switch
+define('API_SYNLOGOUT', 1);		//Synchronization Logout API Interface switch
+define('API_UPDATEPW', 1);		//Switch to change the user password
+define('API_UPDATEBADWORDS', 1);	// update keyword list switch
+define('API_UPDATEHOSTS', 1);		// update HOST file switch
+define('API_UPDATEAPPS', 1);		// update the application list switch
+define('API_UPDATECLIENT', 1);		// update the client cache switch
+define('API_UPDATECREDIT', 1);		// update user points switch
+define('API_GETCREDIT', 1);		//Switch to the UC to provide points
+define('API_GETCREDITSETTINGS', 1);	//to the UC provide points Setting switch
+define('API_UPDATECREDITSETTINGS', 1);	// update the application points settings switch
+define('API_ADDFEED', 1);		//to UCHome add feed Switch
 
 define('API_RETURN_SUCCEED', '1');
 define('API_RETURN_FAILED', '-1');
@@ -32,7 +32,7 @@ define('S_ROOT', substr(dirname(__FILE__), 0, -3));
 
 $_SGLOBAL = $_SCONFIG = $_SBLOCK = $_TPL = $_SCOOKIE = $space = array();
 
-//获取时间
+//Get time
 $_SGLOBAL['timestamp'] = time();
 
 if(defined('IN_UC')) {
@@ -57,7 +57,7 @@ if(defined('IN_UC')) {
 	include_once S_ROOT.'./data/data_config.php';
 	include_once S_ROOT.'./source/function_common.php';
 
-	//链接数据库
+	//Links Database
 	dbconnect();
 
 	$get = $post = array();
@@ -121,10 +121,10 @@ class uc_note {
 			return API_RETURN_FORBIDDEN;
 		}
 	
-		//note  user delete API 接口
+		//note  user delete API Interface
 		include_once S_ROOT.'./source/function_delete.php';
 	
-		//获得 user 
+		//Get user
 		$uids = $get['ids'];
 		$query = $_SGLOBAL['db']->query("SELECT uid FROM ".tname('member')." WHERE uid IN ($uids)");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -213,7 +213,7 @@ class uc_note {
 			return API_RETURN_FORBIDDEN;
 		}
 	
-		//note 同步登录 API 接口
+		//note Synchronization API interface login
 		obclean();
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 	
@@ -224,7 +224,7 @@ class uc_note {
 			include_once S_ROOT.'./source/function_space.php';
 			$member = saddslashes($member);
 			$space = insertsession($member);
-			//设置cookie
+			//Set cookie
 			ssetcookie('auth', authcode("$member[password]\t$member[uid]", 'ENCODE'), $cookietime);
 		}
 		ssetcookie('loginuser', $get['username'], $cookietime);
@@ -237,7 +237,7 @@ class uc_note {
 			return API_RETURN_FORBIDDEN;
 		}
 	
-		//note 同步登出 API 接口
+		//note Logout Synchronization API interface
 		obclean();
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 	
@@ -319,7 +319,7 @@ class uc_note {
 		fwrite($fp, $s);
 		fclose($fp);
 		
-		//配置文件
+		//Configuration file
 		if($UC_API && is_writeable(S_ROOT.'./config.php')) {
 			$configfile = trim(file_get_contents(S_ROOT.'./config.php'));
 			$configfile = substr($configfile, -2) == '?>' ? substr($configfile, 0, -2) : $configfile;

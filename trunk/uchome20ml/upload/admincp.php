@@ -8,7 +8,6 @@ define('IN_ADMINCP', TRUE);
 include_once('./common.php');
 include_once(S_ROOT.'./source/function_admincp.php');
 
-
 //-------------------------------------
 //vot: Added AdminCP Language File
 include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php');//vot
@@ -28,8 +27,6 @@ include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php');//vot
 language_append('sourcelang','lang_admincp');
 
 //-------------------------------------
-
-
 // Check for site closed
 checkclose();
 
@@ -79,7 +76,7 @@ if(empty($_GET['ac']) || (!in_array($_GET['ac'], $acs[0]) && !in_array($_GET['ac
 //Referer
 if(!preg_match("/admincp\.php/", $_SGLOBAL['refer'])) $_SGLOBAL['refer'] = "admincp.php?ac=$ac";
 
-//Menu Active Punkt
+//Menu Active Punkt Class
 $menuactive = array($ac => ' class="active"');
 
 // Permissions
@@ -102,13 +99,13 @@ for($i=0; $i<3; $i++) {
 	}
 }
 
-// space management
+// Space management
 if($isfounder || $megroup['managename'] || $megroup['managespacegroup'] || $megroup['managespaceinfo'] || $megroup['managespacecredit'] || $megroup['managespacenote'] || $megroup['managedelspace']) {
 	$needlogin = 1;
 	$menus[1]['space'] = 1;
 }
 
-// secondary logon confirmation (half hour)
+// Secondary logon confirmation (half hour)
 if($needlogin) {
 	$cpaccess = 0;
 	$query = $_SGLOBAL['db']->query("SELECT errorcount FROM ".tname('adminsession')." WHERE uid='$_SGLOBAL[supe_uid]' AND dateline+1800>='$_SGLOBAL[timestamp]'");
@@ -130,7 +127,7 @@ if($needlogin) {
 }
 
 switch ($cpaccess) {
-	case '1':// can log on
+	case '1':// Can log on
 		if(submitcheck('loginsubmit')) {
 			if(!$passport = getpassport($_SGLOBAL['supe_username'], $_POST['password'])) {
 				$_SGLOBAL['db']->query("UPDATE ".tname('adminsession')." SET errorcount=errorcount+1 WHERE uid='$_SGLOBAL[supe_uid]'");
@@ -157,7 +154,7 @@ switch ($cpaccess) {
 		break;
 	case '2':// Login successful
 		break;
-	default:// try to login too many times
+	default:// Tried to login too many times
 		cpmessage('excessive_number_of_attempts_to_sign');
 		break;
 }
@@ -176,7 +173,7 @@ if($needlogin) {
 	admincp_log();
 }
 
-// remove the ads
+// Remove the ads
 $_SGLOBAL['ad'] = array();
 
 //DEBUG

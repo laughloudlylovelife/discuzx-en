@@ -12,7 +12,7 @@ set_magic_quotes_runtime(0);
 
 $_SGLOBAL = $_SCONFIG = $_SBLOCK = $_TPL = $_SCOOKIE = $_SN = $space = array();
 
-//Program directory
+//Program Root Directory
 $root = dirname(__FILE__).DIRECTORY_SEPARATOR;//vot
 // Replace '\' to '/', Remove DRIVE:
 $root = preg_replace("/^\w:/i",'',$root);     //vot
@@ -40,13 +40,12 @@ if(!@include_once(S_ROOT.'./config.php')) {
 include_once(S_ROOT.'./source/function_common.php');
 //echo "loaded ".S_ROOT."./source/function_common.php.<br>";
 
-
-//Get Time
+//Get Start Time
 $mtime = explode(' ', microtime());
 $_SGLOBAL['timestamp'] = $mtime[1];
 $_SGLOBAL['supe_starttime'] = $_SGLOBAL['timestamp'] + $mtime[0];
 
-//Filter GPC
+//Filter Get/Post/Cookies parameters
 $magic_quote = get_magic_quotes_gpc();
 if(empty($magic_quote)) {
 	$_GET = saddslashes($_GET);
@@ -96,10 +95,9 @@ $_SGLOBAL['ajaxmenuid'] = empty($_GET['ajaxmenuid'])?'':$_GET['ajaxmenuid'];
 $_SGLOBAL['refer'] = empty($_SERVER['HTTP_REFERER'])?'':$_SERVER['HTTP_REFERER'];
 if(empty($_GET['m_timestamp']) || $_SGLOBAL['mobile'] != md5($_GET['m_timestamp']."\t".$_SCONFIG['sitekey'])) $_SGLOBAL['mobile'] = '';
 
-//prevent Login & Register Flood
+//Prevent Login & Register Flood
 if(empty($_SCONFIG['login_action'])) $_SCONFIG['login_action'] = md5('login'.md5($_SCONFIG['sitekey']));
 if(empty($_SCONFIG['register_action'])) $_SCONFIG['register_action'] = md5('register'.md5($_SCONFIG['sitekey']));
-
 
 //=============================================================
 //vot: Added block for Choose Theme and Language
@@ -130,7 +128,6 @@ $languages = $default_language = array();
 
 $languages = get_languages();
 
-
 //DEBUG
 //echo "<pre>LNG_DIR ";
 //print_r($lng_dir);
@@ -151,7 +148,7 @@ $_TPL['default_language'] = $_SC['language'];
 //===========================================================
 
 //------------------------------------------------
-//Style of the whole site
+//Sett the whole site Default Style
 if(empty($_SCONFIG['template'])) {
 	$_SCONFIG['template'] = 'default';
 }
@@ -166,7 +163,7 @@ if($_SCOOKIE['mytemplate']) {
 $_TPL['default_template'] = $_TPL['templates'][$_SCONFIG['template']];
 
 //==================================
-//vot: Interface Language
+//vot: Set Interface Language
 if(empty($_SCONFIG['language'])) {
 	$_SCONFIG['language'] = $_SC['language']; // Default Language
 }

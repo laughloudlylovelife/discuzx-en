@@ -54,7 +54,7 @@ if(submitcheck('buysubmit')) {
 	magic_buy_post($magic, $magicstore, $coupon);
 
 	$op = 'use';
-	$frombuy = true;//标记是购买后立即使用
+	$frombuy = true;//Tag is used immediately after purchase
 	$usermagic['count'] += $_POST['buynum'];
 }
 

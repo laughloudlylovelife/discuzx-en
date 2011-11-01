@@ -83,7 +83,7 @@ if(submitcheck('valuesubmit')) {
 }
 
 if(empty($_GET['op'])) {
-	//œ‘ æ list 
+	//Display list
 	$perpage = 20;
 	$page = empty($_GET['page'])?1:intval($_GET['page']);
 	if($page<1) $page = 1;

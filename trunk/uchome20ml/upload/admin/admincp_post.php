@@ -30,7 +30,7 @@ if(checkperm('managethread')) {
 	if($tagid) {
 		$grade = getcount('tagspace', array('tagid'=>$tagid, 'uid'=>$_SGLOBAL['supe_uid']), 'grade');
 		if($grade >= 8) {
-			//是否成员
+			//欠员
 			$allowmanage = 1;
 			$managebatch = 1;
 		}

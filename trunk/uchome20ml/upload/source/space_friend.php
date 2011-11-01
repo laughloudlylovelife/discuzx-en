@@ -58,6 +58,7 @@ if($_GET['view'] == 'online') {
 				}
 			}
 			realname_set($value['uid'], $value['username']);
+			$value['cn'] = rawurlencode($value['residecountry']);
 			$value['p'] = rawurlencode($value['resideprovince']);
 			$value['c'] = rawurlencode($value['residecity']);
 			$value['isfriend'] = ($value['uid']==$space['uid'] || ($space['friends'] && in_array($value['uid'], $space['friends'])))?1:0;
@@ -73,17 +74,17 @@ if($_GET['view'] == 'online') {
 	$theurl = "space.php?uid=$space[uid]&do=friend&view=$_GET[view]";
 	$actives = array('me'=>' class="active"');
 
-	if($_GET['view'] == 'visitor') {//·Ã¿Í
+	if($_GET['view'] == 'visitor') {//Ã¿
 		$count = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('visitor')." main WHERE main.uid='$space[uid]'"), 0);
-		$query = $_SGLOBAL['db']->query("SELECT f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.vuid AS uid, main.vusername AS username, main.dateline
+		$query = $_SGLOBAL['db']->query("SELECT f.residecountry, f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.vuid AS uid, main.vusername AS username, main.dateline
 			FROM ".tname('visitor')." main
 			LEFT JOIN ".tname('spacefield')." f ON f.uid=main.vuid
 			WHERE main.uid='$space[uid]'
 			ORDER BY main.dateline DESC
 			LIMIT $start,$perpage");
-	} else {//×ã¼£
+	} else {//ã¼£
 		$count = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('visitor')." main WHERE main.vuid='$space[uid]'"), 0);
-		$query = $_SGLOBAL['db']->query("SELECT s.username, s.name, s.namestatus, s.groupid, f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.uid AS uid, main.dateline
+		$query = $_SGLOBAL['db']->query("SELECT s.username, s.name, s.namestatus, s.groupid, f.residecountry, f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.uid AS uid, main.dateline
 			FROM ".tname('visitor')." main
 			LEFT JOIN ".tname('space')." s ON s.uid=main.uid
 			LEFT JOIN ".tname('spacefield')." f ON f.uid=main.uid
@@ -94,6 +95,7 @@ if($_GET['view'] == 'online') {
 	if($count) {
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 			realname_set($value['uid'], $value['username'], $value['name'], $value['namestatus']);
+			$value['cn'] = rawurlencode($value['residecountry']);
 			$value['p'] = rawurlencode($value['resideprovince']);
 			$value['c'] = rawurlencode($value['residecity']);
 			$value['isfriend'] = ($value['uid']==$space['uid'] || ($space['friends'] && in_array($value['uid'], $space['friends'])))?1:0;
@@ -128,13 +130,13 @@ if($_GET['view'] == 'online') {
 
 } else {
 
-	//´¦Àí²éÑ¯
+	//Ñ¯
 	$theurl = "space.php?uid=$space[uid]&do=$do";
 	$actives = array('me'=>' class="active"');
 	
 	$_GET['view'] = 'me';
 
-	//ºÃÓÑ·Ö groups 
+	//Ñ· groups 
 	$wheresql = '';
 	if($space['self']) {
 		$groups = getfriendgroup();
@@ -156,7 +158,7 @@ if($_GET['view'] == 'online') {
 			$count = $space['friendnum'];
 		}
 		if($count) {
-			$query = $_SGLOBAL['db']->query("SELECT s.*, f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.gid, main.num
+			$query = $_SGLOBAL['db']->query("SELECT s.*, f.residecountry, f.resideprovince, f.residecity, f.note, f.spacenote, f.sex, main.gid, main.num
 				FROM ".tname('friend')." main
 				LEFT JOIN ".tname('space')." s ON s.uid=main.fuid
 				LEFT JOIN ".tname('spacefield')." f ON f.uid=main.fuid
@@ -165,6 +167,7 @@ if($_GET['view'] == 'online') {
 				LIMIT $start,$perpage");
 			while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 				realname_set($value['uid'], $value['username'], $value['name'], $value['namestatus']);
+				$value['cn'] = rawurlencode($value['residecountry']);
 				$value['p'] = rawurlencode($value['resideprovince']);
 				$value['c'] = rawurlencode($value['residecity']);
 				$value['group'] = $groups[$value['gid']];
@@ -178,7 +181,7 @@ if($_GET['view'] == 'online') {
 		// pagination 
 		$multi = multi($count, $perpage, $page, $theurl);
 		$friends = array();
-		//È¡100ºÃÓÑ user name 
+		//È¡100 user name 
 		$query = $_SGLOBAL['db']->query("SELECT f.fusername, s.name, s.namestatus, s.groupid FROM ".tname('friend')." f
 			LEFT JOIN ".tname('space')." s ON s.uid=f.fuid
 			WHERE f.uid=$_SGLOBAL[supe_uid] AND f.status='1' ORDER BY f.num DESC, f.dateline DESC LIMIT 0,100");
@@ -192,7 +195,7 @@ if($_GET['view'] == 'online') {
 	if($space['self']) {
 		$groupselect = array($group => ' class="current"');
 
-		//ºÃÓÑ¸öÊý
+		//Ñ¸
 		$maxfriendnum = checkperm('maxfriendnum');
 		if($maxfriendnum) {
 			$maxfriendnum = checkperm('maxfriendnum') + $space['addfriend'];
@@ -200,7 +203,7 @@ if($_GET['view'] == 'online') {
 	}
 }
 
-//ÔÚÏß×´Ì¬
+//×´Ì¬
 if($fuids) {
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('session')." WHERE uid IN (".simplode($fuids).")");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {

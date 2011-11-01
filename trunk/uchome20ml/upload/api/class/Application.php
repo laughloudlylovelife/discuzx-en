@@ -1,7 +1,7 @@
 <?php
 /*
 	[UCenter Home] (C) 2007-2008 Comsenz Inc.
-	$Id: Application.php 12591 2009-07-09 06:35:06Z zhengqingpeng $
+	$Id: Application.php 13522 2010-06-28 10:42:08Z shirui $
 */
 
 if(!defined('IN_UCHOME')) {
@@ -10,19 +10,25 @@ if(!defined('IN_UCHOME')) {
 
 class Application extends MyBase {
 
-	function update($appId, $appName, $version, $displayMethod, $displayOrder = null) {
-		global $_SGLOBAL;
-		$fields = array('appname' => $appName);
-		$where = array('appid'	=> $appId);
-		updatetable('myapp', $fields, $where);
-		updatetable('userapp', $fields, $where);
+    function update($appId, $appName, $version, $displayMethod, $displayOrder = null) {
+        global $_SGLOBAL;
 
-		$result = $_SGLOBAL['db']->affected_rows();
-		
-		$displayMethod = ($displayMethod == 'iframe') ? 1 : 0;
-		$this->refreshApplication($appId, $appName, $version, $displayMethod, null, null, $displayOrder);
-		return new APIResponse($result);
-	}
+        $result = true;
+        $sql = "SELECT appname FROM " . tname('myapp') . " WHERE appid = $appId";
+        $query = $_SGLOBAL['db']->query($sql);
+        $row = $_SGLOBAL['db']->fetch_array($query);
+        if ($row['appname'] != $appName) {
+            $fields = array('appname' => $appName);
+            $where = array('appid'  => $appId);
+            updatetable('myapp', $fields, $where);
+            updatetable('userapp', $fields, $where);
+            $result = $_SGLOBAL['db']->affected_rows();
+        }
+
+        $displayMethod = ($displayMethod == 'iframe') ? 1 : 0;
+        $this->refreshApplication($appId, $appName, $version, $displayMethod, null, null, $displayOrder);
+        return new APIResponse($result);
+    }
 
 	function remove($appIds) {
 		global $_SGLOBAL;
