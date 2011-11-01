@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -8,22 +8,22 @@
  */
 
 $lang = "
-<okbtn> Ok </okbtn>
-<ctnbtn>Отменить</ctnbtn>
+<okbtn>ОК</okbtn>
+<ctnbtn>Продолжить</ctnbtn>
 <fileName>Имя файла</fileName>
 <size>Размер</size>
 <stat>%</stat>
-<browser>Откр</browser>
+<browser>Выбор</browser>
 <delete>Удалить</delete>
 <return>Назад</return>
-<upload>Загруз</upload>
-<okTitle>Завершение загрузки</okTitle>
-<okMsg>Файл успешно загружен!</okMsg>
-<uploadTitle>Загружаю....</uploadTitle>
-<uploadMsg1>Всего файлов: </uploadMsg1>
-<uploadMsg2> Осталось: </uploadMsg2>
-<uploadMsg3></uploadMsg3>
-<bigFile>Файл слишком большой</bigFile>
-<uploaderror>Сбой при загрузке, попробуйте снова</uploaderror>
+<upload>Загрузить</upload>
+<okTitle>Загрузка завершена</okTitle>
+<okMsg>Файл успешно загружен</okMsg>
+<uploadTitle>Загрузка....</uploadTitle>
+<uploadMsg1>Всего</uploadMsg1>
+<uploadMsg2>Идёт загрузка. Прогресс</uploadMsg2>
+<uploadMsg3>Файлов</uploadMsg3>
+<bigFile>Файл слишком велик</bigFile>
+<uploaderror>Ошибка загрузки</uploaderror>
 ";
 
