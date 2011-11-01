@@ -1184,6 +1184,8 @@ END;
 	userapp_cache();
 	app_cache();
 	network_cache();
+//vot
+	country_cache();
 
 	$msg = <<<EOF
 <form method="post" action="$theurl">
@@ -1256,7 +1258,7 @@ input { border: 1px solid #B2C9D3; padding: 5px; background: #F5FCFF; }
 	//Add Option
 	function addoption(obj) {
 		if (obj.value=='addoption') {
-			var newOption=prompt('Enter:','');
+			var newOption=prompt('{$LNG['enter']}','');
 			if (newOption!=null && newOption!='') {
 				var newOptionTag=document.createElement('option');
 				newOptionTag.text=newOption;

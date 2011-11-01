@@ -11,12 +11,12 @@ if(!defined('IN_UCHOME')) {
 class Photo extends MyBase {
 
 	/**
-	 * 创建 album 
+	 * Create album 
 	 * @param integer $uId  user Id
-	 * @param string  $name  album  name 称
-	 * @param string  $privacy  album 限制
-	 * @param string  $passwd 查看 album 时的密码
-	 * @param string  $friends 允许查看 album 的好友Id
+	 * @param string  $name  album name
+	 * @param string  $privacy  album privacy
+	 * @param string  $passwd  When the password to view album
+	 * @param string  $friends allow to view album for friends Id
 	 * @return integer  album Id
 	 */
 	function createAlbum($uId, $name, $privacy, $passwd = null, $friendIds = null) {
@@ -40,14 +40,14 @@ class Photo extends MyBase {
 	}
 
 	/**
-	 *  update  album 
+	 * update album 
 	 * @param integer $uId  user Id
 	 * @param intger  $aId  album Id
-	 * @param string  $name  album  name 称
-	 * @param string  $privacy  album 限制
-	 * @param string  $passwd 查看 album 时的密码
-	 * @param string  $friends 允许查看 album 的好友Id
-	 * @param integer $coverId  album 封面Id
+	 * @param string  $name  album name
+	 * @param string  $privacy  album privacy
+	 * @param string  $passwd When the password to view album
+	 * @param string  $friends allow to view album for friends Id
+	 * @param integer $coverId  album cover Id
 	 * @return boolean
 	 */
 	function updateAlbum($uId, $aId, $name = null, $privacy = null, $passwd = null, $friendIds = null, $coverId = null) {
@@ -95,12 +95,12 @@ class Photo extends MyBase {
 	}
 
 	/**
-	 * 移除 album 
+	 * Remove album 
 	 *
 	 * @param integer $uId  user Id
 	 * @param integer $aId  album Id
-	 * @param string  $action 动作
-	 * @param integer $targetAlbumId 目标 album Id
+	 * @param string  $action Action
+	 * @param integer $targetAlbumId Target album Id
 	 * @return boolean
 	 */
 	function removeAlbum($uId, $aId, $action = null , $targetAlbumId = null) {
@@ -156,7 +156,7 @@ class Photo extends MyBase {
 	}
 
 	/**
-	 * 获取 user 的 album  list 
+	 * Get the user album list
 	 *
 	 * @param integer $uId  user Id
 	 * @return array
@@ -172,17 +172,17 @@ class Photo extends MyBase {
 		return new APIResponse($albums);
 	}
 
-	// todo 测试远程模式上传的 image 
+	// todo Test image upload remote mode
 	/**
-	 * 上传 photo 
+	 * Upload photo 
 	 *
 	 * @param integer $uId  user Id
 	 * @param integer $aId  album Id
-	 * @param string  $fileName 文件 name 
-	 * @param string  $fileType 文件类型
-	 * @param integer $fileSize 文件大小
-	 * @param string  $data  photo 数据
-	 * @param string  $caption  photo 说明
+	 * @param string  $fileName File name 
+	 * @param string  $fileType File Type
+	 * @param integer $fileSize File Size
+	 * @param string  $data  photo data
+	 * @param string  $caption  photo caption
 	 * @return array
 	 */
 	function upload($uId, $aId, $fileName, $fileType, $fileSize, $data, $caption = null) {
@@ -231,7 +231,7 @@ class Photo extends MyBase {
 	}
 
 	/**
-	 * 获取 photo 信息
+	 * Get photo information
 	 *
 	 * @param integer $uId  user Id
 	 * @param integer $aId  album Id
@@ -278,14 +278,14 @@ class Photo extends MyBase {
 	}
 
 	/**
-	 *  update 一张 photo 
+	 *  update the photo 
 	 * @param integer $uId  user Id
 	 * @param integer $aId  album Id
-	 * @param string  $fileName 文件 name
-	 * @param string  $fileType 文件类型
-	 * @param integer $fileSize 文件大小
-	 * @param string  $caption  photo 说明
-	 * @param string  $data  photo 数据
+	 * @param string  $fileName File name
+	 * @param string  $fileType File Type
+	 * @param integer $fileSize File size
+	 * @param string  $caption  photo caption
+	 * @param string  $data  photo data
 	 */
 	function update($uId, $pId, $aId, $fileName = null, $fileType = null, $fileSize = null, $caption = null, $data = null ) {
 		global $_SGLOBAL;
@@ -298,7 +298,7 @@ class Photo extends MyBase {
 		}
 
 		if (is_string($data) && strlen($data) > 0) {
-			// 重新上传新 image 
+			// Re-upload a new image
 			$query = $_SGLOBAL['db']->query('SELECT size, title, filename FROM ' . tname('pic') . ' WHERE picid=' . $pId. ' AND albumid=' . $aId . ' AND uid=' . $uId);
 			$picInfo = $_SGLOBAL['db']->fetch_array($query);
 			if ($picInfo && is_array($picInfo)) {
@@ -313,7 +313,7 @@ class Photo extends MyBase {
 				$pic = stream_save($stream, $aId, $fileType, $name, $title, $picInfo['size']);
 				$_SC['attachdir'] = $attachDir;
 
-				// 返回值跟文档不太一样
+				// Returns is not the same with documents
 				$newPic = array();
 				if ($pic && is_array($pic)) {
 					include_once(S_ROOT . './source/function_delete.php');

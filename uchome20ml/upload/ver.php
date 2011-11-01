@@ -5,5 +5,5 @@
 */
 
 define('X_VER', '2.0');
-define('X_RELEASE', '20100416');
+define('X_RELEASE', '20101102');
 

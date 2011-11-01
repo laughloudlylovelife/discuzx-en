@@ -20,7 +20,7 @@ function saddslashes($string) {
 	return $string;
 }
 
-//È¡ÏûHTML´úÂë
+//È¡HTML
 function shtmlspecialchars($string) {
 	if(is_array($string)) {
 		foreach($string as $key => $val) {
@@ -33,13 +33,13 @@ function shtmlspecialchars($string) {
 	return $string;
 }
 
-//×Ö·û´®½âÃÜ¼ÓÃÜ
+//Ö·Ü¼
 function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 
-	$ckey_length = 4;	// Ëæ»úÃÜÔ¿³¤¶È È¡Öµ 0-32;
-				// ¼ÓÈëËæ»úÃÜÔ¿£¬¿ÉÒÔÁîÃÜÎÄÎÞÈÎºÎ¹æÂÉ£¬¼´±ãÊÇÔ­ÎÄºÍÃÜÔ¿ÍêÈ«ÏàÍ¬£¬¼ÓÃÜ½á¹ûÒ²»áÃ¿´Î²»Í¬£¬Ôö´óÆÆ½âÄÑ¶È¡£
-				// È¡ÖµÔ½´ó£¬ÃÜÎÄ±ä¶¯¹æÂÉÔ½´ó£¬ÃÜÎÄ±ä»¯ = 16 µÄ $ckey_length ´Î·½
-				// µ±´ËÖµÎª 0 Ê±£¬Ôò²»²úÉúËæ»úÃÜÔ¿
+	$ckey_length = 4;	// Ô¿ È¡Öµ 0-32;
+				// Ô¿ÎºÎ¹É£Ô­ÄºÔ¿È«Í¬Ü½Ò²Ã¿Î²Í¬Æ½Ñ¶È¡
+				// È¡ÖµÔ½Ä±ä¶¯Ô½Ä±ä»¯ = 16  $ckey_length Î·
+				// ÖµÎª 0 Ê±ò²»²Ô¿
 
 	$key = md5($key ? $key : UC_KEY);
 	$keya = md5(substr($key, 0, 16));
@@ -87,7 +87,7 @@ function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0) {
 	}
 }
 
-//Çå¿Õcookie
+//cookie
 function clearcookie() {
 	global $_SGLOBAL;
 
@@ -98,13 +98,13 @@ function clearcookie() {
 	$_SGLOBAL['member'] = array();
 }
 
-//cookieÉèÖÃ
+//cookie
 function ssetcookie($var, $value, $life=0) {
 	global $_SGLOBAL, $_SC, $_SERVER;
 	setcookie($_SC['cookiepre'].$var, $value, $life?($_SGLOBAL['timestamp']+$life):0, $_SC['cookiepath'], $_SC['cookiedomain'], $_SERVER['SERVER_PORT']==443?1:0);
 }
 
-//Êý¾Ý¿âÁ¬½Ó
+//Ý¿
 function dbconnect() {
 	global $_SGLOBAL, $_SC;
 
@@ -117,7 +117,7 @@ function dbconnect() {
 	}
 }
 
-//»ñÈ¡ÔÚÏßIP
+//È¡IP
 function getonlineip($format=0) {
 	global $_SGLOBAL;
 
@@ -145,7 +145,7 @@ function getonlineip($format=0) {
 	}
 }
 
-//ÅÐ¶Ïµ±Ç° user µÇÂ¼×´Ì¬
+//Ð¶ÏµÇ° user Â¼×´Ì¬
 function checkauth() {
 	global $_SGLOBAL, $_SC, $_SCONFIG, $_SCOOKIE, $_SN;
 
@@ -169,7 +169,7 @@ function checkauth() {
 						$_SGLOBAL['supe_username'] = addslashes($member['username']);
 						$session = array('uid' => $_SGLOBAL['supe_uid'], 'username' => $_SGLOBAL['supe_username'], 'password' => $password);
 						include_once(S_ROOT.'./source/function_space.php');
-						insertsession($session);//µÇÂ¼
+						insertsession($session);//Â¼
 					} else {
 						$_SGLOBAL['supe_uid'] = 0;
 					}
@@ -186,7 +186,7 @@ function checkauth() {
 	}
 }
 
-//»ñÈ¡ user app list 
+//È¡ user app list 
 function getuserapp() {
 	global $_SGLOBAL, $_SCONFIG;
 
@@ -212,13 +212,13 @@ function getuserapp() {
 	}
 }
 
-//»ñÈ¡µ½±í name 
+//È¡ name 
 function tname($name) {
 	global $_SC;
 	return $_SC['tablepre'].$name;
 }
 
-//¶Ô»°¿ò
+//Ô»
 function showmessage($msgkey, $url_forward='', $second=1, $values=array()) {
 	global $_SGLOBAL, $_SC, $_SCONFIG, $_TPL, $space, $_SN;
 
@@ -227,19 +227,19 @@ function showmessage($msgkey, $url_forward='', $second=1, $values=array()) {
 	// remove the ads
 	$_SGLOBAL['ad'] = array();
 	
-	//ÓïÑÔ
+	//
 	include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/lang_showmessage.php');//vot
 	if(isset($_SGLOBAL['msglang'][$msgkey])) {
 		$message = lang_replace($_SGLOBAL['msglang'][$msgkey], $values);
 	} else {
 		$message = $msgkey;
 	}
-	//ÊÖ»ú
+	//Ö»
 	if($_SGLOBAL['mobile']) {
 		include template('showmessage');
 		exit();
 	}
-	//ÏÔÊ¾
+	//Ê¾
 	if(empty($_SGLOBAL['inajax']) && $url_forward && empty($second)) {
 		header("HTTP/1.1 301 Moved Permanently");
 		header("Location: $url_forward");
@@ -261,7 +261,7 @@ function showmessage($msgkey, $url_forward='', $second=1, $values=array()) {
 	exit();
 }
 
-//ÅÐ¶ÏÌá½»ÊÇ·ñÕýÈ·
+//Ð¶á½»Ç·È·
 function submitcheck($var) {
 	if(!empty($_POST[$var]) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 		if((empty($_SERVER['HTTP_REFERER']) || preg_replace("/https?:\/\/([^\:\/]+).*/i", "\\1", $_SERVER['HTTP_REFERER']) == preg_replace("/([^\:]+).*/", "\\1", $_SERVER['HTTP_HOST'])) && $_POST['formhash'] == formhash()) {
@@ -274,7 +274,7 @@ function submitcheck($var) {
 	}
 }
 
-// add Êý¾Ý
+// add 
 function inserttable($tablename, $insertsqlarr, $returnid=0, $replace = false, $silent=0) {
 	global $_SGLOBAL;
 
@@ -291,7 +291,7 @@ function inserttable($tablename, $insertsqlarr, $returnid=0, $replace = false, $
 	}
 }
 
-// update Êý¾Ý
+// update 
 function updatetable($tablename, $setsqlarr, $wheresqlarr, $silent=0) {
 	global $_SGLOBAL;
 
@@ -314,7 +314,7 @@ function updatetable($tablename, $setsqlarr, $wheresqlarr, $silent=0) {
 	$_SGLOBAL['db']->query('UPDATE '.tname($tablename).' SET '.$setsql.' WHERE '.$where, $silent?'SILENT':'');
 }
 
-//»ñÈ¡ user  space ÐÅÏ¢
+//È¡ user  space Ï¢
 function getspace($key, $indextype='uid', $auto_open=0) {
 	global $_SGLOBAL, $_SCONFIG, $_SN;
 
@@ -325,7 +325,7 @@ function getspace($key, $indextype='uid', $auto_open=0) {
 		if(!$space = $_SGLOBAL['db']->fetch_array($query)) {
 			$space = array();
 			if($indextype=='uid' && $auto_open) {
-				//×Ô¶¯¿ªÍ¨ space 
+				//Ô¶Í¨ space 
 				include_once(S_ROOT.'./uc_client/client.php');
 				if($user = uc_get_user($key, 1)) {
 					include_once(S_ROOT.'./source/function_space.php');
@@ -337,7 +337,7 @@ function getspace($key, $indextype='uid', $auto_open=0) {
 			$_SN[$space['uid']] = ($_SCONFIG['realname'] && $space['name'] && $space['namestatus'])?$space['name']:$space['username'];
 			$space['self'] = ($space['uid']==$_SGLOBAL['supe_uid'])?1:0;
 
-			//ºÃÓÑ cache 
+			// cache 
 			$space['friends'] = array();
 			if(empty($space['friend'])) {
 				if($space['friendnum']>0) {
@@ -358,7 +358,7 @@ function getspace($key, $indextype='uid', $auto_open=0) {
 			$space['name'] = addslashes($space['name']);
 			$space['privacy'] = empty($space['privacy'])?(empty($_SCONFIG['privacy'])?array():$_SCONFIG['privacy']):unserialize($space['privacy']);
 
-			// notice Êý
+			// notice 
 			$space['allnotenum'] = 0;
 			foreach (array('notenum','pokenum','addfriendnum','mtaginvitenum','eventinvitenum','myinvitenum') as $value) {
 				$space['allnotenum'] = $space['allnotenum'] + $space[$value];
@@ -372,7 +372,7 @@ function getspace($key, $indextype='uid', $auto_open=0) {
 	return $_SGLOBAL[$var];
 }
 
-//»ñµÃ user UID
+// user UID
 function getuid($name) {
 	global $_SGLOBAL, $_SCONFIG;
 
@@ -388,7 +388,7 @@ function getuid($name) {
 	return $uid;
 }
 
-//»ñÈ¡µ±Ç° user ÐÅÏ¢
+//È¡Ç° user Ï¢
 function getmember() {
 	global $_SGLOBAL, $space;
 
@@ -401,7 +401,7 @@ function getmember() {
 	}
 }
 
-//¼ì²é privacy 
+// privacy 
 function ckprivacy($type, $feedmode=0) {
 	global $_SGLOBAL, $space, $_SCONFIG;
 
@@ -419,18 +419,18 @@ function ckprivacy($type, $feedmode=0) {
 			$result = true;
 		}
 	} elseif($space['self']){
-		//×Ô¼º
+		//Ô¼
 		$result = true;
 	} else {
 		if(empty($space['privacy']['view'][$type])) {
 			$result = true;
 		}
 		if(!$result && $space['privacy']['view'][$type] == 1) {
-			//ÊÇ·ñºÃÓÑ
+			//Ç·
 			if(!isset($space['isfriend'])) {
 				$space['isfriend'] = $space['self'];
 				if($space['friends'] && in_array($_SGLOBAL['supe_uid'], $space['friends'])) {
-					$space['isfriend'] = 1;//ÊÇºÃÓÑ
+					$space['isfriend'] = 1;//Çº
 				}
 			}
 			if($space['isfriend']) {
@@ -438,11 +438,11 @@ function ckprivacy($type, $feedmode=0) {
 			}
 		}
 	}
-	$_SGLOBAL[$var] = $result;//µ±Ç°Ò³Ãæ cache 
+	$_SGLOBAL[$var] = $result;//Ç°Ò³ cache 
 	return $result;
 }
 
-//¼ì²éAPP privacy 
+//APP privacy 
 function app_ckprivacy($privacy) {
 	global $_SGLOBAL, $space;
 
@@ -452,30 +452,30 @@ function app_ckprivacy($privacy) {
 	}
 	$result = false;
 	switch ($privacy) {
-		case 0://¹«¿ª
+		case 0://
 			$result = true;
 			break;
-		case 1://ºÃÓÑ
+		case 1://
 			if(!isset($space['isfriend'])) {
 				$space['isfriend'] = $space['self'];
 				if($space['friends'] && in_array($_SGLOBAL['supe_uid'], $space['friends'])) {
-					$space['isfriend'] = 1;//ÊÇºÃÓÑ
+					$space['isfriend'] = 1;//Çº
 				}
 			}
 			if($space['isfriend']) {
 				$result = true;
 			}
 			break;
-		case 2://²¿·ÖºÃÓÑ
+		case 2://Öº
 			break;
-		case 3://×Ô¼º
+		case 3://Ô¼
 			if($space['self']) {
 				$result = true;
 			}
 			break;
-		case 4://¼ÓÃÜ
+		case 4://
 			break;
-		case 5://Ã»ÓÐÈË
+		case 5://Ã»
 			break;
 		default:
 			$result = true;
@@ -485,7 +485,7 @@ function app_ckprivacy($privacy) {
 	return $result;
 }
 
-//»ñÈ¡ user  groups 
+//È¡ user  groups 
 function getgroupid($experience, $gid=0) {
 	global $_SGLOBAL;
 
@@ -509,7 +509,7 @@ function getgroupid($experience, $gid=0) {
 	return $gid;
 }
 
-//¼ì²é permissions 
+// permissions 
 function checkperm($permtype) {
 	global $_SGLOBAL, $space;
 
@@ -529,7 +529,7 @@ function checkperm($permtype) {
 
 			if($gid != $_SGLOBAL['member']['groupid']) {
 				updatetable('space', array('groupid'=>$gid), array('uid'=>$_SGLOBAL['supe_uid']));
-				//ÔùËÍµÀ¾ß
+				//Íµ
 				if($_SGLOBAL['usergroup'][$gid]['magicaward']) {
 					include_once(S_ROOT.'./source/inc_magicaward.php');
 				}
@@ -537,7 +537,7 @@ function checkperm($permtype) {
 			
 			$_SGLOBAL[$var] = empty($_SGLOBAL['usergroup'][$gid][$permtype])?'':$_SGLOBAL['usergroup'][$gid][$permtype];
 			if(substr($permtype, 0, 6) == 'manage' && empty($_SGLOBAL[$var])) {
-				$_SGLOBAL[$var] = $_SGLOBAL['usergroup'][$gid]['manageconfig'];// permissions ¸²¸Ç
+				$_SGLOBAL[$var] = $_SGLOBAL['usergroup'][$gid]['manageconfig'];// permissions 
 				if(empty($_SGLOBAL[$var])) {
 					$_SGLOBAL[$var] = ckfounder($_SGLOBAL['supe_uid'])?1:0;// founder 
 				}
@@ -547,7 +547,7 @@ function checkperm($permtype) {
 	return $_SGLOBAL[$var];
 }
 
-//Ð´ÔËÐÐ blog 
+//Ð´ blog 
 function runlog($file, $log, $halt=0) {
 	global $_SGLOBAL, $_SERVER;
 
@@ -580,27 +580,27 @@ function runlog($file, $log, $halt=0) {
 }
 
 
-//»ñÈ¡×Ö·û´®
+//È¡Ö·
 function getstr($string, $length, $in_slashes=0, $out_slashes=0, $censor=0, $bbcode=0, $html=0) {
 	global $_SC, $_SGLOBAL;
 
 	$string = trim($string);
 
 	if($in_slashes) {
-		//´«ÈëµÄ×Ö·ûÓÐslashes
+		//Ö·slashes
 		$string = sstripslashes($string);
 	}
 	if($html < 0) {
-		//È¥µôhtml±êÇ©
+		//È¥htmlÇ©
 //vot		$string = preg_replace("/(\<[^\<]*\>|\r|\n|\s|\[.+?\])/is", ' ', $string);
 		$string = preg_replace("/(\<[^\<]*\>|\r|\n|\t| |\[.+?\])/is", ' ', $string);
 		$string = shtmlspecialchars($string);
 	} elseif ($html == 0) {
-		// transform html±êÇ©
+		// transform htmlÇ©
 		$string = shtmlspecialchars($string);
 	}
 	if($censor) {
-		//´ÊÓïÆÁ±Î
+		//
 		@include_once(S_ROOT.'./data/data_censor.php');
 		if($_SGLOBAL['censor']['banned'] && preg_match($_SGLOBAL['censor']['banned'], $string)) {
 			showmessage('information_contains_the_shielding_text');
@@ -678,7 +678,7 @@ function getstr($string, $length, $in_slashes=0, $out_slashes=0, $censor=0, $bbc
 	return trim($string);
 }
 
-//Ê±¼ä¸ñÊ½»¯
+//Ê±Ê½
 function sgmdate($dateformat, $timestamp='', $format=0) {
 	global $_SCONFIG, $_SGLOBAL;
 	if(empty($timestamp)) {
@@ -705,7 +705,7 @@ function sgmdate($dateformat, $timestamp='', $format=0) {
 	return $result;
 }
 
-//×Ö·û´®Ê±¼ä»¯
+//Ö·Ê±ä»¯
 function sstrtotime($string) {
 	global $_SGLOBAL, $_SCONFIG;
 	$time = '';
@@ -812,7 +812,7 @@ function multi($num, $perpage, $curpage, $mpurl, $ajaxdiv='', $todiv='') {
 }
 
 
-//´¦Àí pagination 
+// pagination 
 function smulti($start, $perpage, $count, $url, $ajaxdiv='') {
 	global $_SGLOBAL;
 
@@ -871,7 +871,7 @@ function obclean() {
 	}
 }
 
-//Ä£°åµ÷ÓÃ
+//Ä£
 function template($name) {
 	global $_SCONFIG, $_SGLOBAL;
 
@@ -905,7 +905,7 @@ function template($name) {
 	return $objfile;
 }
 
-//×ÓÄ£°å update ¼ì²é
+//Ä£ update 
 function subtplcheck($subfiles, $mktime, $tpl) {
 	global $_SC, $_SCONFIG;
 
@@ -926,7 +926,7 @@ function subtplcheck($subfiles, $mktime, $tpl) {
 	}
 }
 
-//Ä£¿é
+//Ä£
 function block($param) {
 	global $_SBLOCK;
 
@@ -934,7 +934,7 @@ function block($param) {
 	block_batch($param);
 }
 
-//»ñÈ¡ÊýÄ¿
+//È¡Ä¿
 function getcount($tablename, $wherearr=array(), $get='COUNT(*)') {
 	global $_SGLOBAL;
 	if(empty($wherearr)) {
@@ -949,7 +949,7 @@ function getcount($tablename, $wherearr=array(), $get='COUNT(*)') {
 	return $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT $get FROM ".tname($tablename)." WHERE $wheresql LIMIT 1"), 0);
 }
 
-//µ÷ÕûÊä³ö
+//
 function ob_out() {
 	global $_SGLOBAL, $_SCONFIG, $_SC;
 
@@ -1013,19 +1013,19 @@ function xml_out($content) {
 	exit();
 }
 
-//rewriteÁ´½Ó
+//rewrite
 function rewrite_url($pre, $para) {
 	$para = str_replace(array('&','='), array('-', '-'), $para);
 	return '<a href="'.$pre.$para.'.html"';
 }
 
-//ÍâÁ´
+//
 function iframe_url($url) {
 	$url = rawurlencode($url);
 	return "<a href=\"link.php?url=http://$url\"";
 }
 
-//´¦ÀíËÑË÷¹Ø¼ü×Ö
+//Ø¼
 function stripsearchkey($string) {
 	$string = trim($string);
 	$string = str_replace('*', '%', addcslashes($string, '%_'));
@@ -1033,7 +1033,7 @@ function stripsearchkey($string) {
 	return $string;
 }
 
-//¼ì²éËÑË÷
+//
 function cksearch($theurl) {
 	global $_SGLOBAL, $_SCONFIG, $space;
 	
@@ -1054,7 +1054,7 @@ function cksearch($theurl) {
 				if($space['credit'] < $reward['credit'] || $space['experience'] < $reward['experience']) {
 					showmessage('points_search_error');
 				} else {
-					//¿Û·Ö
+					//Û·
 					$_SGLOBAL['db']->query("UPDATE ".tname('space')." SET lastsearch='$_SGLOBAL[timestamp]', credit=credit-$reward[credit], experience=experience-$reward[experience] WHERE uid='$_SGLOBAL[supe_uid]'");
 				}
 			}
@@ -1062,7 +1062,7 @@ function cksearch($theurl) {
 	}
 }
 
-//ÊÇ·ñÆÁ±Î¶þ¼¶Óò name 
+//Ç·Î¶ name 
 function isholddomain($domain) {
 	global $_SCONFIG;
 
@@ -1088,12 +1088,12 @@ function isholddomain($domain) {
 	return $ishold;
 }
 
-//Á¬½Ó×Ö·û
+//Ö·
 function simplode($ids) {
 	return "'".implode("','", $ids)."'";
 }
 
-//ÏÔÊ¾½ø³Ì´¦ÀíÊ±¼ä
+//Ê¾Ì´Ê±
 function debuginfo() {
 	global $_SGLOBAL, $_SC, $_SCONFIG;
 
@@ -1109,7 +1109,7 @@ function debuginfo() {
 	return $info;
 }
 
-//¸ñÊ½»¯´óÐ¡º¯Êý
+//Ê½Ð¡
 function formatsize($size) {
 	$prec=3;
 	$size = round(abs($size));
@@ -1122,7 +1122,7 @@ function formatsize($size) {
 	return $size.$units[$unit];
 }
 
-//»ñÈ¡ÎÄ¼þÄÚÈÝ
+//È¡Ä¼
 function sreadfile($filename) {
 	$content = '';
 	if(function_exists('file_get_contents')) {
@@ -1136,7 +1136,7 @@ function sreadfile($filename) {
 	return $content;
 }
 
-//Ð´ÈëÎÄ¼þ
+//Ð´Ä¼
 function swritefile($filename, $writetext, $openmod='w') {
 	if(@$fp = fopen($filename, $openmod)) {
 		flock($fp, 2);
@@ -1149,7 +1149,7 @@ function swritefile($filename, $writetext, $openmod='w') {
 	}
 }
 
-//²úÉúËæ»ú×Ö·û
+//Ö·
 function random($length, $numeric = 0) {
 	PHP_VERSION < '4.2.0' ? mt_srand((double)microtime() * 1000000) : mt_srand();
 	$seed = base_convert(md5(print_r($_SERVER, 1).microtime()), 16, $numeric ? 10 : 35);
@@ -1162,12 +1162,12 @@ function random($length, $numeric = 0) {
 	return $hash;
 }
 
-//ÅÐ¶Ï×Ö·û´®ÊÇ·ñ´æÔÚ
+//Ð¶Ö·Ç·
 function strexists($haystack, $needle) {
 	return !(strpos($haystack, $needle) === FALSE);
 }
 
-//»ñÈ¡Êý¾Ý
+//È¡
 function data_get($var, $isarray=0) {
 	global $_SGLOBAL;
 
@@ -1179,7 +1179,7 @@ function data_get($var, $isarray=0) {
 	}
 }
 
-// update Êý¾Ý
+// update 
 function data_set($var, $datavalue, $clean=0) {
 	global $_SGLOBAL;
 
@@ -1191,11 +1191,11 @@ function data_set($var, $datavalue, $clean=0) {
 	}
 }
 
-//¼ì²éÕ¾µãÊÇ·ñ¹Ø±Õ
+//Õ¾Ç·Ø±
 function checkclose() {
 	global $_SGLOBAL, $_SCONFIG;
 
-	//Õ¾µã¹Ø±Õ
+	//Õ¾Ø±
 	if($_SCONFIG['close'] && !ckfounder($_SGLOBAL['supe_uid']) && !checkperm('closeignore')) {
 		if(empty($_SCONFIG['closereason'])) {
 			showmessage('site_temporarily_closed');
@@ -1203,13 +1203,13 @@ function checkclose() {
 			showmessage($_SCONFIG['closereason']);
 		}
 	}
-	//IP·ÃÎÊ¼ì²é
+	//IPÊ¼
 	if((!ipaccess($_SCONFIG['ipaccess']) || ipbanned($_SCONFIG['ipbanned'])) && !ckfounder($_SGLOBAL['supe_uid']) && !checkperm('closeignore')) {
 		showmessage('ip_is_not_allowed_to_visit');
 	}
 }
 
-//Õ¾µãÁ´½Ó
+//Õ¾
 function getsiteurl() {
 	global $_SCONFIG;
 
@@ -1221,12 +1221,12 @@ function getsiteurl() {
 	}
 }
 
-//»ñÈ¡ÎÄ¼þ name ºó×º
+//È¡Ä¼ name ×º
 function fileext($filename) {
 	return strtolower(trim(substr(strrchr($filename, '.'), 1)));
 }
 
-//È¥µôslassh
+//È¥slassh
 function sstripslashes($string) {
 	if(is_array($string)) {
 		foreach($string as $key => $val) {
@@ -1238,7 +1238,7 @@ function sstripslashes($string) {
 	return $string;
 }
 
-//ÏÔÊ¾¹ã¸æ
+//Ê¾
 function adshow($pagetype) {
 	global $_SGLOBAL;
 
@@ -1251,7 +1251,7 @@ function adshow($pagetype) {
 	echo sreadfile($file);
 }
 
-//±àÂë transform 
+// transform 
 function siconv($str, $out_charset, $in_charset='') {
 	global $_SC;
 
@@ -1264,10 +1264,10 @@ function siconv($str, $out_charset, $in_charset='') {
 			return $outstr;
 		}
 	}
-	return $str;// transform Ê§°Ü
+	return $str;// transform Ê§
 }
 
-//»ñÈ¡ user Êý¾Ý
+//È¡ user 
 function getpassport($username, $password) {
 	global $_SGLOBAL, $_SC;
 
@@ -1285,7 +1285,7 @@ function getpassport($username, $password) {
 	return $passport;
 }
 
-// user ²Ù×÷Ê±¼ä¼ä¸ô¼ì²é
+// user Ê±
 function interval_check($type) {
 	global $_SGLOBAL, $space;
 
@@ -1300,7 +1300,7 @@ function interval_check($type) {
 	return $waittime;
 }
 
-//´¦ÀíÉÏ´« image Á¬½Ó
+//Ï´ image 
 function pic_get($filepath, $thumb, $remote, $return_thumb=1) {
 	global $_SCONFIG, $_SC;
 
@@ -1319,18 +1319,18 @@ function pic_get($filepath, $thumb, $remote, $return_thumb=1) {
 	return $url;
 }
 
-//»ñµÃ·âÃæ image Á´½Ó
+//Ã· image 
 function pic_cover_get($pic, $picflag) {
 	global $_SCONFIG, $_SC;
 
 	if(empty($pic)) {
 		$url = 'image/nopic.gif';
 	} else {
-		if($picflag == 1) {//±¾µØ
+		if($picflag == 1) {//
 			$url = $_SC['attachurl'].$pic;
-		} elseif ($picflag == 2) {//Ô¶³Ì
+		} elseif ($picflag == 2) {//Ô¶
 			$url = $_SCONFIG['ftpurl'].$pic;
-		} else {//ÍøÂç
+		} else {//
 			$url = $pic;
 		}
 	}
@@ -1338,13 +1338,13 @@ function pic_cover_get($pic, $picflag) {
 	return $url;
 }
 
-//´¦Àí points ÐÇÐÇ
+// points 
 function getstar($experience) {
 	global $_SCONFIG;
 
 	$starimg = '';
 	if($_SCONFIG['starcredit'] > 1) {
-		//¼ÆËãÐÇÐÇÊý
+		//
 		$starnum = intval($experience/$_SCONFIG['starcredit']) + 1;
 		if($_SCONFIG['starlevelnum'] < 2) {
 			if($starnum > 10) $starnum = 10;
@@ -1352,7 +1352,7 @@ function getstar($experience) {
 				$starimg .= '<img src="image/star_level10.gif" align="absmiddle" />';
 			}
 		} else {
-			//¼ÆËãµÈ¼¶(10¸ö)
+			//È¼(10)
 			for($i = 10; $i > 0; $i--) {
 				$numlevel = intval($starnum / pow($_SCONFIG['starlevelnum'], ($i - 1)));
 				if($numlevel > 10) $numlevel = 10;
@@ -1369,7 +1369,7 @@ function getstar($experience) {
 	return $starimg;
 }
 
-//»ñÈ¡ºÃÓÑ×´Ì¬
+//È¡×´Ì¬
 function getfriendstatus($uid, $fuid) {
 	global $_SGLOBAL;
 
@@ -1377,11 +1377,11 @@ function getfriendstatus($uid, $fuid) {
 	if($value = $_SGLOBAL['db']->fetch_array($query)) {
 		return $value['status'];
 	} else {
-		return -1;//Ã»ÓÐ¼ÇÂ¼
+		return -1;//Ã»Ð¼Â¼
 	}
 }
 
-//ÖØÐÂ groups ½¨
+// groups 
 function renum($array) {
 	$newnums = $nums = array();
 	foreach ($array as $id => $num) {
@@ -1391,27 +1391,27 @@ function renum($array) {
 	return array($nums, $newnums);
 }
 
-//¼ì²é¶¨Ïò
+//é¶¨
 function ckfriend($touid, $friend, $target_ids='') {
 	global $_SGLOBAL, $_SC, $_SCONFIG, $_SCOOKIE, $space;
 
-	//ÓÎ¿Í
+	//Î¿
 	if(empty($_SGLOBAL['supe_uid'])) {
 		return $friend?false:true;
 	}
 	
-	//×Ô¼º
-	if($touid == $_SGLOBAL['supe_uid']) return true;//×Ô¼º
+	//Ô¼
+	if($touid == $_SGLOBAL['supe_uid']) return true;//Ô¼
 	
 	$var = 'ckfriend_'.md5($touid.'_'.$friend.'_'.$target_ids);
 	if(isset($_SGLOBAL[$var])) return $_SGLOBAL[$var];
 
 	$_SGLOBAL[$var] = false;
 	switch ($friend) {
-		case 0://È«Õ¾ user ¿É¼û
+		case 0://È«Õ¾ user É¼
 			$_SGLOBAL[$var] = true;
 			break;
-		case 1://È«ºÃÓÑ¿É¼û
+		case 1://È«Ñ¿É¼
 			if($space['uid'] == $touid) {
 				if($space['friends'] && in_array($_SGLOBAL['supe_uid'], $space['friends'])) {
 					$_SGLOBAL[$var] = true;
@@ -1420,15 +1420,15 @@ function ckfriend($touid, $friend, $target_ids='') {
 				$_SGLOBAL[$var] = getfriendstatus($_SGLOBAL['supe_uid'], $touid)==1?true:false;
 			}
 			break;
-		case 2://½öÖ¸¶¨ºÃÓÑ¿É¼û
+		case 2://Ö¸Ñ¿É¼
 			if($target_ids) {
 				$target_ids = explode(',', $target_ids);
 				if(in_array($_SGLOBAL['supe_uid'], $target_ids)) $_SGLOBAL[$var] = true;
 			}
 			break;
-		case 3://½ö×Ô¼º¿É¼û
+		case 3://Ô¼É¼
 			break;
-		case 4://Æ¾ÃÜÂë²é¿´
+		case 4://Æ¾é¿´
 			$_SGLOBAL[$var] = true;
 			break;
 		default:
@@ -1437,7 +1437,7 @@ function ckfriend($touid, $friend, $target_ids='') {
 	return $_SGLOBAL[$var];
 }
 
-//ÕûÀífeed
+//feed
 function mkfeed($feed, $actors=array()) {
 	global $_SGLOBAL, $_SN, $_SCONFIG;
 
@@ -1499,7 +1499,7 @@ function mkfeed($feed, $actors=array()) {
 		$feed['icon_image'] = "http://appicon.manyou.com/icons/{$feed['icon']}";
 	}
 
-	//ÔÄ¶Á
+	//Ä¶
 	$feed['style'] = $feed['target'] = '';
 	if($_SCONFIG['feedread'] && empty($feed['id'])) {
 		$read_feed_ids = empty($_COOKIE['read_feed_ids'])?array():explode(',',$_COOKIE['read_feed_ids']);
@@ -1513,12 +1513,12 @@ function mkfeed($feed, $actors=array()) {
 		$feed['target'] = ' target="_blank"';
 	}
 
-	//¹ÜÀí
+	//
 	if(in_array($feed['idtype'], array('blogid','picid','sid','pid','eventid'))) {
 		$feed['showmanage'] = 1;
 	}
 	
-	//ÊÇ·ñ×ÔÉíÓ¦ÓÃ
+	//Ç·Ó¦
 	$feed['thisapp'] = 0;
 	if($feed['appid'] == UC_APPID) {
 		$feed['thisapp'] = 1;
@@ -1527,7 +1527,7 @@ function mkfeed($feed, $actors=array()) {
 	return $feed;
 }
 
-//ÕûÀífeedµÄÁ´½Ó
+//feed
 function mktarget($html) {
 	global $_SCONFIG;
 
@@ -1537,7 +1537,7 @@ function mktarget($html) {
 	return $html;
 }
 
-//ÕûÀí share 
+// share 
 function mkshare($share) {
 	$share['body_data'] = unserialize($share['body_data']);
 
@@ -1554,17 +1554,17 @@ function mkshare($share) {
 	return $share;
 }
 
-//ip·ÃÎÊÔÊÐí
+//ip
 function ipaccess($ipaccess) {
 	return empty($ipaccess)?true:preg_match("/^(".str_replace(array("\r\n", ' '), array('|', ''), preg_quote($ipaccess, '/')).")/", getonlineip());
 }
 
-//ip·ÃÎÊ½ûÖ¹
+//ipÊ½Ö¹
 function ipbanned($ipbanned) {
 	return empty($ipbanned)?false:preg_match("/^(".str_replace(array("\r\n", ' '), array('|', ''), preg_quote($ipbanned, '/')).")/", getonlineip());
 }
 
-//¼ì²éstart
+//start
 function ckstart($start, $perpage) {
 	global $_SCONFIG;
 
@@ -1574,7 +1574,7 @@ function ckstart($start, $perpage) {
 	}
 }
 
-//´¦ÀíÍ·Ïñ
+//Í·
 function avatar($uid, $size='small', $returnsrc = FALSE) {
 	global $_SCONFIG, $_SN;
 	
@@ -1583,7 +1583,7 @@ function avatar($uid, $size='small', $returnsrc = FALSE) {
 	return $returnsrc ? UC_API.'/data/avatar/'.$avatarfile : '<img src="'.UC_API.'/data/avatar/'.$avatarfile.'" onerror="this.onerror=null;this.src=\''.UC_API.'/images/noavatar_'.$size.'.gif\'">';
 }
 
-//µÃµ½Í·Ïñ
+//ÃµÍ·
 function avatar_file($uid, $size) {
 	global $_SGLOBAL, $_SCONFIG;
 
@@ -1601,7 +1601,7 @@ function avatar_file($uid, $size) {
 	return $_SGLOBAL[$var];
 }
 
-//¼ì²éÊÇ·ñµÇÂ¼
+//Ç·Â¼
 function checklogin() {
 	global $_SGLOBAL, $_SCONFIG;
 
@@ -1611,23 +1611,79 @@ function checklogin() {
 	}
 }
 
-//»ñµÃÇ°Ì¨ÓïÑÔ
+
+//-----------------------------------------------
+//vot: Append a language file to the mount point
+function language_append($mount_point='', $lang_file='') {
+	global $_SGLOBAL, $_SCONFIG, $_SC;//vot
+
+  if($lang_file) {
+    if(empty($_SGLOBAL['language_load'][$lang_file]));
+      include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/'.$lang_file.'.php');
+//DEBUG
+//echo "include: ".S_ROOT.'language/'.$_SCONFIG['language'].'/'.$lang_file.'.php'."<br>\n";
+
+//echo 'mount=$_SGLOBAL['.$mount_point."].<br>\n";
+
+//DEBUG
+//echo "<pre>";
+//echo " count1=".count($_SGLOBAL[$mount_point])."<br>\n";
+//echo " count2=".count($_lang)."<br>\n";
+//echo "Summ languages.<br>\n";
+//	$_SGLOBAL[$mount_point] = $_SGLOBAL[$mount_point] + $_lang;
+	$_SGLOBAL[$mount_point] = array_merge($_SGLOBAL[$mount_point], $_lang);
+//echo " count3=".count($_SGLOBAL[$mount_point])."<br>\n";
+//print_r($_lang);
+//echo "</pre>";
+
+	//vot: remove the allready appended language array
+	unset($_lang);
+	$_SGLOBAL['language_load'][$lang_file] = 1;
+  }
+}
+
+//-----------------------------------------------
+//vot: Append a language file to the mount point
+function language_load($lang_file='') {
+	global $_SGLOBAL, $_SCONFIG, $_SC;//vot
+
+  if($lang_file) {
+      include(S_ROOT.'language/'.$_SCONFIG['language'].'/'.$lang_file.'.php');
+  }
+}
+
+//------------------------------------------------------
+// Language Variable
 function lang($key, $vars=array()) {
 	global $_SGLOBAL, $_SCONFIG, $_SC;//vot
-//DEBUG
-//echo "include: ".S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php'."<br>";
 
-	include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php');//vot
+	// Preload Language Files
+//	include_once(S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php'); //vot
+//DEBUG
+//echo "include: ".S_ROOT.'language/'.$_SCONFIG['language'].'/lang_source.php'."<br>\n";
+//echo " count0=".count($_SGLOBAL['sourcelang'])."<br>\n";
+
+//	language_append('sourcelang','lang_source2');
+//echo " count2=".count($_SGLOBAL['sourcelang'])."<br>\n";
+//	language_append('sourcelang','lang_template');
+//echo " count3=".count($_SGLOBAL['sourcelang'])."<br>\n";
+
+//DEBUG
+//echo "<pre>";
+//print_r($_SGLOBAL['sourcelang']);
+//echo "</pre>";
+
+
 
 	if(isset($_SGLOBAL['sourcelang'][$key])) {
 		$result = lang_replace($_SGLOBAL['sourcelang'][$key], $vars);
 	} else {
-		$result = $key;
+		$result = '{'.$key.'}';
 	}
 	return $result;
 }
 
-//»ñµÃºóÌ¨ÓïÑÔ
+//ÃºÌ¨
 function cplang($key, $vars=array()) {
 	global $_SGLOBAL, $_SC, $_SCONFIG;//vot
 //DEBUG
@@ -1642,7 +1698,7 @@ function cplang($key, $vars=array()) {
 	return $result;
 }
 
-//ÓïÑÔÌæ»»
+//æ»»
 function lang_replace($text, $vars) {
 //DEBUG
 //echo 'lang_replace(): '."<br>";
@@ -1660,7 +1716,7 @@ function lang_replace($text, $vars) {
 	return $text;
 }
 
-//»ñµÃ user  groups  name 
+// user  groups  name 
 function getfriendgroup() {
 	global $_SCONFIG, $space;
 
@@ -1684,7 +1740,7 @@ function getfriendgroup() {
 	return $groups;
 }
 
-//½ØÈ¡Á´½Ó
+//È¡
 function sub_url($url, $length) {
 	if(strlen($url) > $length) {
 		$url = str_replace(array('%3A', '%2F'), array(':', '/'), rawurlencode($url));
@@ -1693,33 +1749,33 @@ function sub_url($url, $length) {
 	return $url;
 }
 
-//»ñÈ¡ user name
+//È¡ user name
 function realname_set($uid, $username, $name='', $namestatus=0) {
 	global $_SGLOBAL, $_SN, $_SCONFIG;
 	if($name) {
 		$_SN[$uid] = ($_SCONFIG['realname'] && $namestatus)?$name:$username;
 	} elseif(empty($_SN[$uid])) {
 		$_SN[$uid] = $username;
-		$_SGLOBAL['select_realname'][$uid] = $uid;//ÐèÒª¼ìË÷
+		$_SGLOBAL['select_realname'][$uid] = $uid;//Òª
 	}
 }
 
-//»ñÈ¡ real name 
+//È¡ real name 
 function realname_get() {
 	global $_SGLOBAL, $_SCONFIG, $_SN, $space;
 
 	if(empty($_SGLOBAL['_realname_get']) && $_SCONFIG['realname'] && $_SGLOBAL['select_realname']) {
-		//½ûÖ¹ÖØ¸´µ÷ÓÃ
+		//Ö¹Ø¸
 		$_SGLOBAL['_realname_get'] = 1;
 
-		// allready ¾­ÓÐµÄ
+		// allready Ðµ
 		if($space && isset($_SGLOBAL['select_realname'][$space['uid']])) {
 			unset($_SGLOBAL['select_realname'][$space['uid']]);
 		}
 		if($_SGLOBAL['member']['uid'] && isset($_SGLOBAL['select_realname'][$_SGLOBAL['member']['uid']])) {
 			unset($_SGLOBAL['select_realname'][$_SGLOBAL['member']['uid']]);
 		}
-		//»ñµÃ real name 
+		// real name 
 		$uids = empty($_SGLOBAL['select_realname'])?array():array_keys($_SGLOBAL['select_realname']);
 		if($uids) {
 			$query = $_SGLOBAL['db']->query("SELECT uid, name, namestatus FROM ".tname('space')." WHERE uid IN (".simplode($uids).")");
@@ -1732,7 +1788,7 @@ function realname_get() {
 	}
 }
 
-// group  groups ÐÅÏ¢
+// group  groups Ï¢
 function getmtag($id) {
 	global $_SGLOBAL;
 
@@ -1740,13 +1796,13 @@ function getmtag($id) {
 	if(!$mtag = $_SGLOBAL['db']->fetch_array($query)) {
 		showmessage('designated_election_it_does_not_exist');
 	}
-	//¿Õ group  groups 
+	// group  groups 
 	if($mtag['membernum']<1 && ($mtag['joinperm'] || $mtag['viewperm'])) {
 		$mtag['joinperm'] = $mtag['viewperm'] = 0;
 		updatetable('mtag', array('joinperm'=>0, 'viewperm'=>0), array('tagid'=>$id));
 	}
 
-	//´¦Àí
+	//
 	include_once(S_ROOT.'./data/data_profield.php');
 	$mtag['field'] = $_SGLOBAL['profield'][$mtag['fieldid']];
 	$mtag['title'] = $mtag['field']['title'];
@@ -1754,9 +1810,9 @@ function getmtag($id) {
 		$mtag['pic'] = 'image/nologo.jpg';
 	}
 
-	//³ÉÔ±¼¶±ð
+	//Ô±
 	$mtag['ismember'] = 0;
-	$mtag['grade'] = -9;//-9 ·Ç³ÉÔ± -2 ÉêÇë -1 ½ûÑÔ 0 ordinary 1 Ã÷ÐÇ 8 ¸± group Ö÷ 9  group Ö÷
+	$mtag['grade'] = -9;//-9 Ç³Ô± -2  -1  0 ordinary 1  8  group  9  group 
 	$query = $_SGLOBAL['db']->query("SELECT grade FROM ".tname('tagspace')." WHERE tagid='$id' AND uid='$_SGLOBAL[supe_uid]' LIMIT 1");
 	if($value = $_SGLOBAL['db']->fetch_array($query)) {
 		$mtag['grade'] = $value['grade'];
@@ -1781,7 +1837,7 @@ function getmtag($id) {
 	return $mtag;
 }
 
-//È¡Êý groups ÖÐµÄËæ»ú¸ö
+//È¡ groups Ðµ
 function sarray_rand($arr, $num=1) {
 	$r_values = array();
 	if($arr && count($arr) > $num) {
@@ -1800,13 +1856,13 @@ function sarray_rand($arr, $num=1) {
 	return $r_values;
 }
 
-//»ñµÃ user Î¨Ò»´®
+// user Î¨Ò»
 function space_key($space, $appid=0) {
 	global $_SCONFIG;
 	return substr(md5($_SCONFIG['sitekey'].'|'.$space['uid'].(empty($appid)?'':'|'.$appid)), 8, 16);
 }
 
-//»ñµÃ user URL
+// user URL
 function space_domain($space) {
 	global $_SCONFIG;
 
@@ -1822,7 +1878,7 @@ function space_domain($space) {
 	return $space['domainurl'];
 }
 
-//²úÉúform·ÀÎ±Âë
+//formÎ±
 function formhash() {
 	global $_SGLOBAL, $_SCONFIG;
 
@@ -1833,12 +1889,12 @@ function formhash() {
 	return $_SGLOBAL['formhash'];
 }
 
-//¼ì²éÓÊÏäÊÇ·ñÓÐÐ§
+//Ç·Ð§
 function isemail($email) {
 	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
 }
 
-//ÑéÖ¤ÌáÎÊ
+//Ö¤
 function question() {
 	global $_SGLOBAL;
 
@@ -1851,7 +1907,7 @@ function question() {
 	}
 }
 
-//Êä³öMYOPÉý¼¶ÐÅÏ¢½Å±¾
+//MYOPÏ¢Å±
 function my_checkupdate() {
 	global $_SGLOBAL, $_SCONFIG;
 	if($_SCONFIG['my_status'] && empty($_SCONFIG['my_closecheckupdate']) && checkperm('admin')) {
@@ -1862,7 +1918,7 @@ function my_checkupdate() {
 	}
 }
 
-//»ñµÃ user  groups Í¼±ê
+// user  groups Í¼
 function g_icon($gid) {
 	global $_SGLOBAL;
 	include_once(S_ROOT.'./data/data_usergroup.php');
@@ -1873,7 +1929,7 @@ function g_icon($gid) {
 	}
 }
 
-//»ñµÃ user ÑÕÉ«
+// user É«
 function g_color($gid) {
 	global $_SGLOBAL;
 	include_once(S_ROOT.'./data/data_usergroup.php');
@@ -1884,7 +1940,7 @@ function g_color($gid) {
 	}
 }
 
-//¼ì²éÊÇ·ñ²Ù×÷ founder 
+//Ç· founder 
 function ckfounder($uid) {
 	global $_SC;
 
@@ -1896,7 +1952,7 @@ function ckfounder($uid) {
 	}
 }
 
-//»ñÈ¡Ä¿Â¼
+//È¡Ä¿Â¼
 function sreaddir($dir, $extarr=array()) {
 	$dirs = array();
 	if($dh = opendir($dir)) {
@@ -1914,7 +1970,7 @@ function sreaddir($dir, $extarr=array()) {
 	return $dirs;
 }
 
-//»ñÈ¡Ö¸¶¨¶¯×÷ÄÜ»ñµÃ¶àÉÙ points 
+//È¡Ö¸Ü»Ã¶ points 
 function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 	global $_SGLOBAL, $_SCOOKIE;
 
@@ -1930,7 +1986,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 	if($rule['credit'] || $rule['experience']) {
 		$uid = $uid ? intval($uid) : $_SGLOBAL['supe_uid'];
 		if($rule['rewardtype']) {
-			//Ôö¼Ó points 
+			// points 
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('creditlog')." WHERE uid='$uid' AND rid='$rule[rid]'");
 			$creditlog = $_SGLOBAL['db']->fetch_array($query);
 
@@ -1946,7 +2002,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 					'experience' => $rule['experience'],
 					'dateline' => $_SGLOBAL['timestamp']
 				);
-				//ÅÐ¶ÏÊÇ·ñÐèÒªÈ¥ÖØ
+				//Ð¶Ç·ÒªÈ¥
 				if($rule['norepeat']) {
 					if($rule['norepeat'] == 1) {
 						$setarr['info'] = $needle;
@@ -1966,14 +2022,14 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 				$setarr = array();
 				$clid = $creditlog['clid'];
 				switch($rule['cycletype']) {
-					case 0:		//Ò»´ÎÐÔ½±Àø
+					case 0:		//Ò»Ô½
 						break;
-					case 1:		//Ã¿ÌìÏÞ´ÎÊý
-					case 4:		//²»ÏÞÖÜÆÚ
+					case 1:		//Ã¿Þ´
+					case 4:		//
 						$sql = 'cyclenum+1';
 						if($rule['cycletype'] == 1) {
 							$today = sstrtotime(sgmdate('Y-m-d'));
-							//ÅÐ¶ÏÊÇ·ñÎª×òÌì
+							//Ð¶Ç·Îª
 							if($creditlog['dateline'] < $today && $rule['rewardnum']) {
 								$creditlog['cyclenum'] =  0;
 								$sql = 1;
@@ -1981,7 +2037,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 							}
 						}
 						if(empty($rule['rewardnum']) || $creditlog['cyclenum'] < $rule['rewardnum']) {
-							//ÑéÖ¤ÊÇ·ñÎªÐèÒªÈ¥ÖØ²Ù×÷
+							//Ö¤Ç·ÎªÒªÈ¥Ø²
 							if($rule['norepeat']) {
 								$repeat = checkcheating($creditlog, $needle, $rule['norepeat']);
 								if($repeat && !$newcycle) {
@@ -1990,7 +2046,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 							}
 							$reward['credit'] = $rule['credit'];
 							$reward['experience'] = $rule['experience'];
-							// update ´ÎÊý
+							// update 
 							$setarr = array(
 								'cyclenum' => "cyclenum=$sql",
 								'total' => 'total=total+1',
@@ -2001,12 +2057,12 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 						}
 						break;
 
-					case 2:		//Õûµã
-					case 3:		//¼ä¸ô·ÖÖÓ
+					case 2:		//
+					case 3:		//
 						$nextcycle = 0;
 						if($creditlog['starttime']) {
 							if($rule['cycletype'] == 2) {
-								//ÉÏÒ»´ÎÖ´ÐÐÊ±¼ä
+								//Ò»Ö´Ê±
 								$start = sstrtotime(sgmdate('Y-m-d H:00:00', $creditlog['starttime']));
 								$nextcycle = $start+$rule['cycletime']*3600;
 							} else {
@@ -2014,7 +2070,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 							}
 						}
 						if($_SGLOBAL['timestamp'] <= $nextcycle && $creditlog['cyclenum'] < $rule['rewardnum']) {
-							//ÑéÖ¤ÊÇ·ñÎªÐèÒªÈ¥ÖØ²Ù×÷
+							//Ö¤Ç·ÎªÒªÈ¥Ø²
 							if($rule['norepeat']) {
 								$repeat = checkcheating($creditlog, $needle, $rule['norepeat']);
 								if($repeat && !$newcycle) {
@@ -2048,20 +2104,20 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 						break;
 				}
 
-				//¼ÇÂ¼²Ù×÷ÀúÊ·
+				//Â¼Ê·
 				if($rule['norepeat'] && $needle) {
 					switch($rule['norepeat']) {
 						case 0:
 							break;
-						case 1:		//ÐÅÏ¢È¥ÖØ
+						case 1:		//Ï¢È¥
 							$info = empty($creditlog['info'])||$newcycle ? $needle : $creditlog['info'].','.$needle;
 							$setarr['info'] = "`info`='$info'";
 							break;
-						case 2:		// user È¥ÖØ
+						case 2:		// user È¥
 							$user = empty($creditlog['user'])||$newcycle ? $needle : $creditlog['user'].','.$needle;
 							$setarr['user'] = "`user`='$user'";
 							break;
-						case 3:		//Ó¦ÓÃÈ¥ÖØ
+						case 3:		//Ó¦È¥
 							$app = empty($creditlog['app'])||$newcycle ? $needle : $creditlog['app'].','.$needle;
 							$setarr['app'] = "`app`='$app'";
 							break;
@@ -2073,7 +2129,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 
 			}
 			if($setcookie && $uid = $_SGLOBAL['supe_uid']) {
-				//ÆäÖÐÓÐÐÂÖµÊ±²ÅÖØÐ´cookieÖµ
+				//ÖµÊ±Ð´cookieÖµ
 				if($reward['credit'] || $reward['experience']) {
 					$logstr = $action.','.$clid;
 					ssetcookie('reward_log', $logstr);
@@ -2081,7 +2137,7 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 				}
 			}
 		} else {
-			//¿Û³ý points 
+			//Û³ points 
 			$reward['credit'] = "-$rule[credit]";
 			$reward['experience'] = "-$rule[experience]";
 		}
@@ -2099,26 +2155,26 @@ function getreward($action, $update=1, $uid=0, $needle='', $setcookie = 1) {
 	return array('credit'=>abs($reward['credit']), 'experience' => abs($reward['experience']));
 }
 
-//·À points ÖØ¸´½±ÀøÍ¬¸öÈË»òÍ¬ÐÅÏ¢
+// points Ø¸Í¬Ë»Í¬Ï¢
 function checkcheating($creditlog, $needle, $norepeat) {
 
 	$repeat = false;
 	switch($norepeat) {
 		case 0:
 			break;
-		case 1:		//ÐÅÏ¢È¥ÖØ
+		case 1:		//Ï¢È¥
 			$infoarr = explode(',', $creditlog['info']);
 			if(in_array($needle, $infoarr)) {
 				$repeat = true;
 			}
 			break;
-		case 2:		// user È¥ÖØ
+		case 2:		// user È¥
 			$userarr = explode(',', $creditlog['user']);
 			if(in_array($needle, $userarr)) {
 				$repeat = true;
 			}
 			break;
-		case 3:		//Ó¦ÓÃÈ¥ÖØ
+		case 3:		//Ó¦È¥
 			$apparr = explode(',', $creditlog['app']);
 			if(in_array($needle, $apparr)) {
 				$repeat = true;
@@ -2129,7 +2185,7 @@ function checkcheating($creditlog, $needle, $norepeat) {
 	return $repeat;
 }
 
-//»ñµÃ hot value 
+// hot value 
 function topic_get($topicid) {
 	global $_SGLOBAL;
 	$topic = array();
@@ -2160,7 +2216,7 @@ function topic_get($topicid) {
 	return $topic;
 }
 
-//×Ô¶¨Òå pagination 
+//Ô¶ pagination 
 function mob_perpage($perpage) {
 	global $_SGLOBAL;
 
@@ -2171,14 +2227,14 @@ function mob_perpage($perpage) {
 	return $perpage;
 }
 
-//¼ì²é user µÄÌØÊâÉí·Ý
+// user 
 function ckspacelog() {
 	global $_SGLOBAL;
 	
 	if(empty($_SGLOBAL['supe_uid'])) return false;
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('spacelog')." WHERE uid='$_SGLOBAL[supe_uid]'");
 	if($value = $_SGLOBAL['db']->fetch_array($query)) {
-		if($value['expiration'] && $value['expiration'] <= $_SGLOBAL['timestamp']) {//µ½ÆÚ
+		if($value['expiration'] && $value['expiration'] <= $_SGLOBAL['timestamp']) {//
 			$_SGLOBAL['db']->query("DELETE FROM ".tname('spacelog')." WHERE uid='$_SGLOBAL[supe_uid]'");
 		}
 		$expiration = sgmdate('Y-m-d H:i', $value['expiration']);
@@ -2201,12 +2257,12 @@ function get_languages() {
 
 	if(is_dir($lng_dirname.'/'.$dir)) {
 
-		$lngvalue = array('name'=>$dir, 'title'=>'Unknown', 'icon'=>W_ROOT.'image/lngicon.gif' );
+		$lngvalue = array('name'=>$dir, 'title'=>'Unknown', 'icon'=>W_ROOT.'/image/lngicon.gif' );
 
 		if(file_exists($lng_dirname.'/'.$dir.'/lang_title.php')) {
 			require($lng_dirname.'/'.$dir.'/lang_title.php');
 			$lngvalue['title'] = $_SGLOBAL['language_title'];
-			$lngvalue['icon'] = W_ROOT.'language/'.$dir.'/'.$_SGLOBAL['language_icon'];
+			$lngvalue['icon'] = W_ROOT.'/language/'.$dir.'/'.$_SGLOBAL['language_icon'];
 		}
 
 		$languages[$dir] = $lngvalue;

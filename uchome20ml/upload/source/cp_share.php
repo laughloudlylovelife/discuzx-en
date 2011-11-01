@@ -86,7 +86,7 @@ if($_GET['op'] == 'delete') {
 			$arr['body_template'] = '<b>{username}</b><br>{reside}<br>{spacenote}';
 			$arr['body_data'] = array(
 				'username' => "<a href=\"space.php?uid=$id\">".$_SN[$tospace['uid']]."</a>",
-				'reside' => $tospace['resideprovince'].$tospace['residecity'],
+				'reside' => $tospace['residecountry'].$tospace['resideprovince'].$tospace['residecity'],
 				'spacenote' => $tospace['spacenote']
 			);
 			
@@ -312,7 +312,7 @@ if($_GET['op'] == 'delete') {
 			$arr['body_data'] = array(
 				'eventname' => "<a href=\"space.php?do=event&id=$event[eventid]\">$event[title]</a>",
 				'eventtime' => sgmdate('m-d H:i', $event['starttime']) . " - " . sgmdate("m-d H:i", $event['endtime']),
-				'eventlocation' => "$event[province] $event[city] $event[location]",
+				'eventlocation' => "$event[country] $event[province] $event[city] $event[location]",
 				'eventcreator' => $event['username']
 			);
 			$arr['image'] = $_SC['attachurl'] . $event['poster'];
@@ -364,7 +364,7 @@ if($_GET['op'] == 'delete') {
 			$hotarr = array('pid', $poll['pid'], $poll['hotuser']);
 			break;
 		default:
-			//获得feed
+			//feed
 			$topic = array();
 			$topicid = $_GET['topicid'] = intval($_GET['topicid']);
 			if($topicid) {
@@ -414,13 +414,13 @@ if($_GET['op'] == 'delete') {
 					$arr['body_data']['host'] = $hosts[1];
 				}
 			}
-			// 判断是否音乐 mp3、wma
+			// 卸欠 mp3wma
 			if(preg_match("/\.(mp3|wma)$/i", $link)) {
 				$arr['title_template'] = cplang('share_music');
 				$arr['body_data']['musicvar'] = $link;
 				$type = 'music';
 			}
-			// 判断是否 Flash
+			// 卸欠 Flash
 			if(preg_match("/\.swf$/i", $link)) {
 				$arr['title_template'] = cplang('share_flash');
 				$arr['body_data']['flashaddr'] = $link;
@@ -435,16 +435,16 @@ if($_GET['op'] == 'delete') {
 		$arr['username'] = $_SGLOBAL['supe_username'];
 		$arr['dateline'] = $_SGLOBAL['timestamp'];
 		$arr['topicid'] = $_POST['topicid'];
-		$arr['body_data'] = serialize($arr['body_data']);//数 groups 转化
+		$arr['body_data'] = serialize($arr['body_data']);// groups 转
 		
-		//入库
-		$setarr = saddslashes($arr);//增加转义
+		//
+		$setarr = saddslashes($arr);//转
 		$sid = inserttable('share', $setarr, 1);
 
 		//Statistics
 		updatestat('share');
 	
-		//被 share notice 当事人
+		// share notice 
 		if($note_uid && $note_uid != $_SGLOBAL['supe_uid']) {
 			notification_add($note_uid, 'sharenotice', $note_message);
 		}
@@ -462,7 +462,7 @@ if($_GET['op'] == 'delete') {
 		$reward = getreward('createshare', 0, 0, $needle);
 		$_SGLOBAL['db']->query("UPDATE ".tname('space')." SET {$sharenumsql}, lastpost='$_SGLOBAL[timestamp]', updatetime='$_SGLOBAL[timestamp]', credit=credit+$reward[credit], experience=experience+$reward[experience] WHERE uid='$_SGLOBAL[supe_uid]'");
 
-		//动态
+		//态
 		if(ckprivacy('share', 1)) {
 			include_once(S_ROOT.'./source/function_feed.php');
 			feed_publish($sid, 'sid', 1);
@@ -478,8 +478,8 @@ if($_GET['op'] == 'delete') {
 		showmessage('do_success', $url, 0);
 	}
 
-	//显示
-	$arr['body_data'] = serialize($arr['body_data']);//数 groups 转化
+	//示
+	$arr['body_data'] = serialize($arr['body_data']);// groups 转
 	$arr = mkshare($arr);
 
 	realname_get();

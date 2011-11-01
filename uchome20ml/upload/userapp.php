@@ -31,18 +31,18 @@ if(empty($_SCONFIG['my_status'])) {
 }
 
 if($appid == '1036584') {
-	// Video Authentication
+	// Video Verification
 } else {
 	// Check for Application permission
 	if(!checkperm('allowmyop')) {
 		showmessage('no_privilege');
 	}
 	
-	// Real-name authentication
+	// Real-name verification
 	include_once(S_ROOT.'./source/function_cp.php');
 	ckrealname('userapp');
 	
-	// Video Authentication
+	// Video Verification
 	ckvideophoto('userapp');
 	
 	// Update Session Status
@@ -57,7 +57,7 @@ if($app = $_SGLOBAL['db']->fetch_array($query)) {
 	}
 }
 	
-// Roaming
+// Network Application
 $my_appId = $appid;
 $my_suffix = base64_decode(urldecode($_GET['my_suffix']));
 

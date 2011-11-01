@@ -51,6 +51,7 @@ if(submitcheck('eventsubmit')) {
 	$arr1 = array(
 		"title" => getstr($_POST['title'], 80, 1, 1, 1),
 		"classid" => intval($_POST['classid']),
+"country" => getstr($_POST['country'], 0, 1, 1),
 		"province" => getstr($_POST['province'], 20, 1, 1),
 		"city" => getstr($_POST['city'], 20, 1, 1),
 		"location" => getstr($_POST['location'], 80, 1, 1, 1),
@@ -529,7 +530,7 @@ if($op == 'invite') {
 				$_POST['fellow'] = intval($_POST['fellow']);
 				$arr['fellow'] = $_POST['fellow'];// Modify number of participants
 				$num = $_POST['fellow'] - $_SGLOBAL['supe_userevent']['fellow'];
-				// 检查人数
+				// 
 				if ($event['limitnum'] > 0 && $num + $event['membernum'] > $event['limitnum']){
 					showmessage("event_already_full");
 				}
@@ -668,7 +669,7 @@ if($op == 'invite') {
 	}
 
 } elseif($op == "follow") {
-	// 关注
+	// 注
 	if(! $eventid){
 		showmessage("event_does_not_exist"); // Event does not exist or has been deleted
 	}
@@ -944,7 +945,7 @@ if($op == 'invite') {
 	
 	//This Month Events
 	$events = array();
-	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("event")." WHERE starttime < $dayend AND endtime > $daystart ORDER BY eventid DESC LIMIT 100");//最多只取100
+	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("event")." WHERE starttime < $dayend AND endtime > $daystart ORDER BY eventid DESC LIMIT 100");//只取100
 	while($value=$_SGLOBAL['db']->fetch_array($query)) {
 		if($value['public']<1 || $value['grade'] == 0 || $value['grade'] == -1){
 			continue;
@@ -1031,6 +1032,7 @@ if($op == 'invite') {
 		$event['verify'] = 0;  // Need verify
 		$event['public'] = 2;  // Whether public event: a fully open
 		$event['limitnum'] = 0;  // Limit the number of participants: unlimited
+$event['country'] = $space['country'];  // Country
 		$event['province'] = $space['resideprovince'];  // Event City: Publisher City
 		$event['city'] = $space['residecity'];
 		

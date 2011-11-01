@@ -34,7 +34,7 @@ $results = getwheres($intkeys, $strkeys, $randkeys, $likekeys, 'b.');
 $wherearr = $results['wherearr'];
 $mpurl .= '&'.implode('&', $results['urls']);
 
-//限制条件2
+//2
 $intkeys = array();
 $strkeys = array('postip');
 $randkeys = array();

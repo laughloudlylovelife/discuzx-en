@@ -31,10 +31,12 @@ if($_GET['op'] == 'base') {
 			'birthday' => intval($_POST['birthday']),
 			'blood' => getstr($_POST['blood'], 5, 1, 1),
 			'marry' => intval($_POST['marry']),
-			'birthprovince' => getstr($_POST['birthprovince'], 20, 1, 1),
-			'birthcity' => getstr($_POST['birthcity'], 20, 1, 1),
-			'resideprovince' => getstr($_POST['resideprovince'], 20, 1, 1),
-			'residecity' => getstr($_POST['residecity'], 20, 1, 1)
+	'birthcountry' => getstr($_POST['birthcountry'], 0, 1, 1),
+			'birthprovince' => getstr($_POST['birthprovince'], 0, 1, 1),
+			'birthcity' => getstr($_POST['birthcity'], 0, 1, 1),
+	'residecountry' => getstr($_POST['residecountry'], 0, 1, 1),
+			'resideprovince' => getstr($_POST['resideprovince'], 0, 1, 1),
+			'residecity' => getstr($_POST['residecity'], 0, 1, 1)
 		);
 		
 		// gender 
@@ -87,11 +89,11 @@ if($_GET['op'] == 'base') {
 					$setarr['experience'] = $space['experience'] + $reward['experience'];
 				}
 			
-			} elseif($_SCONFIG['realname'] && $space['namestatus'] && !checkperm('managename')) {	//¿Û¼õ points 
+			} elseif($_SCONFIG['realname'] && $space['namestatus'] && !checkperm('managename')) {	//Û¼ points 
 				$reward = getreward('editrealname', 0);
 				// points
 				if($space['name'] && $setarr['name'] != $space['name'] && ($reward['credit'] || $reward['experience'])) {
-					//ÑéÖ¤¾­ÑéÖµ
+					//Ö¤Öµ
 					if($space['experience'] >= $reward['experience']) {
 						$setarr['experience'] = $space['experience'] - $reward['experience'];
 					} else {
@@ -108,12 +110,12 @@ if($_GET['op'] == 'base') {
 			updatetable('space', $setarr, array('uid'=>$_SGLOBAL['supe_uid']));
 		}
 	
-		//±ä¸ü¼ÇÂ¼
+		//Â¼
 		if($_SCONFIG['my_status']) {
 			inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp'], 'type'=>0), 0, true);
 		}
 		
-		//²úÉúfeed
+		//feed
 		if(ckprivacy('profile', 1)) {
 			feed_add('profile', cplang('feed_profile_update_base'));
 		}
@@ -129,7 +131,7 @@ if($_GET['op'] == 'base') {
 	// gender 
 	$sexarr = array($space['sex']=>' checked');
 	
-	//ÉúÈÕ:Äê
+	//:
 	$birthyeayhtml = '';
 	$nowy = sgmdate('Y');
 	for ($i=0; $i<100; $i++) {
@@ -137,13 +139,13 @@ if($_GET['op'] == 'base') {
 		$selectstr = $they == $space['birthyear']?' selected':'';
 		$birthyeayhtml .= "<option value=\"$they\"$selectstr>$they</option>";
 	}
-	//ÉúÈÕ:ÔÂ
+	//:
 	$birthmonthhtml = '';
 	for ($i=1; $i<13; $i++) {
 		$selectstr = $i == $space['birthmonth']?' selected':'';
 		$birthmonthhtml .= "<option value=\"$i\"$selectstr>$i</option>";
 	}
-	//ÉúÈÕ:ÈÕ
+	//:
 	$birthdayhtml = '';
 	for ($i=1; $i<32; $i++) {
 		$selectstr = $i == $space['birthday']?' selected':'';
@@ -158,7 +160,7 @@ if($_GET['op'] == 'base') {
 	// marriage 
 	$marryarr = array($space['marry'] => ' selected');
 	
-	//À¸Ä¿±íµ¥
+	//Ä¿íµ¥
 	$profilefields = array();
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('profilefield')." ORDER BY displayorder");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -187,7 +189,7 @@ if($_GET['op'] == 'base') {
 	}
 	
 	if(empty($_SCONFIG['namechange'])) {
-		$_GET['namechange'] = 0;//²»ÔÊĞíĞŞ¸Ä
+		$_GET['namechange'] = 0;//Ş¸
 	}
 	
 	// privacy 
@@ -200,48 +202,48 @@ if($_GET['op'] == 'base') {
 } elseif ($_GET['op'] == 'contact') {
 	
 	if($_GET['resend']) {
-		//ÖØĞÂ·¢ËÍÓÊÏäÑéÖ¤
+		//Â·Ö¤
 		$toemail = $space['newemail']?$space['newemail']:$space['email'];
 		emailcheck_send($space['uid'], $toemail);
 		showmessage('do_success', "cp.php?ac=profile&op=contact");
 	}
 	
 	if(submitcheck('profilesubmit') || submitcheck('nextsubmit')) {
-		//Ìá½»¼ì²é
+		//á½»
 		$setarr = array(
 			'mobile' => getstr($_POST['mobile'], 40, 1, 1),
 			'qq' => getstr($_POST['qq'], 20, 1, 1),
 			'msn' => getstr($_POST['msn'], 80, 1, 1),
 		);
 		
-		//ÓÊÏäÎÊÌâ
+		//
 		$newemail = isemail($_POST['email'])?$_POST['email']:'';
 		if(isset($_POST['email']) && $newemail != $space['email']) {
 			
-			//¼ì²éÓÊÏäÎ¨Ò»ĞÔ
+			//Î¨Ò»
 			if($_SCONFIG['uniqueemail']) {
 				if(getcount('spacefield', array('email'=>$newemail, 'emailcheck'=>1))) {
 					showmessage('uniqueemail_check');
 				}
 			}
 			
-			//ÑéÖ¤ÃÜÂë
+			//Ö¤
 			if(!$passport = getpassport($_SGLOBAL['supe_username'], $_POST['password'])) {
 				showmessage('password_is_not_passed');
 			}
 			
-			//ÓÊÏäĞŞ¸Ä
+			//Ş¸
 			if(empty($newemail)) {
-				//ÓÊÏä delete 
+				// delete 
 				$setarr['email'] = '';
 				$setarr['emailcheck'] = 0;
 			} elseif($newemail != $space['email']) {
-				//Ö®Ç° allready ¾­ÑéÖ¤
+				//Ö®Ç° allready Ö¤
 				if($space['emailcheck']) {
-					//·¢ËÍÓÊ¼şÑéÖ¤£¬²»ĞŞ¸ÄÓÊÏä
+					//Ê¼Ö¤Ş¸
 					$setarr['newemail'] = $newemail;
 				} else {
-					//ĞŞ¸ÄÓÊÏä
+					//Ş¸
 					$setarr['email'] = $newemail;
 				}
 				emailcheck_send($space['uid'], $newemail);
@@ -262,12 +264,12 @@ if($_GET['op'] == 'base') {
 				VALUES ".implode(',', $inserts));
 		}
 
-		//±ä¸ü¼ÇÂ¼
+		//Â¼
 		if($_SCONFIG['my_status']) {
 			inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp'], 'type'=>2), 0, true);
 		}
 		
-		//²úÉúfeed
+		//feed
 		if(ckprivacy('profile', 1)) {
 			feed_add('profile', cplang('feed_profile_update_contact'));
 		}
@@ -297,7 +299,7 @@ if($_GET['op'] == 'base') {
 	}
 	
 	if(submitcheck('profilesubmit') || submitcheck('nextsubmit')) {
-		//Ìá½»¼ì²é
+		//á½»
 		$inserts = array();
 		foreach ($_POST['title'] as $key => $value) {
 			$value = getstr($value, 100, 1, 1);
@@ -312,12 +314,12 @@ if($_GET['op'] == 'base') {
 			$_SGLOBAL['db']->query("INSERT INTO ".tname('spaceinfo')."(uid,type,title,subtitle,startyear,friend) VALUES ".implode(',', $inserts));
 		}
 		
-		//±ä¸ü¼ÇÂ¼
+		//Â¼
 		if($_SCONFIG['my_status']) {
 			inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp'], 'type'=>2), 0, true);
 		}
 		
-		//²úÉúfeed
+		//feed
 		if(ckprivacy('profile', 1)) {
 			feed_add('profile', cplang('feed_profile_update_edu'));
 		}
@@ -330,7 +332,7 @@ if($_GET['op'] == 'base') {
 		showmessage('update_on_successful_individuals', $url);
 	}
 	
-	//µ±Ç° allready ¾­ÉèÖÃµÄÑ§Ğ£
+	//Ç° allready ÃµÑ§Ğ£
 	$list = array();
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('spaceinfo')." WHERE uid='$space[uid]' AND type='edu'");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -349,7 +351,7 @@ if($_GET['op'] == 'base') {
 	}
 	
 	if(submitcheck('profilesubmit') || submitcheck('nextsubmit')) {
-		//Ìá½»¼ì²é
+		//á½»
 		$inserts = array();
 		foreach ($_POST['title'] as $key => $value) {
 			$value = getstr($value, 100, 1, 1);
@@ -369,12 +371,12 @@ if($_GET['op'] == 'base') {
 				VALUES ".implode(',', $inserts));
 		}
 
-		//±ä¸ü¼ÇÂ¼
+		//Â¼
 		if($_SCONFIG['my_status']) {
 			inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp'], 'type'=>2), 0, true);
 		}
 		
-		//²úÉúfeed
+		//feed
 		if(ckprivacy('profile', 1)) {
 			feed_add('profile', cplang('feed_profile_update_work'));
 		}
@@ -388,7 +390,7 @@ if($_GET['op'] == 'base') {
 		showmessage('update_on_successful_individuals', $url);
 	}
 	
-	//µ±Ç° allready ¾­ÉèÖÃ
+	//Ç° allready 
 	$list = array();
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('spaceinfo')." WHERE uid='$space[uid]' AND type='work'");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -414,12 +416,12 @@ if($_GET['op'] == 'base') {
 				VALUES ".implode(',', $inserts));
 		}
 	
-		//±ä¸ü¼ÇÂ¼
+		//Â¼
 		if($_SCONFIG['my_status']) {
 			inserttable('userlog', array('uid'=>$_SGLOBAL['supe_uid'], 'action'=>'update', 'dateline'=>$_SGLOBAL['timestamp'], 'type'=>2), 0, true);
 		}
 		
-		//²úÉúfeed
+		//feed
 		if(ckprivacy('profile', 1)) {
 			feed_add('profile', cplang('feed_profile_update_info'));
 		}

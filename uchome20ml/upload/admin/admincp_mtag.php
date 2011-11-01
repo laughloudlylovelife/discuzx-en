@@ -35,7 +35,7 @@ if(submitcheck('opsubmit')) {
 		if(empty($newtagid)) {
 			cpmessage('designated_to_merge_the_columns_do_not_exist');
 		}
-		//开始合并
+		//始喜
 		include_once(S_ROOT.'./source/function_op.php');
 		if(!empty($_POST['ids']) && mergemtag($_POST['ids'], $newtagid)) {
 			cpmessage('the_successful_merger_of_the_designated_columns', $_POST['mpurl']);

@@ -11,22 +11,22 @@ error_reporting(0);
 
 define('IN_COMSENZ', TRUE);
 define('ROOT_PATH', dirname(__FILE__).'/../');
-//note 错误代码定义
-define('EXPLOR_SUCCESS', 0);//note 导出 success 
-define('IMPORT_SUCCESS', 0);//note 导入 success 
-define('DELETE_SQLPATH_SUCCESS', 4);//note  delete  backup 文件 success 
-define('MKDIR_ERROR', 1);//note 创建目录失败
-define('DATABASE_EXPORT_FILE_INVALID', 2);//note  backup 文件写入失败
-define('RUN_SQL_ERROR', 3);//note sql执行错误
-define('SQLPATH_NULL_NOEXISTS', 4);//note sqlpath为空或者目录不存在
-define('SQLPATH_NOMATCH_BAKFILE', 5);//note 指定sqlpaht没有找到合法的 backup 文件
-define('BAK_FILE_LOSE', 6);//note  backup 文件缺失
-define('DIR_NO_EXISTS', 7);//note 指定 backup 目录不存在
-define('DELETE_DUMPFILE_ERROR', 8);//note  delete 指定的数据库 backup 文件错误
-define('DB_API_NO_MATCH', 9);//note  backup 接口程序暂不支持此种应用的 backup 
+//note Error Code Definitions
+define('EXPLOR_SUCCESS', 0);//note Export success
+define('IMPORT_SUCCESS', 0);//note Import success
+define('DELETE_SQLPATH_SUCCESS', 4);//note  delete backup file success
+define('MKDIR_ERROR', 1);//note Failed to create directory
+define('DATABASE_EXPORT_FILE_INVALID', 2);//note  backup file write failed
+define('RUN_SQL_ERROR', 3);//note sql execution error
+define('SQLPATH_NULL_NOEXISTS', 4);//note sqlpath directory does not exist or is empty
+define('SQLPATH_NOMATCH_BAKFILE', 5);//note Specified sqlpaht legitimate backup file not found
+define('BAK_FILE_LOSE', 6);//note  backup File missing
+define('DIR_NO_EXISTS', 7);//note Specified backup directory does not exist
+define('DELETE_DUMPFILE_ERROR', 8);//note  Delete the specified database backup file failed
+define('DB_API_NO_MATCH', 9);//note  Backup program does not support such application type backup
 
-$sizelimit = 2000;//note 分卷的大小，单位K，默认为2000K，请不要设置的太大，一面超出php可操作的内存
-$usehex = true;//note 使用十六进制，可以最大程度避免字符集问题。
+$sizelimit = 2000;//note Sub-volume size in K, the default is 2000K, please do not set too large, the operational side than php memory
+$usehex = true;//note Use hexadecimal, you can avoid most of the character set issues.
 
 $code = @$_GET['code'];
 $apptype = @$_GET['apptype'];
@@ -34,9 +34,9 @@ $apptype = @$_GET['apptype'];
 $apptype = strtolower($apptype);
 
 if($apptype == 'discuz') {
-	require ROOT_PATH.'./config.inc.php';//note 加载配置文件
+	require ROOT_PATH.'./config.inc.php';//note Load configuration file
 } elseif($apptype == 'uchome' || $apptype == 'supesite' || $apptype == 'supev') {//note uchome or supsite or supev
-	require ROOT_PATH.'./config.php';//note 加载配置文件
+	require ROOT_PATH.'./config.php';//note Load configuration file
 } elseif($apptype == 'ucenter') {//note ucenter
 	require ROOT_PATH.'./data/config.inc.php';
 } elseif($apptype == 'ecmall') {//note ecmall
@@ -195,8 +195,8 @@ $db = new dbstuff();
 $version = '';
 if($apptype == 'discuz') {//note discuz
 
-	define('BACKUP_DIR', ROOT_PATH.'forumdata/');//note 数据库 backup 文件放置路径
-	$tablepre = $tablepre;//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'forumdata/');//note Place the database backup file path
+	$tablepre = $tablepre;//note Table prefix assignment, a different product, please modify this expression
 	if(empty($dbcharset)) {
 		$dbcharset = in_array(strtolower($charset), array('gbk', 'big5', 'utf-8')) ? str_replace('-', '', $charset) : '';
 	}
@@ -207,22 +207,22 @@ if($apptype == 'discuz') {//note discuz
 
 } elseif($apptype == 'uchome' || $apptype == 'supesite') {//note uchome
 
-	define('BACKUP_DIR', ROOT_PATH.'./data/');//note 数据库 backup 文件放置路径
-	$tablepre = $_SC['tablepre'];//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'./data/');//note Place the database backup file path
+	$tablepre = $_SC['tablepre'];//note Table prefix assignment, a different product, please modify this expression
 	$dbcharset = $_SC['dbcharset'];
 	$db->connect($_SC['dbhost'], $_SC['dbuser'], $_SC['dbpw'], $_SC['dbname'], $dbcharset, $_SC['pconnect'], $tablepre);
 
 } elseif($apptype == 'ucenter') {//note ucenter
 
-	define('BACKUP_DIR', ROOT_PATH.'./data/backup/');//note 数据库 backup 文件放置路径
-	$tablepre = UC_DBTABLEPRE;//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'./data/backup/');//note Place the database backup file path
+	$tablepre = UC_DBTABLEPRE;//note Table prefix assignment, a different product, please modify this expression
 	$dbcharset = UC_DBCHARSET;
 	$db->connect(UC_DBHOST, UC_DBUSER, UC_DBPW, UC_DBNAME, $dbcharset, UC_DBCONNECT, $tablepre);
 
 } elseif($apptype == 'ecmall') {//note ecmall
 
-	define('BACKUP_DIR', ROOT_PATH.'./data/backup/');//note 数据库 backup 文件放置路径
-	$tablepre = DB_PREFIX;//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'./data/backup/');//note Place the database backup file path
+	$tablepre = DB_PREFIX;//note Table prefix assignment, a different product, please modify this expression
 	$dbcharset = (CHARSET == 'utf-8') ? 'utf8' : CHARSET;
 	$cfg = parse_url(DB_CONFIG);
 	if(empty($cfg['pass'])) {
@@ -237,8 +237,8 @@ if($apptype == 'discuz') {//note discuz
 
 } elseif($apptype == 'supev') {//note supev
 
-	define('BACKUP_DIR', ROOT_PATH.'data/backup/');//note 数据库 backup 文件放置路径
-	$tablepre = $tablepre;//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'data/backup/');//note Place the database backup file path
+	$tablepre = $tablepre;//note Table prefix assignment, a different product, please modify this expression
 	if(empty($dbcharset)) {
 		$dbcharset = in_array(strtolower($charset), array('gbk', 'big5', 'utf-8')) ? str_replace('-', '', $charset) : '';
 	}
@@ -246,14 +246,14 @@ if($apptype == 'discuz') {//note discuz
 
 } elseif($apptype == 'ecshop') {//note ecshop
 
-	define('BACKUP_DIR', ROOT_PATH.'data/backup/');//note 数据库 backup 文件放置路径
-	$tablepre = $prefix;//note 表前缀赋值，不同的产品请修改此表达式
+	define('BACKUP_DIR', ROOT_PATH.'data/backup/');//note Place the database backup file path
+	$tablepre = $prefix;//note Table prefix assignment, a different product, please modify this expression
 	$dbcharset = 'utf8';
 	$db->connect($db_host, $db_user, $db_pass, $db_name, $dbcharset, 0, $tablepre);
 
 }
 
-if($get['method'] == 'export') {//note 导出 backup 
+if($get['method'] == 'export') {//note Export backup
 
 	$db->query('SET SQL_QUOTE_SHOW_CREATE=0', 'SILENT');
 
@@ -262,7 +262,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	$tables = array();
 	$tables = arraykeys2(fetchtablelist($tablepre), 'Name');
 
-	if($apptype == 'discuz') {//note discuz的 backup 需要 backup 插件表关联的数据
+	if($apptype == 'discuz') {//note discuz need to backup the backup plug-ins associated with the data table
 		$query = $db->query("SELECT datatables FROM {$tablepre}plugins WHERE datatables<>''");
 		while($plugin = $db->fetch_array($query)) {
 			foreach(explode(',', $plugin['datatables']) as $table) {
@@ -278,7 +278,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	$version = $version ? $version : $apptype;
 	$idstring = '# Identify: '.base64_encode("$timestamp,$version,$apptype,multivol,$get[volume]")."\n";
 
-	if(!isset($get['sqlpath']) || empty($get['sqlpath'])) {//note 若没有指定存放目录，则设定存放 backup 数据的目录
+	if(!isset($get['sqlpath']) || empty($get['sqlpath'])) {//note If not specified storage directory, then set the directory store backup data
 		$get['sqlpath'] = 'backup_'.date('ymd', $timestamp).'_'.random(6);
 		if(!mkdir(BACKUP_DIR.'./'.$get['sqlpath'], 0777)) {
 			api_msg('mkdir_error', 'make dir error:'.BACKUP_DIR.'./'.$get['sqlpath']);
@@ -289,7 +289,7 @@ if($get['method'] == 'export') {//note 导出 backup
 		}		
 	}
 
-	if(!isset($get['backupfilename']) || empty($get['backupfilename'])) {//note 若没有指定 backup 文件 name ，则设定保存数据的文件 name 
+	if(!isset($get['backupfilename']) || empty($get['backupfilename'])) {//note If you do not specify backup file name, then save the data file name set
 		$get['backupfilename'] = date('ymd', $timestamp).'_'.random(6);
 	}
 
@@ -297,7 +297,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	$get['tableid'] = isset($get['tableid']) ? intval($get['tableid']) : 0;
 	$get['startfrom'] = isset($get['startfrom']) ? intval($get['startfrom']) : 0;
 
-	//note count() 有待于优化
+	//note count() To be optimized
 	$complete = TRUE;
 	for(; $complete && $get['tableid'] < count($tables) && strlen($sqldump) + 500 < $sizelimit * 1000; $get['tableid']++) {
 		$sqldump .= sqldumptable($tables[$get['tableid']], strlen($sqldump));
@@ -334,7 +334,7 @@ if($get['method'] == 'export') {//note 导出 backup
 		api_msg('explor_success', 'explor_success');
 	}
 
-} elseif($get['method'] == 'import') {//note 导入 backup ，即恢复数据
+} elseif($get['method'] == 'import') {//note Import backup, restore existing data
 
 	if(!isset($get['dumpfile']) || empty($get['dumpfile'])) {
 		$get['dumpfile'] = get_dumpfile_by_path($get['sqlpath']);
@@ -356,7 +356,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	unset($sqldump);
 
 	foreach($sqlquery as $sql) {
-		//note 兼容SQL建表格式，调整为当前版本和字符集合适的建表语句
+		//note Compatible with SQL to build the table format, adjusted to the current version and build the right character set table statement
 		$sql = syntablestruct(trim($sql), $db->version() > '4.1', $dbcharset);
 
 		if($sql != '') {
@@ -371,7 +371,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	$get['dumpfile'] = $next_dumpfile;
 	auto_next($get, BACKUP_DIR.$get['sqlpath'].'/'.$cur_file);
 
-} elseif($get['method'] == 'ping') {//note 探测某个指定目录下是否有 backup 数据
+} elseif($get['method'] == 'ping') {//note Detecting whether a specified directory backup data
 
 	if($get['dir'] && is_dir(BACKUP_DIR.$get['dir'])) {
 		echo "1";exit;
@@ -379,7 +379,7 @@ if($get['method'] == 'export') {//note 导出 backup
 		echo "-1";exit;
 	}
 
-} elseif($get['method'] == 'list') {//note 列出可用的 backup 目录，以xml格式返回
+} elseif($get['method'] == 'list') {//note List of available backup directory to to return xml format
 
 	$str = "<root>\n";
 	$directory = dir(BACKUP_DIR);
@@ -397,7 +397,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	echo $str;
 	exit;
 
-} elseif($get['method'] == 'view') {//note 显示具体的某一个 backup 目录下的详情
+} elseif($get['method'] == 'view') {//note Show some specific details of a backup directory
 
 	$sqlpath = trim($get['sqlpath']);
 	if(empty($sqlpath) || !is_dir(BACKUP_DIR.$sqlpath)) {
@@ -423,7 +423,7 @@ if($get['method'] == 'export') {//note 导出 backup
 	echo $str;
 	exit;
 	
-} elseif($get['method'] == 'delete') {//note  delete 具体的某一个 backup 目录下的 backup 文件，目录同时也 delete 
+} elseif($get['method'] == 'delete') {//note  delete a backup of a specific directory under the backup files, directories, and also delete
 
 	$sqlpath = trim($get['sqlpath']);
 	if(empty($sqlpath) || !is_dir(BACKUP_DIR.$sqlpath)) {
@@ -444,26 +444,26 @@ if($get['method'] == 'export') {//note 导出 backup
 
 function syntablestruct($sql, $version, $dbcharset) {
 
-	//note 是否为建表语句
+	//note Table whether to build the statement
 	if(strpos(trim(substr($sql, 0, 18)), 'CREATE TABLE') === FALSE) {
 		return $sql;
 	}
 
-	//note 自动判断当前建表语句的版本
+	//note Automatically determine the current version of the statement to build the table
 	$sqlversion = strpos($sql, 'ENGINE=') === FALSE ? FALSE : TRUE;
 
-	//note 如果都为同一版本，则不做处理
+	//note If the same version, not treated
 	if($sqlversion === $version) {
 
-		//note 如果为高版本，并且设置了 transform 的字符集，则进行替换。
+		//note If the high version, and set the transform of the character set to be replaced.
 		return $sqlversion && $dbcharset ? preg_replace(array('/ character set \w+/i', '/ collate \w+/i', "/DEFAULT CHARSET=\w+/is"), array('', '', "DEFAULT CHARSET=$dbcharset"), $sql) : $sql;
 	}
 
-	//note 如果低转高
+	//note If the low to high
 	if($version) {
 		return preg_replace(array('/TYPE=HEAP/i', '/TYPE=(\w+)/is'), array("ENGINE=MEMORY DEFAULT CHARSET=$dbcharset", "ENGINE=\\1 DEFAULT CHARSET=$dbcharset"), $sql);
 
-	//note 如果高转低
+	//note If the high to low
 	} else {
 		return preg_replace(array('/character set \w+/i', '/collate \w+/i', '/ENGINE=MEMORY/i', '/\s*DEFAULT CHARSET=\w+/is', '/\s*COLLATE=\w+/is', '/ENGINE=(\w+)(.*)/is'), array('', '', 'ENGINE=HEAP', '', '', 'TYPE=\\1\\2'), $sql);
 	}
@@ -588,7 +588,7 @@ function sqldumptable($table, $currsize = 0) {
 
 		$create = $db->fetch_row($createtable);
 
-		//debug 判断是否在不同数据库
+		//debug Determine whether the different databases
 		if(strpos($table, '.') !== FALSE) {
 			$tablename = substr($table, strpos($table, '.') + 1);
 			$create[1] = str_replace("CREATE TABLE $tablename", 'CREATE TABLE '.$table, $create[1]);

@@ -66,9 +66,9 @@ class VideoAuth extends MyBase {
 			if (fwrite($fp, $pic) !== FALSE) {
 				fclose($fp);
 				
-				//Ö÷±í
+				//The main table
 				updatetable('space', array('videostatus'=>1), array('uid' => $uId));
-				//¸½±í
+				//Attached table
 				$fields = array('videopic' => $secret);
 				updatetable('spacefield', $fields, array('uid' => $uId));
 				$result = $_SGLOBAL['db']->affected_rows();

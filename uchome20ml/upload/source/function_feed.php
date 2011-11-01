@@ -8,7 +8,7 @@ if(!defined('IN_UCHOME')) {
 	exit('Access Denied');
 }
 
-//产生动态
+//态
 function feed_publish($id, $idtype, $add=0) {
 	global $_SGLOBAL;
 	
@@ -20,7 +20,7 @@ function feed_publish($id, $idtype, $add=0) {
 				WHERE b.blogid='$id'");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
 				if($value['friend'] != 3) {
-					//基本
+					//
 					$setarr['icon'] = 'blog';
 					$setarr['id'] = $value['blogid'];
 					$setarr['idtype'] = $idtype;
@@ -31,12 +31,12 @@ function feed_publish($id, $idtype, $add=0) {
 					$setarr['friend'] = $value['friend'];
 					$setarr['hot'] = $value['hot'];
 					
-					//详细
+					//细
 					$url = "space.php?uid=$value[uid]&do=blog&id=$value[blogid]";
-					if($value['friend'] == 4) {//加密
+					if($value['friend'] == 4) {//
 						$setarr['title_template'] = cplang('feed_blog_password');
 						$setarr['title_data'] = array('subject' => "<a href=\"$url\">$value[subject]</a>");
-					} else {//非私人
+					} else {//私
 						if($value['pic']) {
 							$setarr['image_1'] = pic_cover_get($value['pic'], $value['picflag']);
 							$setarr['image_1_link'] = $url;
@@ -60,7 +60,7 @@ function feed_publish($id, $idtype, $add=0) {
 				while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 					if($value['friend'] <= 2) {
 						if(empty($setarr['icon'])) {
-							//基本
+							//
 							$setarr['icon'] = 'album';
 							$setarr['id'] = $value['albumid'];
 							$setarr['idtype'] = $idtype;
@@ -69,7 +69,7 @@ function feed_publish($id, $idtype, $add=0) {
 							$setarr['dateline'] = $value['dateline'];
 							$setarr['target_ids'] = $value['target_ids'];
 							$setarr['friend'] = $value['friend'];
-							//详细
+							//细
 							$setarr['title_template'] = '{actor} '.cplang('upload_album');
 							$setarr['body_template'] = '<b>{album}</b><br>'.cplang('the_total_picture', array('{picnum}'));
 							$setarr['body_data'] = array(
@@ -85,18 +85,18 @@ function feed_publish($id, $idtype, $add=0) {
 					}
 				}
 			} else {
-				//默认 album 
+				//默 album 
 				$picnum = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('pic')." WHERE uid='$_SGLOBAL[supe_uid]' AND albumid='0'"), 0);
 				if($picnum>=1) {
 					$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('pic')." WHERE uid='$_SGLOBAL[supe_uid]' AND albumid='0' ORDER BY dateline DESC LIMIT 0,4");
 					while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 						if(empty($setarr['icon'])) {
-							//基本
+							//
 							$setarr['icon'] = 'album';
 							$setarr['uid'] = $value['uid'];
 							$setarr['username'] = $_SGLOBAL['supe_username'];
 							$setarr['dateline'] = $value['dateline'];
-							//详细
+							//细
 							$setarr['title_template'] = '{actor} '.cplang('upload_album');
 							$setarr['body_template'] = '<b>{album}</b><br>'.cplang('the_total_picture', array('{picnum}'));
 							$setarr['body_data'] = array(
@@ -118,7 +118,7 @@ function feed_publish($id, $idtype, $add=0) {
 				LEFT JOIN ".tname('album')." a ON a.albumid=p.albumid WHERE $plussql");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
 				if(empty($value['friend'])) {// privacy 
-					//基本
+					//
 					$setarr['icon'] = 'album';
 					$setarr['id'] = $value['picid'];
 					$setarr['idtype'] = $idtype;
@@ -128,7 +128,7 @@ function feed_publish($id, $idtype, $add=0) {
 					$setarr['target_ids'] = $value['target_ids'];
 					$setarr['friend'] = $value['friend'];
 					$setarr['hot'] = $value['hot'];
-					//详细
+					//细
 					$url = "space.php?uid=$value[uid]&do=album&picid=$value[picid]";
 					$setarr['image_1'] = pic_get($value['filepath'], $value['thumb'], $value['remote']);
 					$setarr['image_1_link'] = $url;
@@ -143,7 +143,7 @@ function feed_publish($id, $idtype, $add=0) {
 				LEFT JOIN ".tname('post')." p ON p.tid=t.tid AND p.isthread='1'
 				WHERE t.tid='$id'");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
-				//基本
+				//
 				$setarr['icon'] = 'thread';
 				$setarr['id'] = $value['tid'];
 				$setarr['idtype'] = $idtype;
@@ -152,7 +152,7 @@ function feed_publish($id, $idtype, $add=0) {
 				$setarr['dateline'] = $value['dateline'];
 				$setarr['hot'] = $value['hot'];
 				
-				//详细
+				//细
 				$url = "space.php?uid=$value[uid]&do=thread&id=$value[tid]";
 				
 				if($value['eventid']) {
@@ -185,7 +185,7 @@ function feed_publish($id, $idtype, $add=0) {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('poll')." WHERE pid='$id'");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
 
-				//基本
+				//
 				$setarr['icon'] = 'poll';
 				$setarr['id'] = $value['pid'];
 				$setarr['idtype'] = $idtype;
@@ -194,7 +194,7 @@ function feed_publish($id, $idtype, $add=0) {
 				$setarr['dateline'] = $value['dateline'];
 				$setarr['hot'] = $value['hot'];
 				
-				//详细
+				//细
 				$url = "space.php?uid=$value[uid]&do=poll&pid=$value[pid]";
 				
 				$setarr['title_template'] = cplang('feed_poll');
@@ -217,7 +217,7 @@ function feed_publish($id, $idtype, $add=0) {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('event')." WHERE eventid='$id'");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
 
-				//基本
+				//
 				$setarr['icon'] = 'event';
 				$setarr['id'] = $value['eventid'];
 				$setarr['idtype'] = $idtype;
@@ -226,20 +226,21 @@ function feed_publish($id, $idtype, $add=0) {
 				$setarr['dateline'] = $value['dateline'];
 				$setarr['hot'] = $value['hot'];
 				
-				//详细
+				//细
 				$url = "space.php?do=event&id=$value[eventid]";
 				
 				$setarr['title_template'] = cplang('event_add');
 				$setarr['body_template'] =  cplang('event_feed_info');
 				$setarr['body_data'] = array(
 					'title' => "<a href=\"$url\">$value[title]</a>",
+					'country' => $value['country'],
 					'province' => $value['province'],
 					'city' => $value['city'],
 					'location' => $value['location'],
 					'starttime' => sgmdate('m-d H:i', $value['starttime']),
 					'endtime' => sgmdate('m-d H:i', $value['endtime'])
 				);
-				//封面
+				//
 				if($value['poster']) {
 					$setarr['image_1'] = pic_get($value['poster'], $value['thumb'], $value['remote']);
 					$setarr['image_1_link'] = $url;
@@ -250,7 +251,7 @@ function feed_publish($id, $idtype, $add=0) {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('share')." WHERE sid='$id'");
 			if($value = $_SGLOBAL['db']->fetch_array($query)) {
 
-				//基本
+				//
 				$setarr['icon'] = 'share';
 				$setarr['id'] = $value['sid'];
 				$setarr['idtype'] = $idtype;
@@ -259,7 +260,7 @@ function feed_publish($id, $idtype, $add=0) {
 				$setarr['dateline'] = $value['dateline'];
 				$setarr['hot'] = $value['hot'];
 				
-				//详细
+				//细
 				$url = "space.php?uid=$value[uid]&do=share&id=$value[sid]";
 				
 				$setarr['title_template'] = '{actor} '.$value['title_template'];
@@ -276,13 +277,13 @@ function feed_publish($id, $idtype, $add=0) {
 		
 		$setarr['appid'] = UC_APPID;
 			
-		//数据处理
-		$setarr['title_data'] = serialize($setarr['title_data']);//数 groups 转化
+		//荽
+		$setarr['title_data'] = serialize($setarr['title_data']);// groups 转
 		if($idtype != 'sid') {
-			$setarr['body_data'] = serialize($setarr['body_data']);//数 groups 转化
+			$setarr['body_data'] = serialize($setarr['body_data']);// groups 转
 		}
-		$setarr['hash_template'] = md5($setarr['title_template']."\t".$setarr['body_template']);//喜好hash
-		$setarr['hash_data'] = md5($setarr['title_template']."\t".$setarr['title_data']."\t".$setarr['body_template']."\t".$setarr['body_data']);//合并hash
+		$setarr['hash_template'] = md5($setarr['title_template']."\t".$setarr['body_template']);//喜hash
+		$setarr['hash_data'] = md5($setarr['title_template']."\t".$setarr['title_data']."\t".$setarr['body_template']."\t".$setarr['body_data']);//喜hash
 		
 		$setarr = saddslashes($setarr);
 		

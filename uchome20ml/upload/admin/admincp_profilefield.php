@@ -41,12 +41,12 @@ if(submitcheck('fieldsubmit')) {
 	if(empty($thevalue['fieldid'])) {
 		$fieldid = inserttable('profilefield', $setarr, 1);
 		
-		//更改表结构
+		//Change the table structure
 		if(!$_SGLOBAL['db']->query("ALTER TABLE ".tname('spacefield')." ADD `field_$fieldid` varchar($setarr[maxsize]) NOT NULL default ''", 'SILENT')) {
-			$_SGLOBAL['db']->query("DELETE FROM ".tname('profilefield')." WHERE fieldid='$fieldid'");//表结构操作失败
+			$_SGLOBAL['db']->query("DELETE FROM ".tname('profilefield')." WHERE fieldid='$fieldid'");//Table structure operation failed
 		}
 	} else {
-		//更改表结构
+		//Change the table structure
 		if(!$_SGLOBAL['db']->query("ALTER TABLE ".tname('spacefield')." CHANGE `field_$thevalue[fieldid]` `field_$thevalue[fieldid]` varchar($setarr[maxsize]) NOT NULL default ''", 'SILENT')) {
 			cpmessage('failed_to_change_the_length_of_columns', 'admincp.php?ac=profilefield');
 		}

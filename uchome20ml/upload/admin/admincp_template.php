@@ -22,7 +22,7 @@ if(submitcheck('editsubmit')) {
 	$filename = checkfilename($_POST['filename']);
 	$filefullname = $tpldir.$filename;
 
-	// copy 当前的文件
+	//Copy the current file
 	$d_file = $filefullname.'.bak';
 	if(!file_exists($d_file)) {
 		if(!@copy($filefullname, $d_file)) {
@@ -35,7 +35,7 @@ if(submitcheck('editsubmit')) {
 	fwrite($fp, stripslashes($_POST['content']));
 	fclose($fp);
 	
-	//清空模板 cache 
+	//Clear Template Cache
 	$filename = substr($filename, 0, strlen($filename)-4);
 	$tpl = strexists($filename,'/')?$filename:"template/$_SCONFIG[template]/$filename";
 	$objfile = S_ROOT.'./data/tpl_cache/'.str_replace('/','_',$tpl).'.php';
@@ -46,7 +46,7 @@ if(submitcheck('editsubmit')) {
 
 if(empty($_GET['op'])) {
 
-	//获取模板 list 
+	//Get template list
 	$tpls = array();
 	if($dh = opendir($tpldir)) {
 		while (($file = readdir($dh)) !== false) {
@@ -83,7 +83,7 @@ if(empty($_GET['op'])) {
 	$filename = checkfilename($_GET['filename']);
 	$filefullname = $tpldir.$filename;
 
-	// copy 当前的文件
+	//Copy the current file
 	$d_file = $filefullname.'.bak';
 	if(file_exists($d_file)) {
 		if(!@copy($d_file, $filefullname)) {

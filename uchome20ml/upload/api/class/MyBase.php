@@ -231,13 +231,13 @@ class MyBase {
 	 * getUsers
 	 *
 	 * @param array $uIds
-	 * @param array $spaces space表中的信息
-	 * @param boolean $isReturnSpaceField 是否返回spacefield表中的信息
-	 * @param boolean $isReturnSpaceInfo 是否返回spaceinfo表中的信息
-	 * @param boolean $isReturnFriends 是否返回好友信息
-	 * @param integer $friendNum 好友数目
-	 * @param boolean $isOnlyReturnFriendId 是否仅返回好友id
-	 * @param boolean $isFriendIdKey 是否friendId作为数 groups 的key
+	 * @param array $spaces space info table
+	 * @param boolean $isReturnSpaceField Whether to return spacefield info table
+	 * @param boolean $isReturnSpaceInfo Whether to return spaceinfo information in the table
+	 * @param boolean $isReturnFriends Whether to return Friend information
+	 * @param integer $friendNum Number of friends
+	 * @param boolean $isOnlyReturnFriendId whether to return Friend id only
+	 * @param boolean $isFriendIdKey whether friendId as the array key
 	 * @access public
 	 * @return array
 	 */
@@ -265,7 +265,7 @@ class MyBase {
 				$spaceFields[$row['uid']] = $row;
 			}
 
-			// 由于spacefield表中一些字段的 privacy 存放在spaceinfo表，在这里一块取出来
+			// As spacefield table stored in the privacy of some of the fields spaceinfo table, where a take out
 			$sql = sprintf('SELECT * FROM %s WHERE uid IN (%s)', tname('spaceinfo'), implode(', ', $uIds));
 			$query = $_SGLOBAL['db']->query($sql);
 			while($row = $_SGLOBAL['db']->fetch_array($query)) {
@@ -413,10 +413,10 @@ class my{
 		return $response;
 	}
 
-	//格式化返回结果
+	//Formatting results to return
 	function formatResponse($data) {
 		global $_SCONFIG, $_SC;
-		//返回结果要参加一些统一的返回信息
+		//to return results to return to participate in some uniform information
 		$res = array(
 			'timezone'	=> $_SCONFIG['timeoffset'],
 			'version'   => X_VER,

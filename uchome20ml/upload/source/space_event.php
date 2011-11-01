@@ -17,20 +17,20 @@ if(!@include_once(S_ROOT.'./data/data_eventclass.php')) {
 	eventclass_cache();
 }
 
-if($eventid){// ÏÔÊ¾ event ÄÚÈİ
+if($eventid){// Ê¾ event 
 
-	if($view=="me"){//ÅÅ³ıÓÉspace.php×Ô¶¯ add µÄ$_GET[view]=me
+	if($view=="me"){//Å³space.phpÔ¶ add $_GET[view]=me
 		$view = "all";
 	}
 
-	//  event ĞÅÏ¢
+	//  event Ï¢
 	$query = $_SGLOBAL['db']->query("SELECT e.*, ef.* FROM ".tname("event")." e LEFT JOIN ".tname("eventfield")." ef ON e.eventid=ef.eventid WHERE e.eventid='$eventid'");
 	$event = $_SGLOBAL['db']->fetch_array($query);
 	if(! $event){
-		showmessage("event_does_not_exist"); //  event ²»´æÔÚ»òÕß allready ±» delete 
+		showmessage("event_does_not_exist"); //  event Ú» allready  delete 
 	}
 	if($event['grade'] == 0 && $event['uid'] != $_SGLOBAL['supe_uid'] && !checkperm('manageevent')){
-		showmessage('event_under_verify');//  event ÕıÔÚÉóºËÖĞ
+		showmessage('event_under_verify');//  event 
 	}
 	realname_set($event['uid'], $event['username']);
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("userevent")." WHERE eventid='$eventid' AND uid='$_SGLOBAL[supe_uid]'");
@@ -40,26 +40,26 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 	} else {
 		$_SGLOBAL['supe_userevent'] = array();
 	}
-	$allowmanage = false; //  event ¹ÜÀí permissions 
+	$allowmanage = false; //  event  permissions 
 	if($value['status'] >= 3 || checkperm('manageevent')){
 		$allowmanage = true;
 	}
 
-	// Ë½ÃÜ event £¬½ö allready ²Î¼Ó event µÄÈËºÍÓĞ¹ÜÀí permissions µÄÈË»òÓĞ invite µÄÈË¿É¼û
+	// Ë½ event  allready Î¼ event ËºĞ¹ permissions Ë» invite Ë¿É¼
 	if($event['public'] == 0 && $_SGLOBAL['supe_userevent']['status'] < 2 && !$allowmanage){
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("eventinvite")." WHERE eventid = '$eventid' AND touid = '$_SGLOBAL[supe_uid]' LIMIT 1");
 		$value = $_SGLOBAL['db']->fetch_array($query);
 		if(empty($value)){
-			showmessage("event_not_public"); // ÕâÊÇÒ»¸öË½ÃÜ event £¬ĞèÒªÍ¨¹ı invite ²ÅÄÜ²é¿´
+			showmessage("event_not_public"); // Ò»Ë½ event ÒªÍ¨ invite Ü²é¿´
 		}
 	}
 
 	if($view == "thread" && !$event['tagid']) {
 		$view = "all";
 	}
-	// °´²é¿´ÄÚÈİ²»Í¬£¬»ñÈ¡²»Í¬Êı¾İ
+	// é¿´İ²Í¬È¡Í¬
 	if($view == "member"){
-		// ²é¿´³ÉÔ±
+		// é¿´Ô±
 		$status = isset($_GET['status']) ? intval($_GET['status']) : 2;
 		$submenus = array();
 		if($status>1){
@@ -73,7 +73,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$statussql = "";
 		$orderby = " ORDER BY ue.dateline ASC";
 		if($status >= 2){
-			$statussql = " AND ue.status >= 2";// °üº¬ groups Ö¯Õß
+			$statussql = " AND ue.status >= 2";//  groups Ö¯
 			$orderby = " ORDER BY ue.status DESC";
 		} else {
 			$statussql = " AND ue.status = '$status'";
@@ -103,7 +103,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			}
 		}
 
-		//ÔÚÏß×´Ì¬
+		//×´Ì¬
 		$ols = array();
 		if($fuids) {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('session')." WHERE uid IN (".simplode($fuids).")");
@@ -114,7 +114,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			}
 		}
 
-		// ´ıÉóºËÈËÊı
+		// 
 		$verifynum = 0;
 		if($_SGLOBAL['supe_userevent']['status'] >= 3){
 			if($status == 0){
@@ -130,14 +130,14 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 
 		$picid = isset($_GET['picid']) ? intval($_GET['picid']) : 0;
 
-		//  photo ×ÜÊı
+		//  photo 
 		$piccount = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname("eventpic")." WHERE eventid = '$eventid'"), 0);
 
 		if ($picid) {
 
 			$_GET['id'] = 0;
 
-			//¼ìË÷ image 
+			// image 
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('pic')." WHERE picid='$picid' LIMIT 1");
 			$pic = $_SGLOBAL['db']->fetch_array($query);
 			realname_set($pic['uid'], $pic['username']);			
@@ -145,7 +145,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			include_once(S_ROOT.'./source/space_album.php');
 
 		} else {
-			// ²é¿´ event  photo  list 
+			// é¿´ event  photo  list 
 			$photolist = array();
 
 			// pagination 
@@ -157,13 +157,13 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			//Check start number
 			ckstart($start, $perpage);
 
-			//´¦Àí²éÑ¯
+			//Ñ¯
 			$theurl = "space.php?do=event&id=$eventid&view=pic";
 
 			$badpicids = array();
 			$query = $_SGLOBAL['db']->query("SELECT pic.*, ep.* FROM ".tname("eventpic")." ep LEFT JOIN ".tname("pic")." pic ON ep.picid=pic.picid WHERE ep.eventid='$eventid' ORDER BY ep.picid DESC LIMIT $start, $perpage");
 			while($value = $_SGLOBAL['db']->fetch_array($query)){
-				if(!$value['filepath']){// photo  allready ¾­±» delete 
+				if(!$value['filepath']){// photo  allready  delete 
 					$badpicids[] = $value['picid'];
 					continue;
 				}
@@ -177,7 +177,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 				$_SGLOBAL['db']->query("DELETE FROM ".tname("eventpic")." WHERE eventid='$eventid' AND picid IN (".simplode($badpicids).")");
 			}
 
-			if($piccount != $event['picnum']) {// update ÊıÄ¿
+			if($piccount != $event['picnum']) {// update Ä¿
 				updatetable("event", array("picnum"=>$piccount),array("eventid"=>$eventid));
 			}
 
@@ -195,7 +195,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 
 		//Check start number
 		ckstart($start, $perpage);
-		//´¦Àí²éÑ¯
+		//Ñ¯
 		$theurl = "space.php?do=event&id=$eventid&view=thread";
 
 		$threadlist = array();
@@ -226,7 +226,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		//Check start number
 		ckstart($start, $perpage);
 
-		//´¦Àí²éÑ¯
+		//Ñ¯
 		$theurl = "space.php?do=event&id=$eventid&view=comment";
 		$cid = empty($_GET['cid'])?0:intval($_GET['cid']);
 		$csql = $cid?"cid='$cid' AND":'';
@@ -245,20 +245,20 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$multi = multi($count, $perpage, $page, $theurl, '', 'comment_ul');
 
 	} else {
-		// ²é¿´ event ×ÛºÏ
-		// ´¦Àí event ½éÉÜ
+		// é¿´ event Ûº
+		//  event 
 		include_once(S_ROOT.'./source/function_blog.php');
 		$event['detail'] = blog_bbcode($event['detail']);
 
-		// º£±¨
+		// 
 		if($event['poster']){
 			$event['pic'] = pic_get($event['poster'], $event['thumb'], $event['remote'], 0);
 		} else {
 			$event['pic'] = $_SGLOBAL['eventclass'][$event['classid']]['poster'];
 		}
 
-		//  event  groups Ö¯Õß
-		$relateduids = array();//²éÕÒ²Î¼Ó´Ë event µÄ³ÉÔ±Ò²²Î¼ÓµÄ event ÓÃ
+		//  event  groups Ö¯
+		$relateduids = array();//Ò²Î¼Ó´ event Ä³Ô±Ò²Î¼Óµ event 
 		$admins = array();
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("userevent")." WHERE eventid = '$eventid' AND status IN ('3', '4') ORDER BY status DESC");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
@@ -267,7 +267,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			$relateduids[] = $value['uid'];
 		}
 
-		//  event ³ÉÔ±
+		//  event Ô±
 		$members = array();
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("userevent")." WHERE eventid = '$eventid' AND status=2 ORDER BY dateline DESC LIMIT 14");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
@@ -276,7 +276,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			$relateduids[] = $value['uid'];
 		}
 
-		// ¸ĞĞËÈ¤µÄ
+		// È¤
 		$follows = array();
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("userevent")." WHERE eventid='$eventid' AND status=1 ORDER BY dateline DESC LIMIT 12");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
@@ -284,13 +284,13 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			$follows[] = $value;
 		}
 
-		// ´ıÉóºËÈËÊı
+		// 
 		$verifynum = 0;
 		if($_SGLOBAL['supe_userevent']['status'] >= 3){
 			$verifynum = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT count(*) FROM ".tname("userevent")." WHERE eventid = '$eventid' AND status=0"),0);
 		}
 
-		// ²Î¼ÓÕâ¸ö event µÄÈËÒ²²Î¼ÓÁËÄÇĞ© event 
+		// Î¼ event Ò²Î¼Ğ© event 
 		$relatedevents = array();
 		if($relateduids){
 			$query = $_SGLOBAL['db']->query("SELECT e.*, ue.* FROM ".tname("userevent")." ue LEFT JOIN ".tname("event")." e ON ue.eventid=e.eventid WHERE ue.uid IN (".simplode($relateduids).") ORDER BY ue.dateline DESC LIMIT 0,8");
@@ -299,7 +299,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			}
 		}
 
-		//  event  wall £¬È¡20Ìõ
+		//  event  wall È¡20
 		$comments = array();
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('comment')." WHERE id='$eventid' AND idtype='eventid' ORDER BY dateline DESC LIMIT 20");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -311,7 +311,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$photolist = $badpicids = array();
 		$query = $_SGLOBAL['db']->query("SELECT pic.*, ep.* FROM ".tname("eventpic")." ep LEFT JOIN ".tname("pic")." pic ON ep.picid = pic.picid WHERE ep.eventid='$eventid' ORDER BY ep.picid DESC LIMIT 10");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
-			if(!$value['filepath']){// photo allready ¾­±» delete 
+			if(!$value['filepath']){// photo allready  delete 
 				$badpicids[] = $value['picid'];
 				continue;
 			}
@@ -337,13 +337,13 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			}
 		}
 
-		//  event ²é¿´Êı¼Ó 1
+		//  event é¿´ 1
 		if($event['uid'] != $_SGLOBAL['supe_uid']){
 			$_SGLOBAL['db']->query("UPDATE ".tname("event")." SET viewnum=viewnum+1 WHERE eventid='$eventid'");
 			$event['viewnum'] += 1;
 		}
 
-		// event ¿ªÊ¼µ¹¼ÆÊ±
+		// event Ê¼Ê±
 		if($event['starttime'] > $_SGLOBAL['timestamp']) {
 			$countdown = intval((mktime(0,0,0,gmdate('m',$event['starttime']),gmdate('d',$event['starttime']),gmdate('Y',$event['starttime'])) -
 						mktime(0,0,0,gmdate('m',$_SGLOBAL['timestamp']),gmdate('d',$_SGLOBAL['timestamp']),gmdate('Y',$_SGLOBAL['timestamp']))) / 86400);
@@ -351,7 +351,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 	}
 
 
-	//Ïà¹Ø hot value 
+	// hot value 
 	$topic = topic_get($event['topicid']);
 
 	realname_get();
@@ -377,26 +377,33 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$type = $_GET['type'] == "admin" ? $_GET['type'] : "hot";
 	}
 
-	//Í¬³Ç event ¼ì²é
+	//Í¬ event 
 	if($view=="city") {
+//vot ADD	$_GET['country']
+
+		if(empty($_GET['country'])) {
+			$_GET['country'] = $space['residecountry'];
+		}
 		if(empty($_GET['province'])) {
 			$_GET['province'] = $space['resideprovince'];
+		}
+		if(empty($_GET['city'])) {
 			$_GET['city'] = $space['residecity'];
-			if(empty($_GET['province'])) {
-				$menu = array($view => ' class="active"');
-				$submenus[$type] = array($type=>' class="active"');
+		}
+		if(empty($_GET['province'])) {
+			$menu = array($view => ' class="active"');
+			$submenus[$type] = array($type=>' class="active"');
 				
-				$_TPL['css'] = 'event';
-				include_once template('space_event_list');
-				exit();
-			}
+			$_TPL['css'] = 'event';
+			include_once template('space_event_list');
+			exit();
 		}
 	}
 
-	// ÍÆ¼ö event 
+	// Æ¼ event 
 	$recommendevents = array();
 	if($view == "all"){
-		// Ö»ÔÚÈ«²¿ event ÏÂÏÔÊ¾
+		// Ö»È« event Ê¾
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname("event")." WHERE grade = 2 ORDER BY recommendtime DESC LIMIT 4");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
 			if($value['deadline'] > $_SGLOBAL['timestamp']){
@@ -410,7 +417,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		}
 	}
 	
-	// ÈÈÃÅ event 
+	//  event 
 	$hotevents = array();
 	if($view == 'friend') {
 		$query = $_SGLOBAL['db']->query('SELECT * FROM '.tname('event')." WHERE endtime > '$_SGLOBAL[timestamp]' ORDER BY membernum LIMIT 6");
@@ -420,7 +427,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		}
 	}
 
-	// »ñÈ¡ºÃÓÑ²Î¼ÓµÄ event 
+	// È¡Ñ²Î¼Óµ event 
 	$friendevents = array();
 	if($space['feedfriend'] && $view != "friend" && $view != "me"){
 		$query = $_SGLOBAL['db']->query("SELECT ue.*, e.*, ue.uid as fuid, ue.username as fusername FROM ".tname("userevent")." ue LEFT JOIN ".tname("event")." e ON ue.eventid=e.eventid WHERE ue.uid IN ($space[feedfriend]) AND ue.status >= 2 ORDER BY ue.dateline DESC LIMIT 6");
@@ -435,10 +442,10 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		}
 	}
 
-	// ÎÒ¹Ø×¢µÄ event 
+	// Ò¹×¢ event 
 	$followevents = array();
 	if($view != "me"){
-		// ÔÚÎÒµÄ event ±êÇ©ÏÂ²»ÏÔÊ¾
+		// Òµ event Ç©Â²Ê¾
 		$query = $_SGLOBAL['db']->query("SELECT ue.*, e.* FROM ".tname("userevent")." ue LEFT JOIN ".tname("event")." e ON ue.eventid=e.eventid WHERE ue.uid = '$_SGLOBAL[supe_uid]' AND ue.status = 1 ORDER BY ue.dateline LIMIT 6");
 		while($value = $_SGLOBAL['db']->fetch_array($query)){
 			$followevents[] = $value;
@@ -542,7 +549,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 			$sql = "SELECT * FROM ".tname('event')." e WHERE e.uid='$space[uid]' ORDER BY e.dateline DESC LIMIT $start, $perpage";
 		}
 
-		if($_GET['classid'] || $_GET['date'] || $_GET['province'] || $_GET['city']) {
+		if($_GET['classid'] || $_GET['date'] || $_GET['country'] || $_GET['province'] || $_GET['city']) {
 			$fromsql = tname("userevent")." ue, ".tname('event')." e";
 			$wherearr[] = " ue.eventid = e.eventid";
 			$joinsql = "";
@@ -556,7 +563,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$theurl .= "&classid=$_GET[classid]";
 	}
 
-	// event Ê±¼ä
+	// event Ê±
 	if($_GET['date']){
 		$daystart = sstrtotime($_GET['date']);
 		$dayend = $daystart + 86400;
@@ -564,7 +571,14 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 		$theurl .= "&date=$_GET[date]";
 	}
 
-	// event ³ÇÊĞ
+//vot: Country
+	if($_GET['country']) {
+		$_GET['country'] = getstr($_GET['country'], 0, 1, 1);
+		$wherearr[] = "e.country = '$_GET[country]'";
+		$theurl .= "&country=$_GET[country]";
+	}
+
+	// event 
 	if($_GET['province']) {
 		$_GET['province'] = getstr($_GET['province'], 20, 1, 1);
 		$wherearr[] = "e.province = '$_GET[province]'";
@@ -578,7 +592,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 
 	$submenus = array($type=>' class="active"');
 
-	//ËÑË÷
+	//
 	if($searchkey = stripsearchkey($_GET['searchkey'])) {
 		$wherearr = $submenus = array();
 		$wherearr[] = "e.title LIKE '%$searchkey%'";
@@ -589,7 +603,7 @@ if($eventid){// ÏÔÊ¾ event ÄÚÈİ
 	$eventlist = $fevents = array();
 	if(empty($wherearr)) $wherearr = array('1');
 
-	if($needquery) {// ºÃÓÑµÄ event allready ÌØ±ğ´¦Àí
+	if($needquery) {// Ñµ event allready Ø±
 		$sql = "SELECT COUNT(*) FROM $fromsql WHERE ".implode(" AND ", $wherearr);
 		$count = $_SGLOBAL['db']->result($_SGLOBAL['db']->query($sql),0);
 	}

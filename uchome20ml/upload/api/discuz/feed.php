@@ -36,7 +36,7 @@ while($value = $_SGLOBAL['db']->fetch_array($query)) {
 	}
 }
 
-// real name ¥¶¿Ì
+// real name 
 realname_get();
 
 foreach ($feed_list as $value) {

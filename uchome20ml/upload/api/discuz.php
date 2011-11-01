@@ -74,7 +74,7 @@ function getdotstring ($string, $vartype, $allownull=false, $varscope=array(), $
 	return $string;
 }
 
-//将数 groups 中相同的值去掉,同时将后面的键 name 也忽略掉
+//Number of groups will be removed in the same value, while the back is also ignored key name
 function sarray_unique($array) {
 	$newarray = array();
 	if(!empty($array) && is_array($array)) {

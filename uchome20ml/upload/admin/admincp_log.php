@@ -57,7 +57,7 @@ if($_GET['op'] == 'view') {
 	
 	$list = $uids = array();
 	$fromcache = true;
-	//如果没有 cache 文件，全文件扫描
+	//If there is no cache file, scan all files
 	if(!is_file($tmpfile)) {
 		$fromcache = false;
 		$lines = array();
@@ -78,7 +78,7 @@ if($_GET['op'] == 'view') {
 			if($valid) {
 				$n = strlen($line);
 				$o = ftell($fp) - $n;
-				$lines[] = $cursor.'-'.$o.'-'.$n;//记录信息：行号-起始位置-长度
+				$lines[] = $cursor.'-'.$o.'-'.$n;//Record information: the line number - the starting position - length
 				if($offset >= $start && $offset < $start + $perpage) {
 					$list[] = $loginfo;
 				}

@@ -27,7 +27,7 @@ class Notifications extends MyBase {
 			)
 		);
 
-		// notice 
+		// Notice 
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('notification')."  WHERE uid='$uId' AND new='1' ORDER BY id DESC");
 		$i = 0;
 		while($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -36,7 +36,7 @@ class Notifications extends MyBase {
 		}
 		$result['notification']['unread'] = $i;
 		
-		//短消息
+		// Short Message
 		include_once S_ROOT.'./uc_client/client.php';
 		$pmarr = uc_pm_list($uId, 1, 1, 'newbox', 'newpm');
 		if($pmarr['count']) {
@@ -44,7 +44,7 @@ class Notifications extends MyBase {
 			$result['message']['mostRecent'] = $pmarr['data'][0]['dateline'];
 		}
 
-		// 好友
+		// Friends
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('friend')."  WHERE fuid='$uId' AND status='0' ORDER BY dateline DESC");
 		$fIds = array();
 		while($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -61,10 +61,10 @@ class Notifications extends MyBase {
 	function send($uId, $recipientIds, $appId, $notification) {
 		global $_SGLOBAL;
 
-		//过滤Blacklist中的 user 
+		//User Blacklist
 		$blacklist = $result = array();
 
-		// 允许匿 name 发送
+		// Allow anonymous sending
 		if ($uId) {
 			$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('blacklist')."  WHERE uid IN ('".implode("','", $recipientIds)."') AND buid='$uId'");
 			while($value = $_SGLOBAL['db']->fetch_array($query)) {

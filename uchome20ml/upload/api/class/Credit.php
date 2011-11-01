@@ -11,10 +11,10 @@ if(!defined('IN_UCHOME')) {
 class Credit extends MyBase {
 
 	/**
-	 * 获取 user  points 
+	 * Get user points
 	 *
-	 * @param integer $uId  user Id
-	 * @return integer  user  points 
+	 * @param integer $uId user Id
+	 * @return integer user points
 	 */
 	function get($uId) {
 		global $_SGLOBAL;
@@ -24,13 +24,13 @@ class Credit extends MyBase {
 	}
 
 	/**
-	 *  update  user 的 points 
+	 * update user points
 	 *
-	 * @param integer $uId  user Id
-	 * @param integer $credits  points 值
-	 * @param integer $appId 应用Id
-	 * @param string $note 操作记录
-	 * @return integer  update 后的 user points 
+	 * @param integer $uId user Id
+	 * @param integer $credits points
+	 * @param integer $appId Application Id
+	 * @param string $note Operation note
+	 * @return integer update user points
 	 */
 	function update($uId, $credits, $appId, $note) {
 		global $_SGLOBAL;

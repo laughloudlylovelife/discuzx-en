@@ -10,7 +10,7 @@ $id = empty($_GET['id'])?0:intval($_GET['id']);
 $adid = empty($_GET['adid'])?0:intval($_GET['adid']);
 
 if($id) {
-	//Block
+	//Block Data
 	include_once('./data/data_block.php');
 	if(!isset($_SGLOBAL['block'][$id])) {
 		echo 'document.write(\'No data.\')';

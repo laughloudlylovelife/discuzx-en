@@ -18,12 +18,14 @@ $profile_lang = array(
 	'birthday'	=> lang('birth_day'),
 	'blood'		=> lang('blood_type'),
 	'marry'		=> lang('marry'),
+	'birthcountry'	=> lang('birthcountry'),
 	'birthprovince' => lang('birthprovince'),
 	'birthcity'	=> lang('birthcity'),
+	'residecountry'	=> lang('residecountry'),
 	'resideprovince' => lang('resideprovince'),
 	'residecity'	=> lang('residecity')
 );
-foreach (array('name','sex','birthyear','birthmonth','birthday','marry','birthprovince','birthcity','resideprovince','residecity') as $key) {
+foreach (array('name','sex','birthyear','birthmonth','birthday','marry','birthcountry','birthprovince','birthcity','residecountry','resideprovince','residecity') as $key) {
 	$value = trim($space[$key]);
 	if(empty($value)) {
 		$nones[] = $profile_lang[$key];
@@ -49,6 +51,7 @@ if(empty($nones)) {
 	// Residence Friends 
 	$residelist = array();
 	$warr = array();
+	$warr[] = "sf.residecountry='".addslashes($space['residecountry'])."'";
 	$warr[] = "sf.resideprovince='".addslashes($space['resideprovince'])."'";
 	$warr[] = "sf.residecity='".addslashes($space['residecity'])."'";
 	$query = $_SGLOBAL['db']->query("SELECT s.uid,s.username,s.name,s.namestatus FROM ".tname('spacefield')." sf
