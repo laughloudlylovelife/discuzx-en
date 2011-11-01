@@ -1185,7 +1185,7 @@ END;
 	app_cache();
 	network_cache();
 //vot
-	country_cache();
+//	country_cache();
 
 	$msg = <<<EOF
 <form method="post" action="$theurl">
