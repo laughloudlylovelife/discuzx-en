@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -10,5 +10,5 @@
 $lang = array
 (
 	'myapp_titlelength'	=> 'Длина названия',
-	'myapp_startrow'	=> 'Первоначальное количество строк',
+	'myapp_startrow'	=> 'Начальная строка',
 );

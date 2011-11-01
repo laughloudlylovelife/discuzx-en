@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -11,12 +11,12 @@ $lang = array
 (
 
 	'page'			=> 'Страниц',
-	'replies'		=> ' ответов',
+	'replies'		=> 'Ответов',
 	'anonymous'		=> 'Анонимных',
-	'full_version'		=> 'Посмотреть полную версию',
-	'forum_nonexistence'	=> 'У вас нет прав доступа к этому форуму или форум не существует',
-	'thread_nonexistence'	=> 'У вас нет прав для просмотра этой темы или темы не существует',
-	'post_time'		=> 'Опубликовано',
+	'full_version'		=> 'Показать полную версию',
+	'forum_nonexistence'	=> 'У вас нет прав доступа к этому архиву форума, или форум не существует',
+	'thread_nonexistence'	=> 'У вас нет прав для просмотра этой темы, или тема не существует',
+	'post_time'		=> 'Дата публикации',
 
 );
 

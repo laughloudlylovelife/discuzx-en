@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'vedio_url'	=> 'Ссылка видео',
+	'vedio_url'	=> 'URL видео',
 	'vedio_width'	=> 'Ширина',
 	'vedio_height'	=> 'Высота',
 );

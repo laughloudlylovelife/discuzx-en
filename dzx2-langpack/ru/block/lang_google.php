@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,21 +9,23 @@
 
 $lang = array
 (
-	'google_name'		=> 'Поиск в Google',
-	'google_desc'		=> 'Окно поиска Google',
-	'google_lang'		=> 'Поиск перевода',
-	'google_lang_comment'	=> 'Эффективный поиск с переводом',
-	'google_lang_any'	=> 'Любой язык',
-	'google_lang_en'	=> 'Английский',
-	'google_lang_zh-CN'	=> 'Упрощенный китайский',
-	'google_lang_zh-TW'	=> 'Традиционный китайский',
-	'google_default'	=> 'Параметры поиска по умолчанию',
-	'google_default_comment'	=> 'Выберите пункт по умолчанию',
-	'google_default_0'	=> 'Веб поиск',
-	'google_default_1'	=> 'Поиск на сайте',
-	'google_client'		=> 'Поисковый идентификатор Google ID',
-	'google_client_comment'	=> 'Необходимо зарегистрироваться в Google для получения поискового кода ID. Получить код: http://www.google.com/cse/',
+	'google_name'			=> 'Поиск в Google',
+	'google_desc'			=> 'Окно поиска Google',
+	'google_lang'			=> 'Язык для вывода результатов',
+	'google_lang_comment'		=> 'Укажите язык сайта для получения более релевантных результатов',
+	'google_lang_any'		=> 'Любой язык',
+// ToDo:
+// Make Language List from the config settings!
+	'google_lang_en'		=> 'Английский',
+	'google_lang_zh-CN'		=> 'Упрощенный китайский',
+	'google_lang_zh-TW'		=> 'Традиционный китайский',
+	'google_default'		=> 'Параметры поиска по умолчанию',
+	'google_default_comment'	=> 'Выберите пункты параметров поиска по умолчанию',
+	'google_default_0'		=> 'Поиск в сети',
+	'google_default_1'		=> 'Поиск по сайту',
+	'google_client'			=> 'Google Adsense ID',
+	'google_client_comment'		=> 'Введите Ваш уникальный идентификатор в Google Adsense. Ещё нет идентификатора? Получите свой ID: http://www.google.com/adsense/',
 // Added by vot
-	'google_lang_ru'	=> 'Russian',//'俄语',
+	'google_lang_ru'		=> 'Russian',//'俄语',
 );
 

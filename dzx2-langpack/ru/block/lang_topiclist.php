@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,21 +9,21 @@
 
 $lang = array
 (
-	'topiclist_topicids'		=> 'Тема',
-	'topiclist_topicids_comment'	=> 'Если у вас несколько значений, укажите ID(topicid) темы через запятую',
-	'topiclist_uids'		=> 'UID автора',
-	'topiclist_uids_comment'	=> 'Если у вас несколько значений, укажите ID(uid) автора через запятую',
-	'topiclist_startrow'		=> 'Начальное количество строк',
-	'topiclist_startrow_comment'	=> 'Установка числа строк данных, введите конкретные значения, 0, чтобы начать с первой линии и так далее',
-	'topiclist_titlelength'		=> 'Длина названия',
-	'topiclist_titlelength_comment'	=> 'Установить максимальную длину названия',
-	'topiclist_summarylength'	=> 'Длина содержания',
-	'topiclist_summarylength_comment'	=> 'Установить максимальную длину содержания',
-	'topiclist_picrequired'		=> 'Изображение для тем',
-	'topiclist_picrequired_comment'	=> 'Установка изображения для тем',
-	'topiclist_orderby'		=> 'Сортировка тем',
-	'topiclist_orderby_comment'	=> 'Выберите способ сортировки тем',
-	'topiclist_orderby_dateline'	=> 'По дате',
-	'topiclist_orderby_viewnum'	=> 'По просмотрам',
+	'topiclist_topicids'		=> 'Темы',
+	'topiclist_topicids_comment'	=> 'Перечислите ID интересующих тем через запятую.',
+	'topiclist_uids'		=> 'Авторы',
+	'topiclist_uids_comment'	=> 'Перечислите UID авторов через запятую.',
+	'topiclist_startrow'		=> 'Начальная строка',
+	'topiclist_startrow_comment'	=> 'Укажите номер начальной строки в результате выборки. Нумерация начинается нуля.',
+	'topiclist_titlelength'		=> 'Длина заголовка',
+	'topiclist_titlelength_comment'	=> 'Укажите максимальную длину заголовка',
+	'topiclist_summarylength'	=> 'Длина описания',
+	'topiclist_summarylength_comment'	=> 'Укажите максимальную длину описания. По умолчанию 255 символов.',
+	'topiclist_picrequired'		=> 'Изображения',
+	'topiclist_picrequired_comment'	=> 'Показывать только темы с изображениями.',
+	'topiclist_orderby'		=> 'Сортировка',
+	'topiclist_orderby_comment'	=> 'Укажите метод сортировки.',
+	'topiclist_orderby_dateline'	=> 'По дате создания',
+	'topiclist_orderby_viewnum'	=> 'По кол-ву просмотров',
 );
 

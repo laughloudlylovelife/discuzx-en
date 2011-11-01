@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'line_style'		=> 'Разделительная линия',
-	'line_style_line'	=> 'Сплошная',
-	'line_style_dash'	=> 'Пунктирная',
+	'line_style'		=> 'Пуктирная линия',
+	'line_style_line'	=> 'Сплошная линия',
+	'line_style_dash'	=> 'Штриховая линия',
 );
