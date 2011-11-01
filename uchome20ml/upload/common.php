@@ -148,7 +148,7 @@ $_TPL['default_language'] = $_SC['language'];
 //===========================================================
 
 //------------------------------------------------
-//Sett the whole site Default Style
+//Set the whole site Default Style
 if(empty($_SCONFIG['template'])) {
 	$_SCONFIG['template'] = 'default';
 }
