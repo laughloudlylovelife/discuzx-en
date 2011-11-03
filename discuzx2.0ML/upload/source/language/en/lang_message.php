@@ -522,8 +522,8 @@ $lang = array (
 	'all_posts_pushed_already'		=> 'Specified posts successfully pushed to the portal',//'所有指定帖子均已连载过了',
 	'portal_has_not_category'		=> 'Sorry, you have not created any portal category, first create a portal category',//'抱歉，您尚未创建任何频道栏目，请先创建频道栏目',
 	'portal_article_add_nopermission'	=> 'Sorry, you do not have permission to publish articles',//'抱歉，您没有发布文章的权限',
-	'article_push_blogid_invalid_repeat'	=> 'The article has been generated allready, could not repeat generation',//'已经由该日志生成过文章，不能重复生成',
-	'article_push_tid_invalid_repeat'	=> 'The article post has been generated allready, could not repeat generation',//'已经由该帖子生成过文章，不能重复生成',
+	'article_push_blogid_invalid_repeat'	=> 'The article has been generated already, could not repeat generation',//'已经由该日志生成过文章，不能重复生成',
+	'article_push_tid_invalid_repeat'	=> 'The article post has been generated already, could not repeat generation',//'已经由该帖子生成过文章，不能重复生成',
 	'article_push_invalid_private'		=> 'Current blog can not be pushed by privacy',//'当前日志因隐私设置不能进行文章推送操作',
 
 	'block_not_exist'			=> 'Specified block does not exist',//'指定的模块不存在',
@@ -621,7 +621,7 @@ $lang = array (
 	'click_item_error'			=> 'To position the object does not exist',//'要表态的对象不存在',
 	'no_privilege_click'			=> 'Sorry, you currently do not have permission to rate, <a href="home.php?mod=spacecp&ac=usergroup">Click here to view permissions</a>',//'抱歉，您目前没有权限进行表态，<a href="home.php?mod=spacecp&ac=usergroup">点击这里查看权限</a>',
 	'click_no_self'				=> 'You can not rate yourself',//'自己不能给自己表态',
-	'click_have'				=> 'You have been rated the item allready',//'您已经表过态了',
+	'click_have'				=> 'You have been rated the item already',//'您已经表过态了',
 	'click_success'				=> 'Rate in position complete',//'参与表态完成了',
 
 	'no_privilege_comment_edit'		=> 'Sorry, you do not have permission to edit this comment',//'抱歉，您没有权限编辑此评论',
@@ -667,7 +667,7 @@ $lang = array (
 	'favorite_does_not_exist'		=> 'Specified favorite does not exist',//'指定的收藏不存在',
 	'no_privilege'				=> 'You are not allowed to do this operation',//'您目前没有权限进行此操作',
 	'favorite_cannot_favorite'		=> 'Specified information can not be added to favorites',//'指定的信息无法收藏',
-	'favorite_repeat'			=> 'The object is in you Favorites allready, do not repeat.',//'你已收藏过了，请不要重复收藏。',
+	'favorite_repeat'			=> 'The object is in you Favorites already, do not repeat.',//'你已收藏过了，请不要重复收藏。',
 	'favorite_do_success'			=> 'Favorite successfully.',//'收藏信息成功。',
 
 	'feed_no_found'				=> 'Specified feed does not exist',//'指定要查看的动态不存在',
@@ -690,7 +690,7 @@ $lang = array (
 	'max_invitenum_error'		=> 'Sorry, you can only get {maxnum} invitation code in 24 hours',//'对不起，24小时内你只能获得 {maxnum} 个邀请码',
 
 	'no_flicker_yet'		=> 'You do not use rainbow card on this information',//'您还没有对此信息使用彩虹炫',
-	'haved_red_bag'			=> 'You allready have a red envelope',//'你已经领取过此次红包了',
+	'haved_red_bag'			=> 'You already have a red envelope',//'你已经领取过此次红包了',
 	'haved_red_bag_gain'		=> 'You have received a red envelope to: Get {percredit} {credittype}',//'你已经领取到红包了:获得 {percredit} {credittype}',
 	'space_no_red_bag'		=> 'The space owner have no a red envelope',//'空间主人没有设置红包或已被领完了',
 	'red_bag_no_credits'		=> 'There is no points remaining in the red envelope',//'红包里没有任何积分剩余了',
@@ -758,7 +758,7 @@ $lang = array (
 	'url_incorrect_format'		=> 'Invalid url format',//'分享的网址格式不正确',
 	'no_privilege_commentadd'	=> 'Sorry, you do not have permission to comment',//'抱歉，您没有权限发表评论',
 	'do_success_thread_share_mod'	=> 'Your Share added successfully, please wait for administrator approval and response',//'您的分享成功了，回复请等待管理员审核通过',
-	'spacecp_share_repeat'		=> 'You have shared this object allready, please do not repeat the share.',//'你已分享过了，请不要重复分享。',
+	'spacecp_share_repeat'		=> 'You have shared this object already, please do not repeat the share.',//'你已分享过了，请不要重复分享。',
 
 	'showcredit_fuid_error'		=> 'Specified user is not your friend, make sure',//'您指定的用户还不是你的好友，请确认',
 	'showcredit_friend_do_success'	=> 'You have successfully presented friends Ranking Points, Friends will receive notification',//'您已经成功赠送好友上榜积分，好友会收到通知的',

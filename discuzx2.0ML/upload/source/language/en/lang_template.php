@@ -11,7 +11,7 @@
 
 $lang = array (
 	'activity_about_member'		=> 'Remaining places',//'剩余名额',
-	'activity_already'		=> 'Participants number limit is reached allready',//'已参加人数',
+	'activity_already'		=> 'Participants number limit is reached already',//'已参加人数',
 	'additional'			=> 'Additional',//'附加',
 	'debate_opponent'		=> 'Opponent',//'反方',
 	'debate_square'			=> 'Square',//'正方',
@@ -400,6 +400,9 @@ $lang = array (
 //---------------------------
 //Change Language
 'change_language'	=> 'Change language',
+
+//vot:
+	'new'		=> 'New',//'全新',
 );
 
 ?>

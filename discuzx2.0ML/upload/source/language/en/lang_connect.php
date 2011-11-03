@@ -33,11 +33,11 @@ $lang = array
 	'weibo_share'			=> 'Share',//'转播',
 	'weibo_share_to'		=> 'Share to Tencent microblogging',//'转播到腾讯微博',
 	'weibo_reason_is_long'		=> 'Microblogging content exceeds the length limit',//'微博内容超过了长度限制',
-	'weibo_account_not_signup'	=> 'Sorry, you have not open yourmicroblogging account, can not share the content, <a href=http://t.qq.com/reg/index.php target=_blank>Click here to open now</a>.',//'抱歉，您还未开通微博账号，无法分享内容，<a href=http://t.qq.com/reg/index.php target=_blank>点击这里马上开通</a>。',
+	'weibo_account_not_signup'	=> 'Sorry, you have not open your microblogging account, can not share the content, <a href=http://t.qq.com/reg/index.php target=_blank>Click here to open now</a>.',//'抱歉，您还未开通微博账号，无法分享内容，<a href=http://t.qq.com/reg/index.php target=_blank>点击这里马上开通</a>。',
 	'user_unauthorized'		=> 'Sorry, you are not authorized to share the space post to the QQ, Tencent, Tencent microblog and friends.',//'抱歉，您未授权分享主题到QQ空间、腾讯微博和腾讯朋友。',
 
 	'connect_errlog_server_no_response'		=> 'Server not responding',//'服务器无响应',
-	'connect_errlog_access_token_incomplete'	=> 'Interface returned AccessToken incomplete data',//'接口返回的AccessToken数据不完整',
+	'connect_errlog_access_token_incomplete'	=> 'Interface AccessToken returned incomplete data',//'接口返回的AccessToken数据不完整',
 	'connect_errlog_request_token_not_authorized'	=> 'User TmpToken is unauthorized or return incomplete data',//'用户TmpToken未授权或返回的数据不完整',
 	'connect_errlog_sig_incorrect'			=> 'URL signature incorrect',//'URL签名不正确',
 );
