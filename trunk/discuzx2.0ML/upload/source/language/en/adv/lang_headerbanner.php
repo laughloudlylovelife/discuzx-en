@@ -17,6 +17,6 @@ $lang = array
 	'headerbanner_groups'		=> 'Target Groups',//'投放群组分类',
 	'headerbanner_groups_comment'	=> 'Set the groups to show advertising. Take effect only when ads included in the scope of &quot;group&quot;.',//'设置广告投放的群组分类，当广告投放范围中包含“群组”时有效',
 	'headerbanner_category'		=> 'Portal Category',
-	'headerbanner_category_comment' => 'Set a portal category for show the Header Banner. This take effect only when Ads is assigned to the Portal',
+	'headerbanner_category_comment'	=> 'Set a portal category for show the Header Banner. This take effect only when Ads is assigned to the Portal',
 );
 
