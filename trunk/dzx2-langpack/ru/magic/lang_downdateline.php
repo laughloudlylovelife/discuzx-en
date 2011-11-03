@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -10,7 +10,7 @@
 $lang = array
 (
 	'downdateline_name'	=> 'Машина времени',
-	'downdateline_desc'	=> 'Изменение даты публикации блога',
-	'downdateline_info'	=> 'Позволяет назначить произвольную дату публикации своего блога',
+	'downdateline_desc'	=> 'Изменение даты публикации поста',
+	'downdateline_info'	=> 'Позволяет назначить произвольную дату публикации своего поста',
 );
 

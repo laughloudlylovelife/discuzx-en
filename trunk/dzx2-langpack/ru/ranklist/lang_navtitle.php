@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -10,13 +10,13 @@
  */
 
 $lang = array(
-	'ranklist_title_member_credit'	=> 'Топ по баллам',
-	'ranklist_title_member_bid'	=> 'Топ по ставкам',
+	'ranklist_title_member_credit'	=> 'Топ-баллы',
+	'ranklist_title_member_bid'	=> 'Топ-ставки',
 	'ranklist_title_member_girl'	=> 'Топ-девушки',
 	'ranklist_title_member_boy'	=> 'Топ-парни',
 	'ranklist_title_member_friend'	=> 'Топ-друзья',
 	'ranklist_title_member_invite'	=> 'Топ-приглашения',
-	'ranklist_title_member_post'	=> 'Топ по постам',
+	'ranklist_title_member_post'	=> 'Топ-посты',
 	'ranklist_title_member_blog'	=> 'Топ-блоггеры',
 	'ranklist_title_member_onlinetime'	=> 'Топ-онлайн',
 

@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -13,7 +13,7 @@ $lang = array
 	'avatar_desc'	=> 'Для получения бонуса загрузите свой аватар',
 	'avatar_view'	=> '<strong>Инструкция по выполнению задачи:</strong>
 		<ul>
-		<li>1. <a href="home.php?mod=spacecp&ac=avatar" target="_blank">Откройте страницу загрузки аватара в отдельном окне</a></li>
+		<li>1. Откройте в отдельном окне страницу <a href="home.php?mod=spacecp&ac=avatar" target="_blank">Загрузка аватара</a></li>
 		<li>2. Загрузите Ваш аватар</li>
 		</ul>',
 );

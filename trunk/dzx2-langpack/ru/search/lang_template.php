@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -10,7 +10,7 @@
  */
 
 $lang = array (
-	'search_nomatch'	=> 'Увы, ничего не найдено',
+	'search_nomatch'	=> 'Результатов не найдено',
 	'search_result'		=> 'Найдено тем: <em>$index[num]</em>',
 	'search_result_keyword'	=> 'По запросу: <em>&quot;<span class="emfont">$keyword</span>&quot; найдено тем: <em>$index[num]</em>',
 	'a_comment'		=> 'Коммент',
@@ -34,34 +34,34 @@ $lang = array (
 	'order_starttime'	=> 'Дата создания',
 	'order_views'		=> 'Кол-во просмотров',
 	'post_trade_price'	=> 'Цена',
-	'search_allforum'	=> 'Все форумы',
+	'search_allforum'	=> 'Все разделы форума',
 	'search_any_date'	=> 'За все время',
 	'search_fulltext'	=> 'Точное соответствие',
-	'search_newer'		=> ' позже ',
+	'search_newer'		=> ' позднее ',
 	'search_older'		=> ' ранее ',
 	'search_orderby'	=> 'Тип сортировки',
-	'search_range'		=> 'Зона поиска',
-	'search_thread_higher'		=> 'Расширенный поиск по сообщениям',
-	'search_thread_range'		=> 'Зона тем',
+	'search_range'		=> 'Диапазон поиска',
+	'search_thread_higher'		=> 'Расширенный поиск постов',
+	'search_thread_range'		=> 'Диапазон тем',
 	'search_thread_range_all'	=> 'Все темы',
-	'search_thread_range_digest'	=> 'Темы с дайджест',
+	'search_thread_range_digest'	=> 'Темы с дайджестом',
 	'search_thread_range_top'	=> 'Прикреплённые темы',
 	'search_time'		=> 'Время поиска',
 	'special_activity'	=> 'Мероприятия',
 	'special_debate'	=> 'Дебаты',
 	'special_poll'		=> 'Опросы',
-	'special_reward'	=> 'Награды',
+	'special_reward'	=> 'Наградные темы',
 	'special_thread'	=> 'Специальные темы',
-	'special_trade'		=> 'Продажи',
-	'trade_remaindays'	=> 'Осталось дней',
+	'special_trade'		=> 'Товары',
+	'trade_remaindays'	=> 'Осталось дней до завершения',
 	'a_comment_thread'	=> 'Ответов',
 	'anonymous'		=> 'Аноним',
 	'creating_time'		=> 'Время создания',
 	'credits'		=> 'Баллов',
 	'member'		=> 'Участников',
-	'public'		=> 'Публичный',
+	'public'		=> 'Публичная',
 	'search_group_result'		=> 'Найдено сообществ: <em>$groupnum</em>',//{$_G[setting][navs][3][navname]}
-	'search_group_result_keyword'	=> 'Найдено: <em>$groupnum  сообществ, $index[num] записей.</em>',//{$_G[setting][navs][3][navname]}
+	'search_group_result_keyword'	=> 'Найдено сообществ: <em>$groupnum</em>, записей: $index[num]</em>',//{$_G[setting][navs][3][navname]}
 	'search_group_viewgroup'	=> 'Просмотр сообщества',//{$_G[setting][navs][3][navname]}',
 	'threads'			=> 'Темы',
 	'return_homepage'	=> 'Назад на главную',
@@ -71,7 +71,7 @@ $lang = array (
 	'portal'		=> 'Статьи',
 	'quick'			=> 'Быстрый',
 	'search_adv'		=> 'Расширенный',
-	'search_quick_day_180'	=> 'За пол-года',
+	'search_quick_day_180'	=> 'За полгода',
 	'search_quick_day_30'	=> 'За месяц',
 	'search_quick_day_365'	=> 'За год',
 	'search_quick_day_7'	=> 'За неделю',

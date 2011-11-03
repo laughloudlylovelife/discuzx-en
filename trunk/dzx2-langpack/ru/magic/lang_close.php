@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -17,9 +17,9 @@ $lang = array
 	'close_info'			=> 'Для закрытия темы на срок:  {expiration} укажите ID темы',
 	'close_info_nonexistence'	=> 'Введите ID темы для закрытия',
 	'close_succeed'			=> 'Указанная тема успешно закрыта',
-	'close_info_noperm'		=> 'В данном форуме использование этого артефакта запрещено',
+	'close_info_noperm'		=> 'В данном разделе использование этого артефакта запрещено',
 	'close_info_user_noperm'	=> 'У Вас нет прав для использования магии',
 
-	'close_notification'		=> '{actor} использовал артефакт &quot;{magicname}&quot; в теме &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">Посмотр</a>',
+	'close_notification'		=> '{actor} использовал артефакт &quot;{magicname}&quot; для закрытия темы &quot;<a href="forum.php?mod=viewthread&tid={tid}">{subject}</a>&quot;',
 );
 

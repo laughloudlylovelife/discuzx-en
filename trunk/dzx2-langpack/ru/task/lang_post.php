@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -16,10 +16,10 @@ $lang = array
 	'post_complete_var_act_newreply'	=> 'Ответить на существующую тему',
 	'post_complete_var_act_newpost'		=> 'Новая тема / Ответ',
 	'post_complate_var_forumid'		=> 'Целевой форум',
-	'post_complate_var_forumid_comment'	=> 'Укажите форум для выполнения задачи',
-	'post_complate_var_threadid'		=> 'Ответ в указанной теме',
+	'post_complate_var_forumid_comment'	=> 'Укажите раздел форума для выполнения задачи',
+	'post_complate_var_threadid'		=> 'Ответ в указанных темах',
 	'post_complate_var_threadid_comment'	=> 'Укажите ID тем для выполнения задачи.',
-	'post_complate_var_author'		=> 'Целевой автор',
+	'post_complate_var_author'		=> 'Авторы тем',
 	'post_complate_var_author_comment'	=> 'Укажите имена авторов тем для выполнения этой задачи',
 	'post_complete_var_num'			=> 'Минимальное количество действий',
 	'post_complete_var_num_comment'		=> 'Укажите минимальное количество раз выполнения действий',
