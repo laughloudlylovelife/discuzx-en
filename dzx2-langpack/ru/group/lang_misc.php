@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -10,9 +10,9 @@
 $lang = array
 (
 	'group_normal_member'		=> 'Перевести в обычных членов',
-	'group_goaway'			=> 'Исключить из группы',
-	'group_demise_message_title'	=> "{$_G[setting][navs][3][navname]} &quot;{forum}&quot; успешно передан вам",
-	'group_demise_message_body'	=> "{$_G[setting][navs][3][navname]} &quot;{forum}&quot; успешно передан вам, [url={siteurl}forum.php?mod=group&fid={fid}]Просмотр {$_G[setting][navs][3][navname]}[/url]",
-	'group_join'			=> ' присоединиться к группе {groupname}',
+	'group_goaway'			=> 'Исключить из сообщества',
+	'group_demise_message_title'	=> "Сообщество &quot;{forum}&quot; успешно передан Вам",
+	'group_demise_message_body'	=> "Сообщество &quot;{forum}&quot; успешно передан Вам. [url={siteurl}forum.php?mod=group&fid={fid}]Просмотр сообщества[/url]",
+	'group_join'			=> 'Присоединиться к сообществу &quot;{groupname}&quot;',
 );
 

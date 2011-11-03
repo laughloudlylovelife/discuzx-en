@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -11,6 +11,6 @@ $lang = array
 (
 	'doodle_name'	=> 'Граффити',
 	'doodle_desc'	=> 'Использование граффити в сообщениях',
-	'doodle_info'	=> 'Разрешает использование граффити в сообщениях',
+	'doodle_info'	=> 'Разрешает использование графического редактора в сообщениях',
 );
 

@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'hot_name'	=> 'Авто-рейтинг',
+	'hot_name'	=> 'Популяризатор',
 	'hot_desc'	=> 'Добавить рейтинг в свой собственный блог, чтобы повысить посещаемость',
 	'hot_info'	=> 'Добавить {num} баллов к рейтингу своего блога',
 );

@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'detector_name'	=> 'Детектор',
+	'detector_name'	=> 'Детектор подарков',
 	'detector_desc'	=> 'Обнаружение подарков, полученных пользователем',
 	'detector_num'	=> 'Максимальное количество юзеров для обнаружения.',
-	'detector_info'	=> 'Определяет до {num} пользователей, получивших подарки.', 
+	'detector_info'	=> 'Определяет до {num} пользователей, получивших подарки.',
 );
 

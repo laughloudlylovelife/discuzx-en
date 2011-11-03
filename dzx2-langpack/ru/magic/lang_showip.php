@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -16,6 +16,6 @@ $lang = array
 	'showip_ip_message'		=> 'IP-адрес пользователя {username}: {ip}',
 	'showip_info_noperm'		=> 'У Вас нет прав для просмотра IP адреса',
 
-	'showip_notification'		=> 'Некто использовал артефакт &quot;{magicname}&quot; в отношении Вас.',
+	'showip_notification'		=> 'Некто использовал артефакт &quot;{magicname}&quot; для просмотра Вашего IP.',
 );
 

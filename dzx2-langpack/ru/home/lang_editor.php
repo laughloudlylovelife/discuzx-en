@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -27,8 +27,8 @@ $lang = array(
 	'editor_link_flash'		=> 'Ссылка на FLASH',
 	'editor_insert_smiley'		=> 'Смайлы',
 	'editor_doodle'			=> 'Граффити',
-	'editor_pagebreak'		=> 'Разбить страницу',
-	'editor_download_remote'	=> 'Загрузка удаленных изображений',
+	'editor_pagebreak'		=> 'Горизонтальный разделитель',
+	'editor_download_remote'	=> 'Загрузка изображений из сети',
 	'editor_restore'		=> 'Восстановить',
 	'editor_switch_text'		=> 'Простой текст',
 	'editor_font_song'		=> 'Arial',
@@ -42,7 +42,7 @@ $lang = array(
 	'editor_fontsize_medium'	=> 'Средний',
 	'editor_fontsize_large'		=> 'Большой',
 	'editor_list_order'		=> 'Нумерованый список',
-	'editor_list_unorder'		=> 'Маркированный список',
+	'editor_list_unorder'		=> 'Ненумерованный список',
 	'editor_align_left'		=> 'Влево',
 	'editor_align_center'		=> 'По центру',
 	'editor_align_right'		=> 'Вправо',
@@ -67,9 +67,9 @@ $lang = array(
 	'editor_ok'			=> 'OK',
 	'editor_cancel'			=> 'Отмена',
 	'editor_prompt_textlink'	=> 'Введите URL для выделенного текста',
-	'editor_prompt_imagelink'	=> 'Пожалуйста, введите адрес URL изображения',
-	'editor_prompt_pagetitle'	=> 'Пожалуйста, введите название страницы!', 
-	'editor_prompt_videolink'	=> 'Пожалуйста, введите адрес URL видео',
+	'editor_prompt_imagelink'	=> 'Введите URL изображения',
+	'editor_prompt_pagetitle'	=> 'Введите название!', 
+	'editor_prompt_videolink'	=> 'Введите URL видео',
 	'editor_prompt_video_flash'	=> 'Flash анимация',
 	'editor_prompt_video_media'	=> 'Media видео',
 	'editor_prompt_video_real'	=> 'Real видео',

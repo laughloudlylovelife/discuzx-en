@@ -1,6 +1,6 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'highlight_name'		=> 'Подсветка тем',
+	'highlight_name'		=> 'Маркер',
 	'highlight_desc'		=> 'Выделение тем форума указанным цветом',
 	'highlight_expiration'		=> 'Период подсветки',
 	'highlight_expiration_comment'	=> 'Укажите период подсветки темы (по умолчанию 24 часа)',
@@ -24,7 +24,7 @@ $lang = array
 	'highlight_info_noperm'		=> 'В данном форуме запрещено использование данного артефакта',
 	'highlight_info_notype'		=> 'Неверные параметры. Не указан тип операции.',
 
-	'highlight_notification'	=> '{actor} использовал артефакт &quot;{magicname}&quot; в теме &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">Просмотр</a>',
-	'highlight_notification_blogid'	=> '{actor} использовал артефакт &quot;{magicname}&quot; в блоге &quot;{subject}&quot;, <a href="home.php?mod=space&do=blog&id={blogid}">Просмотр</a>',
+	'highlight_notification'	=> '{actor} использовал артефакт &quot;{magicname}&quot; для подсветки темы &quot;<a href="forum.php?mod=viewthread&tid={tid}">{subject}</a>&quot;',
+	'highlight_notification_blogid'	=> '{actor} использовал артефакт &quot;{magicname}&quot; для подсветки блога &quot;<a href="home.php?mod=space&do=blog&id={blogid}">{subject}</a>&quot;',
 );
 
