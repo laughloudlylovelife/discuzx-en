@@ -83,7 +83,7 @@ var lng = {
 	'plain_text_warn'	: 'Converting to the plain text will lose some formatting!\nAre you sure you want to continue?',//'转换为纯文本时将会遗失某些格式。\n您确定要继续吗？',
 	'browser_update'	: 'Your browser does not support this feature, please upgrade your browser version',//'你的浏览器不支持此功能，请升级浏览器版本',
 	'tips'			: 'Tips',//'小提示',
-//	'tips'			: 'Tips',//'友情提示',
+//	'show_tips'		: 'Show Tips',//'友情提示',
 
 //---------------------------
 //static/image/editor/editor_function.js
@@ -272,9 +272,9 @@ var lng = {
 	'width'			: 'Width',//'宽',
 	'height'		: 'Height',//'高',
 	'audio_support'		: 'Supported wma, mp3, ra, rm, and other music formats<br />Example: http://server/audio.wma',//'支持 wma mp3 ra rm 等音乐格式<br />示例: http://server/audio.wma',
-	'video_support'		: 'Support for Youku, potatoes, 56, 6, cool video and other video stations at <br /> support wmv avi rmvb mov swf flv video formats <br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
-	'flash_support'		: 'Flash web site and other support swf flv <br /> Example: http://server/flash.sw',//'支持 swf flv 等 Flash 网址<br />示例: http://server/flash.swf',
-	'paste_from_word'	: 'Paste content from Word',//'从 Word 粘贴内容',
+	'video_support'		: 'Supported for Youku, potatoes, 56, 6, cool video and other video stations at <br /> support wmv avi rmvb mov swf flv video formats <br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
+	'flash_support'		: 'Supported Flash formats: swf flv <br /> Example: http://server/flash.swf',//'支持 swf flv 等 Flash 网址<br />示例: http://server/flash.swf',
+	'paste_from_word'	: 'Paste a content from Word',//'从 Word 粘贴内容',
 	'paste_word_tip'	: 'Please use shortcut (Ctrl + V) to paste the content from Word document',//'请通过快捷键(Ctrl+V)把 Word 文件中的内容粘贴到上',
 //--------------------------------
 //static/js/forum.js
@@ -357,7 +357,7 @@ var lng = {
 
 	'best_answer_sure'	: 'Are you sure you want to define this post as the "Best Answer"?',//'您确认要把该回复选为“最佳答案”吗？',
 //	'title_long'		: 'Title length exceeds the limit of 255 characters',//'您的标题超过 255 个字符的限制',
-//	'content_long'		' 'The content length does not meet the requirements.\n\nCurrent Length '//'您的帖子长度不符合要求。\n\n当前长度',
+//	'content_long'		: 'The content length does not meet the requirements.\n\nCurrent Length '//'您的帖子长度不符合要求。\n\n当前长度',
 //	'bytes'			: 'bytes',//'字节',
 //	'system_limit'		: 'System limit',//'系统限制',
 //	'up_to'			: 'to',//'到',
@@ -365,7 +365,7 @@ var lng = {
 //	'credit_confirm1'	: 'This costs ',//'下载积分将',
 	'credit_confirm1'	: 'Download costs ',//'下载需要消耗',
 	'credit_confirm2'	: ' points, are you sure to download?',//'，您是否要下载？',
-	'thread_to_clipboard'	: 'Thread address was copied to the clipboard',//'帖子地址已经复制到剪贴板'
+	'thread_to_clipboard'	: 'Thread address was copied to the clipboard',//'帖子地址已经复制到剪贴板',
 	'click_to_enlarge'	: 'Click to enlarge',//'点击放大',
 	'notify_on_reply'	: 'Receive reply notification',//'接收回复通知',
 	'notify_on_reply_cancel'	: 'Cancel reply notification',//'取消回复通知',
@@ -529,7 +529,7 @@ var lng = {
 //	'font'			: 'Font',//'字体',
 //	'size'			: 'Size',//'大小',
 //!!! mainly the same as 'color' !!!!!!
-//'colour'		: 'Colour',//'色',
+//	'colour'		: 'Colour',//'色',
 	'add_new_title'		: 'Add New Title',//'添加新标题',
 //	'edit'			: 'Edit',//'编辑',
 //	'title'			: 'Title',//'标题',

@@ -8,15 +8,15 @@
  */
 
 $lang = array(
-	'blockclass_html'			=> 'Display',//'展示类',
+	'blockclass_html'			=> 'Display type',//'展示类',
 
-	'blockclass_html_html'			=> 'Display',//'展示类',
+	'blockclass_html_html'			=> 'Display type',//'展示类',
 	'blockclass_html_script_blank'		=> 'Custom HTML',//'自定义HTML',
 	'blockclass_html_script_search'		=> 'Article Search',//'搜索条',
 	'blockclass_html_script_line'		=> 'Horizontal line',//'分割线',
 	'blockclass_html_script_banner'		=> 'Banner',//'图片横幅',
 	'blockclass_html_script_vedio'		=> 'Video',//'网络视频',
-	'blockclass_html_script_stat'		=> 'Stat',//'数据统计',
+	'blockclass_html_script_stat'		=> 'Statistics',//'数据统计',
 	'blockclass_html_script_forumtree'	=> 'Forum List',//'版块列表',
 	'blockclass_html_script_google'		=> 'GOOGLE',
 	'blockclass_html_script_adv'		=> 'Site Advertising',//'站点广告',
@@ -87,7 +87,7 @@ $lang = array(
 	'blockclass_forum_field_posts'			=> 'Posts',//'版块帖子数',
 	'blockclass_forum_field_threads'		=> 'Threads',//'版块话题数',
 	'blockclass_forum_field_todayposts'		=> 'Posts today',//'版块今日新帖数',
-	'blockclass_forum_script_forum'			=> 'Forum',//'论坛版块',
+	'blockclass_forum_script_forum'			=> 'SubForums(?)',//'论坛版块',
 
 	'blockclass_sort_sort'			=> 'Category',//'分类信息',
 	'blockclass_sort_field_title'		=> 'Title',//'帖子名称',
@@ -204,11 +204,11 @@ $lang = array(
 	'blockclass_member_field_address'	=> 'Address',//'邮寄地址',
 	'blockclass_member_field_zipcode'	=> 'Zip code',//'邮编',
 	'blockclass_member_field_nationality'	=> 'Nationality',//'国籍',
-	'blockclass_member_field_birthcity'	=> 'Birth city',//'出生城市',
-	'blockclass_member_field_residecity'	=> 'Reside city',//'居住城市',
-	'blockclass_member_field_residedist'	=> 'Reside district',//'居住县',
-	'blockclass_member_field_residecommunity'	=> 'Reside village',//'居住小区',
-	'blockclass_member_field_residesuite'		=> 'Reside suite',//'房间',
+	'blockclass_member_field_birthcity'	=> 'Birth place',//'出生城市',
+	'blockclass_member_field_residecity'		=> 'Reside country',//'居住城市',
+	'blockclass_member_field_residedist'		=> 'Reside region',//'居住县',
+	'blockclass_member_field_residecommunity'	=> 'Reside city',//'居住小区',
+	'blockclass_member_field_residesuite'		=> 'Reside county/village',//'房间',
 	'blockclass_member_field_graduateschool'	=> 'Graduate school',//'毕业学校',
 	'blockclass_member_field_education'		=> 'Education',//'学历',
 	'blockclass_member_field_occupation'		=> 'Occupation',//'职业',
@@ -265,7 +265,7 @@ $lang = array(
 	'blockclass_doing_field_dateline'	=> 'Publish time',//'发布时间',
 	'blockclass_doing_field_replynum'	=> 'Replies',//'回复数',
 	'blockclass_doing_script_doingnew'	=> 'New Doings',//'最新记录',
-	'blockclass_doing_script_doinghot'	=> 'Hot twits',//'热门记录',
+	'blockclass_doing_script_doinghot'	=> 'Hot doings',//'热门记录',
 	'blockclass_doing_script_doing'		=> 'Customize',//'高级自定义',
 
 	'blockclass_space_blog'			=> 'Blogs',//'日志类',
