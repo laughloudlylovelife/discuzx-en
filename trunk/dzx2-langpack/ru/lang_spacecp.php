@@ -285,6 +285,7 @@ $lang = array(
 	'profile_verify_modify_error'	=> 'Поле &quot;{verify}&quot; было проверено. Изменению не подлежит!',
 	'profile_verify_verifying'	=> 'Ваша информация &quot;{verify}&quot; отправлена на проверку. Пожалуйста, дождитесь завершения проверки модератором.',
 
+//'district_level_0'		=> '- Country -',//'-国家-',
 	'district_level_1'		=> '- Страна- ',
 	'district_level_2'		=> '- Регион -',
 	'district_level_3'		=> '- Город -',
@@ -294,9 +295,9 @@ $lang = array(
 	'spacecp_message_prompt'	=> '(Поддерживается {msg} код. Максимум 1000 символов)',
 	'card_update_doing'		=> ' <a class="xi2" href="###">[Обновить настроение]</a>',
 	'email_acitve_message'		=> '<img src="{imgdir}/mail_inactive.png" alt="Не проверено" class="vm" />
-					   <span class="xi1">Новый Email ({newemail}) ожидает активации...</span><br />
-						Вам было отправлено сообщение с кодом активации. Проверьте свою электронную почту и потвердите активацию данного Email.<br>
-						Если вы не получили письмо с подтверждением, Вы можете изменить Ваш Email и повторно <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Отправить запрос на активацию</a>',
+					   <span class="xi1">Email ({newemail}) ожидает активации...</span><br />
+						Вам было отправлено сообщение с кодом активации. <br />Проверьте свою электронную почту и потвердите активацию данного Email.<br>
+						Если Вы не получили письмо с подтверждением, <br />Вы можете изменить Ваш Email и повторно <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Отправить запрос на активацию</a>',
 
 );
 
