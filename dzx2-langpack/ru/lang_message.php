@@ -891,7 +891,7 @@ $lang = array (
 	'admin_reason_invalid'	=> 'Пожалуйста, введите причину',
 
 	'css_contains_elements_of_insecurity'	=> 'Ваш документ, содержит небезопасные элементы',
-	'diy_template_filename_invalid'		=> 'Неправильное имя шаблона для ВИЗО',
+	'diy_template_filename_invalid'		=> 'Неправильное имя шаблона для DIY',
 	'diy_template_extension_invalid'	=> 'Не правильное расширения файла шаблона!',
 	'diy_template_noexist'		=> 'Файл шаблона не существует',
 	'topic_title_cannot_be_empty'	=> 'Название темы не может быть пустым',
