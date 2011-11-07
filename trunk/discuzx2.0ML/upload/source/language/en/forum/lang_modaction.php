@@ -15,13 +15,13 @@ $lang = array
 	'DEL'	=> 'Delete',//'删除',
 	'DLP'	=> 'Delete reply',//'删除回复',
 	'DCM'	=> 'Delete comment',//'删除点评',
-	'PRN'	=> 'Bulk post remove',//'批量删帖',
+	'PRN'	=> 'Prune posts',//'批量删帖',
 	'UDL'	=> 'Undelete',//'反删除',
 
-	'DIG'	=> 'Digg',//'加入精华',
-	'UDG'	=> 'Bury',//'解除精华',
-	'EDI'	=> 'Limit digg',//'限时精华',
-	'UED'	=> 'Unlimit digg',//'解除限时精华',
+	'DIG'	=> 'Digest',//'加入精华',
+	'UDG'	=> 'Undigest',//'解除精华',
+	'EDI'	=> 'Limit digest',//'限时精华',
+	'UED'	=> 'Unlimit digest',//'解除限时精华',
 
 	'CLS'	=> 'Close',//'关闭',
 	'OPN'	=> 'Open',//'打开',
@@ -54,8 +54,8 @@ $lang = array
 
 	'MOD'	=> 'Moderate',//'审核通过',
 
-	'ABL'	=> 'Add BLOG',//'加入文集',
-	'RBL'	=> 'Remove BLLOG',//'移除文集',
+	'ABL'	=> 'Add Blog',//'加入文集',
+	'RBL'	=> 'Remove Blog',//'移除文集',
 
 	'PTS'	=> 'Push to stack',//'推送主题',
 	'RFS'	=> 'Restore from stack',//'解除推送',
@@ -69,8 +69,8 @@ $lang = array
 	'WRN'	=> 'Warn',//'警告',
 	'UWN'	=> 'Unwarn',//'解除警告',
 
-	'SPA'	=> 'Pin',//'鉴定为',
-	'SPD'	=> 'Unpin',//'撤销鉴定',
+	'SPA'	=> 'Pin post',//'鉴定为',
+	'SPD'	=> 'Unpin post',//'撤销鉴定',
 
 	'SLA'	=> 'Add Icon',//'添加图标',
 	'SLD'	=> 'Remove Icon',//'撤销图标',
@@ -81,7 +81,7 @@ $lang = array
 
 	'MAG'	=> 'Magic',//'道具',
 
-	'REB'	=> 'Push',//'推送',
+	'REB'	=> 'Get promotion',//'推送',
 
 );
 

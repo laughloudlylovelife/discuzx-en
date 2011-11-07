@@ -20,6 +20,7 @@ $lang = array
 		'mp.birthday'		=> 'Birth Day',//'生日(日)',
 		'mp.bloodtype'		=> 'Blood type',//'血型',
 		'mp.affectivestatus'	=> 'Emotional category',//'情感状态',
+'mp.birthcountry'	=> 'Birth country',//'家乡(国)',
 		'mp.birthprovince'	=> 'Birth region',//'家乡(省)',
 		'mp.birthcity'		=> 'Birth city',//'家乡(市)',
 		'mp.resideprovince'	=> 'Reside region',//'居住地(省)',
