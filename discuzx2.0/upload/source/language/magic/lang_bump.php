@@ -13,7 +13,7 @@ $lang = array
 	'bump_forum'			=> 'Allowed forums',//'允许使用本道具的版块',
 	'bump_desc'			=> 'Bump a thread',//'可以提升某个主题',
 	'bump_info'			=> 'For bump specific thread, enter thread ID',//'提升指定的主题，请输入主题的 ID',
-	'bump_info_nonexistence'	=> 'Enter thec thread ID',//'请指定要提升的主题',
+	'bump_info_nonexistence'	=> 'Enter the thread ID',//'请指定要提升的主题',
 	'bump_succeed'			=> 'The thread was bumped successfully',//'你操作的主题已提升',
 	'bump_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
 

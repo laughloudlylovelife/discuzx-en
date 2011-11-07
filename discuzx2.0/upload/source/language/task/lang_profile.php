@@ -14,12 +14,13 @@ $lang = array
 
 	'profile_fields'		=> array(
 		'mp.realname'		=> 'Real Name',//'姓名',
-		'mp.gender'			=> 'Gender',//'性别',
+		'mp.gender'		=> 'Gender',//'性别',
 		'mp.birthyear'		=> 'Birth year',//'生日(年)',
 		'mp.birthmonth'		=> 'Birth month',//'生日(月)',
 		'mp.birthday'		=> 'Birth Day',//'生日(日)',
 		'mp.bloodtype'		=> 'Blood type',//'血型',
 		'mp.affectivestatus'	=> 'Emotional category',//'情感状态',
+'mp.birthcountry'	=> 'Birth country',//'家乡(国)',
 		'mp.birthprovince'	=> 'Birth region',//'家乡(省)',
 		'mp.birthcity'		=> 'Birth city',//'家乡(市)',
 		'mp.resideprovince'	=> 'Reside region',//'居住地(省)',
