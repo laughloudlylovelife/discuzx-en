@@ -90,7 +90,7 @@ Note on the CSS Hack:
 */
 	* { word-wrap: break-word; }
 	body { {BGCODE}; }
-	body, input, button, select, textarea { font: {FONTSIZE} {FONT}; color: {TABLETEXT}; }
+/*vot*/	body, input, button, select, textarea, td { font: {FONTSIZE} {FONT}; color: {TABLETEXT}; }
 		textarea { resize: none; }
 	body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc { margin: 0; padding: 0; }
 	table { empty-cells: show; border-collapse: collapse; }
