@@ -612,7 +612,7 @@ Note on the CSS Hack:
 				#nv li { float: left; padding-right: 1px; height: 33px; line-height: 33px; background: url({IMGDIR}/nv_a.png) no-repeat 100% 0; font-weight: 700; font-size: 14px; }
 					.ie_all #nv li { line-height: 36px; }
 					.ie6 #nv li { line-height: 33px; }
-/*vot*/					#nv li a { float: left; padding: 0 5px; height: 33px; }
+/*vot*/					#nv li a { float: left; padding: 0 10px; height: 33px; }
 						#nv li a { color: {MENUTEXT}; }
 						#nv li span { display: none; }
 					#nv li.a { margin-left: -1px; {MENUHOVERBGCODE}; }
