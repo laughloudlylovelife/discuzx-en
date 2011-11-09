@@ -921,7 +921,7 @@ Note on the CSS Hack:
 			.tbn li { margin: 0 10px; height: 33px; border-bottom: 1px dashed #CCC; }
 			.tbn li.a { margin: -1px 0 0; padding: 0 10px 0 9px; border-top: 1px solid {COMMONBORDER}; border-bottom-style: solid; background: {WRAPBG}; }
 		.tbn ul a { display: block; height: 33px; line-height: 33px; }
-		.tbn .mt { padding: 10px; }
+/*vot*/		.tbn .mt { padding: 10px; font-size: 14px;}
 
 /* Magics */
 .mg_img { padding: 10px; width: 76px; height: 76px; background: url({IMGDIR}/magic_imgbg.gif) no-repeat 0 0; } 
