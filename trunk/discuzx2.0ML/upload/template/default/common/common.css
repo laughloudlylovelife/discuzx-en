@@ -662,7 +662,7 @@ Note on the CSS Hack:
 		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
 		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
 
-/*vot*/		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 0 6px 10px; width: 117px; }
+/*vot*/		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 0 6px 10px; width: 125px; }/*117px*/
 
 		.ct2_a, .ct3_a { border: 1px solid {WRAPBORDERCOLOR}; {SIDEBGCODE} }
 			.ct2_a_r { border: none; background-image: none; }
