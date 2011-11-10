@@ -1613,3 +1613,12 @@ DIY image is not loaded when the Hide Slide
 	font-size: 18px;
 	text-align: center;
 }
+/*
+	Name:			Language Flag Style
+	Level:			Global
+	Explain:		Used for switch the current language (in Multi-Lingual version)
+	Last Modify:		Valery Votintsev
+*/
+.flag {
+	padding-top: 6px;
+}
