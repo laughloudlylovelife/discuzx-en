@@ -11,5 +11,5 @@
  */
 
 $_SGLOBAL['language_title'] = 'Arabic';
-$_SGLOBAL['language_icon'] = 'ps.gif';
+$_SGLOBAL['language_icon'] = 'ar.gif';
 
