@@ -165,16 +165,25 @@ $_config['remote']['appkey'] = md5($_config['security']['authkey']);
 // Remote call: Open external cron task. within the system no longer running cron, cron task activated by an external program
 $_config['remote']['cron'] = 0;
 
-//vot: Multi-Lingual support
-// Enabled Language List
-// (Comment a language that is not required)
+//-----------------------------------------------------------------------
+// Multi-Lingual support by Valery Votintsev
+//-----------------------------------------------------------------------
+// "dir" - text direction:
+//	'ltr' (Left To Right) 
+//	'rtl' (Right To Left), i.e for Arabic, Hebrew, Urdu, etc.
+//-----------------------------------------------------------------------
+// Uncomment a language line for enable the language!
+// Comment a language line that is not required!!!
+//
+// Enabled Language List:
 
 $_config['languages'] = array(
-	'en' => array('icon'=>'en.gif', 'title'=>'English'),
-//	'cn' => array('icon'=>'cn.gif', 'title'=>'Chinese'),
-//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch'),
-//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian'),
-//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese'),
+	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
+//	'cn' => array('icon'=>'cn.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
+//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
+//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
+//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
+//	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
 );
 
 ?>
