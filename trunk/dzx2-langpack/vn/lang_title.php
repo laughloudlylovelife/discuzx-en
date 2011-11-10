@@ -4,9 +4,9 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_title.php by Valery Votintsev at sources.ru
+ *	Vietnames Language Pack
  *
- *	Language Title and Icon
+ *      $Id: lang_title.php by vituocgia http://we.ecms.asia/
  *
  */
 
