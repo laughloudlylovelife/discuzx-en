@@ -371,7 +371,7 @@ $lang = array (
 	'plugins_setting_module_nonexistence'	=> 'ملف الموديل للهاك المحدد  ({modfile}) غير موجود او يوجد به خطأ, الرجاء فحص الهاك من جميع ملفاته رفعت.',//'指定的插件管理模块文件({modfile})不存在或存在语法错误，请检查是否已将插件完整上传。',
 	'plugins_add_succeed'			=> 'تم اضافة الهاك بنجاح, مواصلة لتعديل الاعدادت.',//'插件已成功添加，请继续进行详细设置。',
 	'plugins_nonexistence'			=> 'انت لم تحدد الهاك المراد اجراء العملية عليه. حدد الهاك المطلوب:',//'您即将进行的操作：设计插件。请先选择插件：',
-	'plugin_donot_edit'			=> 'Editing not allowed',//'不允许编辑',
+	'plugin_donot_edit'			=> 'التعديل غير مسموح',//'不允许编辑',
 	'plugins_edit_directory_invalid'	=> 'دليل الهاك غير صالح او لا تستخدم  &quot;/&quot; في النهاية, الرجاء العودة للتعديل.',//'您输入的插件目录不合法或没有使用 \"/\" 结尾，请返回修改。',
 	'plugins_edit_language_invalid'		=> 'ملف لغة الهاك  ({langfile}) غير موجود.',//'插件语言包文件({langfile})不存在。',
 	'plugins_edit_modules_name_invalid'	=> 'اسم الموديل غير صالح, الرجاء العودة للتعديل.',//'您输入的程序模块名称不合法，请返回修改。',
@@ -401,7 +401,7 @@ $lang = array (
 	'postsplit_do_succeed'			=> 'Congratulations, post split operation was successful, return',//'恭喜你,帖子分表操作成功,请返回',
 	'postsplit_resetpid_succeed'		=> 'تمت العملية بنجاح',//'Post ID重置完成',
 
-	'profilefield_not_found'	=> 'Field not found',//'栏目未找到',
+	'profilefield_not_found'	=> 'الحقل غير موجود',//'栏目未找到',
 	'fields_edit_invalid'		=> 'اسم الحقول وطوله فارغ, الرجاء العودة للتعديل.',//'项目名称和长度不能为空，请返回修改。',
 
 	'recyclebin_none_selected'	=> 'أنت لم تختار المشاركة للاجراء.',//'没有选择要操作的帖子。',
@@ -409,7 +409,7 @@ $lang = array (
 	'report_resolve_succeed'		=> 'تم معالجة التقرير بنجاح, سيتم تحويلك الى صفحة القائمة.',//'处理成功,现在返回列表页。',
 	'report_receive_succeed'		=> 'تم اجراء العملية بنجاح.',//'操作成功。',
 
-	'searchindex_not_found'		=> 'Index file is missing',//'索引文件丢失',
+	'searchindex_not_found'		=> 'الملف الرئيسي غير موجود',//'索引文件丢失',
 	'search_keyword_noexists'	=> 'الرجاء كتابة كلمات البحث!',//'请输入要搜索的关键词！',
 
 	'founder_action'			=> 'You have no rights to use Founder special features',//'创始人专用功能，你无权使用',

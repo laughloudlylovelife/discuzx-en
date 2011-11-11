@@ -12,7 +12,7 @@
 
 $lang = array (
  	'all'				=> 'الكل',//'全部',
-	'have'				=> 'يملك',//'已有',
+	'have'				=> ' يملك ',//'已有',
 	'homepage'			=> 'الصفحة الرئيسية',//'首页',
 	'hot'				=> 'نشيط',//'热度',
 	'join'				=> 'انضمام',//'人参加',
@@ -77,8 +77,8 @@ $lang = array (
 	'please_input_friend_name'	=> ' يرجى كتابة اسم صديقك ',//'请输入好友的用户名',
   'price_can_not_be_higher_than_the_total'	=> 'يجب أن يكون السعر أقل من مجموع النقاط',
   'ranking_message_0'	=> 'انت لست على القائمة.هل تحتاج الى الانضام للقائمة.',
-	'ranking_message_1'		=> 'Greater bid price will more top rank, and the higher will be your home page exposure;',//'竞价单价越多，竞价排名越靠前，你的主页曝光率也会越高；',
-  'ranking_message_2'	=> 'Each valid view will reduce your bidding from {$extcredits[$creditid][title]} (except Malicious refresh).',
+	'ranking_message_1'		=> 'كلما كان السعر اكبر زاد الترتيب, وستكون صفحتك في المقدمة;',//'竞价单价越多，竞价排名越靠前，你的主页曝光率也会越高；',
+  'ranking_message_2'	=> 'كل زيارة صالحة سوف تقوم بإعلاء ترتيبك  {$extcredits[$creditid][title]} (ما عدا تحديث  ماكر/خبيث ).',
 	'ranklist_beauty'		=> 'اعلى السيدات',//'美女排行',
 	'ranklist_blog'			=> 'اعلى المدونين',//'日志数排行',
 	'ranklist_handsome'		=> 'اعلى الاولاد',//'帅哥排行',

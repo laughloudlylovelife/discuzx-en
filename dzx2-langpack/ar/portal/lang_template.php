@@ -277,7 +277,7 @@ $lang = array (
 	'topic_keyword'			=> 'كلمات البحث',//'SEO 关键字',
 	'topic_keyword_comment'		=> 'ادخل الكلمات الدلالية وافصل بينهم بفاصلة ","',//'此关键词用于搜索引擎优化，放在 meta 的 keyword 标签中，多个关键字间请用半角逗号 "," 隔开',
 	'topic_navs'			=> 'استخدام في الشريط التنقل العلوي',//'站点导航',
-	'topic_opened'			=> 'is open',//'是否开启',
+	'topic_opened'			=> ' مفتوح ',//'是否开启',
 	'topic_page_bottom'		=> 'استخدام في شريط التنقل السفلي',//'站点尾部信息',
 	'topic_static_name'		=> 'الاسم الثابت',//'静态化名称',
 	'topic_static_name_comment'	=> 'اكتب الاسم الثابت للموضوع',//'用于专题静态化时显示在链接中的个性化名称，不能重复',
@@ -298,9 +298,9 @@ $lang = array (
 	'view_related'		=> 'قراءات ذات صلة',//'相关阅读',
 	'view_views'		=> 'مشاهدات',//'查看数',
 //vot
-	'select_all'	=> 'Select All',//'全选',
-	'select_mod'	=> 'Choose module',//'选择模块',
-	'select_page'	=> 'Select page',//'选择页面',
+	'select_all'	=> 'تحديد الكل',//'全选',
+	'select_mod'	=> 'اختيار الموديل',//'选择模块',
+	'select_page'	=> 'حدد الصفحة',//'选择页面',
 
 
 
