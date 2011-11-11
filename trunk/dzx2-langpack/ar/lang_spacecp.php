@@ -285,6 +285,7 @@ $lang = array(
 	'profile_verify_modify_error'	=> 'تمت المصادقة على  {verify} . لا يمكنك التعديل.',//'{verify}已经认证通过不允许修改',
 	'profile_verify_verifying'	=> '{verify} تم التحقق, لا تسطيع التعديل',
 
+//'district_level_0'		=> '- Country -',//'-国家-',
 	'district_level_1'		=> '- الدولة -',//'-省份-',
 	'district_level_2'		=> '- الاقليم -',//'-城市-',
 	'district_level_3'		=> '- المدينة -',//'-州县-',

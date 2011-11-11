@@ -205,15 +205,15 @@ $lang = array
 	'search'	=> 'بحث',//'搜索',
 
 //vot source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> 'Refresh frequency limit',
-	'attackevasive_1_message'	=> 'You visit the site too fast, less than two seconds! Please wait a little...',
-	'attackevasive_2_subject'	=> 'Access throug proxy servers is restricted',
+	'attackevasive_1_subject'	=> 'تحديث حد التردد',
+	'attackevasive_1_message'	=> 'قمت بزيارة موقع سريع جدا، وأقل من ثانيتين! يرجى الانتظار قليلا...',
+	'attackevasive_2_subject'	=> 'الوصول من خلال ملقمات بروكسي مقيدة',
 	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
-	'attackevasive_4_subject'	=> 'Open the page reload',
-	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
+	'attackevasive_4_subject'	=> 'تحديث فتح الصفحة',
+	'attackevasive_4_message'	=> 'اهلا بك في الموقع, جاري اعادة تحميل الصفحة, الرجاء الانتظار ...',
 
 //vot Months Names
-	'month_name'	=> array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
+	'month_name'	=> array('شهر','يناير','فبراير','مارس','ابريل','مايو','يونيو','يوليو','اغسطس','سبتمبر','اكتوبر','نوفمبر','ديسمبر'),
 
 );
 

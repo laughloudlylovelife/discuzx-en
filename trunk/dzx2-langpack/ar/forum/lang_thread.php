@@ -12,7 +12,7 @@ if(!defined('IN_DISCUZ')) {
 }
 
 $lang = array (
-	  'forum_archive' => 'Archive',//'存档',
+	  'forum_archive' => 'الارشيف',//'存档',
 
 
 );

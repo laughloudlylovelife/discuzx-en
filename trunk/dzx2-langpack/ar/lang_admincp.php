@@ -6129,7 +6129,7 @@ $lang = array
 	'custommenu_add'		=> 'اضافة لقائمة مخصصة',//'添加常用操作',
 	'custommenu_addto'		=> 'اضافة الى قائمة فرعية',//'添加到常用操作',
 
-	'import_data_invalid'		=> 'Data can not identify, please return',//'数据无法识别，请返回',
+	'import_data_invalid'		=> 'لا يمكن تعريف البيانات,الرجاء الرجوع',//'数据无法识别，请返回',
 	'import_data_typeinvalid'	=> 'نوع البيانات خاطئ, الرجاء الرجوع',//'数据类型错误，请返回',
 
 
@@ -6192,23 +6192,23 @@ RepeatLimit 32
 // Added by Valery Votintsev
 
 //source/admincp/admincp_quickquery.php
-	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',
-	'quick_enable_trash'		=> 'Enable Recycle Bin for all forums',//'开启 所有版块 主题回收站',
-	'quick_enable_bbcode'		=> 'Enable BB-Codes for all forums',//'开启 所有版块 Discuz! 代码”',
-	'quick_enable_img'		=> 'Enable [IMG] code for all forums',//'开启 所有版块 [IMG] 代码”',
-	'quick_enable_smilies'		=> 'Enable Smilies code for all forums',//'开启 所有版块 Smilies 代码',
-	'quick_enable_jammer'		=> 'Enable Jammer code for all forums',//'开启 所有版块 内容干扰码',
-	'quick_enable_anonymous'	=> 'Enable anonymous posting for all forums',//'开启 所有版块 允许匿名发贴”',
-	'quick_disable'			=> 'Quick disable functions',//'快速关闭论坛版块功能',
-	'quick_disable_trash'		=> 'Disable Recycle Bin for all forums',//'关闭 所有版块 主题回收站',
-	'quick_disable_html'		=> 'Disable HTML code for all forums',//'关闭 所有版块 HTML 代码',
-	'quick_disable_bbcode'		=> 'Disable BB-Codes for all forums',//'关闭 所有版块 Discuz! 代码',
-	'quick_disable_img'		=> 'Disable [IMG] code for all forums',//'关闭 所有版块 [IMG] 代码',
-	'quick_disable_smilies'		=> 'Disable Smilies codes for all forums',//'关闭 所有版块 Smilies 代码',
-	'quick_disable_jammer'		=> 'Disable Jammer Code for all forums',//'关闭 所有版块 内容干扰码',
-	'quick_disable_anonymous'	=> 'Disable anonymous posting for all forums',//'关闭 所有版块 允许匿名发贴',
-	'quick_members'			=> 'Members related functions',//'会员操作相关',
-	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
+	'quick_enable'			=> 'تفعيل السريع للخصائص',//'快速开启论坛版块功能',
+	'quick_enable_trash'		=> 'تفعيل سله المهملات لجميع الاقسام',//'开启 所有版块 主题回收站',
+	'quick_enable_bbcode'		=> 'تفعيل BB-Codes لكل الاقسام',//'开启 所有版块 Discuz! 代码”',
+	'quick_enable_img'		=> 'تفعيل [IMG]   لكل الأقسام ',//'开启 所有版块 [IMG] 代码”',
+	'quick_enable_smilies'		=> 'تفعيل اكواد الابتسامات   لكل الأقسام ',//'开启 所有版块 Smilies 代码',
+	'quick_enable_jammer'		=> 'تفعيل كود Jammer   لكل الأقسام ',//'开启 所有版块 内容干扰码',
+	'quick_enable_anonymous'	=> 'تفعيل المشاركة كمجهول  لكل الأقسام ',//'开启 所有版块 允许匿名发贴”',
+	'quick_disable'			=> 'التعطيل السريع للخصائص',//'快速关闭论坛版块功能',
+	'quick_disable_trash'		=> 'تعطيل سلة المهملات  لكل الأقسام ',//'关闭 所有版块 主题回收站',
+	'quick_disable_html'		=> 'تعطيل اكواد HTML   لكل الأقسام ',//'关闭 所有版块 HTML 代码',
+	'quick_disable_bbcode'		=> 'تعطيل  BB-Codes  لكل الأقسام ',//'关闭 所有版块 Discuz! 代码',
+	'quick_disable_img'		=> 'تعطيل اكواد الصور  [IMG]   لكل الأقسام ',//'关闭 所有版块 [IMG] 代码',
+	'quick_disable_smilies'		=> 'تعطيل اكواد الابتسامات  لكل الأقسام ',//'关闭 所有版块 Smilies 代码',
+	'quick_disable_jammer'		=> 'تعطيل Jammer Code  لكل الأقسام ',//'关闭 所有版块 内容干扰码',
+	'quick_disable_anonymous'	=> 'تعطيل المشاركة كمجهول  لكل الأقسام ',//'关闭 所有版块 允许匿名发贴',
+	'quick_members'			=> 'الخصائص المتعلقة بالاعضاء',//'会员操作相关',
+	'quick_clean_trans'		=> 'مسح سجلات المعاملة لجميع الاعضاء',//'清空 所有会员 积分交易记录',
 
 //	'setting_seo_rewritestatus_all_script'		=> 'جميع صفحات الموقع',//'全站动态页面',
 //	'postsplit_manage_update_tabletype_submit'	=> 'تحديث نوع الجدول',//'更新表类型',
@@ -6217,7 +6217,7 @@ RepeatLimit 32
 //	'custommenu_addto'	=> 'اضافة الى قائمة مخصصة',
 //	'import_data_invalid'	=> 'لم يتم التعرف على البيانات، الرجاء العودة',
 //	'import_data_typeinvalid'	=> 'نوع بيانات خطأ العودة',
-	'home_dev_arabic'		=> 'تعريب:',//'显示名称',
+//	'home_dev_arabic'		=> 'تعريب:',//'显示名称',
 );
 
 //------------------------------------------------------

@@ -839,7 +839,7 @@ $lang = array (
 	'sharing_does_not_exist'	=> 'منشور التعليقات غير موجود',//'评论的分享不存在',
 	'note_wall_reply_success'	=> 'رد حائط  {username} تم بنجاح',//'已经回复到{username}的留言板',
 
-  'not_in_mobile'	=> 'You accessed a page in non-mobile mode. Whether need a further access to the computer version?',
+  'not_in_mobile'	=> 'لقد قمت بالوصول للصفحة  الخاصة بالحاسوب. هل تريد الوصول الى نسخة الحاسوب?',
 	'submit_secqaa_invalid'		=> 'اجابة سؤال الامان خاطئة, يرجى العودة.',//'验证问答的答案填写错误，请返回修改。',
 	'post_url_nopermission'			=> 'عذراً, لا يمكنك نشر موضوع يحتوي على رابط, يرجى العودة.',//'对不起，您没有权限发表 URL 连接，请返回修改。',
 	'period_nopermission'		=> 'عذراً, المدير وضع  {banperiods} يوميا, لا يمكنك اجراء العملية الان او عرض هذه الصفحة , يرجى المحاولة في وقت لاحق',//'对不起，管理员设置了每日 {banperiods} 不能进行此操作或访问此页面，请其他时间再试。',
@@ -884,7 +884,7 @@ $lang = array (
 	'magic_is_closed'			=> 'هذه الدعامة تم حظرها',//'此道具已被禁用',
 	'magic_not_for_sale'			=> 'لا يمكن بيع الدعائم في المتجر',//'此道具不能通过购买获得',
 	'magic_groupid_limit'			=> 'مجموعة الاعضاء المنتسب اليها لا يمكنها شراء هذه الدعائم',//'您当前所在的用户组不能购买该道具',
-	'bad_buynum'				=> 'You entered wrong number of purchase',//'您输入的购买数目有误',
+	'bad_buynum'				=> 'لقد ادخلت رقما غير صالح للشراء',//'您输入的购买数目有误',
 	'not_enough_coupon'			=> 'الإيصالات لا تكفي',//'代金券数目不足',
 	'credit_is_not_enough'			=> 'نقاطك غير كافية لشراء هذه الدعامة',//'您的积分不够购买此道具',
 

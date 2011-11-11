@@ -12,11 +12,11 @@
 $lang = array (
   'no_simplemobiletype'	=> 'الإصدار القياسي',
   'nomobiletype'	=> 'نسخة الكومبيوتر',
-  'simplemobiletype'	=> 'مبتدئ',
+  'simplemobiletype'	=> 'الاصدار البسيط',
   'favorite'	=> 'المفضلة',
   'my_posts'	=> 'مشاركاتي',
   'new_pm'	=> 'الرسائل الجديدة',
-  'waptitle'	=> 'هاتف نقال',
+  'waptitle'	=> 'هاتف محمول',
   'login_mobile'	=> 'تسجيل الدخول الان - {$_G[setting][bbname]} الهاتف النقال',
   'login_mobile_join'	=> 'الآن استخدام الهاتف للوصول والحصول على تجربة متنقلة سريعة',
   'mobile_favorite'	=> 'المفضلة السريعة',
@@ -54,7 +54,7 @@ $lang = array (
   'required'	=> 'مطلوب',
   'send_special_activity_error'	=> 'اصدار الهاتف المحمول لا يدعم<strong>الفعاليات</strong>يرجى اختيار نوع اخر',
   'send_special_trade_error'	=> 'اصدار الهاتف المحمول لا يدعم <strong>المنتجات</strong>يرجى اختيار نوع اخر',
-  'threadsort_error'	=> 'Release of classified information using the PC version',
+  'threadsort_error'	=> 'لنشر انواع المواضيع استخدم اصدار الحاسوب',
   'threadsort_calendar'	=> 'صيغة التاريخ 2010 -12-01',
   'post_poll_options'	=> 'خيارات التصويت',
   'admin_close_expire_comment'	=> '<span class="xg1">صيغة التاريخ：2010-12-01 10:50</span>',
@@ -91,6 +91,6 @@ $lang = array (
   'favorite_thread_confirm'	=> 'اضافة الى هذا الموضوع: ',
   'user_mobile_pm_comment'	=> 'تم الاسال , سيتم تحويلك للصفحة السابقة',
   'reset'	=> 'مسح',
-  'reg_username'	=> 'اسم المستخدم من 4-15',
+  'reg_username'	=> 'اسم المستخدم من 3-15',
 );
 
