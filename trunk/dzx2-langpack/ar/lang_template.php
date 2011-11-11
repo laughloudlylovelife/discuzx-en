@@ -262,7 +262,7 @@ $lang = array (
 	'article_push'			=> 'توليد مقالة',//'生成文章',
 	'debate'			=> ' تحديات',//'辩论',
 	'doing'				=> ' افعال ',//'记录',
-	'friends'			=> 'Friends',//'好友',
+	'friends'			=> 'اصدقاء',//'好友',
 	'online_member'			=> 'الاعضاء المتواجدون',//'在线成员',
 	'my_space'			=> ' ملفي الشخصي ',//'我的中心',
 	'magic'				=> 'دعائم',//'道具',
@@ -360,15 +360,15 @@ $lang = array (
 // Added by Valery Votintsev
 
 //static/space/t1/style.css
-	'default_style'	=> 'Default style',//'[name]默认风格[/name]',
+	'default_style'	=> 'الاستايل الافتراضي',//'[name]默认风格[/name]',
 
 //---------------------------
 //static/space/t2/style.css
-	'nature'	=> 'Nature',//'[name]自然[/name]',
+	'nature'	=> 'طبيعة',//'[name]自然[/name]',
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'	=> 'Sky',//'[name]天空[/name]',
+	'sky'	=> 'سماء',//'[name]天空[/name]',
 
 //---------------------------
 //static/space/t4/style.css
@@ -380,7 +380,7 @@ $lang = array (
 
 //---------------------------
 //static/space/t6/style.css
-	'green_wall'	=> 'Green Wall',//'[name]绿墙[/name]',
+	'green_wall'	=> 'حائط اخضر',//'[name]绿墙[/name]',
 
 //---------------------------
 //static/space/t7/style.css
@@ -388,19 +388,19 @@ $lang = array (
 
 //---------------------------
 //static/space/t8/style.css
-	'christmas'	=> 'Christmas',//'[name]圣诞[/name]',
+	'christmas'	=> 'كريسمس',//'[name]圣诞[/name]',
 
 //---------------------------
 //static/topic/t1/style.css
-	'default_skin'	=> 'Default Skin',//'[name]默认皮肤[/name]',
+	'default_skin'	=> 'الافتراضي',//'[name]默认皮肤[/name]',
 
 //---------------------------
 //static/topic/t2/style.css
-	'skin_2'	=> 'Skin 2',//'[name]皮肤2[/name]',
+	'skin_2'	=> 'الاستايل الثاني',//'[name]皮肤2[/name]',
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Change language',
+'change_language'	=> 'تغيير اللغة',
 
 //vot:
 	'new'		=> 'جديد',//'全新',
