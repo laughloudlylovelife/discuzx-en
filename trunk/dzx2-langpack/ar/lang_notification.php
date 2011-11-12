@@ -20,7 +20,7 @@ $lang = array
 	'type_sharecomment'	=> 'تعليق منشور',//'分享评论',
 	'type_doing'		=> 'افعال',//'记录',
 	'type_friend'		=> 'اصدقاء',//'好友',
-	'type_credit'		=> 'مال',//'积分',
+	'type_credit'		=> 'نقاط',//'积分',
 	'type_bbs'		=> 'المنتدى',//'论坛',
 	'type_system'		=> 'النظام',//'系统',
 	'type_thread'		=> 'مواضيع',//'主题',
@@ -50,7 +50,7 @@ $lang = array
 	'click_blog'		=> '{actor} قام بتقييم مدونتك <a href="{url}" target="_blank">{subject}</a> وقام بالتعليق',//'{actor} 对你的日志 <a href="{url}" target="_blank">{subject}</a> 做了表态',
 	'click_pic'		=> '{actor} قام بتقييم على مدونتك <a href="{url}" target="_blank">{subject}</a>',//'{actor} 对你的 <a href="{url}" target="_blank">图片</a> 做了表态',
 	'click_article'		=> '{actor} قام بتقييم  <a href="{url}" target="_blank">مقالتك</a>',//'{actor} 对你的 <a href="{url}" target="_blank">文章</a> 做了表态',
-	'show_out'		=> '{actor} قما بزيارة ملفك الشخصي, this showed your final bid point also consumed',//'{actor} 访问了你的主页后，你在竞价排名榜中最后一个积分也被消费掉了',
+	'show_out'		=> '{actor} قما بزيارة ملفك الشخصي, وظهر ترتيبك النهائي',//'{actor} 访问了你的主页后，你在竞价排名榜中最后一个积分也被消费掉了',
 	'puse_article'		=> 'تهانينا، مقالتك <a href="{url}" target="_blank">{subject}</a> تم نشرها في المجلة, <a href="{newurl}" target="_blank">اضغط هنا لعرضها</a>',//'恭喜你，你的<a href="{url}" target="_blank">{subject}</a>已被推送到门户， <a href="{newurl}" target="_blank">点击查看</a>',
 
 	'myinvite_request'	=> 'رسالة تطبيق جديدة <a href="home.php?mod=space&do=notice&view=userapp">اضغط هنا لرؤية التفاصيل</a>',//'有新的应用消息<a href="home.php?mod=space&do=notice&view=userapp">点此进入应用消息页面进行相关操作</a>',
@@ -73,7 +73,8 @@ $lang = array
 
 	'reason_warn_post'	=> 'موضوعك  <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> لقد تم  {modaction} بواسطة {actor}.<br />
 				اذا تم تحذيره  {warninglimit} مرات في  {warningexpiration} ايام/يوم, سوف تكون لا تستطيع المشاركة لمدة  {warningexpiration} يوم تلقائيا.<br />
-				حاليا, تم تحذيرك  {authorwarnings} مرات! <div class="quote"><blockquote>{reason}</blockquote></div>',
+				حاليا, تم تحذيرك  {authorwarnings} مرات!
+				<div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'reason_move'		=> 'موضوعك  <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> تم نقله الى  <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> بواسطة {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} 移动到 <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -102,10 +103,13 @@ $lang = array
 	'modreplies_validate'	=> 'تم الموافقة على ردك! &nbsp; <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank" class="lit">اضغط هنا لرؤيته</a> <p class="summary">المحتوى: <span>{post}</span></p> <div class="quote"><blockquote>{reason}</blockquote></div>',//'你发表的回复已经审核通过！ &nbsp; <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank" class="lit">查看 &rsaquo;</a> <p class="summary">回复内容：<span>{post}</span></p> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'transfer'		=> 'لقد استقبلت {credit} نقطة من  {actor} &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=log&suboperation=creditslog" target="_blank" class="lit">اضغط هنا للمشاهدة</a>
-<p class="summary">{actor} said: <span>{transfermessage}</span></p>',
+				<p class="summary">{actor} يقول: <span>{transfermessage}</span></p>',
 
-	'addfunds'		=> 'طلبك لاعادة تعبئة النقاط تم بنجاح, وتم اضافة مبلغ مماثل الى نقاطك &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">اضغط هنا لعرض  &rsaquo;</a>.
-<p class="summary">رقم الطلبية: <span>{orderid}</span></p><p class="summary">الدفع: <span>{price} وحدة </span></p><p class="summary">النقاط الواردة : <span>{value}</span></p>',
+	'addfunds'		=> 'طلبك لاعادة تعبئة النقاط تم بنجاح, وتم اضافة مبلغ مماثل الى نقاطك
+				&nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">اضغط هنا لعرض  &rsaquo;</a>.
+				<p class="summary">رقم الطلبية: <span>{orderid}</span></p>
+				<p class="summary">الدفع: <span>{price} وحدة </span></p>
+				<p class="summary">النقاط الواردة : <span>{value}</span></p>',
 
 	'rate_reason'		=> 'مشاركتك في موضوع  <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> تم تقييمها  {ratescore} بواسطة {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你在主题 <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> 的帖子被 {actor} 评分 {ratescore} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -145,8 +149,6 @@ $lang = array
 
 	'comment_add'		=> '{actor} علق على موضوعك  <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank" class="lit">عرض &rsaquo;</a>',
 
-	'repquote_noticeauthor'	=> '{actor} اقتبس مشاركتك <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> &nbsp; <a class="lit" href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">عرض</a>',
-
 	'reppost_noticeauthor'	=> '{actor} رد على موضوعك <a href="forum.php?mod=redirect&goto=findpost&ptid={tid}&pid={pid}" target="_blank">{subject}</a> &nbsp; <a class="lit" href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">عرض</a>',
 
 	'task_reward_credit'	=> 'تهانينا! لقد اكملت مهمتك: <a href="home.php?mod=task&do=view&id={taskid}" target="_blank">{name}</a>, وحصلت على  {creditbonus} نقطة . &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">اضغط هنا لعرض نقاطي &rsaquo;</a></p>',//'恭喜你完成任务：<a href="home.php?mod=task&do=view&id={taskid}" target="_blank">{name}</a>，获得积分 {creditbonus} &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">查看我的积分 &rsaquo;</a></p>',
@@ -171,7 +173,7 @@ $lang = array
 	'poke_request'		=> '<a href="{fromurl}" class="xi2">{fromusername}</a>: <span class="xw0">{pokemsg}&nbsp;</span><a href="home.php?mod=spacecp&ac=poke&op=reply&uid={fromuid}&from=notice" id="a_p_r_{fromuid}" class="xw1" onclick="showWindow(this.id, this.href, \'get\', 0);">القي تحية</a><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=poke&op=ignore&uid={fromuid}&from=notice" id="a_p_i_{fromuid}" onclick="showWindow(\'pokeignore\', this.href, \'get\', 0);">تجاهل</a>',
 
 	'profile_verify_error'		=> '{verify} من البيانات تم رفضه, يجب ملئ الحقول التالية:<br/>{profile}<br/>سبب الرفض: {reason}',//'{verify}资料审核被拒绝,以下字段需要重新填写:<br/>{profile}<br/>拒绝理由:{reason}',
-	'profile_verify_pass'		=> 'تهانينا، قمت بكتابتها في  {verify} تم الموافقة عليها',//'恭喜你，你填写的{verify}资料审核通过了',
+	'profile_verify_pass'		=> 'تهانينا، البيانات التي ادخلت  {verify} تم معاينتها بنجاح بواسطة ',//'恭喜你，你填写的{verify}资料审核通过了',
 	'profile_verify_pass_refusal'	=> 'للاسف, تم رفض البيانات المقدمة  ({verify})  ',//'很遗憾，你填写的{verify}资料审核被拒绝了',
 	'member_ban_speak'		=> 'قد يحق لك التحدث {user}, المدة : {day}(0: نيابة عن هفوة دائمة), حظر من المشاركة بسبب: {reason}',//'你已被 {user} 禁止发言，期限：{day}天(0：代表永久禁言)，禁言理由：{reason}',
 
@@ -179,31 +181,32 @@ $lang = array
 	'member_moderate_validate'		=> 'تم الموافقة على حسابك .<br />ملاحظة المدير : <b>{remark}</b>',//'你的账号已经通过审核。<br />管理员留言: <b>{remark}</b>',
 	'member_moderate_invalidate_no_remark'	=> 'تم رفض حسابك من قبل المدير , الرجاء  <a href="home.php?mod=spacecp&ac=profile">اعادة تقديم معلومات التسجيل مرة اخرى </a>.',//'你的账号未能通过管理员的审核，请<a href="home.php?mod=spacecp&ac=profile">重新提交注册信息</a>。',
 	'member_moderate_validate_no_remark'	=> 'تم الموافقة على حسابك .',//'你的账号已经通过审核。',
-	'manage_verifythread'			=> 'موضوع جديد في الانتظار, <a href="admin.php?action=moderate&operation=threads&dateline=all"> معاينة الان </a>',
-	'manage_verifypost'			=> 'ردود في الانتظار,<a href="admin.php?action=moderate&operation=replies&dateline=all"> معاينة </a>',
-	'manage_verifyuser'			=> 'اعضاء جدد في الانتظار,<a href="admin.php?action=moderate&operation=members"> معاينة </a>',
-	'manage_verifyblog'			=> 'مدونة جديدة في الانتظار,<a href="admin.php?action=moderate&operation=blogs"> معاينة </a>',
-	'manage_verifydoing'			=> 'فعل جديد في الانتظار,<a href="admin.php?action=moderate&operation=doings"> معاينة </a>',
-	'manage_verifypic'			=> 'صورة جديدة في الانتظار, <a href="admin.php?action=moderate&operation=pictures"> معاينة </a>',
-	'manage_verifyshare'			=> 'منشور جديد في الانتظار,<a href="admin.php?action=moderate&operation=shares"> معاينة </a>',
-	'manage_verifycommontes'		=> 'تعليق جديد في الانتظار.<a href="admin.php?action=moderate&operation=comments"> معاينة </a>',
-	'manage_verifyrecycle'			=> 'موضوع جديد في سلة المهملات بالانتظار,<a href="admin.php?action=recyclebin"> الاتفاق الان</a>',
-	'manage_verifyrecyclepost'		=> 'رد في سلة الردود المهملة بالانتظار.<a href="admin.php?action=recyclebinpost"> الاتفاق الان</a>',
-	'manage_verifyarticle'			=> 'مقالة جديدة بالانتظار,<a href="admin.php?action=moderate&operation=articles"> معاينة </a>',
-	'manage_verifymedal'			=> 'وسام في الانتظار,<a href="admin.php?action=medals&operation=mod"> معاينة </a>',
-	'manage_verifyacommont'			=> 'تعليق مقالة في الانتظار,<a href="admin.php?action=moderate&operation=articlecomments"> معاينة </a>',
-	'manage_verifytopiccommont'		=> 'تعليق موضوع بالانتظار,<a href="admin.php?action=moderate&operation=topiccomments"> معاينة </a>',
-	'manage_verify_field'			=> ' {verifyname} جديد في الانتظار ,<a href="admin.php?action=verify&operation=verify&do={doid}"> الاتفاق الان</a>',
-	'system_notice'				=> '{subject}<p class="summary">{message}</p>',
-	'system_adv_expiration'			=> 'The following ads on your site will be expired in {day} days. Please deal with:<br />{advs}',
-	'report_change_credits'			=> '{actor} تعامل مع تقريرا خاص بك, نقاطك {creditchange}',
-	'new_report'				=> 'هناك تقرير جديد, <a href="admin.php?action=report" target="_blank">اضغط هنا</a> لدخول لوحة تحكم الادارة.',
-	'new_post_report'			=> 'تقرير جديد في الانتظار ,<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank"> الادارة</a>.',
-	'magics_receive'			=> 'لقد استقبلت {actor}\'s props {magicname}
+	'manage_verifythread'		=> 'موضوع جديد في الانتظار, <a href="admin.php?action=moderate&operation=threads&dateline=all"> معاينة الان </a>',
+	'manage_verifypost'		=> 'ردود في الانتظار,<a href="admin.php?action=moderate&operation=replies&dateline=all"> معاينة </a>',
+	'manage_verifyuser'		=> 'اعضاء جدد في الانتظار,<a href="admin.php?action=moderate&operation=members"> معاينة </a>',
+	'manage_verifyblog'		=> 'مدونة جديدة في الانتظار,<a href="admin.php?action=moderate&operation=blogs"> معاينة </a>',
+	'manage_verifydoing'		=> 'فعل جديد في الانتظار,<a href="admin.php?action=moderate&operation=doings"> معاينة </a>',
+	'manage_verifypic'		=> 'صورة جديدة في الانتظار, <a href="admin.php?action=moderate&operation=pictures"> معاينة </a>',
+	'manage_verifyshare'		=> 'منشور جديد في الانتظار,<a href="admin.php?action=moderate&operation=shares"> معاينة </a>',
+	'manage_verifycommontes'	=> 'تعليق جديد في الانتظار.<a href="admin.php?action=moderate&operation=comments"> معاينة </a>',
+	'manage_verifyrecycle'		=> 'موضوع جديد في سلة المهملات بالانتظار,<a href="admin.php?action=recyclebin"> الاتفاق الان</a>',
+	'manage_verifyrecyclepost'	=> 'رد في سلة الردود المهملة بالانتظار.<a href="admin.php?action=recyclebinpost"> الاتفاق الان</a>',
+	'manage_verifyarticle'		=> 'مقالة جديدة بالانتظار,<a href="admin.php?action=moderate&operation=articles"> معاينة </a>',
+	'manage_verifymedal'		=> 'وسام في الانتظار,<a href="admin.php?action=medals&operation=mod"> معاينة </a>',
+	'manage_verifyacommont'		=> 'تعليق مقالة في الانتظار,<a href="admin.php?action=moderate&operation=articlecomments"> معاينة </a>',
+	'manage_verifytopiccommont'	=> 'تعليق موضوع بالانتظار,<a href="admin.php?action=moderate&operation=topiccomments"> معاينة </a>',//'有新的待审核专题评论。<a href="admin.php?action=moderate&operation=topiccomments">现在进行审核</a>',
+	'manage_verify_field'		=> ' {verifyname} جديد في الانتظار ,<a href="admin.php?action=verify&operation=verify&do={doid}"> الاتفاق الان</a>',//'有新的待处理{verifyname}。<a href="admin.php?action=verify&operation=verify&do={doid}">现在处理</a>',
+	'system_notice'			=> '{subject}<p class="summary">{message}</p>',
+	'system_adv_expiration'		=> 'الاعلان التالي سوف ينتهي خلال {day} يوم. الرجاء الاتفاق مع:<br />{advs}',
+	'report_change_credits'		=> '{actor} تعامل مع تقريرا خاص بك, نقاطك {creditchange}',
+	'new_report'			=> 'هناك تقرير جديد, <a href="admin.php?action=report" target="_blank">اضغط هنا</a> لدخول لوحة تحكم الادارة.',
+	'new_post_report'		=> 'تقرير جديد في الانتظار ,<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank"> الادارة</a>.',
+	'magics_receive'		=> 'لقد استقبلت من {actor} دعامة  {magicname}
 					<p class="summary">{actor} يقول: <span>{msg}</span></p>
 					<p class="mbn"><a href="home.php?mod=magic" target="_blank">رجوع</a>
 					<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">عرض الدعائم الخاصة بي</a></p>',
 
 );
+//	'repquote_noticeauthor'	=> '{actor} اقتبس مشاركتك <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> &nbsp; <a class="lit" href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">عرض</a>',
 
 ?>
