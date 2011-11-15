@@ -79,7 +79,7 @@ $lang = array(
 				<strong>Please click the link below to receive the Friend Invite:</strong><br>
 				<a href="{inviteurl}">{inviteurl}</a><br>
 				<br>
-				<strong>If you have an account at {sitename}, please click the following link to see my personal home page:</strong><br>
+				<strong>If you have an account at {sitename}, please click the following link to see my personal page:</strong><br>
 				<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 				</td></tr></table>',
 
@@ -96,7 +96,7 @@ $lang = array(
 				<strong>Please click the link below to receive the invite to play with {appname}:</strong><br>
 				<a href="{inviteurl}">{inviteurl}</a><br>
 				<br>
-				<strong>if you have an account at {sitename}, please click the following link to see my personal home page:</strong><br>
+				<strong>if you have an account at {sitename}, please click the following link to see my personal page:</strong><br>
 				<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 				</td></tr></table>',
 
@@ -153,8 +153,8 @@ $lang = array(
 	'upload_album'			=> 'updated album',//'更新了相册',
 	'the_total_picture'		=> 'Total \\1 images',//'共 \\1 张图片',
 
-	'space_open_subject'	=> 'Come to your personal home page and take care about it',//'快来打理一下您的个人主页吧',
-	'space_open_message'	=> 'Hi, today I visited your personal home page and found out you do not customize it. Take a look! The address is: \\1space.php',//'hi，我今天去拜访了一下您的个人主页，发现您自己还没有打理过呢。赶快来看看吧。地址是：\\1space.php',
+	'space_open_subject'	=> 'Come to your personal page and take care about it',//'快来打理一下您的个人主页吧',
+	'space_open_message'	=> 'Hi, today I visited your personal page and found out you do not customize it. Take a look! The address is: \\1space.php',//'hi，我今天去拜访了一下您的个人主页，发现您自己还没有打理过呢。赶快来看看吧。地址是：\\1space.php',
 
 
 
