@@ -285,11 +285,12 @@ class discuz_core {
 		dsetcookie('language', $lng);
 
 		// set new language variables
-		$this->var['language'] = $lng;
-		$this->var['langpath'] = DISCUZ_ROOT . 'source/language/'.$lng . '/';
-		$this->var['langurl']  = $this->var['siteroot'] . 'source/language/'.$lng . '/';
-		$this->var['langicon'] = $this->var['config']['languages'][$lng]['icon'];
+		$this->var['language']  = $lng;
+		$this->var['langpath']  = DISCUZ_ROOT . 'source/language/'.$lng . '/';
+		$this->var['langurl']   = $this->var['siteroot'] . 'source/language/'.$lng . '/';
+		$this->var['langicon']  = $this->var['config']['languages'][$lng]['icon'];
 		$this->var['langtitle'] = $this->var['config']['languages'][$lng]['title'];
+		$this->var['langdir']   = $this->var['config']['languages'][$lng]['dir'];
 
 		// set jspath (for include *.js)
 //		$this->var['setting']['jspath'] = $this->var['siteroot'] . 'static/js/';

@@ -24,9 +24,12 @@ function convertip($ip) {
 		} elseif($iparray[0] > 255 || $iparray[1] > 255 || $iparray[2] > 255 || $iparray[3] > 255) {
 			$return = '- Invalid IP Address';
 		} else {
+			$geoipfile = DISCUZ_ROOT.'./data/ipdata/GeoIP.dat';//vot
 			$tinyipfile = DISCUZ_ROOT.'./data/ipdata/tinyipdata.dat';
 			$fullipfile = DISCUZ_ROOT.'./data/ipdata/wry.dat';
-			if(@file_exists($tinyipfile)) {
+			if(@file_exists($geoipfile)) { //vot
+				$return = convertip_geo($ip, $geoipfile); //vot
+			} elseif(@file_exists($tinyipfile)) {
 				$return = convertip_tiny($ip, $tinyipfile);
 			} elseif(@file_exists($fullipfile)) {
 				$return = convertip_full($ip, $fullipfile);
@@ -35,6 +38,25 @@ function convertip($ip) {
 	}
 
 	return $return;
+
+}
+//---------------------------------------------------------
+//vot: Check IP country using the maxmind.com free database
+function convertip_geo($ip='', $ipdatafile='') {
+
+	require_once(DISCUZ_ROOT.'./source/function/geoip.inc');
+
+	$gi = geoip_open($ipdatafile,GEOIP_STANDARD);
+
+	$country = geoip_country_name_by_addr($gi, $ip);
+
+	geoip_close($gi);
+
+	if($country) {
+		return $country;
+	} else {
+		return 'Unknown';
+	}
 
 }
 

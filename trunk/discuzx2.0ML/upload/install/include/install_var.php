@@ -258,16 +258,16 @@ $serialize_sql_setting = array (
 'seotitle' =>
   array (
     'portal'	=> 'Portal',
-    'forum'		=> 'Forum',
-    'group'		=> 'Groups',
-    'home'		=> 'Home',
+    'forum'	=> 'Forum',
+    'group'	=> 'Groups',
+    'home'	=> 'Home',
     'userapp'	=> 'Apps',
   ),
   'activityfield' =>
   array (
     'realname'	=> 'Real Name',
     'mobile'	=> 'Mobile Phone',
-    'qq'		=> 'QQ number',
+    'qq'	=> 'QQ number',
   ),
   'article_tags' =>
   array (

@@ -310,14 +310,14 @@ function profile_show($fieldid, $space=array()) {
 		return $return;
 	} elseif($fieldid=='birthcity') {
 		return $space['birthprovince']
-				.(!empty($space['birthcity']) ? '&nbsp;'.$space['birthcity'] : '')
-				.(!empty($space['birthdist']) ? '&nbsp;'.$space['birthdist'] : '')
-				.(!empty($space['birthcommunity']) ? '&nbsp;'.$space['birthcommunity'] : '');
+				.(!empty($space['birthcity']) ? ' / '.$space['birthcity'] : '')
+				.(!empty($space['birthdist']) ? ' / '.$space['birthdist'] : '')
+				.(!empty($space['birthcommunity']) ? ' / '.$space['birthcommunity'] : '');
 	} elseif($fieldid=='residecity') {
 		return $space['resideprovince']
-				.(!empty($space['residecity']) ? '&nbsp;'.$space['residecity'] : '')
-				.(!empty($space['residedist']) ? '&nbsp;'.$space['residedist'] : '')
-				.(!empty($space['residecommunity']) ? '&nbsp;'.$space['residecommunity'] : '');
+				.(!empty($space['residecity']) ? ' / '.$space['residecity'] : '')
+				.(!empty($space['residedist']) ? ' / '.$space['residedist'] : '')
+				.(!empty($space['residecommunity']) ? ' / '.$space['residecommunity'] : '');
 	} elseif($fieldid == 'site') {
 		$url = str_replace('"', '\\"', $space[$fieldid]);
 		return "<a href=\"$url\" target=\"_blank\">$url</a>";

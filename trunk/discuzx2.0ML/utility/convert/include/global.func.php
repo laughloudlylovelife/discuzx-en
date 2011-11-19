@@ -516,7 +516,8 @@ EOT;
 function lang($name, $vars = array()) {
 	static $language;
 	if($language === null) {
-		@include DISCUZ_ROOT.'./language/lang.php';
+//vot		@include DISCUZ_ROOT.'./language/lang.php';
+/*vot*/		@include DISCUZ_ROOT.'./language/en/lang_update.php';
 		if(empty($language)) {
 			$language = array();
 		}
