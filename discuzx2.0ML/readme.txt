@@ -1,20 +1,20 @@
-+--------------------------------------------------+
++----------------------------------------------------+
 
- Discuz!X v.2.0 ENGLISH UTF-8 VERSION
-
- Revision: 95
+ International (Multi-Lingual) Discuz!X v.2.0 Version
 
  by Valery Votintsev from sources.ru
 
  Package Release Date: 2011-10-10
 
-+--------------------------------------------------+
+ Revision: 166
+
++----------------------------------------------------+
 
 ATTENTION!
 
-This package IS NOT ORIGINAL Discuz!X Release!!!
+This package is NOT ORIGINAL Discuz!X Release!!!
 
-This is a modified ENGLISH VERSION
+This is a modified MULTI-LINGUAL version
 based on original Discuz!X v.2.0, Release 20111010.
 
 

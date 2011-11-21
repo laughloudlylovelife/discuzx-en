@@ -1,5 +1,5 @@
 +--------------------------------------------------------------------------+
- Discuz!X v.2.0 ENGLISH VERSION
+ International (Multi-Lingual) Discuz!X v.2.0 Version
 
  Release 20111010
 
