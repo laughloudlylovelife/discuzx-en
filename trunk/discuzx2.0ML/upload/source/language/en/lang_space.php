@@ -137,7 +137,7 @@ $lang = array(
 					<input type="hidden" name="id" value="{uid}" />
 					<input type="hidden" name="idtype" value="uid" />
 					<input type="hidden" name="commentsubmit" value="true" />' :
-					'<div class="pt hm">You have to login before you can continue. <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href)" class="xi2">Login</a> | <a href="member.php?mod='.$_G['setting']['regname'].'" class="xi2">'.$_G['setting']['reglinkname'].'</a></div>').'
+					'<div class="pt hm">You have to login before you can continue. <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href)" class="xi2">Login</a> | <a href="member.php?mod='.$_G['setting']['regname'].'" class="xi2">Register</a></div>').'
 					<p class="ptn"><button '.($_G['uid'] ? 'type="submit"' : 'type="button" onclick="showWindow(\'login\', \'member.php?mod=logging&action=login&guestmessage=yes\')"').' name="commentsubmit_btn" value="true" id="commentsubmit_btn" class="pn"><strong>Send message</strong></button></p>
 					<input type="hidden" name="handlekey" value="commentwall_{uid}" />
 					<span id="return_commentwall_{uid}"></span>
@@ -174,7 +174,7 @@ $lang = array(
 	'block_profile_wall'		=> 'View wall',//'查看留言',
 	'block_profile_avatar'		=> 'Edit Avatar',//'编辑头像',
 	'block_profile_update'		=> 'Update profile',//'更新资料',
-	'block_profile_wall_to_me'	=> 'Wall to me',//'给我留言',
+	'block_profile_wall_to_me'	=> 'Write to Wall',//'给我留言',
 	'block_profile_friend_add'	=> 'Add as Friend',//'加为好友',
 	'block_profile_friend_ignore'	=> 'Remove from Friends',//'解除好友',
 	'block_profile_poke'		=> 'Send Greeting',//'打个招呼',

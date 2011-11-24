@@ -11,7 +11,7 @@
 
 $lang = array (
 	'getpassword'			=> 'Retrieve Password',//'找回密码',
-	'login_guest'			=> 'No account yet? <a href="member.php?mod=register" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Register Account">{$_G[setting][reglinkname]}</a>',//'没有帐号？<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow('login');showWindow('register', this.href);return false;" title="注册帐号">{$_G[setting][reglinkname]}</a>',
+	'login_guest'			=> 'No account yet? <a href="member.php?mod=register" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Register New Account">Register</a>',//'没有帐号？<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow('login');showWindow('register', this.href);return false;" title="注册帐号">{$_G[setting][reglinkname]}</a>',
 	'new_password'			=> 'New password',//'新密码',
 	'new_password_confirm'		=> 'Confirm Password',//'确认密码',
 	'submit'			=> 'Submit',//'提交',
@@ -32,7 +32,7 @@ $lang = array (
 	'disagree'			=> 'Disagree',//'不同意',
 	'index_activation'		=> 'Your account have to be activated',//'你的帐号需要激活',
 	'invite_code'			=> 'Invitation code',//'邀请码',
-	'login_inactive'		=> 'Give up invitation, <a href="javascript:;" onclick="$(\'registerform\').activationauth.value=\'\',$(\'activation_hidden\').style.display=\'\',$(\'activation_user\').style.display=\'none\'">{$_G[setting][reglinkname]} Now</a>',//'放弃激活，<a href="javascript:;" onclick="$('registerform').activationauth.value='',$('activation_hidden').style.display='',$('activation_user').style.display='none'">现在{$_G[setting][reglinkname]}</a>',
+	'login_inactive'		=> 'Give up invitation, <a href="javascript:;" onclick="$(\'registerform\').activationauth.value=\'\',$(\'activation_hidden\').style.display=\'\',$(\'activation_user\').style.display=\'none\'">Register Now</a>',//'放弃激活，<a href="javascript:;" onclick="$('registerform').activationauth.value='',$('activation_hidden').style.display='',$('activation_user').style.display='none'">现在{$_G[setting][reglinkname]}</a>',
 	'login_now'			=> 'Already have an account?<br><a href="member.php?mod=logging&action=login" onclick="hideWindow(\'register\');showWindow(\'login\', this.href);return false;">Login Now</a>',//'已有帐号？<a href="member.php?mod=logging&action=login" onclick="hideWindow('register');showWindow('login', this.href);return false;">现在登录</a>',
 	'password_confirm'		=> 'Confirm Password',//'确认密码',
 	'register_buyinvitecode'	=> 'No invitation code? Click here for',//'还没有邀请码？点击此处获取',
