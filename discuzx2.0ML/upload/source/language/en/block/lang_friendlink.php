@@ -20,7 +20,7 @@ $lang = array
 	'friendlink_type_group4'	=> 'Group 4',//'分组4',
 	'friendlink_titlelength'	=> 'Site name length',
 	'friendlink_titlelength_comment'	=> 'Set the maximum length of site name',
-	'friendlink_summarylength'		=> 'Summary Length',
+	'friendlink_summarylength'		=> 'Summary length',
 	'friendlink_summarylength_comment'	=> 'Set the maximum length of site summary',
 );
 

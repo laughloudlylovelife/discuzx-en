@@ -139,6 +139,7 @@ var lng = {
 	'today'		: 'Today',//'今天',
 	'hours'		: 'Hours',//'点',
 	'minutes'	: 'Minutes',//'分',
+	'ok'		: 'Ok',//'OK',
 
 //--------------------------------
 //static/js/common.js
