@@ -185,7 +185,7 @@ var lng = {
 	'narrow_screen'		: 'Narrow screen',//'切换到窄版',
 	'wide_screen'		: 'Wide screen',//'切换到宽版',
 	'logging_wait'		: 'Logging in, please wait...',//'登录中，请稍后...',
-	'notices_no'		: '[   ]',//'【　　　】',
+	'notices_no'		: '[　　　]',//'【　　　】',
 	'notices_yes'		: '[New]',//'【新提醒】',
 	'sec_after_win_closed'	: ' seconds before the window closed',//' 秒后窗口关闭',
 	'sec_after_page_jump'	: ' seconds before the page redirect',//' 秒后页面跳转',
