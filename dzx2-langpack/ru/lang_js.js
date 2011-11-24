@@ -184,7 +184,7 @@ var lng = {
 	'narrow_screen'		: 'Узкий экран',//'切换到窄版',
 	'wide_screen'		: 'Широкий экран',//'切换到宽版',
 	'logging_wait'		: 'Входим, ожидайте...',//'登录中，请稍后...',
-	'notices_no'		: '[   ]',//'【　　　】',
+	'notices_no'		: '[　　　]',//'【　　　】',
 	'notices_yes'		: '[New]',//'【新提醒】',
 	'sec_after_win_closed'	: ' сек. до закрытия окна',//' 秒后窗口关闭',
 	'sec_after_page_jump'	: ' сек. до перехода',//' 秒后页面跳转',
