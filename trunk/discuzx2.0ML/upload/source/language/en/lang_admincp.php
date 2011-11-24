@@ -1704,7 +1704,7 @@ $lang = array
 	'setting_datetime_timeoffset'		=> 'Default time offset',//'默认时差',
 	'setting_datetime_timeoffset_comment'	=> 'Set your local time offset from GMT (time zone)',//'当地时间与 GMT 的时差',
 	'setting_datetime_timezone' => array(
-			'-12'	=> '(GMT -12:00) Eniwetok, Kwajalein',//'(GMT -12:00) 埃尼威托克岛, 夸贾林环礁',
+			'-12'	=> '(GMT -12:00) Eniwetok Island, Kwajalein Atoll',//'(GMT -12:00) 埃尼威托克岛, 夸贾林环礁',
 			'-11'	=> '(GMT -11:00) Midway Island, Samoa',//'(GMT -11:00) 中途岛, 萨摩亚群岛',
 			'-10'	=> '(GMT -10:00) Hawaii',//'(GMT -10:00) 夏威夷',
 			'-9'	=> '(GMT -09:00) Alaska',//'(GMT -09:00) 阿拉斯加',
@@ -1714,12 +1714,12 @@ $lang = array
 			'-5'	=> '(GMT -05:00) Eastern Time (US &amp; Canada), Bogota, Lima, Quito',//'(GMT -05:00) 东部时间(美国和加拿大), 波哥大, 利马, 基多',
 			'-4'	=> '(GMT -04:00) Atlantic Time (Canada), Caracas, La Paz',//'(GMT -04:00) 大西洋时间(加拿大), 加拉加斯, 拉巴斯',
 			'-3.5'	=> '(GMT -03:30) Newfoundland',//'(GMT -03:30) 纽芬兰',
-			'-3'	=> '(GMT -03:00) Brassila, Buenos Aires, Georgetown, Falkland Islands',//'(GMT -03:00) 巴西利亚, 布宜诺斯艾利斯, 乔治敦, 福克兰群岛',
-			'-2'	=> '(GMT -02:00) Mid-Atlantic, Ascension Is., St. Helena',//'(GMT -02:00) 中大西洋, 阿森松群岛, 圣赫勒拿岛',
+			'-3'	=> '(GMT -03:00) Brasilia, Buenos Aires, Georgetown, Falkland Islands',//'(GMT -03:00) 巴西利亚, 布宜诺斯艾利斯, 乔治敦, 福克兰群岛',
+			'-2'	=> '(GMT -02:00) Mid-Atlantic, Ascension Islands, St. Helena',//'(GMT -02:00) 中大西洋, 阿森松群岛, 圣赫勒拿岛',
 			'-1'	=> '(GMT -01:00) Azores, Cape Verde Islands',//'(GMT -01:00) 亚速群岛, 佛得角群岛 [格林尼治标准时间] 都柏林, 伦敦, 里斯本, 卡萨布兰卡',
 			'0'	=> '(GMT) Casablanca, Dublin, Edinburgh, London, Lisbon, Monrovia',//'(GMT) 卡萨布兰卡, 都柏林, 爱丁堡, 伦敦, 里斯本, 蒙罗维亚',
-			'1'	=> '(GMT +01:00) Amsterdam, Berlin, Brussels, Madrid, Paris, Rome',//'(GMT +01:00) 柏林, 布鲁塞尔, 哥本哈根, 马德里, 巴黎, 罗马',
-			'2'	=> '(GMT +02:00) Cairo, Helsinki, Kaliningrad, South Africa',//'(GMT +02:00) 赫尔辛基, 加里宁格勒, 南非, 华沙',
+			'1'	=> '(GMT +01:00) Amsterdam, Berlin, Brussels, Copenhagen, Madrid, Paris, Rome',//'(GMT +01:00) 柏林, 布鲁塞尔, 哥本哈根, 马德里, 巴黎, 罗马',
+			'2'	=> '(GMT +02:00) Cairo, Helsinki, Kaliningrad, South Africa, Warsaw',//'(GMT +02:00) 赫尔辛基, 加里宁格勒, 南非, 华沙',
 			'3'	=> '(GMT +03:00) Baghdad, Riyadh, Nairobi',//'(GMT +03:00) 巴格达, 利雅得, 莫斯科, 奈洛比',
 			'3.5'	=> '(GMT +03:30) Tehran',//'(GMT +03:30) 德黑兰',
 			'4'	=> '(GMT +04:00) Abu Dhabi, Baku, Moscow, Muscat, Tbilisi',//'(GMT +04:00) 阿布扎比, 巴库, 马斯喀特, 特比利斯',
@@ -1735,7 +1735,7 @@ $lang = array
 			'9.5'	=> '(GMT +09:30) Adelaide, Darwin',//'(GMT +09:30) 阿德莱德, 达尔文',
 			'10'	=> '(GMT +10:00) Canberra, Guam, Melbourne, Sydney, Vladivostok',//'(GMT +10:00) 堪培拉, 关岛, 墨尔本, 悉尼, 海参崴',
 			'11'	=> '(GMT +11:00) Magadan, New Caledonia, Solomon Islands',//'(GMT +11:00) 马加丹, 新喀里多尼亚, 所罗门群岛',
-			'12'	=> '(GMT +12:00) Auckland, Wellington, Fiji, Marshall Island',//'(GMT +12:00) 奥克兰, 惠灵顿, 斐济, 马绍尔群岛'
+			'12'	=> '(GMT +12:00) Auckland, Wellington, Fiji, Marshall Islands',//'(GMT +12:00) 奥克兰, 惠灵顿, 斐济, 马绍尔群岛'
 			  ),
 	'setting_datetime_periods'			=> 'Time period settings',//'时间段设置',
 	'setting_datetime_visitbanperiods'		=> 'Disable access time',//'禁止访问时间段',
@@ -1997,7 +1997,7 @@ $lang = array
 	'setting_mobile_mobileforward_comment'	=> 'After the user opens a page by the phone browser to visit the forum, the user will be automatically redirected to the forum home page',//'开启后用户使用手机浏览器访问社区论坛功能页以外页面时自动跳转到论坛首页进行访问',
 	'setting_mobile_preview'		=> 'Enable the Mobile Preview in standard computer access',//'开启电脑访问手机版预览功能',
 	'setting_mobile_preview_comment'	=> 'When a user accessed the standard computer version by mobile browser, guide the user to preview a mobile phone login page, users can preview in the PC version of Mobile Home',//'当电脑浏览器访问手机版时，给予用户引导手机登录的预览页面，用户可以在电脑版中预览手机版首页',
-	'setting_mobile_register'		=> 'Enablr mobile registration',//'是否允许手机版注册',
+	'setting_mobile_register'		=> 'Enable mobile registration',//'是否允许手机版注册',
 	'setting_mobile_register_comment'	=> 'When the Mobile registration feature is turned on, Phone up the user part not required in the registration page to detect<br />Open carefully!',//'是否开启手机版注册功能，手机注册不会对用户栏目中的注册页必填项进行检测<br />请谨慎开启',
 	'setting_mobile_seccode'		=> 'Enable verification code',//'是否开启验证码',
 	'setting_mobile_seccode_comment'	=> 'Whether to allow verification code for mobile Registration, Login, Publish operations.<br />Switch the verification code at mobile Registration, Login, Publish operations: <a href="?action=setting&operation=sec&anchor=seccode">Global -> Anti-spam settings -> Verification Code settings</a>',//'不开启则手机注册、登录、发布等操作均无验证码<br />注册、登录、发布验证码开关：<a href="?action=setting&operation=sec&anchor=seccode">全局 - 防灌水设置 - 验证码设置</a>',
@@ -3248,7 +3248,7 @@ $lang = array
 	'founder_perm_members_credit'		=> 'User points',//'用户积分',
 	'founder_perm_members_medal'		=> 'User Medals',//'用户勋章',
 	'founder_perm_members_confermedal'	=> 'Medal awarded',//'颁发勋章',
-	'founder_perm_members_repeat'		=> 'User vest(repeat?)',//'用户马甲',
+	'founder_perm_members_repeat'		=> 'User aliases',//'用户马甲',
 	'founder_perm_members_clean'		=> 'Users to clean up',//'用户清理',
 	'founder_perm_members_edit'		=> 'Edit User',//'用户编辑',
 	'founder_perm_group_editgroup'		=> 'Edit Group',//'编辑群组',
@@ -3602,9 +3602,9 @@ $lang = array
 	'usergroups_edit_raterange_max'		=> 'Rating maximum',//'评分最大值',
 	'usergroups_edit_raterange_mrpd'	=> 'Maximum rates per day',//'24 小时最大评分数',
 
-	'usergroups_edit_plugin'		=> 'Related Plugin',//'插件相关',
+	'usergroups_edit_plugin'		=> 'Plugins',//'插件相关',
 
-	'groups_search_result'			=> 'Total found <strong>{groupnum}</strong> groups',//'共搜索到<strong> {groupnum} </strong>个符合条件的群组',
+	'groups_search_result'			=> 'Total <strong>{groupnum}</strong> groups found',//'共搜索到<strong> {groupnum} </strong>个符合条件的群组',
 	'groups_setting_basic'			=> 'Basic settings',//'基本设置',
 	'groups_setting_basic_status'		=> 'Functions turned on for the group',//'是否开启群组功能',
 	'groups_setting_basic_iconsize'		=> 'Group icon file size (kb)',//'群组图标文件大小(kb)',
@@ -4512,7 +4512,7 @@ $lang = array
 	'plugins_edit_modules_include'		=> 'Include running',//'包含运行',
 	'plugins_edit_vars'			=> 'Plug-in variable configuration',//'插件变量配置',
 	'plugins_edit_vars_title'		=> 'Configuration title',//'配置名称',
-	'plugins_edit_vars_title_comment'	=> 'Can be used to display the menu in the plug-in configuration, up to 100 bytes. You can use here the language definitions, such as: lang_admincp.php define \'myaction\'	=> \'My ations\',  If the \'myaction\' filled out, so a multi-language version of the plug-in will be supported.',//'中英文均可，用于显示在插件配置的菜单中，最多 100 个字节。此处支持语言定义，例如：lang_admincp.php 定义了 \'myaction\'=>\'我的操作\' ，则此处填写 myaction 即可，这样有利于多语言版本插件的制作',
+	'plugins_edit_vars_title_comment'	=> 'Can be used to display the menu in the plug-in configuration, up to 100 characters. You can use here the language definitions, such as: lang_admincp.php define \'myaction\'	=> \'My ations\',  If the \'myaction\' filled out, so a multi-language version of the plug-in will be supported.',//'中英文均可，用于显示在插件配置的菜单中，最多 100 个字节。此处支持语言定义，例如：lang_admincp.php 定义了 \'myaction\'=>\'我的操作\' ，则此处填写 myaction 即可，这样有利于多语言版本插件的制作',
 	'plugins_edit_vars_description'		=> 'Configuration instructions',//'配置说明',
 	'plugins_edit_vars_description_comment'	=> 'The configuration description of the use and value range. Detailed description of plug-in, helping users to understand the role of this setting. Maximum of 255 bytes. Here and configure the name, similar to the definition of supported languages',//'描述此项配置的用途和取值范围, 详细的描述有利于插件使用者了解这个设置的作用，最多 255 个字节。此处和配置名称类似，也支持语言定义',
 	'plugins_edit_vars_type'		=> 'Variable Type',//'配置类型',
@@ -5238,7 +5238,7 @@ $lang = array
 	'db_optimize_index'		=> 'Indexes',//'索引',
 	'db_optimize_frag'		=> 'Fragments',//'碎片',
 	'db_optimize_used'		=> 'Size',//'尺寸',
-	'db_optimize_done'		=> 'Data table have no debris, no optimization required.',//'数据表没有碎片，不需要再优化。',
+	'db_optimize_done'		=> 'Data table is not fragmented, no optimization required.',//'数据表没有碎片，不需要再优化。',
 
 	'logs'				=> 'Log Records',//'运行记录',
 	'logs_lpp'			=> 'Lines Per page',//'每页显示',
@@ -5378,7 +5378,7 @@ $lang = array
 	'adv_thread_down'		=> 'Bottom',//'帖子下方',
 	'adv_thread_up'			=> 'Top',//'帖子上方',
 	'adv_thread_right'		=> 'Right',//'帖子右侧',
-	'adv_up'			=> 'Up(ones)',//'上',
+	'adv_up'			=> 'Up',//'上',
 	'adv_middle'			=> 'Middle',//'中',
 	'adv_down'			=> 'Down',//'下',
 	'adv_edit_position_intercat'		=> 'Inter-categories position',//'广告投放位置',
@@ -5512,7 +5512,7 @@ $lang = array
 
 
 
-	'cplog_home'			=> 'Admin Center Home',//'管理中心首页',
+	'cplog_home'			=> 'Admin-Center Home',//'管理中心首页',
 	'cplog_runwizard'		=> 'Quick Setup Wizard',//'快速设置向导',
 
 	'cplog_setting_basic'		=> 'Base Settings',//'站点信息',
@@ -6208,6 +6208,10 @@ RepeatLimit 32
 	'quick_disable_anonymous'	=> 'Disable anonymous posting for all forums',//'关闭 所有版块 允许匿名发贴',
 	'quick_members'			=> 'Members related functions',//'会员操作相关',
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
+
+//---------------------------
+//Change Language
+'change_language'	=> 'Change language',
 
 );
 
