@@ -1,77 +1,85 @@
 
 ---------------------------------------
-  目录文件说明
+  Directory files description
 ---------------------------------------
 
-  1. update.php：
-     将UCenter Home升级到最新版本的升级程序。
-  2. convert.php：
-     X-Space转换到UCenter Home的转换程序。
+  1. update.php:
+     Upgrade UCenter Home to the latest version.
+  2. convert.php:
+     Convert X-Space to UCenter Home.
   3. client_bbs.php
-     将UCenter Home整合到Discuz! 6.0/5.x/4.x/3.x/2.x的文件。
+     Integrate UCenter Home with Discuz! 6.0/5.x/4.x/3.x/2.x.
   
 ---------------------------------------
-  update.php 文件使用方法
+  Usage of update.php
 ---------------------------------------
 
-  适用于 UCenter Home 升级安装。
-  如果你之前安装过UCenter Home，请如下进行升级操作：
+  Upgrade the UCenter Home installation.
+  If you previously installed UCenter Home,
+  please follow the next steps for upgrade:
   
-  1. 请先自行备份当前的数据库，避免升级失败，造成数据丢失而无法恢复。
-  2. 将程序包 ./upload 目录中，除config.new.php文件、./install目录以外的其他所有文件，
-     全部上传并覆盖当前程序。
-  3. 将本目录中的 update.php 文件上传到服务器程序根目录，并在浏览器运行。
-     根据升级程序的提示，进行数据库升级操作。
+  1. Backup all your files and current database
+     for avoid data loss if upgrade failure.
+  2. Upload all the files from ./upload directory (including the config.new.php file)
+     with owerwriting current files.
+  3. Upload the update.php into your root directory,and run in the browser.
+     Follow the upgrade process prompts for upgrade the database.
      
 ---------------------------------------     
-  convert.php 文件使用方法
+  Usage of convert.php
 ---------------------------------------
 
-  适用于 从 X-Space 转换到 UCenter Home。
-  如果您的站点之前使用了X-Space，将X-Space转换到UCenter Home操作：
+  Convert from the X-Space to UCenter Home.
+  If your site using the X-Space, follow the next steps
+  for convert your X-Space to UCenter Home:
   
-  1. 下载并安装UCenter。
+  1. Download and install UCenter.
      http://download.comsenz.com/UCenter/
-  2. 升级Discuz!论坛到最新的6.1.0版本
+  2. Upgrade Discuz! Forum to the latest 6.1.0 version
      http://download.comsenz.com/Discuz/
-  3. 上传程序包 ./upload 目录中的所有文件到服务器，并进行全新安装(参考全新安装说明)。
-  4. 将本目录中的 convert.php 文件上传到服务器程序根目录，并在浏览器运行。
-     根据转换程序的提示，进行X-Space到UCenter Home的转换操作。
+  3. Upload all the files from ./upload directory to the server,
+     and make a fresh install
+	 (refer to the new installation instructions).
+  4. Upload the convert.php file from this directory to the server root,
+     and run in the browser.
+     Follow the upgrade process prompts to convert X-Space to UCenter Home.
 
 ---------------------------------------     
-  client_bbs.php 文件使用方法
+  Usage ofclient_bbs.php
 ---------------------------------------
 
-  适用于当前安装Discuz! 6.0/5.x/4.x/3.x/2.x的用户，整合使用UCenter Home。
+  For integration users of the current installation of
+  Discuz! 6.0/5.x/4.x/3.x/2.x with UCenter Home.
 
-  1. 下载并安装最新版本的UCenter。
+  1. Download and install the latest version of the UCenter.
      http://download.comsenz.com/UCenter/1.5.0/
-  2. 上传程序包 ./upload 目录中的所有文件到服务器，并进行UCenter Home的全新安装
-     (参考UCenter Home全新安装说明)。
-  3. 修改UCenter Home的根目录下的 ./config.php 文件：
+  2. Upload all the files from ./upload directory to the server,
+     and make a fresh install
+     (refer to the new UCenter Home installation instructions).
+  3. Modify /config.php file in the root UCenter Home directory:
   
-	修改方法，在文件最后添加当前你使用的Discuz!的数据库连接参数：
+	Modify the database connection parameters:
 
-	//Discuz6.0/5.x/4.x/3.x 配置参数
-	$_SC['bbs_dbhost']  		= ''; //Mysql服务器地址
-	$_SC['bbs_dbuser']  		= ''; //用户
-	$_SC['bbs_dbpw'] 	 	= ''; //密码
-	$_SC['bbs_dbcharset'] 		= ''; //字符集
-	$_SC['bbs_pconnect'] 		= 0; //是否持续连接
-	$_SC['bbs_dbname']  		= 'discuz'; //数据库
-	$_SC['bbs_tablepre'] 		= 'cdb_'; //表名前缀
-	$_SC['bbs_cookiepre'] 		= 'cdb_'; //COOKIE前缀
-	$_SC['bbs_cookiedomain'] 	= ''; //COOKIE作用域
-	$_SC['bbs_cookiepath'] 		= '/'; //COOKIE作用路径
+	//Discuz6.0/5.x/4.x/3.x configuration parameters
+	$_SC['bbs_dbhost']  		= ''; //Mysql server host
+	$_SC['bbs_dbuser']  		= ''; //User name
+	$_SC['bbs_dbpw'] 	 		= ''; //Password
+	$_SC['bbs_dbcharset'] 		= ''; //Database character set
+	$_SC['bbs_pconnect'] 		= 0; //Persistent connection
+	$_SC['bbs_dbname']  		= 'discuz'; //Database name
+	$_SC['bbs_tablepre'] 		= 'cdb_'; //Table prefix
+	$_SC['bbs_cookiepre'] 		= 'cdb_'; //COOKIE prefix
+	$_SC['bbs_cookiedomain'] 	= ''; //COOKIE domain
+	$_SC['bbs_cookiepath'] 		= '/'; //COOKIE path
 
-  4. 将本目录中的  client_bbs.php 文件上传到 ./uc_client 目录下。
-  5. 修改 ./uc_client 目录下的 client.php 文件：
+  4. Upload the file client_bbs.php from this directory to ./uc_client directory.
+  5. Modify the client.php file in ./uc_client directory:
 	
-	修改方法，找到：
+	Find the line:
 
 	global $uc_controls;
 
-	在这一行下面添加：
+	and add the following below that line:
 
 	global $_SC;
 	if($_SC['bbs_dbname'] && in_array($model, array('friend','user','pm'))) {

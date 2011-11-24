@@ -5,15 +5,15 @@
 	by Valery Votintsev, aka vot from sources.ru
 
 	Based on:
-	UCenter Home v2.0 Release 20100416
-	(C) 2007-2009 Comsenz Inc.
+	UCenter Home v2.0 Releas 20101102
+	(C) Comsenz Inc.
 
-	International Support: http://msg2me.com
+	International Support: http://codersclub.org/discuzx/
         
 --------------------------------------------------------------------------
 
-UCenter Home Multilanguage is a modification of original UCenter Home v2.0
-Release 20100416 (C) 2007-2009 Comsenz Inc.
+UCenter Home Multilanguage is a modification of original
+UCenter Home v2.0 Release 20101102 (C) Comsenz Inc.
 http://u.discuz.net
 
 --------------------------------------------------------------------------
@@ -76,3 +76,4 @@ Enjoy!
 
 ---
 Valery Votintsev, aka vot from sources.ru
+http://codersclub.org/discuzx/
