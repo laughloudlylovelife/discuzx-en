@@ -1022,7 +1022,7 @@ $lang = array (
   'warn_get' => 'Được cảnh báo',
   'admin_message_banned' => 'Chú ý: <blink><em>Tác giả đã bị cấm hoặc bị xóa, nội dung bài viết tự động bị ẩn chỉ có Admin mới có thể xem</em></blink>',
   'admin_message_single_banned' => 'Chú ý: <blink><em>Bài viết này đã bị ẩn bởi Admin hoặc Mod, chỉ có người quản trị mới được xem</em></blink>',
-  'attach_nopermission_login' => 'Bạn phải <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">đăng nhập</a> mới xem được nội dung bài viết này, nếu bạn chưa có tài khoản? hãy <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="đăng ký tại đây">{$_G[setting][reglinkname]}</a>',
+  'attach_nopermission_login' => 'Bạn phải <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">đăng nhập</a> mới xem được nội dung bài viết này, nếu bạn chưa có tài khoản? hãy <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="đăng ký tại đây">Đăng ký</a>',
   'has_expired' => 'Thông tin đã hết hạn',
   'have' => 'Đã có',
   'image_big' => 'Ảnh lớn',

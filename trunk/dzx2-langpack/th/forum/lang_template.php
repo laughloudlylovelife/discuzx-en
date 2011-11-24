@@ -1021,7 +1021,7 @@ $lang = array (
   'warn_get'		=> 'ได้รับการเตือน',
   'admin_message_banned'	=> 'หมายเหตุ: <em>ผู้โพสต์ถูกแบนหรือถูกลบ กระทู้นี้ถูกล๊อคโดยอัตโนมัติ สามารถมองเห็นเฉพาะผู้ดูแลระบบเท่านั้น</em>',
   'admin_message_single_banned'	=> 'หมายเหตุ: <em>กระทู้นี้ถูกแบนห้ามไม่ให้เผยแพร่ต่อสาธารณะ สามารถมองเห็นเฉพาะผู้ดูแลระบบเท่านั้น</em>',
-  'attach_nopermission_login'	=> 'คุณจำเป็นต้อง<a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">เข้าสู่ระบบ</a>ก่อนจึงจะสามารถดูและดาวน์โหลดไฟล์แนบได้ หากยังไม่มีแอคเคานต์หรือยังไม่ได้เป็นสมาชิก กรุณา<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="สมัครสมาชิกใหม่">{$_G[setting][reglinkname]}</a>',
+  'attach_nopermission_login'	=> 'คุณจำเป็นต้อง<a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">เข้าสู่ระบบ</a>ก่อนจึงจะสามารถดูและดาวน์โหลดไฟล์แนบได้ หากยังไม่มีแอคเคานต์หรือยังไม่ได้เป็นสมาชิก กรุณา<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="สมัครสมาชิกใหม่">สมัครสมาชิก</a>',
   'has_expired'		=> 'ข้อมูลนี้ได้หมดอายุแล้ว',
   'have'		=> 'มี',
   'image_big'		=> 'ภาพใหญ่',

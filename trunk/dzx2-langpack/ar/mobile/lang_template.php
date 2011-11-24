@@ -63,7 +63,7 @@ $lang = array (
   'admin_banpost_confirm'	=> 'هل انت متأكد من انك تريد الحظر؟',
   'admin_delpost_confirm'	=> 'هل انت متأكد من حذف المشاركة؟',
   'admin_warn_confirm'	=> 'هل انت متأكد من حظر المشاركة',
-  'attach_nopermission_login'	=> 'تحتاج إلى <a href="member.php?mod=logging&action=login">تسجيل الدخول </a> لتحميل المرفقات , او يمكنك <a href="member.php?mod={$_G[setting][regname]}" title="التسجيل">{$_G[setting][reglinkname]}</a>',
+  'attach_nopermission_login'	=> 'تحتاج إلى <a href="member.php?mod=logging&action=login">تسجيل الدخول </a> لتحميل المرفقات , او يمكنك <a href="member.php?mod={$_G[setting][regname]}" title="التسجيل">التسجيل</a>',
   'attachlist'	=> 'قائمة المرفقات',
   'ban_member'	=> 'حظر',
   'digest'	=> '<span class="xi1">مميز</span>',

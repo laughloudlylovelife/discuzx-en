@@ -65,7 +65,7 @@ $lang = array (
   'login_switch_invisible_mode' => '切换在线状态',
   'logout' => '退出',
   'my_nav' => '快捷导航',
-  'my_nav_login' => '请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
+  'my_nav_login' => '请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">注册</a>',
   'open_diy' => '打开 DIY 面板',
   'pm_center' => '消息',
   'portal_block_manage' => '模块管理',

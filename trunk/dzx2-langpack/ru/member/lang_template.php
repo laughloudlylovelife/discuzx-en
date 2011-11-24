@@ -11,7 +11,7 @@
 
 $lang = array (
 	'getpassword'			=> 'Восстановить пароль',
-	'login_guest'			=> 'Ещё не зарегистрированы?<br /> <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Перейти к регистрации">{$_G[setting][reglinkname]}</a>',
+	'login_guest'			=> 'Ещё не зарегистрированы?<br /><a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Перейти к регистрации">Регистрация</a>',
 	'new_password'			=> 'Новый пароль',
 	'new_password_confirm'		=> 'Подтверждение пароля',
 	'submit'			=> 'Отправить',
