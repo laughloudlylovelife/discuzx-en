@@ -46,7 +46,7 @@ $lang = array
 	'fullblankspace'		=> '&nbsp;',//'　',
 
 	'title_goruptype'		=> 'Group type',//'类',
-	'title_of'			=> 'of',//'的',
+	'title_of'			=> '\'s ',//'的',
 	'title_board_message'		=> 'Message',//'提示信息',
 	'title_view_all'		=> 'View all',//'随便看看',
 	'title_activity'		=> 'Events',//'活动',
