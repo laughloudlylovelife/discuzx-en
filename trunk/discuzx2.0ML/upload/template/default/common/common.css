@@ -964,8 +964,14 @@ Note on the CSS Hack:
 /* Smiles */
 .sllt { padding: 10px 5px 5px !important; }
 	.sllt td { padding: 8px; border: none; cursor: pointer; }
+/*vot
 	.sllt_p { *float: left; text-align: right; }
+*/
+	.sllt_p { border-top: 1px solid gray; text-align: right; padding: 4px 0; }
+/*vot
 		.sllt_p a { margin-right: 5px; color: #069; text-decoration: underline; }
+*/
+		.sllt_p a { margin-right: 5px;  color: #069; text-decoration: underline; border: 1px solid gray; }
 	.sl_pv { margin-top: 5px; padding: 8px; background: #FAFAFA; border: 1px solid #CCC; }
 	.ie6 .slg, .ie7 .slg { width: expression(this.parentNode.offsetWidth); }
 
@@ -977,9 +983,9 @@ Note on the CSS Hack:
 	Last Modify:	lushnis
 */
 	#toptb a#sslct { width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden; }
-	#sslct_menu { padding: 6px 10px 10px; }
-		 .sslct_btn { float: left; margin: 4px 4px 0 0; width: 12px; height: 12px; border: 1px solid {COMMONBORDER}; cursor: pointer; }
-			.sslct_btn i { float: left; display: inline; margin: 1px; width: 10px; height: 10px; background: #2E80D1; overflow: hidden; font-style: normal; }
+/*vot*/	#sslct_menu { padding: 2px; }
+/*vot*/		 .sslct_btn { display: block; margin: 0; cursor: pointer; }
+/*vot*/			.sslct_btn i { float: left; display: inline; margin: 2px; width: 10px; height: 10px; background: #2E80D1; overflow: hidden; font-style: normal; }
 
 /* pop-up menu and pop-up window */
 	.p_pop, .p_pof, .sllt { padding: 4px; border: 1px solid; min-width: 60px; border-color: {DROPMENUBORDER}; {DROPMENUBGCODE}; box-shadow: 1px 2px 2px rgba(0,0,0,0.3); }
