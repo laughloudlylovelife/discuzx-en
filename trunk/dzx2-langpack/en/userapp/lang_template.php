@@ -40,10 +40,10 @@ $lang = array (
 	'save_settings'		=> 'Save',//'保存设置',
 	'use_assistant'		=> 'Use Assistant',//'使用助手',
 	'user_assistant_message'	=> '<ol><li>You can reorder your applications by <img src="{IMGDIR}/drag.gif" /> drag and drop;</li>
-				<li>The more the application is above, the more forward it will be displayed in the menu;</li>
-				<li>You can manage added by you application, you can set permissions for an application or remove it;</li>
-				<li>If you want to manage your space, blogs, photo albums and other privacy, please go to your profile for privacy settings;</li>
-				<li>If the application is set as default, it will associated only with the removal, but still will be displayed after removal at the right side of your menu.</li></ol>',
+					<li>The more the application is above, the more forward it will be displayed in the menu;</li>
+					<li>You can manage added by you application, you can set permissions for an application or remove it;</li>
+					<li>If you want to manage your space, blogs, photo albums and other privacy, please go to your profile for privacy settings;</li>
+					<li>If the application is set as default, it will associated only with the removal, but still will be displayed after removal at the right side of your menu.</li></ol>',
 	'open'			=> 'Open',//'展开',
 );
 

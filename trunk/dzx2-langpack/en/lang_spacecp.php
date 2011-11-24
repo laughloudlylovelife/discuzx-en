@@ -64,7 +64,7 @@ $lang = array(
 	'event_comment_reply'	=> '\\1 replied to your event comment',//'\\1 回复了你的活动评论',
 
 	'mail_my'		=> 'Remind about interaction with my friends',//'好友与我的互动提醒',
-  	'mail_system'		=> 'System alerts',//'系统提醒',
+	'mail_system'		=> 'System alerts',//'系统提醒',
 
 	'invite_subject'	=> '{username} invited you to join the {sitename}, and become friends',//'{username}邀请您加入{sitename}，并成为好友',
 	'invite_massage'	=> '<table border="0">
@@ -295,7 +295,7 @@ $lang = array(
 	'spacecp_message_prompt'	=> '(supported {msg} code, maximum 1000 characters)',//'(支持 {msg} 代码,最大 1000 字)',
 	'card_update_doing'		=> ' <a class="xi2" href="###">[update doings]</a>',//' <a class="xi2" href="###">[更新记录]</a>',
 	'email_acitve_message'		=> '<img src="{imgdir}/mail_inactive.png" alt="Unverified" class="vm" />
-					   <span class="xi1">New E-mail ({newemail}) wait for validation ...</span><br />
+						<span class="xi1">New E-mail ({newemail}) wait for validation ...</span><br />
 						The system has sent a verification email to you, please check your mailbox for activate this e-maill.<br>
 						If you did not receive the verification message, you can replace a mailbox, or <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Re-send the verification message</a>',
 
