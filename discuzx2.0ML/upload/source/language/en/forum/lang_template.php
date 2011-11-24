@@ -1021,7 +1021,7 @@ $lang = array (
 	'warn_get'			=> 'Warned',//'受到警告',
 	'admin_message_banned'		=> 'Note: <em>The author has been deleted or banned.</em>',//'提示: <em>作者被禁止或删除 内容自动屏蔽，只有管理员可见</em>',
 	'admin_message_single_banned'	=> 'Note: <em>Thread has been banned by manager.</em>',//'提示: <em>该帖被管理员或版主屏蔽，只有管理员可见</em>',
-	'attach_nopermission_login'	=> 'You have to <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;">Login</a> to download or view attachment(s). No Account? <a href="member.php?mod=register" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="$reglinkname">$reglinkname</a>',//'你需要<a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href);return false;">登录</a>才可以下载或查看附件。没有帐号？<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow('login');showWindow('register', this.href);return false;" title="注册帐号">{$_G[setting][reglinkname]}</a>',
+	'attach_nopermission_login'	=> 'You have to <a href="logging.php?action=login" onclick="showWindow(\'login\', this.href);return false;">Login</a> to download or view attachment(s). No Account? <a href="member.php?mod=register" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Register">Register</a>',//'你需要<a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href);return false;">登录</a>才可以下载或查看附件。没有帐号？<a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow('login');showWindow('register', this.href);return false;" title="注册帐号">{$_G[setting][reglinkname]}</a>',
 	'has_expired'			=> 'This information has expired',//'该信息已经过期',
 	'have'				=> 'Have',//'已有',
 	'image_big'			=> 'Big image',//'大图',
