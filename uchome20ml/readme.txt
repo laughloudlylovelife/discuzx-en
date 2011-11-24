@@ -6,10 +6,10 @@
 	by Valery Votintsev, aka vot from sources.ru
 
 	Based on:
-	UCenter Home v2.0 Release 20100416
+	UCenter Home v2.0 Release 20101102
 	(C) 2007-2010 Comsenz Inc.
 
-	International Support: http://msg2me.com
+	International Support: http://codersclub.org/discuzx/
 
 --------------------------------------------------------------------------
 
