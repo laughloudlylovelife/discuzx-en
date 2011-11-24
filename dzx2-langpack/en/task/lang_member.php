@@ -10,7 +10,7 @@
 $lang = array
 (
 	'member_name'				=> 'Member task',//'会员类任务',
-	'member_desc'				=> 'Active forum atmosphere by guide members to use forum functions like Add friends, Add favorites and Use magics.',//'添加好友、收藏主题、使用道具，此类任务用来鼓励和引导会员使用论坛的某个功能，活跃论坛的氛围。',
+	'member_desc'				=> 'Activate forum atmosphere by guide members to use forum functions like Add friends, Add favorites and Use magics.',//'添加好友、收藏主题、使用道具，此类任务用来鼓励和引导会员使用论坛的某个功能，活跃论坛的氛围。',
 	'member_complete_var_act'		=> 'Action',//'动作',
 	'member_complete_var_act_favorite'	=> 'Add thread to favorites',//'收藏主题',
 	'member_complete_var_act_magic'		=> 'Use magic',//'使用道具',
