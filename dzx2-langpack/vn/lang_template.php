@@ -66,7 +66,7 @@ $lang = array (
   'login_switch_invisible_mode' => 'Đổi trạng thái',
   'logout' => 'Thoát',
   'my_nav' => 'Điều hướng',
-  'my_nav_login' => 'Mời bạn <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>Đăng nhập</strong></a><br />Hoặc vui lòng <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
+  'my_nav_login' => 'Mời bạn <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>Đăng nhập</strong></a><br />Hoặc vui lòng <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">Đăng ký</a>',
   'open_diy' => 'Mở DIY',
   'pm_center' => 'Tin nhắn',
   'portal_block_manage' => 'Module Quản lý',

@@ -65,7 +65,7 @@ $lang = array (
   'login_switch_invisible_mode'	=> 'เปลี่ยนสถานะเป็นออนไลน์',
   'logout'		=> 'ออกจากระบบ',
   'my_nav'		=> 'เมนูลัด',
-  'my_nav_login'	=> 'กรุณา<a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>เข้าสู่ระบบ</strong></a>เพื่อใช้แถบเมนูลัด<br />ยังไม่มีแอคเคาท์? <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
+  'my_nav_login'	=> 'กรุณา<a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>เข้าสู่ระบบ</strong></a>เพื่อใช้แถบเมนูลัด<br />ยังไม่มีแอคเคาท์? <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">สมัครสมาชิก</a>',
   'open_diy'		=> 'เปิดเมนูการจัดการ DIY',
   'pm_center'		=> 'ข้อความส่วนตัว',
   'portal_block_manage'	=> 'จัดการโมดูล',

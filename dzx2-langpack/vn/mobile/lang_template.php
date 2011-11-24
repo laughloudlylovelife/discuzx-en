@@ -63,7 +63,7 @@ $lang = array (
   'admin_banpost_confirm' => 'Bạn có muốn cảnh cáo',
   'admin_delpost_confirm' => 'Bạn có muốn xóa trả lời này?',
   'admin_warn_confirm' => 'Báo cáo với Quản lý',
-  'attach_nopermission_login' => 'Bạn cần <a href="member.php?mod=logging&action=login">đăng nhập</a> để xem hoặc tải về đính kèm. Bạn chưa có tài khoản? <a href="member.php?mod={$_G[setting][regname]}" title="Đăng ký ngay">{$_G[setting][reglinkname]}</a>',
+  'attach_nopermission_login' => 'Bạn cần <a href="member.php?mod=logging&action=login">đăng nhập</a> để xem hoặc tải về đính kèm. Bạn chưa có tài khoản? <a href="member.php?mod={$_G[setting][regname]}" title="Đăng ký ngay">Đăng ký</a>',
   'attachlist' => 'Danh sách đính kèm',
   'ban_member' => 'Cấm',
   'digest' => '<span class="xi1">Tinh hoa</span>',

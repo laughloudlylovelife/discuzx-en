@@ -11,7 +11,7 @@
 
 $lang = array (
   'getpassword' => 'Quên mật khẩu',
-  'login_guest' => 'Chưa có tài khoản? {$_G[setting][reglinkname]}',
+  'login_guest' => 'Chưa có tài khoản? Đăng ký',
   'new_password' => 'Đổi mật khẩu',
   'new_password_confirm' => 'Xác nhận',
   'submit' => 'Chấp nhận',
@@ -32,7 +32,7 @@ $lang = array (
   'disagree' => 'Không đồng ý',
   'index_activation' => 'Tài khoản của bạn cần kích hoạt',
   'invite_code' => 'Mã kích hoạt',
-  'login_inactive' => 'Kích hoạt, <a href="member.php?mod={$_G[setting][regname]}">{$_G[setting][reglinkname]}</a>',
+  'login_inactive' => 'Kích hoạt, <a href="member.php?mod={$_G[setting][regname]}">Đăng ký</a>',
   'login_now' => 'Đã có tài khoản, đăng nhập ngay',
   'password_confirm' => 'Nhập lại',
   'register_buyinvitecode' => 'Không có mã mời, bấm vào đây để lấy',

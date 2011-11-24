@@ -1021,7 +1021,7 @@ $lang = array (
   'warn_get' => '受到警告',
   'admin_message_banned' => '提示: <em>作者被禁止或删除 内容自动屏蔽，只有管理员可见</em>',
   'admin_message_single_banned' => '提示: <em>该帖被管理员或版主屏蔽，只有管理员可见</em>',
-  'attach_nopermission_login' => '你需要<a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">登录</a>才可以下载或查看附件。没有帐号？<a href="member.php?mod={$_G[setting][regname]}" title="注册帐号">{$_G[setting][reglinkname]}</a>',
+  'attach_nopermission_login' => '你需要<a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">登录</a>才可以下载或查看附件。没有帐号？<a href="member.php?mod={$_G[setting][regname]}" title="注册帐号">注册</a>',
   'has_expired' => '该信息已经过期',
   'have' => '已有',
   'image_big' => '大图',

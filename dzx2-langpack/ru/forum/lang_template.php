@@ -1021,7 +1021,7 @@ $lang = array (
 	'warn_get'			=> 'Предупреждение!',
 	'admin_message_banned'		=> '<em>Автор был забанен или удалён!</em>',
 	'admin_message_single_banned'	=> '<em>Тема заблокирована модератором.</em>',
-	'attach_nopermission_login'	=> 'Для скачивания необходима <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">авторизация</a>.<br />Ещё нет аккаунта? <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="$reglinkname">$reglinkname</a>',
+	'attach_nopermission_login'	=> 'Для скачивания необходима <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">авторизация</a>.<br />Ещё нет аккаунта? <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="Регистрация">Регистрация</a>',
 	'has_expired'			=> 'Срок действия данной информации истёк',
 	'have'				=> 'Имеется',
 	'image_big'			=> 'Полный размер',

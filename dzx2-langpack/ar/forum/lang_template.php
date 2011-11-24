@@ -1022,7 +1022,7 @@ $lang = array (
 	'warn_get'			=> 'محذر',//'受到警告',
 	'admin_message_banned'		=> 'ملاحظة: <em> الكاتب تم حظره او حذفه .</em>',//'提示: <em>作者被禁止或删除 内容自动屏蔽，只有管理员可见</em>',
 	'admin_message_single_banned'	=> 'ملاحظة: <em>تم حذف هذا الموضوع.</em>',//'提示: <em>该帖被管理员或版主屏蔽，只有管理员可见</em>',
-    'attach_nopermission_login'	=> ' لتحميل المرفق يجب <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">تسجيل الدخول</a> لا تمتلك عضوية ؟ <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="التسجيل">{$_G[setting][reglinkname]}</a>',
+    'attach_nopermission_login'	=> ' لتحميل المرفق يجب <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href);return false;">تسجيل الدخول</a> لا تمتلك عضوية ؟ <a href="member.php?mod={$_G[setting][regname]}" onclick="hideWindow(\'login\');showWindow(\'register\', this.href);return false;" title="التسجيل">التسجيل</a>',
 	'has_expired'			=> 'هذه المعلومات منتهية',//'该信息已经过期',
 	'have'				=> 'يملك',//'已有',
    'image_big'	=> 'صورة كبيرة',

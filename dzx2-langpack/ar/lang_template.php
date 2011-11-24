@@ -66,7 +66,7 @@ $lang = array (
 	'login_switch_invisible_mode'	=> 'التحويل للوضع (التواجد)',//'切换在线状态',
 	'logout'			=> 'تسجيل الخروج',//'退出',
     'my_nav'	=> 'الإنتقال السريع',
-    'my_nav_login'	=> 'الرجاء <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>تسجيل الدخول</strong></a> لاستخدام الانتقال السريع<br />ليس لديك حساب بعد？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
+    'my_nav_login'	=> 'الرجاء <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>تسجيل الدخول</strong></a> لاستخدام الانتقال السريع<br />ليس لديك حساب بعد？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">التسجيل</a>',
  	'open_diy'			=> 'فتح',//'打开 DIY 面板',
 	'pm_center'			=> 'الرسائل',//'短消息',
     'portal_block_manage'	=> 'إدارة الموديلات',

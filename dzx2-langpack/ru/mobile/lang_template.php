@@ -63,7 +63,7 @@ $lang = array (
 	'admin_banpost_confirm'		=> 'Вы уверены, что хотите забанить данный пост?',
 	'admin_delpost_confirm'		=> 'Вы уверены, что хотите удалить этот ответ?',
 	'admin_warn_confirm'		=> 'Оповещение автора о предупреждении',
-	'attach_nopermission_login'	=> 'Вам необходимо <a href="member.php?mod=logging&action=login">Войти</a> для загрузки и просмотра вложений. Еще не зарегистрированы? <a href="member.php?mod={$_G[setting][regname]}" title="Регистрация">$_G[setting][reglinkname]}</a>',
+	'attach_nopermission_login'	=> 'Вам необходимо <a href="member.php?mod=logging&action=login">Войти</a> для загрузки и просмотра вложений. Еще не зарегистрированы? <a href="member.php?mod={$_G[setting][regname]}" title="Регистрация">Регистрация</a>',
 	'attachlist'			=> 'Прикреплённые файлы',
 	'ban_member'			=> 'Бан',
 	'digest'			=> '<span class="xi1">Дайджест</span>',
