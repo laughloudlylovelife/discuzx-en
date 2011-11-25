@@ -400,6 +400,23 @@ $lang = array (
 //---------------------------
 //Change Language
 'change_language'	=> 'Изменить язык',
+
+//vot:
+	'new'		=> 'New',//'全新',
+
+//---------------------------
+// Titles from install_var
+'register'	=> 'Регистрация',
+
+'seotitle' =>
+  array (
+    'portal'	=> 'Портал',//'Portal',
+    'forum'	=> 'Форум',//'Forum',
+    'group'	=> 'Сообщества',//'Groups',
+    'home'	=> 'Главная',//'Home',
+    'userapp'	=> 'Приложения',//'Apps',
+  ),
+
 );
 
 ?>

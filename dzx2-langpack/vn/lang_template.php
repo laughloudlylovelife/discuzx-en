@@ -401,6 +401,23 @@ $lang = array (
 //---------------------------
 //Change Language
 'change_language'	=> 'Change language',
+
+//vot:
+	'new'		=> 'New',//'全新',
+
+//---------------------------
+// Titles from install_var
+'register'	=> 'Đăng ký',//'Register',
+
+'seotitle' =>
+  array (
+    'portal'	=> 'Portal',
+    'forum'	=> 'Forum',
+    'group'	=> 'Groups',
+    'home'	=> 'Home',
+    'userapp'	=> 'Apps',
+  ),
+
 );
 
 ?>

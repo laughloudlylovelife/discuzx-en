@@ -399,7 +399,24 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Change language',
+'change_language'	=> '更改语言',//'Change language',
+
+//vot:
+	'new'		=> '全新',//'New',
+
+//---------------------------
+// Titles from install_var
+'register'	=> '注册',//'Register',
+
+'seotitle' =>
+  array (
+    'portal'	=> '门户',//'Portal',
+    'forum'	=> '论坛',//'Forum',
+    'group'	=> '群组',//'Groups',
+    'home'	=> '家园',//'Home',
+    'userapp'	=> '应用',//'Apps',
+  ),
+
 );
 
 ?>
