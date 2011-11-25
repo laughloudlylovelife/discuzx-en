@@ -178,12 +178,13 @@ $_config['remote']['cron'] = 0;
 // Enabled Language List:
 
 $_config['languages'] = array(
-	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
-//	'zh' => array('icon'=>'zh.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
-//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
-//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
-//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
 //	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
+//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
+	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
+//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
+//	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
+//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
+//	'zh' => array('icon'=>'zh.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
 );
 
 ?>
