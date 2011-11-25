@@ -404,6 +404,20 @@ $lang = array (
 
 //vot:
 	'new'		=> 'جديد',//'全新',
+
+//---------------------------
+// Titles from install_var
+'register'	=> 'التسجيل',
+
+'seotitle' =>
+  array (
+    'portal'	=> 'Portal',
+    'forum'	=> 'Forum',
+    'group'	=> 'Groups',
+    'home'	=> 'Home',
+    'userapp'	=> 'Apps',
+  ),
+
 );
 
 ?>

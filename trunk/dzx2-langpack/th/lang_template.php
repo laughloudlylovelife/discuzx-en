@@ -406,7 +406,7 @@ $lang = array (
 
 //---------------------------
 // Titles from install_var
-'register'	=> 'Register',
+'register'	=> 'สมัครสมาชิก',//'Register',
 
 'seotitle' =>
   array (
