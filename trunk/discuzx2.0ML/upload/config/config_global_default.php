@@ -186,5 +186,6 @@ $_config['languages'] = array(
 //	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
 //	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
 );
+$_config['detect_language'] = true;	// Auto-detect user language: true|false
 
 ?>

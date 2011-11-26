@@ -418,7 +418,7 @@ class register_ctl {
 				}
 			}
 
-			$navtitle = $this->setting['reglinkname'];
+			$navtitle = lang('template', 'register');
 
 			if($this->extrafile && file_exists(libfile('member/'.$this->extrafile, 'module'))) {
 				require_once libfile('member/'.$this->extrafile, 'module');

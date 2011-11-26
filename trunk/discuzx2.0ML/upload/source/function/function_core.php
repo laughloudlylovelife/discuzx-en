@@ -471,6 +471,27 @@ function lang($file, $langvar = null, $vars = array(), $default = null) {
 	return $return;
 }
 
+//vot: Detect User Browser Preferred Language
+function detect_language() {
+	global $_G;
+
+	$default = strtolower($_G['config']['output']['language']);
+	
+	if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+
+		$langs = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
+
+		//start going through each one
+		foreach ($langs as $value){
+			$choice = strtolower(substr($value,0,2));
+			if(isset($_G['config']['languages'][$choice])){
+				return $choice;
+			}
+		}
+	} 
+	return $default;
+}
+
 function checktplrefresh($maintpl, $subtpl, $timecompare, $templateid, $cachefile, $tpldir, $file) {
 	static $tplrefresh, $timestamp, $targettplname;
 	if($tplrefresh === null) {
