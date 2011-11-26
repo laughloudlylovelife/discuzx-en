@@ -260,14 +260,16 @@ class discuz_core {
 		//vot: Multi-Lingual Support
 
 		// set default
-		$lng = strtolower($this->var['config']['output']['language']);
+		$default_lang = strtolower($this->var['config']['output']['language']);
+//		$lng = $default_lang;
+		$lng = '';
 
 		// set from cookies
 		if($this->var['cookie']['language']) {
 			$lng = strtolower($this->var['cookie']['language']);
+//DEBUG
+//echo "Cookie lang=",$lng,"<br>";
 		}
-
-		$this->var['oldlanguage'] = $lng; // Store Old Language Value for compare
 
 		// check if valid from GET
 		if(isset($this->var['gp_language'])) {
@@ -276,7 +278,27 @@ class discuz_core {
 				// set from GET
 				$lng = $tmp;
 			}
+//DEBUG
+//echo "_GET lang=",$lng,"<br>";
 		}
+
+		// Check for language auto-detection
+		if(!$lng) {
+			$detect = (boolean) $this->var['config']['detect_language'];
+			if($detect) {
+				$lng = detect_language($this->var['config']['languages'],$default_lang);
+//DEBUG
+//echo "Detect lang=",$lng,"<br>";
+			}
+		}
+
+		if(!$lng) {
+			$lng = $default_lang;
+		}
+
+//DEBUG
+//echo "Result lang=",$lng,"<br>";
+		$this->var['oldlanguage'] = $lng; // Store Old Language Value for compare
 
 		// define DISCUZ_LANG
 		define('DISCUZ_LANG', $lng);
@@ -315,7 +337,8 @@ class discuz_core {
 			$_config['languages'] = array(
 				'en' => array(
 					'icon' => 'en.gif',
-					'title' => 'English'
+					'title' => 'English',
+					'dir' => 'ltr',
 					)
 			);
 		}
@@ -403,6 +426,9 @@ class discuz_core {
 		if(isset($this->var['gp_language'])) {
 			$url = $_SERVER['REQUEST_URI'];
 			$url = preg_replace("~[\?\&]language\=\w*~i",'',$url);
+//DEBUG
+//echo $this->var['language'],"=>", $this->var['oldlanguage'],"<br>";
+//echo $url;
 			header('Location: '.$url);
 			exit;
 		}
