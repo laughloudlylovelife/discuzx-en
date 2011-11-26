@@ -19,7 +19,7 @@ $lang = array
 		'hour'		=> 'Hour',//'小时',
 		'half'		=> 'Half',//'半',
 		'min'		=> 'min.',//'分钟',
-		'sec'		=> 'sec.',//'秒',
+		'sec'		=> 's.',//'秒',
 		'now'		=> 'Now',//'刚刚',
 	),
 	'yes'			=> 'Yes',//'是',

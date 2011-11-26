@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php 21925 2011-04-18 02:58:25Z monkey $
  *
  *      This file is automatically generate
  */
@@ -12,7 +12,7 @@
 $lang = array (
   'no_maxthon2_message' => 'Trình duyệt của bạn không hỗ trợ, xin vui lòng sử dụng trình duyệt IE hoặc Firefox',
   'page_loading' => 'Đang tải ....',
-  'add_app' => 'Thêm $_G[setting][navs][5][navname]',
+  'add_app' => 'Thêm Trò chơi',
   'app_index' => 'Ứng dụng',
   'boy_like' => 'Trò con trai',
   'girl_like' => 'Trò con gái',
@@ -20,22 +20,22 @@ $lang = array (
   'latest_release' => 'Mới nhất',
   'no_feed' => 'Không có tin tức liên quan',
   'own' => 'Tôi chơi',
-  'popular_app' => 'Phổ biến $_G[setting][navs][5][navname]',
-  'today_active_app' => 'Hôm nay $_G[setting][navs][5][navname]',
+  'popular_app' => 'Phổ biến Trò chơi',
+  'today_active_app' => 'Hôm nay Trò chơi',
   'what_everybody_playing' => 'Chúng ta chơi gì',
   'what_friend_playing' => 'Bạn bè đang chơi gì',
   'all' => 'Tất cả',
-  'app_add' => 'Thêm $_G[setting][navs][5][navname]',
-  'app_management' => 'Quản lý $_G[setting][navs][5][navname]',
+  'app_add' => 'Thêm Trò chơi',
+  'app_management' => 'Quản lý Trò chơi',
   'close' => 'Đóng',
-  'default_app' => 'Mặc định $_G[setting][navs][5][navname]',
+  'default_app' => 'Mặc định Trò chơi',
   'determine' => 'OK',
   'edit_settings' => 'Cài đặt',
   'introduction' => 'Giới thiệu',
-  'left_menu_view_num' => 'Menu trái $_G[setting][navs][5][navname] số',
+  'left_menu_view_num' => 'Menu trái Trò chơi số',
   'my' => 'Tôi',
   'remove' => 'Xóa bỏ',
-  'remove_app' => 'Xóa bỏ $_G[setting][navs][5][navname]',
+  'remove_app' => 'Xóa bỏ Trò chơi',
   'remove_app_message' => 'Để xóa bỏ bạn vào trang Quản lý các ứng dụng<br/>Ứng dụng này sẽ không được hiển thị, bạn có thể thêm và sử dụng lại.<br>Chắc chắn tiếp tục không?',
   'save_settings' => 'Lưu Cài đặt',
   'use_assistant' => 'Sử dụng các trợ lý',

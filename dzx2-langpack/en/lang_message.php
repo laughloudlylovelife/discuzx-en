@@ -76,7 +76,7 @@ $lang = array (
 	'modcp_logout_succeed'			=> 'Logout from Moderator control panel successfully, redirecting to forum',//'成功退出管理面板，返回论坛',
 	'topic_edit_nopermission'		=> 'You are not allowed to create or edit topic',//'你没有权限创建或编辑专题',
 	'search_id_invalid'			=> 'Specified search does not exist or has been expired already.',//'您指定的搜索不存在或已过期。',
-	'search_ctrl'				=> 'Sorry, you can search only once in {searchctrl} sec.',//'对不起，您在 {searchctrl} 秒内只能进行一次搜索，请返回。',
+	'search_ctrl'				=> 'Sorry, you can search only once in {searchctrl} s.',//'对不起，您在 {searchctrl} 秒内只能进行一次搜索，请返回。',
 	'search_toomany'			=> 'Sorry, the system administrator set the maximum limit of searches per minute {maxspm}, please try again later.',//'对不起，管理员设置了每分钟系统最多响应搜索请求 {maxspm} 次，请返回并稍后再试。',
 	'no_privilege_myop'			=> 'Sorry, you currently do not have permission to use this application, <a href="home.php?mod=spacecp&ac=usergroup">Click here for permissions</a>',//'抱歉，您目前没有权限使用此应用，<a href="home.php?mod=spacecp&ac=usergroup">点击这里查看权限</a>',
 	'do_success'				=> 'Operation completed',//'进行的操作完成了',

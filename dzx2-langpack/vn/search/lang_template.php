@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php 22155 2011-04-22 08:42:02Z monkey $
  *
  *      This file is automatically generate
  */
@@ -12,7 +12,7 @@
 $lang = array (
   'search_nomatch' => 'Lỗi! không tìm thấy dữ liệu liên quan.',
   'search_result' => 'Kết quả: <em> Đã tìm thấy $index[num] chủ đề</em>',
-  'search_result_keyword' => 'Kết quả: <em> Tìm thấy $index[num] nội dung liên quan tới "<span class="emfont">$keyword</span>"   </em>',
+  'search_result_keyword' => 'Kết quả: <em> Tìm thấy $index[num] nội dung liên quan tới “<span class="emfont">$keyword</span>”   </em>',
   'a_comment' => ' bình luận',
   'a_visit' => ' lượt xem',
   'heat' => 'Độ hot',
@@ -60,9 +60,9 @@ $lang = array (
   'credits' => 'Điểm',
   'member' => 'Thành viên',
   'public' => 'Công khai',
-  'search_group_result' => 'Kết quả: <em>Tìm thấy {$_G[setting][navs][3][navname]} $groupnum kết quả</em>',
-  'search_group_result_keyword' => 'Kết quả: <em>Tìm thấy {$_G[setting][navs][3][navname]} $groupnum kết quả,&nbsp;&nbsp;  $index[num] chủ đề</em>',
-  'search_group_viewgroup' => 'Xem {$_G[setting][navs][3][navname]}',
+  'search_group_result' => 'Kết quả: <em>Tìm thấy Nhóm $groupnum kết quả</em>',
+  'search_group_result_keyword' => 'Kết quả: <em>Tìm thấy Nhóm $groupnum kết quả,&nbsp;&nbsp;  $index[num] chủ đề</em>',
+  'search_group_viewgroup' => 'Xem Nhóm',
   'threads' => 'Chủ đề',
   'return_homepage' => 'Trang chủ',
   'visit_my_space' => 'Xem không gian',

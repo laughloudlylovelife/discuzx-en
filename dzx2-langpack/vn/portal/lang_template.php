@@ -4,8 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *      $Id: lang_template.php 22717 2011-05-18 05:12:59Z monkey $
  *
  *      This file is automatically generate
  */
@@ -23,7 +22,7 @@ $lang = array (
   'article_publish' => 'Được đăng bài viết',
   'category' => 'Danh mục',
   'category_related' => 'Mục liên quan',
-  'portal' => '{$_G[setting][navs][1][navname]}',
+  'portal' => 'Portal',
   'rss_subscribe_this' => 'Đăng ký',
   'sub_category' => 'Mục con',
   'article_hot' => 'Bài nổi bật',
@@ -261,7 +260,7 @@ $lang = array (
   'selected_tag_selected' => 'Chọn các mục sẽ được đánh dấu là lựa chọn',
   'wait_select' => 'Lựa chọn',
   'link_to_internet' => 'Web liên kết',
-  'modify' => 'Sửa đổi',
+  'modify' => 'Sửa đổi',
   'topic_add' => 'Chủ đề mới',
   'topic_additional' => 'Thêm nội dung',
   'topic_allowcomment' => 'Có cho phép nhận xét',
@@ -290,7 +289,7 @@ $lang = array (
   'article_inner_page' => 'Trang',
   'article_inner_page_pre' => '',
   'from' => 'Từ',
-  'nav_index' => '{$_G[setting][navs][1][navname]}',
+  'nav_index' => 'Portal',
   'view_author_original' => 'Tác giả',
   'view_comments' => 'Bình luận',
   'view_content' => 'Xem',

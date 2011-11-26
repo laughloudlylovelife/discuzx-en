@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_spacecp.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_spacecp.php 22088 2011-04-21 07:50:14Z zhengqingpeng $
  */
 
 $lang = array(
@@ -16,7 +16,7 @@ $lang = array(
 	'share_action' => 'Chia sẻ',
 
 	'pm_comment' => 'Trả lời bình luận',
-	'pm_thread_about' => 'Trả lời chủ đề "{subject}" của bạn',
+	'pm_thread_about' => 'Trả lời chủ đề “{subject}” của bạn',
 
 	'wall_pm_subject' => 'Hello!',
 	'wall_pm_message' => 'Tôi đã gửi một tin nhắn lên bảng tin của bạn, [url=\\1]bấm vào đây để đến bảng tin để xem nó[/url]',
@@ -64,7 +64,7 @@ $lang = array(
 	'event_comment_reply' => '\\1 Phản hồi đánh giá sự kiện',
 
 	'mail_my' => 'Nhắc nhở - Tin nhắn với bạn bè',
-  	'mail_system' => 'Tin từ Hệ thống',
+	'mail_system' => 'Tin từ Hệ thống',
 
 	'invite_subject' => '{username} mời bạn tham gia {sitename} để trở thành bạn bè với họ',
 	'invite_massage' => '<table border="0">
@@ -115,8 +115,8 @@ $lang = array(
 	'share_article' => 'Tiêu đề chia sẻ',
 	'album' => 'Album',
 	'share_thread' => 'Chia sẻ chủ đề',
-	'mtag' => '{$_G[setting][navs][3][navname]}',
-	'share_mtag' => 'Chia sẻ {$_G[setting][navs][3][navname]}',
+	'mtag' => 'Nhóm',
+	'share_mtag' => 'Chia sẻ Nhóm',
 	'share_mtag_membernum' => 'Chia sẻ thành viên: {membernum}',
 	'share_tag' => 'Chia sẻ Tag',
 	'share_tag_blognum' => 'Chia sẻ blog: {blognum}',
@@ -184,10 +184,10 @@ $lang = array(
 	'do_stat_reward' => 'Treo thưởng',
 	'do_stat_debate' => 'Tranh luận',
 	'do_stat_trade' => 'Mua bán',
-	'do_stat_group' => "Tạo {$_G[setting][navs][3][navname]}",
-	'do_stat_tgroup' => "{$_G[setting][navs][3][navname]}",
-	'do_stat_home' => "{$_G[setting][navs][4][navname]}",
-	'do_stat_forum' => "{$_G[setting][navs][2][navname]}",
+	'do_stat_group' => "Tạo Nhóm",
+	'do_stat_tgroup' => "Nhóm",
+	'do_stat_home' => "Không gian",
+	'do_stat_forum' => "Diễn đàn",
 	'do_stat_groupthread' => 'Chủ đề Nhóm',
 	'do_stat_post' => 'Trả lời chủ đề',
 	'do_stat_grouppost' => 'Trả lời chủ đề nhóm',
@@ -204,7 +204,7 @@ $lang = array(
 	'do_stat_eventcomment' => 'Bình luận sự kiện',
 	'do_stat_eventjoin' => 'Tham gia sự kiện',
 	'do_stat_sharecomment' => 'Bình luận chia sẻ',
-	
+
 	'do_stat_click' => 'Click',
 	'do_stat_wall' => 'Thông điệp',
 	'do_stat_poke' => 'Chọc',
@@ -285,6 +285,7 @@ $lang = array(
 	'profile_verify_modify_error' => '{verify} đã được xác minh, không được phép sửa đổi',
 	'profile_verify_verifying' => '{verify} của bạn đã được gửi đi. Vui lòng chờ xác minh!',
 
+//'district_level_0'		=> '- Country -',//'-国家-',
 	'district_level_1' => '-Tỉnh-',
 	'district_level_2' => '-Thành phố-',
 	'district_level_3' => '-Quận/Huyện-',
@@ -293,9 +294,10 @@ $lang = array(
 
 	'spacecp_message_prompt' => '({msg} hỗ trợ, tối đa 1000 kí tự)',
 	'card_update_doing' => ' <a class="xi2" href="###">[Cập nhật Profile]</a>',
-	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" /> <span class="xi1"> New Email({newemail})Đang chờ xác minh...</span><br />
-								Hệ thống đã gửi một email xác minh đến email của bạn, vui lòng kiểm tra email của bạn, kích hoạt để xác minh.<br>
-								Nếu bạn không nhận được email xác minh, bạn có thể đổi Email, hoặc <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Gửi lại email xác minh lần nữa</a>',
+	'email_acitve_message' => '<img src="{imgdir}/mail_inactive.png" alt="Chưa xác minh" class="vm" />
+					<span class="xi1"> New Email({newemail})Đang chờ xác minh...</span><br />
+					Hệ thống đã gửi một email xác minh đến email của bạn, vui lòng kiểm tra email của bạn, kích hoạt để xác minh.<br>
+					Nếu bạn không nhận được email xác minh, bạn có thể đổi Email, hoặc <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Gửi lại email xác minh lần nữa</a>',
 
 );
 

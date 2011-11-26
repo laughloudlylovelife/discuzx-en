@@ -60,7 +60,7 @@ $lang = array (
   'admincp' => '管理中心',
   'changestyle' => '切换风格',
   'default' => '默认',
-  'forum_manager' => '{$_G[setting][navs][2][navname]}管理',
+  'forum_manager' => '论坛管理',
   'go_to_mobile' => '进入手机版',
   'login_switch_invisible_mode' => '切换在线状态',
   'logout' => '退出',
@@ -161,8 +161,8 @@ $lang = array (
   'mod_works' => '管理统计',
   'stats' => '站点统计',
   'trend' => '趋势统计',
-  'app_add' => '添加$_G[setting][navs][5][navname]',
-  'app_management' => '管理$_G[setting][navs][5][navname]',
+  'app_add' => '添加应用',
+  'app_management' => '管理应用',
   'e_audio' => '音乐',
   'e_audio_title' => '添加音乐',
   'e_autotypeset' => '自动排版',
@@ -367,11 +367,11 @@ $lang = array (
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'	=> '天空',
+	'sky'		=> '天空',
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'	=> '猫猫',
+	'cat'		=> '猫猫',
 
 //---------------------------
 //static/space/t5/style.css
@@ -399,23 +399,41 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> '更改语言',//'Change language',
+	'change_language'	=> '更改语言',//'Change language',
 
 //vot:
 	'new'		=> '全新',//'New',
 
 //---------------------------
-// Titles from install_var
-'register'	=> '注册',//'Register',
+//vot: Titles from install_var.php, pre_common_nav table
 
-'seotitle' =>
-  array (
-    'portal'	=> '门户',//'Portal',
-    'forum'	=> '论坛',//'Forum',
-    'group'	=> '群组',//'Groups',
-    'home'	=> '家园',//'Home',
-    'userapp'	=> '应用',//'Apps',
-  ),
+	'register'	=> '注册',//'Register',
+
+	'nav_portal'	=> '门户',//1//'Portal',
+	'nav_forum'	=> '论坛',//2//'Forum',
+	'nav_group'	=> '群组',//3//'Groups',
+	'nav_space'	=> '家园',//4//'Space',
+	'nav_apps'	=> '应用',//5//'Applications',
+	'nav_plugin'	=> '插件',//6//'Plugins',
+	'nav_help'	=> '帮助',//7//'Help',
+	'nav_rank'	=> '排行榜',//8//'RankList',
+	'nav_stat'	=> '站点统计',//'Statistics',
+	'nav_report'	=> '举报',//'Reports',
+	'nav_archiver'	=> 'Archive',
+	'nav_mobile'	=> '手机版',//'Mobile',
+	'nav_blog'	=> '日志',//'Blogs',
+	'nav_album'	=> '相册',//'Albums',
+	'nav_share'	=> '分享','Shares',
+	'nav_doing'	=> '记录',//'Doings',
+	'nav_friend'	=> '好友',//'Friends',
+	'nav_thread'	=> '帖子',//'Threads',
+	'nav_favorite'	=> '收藏',//'Favorites',
+	'nav_magic'	=> '道具',//'Magic',
+	'nav_medal'	=> '勋章',//'Medals',
+	'nav_task'	=> '任务',//'Tasks',
+	'nav_sethomepage'	=> '设为首页',//'Set as Homepage',
+	'nav_setfavorite'	=> '收藏本站',//'Add to Favorites',
+//	'nav_'		=> '',//'',
 
 );
 

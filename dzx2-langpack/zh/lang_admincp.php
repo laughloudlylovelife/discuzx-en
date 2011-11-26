@@ -1049,13 +1049,13 @@ $lang = array
 
 	'setting_domain' => '域名设置',
 	'setting_domain_base' => '基本设置',
-	'setting_domain_base_tips' => "<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>{$_G[setting][navs][3][navname]}、{$_G[setting][navs][4][navname]}</strong>的根域名</li>",
+	'setting_domain_base_tips' => "<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>群组、家园</strong>的根域名</li>",
 	'setting_domain_app' => '应用域名',
 	'setting_domain_app_domain' => '域名',
 	'setting_domain_app_tips' => "<li>各自绑定的域名不能相同，域名不需要添加“<strong>http://</strong>”，也不要以“<strong>/</strong>”结尾，例如：portal.comsenz.com</li><li>任意开启一项域名，需要配置默认域名，否则会造成多入口问题</li><li>当开启多域名时，请在 config/config_global.php 中修改 cookiedomain 值来设置 cookie 作用域</li>",
 	'setting_domain_app_mobile_tips' => '当配置手机域名后，非手机浏览器访问会自动跳转至默认域名',
 	'setting_domain_root' => '根域名设置',
-	'setting_domain_root_tips' => "<li>可以为<strong>个人空间、{$_G[setting][navs][3][navname]}、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、{$_G[setting][navs][3][navname]}</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
+	'setting_domain_root_tips' => "<li>可以为<strong>个人空间、群组、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、群组</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
 	'setting_domain_allow_space' => '开启个人空间二级域名',
 	'setting_domain_allow_space_comment' => '开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_allow_group' => '开启群组二级域名',
@@ -6207,6 +6207,10 @@ RepeatLimit 32
 	'quick_members'			=> '会员操作相关',
 	'quick_clean_trans'		=> '清空 所有会员 积分交易记录',
 
+//---------------------------
+//Change Language
+'change_language'	=> '更改语言',//'Change language',
+
 );
 
 //------------------------------------------------------
@@ -6217,7 +6221,7 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	@include $adminextendfile;
 	foreach($adminextend as $extend) {
 		$extend_lang = array();
-		@include DISCUZ_ROOT.'./source/language/lang_admincp_'.$extend;
+		@include DISCUZ_ROOT.'./source/language/zh/lang_admincp_'.$extend;
 		$lang = array_merge($lang, $extend_lang);
 	}
 }

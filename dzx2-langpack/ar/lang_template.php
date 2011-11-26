@@ -61,7 +61,7 @@ $lang = array (
 	'admincp'			=> 'لوحة الادارة',//'管理中心',
     'changestyle'	=> 'تغيير النمط',
     'default'	=> 'الافتراضي',
-	'forum_manager'			=> 'المشرف: {$_G[setting][navs][2][navname]}',//'{$_G[setting][navs][2][navname]}管理',
+	'forum_manager'			=> 'المشرف: Forum',//'论坛管理',
     'go_to_mobile'	=> 'استخدام وضع هاتف',
 	'login_switch_invisible_mode'	=> 'التحويل للوضع (التواجد)',//'切换在线状态',
 	'logout'			=> 'تسجيل الخروج',//'退出',
@@ -162,8 +162,8 @@ $lang = array (
 	'mod_works'			=> 'حالة الاشراف والمشرفين',//'管理统计',
 	'stats'	=> 'الاحصائيات',
 	'trend'				=> 'الحالة',//'趋势统计',
-	'app_add'			=> 'اضافة $_G[setting][navs][5][navname]',
-	'app_management'		=> 'ادارة $_G[setting][navs][5][navname]',
+	'app_add'			=> 'اضافة Application',
+	'app_management'		=> 'ادارة Application',
     'e_audio'	=> 'الموسيقى',
     'e_audio_title'	=> 'إضافة الموسيقى',
 	'e_autotypeset'			=> 'نوع التعيين التلقائي',//'自动排版',
@@ -400,23 +400,41 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'تغيير اللغة',
+	'change_language'	=> 'تغيير اللغة',
 
 //vot:
 	'new'		=> 'جديد',//'全新',
 
 //---------------------------
-// Titles from install_var
-'register'	=> 'التسجيل',
+//vot: Titles from install_var.php, pre_common_nav table
 
-'seotitle' =>
-  array (
-    'portal'	=> 'Portal',
-    'forum'	=> 'Forum',
-    'group'	=> 'Groups',
-    'home'	=> 'Home',
-    'userapp'	=> 'Apps',
-  ),
+	'register'	=> 'التسجيل',
+
+	'nav_portal'	=> 'المجلة',//'Portal',//'门户',//1,
+	'nav_forum'	=> 'المنتدى',//'Forum',//'论坛',//2,
+	'nav_group'	=> 'المجموعات',//'Groups',//'群组',//3,
+	'nav_space'	=> 'الملف الشخصي',//'Space',//'家园',//4,
+	'nav_apps'	=> 'التطبيقات',//'Applications','应用',//5,
+	'nav_plugin'	=> 'الهاكات',//'Plugins',//'插件',//6,
+	'nav_help'	=> 'التعليمات',//'Help',//'帮助',//7,
+	'nav_rank'	=> 'الترتيب',//'RankList',//'排行榜',//8,
+	'nav_stat'	=> 'الاحصائيات',//'Statistics',//'站点统计',
+	'nav_report'	=> 'تبليغ',//'Reports',//'举报',
+	'nav_archiver'	=> 'الارشيف',//'Archive',
+	'nav_mobile'	=> 'الهاتف المحمول',//'Mobile',//'手机版',
+	'nav_blog'	=> 'مدونة',//'Blogs',//'日志',
+	'nav_album'	=> 'البوم',//'Albums',//'相册',
+	'nav_share'	=> 'منشور',//'Shares',//'分享',
+	'nav_doing'	=> 'افعال',//'Doings',//'记录',
+	'nav_friend'	=> 'أصدقائي',//'Friends',//'好友',
+	'nav_thread'	=> 'مواضيعي',//'Threads',//'帖子',
+	'nav_favorite'	=> 'المفضلة',//'Favorites',//'收藏',
+	'nav_magic'	=> 'الدعائم',//'Magic',//'道具',
+	'nav_medal'	=> 'مركز الاوسمة',//'Medals',//'勋章',
+	'nav_task'	=> 'المهام',//'Tasks',//'任务',
+	'nav_sethomepage'	=> 'اجعلنا صفحتك الرئيسية',//'Set as Homepage',//'设为首页',
+	'nav_setfavorite'	=> 'أضف إلى المفضلة',//'Add to Favorites',//'收藏本站',
+//	'nav_'		=> '',//'',
 
 );
 

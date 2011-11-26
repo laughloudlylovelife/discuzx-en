@@ -1,11 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_space.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_space.php 20882 2011-03-07 07:22:17Z lifangming $
  */
 
 $lang = array(
@@ -111,7 +110,7 @@ $lang = array(
 		'wall' => 'Tường',
 		'share' => 'Chia sẻ',
 		'thread' => 'Chủ đề',
-		'group' => $_G[setting][navs][3][navname],
+		'group' => 'Nhóm',
 		'music' => ' Âm nhạc',
 		'statistic' => 'Thống kê',
 		'myapp' => 'Ứng dụng',

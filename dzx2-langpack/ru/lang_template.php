@@ -161,8 +161,8 @@ $lang = array (
 	'mod_works'			=> 'Статистика модераторов',
 	'stats'				=> 'Статистика сайта',
 	'trend'				=> 'Графики',
-	'app_add'			=> 'Добавить $_G[setting][navs][5][navname]',
-	'app_management'		=> 'Управление $_G[setting][navs][5][navname]',
+	'app_add'			=> 'Добавить приложение',
+	'app_management'		=> 'Управление приложением',
 	'e_audio'			=> 'Аудио',
 	'e_audio_title'			=> 'Добавить аудио',
 	'e_autotypeset'			=> 'Авто-определение типа',
@@ -405,17 +405,35 @@ $lang = array (
 	'new'		=> 'New',//'全新',
 
 //---------------------------
-// Titles from install_var
+//vot: Titles from install_var.php, pre_common_nav table
+
 'register'	=> 'Регистрация',
 
-'seotitle' =>
-  array (
-    'portal'	=> 'Портал',//'Portal',
-    'forum'	=> 'Форум',//'Forum',
-    'group'	=> 'Сообщества',//'Groups',
-    'home'	=> 'Главная',//'Home',
-    'userapp'	=> 'Приложения',//'Apps',
-  ),
+	'nav_portal'	=> 'Портал',//'Portal',//'门户',//1,
+	'nav_forum'	=> 'Форум',//'Forum',//'论坛',//2,
+	'nav_group'	=> 'Сообщества',//'Groups',//'群组',//3,
+	'nav_space'	=> 'Space',//'家园',//4,
+	'nav_apps'	=> 'Приложения',//'Applications','应用',//5,
+	'nav_plugin'	=> 'Плагины',//'插件',//6,
+	'nav_help'	=> 'Помощь',//'帮助',//7,
+	'nav_rank'	=> 'ТопЛист',//'排行榜',//8,
+	'nav_stat'	=> 'Статистика',//'站点统计',
+	'nav_report'	=> 'Жалобы',//'举报',
+	'nav_archiver'	=> 'Архив',
+	'nav_mobile'	=> 'Мобильная версия',//'手机版',
+	'nav_blog'	=> 'Блоги',//'日志',
+	'nav_album'	=> 'Альбомы',//'相册',
+	'nav_share'	=> 'Закладки',//'分享',
+	'nav_doing'	=> 'Настроения',//'记录',
+	'nav_friend'	=> 'Друзья',//'好友',
+	'nav_thread'	=> 'Темы',//'帖子',
+	'nav_favorite'	=> 'Избранное',//'收藏',
+	'nav_magic'	=> 'Магия',//'道具',
+	'nav_medal'	=> 'Медали',//'勋章',
+	'nav_task'	=> 'Задачи',//'任务',
+	'nav_sethomepage'	=> 'Установить как домашнюю',//'设为首页',
+	'nav_setfavorite'	=> 'Добавить в избранное',//'收藏本站',
+//	'nav_'		=> '',//'',
 
 );
 
