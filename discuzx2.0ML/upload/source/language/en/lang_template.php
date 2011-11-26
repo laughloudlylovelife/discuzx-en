@@ -60,7 +60,7 @@ $lang = array (
 	'admincp'			=> 'Admin Center',//'管理中心',
 	'changestyle'			=> 'Change Style',//'切换风格',
 	'default'			=> 'Default',//'默认',
-	'forum_manager'			=> 'Moderator: {$_G[setting][navs][2][navname]}',//'{$_G[setting][navs][2][navname]}管理',
+	'forum_manager'			=> 'Forum Moderator:',//'论坛管理',
 	'go_to_mobile'			=> 'To the mobile version',//'进入手机版',
 	'login_switch_invisible_mode'	=> 'Toggle online status',//'切换在线状态',
 	'logout'			=> 'Logout',//'退出',
@@ -161,8 +161,8 @@ $lang = array (
 	'mod_works'			=> 'Moderator Stats',//'管理统计',
 	'stats'				=> 'Site statistics',//'站点统计',
 	'trend'				=> 'Trend/Stats',//'趋势统计',
-	'app_add'			=> 'Add $_G[setting][navs][5][navname]',
-	'app_management'		=> 'Manage $_G[setting][navs][5][navname]',
+	'app_add'			=> 'Add application',
+	'app_management'		=> 'Manage application',
 	'e_audio'			=> 'Audio',//'音乐',
 	'e_audio_title'			=> 'Add Audio',//'添加音乐',
 	'e_autotypeset'			=> 'Type Auto-Set',//'自动排版',
@@ -367,11 +367,11 @@ $lang = array (
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'	=> 'Sky',//'[name]天空[/name]',
+	'sky'		=> 'Sky',//'[name]天空[/name]',
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'	=> 'Cat',//'[name]猫猫[/name]',
+	'cat'		=> 'Cat',//'[name]猫猫[/name]',
 
 //---------------------------
 //static/space/t5/style.css
@@ -399,23 +399,41 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Change language',
+	'change_language'	=> 'Change language',
 
 //vot:
 	'new'		=> 'New',//'全新',
 
 //---------------------------
-// Titles from install_var
-'register'	=> 'Register',
+//vot: Titles from install_var.php, pre_common_nav table
 
-'seotitle' =>
-  array (
-    'portal'	=> 'Portal',
-    'forum'	=> 'Forum',
-    'group'	=> 'Groups',
-    'home'	=> 'Home',
-    'userapp'	=> 'Apps',
-  ),
+	'register'	=> 'Register',//'注册',
+
+	'nav_portal'	=> 'Portal',//'门户',//1,
+	'nav_forum'	=> 'Forum',//'论坛',//2,
+	'nav_group'	=> 'Groups',//'群组',//3,
+	'nav_space'	=> 'Space',//'家园',//4,
+	'nav_apps'	=> 'Applications','应用',//5,
+	'nav_plugin'	=> 'Plugins',//'插件',//6,
+	'nav_help'	=> 'Help',//'帮助',//7,
+	'nav_rank'	=> 'RankList',//'排行榜',//8,
+	'nav_stat'	=> 'Statistics',//'站点统计',
+	'nav_report'	=> 'Reports',//'举报',
+	'nav_archiver'	=> 'Archive',
+	'nav_mobile'	=> 'Mobile',//'手机版',
+	'nav_blog'	=> 'Blogs',//'日志',
+	'nav_album'	=> 'Albums',//'相册',
+	'nav_share'	=> 'Shares',//'分享',
+	'nav_doing'	=> 'Doings',//'记录',
+	'nav_friend'	=> 'Friends',//'好友',
+	'nav_thread'	=> 'Threads',//'帖子',
+	'nav_favorite'	=> 'Favorites',//'收藏',
+	'nav_magic'	=> 'Magic',//'道具',
+	'nav_medal'	=> 'Medals',//'勋章',
+	'nav_task'	=> 'Tasks',//'任务',
+	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
+	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
+//	'nav_'		=> '',//'',
 
 );
 
