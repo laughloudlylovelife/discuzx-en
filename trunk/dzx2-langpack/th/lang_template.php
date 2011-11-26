@@ -60,7 +60,7 @@ $lang = array (
   'admincp'		=> 'จัดการระบบ',
   'changestyle'		=> 'สลับรูปแบบ',
   'default'		=> 'ค่าเริ่มต้น',
-  'forum_manager'	=> 'จัดการ{$_G[setting][navs][2][navname]}',
+  'forum_manager'	=> 'จัดการฟอรั่ม',
   'go_to_mobile'	=> 'เข้าชมแบบอุปกรณ์มือถือ',
   'login_switch_invisible_mode'	=> 'เปลี่ยนสถานะเป็นออนไลน์',
   'logout'		=> 'ออกจากระบบ',
@@ -161,8 +161,8 @@ $lang = array (
   'mod_works'		=> 'สถิติการจัดการ',
   'stats'		=> 'สถิติเว็บไซต์',
   'trend'		=> 'แนวโน้มและสถิติ',
-  'app_add'		=> 'เพิ่ม$_G[setting][navs][5][navname]',
-  'app_management'	=> 'จัดการ$_G[setting][navs][5][navname]',
+  'app_add'		=> 'เพิ่มการประยุกต์ใช้งาน',
+  'app_management'	=> 'จัดการการประยุกต์ใช้งาน',
   'e_audio'		=> 'เพลง',
   'e_audio_title'	=> 'เพิ่มเพลง',
   'e_autotypeset'	=> 'โครงร่างอัตโนมัติ',
@@ -198,7 +198,7 @@ $lang = array (
   'e_attach_del'	=> 'ลบ',
   'e_attach_mediacode'	=> 'แทรกโค๊ดไฟล์แนบมีเดีย',
   'e_attach_url'	=> 'แทรกลิงค์ไฟล์แนบ',
-	'readperm'			=> 'Read Permission',//'阅读权限',
+	'readperm'			=> 'สิทธิ์ในการอ่าน',//'阅读权限',
   'update'		=> 'อับเดท',
   'none_newthread'	=> 'ไม่มีกระทู้ใดที่มีการตอบกลับใหม่',
   'author'		=> 'ผู้เขียน',
@@ -304,7 +304,7 @@ $lang = array (
   'password_security'	=> 'ความปลอดภัยรหัสผ่าน',
   'increase'		=> 'เพิ่ม',
   'friend_top'		=> 'การจัดอันดับ',
-	'connect_config_newpassword_comment'	=> 'You are currently use a QQ account was bind to the site. Here you can set up individual password, Only set up an independent password site to fill in the password so the corresponding function can use it',//'你目前使用的是QQ帐号绑定本站，你可以在这里设置独立密码，只有设置了独立密码后本站需要填写密码的相应功能才可使用',
+	'connect_config_newpassword_comment'	=> 'ขณะนี้คุณกำลังใช้บัญชีผู้ใช้ QQ ถูกผูกเข้ากับเว็บไซต์ ที่นี่คุณสามารถตั้งค่ารหัสผ่านของแต่ละบุคคลตั้งขึ้นเว็บไซต์เฉพาะรหัสผ่านที่เป็นอิสระในการกรอกรหัสผ่านเพื่อให้ทำงานที่สอดคล้องกันสามารถใช้งานได้',//'你目前使用的是QQ帐号绑定本站，你可以在这里设置独立密码，只有设置了独立密码后本站需要填写密码的相应功能才可使用',
   'email'		=> 'Email',
   'security_question'	=> 'เลือกคำถาม(ถ้ากำหนดไว้)',
   'security_question_0'	=> 'เลือกคำถาม',
@@ -367,11 +367,11 @@ $lang = array (
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'	=> 'Sky',//'[name]天空[/name]',
+	'sky'		=> 'Sky',//'[name]天空[/name]',
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'	=> 'Cat',//'[name]猫猫[/name]',
+	'cat'		=> 'Cat',//'[name]猫猫[/name]',
 
 //---------------------------
 //static/space/t5/style.css
@@ -399,23 +399,41 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Change language',
+	'change_language'	=> 'เปลี่ยนภาษา',
 
 //vot:
-	'new'		=> 'New',//'全新',
+	'new'		=> 'ใหม่',//'全新',
 
 //---------------------------
-// Titles from install_var
-'register'	=> 'สมัครสมาชิก',//'Register',
+//vot: Titles from install_var.php, pre_common_nav table
 
-'seotitle' =>
-  array (
-    'portal'	=> 'Portal',
-    'forum'	=> 'Forum',
-    'group'	=> 'Groups',
-    'home'	=> 'Home',
-    'userapp'	=> 'Apps',
-  ),
+	'register'	=> 'สมัครสมาชิก',//'注册',
+
+	'nav_portal'	=> 'พอร์ทัล',//'门户',//1,
+	'nav_forum'	=> 'ฟอรั่ม',//'论坛',//2,
+	'nav_group'	=> 'กลุ่ม',//'群组',//3,
+	'nav_space'	=> 'พื้นที่',//'家园',//4,
+	'nav_apps'	=> 'การประยุกต์ใช้งาน','应用',//5,
+	'nav_plugin'	=> 'ปลั๊กอิน',//'插件',//6,
+	'nav_help'	=> 'ช่วยเหลือ',//'帮助',//7,
+	'nav_rank'	=> 'รายชื่อลำดับที่',//'排行榜',//8,
+	'nav_stat'	=> 'สถิติ',//'站点统计',
+	'nav_report'	=> 'รายงาน',//'举报',
+	'nav_archiver'	=> 'คลัง',
+	'nav_mobile'	=> 'โทรศัพท์มือถือ',//'手机版',
+	'nav_blog'	=> 'บล็อก',//'日志',
+	'nav_album'	=> 'อัลบัม',//'相册',
+	'nav_share'	=> 'หุ้น',//'分享',
+	'nav_doing'	=> 'อารมณ์ความรู้สึก',//'记录',
+	'nav_friend'	=> 'เพื่อน',//'好友',
+	'nav_thread'	=> 'หัวข้อ',//'帖子',
+	'nav_favorite'	=> 'รายการโปรด',//'收藏',
+	'nav_magic'	=> 'มายากล',//'道具',
+	'nav_medal'	=> 'เหรียญ',//'勋章',
+	'nav_task'	=> 'งาน',//'任务',
+	'nav_sethomepage'	=> 'ตั้งเป็นหน้าโฮมเพจ',//'设为首页',
+	'nav_setfavorite'	=> 'เพิ่มในรายการโปรด',//'收藏本站',
+//	'nav_'		=> '',//'',
 
 //Do not edit copyright section, referrered to Comsenz License Agreement!
   'copyright'	=> '&copy; 2001-2011 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a> Thai Language by <a href="http://www.discuzthai.com" target="_blank">DiscuzThai.com</a>',

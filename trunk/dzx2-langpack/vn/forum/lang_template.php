@@ -3,9 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php 22717 2011-05-18 05:12:59Z monkey $
  *
  *      This file is automatically generate
  */
@@ -145,7 +144,7 @@ $lang = array (
   'forum_subforums' => 'Diễn đàn con',
   'forum_threads' => 'Chủ đề',
   'forum_todayposts' => 'Hôm nay',
-  'hotthreads_forum' => '$_G[setting][navs][2][navname] sôi động',
+  'hotthreads_forum' => 'Diễn đàn sôi động',
   'index_guests' => 'Khách',
   'index_invisibles' => 'Ẩn danh',
   'index_members' => 'Thành viên',
@@ -225,7 +224,7 @@ $lang = array (
   'post_newthreadpoll' => 'Bình chọn',
   'post_newthreadreward' => 'Thưởng',
   'post_newthreadtrade' => 'Trao đổi',
-  'recommended_groups' => 'Đề cử {$_G[setting][navs][3][navname]}',
+  'recommended_groups' => 'Đề cử Nhóm',
   'return_index' => 'Trở lại',
   'rss_subscribe_this' => 'RSS',
   'send_posts' => 'Đăng bài',
@@ -945,10 +944,10 @@ $lang = array (
   'activity_join' => 'Tham gia',
   'activity_join_audit' => 'Bạn đã tham gia hoạt động này',
   'activity_join_cancel' => 'Hủy ghi danh',
-  'activity_join_group' => 'Bấm vào đây để gia nhập {$_G[setting][navs][3][navname]}.',
+  'activity_join_group' => 'Bấm vào đây để gia nhập Nhóm.',
   'activity_need_credit' => 'Chú ý: Tham gia hoạt động này bạn sẽ bị trừ',
   'activity_new_signup' => 'Chưa chấp nhận',
-  'activity_no_member' => 'Bạn đang là thành viên của {$_G[setting][navs][3][navname]}, không thể tham gia hoạt động này.',
+  'activity_no_member' => 'Bạn đang là thành viên của Nhóm, không thể tham gia hoạt động này.',
   'activity_pay_myself' => 'Nhận trách nhiệm trả',
   'activity_paytype' => 'Phương thức trả',
   'activity_type' => 'Phân loại',

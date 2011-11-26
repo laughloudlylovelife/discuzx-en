@@ -11,8 +11,8 @@ $lang = array
 (
 	'group_normal_member' => '设为普通成员',
 	'group_goaway' => '踢出群组',
-	'group_demise_message_title' => "把{$_G[setting][navs][3][navname]}{forum}成功转让给你了。",
-	'group_demise_message_body' => "我的{$_G[setting][navs][3][navname]}{forum}成功转让给你了，[url={siteurl}forum.php?mod=group&fid={fid}]点这里查看{$_G[setting][navs][3][navname]}[/url]",
+	'group_demise_message_title' => "把群组{forum}成功转让给你了。",
+	'group_demise_message_body' => "我的群组{forum}成功转让给你了，[url={siteurl}forum.php?mod=group&fid={fid}]点这里查看群组[/url]",
 	'group_join' => '加入{groupname}群组',
 );
 

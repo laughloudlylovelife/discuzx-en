@@ -4,9 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
- *
+ *      $Id: lang_template.php 23072 2011-06-16 10:45:46Z svn_project_zhangjie $
+ *		Translate by DCV team - http://www.discuz.vn
  *      This file is automatically generate
  */
 
@@ -46,7 +45,7 @@ $lang = array (
   'faq' => 'Trợ giúp',
   'faq_search_nomatch' => 'Lỗi! không tìm được thông tin liên quan',
   'homepage' => 'Trang chủ',
-  'keyword_faq' => 'Trợ giúp liên quan tới "<span class="xi1">$keyword</span>"',
+  'keyword_faq' => 'Trợ giúp liên quan tới “<span class="xi1">$keyword</span>”',
   'open' => 'Mở',
   'search' => 'Tìm',
   'close' => 'Đóng',
@@ -61,7 +60,7 @@ $lang = array (
   'admincp' => 'Admincp',
   'changestyle' => 'Đổi giao diện',
   'default' => 'Mặc định',
-  'forum_manager' => '&nbsp; Quản lý {$_G[setting][navs][2][navname]}',
+  'forum_manager' => '&nbsp; Quản lý Diễn đàn',
   'go_to_mobile' => 'Truy cập bằng mobile',
   'login_switch_invisible_mode' => 'Đổi trạng thái',
   'logout' => 'Thoát',
@@ -162,8 +161,8 @@ $lang = array (
   'mod_works' => 'Thống kê Mod',
   'stats' => 'Thống kê',
   'trend' => 'Thống kê xu hướng',
-  'app_add' => 'Thêm $_G[setting][navs][5][navname]',
-  'app_management' => 'Quản lý $_G[setting][navs][5][navname]',
+  'app_add' => 'Thêm Trò chơi',
+  'app_management' => 'Quản lý Trò chơi',
   'e_audio' => 'Nhạc',
   'e_audio_title' => 'Chèn nhạc',
   'e_autotypeset' => 'Tự động',
@@ -400,23 +399,41 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Change language',
+	'change_language'	=> 'Change language',
 
 //vot:
 	'new'		=> 'New',//'全新',
 
 //---------------------------
-// Titles from install_var
-'register'	=> 'Đăng ký',//'Register',
+//vot: Titles from install_var.php, pre_common_nav table
 
-'seotitle' =>
-  array (
-    'portal'	=> 'Portal',
-    'forum'	=> 'Forum',
-    'group'	=> 'Groups',
-    'home'	=> 'Home',
-    'userapp'	=> 'Apps',
-  ),
+	'register'	=> 'Đăng ký',//'Register',
+
+	'nav_portal'	=> 'Portal',//'门户',//1,
+	'nav_forum'	=> 'Diễn đàn',//'Forum',//'论坛',//2,
+	'nav_group'	=> 'Nhóm',//'Groups',//'群组',//3,
+	'nav_space'	=> 'Không gian',//'Space',//'家园',//4,
+	'nav_apps'	=> 'Trò chơi',//'Applications','应用',//5,
+	'nav_plugin'	=> 'Ứng dụng',//'Plugins',//'插件',//6,
+	'nav_help'	=> 'Trợ giúp',//'Help',//'帮助',//7,
+	'nav_rank'	=> 'Xếp hạng danh sách',//'RankList',//'排行榜',//8,
+	'nav_stat'	=> 'Thống kê',//'Statistics',//'站点统计',
+	'nav_report'	=> 'Báo cáo',//'Reports',//'举报',
+	'nav_archiver'	=> 'Lưu trữ',//'Archive',
+	'nav_mobile'	=> 'Phiên bản Mobile',//'Mobile',//'手机版',
+	'nav_blog'	=> 'Blogs',//'日志',
+	'nav_album'	=> 'Albums',//'相册',
+	'nav_share'	=> 'Chia sẻ',//'Shares',//'分享',
+	'nav_doing'	=> 'Trạng thái',//'Status',//'Doings',//'记录',
+	'nav_friend'	=> 'Bạn bè',//'Friends',//'好友',
+	'nav_thread'	=> 'Bài viết',//'Threads',//'帖子',
+	'nav_favorite'	=> 'Ưa thích',//'Favorites',//'收藏',
+	'nav_magic'	=> 'Đạo cụ',//'Magic',//'道具',
+	'nav_medal'	=> 'Huy chương',//'Medals',//'勋章',
+	'nav_task'	=> 'Nhiệm vụ',//'Tasks',//'任务',
+	'nav_sethomepage'	=> 'Đặt trang chủ',//'Set as Homepage',//'设为首页',
+	'nav_setfavorite'	=> 'Đặt Bookmark',//'Add to Favorites',//'收藏本站',
+//	'nav_'		=> '',//'',
 
 );
 

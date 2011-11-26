@@ -3,9 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php 22427 2011-05-06 10:56:41Z monkey $
  *
  *      This file is automatically generate
  */
@@ -77,10 +76,10 @@ $lang = array (
   'comprehensive_overview_message' => 'Đây là thông tin tổng hợp tình hình diễn đàn(cần 2 ngày sau mới có hiệu lực).',
   'info_interactive' => 'Thông tin tương tác',
   'interactive_help_message' => '<li>Ghé thăm: Trong một ngày mỗi người ghé thăm chỉ được tính một lần.</li>
-  									<li>{$_G[setting][navs][2][navname]}:Đề cập tới bài viết mỗi ngày một chủ đề, biểu quyết, các hoạt động, khen thưởng, các cuộc tranh luận, hàng hóa và tổng số lần trả lời các chủ đề.</li>
-									<li>{$_G[setting][navs][3][navname]}:Phương tiện để tạo ra một ngày {$_G[setting][navs][3][navname]}, {$_G[setting][navs][3][navname]} chủ đề, {$_G[setting][navs][3][navname]} tổng số trả lời.</li>
-									<li>{$_G[setting][navs][4][navname]}: Đề cập đến các kỷ lục được công bố hàng ngày, đăng nhập, hình ảnh, chủ đề, các cuộc thăm dò, sự kiện, chia sẻ, và tổng số của mỗi bình luận.</li>
-									<li>Tương tác: Đề cập đến tin nhắn người sử dụng hàng ngày mỗi khác, chào hỏi, và {$_G[setting][navs][4][navname]} tổng số vị trí tương tác tương ứng.</li>',
+  									<li>Diễn đàn: Đề cập tới bài viết mỗi ngày một chủ đề, biểu quyết, các hoạt động, khen thưởng, các cuộc tranh luận, hàng hóa và tổng số lần trả lời các chủ đề.</li>
+									<li>Nhóm: Phương tiện để tạo ra một ngày nhóm, Nhóm chủ đề, Nhóm tổng số trả lời.</li>
+									<li>Không gian: Đề cập đến các kỷ lục được công bố hàng ngày, đăng nhập, hình ảnh, chủ đề, các cuộc thăm dò, sự kiện, chia sẻ, và tổng số của mỗi bình luận.</li>
+									<li>Tương tác: Đề cập đến tin nhắn người sử dụng hàng ngày mỗi khác, chào hỏi, và Không gian tổng số vị trí tương tác tương ứng.</li>',
   'member_interactive' => 'Thành viên',
   'show' => 'Xem',
   'stat_classification' => 'Phân loại',
@@ -353,7 +352,7 @@ $lang = array (
   'favorite_article' => 'Tác phẩm',
   'favorite_blog' => 'Blog',
   'favorite_forum' => 'Diễn đàn',
-  'favorite_group' => '{$_G[setting][navs][3][navname]}',
+  'favorite_group' => 'Nhóm',
   'favorite_thread' => 'Chủ đề',
   'no_favorite_yet' => 'Chưa thêm bất kì ưa thích nào',
   'select_all' => 'Chọn tất',
@@ -722,7 +721,18 @@ $lang = array (
   'unresolved' => 'Chưa giải quyết',
   'description' => 'Mô tả',
   'help' => 'Giúp đỡ',
-  'how_to_share_tips' => '<dt>Làm thế nào để chia sẻ các trang?</dt><dd>Trực tiếp điền url vào</dd><dt>Làm thế nào để chia sẻ video?</dt><dd><p>Điền URL của trang nơi mà chứa video hoàn chỉnh. (Không điền vào địa chỉ thực của file video)</p><p>Chúng tôi hỗ trợ các trang web video:</p><p>Youtube, Youku, cool 6, Mofile ....</p></dd><dt>Làm thế nào để chia sẻ âm nhạc?</dt><dd>Điền vào url dẫn tới tập tin âm nhạc. (Hỗ trợ đuôi mp3 hoặc wma)</dd><dt>Làm thế nào để chia sẻ Flash?</dt><dd>Điền vào url tập tin Flash. (Hỗ trợ đuôi swf)</dd>',
+  'how_to_share_tips' => '<dt>Làm thế nào để chia sẻ các trang?</dt>
+							<dd>Trực tiếp điền url vào</dd>
+							<dt>Làm thế nào để chia sẻ video?</dt>
+							<dd>
+								<p>Điền URL của trang nơi mà chứa video hoàn chỉnh. (Không điền vào địa chỉ thực của file video)</p>
+								<p>Chúng tôi hỗ trợ các trang web video:</p>
+								<p>Youtube, Youku, cool 6, Mofile ....</p>
+							</dd>
+							<dt>Làm thế nào để chia sẻ âm nhạc?</dt>
+							<dd>Điền vào url dẫn tới tập tin âm nhạc. (Hỗ trợ đuôi mp3 hoặc wma)</dd>
+							<dt>Làm thế nào để chia sẻ Flash?</dt>
+							<dd>Điền vào url tập tin Flash. (Hỗ trợ đuôi swf)</dd>',
   'share_description' => 'Lời dẫn kèm theo',
   'share_web_music_flash' => 'Chia sẻ trang web, âm nhạc, video, flash',
   'sharemetoo' => 'Tôi cũng chia sẻ',
@@ -1412,7 +1422,7 @@ $lang = array (
   'recount' => 'Tái kiểm phiếu',
   'select_upload_pic' => 'Hãy chọn một hình ảnh để tải lên',
   'upload_pic_tips' => '<p>Chọn hình tải lên từ máy tính. <br />Mẹo: Chọn một hình ảnh, bạn có thể tiếp tục lựa chọn các hình ảnh kế tiếp để có thể tải lên nhiều hình ảnh một lúc </p>',
-  'you_can_buy_magictools' => 'Bạn có thể mua Thẻ VIP "{$_G[setting][magics][attachsize]}" để tăng kích thước tập tin đính kèm và tải lên nhiều hơn',
+  'you_can_buy_magictools' => 'Bạn có thể mua Thẻ VIP “{$_G[setting][magics][attachsize]}” để tăng kích thước tập tin đính kèm và tải lên nhiều hơn',
   'about_space' => 'Trang liên quan',
   'bytes' => 'Byte',
   'forum_name' => 'Tên diễn đàn',
