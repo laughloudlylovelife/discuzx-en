@@ -76,10 +76,10 @@ $lang = array (
 	'comprehensive_overview_message'	=> 'Here you can see a comprehensive overview of the site statistics (need at least 2 days of functioning for the effective statistics).',//'这里看到的是站点的综合概况发展统计(需要至少统计2天后才有效)。',
 	'info_interactive'			=> 'Replies info',//'信息互动',
 	'interactive_help_message'	=> '<li>Visitors: refers to the daily number of unique visitors. If the user visited the site many times, the visitor counted only once.</li>
-					<li>{$_G[setting][navs][2][navname]}: refers to the every day post topics, voting, activities, rewards, debates, events, and the total number of thread Replies.</li>
-					<li>{$_G[setting][navs][3][navname]}: refers to the total number of every day created {$_G[setting][navs][3][navname]}, {$_G[setting][navs][3][navname]} topics, {$_G[setting][navs][3][navname]} replies.</li>
-					<li>{$_G[setting][navs][4][navname]}: refers to the daily publised doings, blogs, photos, topics, polls, events, shares, and the total number of each comment.</li>
-					<li>Interaction: refers to the daily users messages each to other, send greetings, and the total number of the {$_G[setting][navs][4][navname]} corresponding rate interaction.</li>',
+					<li>Forum: refers to the every day post topics, voting, activities, rewards, debates, events, and the total number of thread Replies.</li>
+					<li>Groups: refers to the total number of every day created groups, group topics, group replies.</li>
+					<li>Spaces: refers to the daily publised doings, blogs, photos, topics, polls, events, shares, and the total number of each comment.</li>
+					<li>Interaction: refers to the daily users messages each to other, send greetings, and the total number of Spaces corresponding rate interaction.</li>',
 	'member_interactive'	=> 'Interactions',//'互动',
 	'show'			=> 'View',//'查看',
 	'stat_classification'	=> 'Classification',//'统计分类',
@@ -125,7 +125,7 @@ $lang = array (
 	'save_pic_message_1'	=> 'Saved first',//'张大头贴,正在保存第',
 	'save_pic_message_2'	=> 'snapshots from your camera.',//'张大头贴。',
 	'save_to'		=> 'Save to',//'保存到',
-	'second'		=> 'sec.',//'秒',
+	'second'		=> 's.',//'秒',
 	'select_album_please'	=> 'Select album',//'请选择相册',
 	'select_album_type'	=> 'Select the album category',//'请选择相册分类',
 	'select_type'		=> 'Select Category',//'选择分类',
@@ -352,7 +352,7 @@ $lang = array (
 	'favorite_article'	=> 'Articles',//'文章',
 	'favorite_blog'		=> 'Blogs',//'日志',
 	'favorite_forum'	=> 'Forums',//'版块',
-	'favorite_group'	=> '{$_G[setting][navs][3][navname]}',
+	'favorite_group'	=> 'Groups',
 	'favorite_thread'	=> 'Threads',//'帖子',
 	'no_favorite_yet'	=> 'You have not added any Favorites',//'你还没有添加任何收藏',
 	'select_all'		=> 'Select all',//'全选',

@@ -56,7 +56,7 @@ $lang = array
 
 
 	'group_member_join'		=> '{actor} want to join your group <a href="forum.php?mod=group&fid={fid}" target="_blank">{groupname}</a>, please moderate him in the <a href="{url}" target="_blank">Group CP</a>',//'{actor} 加入你的群组需要审核，请到群组 <a href="{url}" target="_blank">管理后台</a> 进行审核',
-	'group_member_invite'		=> '{actor} invite you to join the group <a href="forum.php?mod=group&fid={fid}" target="_blank">{groupname}</a>, <a href="{url}" target="_blank">clike here to join now</a>',//'{actor} 邀请你加入 <a href="forum.php?mod=group&fid={fid}" target="_blank">{groupname}</a> 群组，<a href="{url}" target="_blank">点此马上加入</a>',
+	'group_member_invite'		=> '{actor} invite you to join the group <a href="forum.php?mod=group&fid={fid}" target="_blank">{groupname}</a>, <a href="{url}" target="_blank">Click here to join now</a>',//'{actor} 邀请你加入 <a href="forum.php?mod=group&fid={fid}" target="_blank">{groupname}</a> 群组，<a href="{url}" target="_blank">点此马上加入</a>',
 	'group_member_check'		=> 'You request to join the group <a href="{url}" target="_blank">{groupname}</a> was approved, please <a href="{url}" target="_blank">Click to visit</a>',//'你已经通过了 <a href="{url}" target="_blank">{groupname}</a> 群组的审核，请 <a href="{url}" target="_blank">点击访问</a>',
 	'group_member_check_failed'	=> 'Your group <a href="{url}" target="_blank">{groupname}</a> did not pass the verification',//'你没有通过 <a href="{url}" target="_blank">{groupname}</a> 群组的审核。',
 
