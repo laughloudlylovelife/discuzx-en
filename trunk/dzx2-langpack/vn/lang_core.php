@@ -1,11 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_core.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_core.php 22638 2011-05-16 06:29:59Z svn_project_zhangjie $
  */
 
 $lang = array
@@ -86,7 +85,7 @@ $lang = array
 	'title_article_favorite' => 'Bài viết yêu thích',
 	'title_all_favorite' => 'Tất cả',
 	'title_friend_list' => 'Danh sách bạn bè',
-	'title_of' => ' ',
+//	'title_of' => ' ',
 	'title_all_poll' => 'Các Khảo sát',
 	'title_we_poll' => 'Của bạn bè',
 	'title_me_poll' => 'Bình chọn của tôi',
@@ -152,7 +151,7 @@ $lang = array
 	'title_memcp_privacy' => 'Riêng tư',
 	'title_memcp_avatar' => 'Sửa avatar',
 	'title_memcp_profile' => 'Cập nhật',
-	'title_memcp_sendmail' => 'Cảnh báo',
+//	'title_memcp_sendmail' => 'Cảnh báo',
 	'title_memcp_credit' => 'Điểm',
 	'title_memcp_friend' => 'Bạn bè',
 	'title_memcp_usergroup' => 'Nhóm',
@@ -174,7 +173,7 @@ $lang = array
 	'title_ranklist_group' => 'Xếp hạng Nhóm',
 	'title_ranklist_app' => 'Xếp hạng Apps',
 	'title_ranklist_index' => 'Tổng thể',
-	'title_ranklist_index' => 'TOP',
+//	'title_ranklist_index' => 'TOP',
 	'title_search' => 'Tìm kiếm',
 	'title_topic_management' => 'Tạo chủ đề',
 	'title_portal_management' => 'Quản lí Portal',

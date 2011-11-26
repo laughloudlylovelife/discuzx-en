@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_groupthread.php by vituocgia http://we.ecms.asia/ $
+ *      Vietnamese by Translate Team www.discuz.vn
+ *      $Id: lang_groupthread.php 21128 2011-03-16 05:52:27Z zhangguosheng $
  */
 
 $lang = array

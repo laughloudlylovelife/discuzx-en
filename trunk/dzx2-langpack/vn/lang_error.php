@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_error.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_error.php 21026 2011-03-10 07:46:16Z congyushuai $
  */
 
 $lang = array
@@ -32,9 +32,9 @@ $lang = array
 	'mobile_error_end_message' => '<a href="http://{host}">{host}</a> Lỗi này cho bạn, chúng tôi xin lỗi vì sự bất tiện',
 
 	'file_upload_error_-101' => 'Tải lên không thành công! Tải lên tập tin không tồn tại hoặc không hợp pháp, xin vui lòng quay trở lại.',
-'file_upload_error_-102' => 'Tải lên không thành công! Không phải kiểu tập tin ảnh, xin vui lòng quay trở lại.',
-'file_upload_error_-103' => 'Tải lên không thành công! Không thể ghi tập tin, xin vui lòng quay trở lại.',
-'file_upload_error_-104' => 'Tải lên không thành công! Không nhận ra định dạng hình ảnh, xin vui lòng quay trở lại.',
+	'file_upload_error_-102' => 'Tải lên không thành công! Không phải kiểu tập tin ảnh, xin vui lòng quay trở lại.',
+	'file_upload_error_-103' => 'Tải lên không thành công! Không thể ghi tập tin, xin vui lòng quay trở lại.',
+	'file_upload_error_-104' => 'Tải lên không thành công! Không nhận ra định dạng hình ảnh, xin vui lòng quay trở lại.',
 );
 
 ?>

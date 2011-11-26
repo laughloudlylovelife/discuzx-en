@@ -1,68 +1,70 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_email.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_email.php 20525 2011-02-25 04:25:21Z congyushuai $
  */
 
 
 $lang = array
 (
-	'hello' => 'Xin chào',
-	'moderate_member_invalidate' => 'Không duyệt',
+	'hello' => 'Chào bạn',
+	'moderate_member_invalidate' => 'Thành viên vô hiệu',
 	'moderate_member_delete' => 'Xóa',
-	'moderate_member_validate' => 'Duyệt!',
+	'moderate_member_validate' => 'Bởi',
 
 
-	'get_passwd_subject' =>		'Trợ giúp lấy lại mật khẩu',
+	'get_passwd_subject' =>		'Trợ giúp Lấy mật khẩu',
 	'get_passwd_message' =>		'
-<p>{username}, 
-Thư được gửi bởi {bbname}.</p>
+<p>{username},
+Thư này gửi từ {bbname} .</p>
 
-<p>Bạn nhận được email thông báo này vì bạn hoặc ai đó đã sử dụng chức năng lấy lại mật khẩu trên website.</p>
+<p>Bạn nhận được tin nhắn này vì địa chỉ email này đã được dùng để đăng ký thành viên tại {bbname} </p>
 <p>
 ----------------------------------------------------------------------<br />
 <strong>Quan trọng!</strong><br />
 ----------------------------------------------------------------------</p>
 
-<p>Nếu không phải bạn là người gửi yêu cầu thay đổi mật khẩu, vui lòng bỏ qua và xóa email này. Nếu không bạn vui lòng đọc và làm theo chỉ dẫn để lấy lại mật khẩu</p>
+<p>Nếu bạn không yêu cầu đặt lại mật khẩu tại {bbname} xin vui lòng bỏ qua
+Và xóa tin nhắn này. Chỉ khi bạn cần phải lấy lại mật khẩu, cần phải tiếp tục đọc phần sau đây
+Nội dung.</p>
 <p>
 ----------------------------------------------------------------------<br />
-<strong>Hướng dẫn lấy lại mật khẩu</strong><br />
+<strong>Hướng dẫn đặt lại mật khẩu</strong><br />
 ----------------------------------------------------------------------</p>
 </p>
-Trong vòng ba ngày bạn phải click vào liên kết dưới đây để thiết đặt lại mật khẩu của bạn: <br />
+Bạn có ba ngày kể từ ngày yêu cầu đổi mật khẩu. Hãy nhấp vào liên kết dưới đây, quá hạn trên, yêu cầu đổi mật khẩu của bạn sẽ bị hủy bỏ:<br />
 
-<a href="{siteurl}member.php?mod=getpasswd&uid={uid}&id={idstring}" target="_self">{siteurl}member.php?mod=getpasswd&uid={uid}&id={idstring}</a>
+<a href="{siteurl}member.php?mod=getpasswd&amp;uid={uid}&amp;id={idstring}" target="_blank">{siteurl}member.php?mod=getpasswd&amp;uid={uid}&amp;id={idstring}</a>
 <br />
-(Nếu liên kết không mở ra trong trang mới bạn hãy tự copy bằng tay rồi dán lên thanh địa chỉ của trình duyệt)</p>
+(Nếu liên kết trên ko hoạt động, vui lòng copy nó và dán vào khung địa chỉ trình duyệt của bạn!)</p>
 
-<p>Sau khi mở trang web bạn hãy nhập mật khẩu mới, sau đó sử dụng mật khẩu mới để đăng nhập, khi đó bạn có thể thay đổi mật khẩu bất cứ khi nào..</p>
+Chú ý, người quản trị có thể sửa đổi mật khẩu giúp bạn.</p>
 
-<p>Yêu cầu được gửi từ IP {clientip}</p>
+<p>Yêu cầu gửi bởi IP: {clientip}</p>
 
 
 <p>
-Trân trọng<br />
+Trân trọng!<br />
 </p>
-<p>Đội ngũ quản trị {bbname}.
+<p>BQT {bbname}.
 {siteurl}</p>',
 
 
-	'email_verify_subject' =>	'Xác nhận địa chỉ email',
+	'email_verify_subject' =>	'Xác minh Địa chỉ Email',
 	'email_verify_message' =>	'
 <p>{username}, 
 Thư được gửi từ {bbname}.</p>
 
-<p>Bạn nhận được tin nhắn này vì bạn hoặc ai đó đã gửi yêu cầu sửa đổi email đang sử dụng, nếu bạn chưa truy cập diễn đàn hoặc không gửi email yêu cầu vui lòng bỏ qua và xóa thông báo này. Bạn không cần bỏ email thông báo hoặc làm gì cả.</p>
+<p>Bạn nhận được email này, là do bạn là Người đăng ký, hoặc đổi lại địa chỉ email tại {bbname}. Nếu như không phải bạn đăng ký tại {bbname}, xin vui lòng bỏ qua thông báo này nếu bạn thấy phiền.</p>
 <br />
 ----------------------------------------------------------------------<br />
-<strong>Chỉ dẫn kích hoạt tài khoản</strong><br />
+<strong>Hướng dẫn kích hoạt tài khoản</strong><br />
 ----------------------------------------------------------------------<br />
 
-<p>Bạn là người mới tham gia diễn đàn của chúng tôi, hoặc bạn muốn sửa đổi địa chỉ email.  Hệ thống cần xác minh địa chỉ của bạn giúp tránh bạn bị lạm dụng và tránh gửi thư rác.</p>
+<p>Nếu bạn là một người dùng mới đăng kí tại {bbname}, hoặc sửa đổi địa chỉ Email của bạn, chúng tôi cần xác minh tính hợp lệ của địa chỉ của bạn để tránh spam email hoặc bị lạm dụng.</p>
 
 <p>Bạn chỉ cần nhấn vào liên kết dưới đây để kích hoạt tài khoản: <br />
 

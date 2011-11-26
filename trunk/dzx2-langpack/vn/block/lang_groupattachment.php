@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_groupattachment.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_groupattachment.php 22411 2011-05-06 06:09:35Z zhangguosheng $
  */
 
 $lang = array
@@ -12,7 +12,7 @@ $lang = array
 	'groupattachment_name' => 'Danh sách tập tin đính kèm ',
 	'groupattachment_desc' => 'Danh sách các cuộc gọi tập tin đính kèm',
 	'groupattachment_fids' => 'Quy định nhóm',
-	'groupattachment_fids_comment' => 'Chỉ định nhóm, một sốIDXin vui lòng sử dụng dấu phẩy giữa","tách biệt nhau.',
+	'groupattachment_fids_comment' => 'Chỉ định nhóm, một sốIDXin vui lòng sử dụng dấu phẩy giữa“,”tách biệt nhau.',
 	'groupattachment_tids' => 'Xác định chủ đề',
 	'groupattachment_tids_comment' => 'Xác định chủ đềID, NhiềuIDCách nhau bằng dấu phẩy',
 	'groupattachment_gtids' => 'Nhóm loại',
@@ -30,7 +30,7 @@ $lang = array
 	'groupattachment_maxheight' => 'Chiều cao tối đa hình ảnh (pixel)',
 	'groupattachment_maxheight_comment' => 'Cài có hoặc không tự động làm giảm hoặc phóng to kích thước ảnh theo chiều cao của bộ này, 0 không có autoscale',
 	'groupattachment_threadmethod' => 'Các cuộc gọi cách tiếp nhận chuyên đề',
-	'groupattachment_threadmethod_comment' => 'Chọn "Yes" sẽ được gọi theo Phụ lục chủ đề, một màn hình hiển thị chủ đề một file đính kèm, "Không" theo một file đính kèm được gọi là',
+	'groupattachment_threadmethod_comment' => 'Chọn “Yes” sẽ được gọi theo Phụ lục chủ đề, một màn hình hiển thị chủ đề một file đính kèm, “Không” theo một file đính kèm được gọi là',
 	'groupattachment_digest' => 'Bản chất của bài lọc',
 	'groupattachment_digest_comment' => 'Thiết lập một khu vực cụ thể. Lưu ý: Chọn Tất cả hoặc Xóa tất cả đã không có bất kỳ lọc',
 	'groupattachment_digest_0' => 'Tổng chủ đề',

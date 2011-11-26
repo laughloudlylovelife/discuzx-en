@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php 21925 2011-04-18 02:58:25Z monkey $
  *
  *      This file is automatically generate
  */
@@ -33,10 +33,10 @@ $lang = array (
   'comment' => 'Bình luận',
   'comment_ranklist' => 'Bình luận',
   'hot_ranklist' => 'Nổi bật',
-  'ranklist' => '',
+  'ranklist' => 'Xếp hạng',
   'ranklist_thread_view' => 'Xem',
   'views' => 'Phổ biến:',
-  'visit_ranklist' => 'Top xem nhiều',
+  'visit_ranklist' => 'Xem xếp hạng',
   'forum' => 'Diễn đàn',
   'ranklist_forum' => 'Xếp hạng diễn đàn',
   'ranklist_forum_day_post' => 'Dài trong 24 giờ qua',
@@ -76,7 +76,7 @@ $lang = array (
   'please_input_friend_name' => 'Nhập tên người bạn',
   'price_can_not_be_higher_than_the_total' => 'Bạn điền tổng giá dự thầu không được vượt quá',
   'ranking_message_0' => 'Bạn hiện vẫn chưa lên hạng, thăng hạng chính mình, sẽ giúp cho bạn nổi bật hơn.',
-  'ranking_message_1' => 'Giá càng cao, xếp hạng càng cao, chủ đề của bạn càng được nâng cao;',
+  'ranking_message_1' => 'Giá càng cao, xếp hạng càng cao, chủ đề của bạn càng được nâng cao；',
   'ranking_message_2' => 'Chủ đề của tài khoản lên hạng được người khác xem 1 lần, thì giá {$extcredits[$creditid][title]} sẽ bớt đi 1 (mỗi lần cập nhập).',
   'ranklist_beauty' => 'Xinh gái',
   'ranklist_blog' => 'Nhật ký',

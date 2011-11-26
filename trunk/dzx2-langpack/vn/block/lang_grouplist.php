@@ -3,9 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_grouplist.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_grouplist.php 19504 2011-01-05 04:51:17Z monkey $
  */
 
 $lang = array
@@ -17,7 +16,7 @@ $lang = array
 	'grouplist_startrow' => 'Số hàng ban đầu',
 	'grouplist_startrow_comment' => 'Để thiết lập số ban đầu của các hàng, nhập các giá trị cụ thể, 0 để bắt đầu từ những dòng đầu tiên, và như vậy',
 	'grouplist_titlelength' => 'Độ dài tên',
-	'grouplist_titlelength_comment' => 'Thiết lập độ dài tối đa của tên nhóm',
+	'grouplist_titlelength' => 'Thiết lập độ dài tối đa của tên nhóm',
 	'grouplist_summarylength' => ' Độ dài mô tả',
 	'grouplist_summarylength_comment' => 'Thiết lập độ dài tối đa của nhóm giới thiệu',
 	'grouplist_orderby' => 'Phân loại theo nhóm',

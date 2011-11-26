@@ -3,8 +3,9 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_highlight.php by vituocgia http://we.ecms.asia/ $
+ * *		Translate by DCV team - http://www.discuz.vn
+
+ *      $Id: lang_highlight.php 17773 2010-11-01 09:29:31Z liulanbo $
  */
 
 $lang = array
