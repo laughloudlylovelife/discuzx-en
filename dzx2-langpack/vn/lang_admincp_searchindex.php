@@ -1,10 +1,9 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *		Translate by DCV team - http://www.discuzviet.net
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
  *      $Id: lang_admincp_searchindex.php 22627 2011-05-16 03:35:32Z monkey $
  *
  *	This file is automatically generate

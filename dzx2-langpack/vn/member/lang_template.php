@@ -4,8 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php by vituocgia http://we.ecms.asia/ $
- *
+ *      $Id: lang_template.php 22292 2011-04-28 06:33:40Z monkey $
+ *		Translate by DCV team - http://www.discuz.vn
  *      This file is automatically generate
  */
 

@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_activitylist.php by vituocgia http://we.ecms.asia/ $
+ *      Vietnamese by Translate Team www.discuz.vn
+ *      $Id: lang_activitylist.php 22074 2011-04-21 06:07:15Z zhangguosheng $
  */
 
 $lang = array
@@ -12,7 +12,7 @@ $lang = array
 	'activitylist_fids' => 'Hợp diễn đàn',
 	'activitylist_fids_comment' => 'Thiết lập được sư tham gia trong các bài viết, bạn có thể giử CTRL lựa chọn, chọn tất cả hoặc ko giới hạn',
 	'activitylist_uids' => 'Người tài trợ UID',
-	'activitylist_uids_comment' => 'Thiết lập hoạt động đầu tiên UID nhiều UID xin sử dụng dấu phẩy","tách biệt',
+	'activitylist_uids_comment' => 'Thiết lập hoạt động đầu tiên UID nhiều UID xin sử dụng dấu phẩy“,”tách biệt',
 	'activitylist_startrow' => 'Số hàng chữ ban đầu',
 	'activitylist_startrow_comment' => 'Muốn thiết lập số hàng ban đầu, xin nhập giá trị cụ thể , mở đầu bằng những dòng đầu tiên, và như thế',
 	'activitylist_items' => 'Điền dữ liệu',
@@ -24,7 +24,7 @@ $lang = array
 	'activitylist_summarylength' => 'Số lượng nội dụng văn bản ngắn của chủ đề',
 	'activitylist_summarylength_comment' => 'Chủ đề được thiết lập với các nội dung văn bản ngắn 0 sử dụng giá trị mặc định 255',
 	'activitylist_tids' => 'Xác định chủ đề',
-	'activitylist_tids_comment' => 'Hiển thị thiết lập để xác định chủ đề tid nhiều tid xin sử dụng dấu phẩy","tách biệt và lưu ý: Để trống không có lọc',
+	'activitylist_tids_comment' => 'Hiển thị thiết lập để xác định chủ đề tid nhiều tid xin sử dụng dấu phẩy“,”tách biệt và lưu ý: Để trống không có lọc',
 	'activitylist_keyword' => 'Từ khóa đề mục',
 	'activitylist_keyword_comment' => 'đặt các từ khóa trong tiêu đề, lưu ý: Để trống không có lọc sử dụng bất kì ký tự nào đại diện cho các từ khóa * để tìm kiếm từ khóa nhiều hơn hoặc có sẵn AND kết nối, nếu win32 AND unix tìm kiếm một phần, có thể sử dụng | hoặc OR kết nối , nếu win32 OR unix',
 	'activitylist_typeids' => 'Phân loại các chủ đề',

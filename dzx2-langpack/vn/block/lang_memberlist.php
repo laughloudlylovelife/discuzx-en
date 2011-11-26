@@ -3,9 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_memberlist.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_memberlist.php 20017 2011-01-28 04:30:42Z zhangguosheng $
  */
 
 $lang = array

@@ -1,11 +1,11 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp_msg.php by vituocgia http://we.ecms.asia/ $
- *
+ *      $Id: lang_admincp_msg.php 22879 2011-05-29 06:49:24Z monkey $
+ *		Translate by DCV team - http://www.discuz.vn
  *      This file is automatically generate
  */
 
@@ -31,7 +31,7 @@ $lang = array (
   'database_export_multivol_succeed' => 'Xin chúc mừng, bạn tạo thành công {volume} Sao lưu các file, sao lưu hoàn thành.<br /> {filelist}',
   'database_export_zip_succeed' => 'Sao lưu và nén dữ liệu đến máy chủ thành công <a href="{filename}">{filename}</a> ',
   'setting_update_succeed' => 'Thiết lập hiện tại cập nhật thành công ',
-  'setting_domain_http_error' => 'Không thêm "http://"、"."vào đầu hoặc"/"、"." ở cuối',
+  'setting_domain_http_error' => 'Không thêm "http://", "." vào đầu hoặc "/", "." ở cuối',
   'orders_validate_succeed' => 'Trình tự xử lý thành công ',
   'faq_list_update' => 'Trợ giúp cập nhật danh sách thành công ',
   'forums_edit_succeed' => 'Cập nhập cài đặt thành công',
@@ -141,7 +141,7 @@ $lang = array (
 
   'blockstyle_edit_succeed' => 'Chỉnh sửa các module mẫu thành công ',
   'blockstyle_create_succeed' => 'thành công tạo ra một mẫu mô-đun ',
-  'blockstyle_should_be_kept' => 'Mỗi module cần giữ lại ít nhất một thể loại',
+  'blockstyle_should_be_kept' => 'Mỗi module cần giữ lại ít nhất một thể loại',
   'blockstyle_blockclass_not_match' => 'Chọn một phong cách mới và phong cách ban đầu không thuộc về các loại cùng một mô-đun',
 
   'blog_move_succeed' => 'Di chuyển thành công đăng nhập vào thể loại nào',
@@ -304,7 +304,7 @@ $lang = array (
   'members_edit_groups_succeed' => 'người sử dụng để chỉnh sửa các nhóm người sử dụng thuộc tính thành công của',
   'members_edit_credits_succeed' => 'người sử dụng để chỉnh sửa hội nhập thành công',
   'members_edit_medals_succeed' => 'chỉnh sửa người dùng huy chương thành công',
-  'members_edit_illegal' => 'Bạn không thể cấm Nhóm Quản trị, Bạn cần <a href="{ADMINsCRIPt}?action=members&operation=search&uid={uid}&submit=yes&frames=yes" target="_blank">Chỉnh sửa</a> thành viên này ra khỏi nhóm "{grouptitle}" để tiếp tục',
+  'members_edit_illegal' => 'Bạn không thể cấm Nhóm Quản trị, Bạn cần <a href="{ADMINsCRIPt}?action=members&operation=search&uid={uid}&submit=yes&frames=yes" target="_blank">Chỉnh sửa</a> thành viên này ra khỏi nhóm “{grouptitle}” để tiếp tục',
   'members_edit_reason_invalid' => 'Bạn đã không nhập những lý do cho sự thay đổi này',
   'members_not_found' => 'chỉ định người dùng không tìm thấy',
   'members_access_succeed' => 'chỉ định các cho phép người dùng để cập nhật thành công của trang web',

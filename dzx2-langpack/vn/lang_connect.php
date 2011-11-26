@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_connect.php by vituocgia http://we.ecms.asia/ $
+ *      $Id: lang_connect.php 22869 2011-05-27 09:27:31Z fengning $
  */
 
 $lang = array

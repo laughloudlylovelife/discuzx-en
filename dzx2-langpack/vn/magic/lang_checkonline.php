@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_checkonline.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_checkonline.php 14918 2010-08-17 05:35:02Z chenchunshao $
  */
 
 $lang = array
@@ -17,7 +17,6 @@ $lang = array
 	'checkonline_online_message' => '{username} đang trực tuyến, thời gian sự kiện cuối cùng là {time}',
 	'checkonline_offline_message' => '{username} không trực tuyến',
 	'checkonline_info_noperm' => 'Có lỗi, bạn không có quyền xem IP của người này',
-
 	'checkonline_notification' => 'Có người sử dụng {magicname} để kiểm tra trạng thái của bạn',
 );
 

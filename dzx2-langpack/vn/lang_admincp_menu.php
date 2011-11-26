@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_admincp_menu.php by vituocgia http://we.ecms.asia/ $
+ *      Translate by Kyehani - discuz.vn
+ *      $Id: lang_admincp_menu.php 21679 2011-04-08 04:13:12Z congyushuai $
  */
 
 $lang = array

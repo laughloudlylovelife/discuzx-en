@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_gift.php by vituocgia http://we.ecms.asia/ $
+ *      $Id: lang_gift.php 20567 2011-02-28 02:30:15Z congyushuai $
  */
 
 $lang = array

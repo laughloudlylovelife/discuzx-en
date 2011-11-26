@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_bump.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_bump.php 7877 2010-04-14 08:36:20Z monkey $
  */
 
 $lang = array

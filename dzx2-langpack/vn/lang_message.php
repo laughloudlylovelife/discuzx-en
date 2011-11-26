@@ -1,12 +1,11 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_message.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
- *
+ *      $Id: lang_message.php 22889 2011-05-30 07:31:11Z monkey $
+ *		Translate by DCV team - http://www.discuz.vn
  *      This file is automatically generate
  */
 
@@ -14,8 +13,8 @@ $lang = array (
 
   'undefined_action' => 'Hành động không rõ',
   'to_login' => 'Bạn cần đăng nhập để tiếp tục!',
-	'profile_passwd_notmatch'	=> 'The two password do not match',//'两次输入的密码不一致，请返回。',
-	'profile_passwd_illegal'	=> 'Password is empty or contains illegal characters',//'密码空或包含非法字符',
+  'profile_passwd_notmatch' => 'Xin lỗi 2 mật khẩu không giống nhau',
+  'profile_passwd_illegal' => 'Xin lỗi mật khẩu không hợp lệ',
   'set_cover_faild' => 'Không thể thiết lập gồm cả nó',
   'attachment_nonexistence' => 'Xin lỗi, đính kèm không tồn tại.',
   'attachment_forum_nopermission' => 'Xin lỗi bạn không được cấp phép tải đính kèm, phải dùng đạo cụ.',
@@ -273,10 +272,10 @@ $lang = array (
   'grouprecommend_succeed' => 'Chiến dịch thành công ',
 
   'payonline_succeed' => 'Thanh toán thành công ',
-  'attachment_credit' => 'Tài khoản của bạn {policymsg} để tải "{filename}"',
+  'attachment_credit' => 'Tài khoản của bạn {policymsg} để tải “{filename}”',
   'attachment_yetpay' => 'Bạn đã mua tập tin đính kèm, nên có thể tải ngay',
   'attachment_buyall' => 'Mua tất cả các đính kèm ',
-  'attachment_buy' => 'Mua thành công, bắt đầu tải "{filename}"',
+  'attachment_buy' => 'Mua thành công, bắt đầu tải “{filename}”',
   'no_privilege_postimage' => 'Có lỗi, Bạn không được phép tải lên hình ảnh, <a href="home.php?mod=spacecp&ac=usergroup">Xem quyền hạn</a>',
   'no_privilege_postattach' => 'Xin lỗi, hiện tại bạn không được phép tải lên tập tin đính kèm, <a href="home.php?mod=spacecp&ac=usergroup">Xem quyền hạn</a>',
   'thread_closed' => 'Bài viết này đã đóng , không thể nhận xét!',
@@ -497,7 +496,7 @@ $lang = array (
   'modcp_ann_empty' => 'Bạn phải nhập tiêu đề và nội dung của thông báo',
   'modcp_ann_urlerror' => 'Liên kết URL không hợp lệ',
 
-  'recommend_expiration_invalid' => 'định dạng thời gian không hợp lệ, định dạng đúng"yyyy-mm-dd hh:mm"',
+  'recommend_expiration_invalid' => 'định dạng thời gian không hợp lệ, định dạng đúng“yyyy-mm-dd hh:mm”',
 
   'members_edit_succeed' => 'cập nhật thông tin người dùng thành công, hãy tiếp tục',
   'modcp_member_ban_succeed' => 'Cập nhật hồ sơ thành công',
@@ -951,9 +950,9 @@ $lang = array (
 
   'magics_attachsize_message' => 'Đã gia tăng {num}M bộ đính kèm',
 
-	'magicuse_bad_dateline' => 'Có lỗi, thời gian nhập không hợp lệ',
+  'magicuse_bad_dateline' => 'Có lỗi, thời gian nhập không hợp lệ',
 
-	'magics_friendadd_message' => 'Bạn có {num} người bạn',
+  'magics_friendadd_message' => 'Bạn có {num} người bạn',
 
   'magics_credit_message' => 'Xin chúc mừng bạn nhận được {credit}',
 

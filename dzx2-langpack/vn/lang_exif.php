@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_exif.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by Saokim999 www.traitimyenbai.net
+ *      $Id: lang_exif.php 6752 2010-03-25 08:47:54Z cnteacher $
  */
 
 $lang = array(

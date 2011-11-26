@@ -1,10 +1,10 @@
 <?php
 
-/**
+/**+++
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_notification.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_notification.php 22303 2011-04-29 02:42:08Z maruitao $
  */
 
 $lang = array
@@ -26,7 +26,7 @@ $lang = array
 	'type_task' => 'Nhiệm vụ',
 	'type_group' => 'Nhóm',
 
-    'mail_to_user' => 'Có thông báo mới',
+	'mail_to_user' => 'Có thông báo mới',
 	'showcredit' => '{actor} tặng bạn {credit} điểm lên hạng, để giúp bạn lên hạng ở <a href="home.php?mod=space&do=top" target="_blank"> bảng xếp hạng</a> thành viên',
 	'share_space' => '{actor} đã chia sẻ blog của bạn',
 	'share_blog' => '{actor} đã chia sẻ nhật ký của bạn <a href="{url}" target="_blank">{subject}</a>',
@@ -198,7 +198,8 @@ Tính đến nay, bạn đã bị cảnh báo {authorwarnings} lần, xin lưu �
 	'new_post_report' => 'Có báo cáo mới chở xử lý, <a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">Click vào đây để vào quản lý</a>. ',
 	'magics_receive' => 'Bạn nhận được công cụ do {actor} tặng cho bạn {magicname}
 <p class="summary">{actor} Nội dung: <span>{msg}</span></p>
-<p class="mbn"><a href="home.php?mod=magic" target="_blank">Quay lại Shop</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">Xem nhà kho</a></p>',
+<p class="mbn"><a href="home.php?mod=magic" target="_blank">Quay lại Shop</a>
+<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">Xem nhà kho</a></p>',
 
 );
 

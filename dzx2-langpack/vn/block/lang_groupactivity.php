@@ -3,18 +3,18 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_groupactivity.php by vituocgia http://we.ecms.asia/ $
+ *      Vietnamese by Translate Team www.discuz.vn
+ *      $Id: lang_groupactivity.php 21128 2011-03-16 05:52:27Z zhangguosheng $
  */
 
 $lang = array
 (
 	'groupactivity_fids' => 'Nhóm phát triển',
-	'groupactivity_fids_comment' => 'Chỉ định nhóm, một số ID Xin vui lòng sử dụng dấu phẩy giữa","tách biệt nhau',
+	'groupactivity_fids_comment' => 'Chỉ định nhóm, một số ID Xin vui lòng sử dụng dấu phẩy giữa“,”tách biệt nhau',
 	'groupactivity_gtids' => 'Nhóm loại',
 	'groupactivity_gtids_comment' => 'Thiết lập nhóm loại, giữ CTRL để lựa chọn nhiều, chọn tất cả hoặc không giới hạn',
 	'groupactivity_uids' => 'Nhà tài trợ UID',
-	'groupactivity_uids_comment' => 'Đặt quảng bá UID , Nhiều UID Xin vui lòng sử dụng dấu phẩy","tách biệt nhau',
+	'groupactivity_uids_comment' => 'Đặt quảng bá UID , Nhiều UID Xin vui lòng sử dụng dấu phẩy“,”tách biệt nhau',
 	'groupactivity_startrow' => 'Số hàng ban đầu',
 	'groupactivity_startrow_comment' => 'Để thiết lập số ban đầu của các hàng, nhập các giá trị cụ thể0 bắt đầu từ những dòng đầu tiên, và như vậy',
 	'groupactivity_items' => 'Điều số hiển thị dữ liệu',
@@ -26,7 +26,7 @@ $lang = array
 	'groupactivity_summarylength' => 'Số lượng các nội dung văn bản ngắn của chủ đề',
 	'groupactivity_summarylength_comment' => 'Thiết lập các chủ đề của số lượng các nội dung văn bản ngắn,0 Để sử dụng giá trị mặc định 255',
 	'groupactivity_tids' => 'Xác định chủ đề',
-	'groupactivity_tids_comment' => 'Để xác định chủ đề hiển thị thiết lập tid , Nhiều tid Xin vui lòng sử dụng dấu phẩy","Tách biệt nhau. Lưu ý: Để trống không có lọc',
+	'groupactivity_tids_comment' => 'Để xác định chủ đề hiển thị thiết lập tid , Nhiều tid Xin vui lòng sử dụng dấu phẩy“,”Tách biệt nhau. Lưu ý: Để trống không có lọc',
 	'groupactivity_keyword' => 'Từ khóa đề mục',
 	'groupactivity_keyword_comment' => 'Đặt tiêu đề chứa các từ khoá. Lưu ý: Để trống không có bộ lọc; Sử dụng ký tự đại diện các từ khoá *; Phù hợp nhiều từ khoá, có thể được không gian AND Kết nối. Nếu win32 AND unix; Phù hợp một hoặc nhiều từ khóa có thể được sử dụng | 或 OR Kết nối. Nếu win32 OR unix',
 	'groupactivity_typeids' => 'Phân loại Chủ đề',

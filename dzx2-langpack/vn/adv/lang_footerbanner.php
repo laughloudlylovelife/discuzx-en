@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_footerbanner.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_footerbanner.php 19237 2010-12-23 04:27:46Z monkey $
  */
 
 $lang = array
@@ -22,7 +22,7 @@ $lang = array
 	'footerbanner_position_middle' => 'Giữa',
 	'footerbanner_position_down' => 'Cuối',
 	'footerbanner_category' => 'Đặt các kênh cổng thông tin',
-	'footerbanner_category_comment' => 'Thiết lập các kênh quảng cáo phân loại, khi quảng cáo bao gồm trong phạm vi của các "cổng" hợp lệ',
+	'footerbanner_category_comment' => 'Thiết lập các kênh quảng cáo phân loại, khi quảng cáo bao gồm trong phạm vi của các “cổng” hợp lệ',
 );
 
 ?>

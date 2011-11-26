@@ -3,9 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_google.php by vituocgia http://we.ecms.asia/ $
- *	Modified by Valery Votintsev at sources.ru
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_google.php 14918 2010-08-17 05:35:02Z chenchunshao $
  */
 
 $lang = array
@@ -24,8 +23,6 @@ $lang = array
 	'google_default_1' => 'Tìm kiếm',
 	'google_client' => 'Tìm kiếm liên ID',
 	'google_client_comment' => 'Nếu bạn tham gia Tìm kiếm Google,nơi bạn có thể điền ID',
-// Added by vot
-	'google_lang_ru'	=> 'Russian',//'俄语',
 );
 
 ?>

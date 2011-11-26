@@ -3,8 +3,8 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_subnavbanner.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_subnavbanner.php 19237 2010-12-23 04:27:46Z monkey $
  */
 
 $lang = array
@@ -17,7 +17,7 @@ $lang = array
 	'subnavbanner_groups' => 'Nhóm thành viên',
 	'subnavbanner_groups_comment' => 'Chọn chuyên mục nhóm để quảng cáo hiển thị',
 	'subnavbanner_category' => 'Đặt các kênh cổng thông tin',
-	'subnavbanner_category_comment' => 'Thiết lập các kênh quảng cáo phân loại, khi quảng cáo bao gồm trong phạm vi của các "cổng" hợp lệ',
+	'subnavbanner_category_comment' => 'Thiết lập các kênh quảng cáo phân loại, khi quảng cáo bao gồm trong phạm vi của các “cổng” hợp lệ',
 );
 
 ?>

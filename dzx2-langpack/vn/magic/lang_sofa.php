@@ -3,11 +3,9 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
- *      $Id: lang_sofa.php by vituocgia http://we.ecms.asia/ $
+ *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_sofa.php 8067 2010-04-16 03:14:14Z monkey $
  */
-
-//SOFA = Soft Out of Focus Area  (i.e. Drop from Top)
 
 $lang = array
 (
