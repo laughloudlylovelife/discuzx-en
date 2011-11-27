@@ -241,7 +241,7 @@ class Search {
 			$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"member.php?mod=logging&action=login\">".lang('template', 'activation')."</a>\n";
 			$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"member.php?mod=logging&action=logout&formhash={FORMHASH}\">".lang('template', 'logout')."</a>\n";
 		} else {
-			$rightHtmlCode .= "\t<a href=\"member.php?mod=".$_G['setting']['regname']."\" class=\"noborder\">".$_G['setting']['reglinkname']."</a>\n";
+/*vot*/			$rightHtmlCode .= "\t<a href=\"member.php?mod=".$_G['setting']['regname']."\" class=\"noborder\">".lang('template', 'register')."</a>\n";
 			$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"member.php?mod=logging&action=login\">".lang('template', 'login')."</a>\n";
 		}
 		$rightHtmlCode .= "\t</p>\n";
