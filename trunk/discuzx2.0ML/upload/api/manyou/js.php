@@ -197,7 +197,7 @@ class Search {
 		$leftHtmlCode .= '<p id="return-homepage"><a href="'.(!empty($_G['setting']['defaultindex']) ? $_G['setting']['defaultindex'] : 'forum.php').'">' . lang('home/template', 'return_homepage') . '</a></p>' . "\n";
 		$leftHtmlCode .= "<ul id=\"navs-menu\">\n";
 		foreach($_G['setting']['navs'] as $navsid => $nav) {
-			$nav['nav'] = '<li ' . $nav['nav'] . '></li>';
+			$nav['nav'] = '<li ' . $nav['nav'] . '>' .$nav['navname'].'</a></li>';
 			if($nav['available']) {
 				if($navsid == 6 && !empty($_G['setting']['plugins']['jsmenu'])) {
 					$leftHtmlCode .= "\t$nav[nav]\n";
@@ -230,7 +230,7 @@ class Search {
 				$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"portal.php?mod=portalcp\" target=\"_blank\">".lang('template', 'portal_manage')."</a>\n";
 			}
 			if($_G['uid'] && $_G['adminid'] > 1) {
-				$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"forum.php?mod=modcp&fid=$_G[fid]\" target=\"_blank\">".$_G['setting']['navs']['2']['navname'].lang('template', 'manage')."</a>\n";
+/*vot*/				$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"forum.php?mod=modcp&fid=$_G[fid]\" target=\"_blank\">".$_G['setting']['navs']['2']['navname']. ' ' .lang('template', 'manage')."</a>\n";
 			}
 			if($_G['uid'] && ($_G['adminid'] == 1 || $_G['member']['allowadmincp'])) {
 				$rightHtmlCode .= "\t<span class=\"pipe\">|</span><a href=\"admin.php\" target=\"_blank\">".lang('template', 'admincp')."</a>\n";

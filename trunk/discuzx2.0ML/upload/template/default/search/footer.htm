@@ -33,7 +33,7 @@
 <!-- vot --><em>&copy; 2001-2011 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></em>, <strong>MultiLingual version</strong> by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a>
 	<span class="pipe">|</span>
 	<!--{loop $_G['setting']['footernavs'] $nav}--><!--{if $nav['available'] && ($nav['type'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1)) ||
-			!$nav['type'] && ($nav['id'] == 'stat' && $_G['group']['allowstatdata'] || $nav['id'] == 'report' && $_G['uid'] || $nav['id'] == 'archiver'))}-->$nav[code]<span class="pipe">|</span><!--{/if}--><!--{/loop}-->
+			!$nav['type'] && ($nav['id'] == 'stat' && $_G['group']['allowstatdata'] || $nav['id'] == 'report' && $_G['uid'] || $nav['id'] == 'archiver'))}-->{$nav[code]}{$nav[navname]}</a><span class="pipe">|</span><!--{/if}--><!--{/loop}-->
 	<strong><a href="$_G['setting']['siteurl']" target="_blank">$_G['setting']['sitename']</a></strong>
 	<!--{if $_G['setting']['icp']}-->( <a href="http://www.miibeian.gov.cn/" target="_blank">$_G['setting']['icp']</a> )<!--{/if}-->
 	<!--{hook/global_footerlink}-->

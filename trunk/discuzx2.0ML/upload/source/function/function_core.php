@@ -518,9 +518,42 @@ function checktplrefresh($maintpl, $subtpl, $timecompare, $templateid, $cachefil
 	return FALSE;
 }
 
+//vot Replace default navigation links with national language values
+function nav_language() {
+	global $_G;
+	$navtypes = array('navs','footernavs','spacenavs','mynavs','topnavs');
+	foreach($navtypes AS $type) {
+		if($type=='topnavs') {
+ 			$navs = $_G['setting'][$type][0];
+		} else {
+			$navs = $_G['setting'][$type];
+		}
+		foreach($navs AS $nav) {
+			if($nav['id']) {
+				if($type=='topnavs') {
+					$_G['setting'][$type][0][$nav['id']]['navname'] = lang('template','nav_'.$nav['id']);
+				} else {
+					$_G['setting'][$type][$nav['id']]['navname'] = lang('template','nav_'.$nav['id']);
+				}
+			}
+		}
+	}
+//DEBUG
+//echo "<pre>";
+//echo "lng=";
+//print_r($_G['language']);
+//print_r($_G['setting']['navs']);
+//print_r($_G['setting']['topnavs']);
+//print_r($_G['setting']['footernavs']);
+//print_r($_G['setting']['mynavs']);
+//print_r($_G['setting']['spacenavs']);
+//echo "</pre>";
+}
+
 function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primaltpl='') {
 	global $_G;
 
+/*vot*/	nav_language(); // Localize Navigation
 	static $_init_style = false;
 	if($_init_style === false) {
 		$discuz = & discuz_core::instance();
