@@ -8,7 +8,7 @@ body { background: #FCFAF0 url(bgimg.jpg) no-repeat 50% 0; }
 #nv { background-color: #FE9500; background-image: url(nv.png); }
 	#nv li, #nv li a:hover, #nv li.hover a, #nv li.hover a:hover { background-image: url(nv_a.png) !important; }
 	#nv li.a { background-color: #DF3200; }
-/*vot*/	#qmenu { background-image: url(qmenu.png); }
+	#qmenu { background-image: url(../t1/qmenu.png); }
 #scbar, #scbar_form, .scbar_icon_td, .scbar_txt_td, .scbar_type_td, .scbar_btn_td { background-image: url(search.png); }
 #scbar { border-color: #FC6; }
 
