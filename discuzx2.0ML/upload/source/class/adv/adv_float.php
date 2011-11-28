@@ -97,6 +97,7 @@ class adv_float {
 	}
 
 	function evalcode() {
+/*vot*/		$l_close = lang('template','close');
 		return array(
 			'check' => '
 			if($params[2] != $parameter[\'position\']
@@ -107,7 +108,7 @@ class adv_float {
 				$checked = false;
 			}',
 			'create' => '
-			$adcode = empty($_G[\'cookie\'][\'adclose_\'.$coupleadid]) ? $codes[$adids[array_rand($adids)]].\'<br /><a href="javascript:;" onclick="setcookie(\\\'adclose_\'.$coupleadid.\'\\\', 1, 86400);this.parentNode.style.display=\\\'none\\\'"><img src="\'.STATICURL.\'image/common/ad_close.gif" /></a>\' : \'\';
+/*vot*/			$adcode = empty($_G[\'cookie\'][\'adclose_\'.$coupleadid]) ? $codes[$adids[array_rand($adids)]].\'<br /><a href="javascript:;" title="'.$l_close.'" onclick="setcookie(\\\'adclose_\'.$coupleadid.\'\\\', 1, 86400);this.parentNode.style.display=\\\'none\\\'"><img src="\'.STATICURL.\'image/common/ad_close.gif" /></a>\' : \'\';
 			'
 		);
 	}
