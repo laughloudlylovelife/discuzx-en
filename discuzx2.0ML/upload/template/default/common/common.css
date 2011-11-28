@@ -574,7 +574,7 @@ Note on the CSS Hack:
 		#toptb a { float: left; padding: 0 4px; height: 24px; }
 		#toptb a.showmenu { padding-right: 15px; }
 		#toptb a.hover { background-color: #FFF; }
-		#toptb .pipe { float: left; display: none; }
+/*vot*/		#toptb .pipe { float: left;}/* display: none; */
 	#hd { border-bottom: {HEADERBORDER} solid {SPECIALBORDER}; {HEADERBGCODE} }
 		#hd .wp { padding: 10px 0 0; }
 			#diy-tg { width: 55px; background: url({STATICURL}image/diy/panel-toggle.png) no-repeat 100% 1px; text-indent: -9999px; overflow: hidden; }

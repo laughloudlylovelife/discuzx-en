@@ -200,7 +200,7 @@ Welcome to {$_G[setting][bbname]}
 $_G[siteurl]',
 
 
-	'moderate_member_subject'	=> 'Audit results to inform the user','用户审核结果通知',
+	'moderate_member_subject'	=> 'Audit results to inform the user',//'用户审核结果通知',
 	'moderate_member_message'	=> '<p>{username},
 This letter was sent from the {bbname}.</p>
 <p>You have received this message, because of every new user registration

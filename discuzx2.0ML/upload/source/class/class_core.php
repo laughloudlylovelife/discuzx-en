@@ -271,7 +271,7 @@ class discuz_core {
 //echo "Cookie lang=",$lng,"<br>";
 		}
 
-		// check if valid from GET
+		// check if the language from GET is valid
 		if(isset($this->var['gp_language'])) {
 			$tmp = strtolower($this->var['gp_language']);
 			if(isset($this->var['config']['languages'][$tmp])) {
