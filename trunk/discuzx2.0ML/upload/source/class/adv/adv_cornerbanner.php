@@ -105,7 +105,8 @@ class adv_cornerbanner {
 			'create' => '
 				$adid = $adids[array_rand($adids)];
 				$aniscript = $parameter[\'animator\'] ? \'<script type="text/javascript">_attachEvent(window, \\\'load\\\', function () {var ad_corner_obj = $(\\\'ad_corner_close\\\').parentNode,ad_corner_height = ad_corner_obj.clientHeight,ad_corner_hi=0,ad_corner_si=setInterval(function () { ad_corner_obj.style.visibility=\\\'visible\\\';ad_corner_obj.style.overflow=\\\'hidden\\\';ad_corner_obj.style.height=ad_corner_hi+\\\'px\\\';ad_corner_hi+=10;if(ad_corner_height<ad_corner_hi) {ad_corner_obj.style.overflow=\\\'visible\\\';clearInterval(ad_corner_si);}}, 1);}, document);</script>\' : \'\';
-				$adcode = empty($_G[\'cookie\'][\'adclose_\'.$adid]) ? \'<p class="close" id="ad_corner_close" onclick="setcookie(\\\'adclose_\'.$adid.\'\\\', 1, 86400);this.parentNode.style.display=\\\'none\\\'"><a href="javascript:;"><img src="\'.STATICURL.\'image/common/ad_close.gif" /></a></p>\'.$codes[$adid].$aniscript : \'\';
+/*vot*/				$l_close = lang('template','close');
+/*vot*/				$adcode = empty($_G[\'cookie\'][\'adclose_\'.$adid]) ? \'<p class="close" id="ad_corner_close" onclick="setcookie(\\\'adclose_\'.$adid.\'\\\', 1, 86400);this.parentNode.style.display=\\\'none\\\'"><a href="javascript:;" title="$l_close"><img src="\'.STATICURL.\'image/common/ad_close.gif" /></a></p>\'.$codes[$adid].$aniscript : \'\';
 				$extra = \'style="\'.($parameters[$adid][\'height\'] ? \'line-height:\'.$parameters[$adid][\'height\'].\'px;height:\'.$parameters[$adid][\'height\'].\'px\' : \'\').($parameter[\'animator\'] ? \';visibility:hidden\': \'\').\'"\';
 			',
 		);
