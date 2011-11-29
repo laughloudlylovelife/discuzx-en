@@ -17,8 +17,12 @@
 		<!--{/if}-->
 
 		<div id="toptb" class="cl">
-			<!--{if $_G['uid']}-->
-				<div class="y">
+			<div class="y">
+
+				<!-- vot Multi-Lingual -->
+				<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}"><img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+
+				<!--{if $_G['uid']}-->
 					<a href="home.php?mod=space&uid=$_G[uid]" class="xw1" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a>
 					<a href="javascript:;" id="myspace" class="showmenu cur1" onmouseover="showMenu(this.id);">{lang my_nav}</a>
 					<!--{hook/global_usernav_extra1}-->
@@ -31,24 +35,34 @@
 					<!--{hook/global_usernav_extra2}-->
 					<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
 					<!--{if $space['self'] && $do == 'index'}--><a id="diy-tg" href="home.php?mod=space&diy=yes" title="{lang dress_space}">DIY</a><!--{/if}-->
-				</div>
-			<!--{elseif !empty($_G['cookie']['loginuser'])}-->
-				<div class="y">
+				<!--{elseif !empty($_G['cookie']['loginuser'])}-->
 					<a id="loginuser" class="xw1">$_G['cookie']['loginuser']</a>
 					<a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
 					<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
-				</div>
-			<!--{else}-->
-				<div class="y">
+				<!--{else}-->
 					<a href="member.php?mod={$_G[setting][regname]}">{lang register}</a>
 					<a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang login}</a>
-				</div>
-			<!--{/if}-->
+				<!--{/if}-->
+			</div>
 			<div class="z">
 				<a href="./" title="$_G['setting']['bbname']" class="xw1">$_G['setting']['bbname']</a>
 				<a href="home.php?mod=space&do=home" id="navs" class="showmenu" onmouseover="showMenu(this.id);">{lang return_homepage}</a>
 			</div>
 		</div>
+
+
+		<!-- vot Multi-Lingual -->
+		<div id="lslct_menu" class="cl p_pop" style="display: none; width:120px;">
+
+			<!--{loop $_G[config][languages] $lng $lngarray}-->
+
+			<a href="javascript:;" onclick="setlang('$lng')">
+				<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[title]}
+			</a>
+			<!--{/loop}-->
+		</div>
+
+
 		<!--{if $space['status'] == -1 && $_G['adminid'] == 1 }-->
 			<p class="ptw xw1 xi1 hm"><img src="{IMGDIR}/locked.gif" alt="Locked" class="vm" /> {lang message_banned}</p>
 		<!--{/if}-->
