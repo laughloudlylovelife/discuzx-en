@@ -157,7 +157,7 @@ $lang = array (
 	'no_group_create_now'		=> 'You have not created groups, <a href="forum.php?mod=group&action=create">Create right now</a>',//'你还没创建群组，<a href="forum.php?mod=group&action=create">现在创建</a>',
 	'no_group_join'			=> 'You have not joined any group, <a href="group.php?mod=index">Look for groups</a>.',//'你还没有加入任何群组，<a href="group.php?mod=index">找喜欢的群组</a>。',
 	'no_related_posts'		=> 'No related posts.',//'还没有相关的帖子。',
-	'somebody_group'		=> '\s groups',//'的群组',
+	'somebody_group'		=> '\'s groups',//'的群组',
 	'group_do_not_push'		=> 'not recommended',//'不推荐',
 	'copy'				=> 'Copy',//'复制',
 	'create_on'			=> 'Created at',//'创建于',
