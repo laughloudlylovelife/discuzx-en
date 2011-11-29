@@ -519,3 +519,8 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.mbm { margin-bottom: 10px !important; }
 	.mtw { margin-top: 20px !important; }
 	.mbw { margin-bottom: 20px !important; }
+
+/*vot*/
+/* pop-up menu and pop-up window */
+.p_pop {line-height: 18px; padding: 4px; border: 1px solid #999; min-width: 60px; border-color: #333; background: #FFF; box-shadow: 1px 2px 2px rgba(0,0,0,0.3); }
+.p_pop a { position: relative; display: block; text-align:left; padding: 3px 5px; border-bottom: 1px solid #CCF; white-space: nowrap; }

@@ -26,23 +26,50 @@ $admincp = lang('admincp');
 
 require './source/admincp/admincp_menu.php';
 $basescript = ADMINSCRIPT;
+
+//vot Multi-Lingual
+$change_language = cplang('change_language');
+$lang_list='';
+foreach($_G['config']['languages'] AS $lng => $lngarray) {
+  $lang_list .= '	<a href="javascript:;" onclick="setlang(\''.$lng.'\')">
+	<img src="'.$_G[siteroot].'source/language/'.$lng.'/'.$lngarray['icon'].'"/> '.$lngarray['title'].'
+      	</a>'."\n";
+}
+
 echo <<<EOT
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{$_G[langdir]}"><head>
 <title>$title</title>
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta content="Comsenz Inc." name="Copyright" />
 <link rel="stylesheet" href="static/image/admincp/admincp.css?{$_G[style][verhash]}" type="text/css" media="all" />
+
+<!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
+<script type="text/javascript" src="{$_G[langurl]}lang_js.js?{$_G[style][verhash]}"></script>
+
+<script type="text/JavaScript">
+var admincpfilename = '$basescript', IMGDIR = '$IMGDIR', STYLEID = '$STYLEID', VERHASH = '$VERHASH', IN_ADMINCP = true, ISFRAME = $frame, STATICURL='static/', SITEURL = '$_G[siteurl]', JSPATH = '{$_G[setting][jspath]}';
+</script>
 <script src="static/js/common.js?{$_G[style][verhash]}" type="text/javascript"></script>
 </head>
 <body style="margin: 0px" scroll="no">
 <div id="append_parent"></div>
+
+      <!-- vot Multi-Lingual -->
+      <div id="lslct_menu" class="cl p_pop" style="position:fixed;display: none; width:120px;">
+      $lang_list
+      </div>
+
 <table id="frametable" cellpadding="0" cellspacing="0" width="100%" height="100%">
  <tr>
   <td colspan="2" height="90">
    <div class="mainhd">
     <a href="admin.php?action=index" class="logo">Discuz! $admincp</a>
     <div class="uinfo" id="frameuinfo">
+
+      <!-- vot Multi-Lingual -->
+      <p><a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="$change_language"><img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>&nbsp;</p>
+
       <p>$header_welcome, $cpadmingroup <em>{$_G['member']['username']}</em> [<a href="$basescript?action=logout" target="_top">$header_logout</a>]</p>
       <p class="btnlink"><a href="index.php" target="_blank">$header_bbs</a></p>
     </div>

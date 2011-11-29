@@ -1900,7 +1900,18 @@ function searchFocus(obj) {
 
 //vot: MultiLingual support
 function setlang(lang) {
-	$F('_setlang', arguments);
+//DEBUG alert(url);
+	var url = document.location.href;
+	var anchorpos = url.indexOf('#');
+	var anchor = '';
+	if(anchorpos != -1) {
+		anchor = url.substr(anchorpos);
+		url = url.substr(0, anchorpos);
+	}
+	url += (url.indexOf('?') != -1) ? '&' : '?';
+	url += 'language='+lang;
+	url += anchor;
+	document.location.href=url;
 }
 
 function extstyle(css) {
