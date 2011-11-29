@@ -25,9 +25,9 @@ $lang = array (
 	'group_name_empty'			=> 'الرجاء قم بادخال اسم المجموعة.',//'请填写群组名称。',
 	'group_name_exist'			=> 'المجموعة موجودة مسبقا, قم بتغيير اسم المجوعة.',//'群组名称已经存在，请修改。',
 	'group_admin_noallowed'			=> 'لا يمكنك ادارة هذه المجوعة.',//'您无权限管理此群组。',
-	'group_name_failed'		=> 'Group name contains disabled words',//'{_G/setting/navs/3/navname}名称含有敏感词语',
+	'group_name_failed'		=> 'اسم المجموعة يحتوي على حروف غير صالحة.',//'群组名称含有敏感词语',
 	'group_category_empty'			=> 'الرجاء قم بتحديد قسم المجموعة.',//'请选择群组分类。',
-	'group_description_failed'	=> 'The group description contains disabled words',//'{_G/setting/navs/3/navname}简介含有敏感词语',
+	'group_description_failed'	=> 'وصف المجموعة يحتوي على حروف غير صالحة',//'{_G/setting/navs/3/navname}简介含有敏感词语',
 	'group_setup_succeed'			=> 'تم تحديث اعدادت المجموعة بنجاح.',//'群组设置成功更新。',
 	'postcomment_closed'		=> 'التعليقات معطلة',//'点评功能已关闭',
 	'group_nopermission'			=> 'مجموعتك ({grouptitle}) غير مسموح لها لاجراء العملية.',//'您所在的用户组({grouptitle})无法进行此操作。',
@@ -220,7 +220,7 @@ $lang = array (
 	'admin_cpanel_noaccess'			=> 'لا يمكنك الدخول للوحة ادارة المشرفين, يرجى العودة',//'您无权访问管理面板，请重新登录站点，然后重试',
 	'admin_cpanel_locked'			=> 'عذراً, عند إدخال كلمة مرور خاطئة عدة مرات، لوحة الإدارة حظر مؤقتا، و أنت غير قادر دخول لوحة الادارة.<br />بعد 30 دقيقة , سيتم ازالة الحظر على لوحة الادارة',//'对不起，由于您多次输入错误密码，所以管理面板暂时锁定，您现在无法进入管理面板。<br />30 分钟以后，锁定会自动解除',
 
-	'portal_status_off'			=> 'Sorry, the portal feature is not open',//'抱歉，门户功能尚未开启',
+	'portal_status_off'			=> 'عذراً, المجلة مغلقة',//'抱歉，门户功能尚未开启',
 
 	'no_privilege_my_app_status'	=> 'عذراً, هذا المنتدى اغلق هذه الخاصية.',//'对不起，当前站点已经关闭了用户多应用服务。',
 
@@ -285,7 +285,7 @@ $lang = array (
   'replynotice_success_1'	=> 'تم تعيين الرئيسية بنجاح',//'接收设置成功 ',
   'replynotice_success_0'	=> 'تم الغاء الرئيسية بنجاح',//'取消设置成功 ',
   'replynotice_error'	=> 'عذراًً, اعدادات اشعار الرد فشلت, الموضوع غير موجود',//'
-	'no_privilege_indexheats'		=> 'Sorry, you do not have permission to remove forum hot item',//'抱歉，您没有权限删除论坛热点项目',
+	'no_privilege_indexheats'		=> 'عذراً, ليس لديك صلاحيات لفعل ذلك',//'抱歉，您没有权限删除论坛热点项目',
 	'forum_nopermission'		=> 'هذا المنتدى فقط لاعضاء محددين.',//'本版块只有特定用户组可以访问。',
 	'thread_poll_invalid'			=> 'انت لم تختار الاجراء/العملية, يرجى العودة.',//'您没有选择投票选项，请返回修改。',
 	'poll_not_found'	=> 'التصويت غير موجود',//'投票未找到',
@@ -721,7 +721,7 @@ $lang = array (
   'pm_onlyacceptfriend_error'	=> 'الاجراء خاطئ',//'抱歉，您的操作有误',
   'do_success_pm'	=> 'تمت العملية بنجاح ',//'短消息设置成功 ',
   'pm_report_error_nome'	=> 'لا يمكنك التبليغ عن رسائلك',//'您不能举报自己的短消息或公共群发短消息',
-  'pm_report_error_nopmreportuser'	=> 'عذراًً, you have not specified a short message informants',//'抱歉，您尚未指定短消息举报人',
+  'pm_report_error_nopmreportuser'	=> 'عذراًً, لا يوجد مخبري عن رسالة قصيرة',//'抱歉，您尚未指定短消息举报人',
   'pm_ignore_error_nopm'	=> 'عذراًً, العضو المحدد غير موجود',//'抱歉，您指定的用户不存在',
   'pm_kickmember_error_nopm'	=> 'عذراًً, العضو الذي تريد طرده غير موجود',//'抱歉，您要踢除的用户不存在',
   'pm_appendkmember_error_nopm'	=> 'عذراًً, انت تريد اضافة عضو غير موجود',//'抱歉，您要添加的用户不存在',
@@ -789,7 +789,7 @@ $lang = array (
 	'admin_merge_nonexistence'	=> 'رقم الموضوع (tid) غير موجود.',//'主题 ID (tid) 不存在。',
 	'admin_merge_invalid'		=> 'الرجاء قم باختيار موضوع اخر لدمجه.',//'请选择其他主题进行合并。',
 
-              'recommend_group_invalid'	=> 'عذراً, your have selected a topic recommended to forum',
+              'recommend_group_invalid'	=> 'عذراً, لقد قمت بتحديد موضوع مستحسن لقسم',
 	'admin_nonexistence'		=> 'انت لم تحدد موضوع.',//'您没有选择操作项目。',
                'no_privilege_stickthread'	=> 'عذراً, انت لا تملك صلاحيات تثبيت الموضوع',//'抱歉，您没有权限设置主题置顶',
   'no_privilege_highlightthread'	=> 'عذراً, انت لا تملك صلاحيات تمييز عنونا الموضوع',//'抱歉，您没有权限设置主题高亮',
@@ -827,7 +827,7 @@ $lang = array (
   'no_privilege_stickreply'	=> 'عذراً, لا تملك صلاحيات تثبيت رد',
 	'admin_stickreply_invalid'	=> 'المشاركات المطلوبة غير موجودة في الموضوع',//'目标帖子不存在或者为主题',
 
-	'no_privilege_warnpost'		=> 'Sorry, you do not have permission to warn this post',//'抱歉，您没有权限警告此主题',
+	'no_privilege_warnpost'		=> 'عذراً, ليس لديك صلاحيات لتحذير المشاركة',//'抱歉，您没有权限警告此主题',
 	'admin_warn_invalid'		=> 'انت لم تحدد اي مشاركة ليتم تحذيرها.',//'您没有选择要警告的作者的帖子。',
 	'admin_warn_nopermission'	=> 'لا يمكنك تحذير هذا الكاتب.',//'您无权警告该作者。',
 
@@ -859,7 +859,7 @@ $lang = array (
 	'forum_permforum_nopermission'			=> 'انت بحاجة للوصول الى الشروط الواردة في الأسفل للوصول إلى هذا المنتدى </p></div><div><p><b>الشروط: </b><br />&nbsp;&nbsp;&nbsp;{formulamessage}<br /><b>معلوماتك: </b>{usermsg} ',//'您需要满足以下条件才可访问这个版块</p></div><div><p><b>访问条件: </b><br />&nbsp;&nbsp;&nbsp;{formulamessage}<br /><b>您的信息: </b>{usermsg} ',
 	'forum_permforum_nopermission_custommsg'	=> '</p></div><div><p>{formulamessage} ',//'</p></div><div><p>{formulamessage} ',
 	'viewperm_none_nopermission'		=> 'عذراً, لا يمكنك مشاهدة هذا المنتدى , الرجاء  <a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">الضغط هنا لعرض التفاصيل</a></p></div><div>',//'对不起，您无权访问该版块，详细请<a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">点击这里查看</a></p></div><div>',
-	'viewperm_upgrade_nopermission'		=> 'عذراً, انت تحتاج لترقية مجموعتك لمشاهدة المنتدى, الرجاء <a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank"> الضغط هنا لعرض التفاصيل </a></p></div><div><p><b>المجموعات المسموحة لها:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}','对不起，您需要升级您所在的用户组后才能访问该版块，详细请<a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">点击这里查看</a></p></div><div><p><b>有权访问的用户组为:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',
+	'viewperm_upgrade_nopermission'		=> 'عذراً, انت تحتاج لترقية مجموعتك لمشاهدة المنتدى, الرجاء <a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank"> الضغط هنا لعرض التفاصيل </a></p></div><div><p><b>المجموعات المسموحة لها:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',//'对不起，您需要升级您所在的用户组后才能访问该版块，详细请<a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">点击这里查看</a></p></div><div><p><b>有权访问的用户组为:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',
 	'viewperm_login_nopermission'		=> 'عذراً, تحتاج الى تسجيل الدخول لرؤية المنتدى.',//'对不起，您还未登录，无权访问该版块。',
 	'postperm_upgrade_nopermission'		=> 'عذراً, انت تحتاج الى ترقية مجموعتك للسماح لك بالمشاركة الرجاء ,  <a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank"> الضغط هنا لعرض التفاصيل </a></p></div><div><p><b>المجموعات المسموحة لها:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',//'对不起，您需要升级您所在的用户组后才能发帖，详细请<a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">点击这里查看</a></p></div><div><p><b>有权发帖的用户组为:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',
 	'replyperm_upgrade_nopermission'	=> 'عذراً, تحتاج الى ترقية مجموعتك لاضافة رد جديد, الرجاء <a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank"> الضغط هنا لعرض التفاصيل </a></p></div><div><p><b>المجموعات المسموحة لها:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',//'对不起，您需要升级您所在的用户组后才能回帖，详细请<a href="home.php?mod=spacecp&ac=credit&op=usergroup" target="_blank">点击这里查看</a></p></div><div><p><b>有权回帖的用户组为:</b><br />&nbsp;&nbsp;&nbsp; {permgroups}',
@@ -876,7 +876,7 @@ $lang = array (
 
 	'length_is_not_within_the_scope_of'		=> 'الصفحات الفرعية ليست بالقدر الذي يسمح لها',//'分页数不在允许的范围内',
 
-	'magics_weight_range_invalid'		=> 'عذراً, Props package insufficient capacity in excess of {less}, يرجى العودة.',//'对不起，道具包容量不足，超出 {less}，请返回。',
+	'magics_weight_range_invalid'		=> 'عذراً, لقد تخطيت هذا الرقم  {less} في عدد الحزم, يرجى العودة.',//'对不起，道具包容量不足，超出 {less}，请返回。',
 	'magics_give_myself'			=> 'عذراً, لا يمكن تقديمها لنفسك, يرجى العودة.',//'对不起，不能赠送给自己，请返回修改。',
 	'magics_give_weight_range_invalid'	=> 'عذراً, لا تملك دعائم كافية في الملف الشخصي. يمكنك الموفقة واستقبال  {num} دعامة هدية فقط.',//'对不起，对方道具包容量不足，最多只能接受赠送 {num} 个该道具。',
 	'magics_give_succeed'			=> 'لقد قمت بتقديم {toname} {num} {magicname}',//'你送给 {toname} {num} 张{magicname}',
@@ -958,7 +958,7 @@ $lang = array (
 
 	'magics_thunder_message'		=> '{magicname} تم نشره بنجاح',//'已成功发布 {magicname}',
 
-	'admin_cpanel_noaccess_ip'		=> 'عذراً, Only the administrator has set a specific IP address range to access the system settings, عنوانك ليس ضمن المسموح لهم',//'对不起，管理员设定了只有特定 IP 地址范围才能访问系统设置，您的地址不在被允许的范围内',
+	'admin_cpanel_noaccess_ip'		=> 'عذراً, فقط المدير هو من يقوم بتعيين الايبهات المسموح لهم للدخول للوحة الادارة, عنوانك ليس ضمن المسموح لهم',//'对不起，管理员设定了只有特定 IP 地址范围才能访问系统设置，您的地址不在被允许的范围内',
 // Obsolete
 /*
 	'topic_domain_duplicated'	=> 'اسم النطاق الثانوي مكرر',//'专题二级域名不能重复',

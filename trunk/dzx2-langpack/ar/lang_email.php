@@ -199,7 +199,7 @@ $message
 $_G[siteurl]',
 
 
-	'moderate_member_subject'	=> 'مراجعة الحساب','مراجعة الحساب',
+	'moderate_member_subject'	=> 'مراجعة الحساب',//'مراجعة الحساب',
 	'moderate_member_message'	=> '<p>{username},
 تم ارسال هذه الرسالة من  {bbname}.</p>
 <p>انت استقبلت هذه الرسالة , بسبب كل تسجيل مستخدم جديد
