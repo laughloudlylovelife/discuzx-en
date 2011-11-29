@@ -987,22 +987,6 @@ function _toggle_collapse(objname, noimg, complex, lang) {
 
 }
 
-//vot: MultiLingual support
-function _setlang(lang) {
-	var url = document.location.href;
-	var anchorpos = url.indexOf('#');
-	var anchor = '';
-	if(anchorpos != -1) {
-		anchor = url.substr(anchorpos);
-		url = url.substr(0, anchorpos);
-	}
-	url += (url.indexOf('?') != -1) ? '&' : '?';
-	url += 'language='+lang;
-	url += anchor;
-//DEBUG alert(url);
-	document.location.href=url;
-}
-
 function _extstyle(css) {
 	if(!$('css_extstyle')) {
 		loadcss('extstyle');
