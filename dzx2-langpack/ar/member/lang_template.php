@@ -31,7 +31,7 @@ $lang = array (
 	'disagree'		=> ' غير موافق ',//'不同意',
 	'index_activation'	=> 'تم تفعيل حسابك',//'你的帐号需要激活',
 	'invite_code'		=> 'رمز الدعوة',//'邀请码',
-	'login_inactive'	=> 'الحصول على دعوة, <a href="javascript:;" onclick="$(\'registerform\').activationauth.value=\'\',$(\'activation_hidden\').style.display=\'\',$(\'activation_user\').style.display=\'none\'">التسجيل</a>',//'放弃激活，<a href="javascript:;" onclick="$('registerform').activationauth.value='',$('activation_hidden').style.display='',$('activation_user').style.display='none'">现在注册</a>',
+	'login_inactive'	=> 'الحصول على دعوة, <a href="javascript:;" onclick="$(\'registerform\').activationauth.value=\'\',$(\'activation_hidden\').style.display=\'\',$(\'activation_user\').style.display=\'none\'">التسجيل</a>',//'放弃激活，<a href="javascript:;" onclick="$('registerform').activationauth.value='',$('activation_hidden').style.display='',$('activation_user').style.display='none'">现在{$_G[setting][reglinkname]}</a>',
 	'login_now'		=> 'تمتلك عضوية مسبقا?<br><a href="member.php?mod=logging&action=login" onclick="hideWindow(\'register\');showWindow(\'login\', this.href);return false;">تسجيل الدخول</a>',//'已有帐号？<a href="member.php?mod=logging&action=login" onclick="hideWindow('register');showWindow('login', this.href);return false;">现在登录</a>',
 	'password_confirm'	=> 'إعادة كلمة المرور',//'确认密码',
   'register_buyinvitecode'	=> 'لا تملك رمز الدعوة? اضغط هنا!',

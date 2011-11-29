@@ -9,9 +9,9 @@
 
 $lang = array(
 
-	'unknown'		=> 'Unknown',//'未知',
-	'resolutionunit'	=> array('', '', 'inch', 'cm'),//array('', '', '英寸', '厘米'),
-	'exposureprogram'	=> array('Undefined', 'Manual', 'Standard procedure', 'Aperture Priority', 'Shutter Priority', 'Depth of pre-field', 'Sports mode', 'Portrait Mode', 'Landscape mode'),//array('未定义', '手动', '标准程序', '光圈先决', '快门先决', '景深先决', '运动模式', '肖像模式', '风景模式'),
+	'unknown'		=> 'غير معلوم',//'未知',
+	'resolutionunit'	=> array('', '', 'انش', 'سانتيمتر'),//array('', '', '英寸', '厘米'),
+	'exposureprogram'	=> array('Undefined', 'يدوي', 'Standard procedure', 'Aperture Priority', 'Shutter Priority', 'Depth of pre-field', 'Sports mode', 'Portrait Mode', 'Landscape mode'),//array('未定义', '手动', '标准程序', '光圈先决', '快门先决', '景深先决', '运动模式', '肖像模式', '风景模式'),
 	'meteringmode'	=> array(
 		'0'		=> 'Unknown',//'未知',
 		'1'		=> 'Average',//'平均',
@@ -88,7 +88,7 @@ $lang = array(
 	'ColorSpace'		=> 'Color Space',//'色彩空间',
 	'ExifImageLength' 	=> 'Exif Image Width',//'Exif图像宽度',
 	'ExifImageWidth'  	=> 'Exif Image Height',//'Exif图像高度',
-	'FileSource'      	=> 'File Source',//'文件来源',
+	'FileSource'      	=> 'مصدر الملف',//'文件来源',
 	'SceneType'		=> 'Scene type',//'场景类型',
 	'ThumbFileType'   	=> 'Thumbnail file format',//'缩略图文件格式',
 	'ThumbMimeType'   	=> 'Thumbnail Mime type',//'缩略图Mime格式'

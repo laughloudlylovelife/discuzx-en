@@ -25,7 +25,7 @@ $lang = array(
 	'poll_separator'	=> ', ',//'"、"',
 
 	'pm_report_content'	=> '<a href="home.php?mod=space&uid={reporterid}" target="_blank">{reportername}</a>تقرير الرسالة الخاصة:<br>من<a href="home.php?mod=space&uid={uid}" target="_blank">{username}</a>رسالة قصيرة<br> المحتوى:{message}',
-	'message_can_not_send_1'	=> 'Failed to send you within 24 hours of the current beyond the upper limit of two sessions',
+	'message_can_not_send_1'	=> 'لا يمكن الارسال مرتين خلال 24 ساعة',
 	'message_can_not_send_2'	=> 'يجب الانتظار قليلاً بين كل عملية ارسال واخرى, كن صبوراً',
 	'message_can_not_send_3'	=> 'عذراً, يمكنك إرسال رسالة قصيرة لغير الاصدقاء',
 	'message_can_not_send_4'	=> 'عذراً, لا يمكنك إستخدام خاصية ارسال الرسائل حالياً',
@@ -88,19 +88,19 @@ $lang = array(
 			<tr>
 			<td valign="top">{avatar}</td>
 			<td valign="top">
-			<h3>السلام عليكم , انا  {username} من  {sitename}. I invite you to join and play together with &quot;{appname}&quot;</h3><br>
+			<h3>السلام عليكم , انا  {username} من  {sitename}. انا ادعوك للعب معي في لعبة &quot;{appname}&quot;</h3><br>
 			<br>
-			دعوة P.S.:<br>
+			ملاحظة الدعوة:<br>
 			{saymsg}
 			<br><br>
-			<strong>Please click the link below to receive the invite to play with {appname}:</strong><br>
+			<strong>الراجاء الدخول للوصلة ادناه للدعوة للعب في {appname}:</strong><br>
 			<a href="{inviteurl}">{inviteurl}</a><br>
 			<br>
-			<strong>if you have an account at {sitename}, please click the following link to see my personal home page:</strong><br>
+			<strong>اذا كان لديك حساب في {sitename}, الرجاء الضغط على الوصلة للوصول لملفك الشخصي:</strong><br>
 			<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 			</td></tr></table>',
 
-	'person'		=> 'الناس',//'人',
+	'person'		=> ' شخص ',//'人',
 	'delete'		=> 'حذف',//'删除',
 
 	'space_update'		=> '{actor} حدث ملفه الشخصي',//'{actor} 被SHOW了一下',
@@ -115,8 +115,8 @@ $lang = array(
 	'share_article'		=> ' قام بنشر مقالة ',//'分享了一篇文章',
 	'album'			=> 'الالبومات',//'相册',
 	'share_thread'		=> ' قام بنشر موضوع',//'分享了一个帖子',
-	'mtag'			=> 'Groups',
-	'share_mtag'		=> ' قام بنشر مجموعة  (Groups)',
+	'mtag'			=> 'المجموعات',
+	'share_mtag'		=> ' قام بنشر مجموعة  (المجموعات)',
 	'share_mtag_membernum'	=> 'يملك  (membernum) عضو/اعضاء',//'现有 {membernum} 名成员',
 	'share_tag'		=> ' قام بنشر كلمة دلالية ',//'分享了一个标签',
 	'share_tag_blognum'	=> ' يستخدم  {blognum} مدونة ',//'现有 {blognum} 篇日志',
@@ -185,9 +185,9 @@ $lang = array(
 	'do_stat_debate'	=> 'تحديات',//'辩论',
 	'do_stat_trade'		=> 'منتجات',//'商品',
 	'do_stat_group'		=> 'مجموعات',//'群组',
-	'do_stat_tgroup'	=> 'Groups',
-	'do_stat_home'		=> 'Space',
-	'do_stat_forum'		=> 'Forum',
+	'do_stat_tgroup'	=> 'المجموعات',
+	'do_stat_home'		=> 'الملف الشخصي',
+	'do_stat_forum'		=> 'المنتدى',
 	'do_stat_groupthread'	=> 'مواضيع مجموعة اجتماعية',//'群组主题',
 	'do_stat_post'		=> 'ردود',//'主题回复',
 	'do_stat_grouppost'	=> 'ردود المجموعة الاجتماعية',//'群组回复',
@@ -239,7 +239,7 @@ $lang = array(
 
 	'logs_credit_update_RGC'	=> 'Recycled red envelopes',
 	'logs_credit_update_BGC'	=> 'Planted red envelope',
-	'logs_credit_update_AGC'	=> 'Get red packets',
+	'logs_credit_update_AGC'	=> 'الحصول على الحزم الحمراء',
 	'logs_credit_update_RKC'	=> 'PPC',
 	'logs_select_operation'	=> 'الرجلاء قم بتحديد عملية',
 	'task_credit'	=> 'نقاط مكافأة مهمة',
@@ -248,7 +248,7 @@ $lang = array(
 	'magic_credit'	=> 'دعائم عشوائية لكسب النقاط',
 	'magic_space_gift'	=> 'Home planted a red envelope in their own space',
 	'magic_space_re_gift'	=> 'Recovery has not run out of the red envelope',
-	'magic_space_get_gift'	=> 'Access to space to receive the red envelope',
+	'magic_space_get_gift'	=> 'الوصول إلى الملف الشخصي لتلقي المغلف الأحمر',
 	'credit_transfer'	=> 'ادماج النقل',
 	'credit_transfer_tips'	=> 'إيرادات التحويلات',
 	'credit_exchange_tips_1'	=> 'تطبيق النقاط على عملية التحويل ',

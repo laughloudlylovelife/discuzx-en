@@ -208,7 +208,7 @@ $lang = array
 	'attackevasive_1_subject'	=> 'تحديث حد التردد',
 	'attackevasive_1_message'	=> 'قمت بزيارة موقع سريع جدا، وأقل من ثانيتين! يرجى الانتظار قليلا...',
 	'attackevasive_2_subject'	=> 'الوصول من خلال ملقمات بروكسي مقيدة',
-	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
+	'attackevasive_2_message'	=> 'الدخول بواسطة بروكسيات مقيد. الرجاء ازالة اعدادات البروكسي, ثم الدخول.',
 	'attackevasive_4_subject'	=> 'تحديث فتح الصفحة',
 	'attackevasive_4_message'	=> 'اهلا بك في الموقع, جاري اعادة تحميل الصفحة, الرجاء الانتظار ...',
 

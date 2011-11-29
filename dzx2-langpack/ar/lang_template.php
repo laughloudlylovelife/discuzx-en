@@ -16,7 +16,7 @@ $lang = array (
 	'additional'			=> 'اضافي',//'附加',
 	'debate_opponent'		=> 'المنافس',//'反方',
 	'debate_square'			=> 'الخصم',//'正方',
-	'thread_poll'			=> 'استطلاعات',//'投票',',
+	'thread_poll'			=> 'استطلاعات',//'投票',
 	'credits'			=> 'المال فقط',//'积分',
 	'login'				=> 'تسجيل الدخول',//'登录',
     'active_email'	=> 'بريد الاستقبال',
@@ -305,7 +305,7 @@ $lang = array (
     'password_security'	=> 'امان كلمة المرور',
     'increase'	=> 'زيادة/اضافي',
     'friend_top'	=> 'الاعلى',
-    'connect_config_newpassword_comment'	=> 'You are currently using QQ account binding site, where you can set up individual password, the password is only set up an independent site to fill in the password can use the corresponding function',
+    'connect_config_newpassword_comment'	=> 'انت حاليا تستعمل حساب  QQ بواسطة الموقع, يمكنك وضع كلمة مرور جديدة',
     'email'	=> 'البريد الالكتروني',
 	'security_question'		=> 'سؤال الامان',//'安全提问',
 	'security_question_0'	=> 'بدون سؤال',//'无安全提问',
@@ -346,7 +346,7 @@ $lang = array (
     'not_exceed'	=> 'ليس اكثر مما تملك',
 	'ranking_message_0'		=> 'لم تقم بمعاينة نفسك في قائمة الترتيب اشترك الان سوف تصبح من الاعضاء الاكثر شعبية!',//'你现在还没有上榜。让自己上榜吧,这会大大提升你的主页曝光率。',
 	'ranking_message_1'		=> 'الترتيب {$extcredits[$creditid][title]} اكثر,  the higher will be your home page exposure;',//'竞价{$extcredits[$creditid][title]}越多,竞价排名越靠前,你的主页曝光率也会越高；',
-	'ranking_message_2'		=> 'Ranking the user is another effective browsing time, its bid {$extcredits[$creditid][title]} will be reduced by a (malicious refresh access is not deductible).',
+	'ranking_message_2'		=> 'ترتيب المستخدم سيقلص عند وصول اكثر زيارات, الترتيب هو  {$extcredits[$creditid][title]} سيخفض من قبل (الوصول الخبيث غير محسوب).',
 	'self_current_credit'		=> ' عدد نقاطك الان ',//'你当前的积分',
 	'self_current_friend_num'	=> ' عدد اصدقائك الان ',//'你当前的好友数',
 	'top_100_update'		=> 'التالي هو قائمة افضل مئة. يتم تحديث البيانات كل $cache_time دقيقة.',
@@ -372,11 +372,11 @@ $lang = array (
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'	=> 'Cat',//'[name]猫猫[/name]',
+	'cat'	=> 'قط',//'[name]猫猫[/name]',
 
 //---------------------------
 //static/space/t5/style.css
-	'courtyard'	=> 'Courtyard',//'[name]庭院[/name]',
+	'courtyard'	=> 'فناء',//'[name]庭院[/name]',
 
 //---------------------------
 //static/space/t6/style.css
@@ -384,7 +384,7 @@ $lang = array (
 
 //---------------------------
 //static/space/t7/style.css
-	'cowboy'	=> 'Cowboy',//'[name]牛仔[/name]',
+	'cowboy'	=> 'راعي البقر',//'[name]牛仔[/name]',
 
 //---------------------------
 //static/space/t8/style.css
@@ -410,14 +410,14 @@ $lang = array (
 
 	'register'	=> 'التسجيل',
 
-	'nav_portal'	=> 'المجلة',//'Portal',//'门户',//1,
-	'nav_forum'	=> 'المنتدى',//'Forum',//'论坛',//2,
-	'nav_group'	=> 'المجموعات',//'Groups',//'群组',//3,
-	'nav_space'	=> 'الملف الشخصي',//'Space',//'家园',//4,
-	'nav_apps'	=> 'التطبيقات',//'Applications','应用',//5,
-	'nav_plugin'	=> 'الهاكات',//'Plugins',//'插件',//6,
-	'nav_help'	=> 'التعليمات',//'Help',//'帮助',//7,
-	'nav_rank'	=> 'الترتيب',//'RankList',//'排行榜',//8,
+	'nav_1'		=> 'المجلة',//'Portal',//'门户',//1,
+	'nav_2'		=> 'المنتدى',//'Forum',//'论坛',//2,
+	'nav_3'		=> 'المجموعات',//'Groups',//'群组',//3,
+	'nav_4'		=> 'الملف الشخصي',//'Space',//'家园',//4,
+	'nav_5'		=> 'التطبيقات',//'Applications',//'应用',//5,
+	'nav_6'		=> 'الهاكات',//'Plugins',//'插件',//6,
+	'nav_7'		=> 'التعليمات',//'Help',//'帮助',//7,
+	'nav_8'		=> 'الترتيب',//'RankList',//'排行榜',//8,
 	'nav_stat'	=> 'الاحصائيات',//'Statistics',//'站点统计',
 	'nav_report'	=> 'تبليغ',//'Reports',//'举报',
 	'nav_archiver'	=> 'الارشيف',//'Archive',
