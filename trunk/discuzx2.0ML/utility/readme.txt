@@ -40,11 +40,14 @@ with this one!
 4. After a successful upgrade, please delete the update program
    to avoid possible security problems.
 
+
+
  --------------------------------------
  Upgrade procedure steps
  --------------------------------------
 
-1. Shut down your curent system.
+1. Shutdown your curent system.
+   Close an access to your site from Admin-Center.
    Backup all the files and the database.
 
 2. Upload the latest version of Discuz!X to your site,
@@ -54,16 +57,45 @@ with this one!
    directory into your site /install/ directory.
    Ensure that the /install/ directory contains the latest installer!
 
-4. Copy the files:
-   /instal/lang_update.php
-   /instal/lang_restore.php
-???   /instal/convert/language/lang_convert.php
-   into the /source/language/ directory at your site.
+4. Edit your /config/config_global.php file.
+   Copy the next variables from config_global_default.php
+   to the end of config_global.php
+   (only if this variables not presents in your config!):
+
+//-----------------------------------------------------------------------
+// Multi-Lingual support by Valery Votintsev
+//-----------------------------------------------------------------------
+// "dir" - text direction:
+//	'ltr' (Left To Right) 
+//	'rtl' (Right To Left), i.e for Arabic, Hebrew, Urdu, etc.
+//-----------------------------------------------------------------------
+// Uncomment a language line for enable the language!
+// Comment a language line that is not required!!!
+//
+// Enabled Language List:
+
+$_config['languages'] = array(
+//	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
+//	'zh' => array('icon'=>'zh.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
+//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
+	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
+//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
+//	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
+//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
+);
+$_config['detect_language'] = true;	// Auto-detect user language: true|false
+
+   Check the default system language value:
+
+$_config['output']['language'] 		= 'en';		// Page language en/zh_cn/zh_tw
+
 
 5. Visit http://your_domain/install/update.php
 
 6. Follow to the program prompts until completion of
    all the upgrade processes.
+
+
 
  --------------------------------------
  Upgrade Troubleshooting

@@ -247,7 +247,7 @@ if($_GET['step'] == 'start') {
 			if(!empty($value)) {
 				show_msg(lang('update','real_names_updated'), "$theurl?step=data&op=$nextop");//vot
 			}
-			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('realname', '1', '0', '1', lang('update','real_name'), '', '0', '0', '0', '0', '1', 'text', '0', '', '', '0', '0')");//vot
+			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('realname', '1', '0', '1', '".lang('update','real_name')."', '', '0', '0', '0', '0', '1', 'text', '0', '', '', '0', '0')");//vot
 		}
 		$t = DB::result_first('SELECT uid FROM '.DB::table('common_member')." ORDER BY uid DESC LIMIT 1");
 		$names = $uids = array();
@@ -644,13 +644,13 @@ if($_GET['step'] == 'start') {
 			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('article_tags', '$article_tagsnew')");
 		}
 		if(empty($settings['anonymoustext'])) {
-			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('anonymoustext', lang('update','anonymous'))");//vot
+			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('anonymoustext', '".lang('update','anonymous')."')");//vot
 		}
 		if(!$word_type_count = DB::result_first("SELECT count(*) FROM ".DB::table('common_word_type')."")) {
-			DB::query("INSERT INTO ".DB::table('common_word_type')." VALUES('1',  lang('update','politics')),('2', lang('update','advertising'))");//vot
+			DB::query("INSERT INTO ".DB::table('common_word_type')." VALUES('1',  '".lang('update','politics')."'),('2', '".lang('update','advertising')."')");//vot
 		}
 		if(!isset($settings['userreasons'])) {
-			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('userreasons', lang('update','userreasons'))");//vot
+			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('userreasons', '".lang('update','userreasons')."')");//vot
 		}
 		if(!$forum_typevar_search = DB::result_first("SELECT count(*) FROM ".DB::table('forum_typevar')." WHERE search > 2 LIMIT 1")) {
 			DB::query("UPDATE ".DB::table('forum_typevar')." SET search = '3' WHERE search = '1'");
@@ -667,7 +667,7 @@ if($_GET['step'] == 'start') {
 		}
 
 		if(!DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_addon')." WHERE `key` = '25z5wh0o00' AND siteurl = 'http://addons.discuz.com' LIMIT 1")) {
-			DB::query("REPLACE INTO ".DB::table('common_addon')." (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', lang('update','plugin_center'), 'http://addons.discuz.com', lang('update','plugin_forum'), 'http://addons.discuz.com/contact', 'http://www.comsenz.com/addon/logo.gif', 1)");//vot
+			DB::query("REPLACE INTO ".DB::table('common_addon')." (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', '".lang('update','plugin_center')."', 'http://addons.discuz.com', '".lang('update','plugin_forum')."', 'http://addons.discuz.com/contact', 'http://www.comsenz.com/addon/logo.gif', 1)");//vot
 		}
 
 		if(!DB::result_first("SELECT allowreplycredit FROM ".DB::table('common_usergroup_field')." WHERE groupid = 1")) {
