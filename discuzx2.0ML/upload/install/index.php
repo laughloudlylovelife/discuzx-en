@@ -20,7 +20,7 @@ require ROOT_PATH.'./source/discuz_version.php';
 require ROOT_PATH.'./install/include/install_var.php';
 require ROOT_PATH.'./install/include/install_mysql.php';
 require ROOT_PATH.'./install/include/install_function.php';
-require ROOT_PATH.'./install/include/install_lang.php';
+require ROOT_PATH.'./source/language/en/lang_install.php';
 
 $view_off = getgpc('view_off');
 
