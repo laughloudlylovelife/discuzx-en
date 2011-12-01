@@ -129,7 +129,7 @@ $lang = array
 	'menu_ec'			=> 'Е-коммерция',
 	'menu_card'			=> 'Купоны',
 
-	'menu_styles'			=> 'Стили',
+	'menu_styles'			=> 'Скины',
 	'menu_styles_templates'		=> 'Шаблоны',
 	'menu_posting_smilies'		=> 'Смайлы',
 	'menu_click'			=> 'Рейтинги',
