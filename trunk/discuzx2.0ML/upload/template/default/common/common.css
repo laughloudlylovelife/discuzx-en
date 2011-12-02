@@ -1267,6 +1267,9 @@ Note on the CSS Hack:
 /* pgs --> pages & postbutton, pgb --> Back Home, nxt --> Next */
 .pgs {}
 	.pgs #newspecial, .pgs #newspecialtmp, .pgs #post_reply, .pgs #post_replytmp { float: left; margin-right: 5px; }
+/*vot*/	.pgs #newspecial, .pgs #newspecialtmp { float: left; background: url({IMGDIR}/pn_post.png) no-repeat 0 0; width: 80px; height: 33px; color: white; font-size: 14px; font-weight: bold; text-decoration: none; text-align: center; vertical-align: middle; line-height: 33px; }
+/*vot*/	#post_reply, #post_replytmp { float: left; background: url({IMGDIR}/pn_reply.png) no-repeat 0 0; width: 80px; height: 33px; color: white; font-size: 14px; font-weight: bold; text-decoration: none; text-align: center; vertical-align: middle; line-height: 33px; }
+
 	.pg { float: right; }
 	.pg, .pgb { line-height: 26px; }
 		.pg a, .pg strong, .pgb a { float: left; display: inline; margin-left: 4px; padding: 0 8px; height: 26px; border: 1px solid; border-color: {SPECIALBORDER}; background-color: {WRAPBG}; background-repeat: no-repeat; color: {LINK}; overflow: hidden; text-decoration: none; }
