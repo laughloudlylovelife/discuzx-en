@@ -25,6 +25,7 @@ $lang = array (
 	'lgnore_invitation'	=> 'تجاهل الدعوة',//'忽略邀请',
 	'play_together'		=> 'العب معا',//'一起玩',
 	'login_immediately'	=> 'التسجيل الان',//'马上登录',
+	'register_immediately'	=> 'Register Now',//'马上登录',
 	'somebody_friends'	=> 'أصدقاء',//'的好友',
 	'want_to_register'	=> 'أريد التسجيل',//'我要注册',
 	'welcome'		=> 'السلام عليكم, ',//'欢迎你，',

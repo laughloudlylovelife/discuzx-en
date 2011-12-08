@@ -170,6 +170,8 @@ var lng = {
 	'page_prev'		: '上页',
 	'page_next'		: '下页',
 	'copy2clipboard'	: '点此复制到剪贴板',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
 	'enter_search_string'	: '请输入搜索内容',
 	'refresh_q&a'		: '刷新验证问答',
 	'refresh_code'		: '刷新验证码',

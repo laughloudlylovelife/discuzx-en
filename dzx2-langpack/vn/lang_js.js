@@ -170,7 +170,9 @@ var lng = {
 	'page_prev'		: 'Trang trước',//'上页',
 	'page_next'		: 'Trang sau',//'下页',
 	'copy2clipboard'	: 'Sao chép vào clipboard',//'点此复制到剪贴板',
-	'enter_search_string'	: 'Từ khóa tìm kiếm',//'请输入搜索内容',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
+	'enter_search_string'	: 'Nhập nội dung tìm kiếm',//'请输入搜索内容',
 	'refresh_q&a'		: 'Là mới Q&A',//'刷新验证问答',
 	'refresh_code'		: 'Làm mới mã',//'刷新验证码',
 	'code_invalid'		: 'Sai mã bảo mật, hãy điền lại',//'验证码错误，请重新填写',

@@ -24,6 +24,7 @@ $lang = array (
   'lgnore_invitation' => 'Bỏ qua',
   'play_together' => 'Cùng chơi',
   'login_immediately' => 'Đăng ký',
+	'register_immediately'	=> 'Register Now',//'马上登录',
   'somebody_friends' => ' bạn',
   'want_to_register' => 'Tôi muốn đăng ký',
   'welcome' => 'Chào mừng bạn ',

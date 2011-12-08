@@ -171,7 +171,9 @@ var lng = {
 	'page_prev'		: 'ก่อนหน้านี้',//'上页',
 	'page_next'		: 'หน้าต่อไป',//'下页',
 	'copy2clipboard'	: 'คัดลอกไปยังคลิปบอร์ด',//'点此复制到剪贴板',
-	'enter_search_string'	: 'ค้นหาอะไร?',//'请输入搜索内容',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
+	'enter_search_string'	: 'ค้นหาอะไร...?',//'请输入搜索内容',
 	'refresh_q&a'		: 'รีเฟรช Q&A',//'刷新验证问答',
 	'refresh_code'		: 'รีเฟรชรหัส',//'刷新验证码',
 	'code_invalid'		: 'รหัสความปลอดภัยไม่ถูกต้อง, กรุณาลองใหม่',//'验证码错误，请重新填写',
