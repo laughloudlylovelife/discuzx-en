@@ -172,6 +172,8 @@ var lng = {
 	'page_prev'		: 'الصفحة السابقة',//'上页',
 	'page_next'		: 'الصفحة التالية',//'下页',
 	'copy2clipboard'	: 'نسخ للحافظة',//'点此复制到剪贴板',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
 	'enter_search_string'	: 'بحث كلمات دلالية',//'请输入搜索内容',
 	'refresh_q&a'		: 'تحديث س&ج',//'刷新验证问答',
 	'refresh_code'		: 'تحديث رمز الامان',//'刷新验证码',

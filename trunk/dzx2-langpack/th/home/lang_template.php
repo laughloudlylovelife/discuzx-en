@@ -24,6 +24,7 @@ $lang = array (
   'lgnore_invitation'	=> 'ปฏิเสธคำเชิญชวน',
   'play_together'	=> 'ร่วมสนุกด้วยกัน',
   'login_immediately'	=> 'เข้าสู่ระบบ',//'Login Now',//'马上登录',
+	'register_immediately'	=> 'Register Now',//'马上登录',
   'somebody_friends'	=> 'เพื่อน',
   'want_to_register'	=> 'ฉันต้องการสมัครสมาชิก',
   'welcome'		=> 'ยินดีต้อนรับ, ',

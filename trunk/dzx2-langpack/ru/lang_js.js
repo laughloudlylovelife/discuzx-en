@@ -170,7 +170,9 @@ var lng = {
 	'page_prev'		: 'Пред.',//'上页',
 	'page_next'		: 'След.',//'下页',
 	'copy2clipboard'	: 'Скопировать в буфер обмена',//'点此复制到剪贴板',
-	'enter_search_string'	: 'Искомоё слово',//'请输入搜索内容',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
+	'enter_search_string'	: 'Поиск по содержанию',//'请输入搜索内容',
 	'refresh_q&a'		: 'Обновить Вопрос/Ответ',//'刷新验证问答',
 	'refresh_code'		: 'Обновить код',//'刷新验证码',
 	'code_invalid'		: 'Неверный проверочный код, попытайтесь ещё раз',//'验证码错误，请重新填写',

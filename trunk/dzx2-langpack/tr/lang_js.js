@@ -171,7 +171,9 @@ var lng = {
 	'page_prev'		: 'Prev Page',//'上页',
 	'page_next'		: 'Next Page',//'下页',
 	'copy2clipboard'	: 'Copy to clipboard',//'点此复制到剪贴板',
-	'enter_search_string'	: 'Search keyword',//'请输入搜索内容',
+// ATTENTION!
+// The next line must have the same value as in /template.php - 'enter_content' !!!
+	'enter_search_string'	: 'Anahtar kelimeler...',//'请输入搜索内容',
 	'refresh_q&a'		: 'Refresh Q&A',//'刷新验证问答',
 	'refresh_code'		: 'Refresh Code',//'刷新验证码',
 	'code_invalid'		: 'Wrong security code, please try again',//'验证码错误，请重新填写',

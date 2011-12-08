@@ -24,6 +24,7 @@ $lang = array (
 	'lgnore_invitation'	=> 'Отклонить приглашение',
 	'play_together'		=> 'поиграть вместе',
 	'login_immediately'	=> 'Зарегистрироваться сейчас',
+	'register_immediately'	=> 'Register Now',//'马上登录',
 	'somebody_friends'	=> ': друзья',
 	'want_to_register'	=> 'Хочу зарегистрироваться',
 	'welcome'		=> 'Добро пожаловать! ',

@@ -24,6 +24,7 @@ $lang = array (
   'lgnore_invitation' => '忽略邀请',
   'play_together' => '一起玩',
 /*vot*/  'login_immediately' => '马上登录',
+	'register_immediately'	=> '马上登录',
   'somebody_friends' => '的好友',
   'want_to_register' => '我要注册',
   'welcome' => '欢迎您，',
