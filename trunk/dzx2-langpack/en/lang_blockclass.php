@@ -75,7 +75,7 @@ $lang = array(
 	'blockclass_thread_script_threadhot'		=> 'Hot threads',//'热门帖',
 	'blockclass_thread_script_threadstick'		=> 'Stick thread',//'置顶贴',
 	'blockclass_thread_script_threadspecial'	=> 'Speical threads',//'特殊主题贴',
-	'blockclass_thread_script_threadnew'		=> 'Last threads',//'最新贴',
+	'blockclass_thread_script_threadnew'		=> 'Latest threads',//'最新贴',
 	'blockclass_thread_script_threadspecified'	=> 'Specified threads',//'指定帖子',
 	'blockclass_thread_script_thread'		=> 'Customize',//'高级自定义',
 
@@ -225,7 +225,7 @@ $lang = array(
 	'blockclass_member_field_qq'			=> 'QQ',//'QQ号',
 	'blockclass_member_field_yahoo'			=> 'Yahoo',//'YAHOO帐号',
 	'blockclass_member_field_msn'			=> 'MSN',//'MSN帐号',
-	'blockclass_member_field_taobao'		=> 'TaoBao account',//'阿里旺旺帐号',
+	'blockclass_member_field_taobao'		=> 'Wangwang',//'阿里旺旺帐号',
 	'blockclass_member_field_site'			=> 'Personal Space',//'个人主页',
 	'blockclass_member_field_bio'			=> 'Self intro',//'自我介绍',
 	'blockclass_member_field_interest'		=> 'Interests',//'兴趣爱好',
