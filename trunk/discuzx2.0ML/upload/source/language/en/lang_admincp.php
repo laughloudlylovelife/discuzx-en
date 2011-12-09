@@ -281,7 +281,7 @@ $lang = array
 	'nav_group_manage'		=> 'Group Management',//'群组管理',
 	'nav_group_userperm'		=> 'User group permissions',//'群主权限',
 	'nav_group_level'		=> 'Group Levels',//'群组等级',
-	'nav_group_level_editor'	=> 'Group lrvrl - Edit',//'群组等级 -- 编辑',
+	'nav_group_level_editor'	=> 'Group level - Edit',//'群组等级 -- 编辑',
 	'nav_home'			=> 'Home',//'家园',
 
 	'nav_runwizard'			=> 'Quick Setup Wizard',//'快速设置向导',
@@ -6212,6 +6212,7 @@ RepeatLimit 32
 //---------------------------
 //Change Language
 'change_language'	=> 'Change language',
+'change_style'		=> 'Change style',
 
 );
 

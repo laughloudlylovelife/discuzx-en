@@ -40,8 +40,8 @@ $lang = array
 
 	'HLT'	=> 'Highlight',//'设置高亮',
 	'UHL'	=> 'Unhighlight',//'解除高亮',
-	'EHL'	=> 'Limit Highlight',//'限时高亮',
-	'UEH'	=> 'Unlimit Highlight',//'解除限时高亮',
+	'EHL'	=> 'Time-limited Highlight',//'限时高亮',
+	'UEH'	=> 'Remove time-limited Highlight',//'解除限时高亮',
 
 	'BMP'	=> 'Bump',//'提升',
 	'DWN'	=> 'Down',//'下沉',
