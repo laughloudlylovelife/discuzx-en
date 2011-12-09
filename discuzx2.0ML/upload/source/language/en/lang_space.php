@@ -202,7 +202,7 @@ $lang = array(
 	'block_myapp_no_content_publish'	=> ', <a href ="userapp.php?mod=manage&my_suffix=/app/list">I want to play applications</a>',//'，<a href ="userapp.php?mod=manage&my_suffix=/app/list">我要玩应用</a>',
 	'block_view_noperm'			=> 'No prmissions to view',//'无权查看',
 	'block_view_profileinfo_noperm'		=> 'No data or no permission to view',//'暂无资料项或无权查看',
-	'click_play'				=> 'Click to Play',//'点击播放',
+	'click_play'				=> 'Click to play',//'点击播放',
 	'click_view'				=> 'Click to view',//'点击查看',
 	'feed_view_only'			=> 'Just look at these feeds',//'只看此类动态',
 
