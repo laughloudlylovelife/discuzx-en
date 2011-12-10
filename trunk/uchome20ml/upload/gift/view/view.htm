@@ -1,0 +1,56 @@
+<!--{eval $_TPL['titles'] = array('Gift');}-->
+<!--{template header}-->
+<style type="text/css">
+@import url(template/blue/style.css);
+@import url(gift/css/ask_main.css);
+</style>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],small)}--></a></div>
+	<h1>Send gift to Friend</h1>
+	<span class="spacelink">Gift</span>
+</div>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="gift.php"><span>Send Gifts</span></a></li>
+		<li><a href="gift.php?do=view"><span>My received gifts</span></a></li>
+	</ul>
+</div>
+<div style="padding: 1em 2em;">
+	<ul>
+		<!--{if $list}-->
+		<!--{loop $list $val}-->
+		<li style="padding:10px;float:left;text-align:center;width:200px;height:200px;">
+			<!--{if $val['uid'] == 0}-->Someone<!--{else}--><a href="{$val['uid']}">$val['username']</a><!--{/if}--> sent you<br>
+			<img src="gift/gift_model/image/{$val['gift']}">
+			<!--{if $val['message'] != ''}--><br>Msg£º{$val['message']}<!--{/if}-->
+			<!--{if $val['uid'] != 0}--><br><a href="gift.php?uid={$val['uid']}">Sent back gift</a><!--{/if}-->
+			<br><span class="time"><!--{date('d-M H:i',$val[dateline],1)}--></span>
+		</li>
+		<!--{/loop}-->
+		<!--{else}-->
+		Opps you do not have recieved any gift...:-(
+		<!--{/if}-->
+	</ul>
+	<div style="clear:both;"></div>
+	<div class="page">$multi[html]</div>
+</div>
+
+<div class="f_status f_status_w s_clear">
+
+	<a href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">TOP</a>
+</div>
+<div class="IND_lwide" valign="left">
+	<div class="wdL"></div>
+	<p align="right"><font color="#808080">
+	<span class="fl" valign="left">¡¶GIFTS¡· English Version 2.0beta</span>	
+	</font></p>
+	<div class="wdR" valign="left">
+		<p align="right"></div>	
+	<p align="right">	
+	<span class="fr" valign="left"><font color="#808080">Develope by </font> <a href="http://www.cd4fun.com">
+	<font color="#808080">Sky 4 Fun Media Inc.</font></a><font color="#808080">&copy;2009-2019 
+	</font> </span>		
+ 
+</div>
+</div>
+<!--{template footer}-->

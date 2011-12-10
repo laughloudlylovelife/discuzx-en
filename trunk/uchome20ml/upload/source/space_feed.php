@@ -8,15 +8,15 @@ if(!defined('IN_UCHOME')) {
 	exit('Access Denied');
 }
 
-//显示全站动态的好友数
+//Dynamic display the number of friends
 if(empty($_SCONFIG['showallfriendnum']) || $_SCONFIG['showallfriendnum']<1) $_SCONFIG['showallfriendnum'] = 10;
-//默认 hot value 天数
+//The default number of days in hot value
 if(empty($_SCONFIG['feedhotday'])) $_SCONFIG['feedhotday'] = 2;
 
-//网站近况
+//Recent site
 $isnewer = $space['friendnum']<$_SCONFIG['showallfriendnum']?1:0;
 if(empty($_GET['view']) && $space['self'] && $isnewer) {
-	$_GET['view'] = 'all';//默认显示
+	$_GET['view'] = 'all';//default display
 }
 
 // pagination 
@@ -31,16 +31,16 @@ $start = empty($_GET['start'])?0:intval($_GET['start']);
 //Check start number
 ckstart($start, $perpage);
 
-//今天时间开始线
+//Today, time to start line
 $_SGLOBAL['today'] = sstrtotime(sgmdate('Y-m-d'));
 
-//最少热度
+//Minimum Hot
 $minhot = $_SCONFIG['feedhotmin']<1?3:$_SCONFIG['feedhotmin'];
 $_SGLOBAL['gift_appid'] = '1027468';
 
 if($_GET['view'] == 'all') {
 
-	$wheresql = "1";//没有 privacy 
+	$wheresql = "1";//No privacy 
 	$ordersql = "dateline DESC";
 	$theurl = "space.php?uid=$space[uid]&do=$do&view=all";
 	$f_index = '';
@@ -68,12 +68,12 @@ if($_GET['view'] == 'all') {
 		$theurl = "space.php?uid=$space[uid]&do=$do&view=we";
 		$f_index = 'USE INDEX(dateline)';
 		$_GET['view'] = 'we';
-		//不显示时间
+		//Time is not displayed
 		$_TPL['hidden_time'] = 1;
 	}
 }
 
-//过滤
+//Filter
 $appid = empty($_GET['appid'])?0:intval($_GET['appid']);
 if($appid) {
 	$wheresql .= " AND appid='$appid'";
@@ -97,7 +97,7 @@ $query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('feed')." $f_index
 	LIMIT $start,$perpage");
 
 if($_GET['view'] == 'me' || $_GET['view'] == 'hot') {
-	//个人动态
+	//Personal dynamic
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 		if(ckfriend($value['uid'], $value['friend'], $value['target_ids'])) {
 			realname_set($value['uid'], $value['username']);
@@ -106,7 +106,7 @@ if($_GET['view'] == 'me' || $_GET['view'] == 'hot') {
 		$count++;
 	}
 } else {
-	//要折叠的动态
+	//To collapse the dynamic
 	$hidden_icons = array();
 	if($_SCONFIG['feedhiddenicon']) {
 		$_SCONFIG['feedhiddenicon'] = str_replace(' ', '', $_SCONFIG['feedhiddenicon']);
@@ -148,25 +148,25 @@ $newspacelist = array();
 
 if($space['self'] && empty($start)) {
 
-	//短消息
+	//Short Message Number
 	$space['pmnum'] = $_SGLOBAL['member']['newpm'];
 
-	//举报管理
+	//Report Management
 	if(checkperm('managereport')) {
 		$space['reportnum'] = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('report')." WHERE new='1'"), 0);
 	}
 
-	//审核 event 
+	//Manage events
 	if(checkperm('manageevent')) {
 		$space['eventverifynum'] = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('event')." WHERE grade='0'"), 0);
 	}
 
-	//等待 real name 认证
+	//Wait for the real name verification
 	if($_SCONFIG['realname'] && checkperm('managename')) {
 		$space['namestatusnum'] = $_SGLOBAL['db']->result($_SGLOBAL['db']->query("SELECT COUNT(*) FROM ".tname('space')." WHERE namestatus='0' AND name!=''"), 0);
 	}
 	
-	//欢迎新成员
+	//Welcome to new members
 	if($_SCONFIG['newspacenum']>0) {
 		$newspacelist = unserialize(data_get('newspacelist'));
 		if(!is_array($newspacelist)) $newspacelist = array();
@@ -176,7 +176,7 @@ if($space['self'] && empty($start)) {
 		}
 	}
 
-	//最近访客 list 
+	//Recent Visitors list 
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('visitor')." WHERE uid='$space[uid]' ORDER BY dateline DESC LIMIT 0,12");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 		realname_set($value['vuid'], $value['vusername']);
@@ -184,7 +184,7 @@ if($space['self'] && empty($start)) {
 		$oluids[] = $value['vuid'];
 	}
 
-	//访客在线
+	//Visitors Online
 	if($oluids) {
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('session')." WHERE uid IN (".simplode($oluids).")");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
@@ -199,7 +199,7 @@ if($space['self'] && empty($start)) {
 	$oluids = array();
 	$olfcount = 0;
 	if($space['feedfriend']) {
-		//在线好友
+		//Online Friends
 		$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('session')." WHERE uid IN ($space[feedfriend]) ORDER BY lastactivity DESC LIMIT 0,15");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 			if(!$value['magichidden']) {
@@ -212,7 +212,7 @@ if($space['self'] && empty($start)) {
 		}
 	}
 	if($olfcount < 15) {
-		//我的好友
+		//My friends
 		$query = $_SGLOBAL['db']->query("SELECT fuid AS uid, fusername AS username, num FROM ".tname('friend')." WHERE uid='$space[uid]' AND status='1' ORDER BY num DESC, dateline DESC LIMIT 0,30");
 		while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 			if(empty($oluids[$value['uid']])) {
@@ -224,14 +224,14 @@ if($space['self'] && empty($start)) {
 		}
 	}
 
-	//获取任务
+	//For tasks
 	include_once(S_ROOT.'./source/function_space.php');
 
 	$task = gettask();
 
-	//好友生日
+	//Friends birthdays
 	if($space['feedfriend']) {
-		list($s_month, $s_day) = explode('-', sgmdate('n-j', $_SGLOBAL['timestamp']-3600*24*3));//过期3天
+		list($s_month, $s_day) = explode('-', sgmdate('n-j', $_SGLOBAL['timestamp']-3600*24*3));//Expired three days
 		list($n_month, $n_day) = explode('-', sgmdate('n-j', $_SGLOBAL['timestamp']));
 		list($e_month, $e_day) = explode('-', sgmdate('n-j', $_SGLOBAL['timestamp']+3600*24*7));
 		if($e_month == $s_month) {
@@ -258,7 +258,7 @@ if($space['self'] && empty($start)) {
 	// points 
 	$space['star'] = getstar($space['experience']);
 
-	//域 name 
+	//Domain name 
 	$space['domainurl'] = space_domain($space);
 
 	// hot value 
@@ -293,7 +293,7 @@ if($space['self'] && empty($start)) {
 		}
 	}
 	
-	//热闹
+	//Lively topics
 	$query = $_SGLOBAL['db']->query("SELECT * FROM ".tname('topic')." ORDER BY lastpost DESC LIMIT 0,1");
 	while ($value = $_SGLOBAL['db']->fetch_array($query)) {
 		$value['pic'] = $value['pic']?pic_get($value['pic'], $value['thumb'], $value['remote']):'';
@@ -301,17 +301,17 @@ if($space['self'] && empty($start)) {
 	}
 
 
-	//提醒总数
+	//Remind the total number
 	$space['allnum'] = 0;
 	foreach (array('notenum', 'addfriendnum', 'mtaginvitenum', 'eventinvitenum', 'myinvitenum', 'pokenum', 'reportnum', 'namestatusnum', 'eventverifynum') as $value) {
 		$space['allnum'] = $space['allnum'] + $space[$value];
 	}
 }
 
-// real name 处理
+// Deal with real name
 realname_get();
 
-//feed合并
+//feed Merge
 $list = array();
 
 if($_GET['view'] == 'hot') {
@@ -321,7 +321,7 @@ if($_GET['view'] == 'hot') {
 		$list['today'][] = $value;
 	}
 } elseif($_GET['view'] == 'me') {
-	//个人
+	//Personal
 	foreach ($feed_list as $value) {
 		if($hotlist[$value['feedid']]) continue;
 		$value = mkfeed($value);
@@ -335,7 +335,7 @@ if($_GET['view'] == 'hot') {
 		}
 	}
 } else {
-	//好友、全站
+	//Friends, the whole station
 	foreach ($feed_list as $values) {
 		$actors = array();
 		$a_value = array();
@@ -356,7 +356,7 @@ if($_GET['view'] == 'hot') {
 			$list[$theday][] = $a_value;
 		}
 	}
-	//应用
+	//Applications
 	foreach ($appfeed_list as $values) {
 		$actors = array();
 		$a_value = array();
@@ -394,7 +394,7 @@ $_TPL['default_template'] = $default_template;
 
 */
 
-//标签激活
+//Label activate
 $my_actives = array(in_array($_GET['filter'], array('site','myapp'))?$_GET['filter']:'all' => ' class="active"');
 $actives = array(in_array($_GET['view'], array('me','all','hot'))?$_GET['view']:'we' => ' class="active"');
 
@@ -427,7 +427,7 @@ $actives = array(in_array($_GET['view'], array('me','all','hot'))?$_GET['view']:
 
 if(empty($cp_mode)) include_once template("space_feed");
 
-//筛选
+//Filter
 function ckicon_uid($feed) {
 	global $_SGLOBAL, $space, $_SCONFIG;
 
@@ -445,7 +445,7 @@ function ckicon_uid($feed) {
 	return true;
 }
 
-//推荐礼物
+//Suggested Gift
 function my_showgift() {
 	global $_SGLOBAL, $space, $_SCONFIG;
 	if($_SCONFIG['my_showgift'] && $_SGLOBAL['my_userapp'][$_SGLOBAL['gift_appid']]) {

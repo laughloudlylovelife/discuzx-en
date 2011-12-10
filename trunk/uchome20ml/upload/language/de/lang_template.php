@@ -18,6 +18,7 @@ $_lang = array (
 
 	'lang_switch' => 'Sprache ändern',//'Language switch',
 
+	'gifts' => 'Geschenke',//'礼品',
 	'albums' => 'Alben',//'相册',
 	'lmenu_doing_add' => '[+]',//'记录',//Add Doing/Record
 	'lmenu_upload' => '[+]',//'上传',

@@ -438,7 +438,7 @@ $_lang = array (
 	'visit		'	=> 'Visit',//'访问',
 
 //admin/tpl/config.htm
-//'base_settings'		=> 'Basic Settings',//'基本设置',
+	'base_settings'		=> 'Base Settings',//'基本设置',
 	'register_show'		=> 'Registrations',//'注册显示',
 	'system_functions'	=> 'System functions',//'系统功能',
 	'real_name_settings'	=> 'Real-name verification settings',//'实名认证设置',
@@ -1244,8 +1244,9 @@ $_lang = array (
 	'comments_manage'	=> 'Management Comments',//'管理评论',
 
 //admin/tpl/side.htm
-	'batch_manage'		=> 'Batch Management',//'批量管理',
-	'advanced_settings'	=> 'Advanced Settings',//'高级设置',
+	'configuration' 	=> 'Configure',//'基本设置',
+	'batch_manage'		=> 'Management',//'批量管理',
+	'advanced_settings'	=> 'Advanced',//'高级设置',
 
 //admin/tpl/space.htm
 	'users_all'		=> 'All users',//'浏览全部用户',

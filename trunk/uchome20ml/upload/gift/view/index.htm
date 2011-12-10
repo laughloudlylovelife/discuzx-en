@@ -1,0 +1,225 @@
+<!--{eval $_TPL['titles'] = array('Gift');}-->
+<!--{template header}-->
+<style type="text/css">
+@import url(template/blue/style.css);
+@import url(ask/css/ask_main.css);
+</style>
+<div class="c_header a_header">
+	<div class="avatar48"><a href="space.php?uid=$space[uid]"><!--{avatar($space[uid],small)}--></a></div>
+	<h1>Send Gift to friends</h1>
+	<span class="spacelink">Express your emotion,love, blessing to your frineds<br><b>Note:</b> Price are in point, those points will deduct from your account.</span>
+</div>
+<div class="tabs_header">
+	<ul class="tabs">
+		<li><a href="gift.php"><span>Gifts</span></a></li>
+		<li><a href="gift.php?do=view"><span>Receive gifts</span></a></li>
+	</ul>
+</div>
+<form id="giftform" method="POST" action="gift.php?do=send">
+<div style="padding: 1em 2em;">
+	<!--menu-->
+	<div>    
+	<ul style="line-height:26px;" id="type_ul">
+	<li style="padding:5px;float:left;" id="type_all" ><a href="#" onclick="showList( -1 , 0 )" >All</a></li>
+	<!--{loop $giftlist[category] $key $val}-->
+	<li style="padding:5px;float:left;" id="type_{$key}" ><a href="#" onclick="showList( {$key} , 0 )" >{$val}</a></li>
+	<!--{/loop}-->
+	</ul>
+	</div>
+	<div style="clear:both;"></div>
+	<!--gifts-->
+	<div style="border:1px solid #cccccc;height:100%;">
+	<ul style="padding:20px" id="gift_list"></ul>
+	<div style="clear:both;"></div>
+	<div id="gift_page" style="padding:10px 30px;text-align:right;"></div>
+	</div>
+</div>
+<div style="padding: 1em 2em;">
+	<div>
+	<script type="text/javascript" src="source/script_autocomplete.js"></script>
+	    <table cellspacing="0" cellpadding="0">
+		<tr>
+			<td>
+				<label style="font-size:14px;line-height:28px"><strong>I wanna present to : </strong> Note: Click below box and select the friend name</label>
+				<br><input type="text" id="username_gift" name="username_gift" value="{$fusername}" style="width: 150px;" class="t_input" tabindex="1" <!--{if $friends}--> onclick="auc.handleEvent(this.value ,event);" onkeyup="auc.handleEvent(this.value ,event);" onkeydown="closeOpt(username_gift,event);inputKeyDown(event);" autocomplete="off" <!--{/if}--> />
+				<div id="username_menu" class="ajax_selector" onclick="$('username_menu').style.display='none';" style="display:none">
+					<div class="ajax_selector_option" style="width: 150px; height: 100px;">
+						<a href="javascript:;" onclick="$('username_menu').style.display='none';" class="float_del" style="margin-right: 5px;">a</a>
+						<ul id="friendlist" class="blocklink">
+							<!--{loop $friends $key $value}-->
+								<!--{eval $fs[] = $value['username'];}-->
+								<li>$value[username]</li>
+							<!--{/loop}-->
+						</ul>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td><h2 style="font-size:14px;line-height:28px">Message:</h2>
+			<p>Not more then <span id="maxlimit">200</span> Characters</p></td>
+		</tr>
+		<tr>
+			<td>
+			<table width="439" height="120" cellpadding="0" cellspacing="0">
+	          <tbody>
+	            <tr>
+	              <td width="437" valign="middle"><textarea name="message" cols="70" rows="5" class="ft12z" onkeyup="textCounter(this, 'maxlimit', 200)" id="comment_message"></textarea></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	        </td>
+		</tr>
+		<tr>
+			<td>
+			<table cellpadding="0" cellspacing="0">
+	          <tr>
+	          	<td><h2 style="font-size:14px;line-height:28px">Delivery privacy setting:</h2></td>
+	          </tr>
+	          <tr>
+	          	<td><input type="radio" name="gifttype" value="0"><strong>Normal gift</strong> <span class="time">Every one can see</span></td>
+	          </tr>
+	          <tr>
+	          	<td><input type="radio" name="gifttype" value="1" checked><strong>Private gift</strong> <span class="time">Just you and the person who will recieve can see</span></td>
+	          </tr>
+	          <tr>
+	          	<td><input type="radio" name="gifttype" value="2"><strong>Anonymous gift</strong> <span class="time">Only gift and message can view, your name will not display</span></td>
+	          </tr>
+	        </table>
+	        </td>
+		</tr>
+		<tr>
+			<td style="padding-top:10px"><input id="giftsubmit" type="hidden" value="true" name="giftsubmit" /><input id="giftsubmit_btn" type="submit" value="Send Gift" name="giftsubmit_btn" class="submit" /></td>
+		</tr>
+	    </table>
+
+<script language="javascript" type="text/javascript" src="gift/js/jquery-1.2.6.pack.js"></script>
+<script language="javascript" type="text/javascript" >var J = jQuery.noConflict();</script>
+<script type="text/javascript">
+J(document).ready(function(){
+	showList( -1 , 0 );
+});
+var close = true;
+var auc = new sAutoComplete("auc", "username_menu", "friendlist", "username_gift", 0, '');
+auc.addItem('$friendstr');
+function closeOpt(key,evt) {
+	if(evt.keyCode==9) {
+		$('username_menu').style.display='none';
+	}
+}
+function inputKeyDown(event) {
+	if(event.keyCode == 13){
+		doane(event);
+	}
+}
+function textCounter(obj, showid, maxlimit) {
+	var len = strLen(obj.value);
+	var showobj = document.getElementById(showid);
+	if(len > maxlimit) {
+		obj.value = getStrbylen(obj.value, maxlimit);
+		showobj.innerHTML = '0';
+	} else {
+		showobj.innerHTML = maxlimit - len;
+	}
+	if(maxlimit - len > 0) {
+		showobj.parentNode.style.color = "";
+	} else {
+		showobj.parentNode.style.color = "red";
+	}
+}
+function getStrbylen(str, len) {
+	var num = 0;
+	var strlen = 0;
+	var newstr = "";
+	var obj_value_arr = str.split("");
+	for(var i = 0; i < obj_value_arr.length; i ++) {
+		if(i < len && num + byteLength(obj_value_arr[i]) <= len) {
+			num += byteLength(obj_value_arr[i]);
+			strlen = i + 1;
+		}
+	}
+	if(str.length > strlen) {
+		newstr = str.substr(0, strlen);
+	} else {
+		newstr = str;
+	}
+	return newstr;
+}
+function byteLength (sStr) {
+	aMatch = sStr.match(/[^\x00-\x80]/g);
+	return (sStr.length + (! aMatch ? 0 : aMatch.length));
+}
+function strLen(str) {
+	var charset = document.charset; 
+	var len = 0;
+	for(var i = 0; i < str.length; i++) {
+		len += str.charCodeAt(i) < 0 || str.charCodeAt(i) > 255 ? (charset == "utf-8" ? 3 : 2) : 1;
+	}
+	return len;
+}
+function showList(tid,st){
+	J('#gift_list').html("<p><img src=\"gift/js/loading.gif\" align=\"absmiddle\">Processing, please wait.....</p>");
+	J.ajax({
+	   type: "POST",
+	   url: "gift.php?do=list&num="+Math.round(Math.random()*10000),
+	   data: "t="+tid+"&s="+st,
+	   success: function(msg){
+	   		J('#gift_list').html("");
+	   		J('#gift_page').html("");
+	   		if(msg == "err_null_rs"){
+	   			alert("Connection Error please try again!");
+	   		}else{
+				var list = eval('('+unescape(msg)+')');
+				var num = list.gift.length;
+				var maxtype = <!--{eval echo count($giftlist[category])}-->;
+				
+				for(var i=0;i<maxtype;i++){
+					J('#type_'+i).css("font-weight","normal");
+					J('#type_all').css("font-weight","normal");
+				}
+				J('#type_'+list.type).css("font-weight","bold");
+				
+				for(i=0;i<num;i++){
+					var newli = "<li style=\"width:100px;height:130px;float:left;\"><img src=\"gift/gift_model/image/"+list.gift[i].src+"\" width=\"64\" height=\"64\" alt=\""+list.gift[i].name+"\" ><p><input type=\"radio\" name=\"giftitem\" align=\"middle\" value=\""+list.gift[i].gid+"\">"+list.gift[i].name+"<br><span>"+list.gift[i].cost+" points</span></p></li>";
+					J('#gift_list').append(newli);
+				}
+				if(list.pages > 1){
+					var page = '';
+					for(i=0;i<(list.pages);i++){
+						if(list.curp == i){
+							page = page + "<a href='#' style=\"margin: 0 2px; padding: 1px 5px; line-height: 26px;\" onclick=\"showList( "+tid+" , "+(list.perpage*i)+" )\"><strong>"+(i+1)+"</strong></a>";
+						}else{
+							page = page + "<a href='#' style=\"margin: 0 2px; padding: 1px 5px; border: 1px solid #DDD;line-height: 26px;\" onclick=\"showList( "+tid+" , "+(list.perpage*i)+" )\">"+(i+1)+"</a>";
+						}
+					}
+					J('#gift_page').html(page);
+				}
+	   		}
+	   }
+	 });
+}
+</script>
+</div>
+</div>
+<input type="hidden" name="formhash" value="<!--{eval echo formhash();}-->" />
+</form>
+<div class="f_status f_status_w s_clear">
+	
+	<a href="javascript:;" onclick="window.scrollTo(0,0);" id="a_top" title="TOP">TOP</a>
+</div>
+
+<div class="IND_lwide" valign="left">
+	<div class="wdL"></div>
+	<p align="right"><font color="#808080">
+	<span class="fl" valign="left">¡¶GIFTS¡· English Version 2.0beta</span>	
+	</font></p>
+	<div class="wdR" valign="left">
+		<p align="right"></div>	
+	<p align="right">	
+	<span class="fr" valign="left"><font color="#808080">Develope by </font> <a href="http://www.cd4fun.com">
+	<font color="#808080">Sky 4 Fun Media Inc.</font></a><font color="#808080">&copy;2009-2019 
+	</font> </span>		
+ 
+</div>
+</div>
+<!--{template footer}-->
