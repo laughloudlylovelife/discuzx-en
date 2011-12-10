@@ -308,7 +308,7 @@ $_SGLOBAL['cplang'] = array(
 	'do_stat_post'		=> 'Topic posts',//'话题回帖',
 	'do_stat_click'		=> 'Rate Clicks',//'表态',
 	'do_stat_wall'		=> 'Wall messages',//'留言',
-	'do_stat_poke'		=> 'Greetings',//'打招呼'
+	'do_stat_poke'		=> 'Greetings',//'打招呼',
 
 );
 
