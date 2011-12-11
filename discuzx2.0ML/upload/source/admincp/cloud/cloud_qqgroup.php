@@ -716,9 +716,17 @@ EOF;
 }
 
 function showQQGroupCSS() {
+//vot Language-specific style
+$lang_style = '';
+if(is_file($_G[langpath].'style/qqgroup.css')) {
+  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/qqgroup.css" />';
+}
+
 	echo
 <<<EOF
 	<link href="static/image/admincp/cloud/qqgroup.css" rel="stylesheet" type="text/css" />
+	$lang_style
+
 EOF;
 }
 

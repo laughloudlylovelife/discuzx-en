@@ -3,7 +3,10 @@
 	<!--{subtemplate common/header_common}-->
 		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
 		<link rel="stylesheet" type="text/css" href="{$_G[setting][csspath]}data/cache/style_{STYLEID}_css_space.css?{VERHASH}" />
+		<link rel="stylesheet" type="text/css" href="{$_G[langurl]}style/style_{STYLEID}_css_space.css?{VERHASH}" />
+
 		<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}space/{if $space[theme]}$space[theme]{else}t1{/if}/style.css?{VERHASH}">
+		<link id="style_css" rel="stylesheet" type="text/css" href="{$_G[langurl]}style/space_{if $space[theme]}$space[theme]{else}t1{/if}.css?{VERHASH}">
 		<style id="diy_style">$space[spacecss]</style>
 	</head>
 
@@ -13,6 +16,8 @@
 
 		<!--{if $space['self'] && $_GET['diy'] == 'yes' && $do == 'index' }-->
 		<link rel="stylesheet" type="text/css" href="{$_G[setting][csspath]}data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+		<link rel="stylesheet" type="text/css" href="{$_G[langurl]}style/style_{STYLEID}_css_diy.css?{VERHASH}" />
+
 		<!--{subtemplate home/space_diy}-->
 		<!--{/if}-->
 

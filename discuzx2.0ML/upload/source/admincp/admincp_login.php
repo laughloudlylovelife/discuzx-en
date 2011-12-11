@@ -46,6 +46,13 @@ function html_login_header($form = true) {
 	$charset = CHARSET;
 	$title = lang('admincp_login', 'login_title');
 	$tips = lang('admincp_login', 'login_tips');
+
+//vot Language-specific style
+$lang_style = '';
+if(is_file($_G[langpath].'style_'.$_G['setting']['styleid'].'_common.css')) {
+  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/style_'.$_G['setting']['styleid'].'_common.css" />';
+}
+
 	echo <<<EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -53,6 +60,8 @@ function html_login_header($form = true) {
 <title>$title</title>
 <meta http-equiv="Content-Type" content="text/html;charset=$charset" />
 <link rel="stylesheet" href="static/image/admincp/admincp.css" type="text/css" media="all" />
+<link rel="stylesheet" href="{$_G[langurl]}style/admincp.css" type="text/css" media="all" />
+$lang_style
 <meta content="Comsenz Inc." name="Copyright" />
 </head>
 <body>

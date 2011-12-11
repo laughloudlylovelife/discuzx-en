@@ -22,6 +22,12 @@ if(!empty($_G['gp_preview'])) {
 	$_G['gp_advnew'][$_G['gp_advnew']['style']]['url'] = $_G['gp_TMPadvnew'.$_G['gp_advnew']['style']] ? $_G['gp_TMPadvnew'.$_G['gp_advnew']['style']] : $_G['gp_advnew'.$_G['gp_advnew']['style']];
 	$data = dstripslashes(encodeadvcode($_G['gp_advnew']));
 
+//vot Language-specific style
+$lang_style = '';
+if(is_file($_G[langurl].'style/style_'.$_G['setting']['styleid'].'_common.css')) {
+  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/style_'.$_G['setting']['styleid'].'_common.css" />';
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,6 +36,7 @@ if(!empty($_G['gp_preview'])) {
 <script type="text/javascript">var IMGDIR = '<?php echo $_G['style']['imgdir']; ?>', cookiepre = '<?php echo $_G['config']['cookie']['cookiepre'];?>', cookiedomain = '<?php echo $_G['config']['cookie']['cookiedomain'];?>', cookiepath = '<?php echo $_G['config']['cookie']['cookiepath'];?>';</script>
 <script type="text/javascript" src="static/js/common.js"></script>
 <link rel="stylesheet" type="text/css" href="data/cache/style_<?php echo $_G['setting']['styleid'];?>_common.css" />
+$lang_style
 </head>
 <body>
 <div id="append_parent"></div><div id="ajaxwaitid"></div>

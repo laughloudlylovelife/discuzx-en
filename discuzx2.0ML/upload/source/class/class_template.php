@@ -245,6 +245,9 @@ class template {
 	function loadcsstemplate() {
 		global $_G;
 		$scriptcss = '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_common.css?{VERHASH}" />';
+/*vot*/		if(is_file($_G[langpath].'style/style_'.STYLEID.'_common.css')) {
+/*vot*/			$scriptcss .= '<link rel="stylesheet" type="text/css" href="{$_G[langurl]}style/style_{STYLEID}_common.css?{VERHASH}" />';
+/*vot*/		}
 		$content = $this->csscurmodules = '';
 		$content = @implode('', file(DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_module.css'));
 		$content = preg_replace("/\[(.+?)\](.*?)\[end\]/ies", "\$this->cssvtags('\\1','\\2')", $content);
@@ -257,6 +260,9 @@ class template {
 				exit('Can not write to cache files, please check directory ./data/ and ./data/cache/ .');
 			}
 			$scriptcss .= '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_'.$_G['basescript'].'_'.CURMODULE.'.css?{VERHASH}" />';
+/*vot*/			if(is_file($_G[langpath].'style/style_'.STYLEID.'_'.$_G['basescript'].'_'.CURMODULE.'.css')) {
+/*vot*/				$scriptcss .= '<link rel="stylesheet" type="text/css" href="{$_G[langurl]}style/style_{STYLEID}_'.$_G['basescript'].'_'.CURMODULE.'.css?{VERHASH}" />';
+			}
 		}
 		$scriptcss .= '{if $_G[uid] && isset($_G[cookie][extstyle]) && strpos($_G[cookie][extstyle], TPLDIR) !== false}<link rel="stylesheet" id="css_extstyle" type="text/css" href="$_G[cookie][extstyle]/style.css" />{elseif $_G[style][defaultextstyle]}<link rel="stylesheet" id="css_extstyle" type="text/css" href="$_G[style][defaultextstyle]/style.css" />{/if}';
 		return $scriptcss;
