@@ -2257,12 +2257,12 @@ function get_languages() {
 
 	if(is_dir($lng_dirname.'/'.$dir)) {
 
-		$lngvalue = array('name'=>$dir, 'title'=>'Unknown', 'icon'=>W_ROOT.'/image/lngicon.gif' );
+		$lngvalue = array('name'=>$dir, 'title'=>'Unknown', 'icon'=>W_ROOT.'image/lngicon.gif' );
 
 		if(file_exists($lng_dirname.'/'.$dir.'/lang_title.php')) {
 			require($lng_dirname.'/'.$dir.'/lang_title.php');
 			$lngvalue['title'] = $_SGLOBAL['language_title'];
-			$lngvalue['icon'] = W_ROOT.'/language/'.$dir.'/'.$_SGLOBAL['language_icon'];
+			$lngvalue['icon'] = W_ROOT.'language/'.$dir.'/'.$_SGLOBAL['language_icon'];
 		}
 
 		$languages[$dir] = $lngvalue;
