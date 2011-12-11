@@ -1,7 +1,9 @@
 <?
 define('IN_UCHOME',1);
 
-echo "<b>Check for UCHome 2.0 Language Pack Integrity</b><br><br>";
+echo "<h2>UCHome2ML LANGUAGE PACK VERIFIER</h2>";
+echo "(c) by Valery Votintsev (vot), http://codersclub.org/discuzx/<br>";
+echo "-------------------------------------------------------------<br>";
 
 $lang = isset($_GET['lang']) ? $_GET['lang'] : '';
 
