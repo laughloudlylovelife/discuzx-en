@@ -110,8 +110,16 @@ if(!$operation || $operation == 'open') {
 			showformfooter();
 			echo "</div>";
 
+//vot Language-specific style
+$lang_style = '';
+if(is_file($_G[langpath].'style/cloud.css')) {
+  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/cloud.css" />';
+}
+
 			echo <<<EOT
 <link rel="stylesheet" type="text/css" href="static/image/admincp/cloud/cloud.css" />
+$lang_style
+
 <script type="text/javascript" src="static/image/admincp/cloud/cloud.js"></script>
 <script type="text/JavaScript">
 var cloudStatus = "$cloudstatus";

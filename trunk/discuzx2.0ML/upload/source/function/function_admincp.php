@@ -335,6 +335,12 @@ function cpheader() {
 	$frame = getgpc('frame') != 'no' ? 1 : 0;
 	$charset = CHARSET;
 	$basescript = ADMINSCRIPT;
+//vot Language-specific style
+$lang_style = '';
+if(is_file($_G[langpath].'style/admincp.css')) {
+  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/admincp.css" />';
+}
+
 	echo <<<EOT
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -343,6 +349,8 @@ function cpheader() {
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta http-equiv="x-ua-compatible" content="ie=7" />
 <link href="static/image/admincp/admincp.css?{$_G[style][verhash]}" rel="stylesheet" type="text/css" />
+$lang_style
+
 	<!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
 	<script type="text/javascript" src="{$_G[setting][jspath]}lang_js.js?{VERHASH}"></script>
 </head>

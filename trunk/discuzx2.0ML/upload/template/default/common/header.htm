@@ -12,6 +12,8 @@
 	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
 		<!--{if $_G['basescript'] == 'forum' && empty($_G['disabledwidthauto']) && $_G['forum_widthauto']}-->
 			<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+			<link rel="stylesheet" type="text/css" href="{$_G[langurl]}style/style_{STYLEID}_widthauto.css?{VERHASH}" />
+
 			<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
 		<!--{/if}-->
 		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
@@ -25,6 +27,7 @@
 	<!--{/if}-->
 	<!--{if $_GET['diy'] == 'yes' && (CURMODULE == 'topic' || $_G['group']['allowdiy']) && !empty($_G['style']['tplfile'])}-->
 	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<link rel="stylesheet" type="text/css" id="diy_common" href="{$_G[langurl]}style/style_{STYLEID}_css_diy.css?{VERHASH}" />
 	<!--{/if}-->
 </head>
 
