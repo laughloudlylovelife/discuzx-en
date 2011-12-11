@@ -9,6 +9,21 @@
 */
 
 //--------------------------------
+//static/js/register.js
+
+// Suggested email domains for registering:
+var emaildomains = [
+		'qq.com',
+		'163.com',
+		'sina.com',
+		'sohu.com',
+		'yahoo.cn',
+		'yahoo.com',
+		'gmail.com',
+		'hotmail.com'
+		];
+
+//--------------------------------
 //static/js/common.js
 
 var colortexts = {

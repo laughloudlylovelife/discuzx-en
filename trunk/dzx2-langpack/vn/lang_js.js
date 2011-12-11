@@ -9,6 +9,17 @@
 */
 
 //--------------------------------
+//static/js/register.js
+
+// Suggested email domains for registering:
+var emaildomains = [
+		'aol.com',
+		'gmail.com',
+		'hotmail.com',
+		'yahoo.com'
+		];
+
+//--------------------------------
 //static/js/common.js
 
 var colortexts = {

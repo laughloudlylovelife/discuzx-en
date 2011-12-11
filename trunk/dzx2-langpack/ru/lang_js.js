@@ -9,6 +9,20 @@
 */
 
 //--------------------------------
+//static/js/register.js
+
+// Suggested email domains for registering:
+var emaildomains = [
+		'mail.ru',
+		'gmail.com',
+		'hotmail.com',
+		'qip.ru',
+		'rambler.ru',
+		'yandex.ru',
+		'yahoo.com'
+		];
+
+//--------------------------------
 //static/js/common.js
 
 var colortexts = {
