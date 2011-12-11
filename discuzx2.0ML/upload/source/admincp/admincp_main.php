@@ -36,12 +36,6 @@ foreach($_G['config']['languages'] AS $lng => $lngarray) {
       	</a>'."\n";
 }
 
-//vot Language-specific style
-$lang_style = '';
-if(is_file($_G[langpath].'style/admincp.css')) {
-  $lang_style = '<link rel="stylesheet" type="text/css" href="'.$_G[langurl].'style/admincp.css" />';
-}
-
 echo <<<EOT
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{$_G[langdir]}"><head>
@@ -49,7 +43,6 @@ echo <<<EOT
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta content="Comsenz Inc." name="Copyright" />
 <link rel="stylesheet" href="static/image/admincp/admincp.css?{$_G[style][verhash]}" type="text/css" media="all" />
-$lang_style
 
 <!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
 <script type="text/javascript" src="{$_G[langurl]}lang_js.js?{$_G[style][verhash]}"></script>
