@@ -15,6 +15,7 @@ if(!defined('IN_DISCUZ')) {
 function build_cache_styles() {
 	global $_G;
 
+/*vot*/	$direction = $_G[langdir] == 'rtl' ? '_rtl' : '';
 	$stylevars = $styledata = array();
 	$defaultstyleid = $_G['setting']['styleid'];
 /*vot*/	$query = DB::query("SELECT sv.* FROM ".DB::table('common_stylevar')." sv LEFT JOIN ".DB::table('common_style')." s ON (s.styleid = sv.styleid AND (s.available=1 OR s.styleid='$defaultstyleid'))");
@@ -124,7 +125,7 @@ function writetocsscache($data) {
 			$cssdata = !preg_match('/^http:\/\//i', $data['styleimgdir']) ? preg_replace("/url\(([\"'])?".preg_quote($data['styleimgdir'], '/')."/i", "url(\\1../../$data[styleimgdir]", $cssdata) : $cssdata;
 			$cssdata = !preg_match('/^http:\/\//i', $data['imgdir']) ? preg_replace("/url\(([\"'])?".preg_quote($data['imgdir'], '/')."/i", "url(\\1../../$data[imgdir]", $cssdata) : $cssdata;
 			$cssdata = !preg_match('/^http:\/\//i', $data['staticurl']) ? preg_replace("/url\(([\"'])?".preg_quote($data['staticurl'], '/')."/i", "url(\\1../../$data[staticurl]", $cssdata) : $cssdata;
-			if($entry == 'module.css') {
+			if($entry == 'module'.$direction.'.css') {
 				$cssdata = preg_replace('/\/\*\*\s*(.+?)\s*\*\*\//', '[\\1]', $cssdata);
 			}
 			$cssdata = preg_replace(array('/\s*([,;:\{\}])\s*/', '/[\t\n\r]/', '/\/\*.+?\*\//'), array('\\1', '',''), $cssdata);
