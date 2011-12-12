@@ -1625,3 +1625,26 @@ DIY image is not loaded when the Hide Slide
 .flag {
 	padding-top: 6px;
 }
+/*
+	Name:			Print page copyrights
+	Level:			Global
+	Explain:		Used for print page
+	Last Modify:		Valery Votintsev
+*/
+.print_copyright {
+	text-align: right;
+}
+.sendmail {
+	font-family:'lucida grande',tahoma,'bitstream vera sans',helvetica,sans-serif;
+	font-size:14px;
+	line-height:150%;
+	color:#000;
+	text-align: left;
+	padding:4px;
+}
+.sendmail .title {
+	color:#FFF;
+	background:#FF8E00;
+	font-size:24px;
+	font-weight:bold;
+}
