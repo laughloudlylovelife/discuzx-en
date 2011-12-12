@@ -567,7 +567,7 @@ Note on the CSS Hack:
 		.pmfl			PM friend list (Window)
 		*/
 
-/* generic container, define page width */	.wp { margin: 0 auto; width: 960px; } #wp .wp { width: auto; }
+/* generic wrapper, define page width */	.wp { margin: 0 auto; width: 960px; } #wp .wp { width: auto; }
 
 /* Header */
 	#toptb { line-height: 24px; }
@@ -812,7 +812,7 @@ Note on the CSS Hack:
 	/* Check Ads */ .a_t { margin-bottom: 10px; }
 		.a_t table { width: 100%; }
 		.a_t td { padding: 4px 15px; border: 1px solid {COMMONBORDER}; }
-	/* Post the ads */ .a_pr { float: right; width: 120px; overflow: hidden; }
+	/* Post ads */ .a_pr { float: right; width: 120px; overflow: hidden; }
 		.a_pt, .a_pb { background: url({IMGDIR}/ad.gif) no-repeat 0 50%; margin-bottom: 6px; padding-left: 20px; zoom: 1; }
 	/* Floating ads */ .a_fl, .a_fr { float: right; position: fixed; top: 350px; z-index: 100; }
 		.a_fl { left: 0; }
@@ -821,7 +821,7 @@ Note on the CSS Hack:
 	/* Couplet (double) ads */ .a_cb { top: 20px }
 		* html .a_cb { top: expression(offsetParent.scrollTop+20); }
 	/* Article floating ads */ .a_af { float:left; margin-right: 10px; margin-bottom: 10px; }
-	/* lower right corner ads  */
+	/* lower right corner ads  */  .a_cn { position: fixed; right: 10px; bottom: 10px; z-index: 300; }
 		* html .a_cn { position: absolute; top: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight); }
 		.a_cn .close { text-align: right; }
 
@@ -964,14 +964,8 @@ Note on the CSS Hack:
 /* Smiles */
 .sllt { padding: 10px 5px 5px !important; }
 	.sllt td { padding: 8px; border: none; cursor: pointer; }
-/*vot
-	.sllt_p { *float: left; text-align: right; }
-*/
-	.sllt_p { border-top: 1px solid gray; text-align: right; padding: 4px 0; }
-/*vot
-		.sllt_p a { margin-right: 5px; color: #069; text-decoration: underline; }
-*/
-		.sllt_p a { margin-right: 5px;  color: #069; text-decoration: underline; border: 1px solid gray; }
+/*vot*/	.sllt_p { border-top: 1px solid gray; text-align: right; padding: 4px 0; }
+/*vot*/		.sllt_p a { margin-right: 5px;  color: #069; text-decoration: underline; border: 1px solid gray; }
 	.sl_pv { margin-top: 5px; padding: 8px; background: #FAFAFA; border: 1px solid #CCC; }
 	.ie6 .slg, .ie7 .slg { width: expression(this.parentNode.offsetWidth); }
 
@@ -1008,7 +1002,7 @@ Note on the CSS Hack:
 	.h_pop { min-width: 120px; border-top: none; }
 /* .txt and .textarea belong to the old naming convention, to be finishing by lushnis */ .p_opt .txt, .p_opt .txtarea { margin: 5px 0; }
 
-	.p_pop .flbc, .p_pof .flbc{margin-right: 8px;margin-top: 4px;}
+	.p_pop .flbc, .p_pof .flbc {margin-right: 8px;margin-top: 4px;}
 
 /* For popup the following class can be written separately, defined individually */
 	/* four sides, four corners of the common styles */
