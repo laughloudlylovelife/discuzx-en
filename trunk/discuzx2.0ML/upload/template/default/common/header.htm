@@ -164,7 +164,7 @@
 				</div>
 
 				<div id="nv">
-<!--vot-->				<a href="javascript:;" id="qmenu" onmouseover="showMenu({'ctrlid':'qmenu','pos':'<!--{if $_G['langdir']='rtl'}-->43<!--{else}-->34<!--{/if}-->!','ctrlclass':'a','duration':2});">{lang my_nav}</a>
+<!--vot-->				<a href="javascript:;" id="qmenu" onmouseover="showMenu({'ctrlid':'qmenu','pos':'<!--{if $_G['langdir']=='rtl'}-->43<!--{else}-->34<!--{/if}-->!','ctrlclass':'a','duration':2});">{lang my_nav}</a>
 					<ul>
 						<!--{loop $_G['setting']['navs'] $nav}-->
 							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]>$nav[navname]</a></li><!--{/if}-->
