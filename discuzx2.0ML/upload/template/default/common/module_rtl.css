@@ -5,6 +5,7 @@ Extend CSS file for Discuz! X
 http://www.comsenz.com
 Created & Modified by Monkey, Lushnis, Pony, Dfox & DragonLee.
 Translated by Valery Votintsev
+ Arabic (RTL) by Khalid Nahhal, www.ar-discuz.com
 
 1. Some common module styles
 	1. Notice
@@ -78,8 +79,8 @@ Translated by Valery Votintsev
 	#an { margin-bottom: 5px; }
 		#an dt { display: none; }
 		#an li { float: left; clear: both; width: 526px; text-align: left; }
-			#an li span { float: right; width: 430px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-			#an li em { float: right; width: 95px; color: {LIGHTTEXT}; }
+/*vot*/			#an li span { float: right; width: 430px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/*vot*/			#an li em { float: right; width: 95px; color: {LIGHTTEXT}; }
 			#anc, #an li { height: 29px; overflow: hidden; }
 
 /* Online member list */
@@ -93,7 +94,7 @@ Translated by Valery Votintsev
 
 
 /** misc::invite,group,forum::viewthread **/
-	/* .usl -> ç”¨ن؛ژç±»ن¼¼ç¾¤ç»„ن¸­é‚€è¯·ه¥½هڈ‹ن¸­çڑ„ه¥½هڈ‹هˆ—è،¨ by Pony */
+	/* .usl -> Invite friends for a similar group in the buddy list by Pony */
 		.usl { overflow: scroll; overflow-x: hidden; padding: 5px; width: 580px; height: 280px; }
 		.usl2 { width: auto; border: dashed {WRAPBORDERCOLOR}; border-width: 0 1px 1px; }
 			.usl li { overflow: hidden; float: right; margin: 3px; width: 134px; height: 64px; }
@@ -119,7 +120,7 @@ Translated by Valery Votintsev
 			.ie6 .el, .ie6 .el li { zoom: 1; }
 		.el .t { position: absolute; margin: 1px -20px 0 0; }
 		.el .o { overflow: hidden; float: left; margin: 4px 0 -4px -20px; width: 16px; height: 16px; text-indent: 20px; background: url({IMGDIR}/op.png) no-repeat -2px -62px; }
-			/* ه¤–ه®½و”¹هڈکو—¶ .ie6 .el .o, .ie6 .xlda .el .o çڑ„ margin ه€¼éœ€è¦پو›´و”¹ */
+			/* Changes outside the wide .ie6 .el .o, .ie6 .xlda .el .o, .ie6 .favl .o The margin value need to change */
 			.ie6 .el .o { position: absolute; margin: 2px 525px 0 0; }
 			.el .del { background-position: -2px -22px; }
 		.el .d { padding-top: 10px; color: {MIDTEXT}; }
@@ -399,7 +400,7 @@ Translated by Valery Votintsev
 /** forum::forumdisplay,forum::viewthread,forum::modcp,group,home::space,home::task,search::forum,search::group,member::groupexpiry,misc::ranklist,misc::stat **/
 /* fct --> froumatction Function Button */
 	.fct a { float: right; margin-right: 8px; }
-	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt, .fa_mng, .fa_pend { padding-right: 16px; background: no-repeat 100% 50%; }
+/*vot*/	.fa_fav_0, .fa_fav, .fa_rss, .fa_achv, .fa_bin, .fa_ivt, .fa_mng, .fa_pend { padding-right: 16px; background: no-repeat 100% 50%; }
 		.fa_fav_0 { background-image: url({IMGDIR}/fav_grey.gif); }
 		.fa_fav { background-image: url({IMGDIR}/fav.gif); }
 		.fa_rss { background-image: url({IMGDIR}/feed.gif); }
@@ -429,7 +430,7 @@ Translated by Valery Votintsev
 		.ttp li { float: right; padding-bottom: 5px; }
 		.ttp a, .ttp strong { float: right; margin-left: 5px; padding: 4px 8px 3px; height: 18px; border: 1px solid {COMMONBORDER}; background: {WRAPBG}; white-space: nowrap; }
 			.ttp a:hover { border-color: {HIGHLIGHTLINK}; color: {HIGHLIGHTLINK}; text-decoration: none; }
-		.ttp .a a { padding-left: 12px;  padding-right: 12px; border-color: {HIGHLIGHTLINK}; background: {SPECIALBG}; color: {HIGHLIGHTLINK}; }
+		.ttp .a a { padding-right: 12px; padding-left: 12px; border-color: {HIGHLIGHTLINK}; background: {SPECIALBG}; color: {HIGHLIGHTLINK}; }
 		.ttp .pipe { float: right; margin-left: 10px; padding: 0; width: 2px; height: 27px; background: {SPECIALBORDER}; text-indent: -9999px; }
 	/* when the Forum has launched a large number of subject classification away style by Pony */
 	.cttp { overflow: hidden; padding-left: 35px; height: 32px; }
@@ -455,7 +456,7 @@ Translated by Valery Votintsev
 				.tl cite, .tl .num em { display: block; }
 				.tl th em { margin-left: 4px; zoom: 1; }
 					.tl th em, .tl th em a { color: #007CD5; }
-				.tl td em { font-size: 11px; font-family: Arial, Psimsun, sans-serif; -webkit-text-size-adjust: none; }
+/*vot*/			.tl td em { font-size: 11px; font-family: Verdana, Arial, sans-serif; -webkit-text-size-adjust: none; }
 					.tl td em, .tl td em a { color: {LIGHTTEXT}; }
 			/*.tl .th th, .tl .th td { padding: 8px 0; background: {SPECIALBG}; border-top: 1px solid {SPECIALBORDER}; }*/
 			.tl .ts th, .tl .ts td { padding: 3px 0; border-bottom-color: {COMMONBORDER}; background: {COMMONBG}; }
@@ -502,7 +503,7 @@ Translated by Valery Votintsev
 /** forum::viewthread,group::viewthread **/
 .plh { line-height: 46px; }
 	.plh .plc { padding-bottom: 0; }
-	.ts { font: 700 16px "Microsoft Yahei", Hei, Tahoma, SimHei, sans-serif; }
+/*vot*/	.ts { font: 700 16px Verdana, Arial, Tahoma, sans-serif; }
 
 #nv_forum #ct { border-color: {SPECIALBORDER}; }
 
@@ -571,8 +572,8 @@ Translated by Valery Votintsev
 		.pls .avatar { margin: 10px 15px; }
 			.pls .avatar img { padding: 5px 5px 8px; background: #FFF url({IMGDIR}/midavt_shadow.gif) 0 100% repeat-x; }
 
-		.pls p, .pls .pil, .pls .o { margin: 5px 20px 5px 10px; }
-			.pls p em, .pls dt em { color: {NOTICETEXT}; }
+/*vot*/		.pls p, .pls .pil, .pls .o { /*margin: 10px 20px;*/ padding: 2px 6px; }
+/*vot*/			.pls p em, .pls dt em { color: {NOTICETEXT}; padding-right: 10px; }
 			.pls dd, .pls dt { float: right; overflow: hidden; height: 1.6em; line-height: 1.6em; }
 				.pls dt { margin-left: 3px; width: 60px; }
 				.pls dd { width: 65px; }
@@ -592,7 +593,7 @@ Translated by Valery Votintsev
 		#pl_top .pls { text-indent: 15px; }
 
 /* Posts of the time, the floor where the block and some properties */
-	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; height: 16px; border-bottom: 1px dashed {COMMONBORDER}; }
+/*vot*/	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; /*height: 16px;*/ border-bottom: 1px dashed {COMMONBORDER}; }
 		.pi strong a { float: left; margin-top: -6px; padding: 4px 6px; border: 1px solid {WRAPBG}; font-weight: 400; }
 			.pi strong a:hover { border-color: {COMMONBORDER}; }
 		.pls .pi { padding-right: 15px; }
@@ -605,12 +606,11 @@ Translated by Valery Votintsev
 		.ie6 .pcbs table, .ie6 .t_fsz table { width: auto; }
 		.pcb h1, .pcb h2 { margin: 8px 0; font-size: 1.17em; }
 			.pcb h1 a { font-weight: 400; }
-			.pcb h2 em { float: left; font-size: 13px; font-weight: 400; }
+			.pcb h2 em { float: left; font-size: 12px; font-weight: 400; }
 			#ph { padding: 17px 0 0; }
 				#ph h1 { font-size: 20px; }
 			#fj { margin-right: 5px; }
 				#fj label, #fj input { margin-left: 4px; padding: 0; height: 16px; line-height: 16px; float:left; }
-				#fj a { float:left; }
 		.pcb .jammer { font-size: 10px; color: {WRAPBG}; }
 
 		.pcb strong { font-weight: 700; }
@@ -620,7 +620,7 @@ Translated by Valery Votintsev
 		.pct { padding-bottom: 1em; }
 		.t_fsz { min-height: 100px; }
 			* html .t_fsz { height: 100px; overflow: visible; }
-		.t_f, .t_f td { font-size: {MSGFONTSIZE}; text-align: justify; text-indent: 24px;}
+		.t_f, .t_f td { font-size: {MSGFONTSIZE}; }
 			.t_f a { color: {HIGHLIGHTLINK}; text-decoration: underline; }
 		.t_f ul { margin-right: 14px; }
 			.t_f li { margin-right: 2em; }
@@ -638,7 +638,6 @@ Translated by Valery Votintsev
 		.pob { line-height: 36px; }
 			.pob em { float: right;}
 				.pob em a { padding: 5px 25px 5px 10px; }
-				.ie6 .pob em a {display: inline-block; zoom:1;}
 			.cmmnt { background: url({IMGDIR}/cmmnt.gif) no-repeat 100% 50%; }
 			.fastre { background: url({IMGDIR}/fastreply.gif) no-repeat 100% 50%; }
 			.req { background: url({IMGDIR}/repquote.gif) no-repeat 100% 50%; }
@@ -655,8 +654,6 @@ Translated by Valery Votintsev
 				#p_btn i { display: block; padding-right: 8px; background: url({IMGDIR}/share_btn.png) no-repeat 100% 100%; font-style: normal; cursor: pointer; }
 					#p_btn img { float: right; margin: 4px 0 0 3px; }
 					#p_btn span { padding-left: 2px; color: {LIGHTTEXT}; }
-					.ie7 #p_btn img, .ie7 #p_btn i {float:left;}
-					.ie6 #p_btn img, .ie6 #p_btn i {float:left;}
 			.tshare { padding-bottom: 10px; }
 				.tshare strong { float: right; margin-right: 10px; }
 				#p_btn .tshare a, #p_btn .tshare i { padding: 0; background-image: none; }
@@ -767,10 +764,10 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 	.pl .blockcode * { direction: ltr; }
 	.pl .blockcode { padding: 10px 0 5px 10px; border: 1px solid {WRAPBORDERCOLOR}; background: #F7F7F7 url({IMGDIR}/codebg.gif) repeat-y 0 0; overflow: hidden; }
 		.pl .blockcode ol { margin: 0 0 0 10px !important; padding: 0 !important; }
-			.pl .blockcode ol li { padding-left: 10px; list-style-type: decimal-leading-zero; font-family: Monaco,Consolas,"Lucida Console","Courier New",serif; font-size: 13px; line-height: 1.8em; }
+			.pl .blockcode ol li { padding-left: 10px; list-style-type: decimal-leading-zero; font-family: Monaco,Consolas,"Lucida Console","Courier New",serif; font-size: 12px; line-height: 1.8em; }
 				.pl .blockcode ol li:hover { background: {WRAPBG}; color: {HIGHLIGHTLINK}; }
 			* html .pl .blockcode ol li { font-family: "Courier New",serif; }
-		.pl .blockcode em { margin-right: 43px; color: {HIGHLIGHTLINK} !important; font-size: 13px; cursor: pointer; }
+		.pl .blockcode em { margin-right: 43px; color: {HIGHLIGHTLINK} !important; font-size: 12px; cursor: pointer; }
 		.pl .blockcode li { margin-left: 2em; }
 
 /* Poll optionvessel by dfox */
@@ -812,7 +809,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.spvimg em.hot { width: 120px; height: 102px; background-position: 0 -104px; }
 		.spi { margin-right: 315px;}
 			.spi dl { font-size: 14px; }
-				.spi dl dt { float: right; padding: 2px 0; width: 170px; height: 1em; }
+/*vot*/				.spi dl dt { float: right; padding: 2px 0; width: 140px; height: 1em; }
 				.spi dl dd { margin-right: 90px; padding: 2px 0; min-height: 21px; height: auto !important; height: 21px; }
 				.spi dl dd em { color: #F30; }
 			dl.nums {}
@@ -821,6 +818,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.actl { table-layout: fixed; margin: 10px 0; width: 320px; border-top: 3px solid {COMMONBORDER}; }
 			.actl th, .actl td { padding: 8px 2px; border-top: 1px dashed {COMMONBORDER}; }
 			.actl th { width: 60px; }
+		.actfm { height: auto !important; height: 220px; max-height: 220px; overflow-x: hidden; overflow-y: auto; }
 		.actl_pop { overflow: auto; max-width: 200px; max-height: 300px; }
 			.ie6 .actl_pop { width: 200px !important; height: expression(this.offsetHeight > 300 ? 300 : 'auto'); }
 			.actl_pop li { display: block; padding: 3px 0; border-bottom: 1px dashed {COMMONBORDER}; }
@@ -925,17 +923,17 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 	Explain:		Post and the list of goods in a single transaction
 	Last Modify:	Pony 11060710
 */
-	.tradl {}
-		.tradl li { padding: 10px; width: 138px; height: 235px; }
+.tradl {}
+	.tradl li { padding: 10px; width: 138px; height: 235px; }
 		.pg_trade .tradl li {float: none; padding: 10px 0; width: auto; height: 224px; }
-		.tradl .u { text-align: right; }
-		.tradl h4 { overflow: hidden; height: 38px; font-weight: 400; }
-		.tradl .tn { display: block; position: relative; margin: 5px auto; padding: 1px; width: 130px; height: 130px; border: 1px solid {COMMONBORDER}; }
-			.tradl .tn em.hot { width: 53px; height: 46px; background-position: 0 -48px; }
-			.tradl img { max-width: 130px; max-height: 130px; }
-				* html .tradl img { width: expression(this.width > 130 && this.width>=this.height ? 130 : true); height: expression(this.height > 130 && this.width<=this.height ? 130 : true); }
-		.tradl .p { font-family: Arial, sans-serif; font-size: 16px; color: {LIGHTTEXT}; }
-		.tradl .stat { background: url({IMGDIR}/closed.png); color: {LIGHTLINK}; }
+	.tradl .u { text-align: right; }
+	.tradl h4 { overflow: hidden; height: 38px; font-weight: 400; }
+	.tradl .tn { display: block; position: relative; margin: 5px auto; padding: 1px; width: 130px; height: 130px; border: 1px solid {COMMONBORDER}; }
+		.tradl .tn em.hot { width: 53px; height: 46px; background-position: 0 -48px; }
+		.tradl img { max-width: 130px; max-height: 130px; }
+			* html .tradl img { width: expression(this.width > 130 && this.width>=this.height ? 130 : true); height: expression(this.height > 130 && this.width<=this.height ? 130 : true); }
+	.tradl .p { font-family: Arial, sans-serif; font-size: 16px; color: {LIGHTTEXT}; }
+	.tradl .stat { background: url({IMGDIR}/closed.png); color: {LIGHTLINK}; }
 /** end **/
 
 
@@ -974,7 +972,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 			.dr .mls li { width: 70px; }
 
 /* Tags */
-	.ptg { padding-right: 20px; background: url({IMGDIR}/tag.gif) no-repeat 100$ 2px; }
+	.ptg { padding-right: 20px; background: url({IMGDIR}/tag.gif) no-repeat 100% 2px; }
 		.ptg a { color: {HIGHLIGHTLINK}; }
 /** end **/
 
@@ -1025,8 +1023,8 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 				.zoominner p a.imgclose:hover { background-position: -80px -39px; }
 
 .zimg_c { position: relative; }
-.zimg_prev, .zimg_next { display: block; position: absolute; width: 45%; height: 100%; background: url({IMGDIR}/pic-prev.png) no-repeat 0 -100px; cursor: pointer; }
-.zimg_next { left: 10px; background-image: url({IMGDIR}/pic-next.png); background-position: 100% -100px; }
+/*vot*/ .zimg_prev, .zimg_next { display: block; position: absolute; width: 45%; height: 100%; background: url({IMGDIR}/pic-prev.gif) no-repeat 0 -100px; cursor: pointer; }
+/*vot*/ .zimg_next { left: 10px; background-image: url({IMGDIR}/pic-next.gif); background-position: 100% -100px; }
 .zimg_c img { margin: 0 auto; }
 .zimg_p strong { display: none; }
 /** end **/
@@ -1077,7 +1075,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 .gl .flc dl { margin-right: 60px; }
 	.gl .flc dl dt { height: 20px; overflow: hidden; }
 
-	.mls li p { margin: 5px 4px 0; width: 58px; }
+/*vot*/	.mls li p { margin: 5px 4px 0; width: 66px; }
 
 .gl .flc .i { margin-top: -14px; width: 127px; }
 	.gl .flc .i em, .gl .flc .i span { float: left; width: 55px; color: {LIGHTTEXT}; text-align: left; line-height: 20px; }
@@ -1130,7 +1128,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.vw .attach { padding-right: 20px; background: url({IMGDIR}/fach.gif) no-repeat 0 50%; color: {HIGHLIGHTLINK}; }
 		.vw .o { margin-top: 15px; padding-top: 5px; border-top: 1px solid {COMMONBORDER}; text-align: left; }
 			.vw .o .mgcmn { width: auto; text-align: right; }
-		#nv_portal .vw .h, #nv_portal .vw .s, #nv_portal .vw .d, #nv_portal .vw .o,#nv_forum .vw .h, #nv_forum .vw .s, #nv_forum .vw .d { margin-left: 15px; margin-right: 15px; }
+		#nv_portal .vw .h, #nv_portal .vw .s, #nv_portal .vw .d, #nv_portal .vw .o,#nv_forum .vw .h, #nv_forum .vw .s, #nv_forum .vw .d { margin-right: 15px; margin-left: 15px; }
 
 /* .atd -> attitude Position by Pony */
 	.atd { margin: 15px auto; }
@@ -1322,7 +1320,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 
 /* View profile by lushnis */
 	#pprl li { clear: both; padding: 3px 90px 3px 0; }
-		#pprl li em { float: right; margin-right: -90px; width: 150px; white-space: nowrap; overflow: hidden; }
+/*vot*/		#pprl li em { float: right; margin-right: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
 	#pbbs li, #psts li, #pntc li { clear: none; float: right; width: 270px }
 
 /* وڈگé†’çڑ„ه†…ه®¹ن¸­ن¼ڑç”¨هˆ°م€‚è؟™é‡Œن½؟ç”¨ç‹¬ç«‹classï¼Œن»¥ن¾؟ن¸ھو€§هŒ–م€‚è‹¥وƒ³ن½؟وڈگé†’ه†…ه®¹و›´é†’ç›®ï¼Œهڈ¯ه¯¹summaryن¸‹çڑ„spanè؟›è،Œه®ڑن¹‰ */
@@ -1339,7 +1337,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 /** home::space **/
 /* Home page search box on the right side */
 	#sc .shortsc td { padding: 0 0 0 1px; }
-	.shortsc .px { width: 82px; }
+/*vot*/	.shortsc .px { width: 100px; }
 	.ie6 .shortsc .pn span { padding: 0; }
 
 /* Quick Find friends button style by ShuaiShuai */
@@ -1443,19 +1441,19 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		.tdats th, .tdats td { overflow: hidden; padding: 0 5px; height: 26px; border-width: 0 0 0 1px; border-color: {WRAPBG}; white-space: nowrap; }
 		.tdats th { height: 40px; font-weight: 700; }
 			.tdats .h th { height: 24px; border-top: 1px solid {COMMONBORDER}; border-bottom: 1px solid #E5E5E5; background: url({IMGDIR}/tb.png) repeat-x 0 -4px; color: {MIDTEXT}; zoom: 1; }
-		.tdats .tdat { float: right; width: 250px; border: none; table-layout: fixed; }
-		.tdats .tfx { width: 200px; }
-			.tdats .tfxf { width: 550px; }
+		.tdats .tdat { float: right; width: 150px; border: none; table-layout: fixed; }
+		.tdats .tfx { width: 300px; }
+			.tdats .tfxf { width: 650px; }
 			.tfx th, .tfx td { border-width: 0 3px !important; background: #FFF2DF; }
 			.tfx .alt, .tfx .alt th, .tfx .alt td { background: #FAEDDA; }
 			.tfx .h th { padding: 1px 5px; }
 		.tscr { float: right; overflow: hidden; width: 350px; }
-			.tscr .tdat th, .tscr .tdat td { width: 280px; }
+			.tscr .tdat th, .tscr .tdat td { width: 350px; }
 			.nwp { word-wrap: normal; white-space: nowrap; }
 		.tdats .c0 { padding: 0; height: 46px; text-align: center; vertical-align: bottom; background: transparent; }
 			.tdats .c0 h4 { line-height: 38px; background-color: #F60; color: {LIGHTLINK}; }
 		 	.tdats .c0 h4, .tdats .tb li { -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0; }
-		.tdats .tb { float: right; margin-top: 8px; padding-right: 0; width: 290px; border-bottom-width: 4px; }
+		.tdats .tb { float: right; margin-top: 8px; padding-right: 0; width: 350px; border-bottom-width: 4px; }
 			.tdats .tb li { padding: 0 10px; line-height: 33px; font-weight: 700; color: {LIGHTLINK}; }
 			.tdats .c0 h4, .tdats #c1, .tdats #c2, .tdats #c3, .tdats #c4 { background-image: url({IMGDIR}/bg_usergroup.png); }
 			.tdats .c1 { border-color: #158B00; }
@@ -1547,7 +1545,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 
 /** home::task **/
 .pbg { position: relative; width: 80%; }
-	.pbg .xs0 { position: absolute; top: 0; left: 8px; font-family: PMingLiU, sans-serif; }
+/*vot*/	.pbg .xs0 { position: absolute; top: 0; left: 8px; font-family: Verdana, Arial, sans-serif; }
 /** end **/
 
 
@@ -1622,7 +1620,7 @@ body { background: #FFF none !important; }
 		.td_srchtxt { background: url({IMGDIR}/searchbar.png) no-repeat 100% -35px; }
 		.td_srchbtn { background: url({IMGDIR}/searchbar.png) no-repeat 0 -70px; }
 		#scform_srchtxt { padding: 0 10px; width: 460px; background: transparent; outline: none; }
-		#scform_submit { width: 107px; opacity: 0; filter: alpha(opacity=0); cursor: pointer; }
+/*vot*/		#scform_submit { width: 107px; /*opacity: 0; filter: alpha(opacity=0);*/ cursor: pointer; color: white; background: transparent; }
 		#scform_srchtxt, #scform_submit { height: 35px; border: none; line-height: 35px; }
 		.ie6 #scform_srchtxt, .ie6 #scform_submit, .ie7 #scform_srchtxt, .ie7 #scform_submit { height: 33px; border: none; line-height: 33px; }
 	.sttl { margin: 10px 0; padding: 5px; border-bottom: 1px solid #CCC; background: #F5F5F5; }

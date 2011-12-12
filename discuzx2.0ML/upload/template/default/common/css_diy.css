@@ -1,4 +1,6 @@
-/* Determine: When you open the DIY panel to load -- Translated by Valery Votintsev */
+/* Determine: When you open the DIY panel to load
+Translated by Valery Votintsev
+*/
 body { padding-top: 170px; }
 #controlpanel { color: #000;position: fixed; top: 0; left: 0; z-index: 200; width: 100%; border-bottom: 1px solid #999; background: #F5F5F5 url({STATICURL}image/diy/cp-bg.png) repeat-x 0 0; }
 	* html #controlpanel { position: absolute; top: expression(offsetParent.scrollTop); }
