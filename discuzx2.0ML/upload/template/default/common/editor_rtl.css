@@ -3,7 +3,6 @@ Editor CSS file for Discuz! X
 (C) Comsenz Inc.
 http://www.comsenz.com
 -- Modified by Valery Votintsev
- Arabic (RTL) by Khalid Nahhal, www.ar-discuz.com
 */
 .edt { border: 1px solid; border-color: #999 #999 #CCC #CCC; }
 	.edt .bar { padding: 4px; height: 44px; border-bottom: 1px solid #DDD; background: {COMMONBG}; }
@@ -11,8 +10,8 @@ http://www.comsenz.com
 			.edt .bbar img { vertical-align: bottom; *margin-left: -4px; cursor: row-resize; }
 			.edt .bbar em { width: 200px; height: 20px; overflow: hidden; white-space: nowrap; float: right; text-align: right; }
 		.edt .bbar, .edt .bbar a { color: #999; }
-		.edt .btn { float: right; border-left: 1px solid #FEFEFE; border-right: 1px solid #DDD; }
-			.edt .b1r, .edt .b2r { position: relative; float: right; padding: 0 3px; height: 44px; border-right: 1px solid #FEFEFE; border-left: 1px solid #DDD; }
+		.edt .btn { float: right; border-right: 1px solid #DDD; border-left: 1px solid #FEFEFE; }
+			.edt .b1r, .edt .b2r { position: relative; float: right; padding: 0 3px; height: 44px; border-left: 1px solid #DDD; border-right: 1px solid #FEFEFE; }
 			.edt .b2r p, .edt .b2r br { clear: both; }
 		.edt .bar a { float: right; border: 1px solid {COMMONBG}; background: transparent url({STATICURL}image/editor/editor.gif) no-repeat 0 0; overflow: hidden; }
 			.edt .b1r a { padding-top: 27px; width: 35px; height: 15px; text-align: center; font-size: 11px; font-family: Arial, PMingLiU, sans-serif; }
@@ -98,7 +97,7 @@ http://www.comsenz.com
 	#e_simple, #e_fullswitcher { padding: 0 2px; text-align: left; border: 1px solid {SPECIALBORDER}; background: url({IMGDIR}/card_btn.png) repeat-x 0 100%; }
 		#e_fullswitcher { margin-left: 3px; }
 /* Narrow editor shows the size of the input box menu */
-.popupfix .px { margin-bottom: 4px; padding: 2px; } /* vot */
+.popupfix .px { margin-bottom: 4px; }
 
 #e_body { display: block !important; }
 #e_body_loading { display: none; }
