@@ -433,8 +433,9 @@ function writeEditorContents(text) {
 		if(initialized && !(BROWSER.firefox && BROWSER.firefox >= '3' || BROWSER.opera)) {
 			editdoc.body.innerHTML = text;
 		} else {
+/*vot*/			var rtl = (LANGDIR = 'rtl') ? ' dir="rtl"' : '';
 			text = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
-				'<html><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
+/*vot*/				'<html'+rtl+'><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
 				(BROWSER.ie && BROWSER.ie > 7 ? '<meta http-equiv="X-UA-Compatible" content="IE=7" />' : '' ) +
 				'<link rel="stylesheet" type="text/css" href="data/cache/style_' + STYLEID + '_wysiwyg.css?' + VERHASH + '" />' +
 				(BROWSER.ie ? '<script>window.onerror = function() { return true; }</script>' : '') +
@@ -655,8 +656,8 @@ function discuzcode(cmd, arg) {
 	}
 
 	checkFocus();
-
-	if(in_array(cmd, ['sml', 'url', 'quote', 'code', 'free', 'hide', 'aud', 'vid', 'fls', 'attach', 'image', 'pasteword']) || cmd == 'tbl' || in_array(cmd, ['fontname', 'fontsize', 'forecolor', 'backcolor']) && !arg) {
+//googlemap by yongbing@ichangning.com
+	if(in_array(cmd, ['sml', 'url', 'quote', 'code', 'free', 'hide', 'aud', 'vid', 'fls', 'attach', 'image', 'pasteword', 'googlemap']) || cmd == 'tbl' || in_array(cmd, ['fontname', 'fontsize', 'forecolor', 'backcolor']) && !arg) {
 		showEditorMenu(cmd);
 		return;
 	} else if(cmd.substr(0, 3) == 'cst') {
@@ -979,6 +980,15 @@ function showEditorMenu(tag, params) {
 				menupos = '00';
 				menutype = 'win';
 				break;
+//googlemap by yongbing@ichangning.com
+			case 'googlemap':
+				stitle = lng['map_title'];
+				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./source/plugin/googlemap/googlemap.html"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
+				menuwidth = 600;
+				menupos = '00';
+				menutype = 'win';
+				//var mapurl=this.frames[ctrlid+'_param_1'].document.getElementById("addMap").click(pasteMap);
+				break;
 			default:
 				var haveSel = selection == null || selection == false || in_array(trim(selection), ['', 'null', 'undefined', 'false']) ? 0 : 1;
 				if(params == 1 && haveSel) {
@@ -1152,6 +1162,18 @@ function showEditorMenu(tag, params) {
 				break;
 			case 'pasteword':
 				pasteWord($(ctrlid + '_param_1').contentWindow.document.body.innerHTML);
+				hideMenu('', 'win');
+				break;
+//googlemap by yongbing@ichangning.com
+			case 'googlemap':
+				//var mapsrc = window.frames[ctrlid + '_param_1'].document.getElementById("mapurl").value;	
+				var mapsrc = document.getElementById(ctrlid + '_param_1').contentWindow.document.getElementById("mapurl").value;
+				var str = '<img src=' + mapsrc + ' border=0 />';
+				if(wysiwyg) {
+					insertText(str, str.length, 0, false, sel);
+				} else {
+					insertText('[img]' + mapsrc + '[/img]', 0, 0, false, sel);
+				}
 				hideMenu('', 'win');
 				break;
 			default:
