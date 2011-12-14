@@ -586,13 +586,13 @@ Note on the CSS Hack:
 			#hd .fastlg { padding-top: 10px; }
 
 			#scbar { height: 44px; border: solid {SPECIALBG}; border-width: 0 1px 1px; background: url({IMGDIR}/search.png) repeat-x 0 0; line-height: 44px; overflow: hidden; }
-				.scbar_icon_td { width: 70px; background: url({IMGDIR}/search.png) no-repeat 0 -74px; }
+				.scbar_icon_td { width: 70px; background: url({IMGDIR}/search.png) no-repeat 0 -490px; }
 				.scbar_txt_td, .scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
 					#scbar_txt { width: 400px; border: 1px solid #FFF; outline: none; font-size: 14px; }
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
 /*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
-				.scbar_type_td { background: url({IMGDIR}/search.png) no-repeat -1 -370px; }
+				.scbar_type_td { background: url({IMGDIR}/search.png) no-repeat 0 -370px; }
 					#scbar_type { display: block; padding-left: 15px; text-align: right; text-decoration: none; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-right: 8px; height: 45px; overflow: hidden; }
@@ -740,8 +740,8 @@ Note on the CSS Hack:
 	#pt { margin: 2px 0; height: 29px; border:none; background: transparent; line-height: 29px; }
 		#pt .z { padding-left: 10px; }
 		#pt .z a, #pt .z em, #pt .z span { float: right; height: 29px; }
-		#pt .z em { width: 20px; background: url({IMGDIR}/pt_item.png) no-repeat 3px 10px; line-height: 200px; overflow: hidden; }
-		.nvhm { width: 55px; background: url({IMGDIR}/search.png) no-repeat -8px -119px; line-height: 200px; overflow: hidden; }
+		#pt .z em { width: 20px; background: url({IMGDIR}/pt_item.png) no-repeat 10px -10px; line-height: 200px; overflow: hidden; }
+		.nvhm { width: 16px; background: url({IMGDIR}/search.png) no-repeat -8px -119px; line-height: 200px; overflow: hidden; }
 			/* XP or Windows 7, IE up to version 8 or 9, combinations of these types of differences in font rendering, so the background needs to be fine-tuned to adapt to more situations, by Pony 11050511 */
 			.ie_all #pt .z em { background-position: 3px 9px; }
 			.ie_all .nvhm { background-position: -8px -120px; }
@@ -847,7 +847,7 @@ Note on the CSS Hack:
 	.xl label, .xl label a { color: #C00; }
 	.xl1 li { height: 1.5em; overflow: hidden; }
 		.xl1_elp { float: right; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-	.xl2 li { float: right; margin: 2px 0; padding: 0; width: 100.6%; height: 1.5em; overflow: hidden; }
+	.xl2 li { float: right; margin: 2px 0; padding: 0; width: 48.6%; height: 1.5em; overflow: hidden; }
 	.xl ol, ol.xl { background: url({IMGDIR}/sortnum.png) no-repeat 100% 3px; line-height: 21px; }
 		.xl ol li, ol.xl li { background: none; padding-right: 20px; }
 		.xl ol li, ol.xl li { height: 21px; }
@@ -994,7 +994,7 @@ Note on the CSS Hack:
 		.p_pof { width: 500px; }
 		.p_opt { padding: 10px; }
 		.p_pop li { display: inline; }
-		.p_pop a { position: relative; display: block; padding: 3px 5px; border-bottom: 1px solid {SPECIALBG}; white-space: pre-wrap; }
+		.p_pop a { position: relative; display: block; padding: 3px 5px; border-bottom: 1px solid {SPECIALBG}; white-space: nowrap; }
 			.p_pop li:last-child a { border: none; }
 			.ie6 .p_pop a { position: relative; }
 			.p_pop a:hover, .p_pop a.a, #sctype_menu .sca { background-color: {SPECIALBG}; color: {HIGHLIGHTLINK}; text-decoration: none; }
@@ -1280,7 +1280,7 @@ Note on the CSS Hack:
 /* Action buttons */
 .bac {margin: 0; padding: 0; width: 70px; height: 30px;line-height: 30px; color: {LINK}; overflow: hidden; text-decoration: none; background: url({IMGDIR}/pg_arw.png) no-repeat 0 0; text-align: center; text-indent: -7px; display: block;}
 
-#psd,appl { width: 120px; } /*vot*/
+#psd,appl { width: 136px; } /*vot*/
 #psd .bn .mbn input, #postbox input { margin-left: 4px; }
 #postbox .mbn, #psd .mbn { height: 1.6em; line-height: 1.6em; }
 
