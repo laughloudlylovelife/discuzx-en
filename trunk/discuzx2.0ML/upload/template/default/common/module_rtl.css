@@ -592,7 +592,7 @@ Translated by Valery Votintsev
 		#pl_top .pls { text-indent: 15px; }
 
 /* Posts of the time, the floor where the block and some properties */
-	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; height: 16px; border-bottom: 1px dashed {COMMONBORDER}; }
+	.pi { overflow: hidden; margin-bottom: 10px; padding: 10px 0; height: 33px; border-bottom: 1px dashed {COMMONBORDER}; }
 		.pi strong a { float: left; margin-top: -6px; padding: 4px 6px; border: 1px solid {WRAPBG}; font-weight: 400; }
 			.pi strong a:hover { border-color: {COMMONBORDER}; }
 		.pls .pi { padding-right: 15px; }
@@ -731,7 +731,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 		Explain:		The left side of the user interactivity post
 		Last Modify:	Pony
 	*/
-	.pls .o li { background-position: 100% 50%; background-repeat: no-repeat; text-indent: 18px; }
+	.pls .o li { background-position: 99% 100%; background-repeat: no-repeat; text-indent: 25px; }
 		.pls .o .callon { background-image: url({IMGDIR}/home.gif); }
 		.pls .o .buddy { background-image: url({STATICURL}image/feed/friend.gif); }
 		.pls .o .poke2 { background-image: url({STATICURL}image/feed/poke.gif); }
@@ -1099,7 +1099,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 /* All groups related buttons  by Shuaishuai*/
 	.groupbtn { float: right; margin: 0 2px; padding: 0 7px 0 0 !important; height: 25px; background: url({IMGDIR}/n_rate.png) no-repeat 0 0 !important; line-height: 25px; text-align: center; cursor: pointer; }
 	.groupbtn:hover{ text-decoration: none; }
-		.groupbtn span { display: block; background: url({IMGDIR}/n_rate.png) no-repeat right 100% !important; padding-left: 7px; }
+		.groupbtn span { display: block; background: url({IMGDIR}/n_rate.png) no-repeat left 100% !important; padding-left: 7px; }
 /** end **/
 
 

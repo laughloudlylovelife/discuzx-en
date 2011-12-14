@@ -592,7 +592,7 @@ Note on the CSS Hack:
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
 /*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
-				.scbar_type_td { background: url({IMGDIR}/search.png) no-repeat 0 -370px; }
+				.scbar_type_td { background: url({IMGDIR}/search.png) no-repeat -1 -370px; }
 					#scbar_type { display: block; padding-left: 15px; text-align: right; text-decoration: none; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-right: 8px; height: 45px; overflow: hidden; }
@@ -847,7 +847,7 @@ Note on the CSS Hack:
 	.xl label, .xl label a { color: #C00; }
 	.xl1 li { height: 1.5em; overflow: hidden; }
 		.xl1_elp { float: right; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-	.xl2 li { float: right; margin: 2px 0; padding: 0; width: 48.6%; height: 1.5em; overflow: hidden; }
+	.xl2 li { float: right; margin: 2px 0; padding: 0; width: 100.6%; height: 1.5em; overflow: hidden; }
 	.xl ol, ol.xl { background: url({IMGDIR}/sortnum.png) no-repeat 100% 3px; line-height: 21px; }
 		.xl ol li, ol.xl li { background: none; padding-right: 20px; }
 		.xl ol li, ol.xl li { height: 21px; }
@@ -994,7 +994,7 @@ Note on the CSS Hack:
 		.p_pof { width: 500px; }
 		.p_opt { padding: 10px; }
 		.p_pop li { display: inline; }
-		.p_pop a { position: relative; display: block; padding: 3px 5px; border-bottom: 1px solid {SPECIALBG}; white-space: nowrap; }
+		.p_pop a { position: relative; display: block; padding: 3px 5px; border-bottom: 1px solid {SPECIALBG}; white-space: pre-wrap; }
 			.p_pop li:last-child a { border: none; }
 			.ie6 .p_pop a { position: relative; }
 			.p_pop a:hover, .p_pop a.a, #sctype_menu .sca { background-color: {SPECIALBG}; color: {HIGHLIGHTLINK}; text-decoration: none; }
@@ -1280,7 +1280,7 @@ Note on the CSS Hack:
 /* Action buttons */
 .bac {margin: 0; padding: 0; width: 70px; height: 30px;line-height: 30px; color: {LINK}; overflow: hidden; text-decoration: none; background: url({IMGDIR}/pg_arw.png) no-repeat 0 0; text-align: center; text-indent: -7px; display: block;}
 
-#psd,appl { width: 136px; } /*vot*/
+#psd,appl { width: 120px; } /*vot*/
 #psd .bn .mbn input, #postbox input { margin-left: 4px; }
 #postbox .mbn, #psd .mbn { height: 1.6em; line-height: 1.6em; }
 
