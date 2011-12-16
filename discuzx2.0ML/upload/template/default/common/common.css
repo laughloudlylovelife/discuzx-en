@@ -586,14 +586,14 @@ Note on the CSS Hack:
 			#hd .fastlg { padding-top: 10px; }
 
 			#scbar { height: 44px; border: solid {SPECIALBG}; border-width: 0 1px 1px; background: url({IMGDIR}/search.png) repeat-x 0 0; line-height: 44px; overflow: hidden; }
-				.scbar_icon_td { width: 50px; background: url({IMGDIR}/search.png) no-repeat 0 -74px; }
+				.scbar_icon_td { width: 70px; background: url({IMGDIR}/search.png) no-repeat 0 -74px; }
 				.scbar_txt_td, .scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
 					#scbar_txt { width: 400px; border: 1px solid #FFF; outline: none; font-size: 14px; }
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
 /*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
-				.scbar_type_td { background: url({IMGDIR}/search.png) repeat 0 -222px; }
-					#scbar_type { display: block; padding-left: 5px; text-align: left; text-decoration: none; }
+				.scbar_type_td { width: background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
+					#scbar_type { display: block; padding-left: 5px; text-align: left; text-decoration: none; width: 60px; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-left: 8px; height: 45px; overflow: hidden; }
 					#scbar_hot strong, #scbar_hot a { float: left; margin-right: 8px; white-space: nowrap; }
@@ -668,9 +668,9 @@ Note on the CSS Hack:
 			.ct2_a_r { border: none; background-image: none; }
 			 .ct2_a h1.mt { display: none; }
 			 .ct2_a .tb { margin-top: 3px; }
-		.ct2_a .mn { float: right; width: 810px; }
+		.ct2_a .mn { float: right; width: 800px; }
 /*vot*/			.ct2_a .mn { display: inline; /*margin-right: 10px;*/ padding-top: 10px; width: 800px; }
-				#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; width: 810px; }
+				#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; width: 800px; }
 
 		.ct3_a .mn { float: left; margin-left: 20px; width: 565px; }
 		.ct3_a .sd { float: right; width: 220px; }
@@ -1277,7 +1277,7 @@ Note on the CSS Hack:
 /* Action buttons */
 .bac {margin: 0; padding: 0; width: 70px; height: 30px;line-height: 30px; color: {LINK}; overflow: hidden; text-decoration: none; background: url({IMGDIR}/pg_arw.png) no-repeat 0 0; text-align: center; text-indent: -7px; display: block;}
 
-#psd,appl { width: 136px; } /*vot*/
+#psd, appl { width: 146px; } /*vot*/
 #psd .bn .mbn input, #postbox input { margin-right: 4px; }
 #postbox .mbn, #psd .mbn { height: 1.6em; line-height: 1.6em; }
 

@@ -244,36 +244,21 @@ class template {
 
 	function loadcsstemplate() {
 		global $_G;
-/*vot*/		$direction = $_G['langdir'] == 'rtl' ? '_rtl' : '';
-/*vot*/		$scriptcss = '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_common'.$direction.'.css?{VERHASH}" />';
-//DEBUG
-//echo "loadcsstemplate: direction=".$direction."<br>\n";
-//echo "loadcsstemplate: styleid=".STYLEID."<br>\n";
-//echo "loadcsstemplate: 1 scriptcss=".htmlspecialchars($scriptcss)."<br>\n";
+/*vot*/		$scriptcss = '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_common{RTLSUFFIX}.css?{VERHASH}" />';
 		$content = $this->csscurmodules = '';
-//DEBUG
-//echo "loadcsstemplate: read file=".DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_module'.$direction.'.css'."<br>\n";
-/*vot*/		$content = @implode('', file(DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_module'.$direction.'.css'));
+/*vot*/		$content = @implode('', file(DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_module'.RTLSUFFIX.'.css'));
 		$content = preg_replace("/\[(.+?)\](.*?)\[end\]/ies", "\$this->cssvtags('\\1','\\2')", $content);
-//DEBUG
-//echo "loadcsstemplate: this->csscurmodules=".htmlspecialchars($this->csscurmodules)."<br>\n";
 		if($this->csscurmodules) {
 			$this->csscurmodules = preg_replace(array('/\s*([,;:\{\}])\s*/', '/[\t\n\r]/', '/\/\*.+?\*\//'), array('\\1', '',''), $this->csscurmodules);
-//DEBUG
-//echo "loadcsstemplate: read file=".DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_'.$_G['basescript'].'_'.CURMODULE.$direction.'.css'."<br>\n";
-/*vot*/			if(@$fp = fopen(DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_'.$_G['basescript'].'_'.CURMODULE.$direction.'.css', 'w')) {
+/*vot*/			if(@$fp = fopen(DISCUZ_ROOT.'./data/cache/style_'.STYLEID.'_'.$_G['basescript'].'_'.CURMODULE.RTLSUFFIX.'.css', 'w')) {
 				fwrite($fp, $this->csscurmodules);
 				fclose($fp);
 			} else {
 				exit('Can not write to cache files, please check directory ./data/ and ./data/cache/ .');
 			}
-/*vot*/			$scriptcss .= '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_'.$_G['basescript'].'_'.CURMODULE.$direction.'.css?{VERHASH}" />';
-//DEBUG
-//echo "loadcsstemplate: 2 scriptcss=".htmlspecialchars($scriptcss)."<br>\n";
+/*vot*/			$scriptcss .= '<link rel="stylesheet" type="text/css" href="data/cache/style_{STYLEID}_'.$_G['basescript'].'_'.CURMODULE.RTLSUFFIX.'.css?{VERHASH}" />';
 		}
 		$scriptcss .= '{if $_G[uid] && isset($_G[cookie][extstyle]) && strpos($_G[cookie][extstyle], TPLDIR) !== false}<link rel="stylesheet" id="css_extstyle" type="text/css" href="$_G[cookie][extstyle]/style.css" />{elseif $_G[style][defaultextstyle]}<link rel="stylesheet" id="css_extstyle" type="text/css" href="$_G[style][defaultextstyle]/style.css" />{/if}';
-//DEBUG
-//echo "loadcsstemplate: 3 scriptcss=".htmlspecialchars($scriptcss)."<br>\n";
 		return $scriptcss;
 	}
 

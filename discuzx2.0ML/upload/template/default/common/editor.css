@@ -16,7 +16,7 @@ http://www.comsenz.com
 		.edt .bar a { float: left; border: 1px solid {COMMONBG}; background: transparent url({STATICURL}image/editor/editor.gif) no-repeat 0 0; overflow: hidden; }
 			.edt .b1r a { padding-top: 27px; width: 35px; height: 15px; text-align: center; font-size: 11px; font-family: Arial, PMingLiU, sans-serif; }
 			.edt .b2r a { width: 20px; height: 20px; text-indent: -9999px; }
-				.edt .b2r a.dp { margin-right: 1px; padding-left: 2px; width: 78px; height: 20px; text-indent: 0; border-color: {INPUTBORDERDARKCOLOR} {INPUTBORDER} {INPUTBORDER} {INPUTBORDERDARKCOLOR}; background: #FFF url({STATICURL}image/common/newarow.gif) no-repeat 100% 0; }
+				.edt .b2r a.dp { margin-right: 1px; padding-left: 2px; height: 20px; text-indent: 0; border-color: {INPUTBORDERDARKCOLOR} {INPUTBORDER} {INPUTBORDER} {INPUTBORDERDARKCOLOR}; background: #FFF url({STATICURL}image/common/newarow.gif) no-repeat 100% 0; }
 				.edt .b2r a:hover.dp { border-color: #09C; background-position: 100% -23px; }
 			.edt .nbl { border-left: none; padding-left: 0; }
 				.edt .nbr { border-right: none; padding-right: 0; }
@@ -33,8 +33,12 @@ http://www.comsenz.com
 	.simpleedt .bar, .simpleedt .b1r, .simpleedt .b2r { height: 22px; }
 	.bar_swch { display: block; clear: both; }
 
+/*vot*/	#e_googlemap 	{ background:transparent url({STATICURL}image/common/map.gif) no-repeat 0 0; overflow: hidden;background-position: 8px 5px;}
+/*vot*/	.simpleedt #e_googlemap 	{ background-position: 0 0;}
+
 	#e_bold			{ background-position: 0 0; }
 	#e_fontsize		{ width: 45px; }
+	#e_fontname		{ width: 50px; }
 	#e_italic		{ background-position: -20px 0; }
 	#e_underline		{ background-position: -40px 0; }
 	#e_forecolor		{ background-position: -60px 0; }
@@ -94,10 +98,14 @@ http://www.comsenz.com
 		.b2r #e_attachn { left: 57px; }
 
 	#e_switcher input{ margin-right: 4px; vertical-align: middle; }
-	#e_simple, #e_fullswitcher { padding: 0 2px; text-align: right; border: 1px solid {SPECIALBORDER}; background: url({IMGDIR}/card_btn.png) repeat-x 0 100%; }
-		#e_fullswitcher { margin-right: 3px; }
+/*vot*/ #e_fullswitcher { background:transparent url({IMGDIR}/expand.png) no-repeat 2px 2px; width: 16px; height: 16px; padding: 2px; border: 1px solid {SPECIALBORDER}; text-indent: -9999px; }
+/*vot*/ #e_backswitcher { background:transparent url({IMGDIR}/shrink.png) no-repeat 2px 2px; width: 16px; height: 16px; padding: 2px; border: 1px solid {SPECIALBORDER}; text-indent: -9999px; }
+/*vot*/ #e_simple { background:transparent url({IMGDIR}/simple.gif) no-repeat 2px 2px; width: 16px; height: 16px; padding: 2px; border: 1px solid {SPECIALBORDER}; text-indent: -9999px; }
+/*vot*/ #e_advanced { background:transparent url({IMGDIR}/advanced.gif) no-repeat 2px 2px; width: 16px; height: 16px; padding: 2px; border: 1px solid {SPECIALBORDER}; text-indent: -9999px; }
+/*vot*/ a#e_fullswitcher:hover, a#e_backswitcher:hover, a#e_advanced:hover, a#e_simple:hover { border: 1px solid #09C; }
+
 /* Narrow editor shows the size of the input box menu */
-.popupfix .px { margin-bottom: 4px; padding: 2px; } /* vot */
+/*vot*/ .popupfix .px { margin-bottom: 4px; padding: 2px; }
 
 #e_body { display: block !important; }
 #e_body_loading { display: none; }

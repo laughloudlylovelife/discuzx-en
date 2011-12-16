@@ -218,7 +218,7 @@ Translated by Valery Votintsev
 	.imgf .px { width: 106px; padding: 2px; height: 14px; line-height: 14px; }
 	.imgdeleted { opacity: 0.3; filter: alpha(opacity=30); }
 
-.fnm { width: 130px !important; }
+.fnm { width: 100px !important; }
 .fszm { width: 55px !important; line-height: normal; }
 .fnm li, .fszm li, .simm li { cursor: pointer; }
 .qsv { padding-left: 16px; width: 16px; height: 16px; background: url({IMGDIR}/repquote.gif) no-repeat 50% 50%; cursor: pointer; }
@@ -429,7 +429,7 @@ Translated by Valery Votintsev
 		.ttp li { float: left; padding-bottom: 5px; }
 		.ttp a, .ttp strong { float: left; margin-right: 5px; padding: 4px 8px 3px; height: 18px; border: 1px solid {COMMONBORDER}; background: {WRAPBG}; white-space: nowrap; }
 			.ttp a:hover { border-color: {HIGHLIGHTLINK}; color: {HIGHLIGHTLINK}; text-decoration: none; }
-		.ttp .a a { padding-right: 12px;  padding-left: 12px; border-color: {HIGHLIGHTLINK}; background: {SPECIALBG}; color: {HIGHLIGHTLINK}; }
+		.ttp .a a { padding-right: 12px; padding-left: 12px; border-color: {HIGHLIGHTLINK}; background: {SPECIALBG}; color: {HIGHLIGHTLINK}; }
 		.ttp .pipe { float: left; margin-right: 10px; padding: 0; width: 2px; height: 27px; background: {SPECIALBORDER}; text-indent: -9999px; }
 	/* when the Forum has launched a large number of subject classification away style by Pony */
 	.cttp { overflow: hidden; padding-right: 35px; height: 32px; }

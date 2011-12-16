@@ -61,11 +61,19 @@ function initEditor() {
 		if(buttons[i].id.indexOf(editorid + '_') != -1) {
 			buttons[i].href = 'javascript:;';
 			if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'fullswitcher') {
-				buttons[i].innerHTML = !editorisfull ? lng['full_screen'] : lng['restore_size'];
-				buttons[i].onmouseover = function(e) {setEditorTip(editorisfull ? lng['restore_size_edit'] : lng['full_screen_edit']);};
+//vot				buttons[i].innerHTML = !editorisfull ? lng['full_screen'] : lng['restore_size'];
+//vot				buttons[i].onmouseover = function(e) {setEditorTip(editorisfull ? lng['restore_size_edit'] : lng['full_screen_edit']);};
+				buttons[i].onclick = function(e) {editorfull();doane();}
+			} else if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'backswitcher') {
+//vot				buttons[i].innerHTML = !editorisfull ? lng['full_screen'] : lng['restore_size'];
+//vot				buttons[i].onmouseover = function(e) {setEditorTip(editorisfull ? lng['restore_size_edit'] : lng['full_screen_edit']);};
+//alert('backswitcher');
 				buttons[i].onclick = function(e) {editorfull();doane();}
 			} else if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'simple') {
 				buttons[i].innerHTML = !simplodemode ? lng['general'] : lng['simple'];
+				buttons[i].onclick = function(e) {editorsimple();doane();}
+			} else if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'advanced') {
+//vot				buttons[i].innerHTML = !simplodemode ? lng['general'] : lng['simple'];
 				buttons[i].onclick = function(e) {editorsimple();doane();}
 			} else {
 				_attachEvent(buttons[i], 'mouseover', function(e) {setEditorTip(BROWSER.ie ? window.event.srcElement.title : e.target.title);});
@@ -98,7 +106,23 @@ function initEditor() {
 			showDialog(lng['browser_update'], 'notice', lng['tips']);
 		};
 		$(editorid + '_fullswitcher').className = 'xg1';
+
 	}
+if(editorisfull) {
+$(editorid + '_fullswitcher').style.display = 'none';
+$(editorid + '_backswitcher').style.display = 'block';
+} else {
+$(editorid + '_fullswitcher').style.display = 'block';
+$(editorid + '_backswitcher').style.display = 'none';
+}
+if(simplodemode) {
+$(editorid + '_simple').style.display = 'none';
+$(editorid + '_advanced').style.display = 'block';
+} else {
+$(editorid + '_simple').style.display = 'block';
+$(editorid + '_advanced').style.display = 'none';
+}
+
 	if($(editorid + '_svdsecond') && savedatat === null) {
 		savedatac = savedataInterval;
 		autosave = !getcookie('editorautosave_' + editorid) || getcookie('editorautosave_' + editorid) == 1 ? 1 : 0;
@@ -265,6 +289,10 @@ function editorfull(op) {
 			$(editorid + '_resize').style.display = 'none';
 		}
 		window.onresize = function() { editorfull(1); };
+///*vot*/ $(editorid + '_fullswitcher').style.visibility = 'visible';
+///*vot*/ $(editorid + '_backswitcher').style.visibility = 'hidden';
+$(editorid + '_fullswitcher').style.display = 'none';
+$(editorid + '_backswitcher').style.display = 'block';
 		editorisfull = 1;
 	} else {
 		if(savesimplodemode) {
@@ -285,11 +313,14 @@ function editorfull(op) {
 		}
 		editorisfull = 0;
 		editorcontrolpos();
+//$(editorid + '_fullswitcher').style.visibility = 'hidden';
+//$(editorid + '_backswitcher').style.visibility = 'visible';
+$(editorid + '_fullswitcher').style.display = 'block';
+$(editorid + '_backswitcher').style.display = 'none';
 	}
 	if(iswysiwyg) {
 		switchEditor(1);
 	}
-	$(editorid + '_fullswitcher').innerHTML = editorisfull ? lng['restore_size'] : lng['full_screen'];
 }
 
 function editorsimple() {
@@ -303,6 +334,8 @@ function editorsimple() {
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = 'none';
 		}
+$(editorid + '_simple').style.display = 'none';
+$(editorid + '_advanced').style.display = 'block';
 		simplodemode = 1;
 	} else {
 		v = '';
@@ -314,6 +347,8 @@ function editorsimple() {
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = '';
 		}
+$(editorid + '_simple').style.display = 'block';
+$(editorid + '_advanced').style.display = 'none';
 		simplodemode = 0;
 	}
 	setcookie('editormode_' + editorid, simplodemode ? 1 : -1, 2592000);
@@ -437,7 +472,7 @@ function writeEditorContents(text) {
 			text = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
 /*vot*/				'<html'+rtl+'><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
 				(BROWSER.ie && BROWSER.ie > 7 ? '<meta http-equiv="X-UA-Compatible" content="IE=7" />' : '' ) +
-				'<link rel="stylesheet" type="text/css" href="data/cache/style_' + STYLEID + '_wysiwyg.css?' + VERHASH + '" />' +
+				'<link rel="stylesheet" type="text/css" href="data/cache/style_' + STYLEID + '_wysiwyg' + RTLSUFFIX + '.css?' + VERHASH + '" />' +
 				(BROWSER.ie ? '<script>window.onerror = function() { return true; }</script>' : '') +
 				'</head><body>' + text + '</body></html>';
 			editdoc.designMode = allowhtml ? 'on' : 'off';

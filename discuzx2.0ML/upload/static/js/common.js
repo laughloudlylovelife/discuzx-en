@@ -860,11 +860,11 @@ function loadcss(cssname) {
 			css.id = 'css_' + cssname,
 			css.type = 'text/css';
 			css.rel = 'stylesheet';
-			css.href = 'data/cache/style_' + STYLEID + '_' + cssname + '.css?' + VERHASH;
+			css.href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
 			var headNode = document.getElementsByTagName("head")[0];
 			headNode.appendChild(css);
 		} else {
-			$('css_' + cssname).href = 'data/cache/style_' + STYLEID + '_' + cssname + '.css?' + VERHASH;
+			$('css_' + cssname).href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
 		}
 		CSSLOADED[cssname] = 1;
 	}
