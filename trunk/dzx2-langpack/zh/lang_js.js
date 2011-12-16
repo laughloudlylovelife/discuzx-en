@@ -98,7 +98,7 @@ var lng = {
 	'plain_text_warn'	: '转换为纯文本时将会遗失某些格式。\n您确定要继续吗？',
 	'browser_update'	: '你的浏览器不支持此功能，请升级浏览器版本',
 	'tips'			: '小提示',
-//	'tips'			: '友情提示',
+//	'show_tips'		: '友情提示',
 
 //---------------------------
 //static/image/editor/editor_function.js
@@ -154,6 +154,7 @@ var lng = {
 	'today'		: '今天',
 	'hours'		: '点',
 	'minutes'	: '分',
+	'ok'		: 'Ok',//'OK',
 
 //--------------------------------
 //static/js/common.js
