@@ -1,4 +1,6 @@
-/* Determine: When you open the DIY panel to load -- Translated by Valery Votintsev */
+/* Determine: When you open the DIY panel to load
+Translated by Valery Votintsev
+*/
 body { padding-top: 170px; }
 #controlpanel { color: #000;position: fixed; top: 0; right: 0; z-index: 200; width: 100%; border-bottom: 1px solid #999; background: #F5F5F5 url({STATICURL}image/diy/cp-bg.png) repeat-x 0 0; }
 	* html #controlpanel { position: absolute; top: expression(offsetParent.scrollTop); }
@@ -53,9 +55,9 @@ body { padding-top: 170px; }
 			#contentblockclass ol label.hover { border-style: solid; background: none; }
 	#cpfooter { padding: 0 10px 10px; border-bottom: 1px solid #FFF; }
 		#cpfooter td { height: 6px; background: #FFF; line-height: 0; overflow: hidden; }
-			#cpfooter td.l { width: 6px; background: url({STATICURL}image/diy/cp-nav-corner-br.png) no-repeat 0 0; }
+			#cpfooter td.l { width: 6px; background: url({STATICURL}image/diy/cp-nav-corner-bl.png) no-repeat 0 0; }
 			#cpfooter td.c { height: 5px; border-bottom: 1px solid #CCBDCC; }
-			#cpfooter td.r { width: 6px; background: url({STATICURL}image/diy/cp-nav-corner-bl.png) no-repeat 0 0; }
+			#cpfooter td.r { width: 6px; background: url({STATICURL}image/diy/cp-nav-corner-br.png) no-repeat 0 0; }
 
 /* DIY section */
 dl.diy dt { margin-top: -10px; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #CCC; line-height: 26px; }

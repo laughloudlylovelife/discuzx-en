@@ -312,7 +312,10 @@ class discuz_core {
 		$this->var['langurl']   = $this->var['siteroot'] . 'source/language/'.$lng . '/';
 		$this->var['langicon']  = $this->var['config']['languages'][$lng]['icon'];
 		$this->var['langtitle'] = $this->var['config']['languages'][$lng]['title'];
-		$this->var['langdir']   = $this->var['config']['languages'][$lng]['dir'];
+		$this->var['langdir']   = strtolower($this->var['config']['languages'][$lng]['dir']);
+
+		// define LANGUAGE RTL Suffix
+		define('RTLSUFFIX', $this->var['langdir'] == 'rtl' ? '_rtl' : '');
 
 		// set jspath (for include *.js)
 //		$this->var['setting']['jspath'] = $this->var['siteroot'] . 'static/js/';
