@@ -81,6 +81,10 @@ $lang = array (
 	'your_mobile_browser'		=> 'Пожалуйста, выберите ', 
 	'e_redo'			=> 'Повторить',
 	'e_undo'			=> 'Отменить',
+	'e_full_screen'			=> 'На весь экран',//'全屏',
+	'e_restore_size'		=> 'Восстановить размер',//'恢复',
+	'e_simple'			=> 'Простой режим',//'常用',
+	'e_advanced'			=> 'Расширенный режим',//'高级',
 	'header_add_frame'		=> 'Добавить фрейм',
 	'header_add_module'		=> 'Добавить блок',
 	'header_clearall'		=> 'Очистить',
@@ -399,7 +403,7 @@ $lang = array (
 
 //---------------------------
 //Change Language
-'change_language'	=> 'Изменить язык',
+	'change_language'	=> 'Изменить язык',
 
 //vot:
 	'new'		=> 'New',//'全新',
@@ -407,7 +411,7 @@ $lang = array (
 //---------------------------
 //vot: Titles from install_var.php, pre_common_nav table
 
-'register'	=> 'Регистрация',
+	'register'	=> 'Регистрация',
 
 	'nav_1'		=> 'Портал',//'Portal',//'门户',//1,
 	'nav_2'		=> 'Форум',//'Forum',//'论坛',//2,

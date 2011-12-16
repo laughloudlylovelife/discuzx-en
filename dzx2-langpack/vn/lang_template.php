@@ -4,8 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php 23072 2011-06-16 10:45:46Z svn_project_zhangjie $
- *		Translate by DCV team - http://www.discuz.vn
+ *      $Id: lang_template.php by Valery Votintsev at sources.ru
+ *	Translated by DCV team - http://www.discuz.vn
  *      This file is automatically generate
  */
 
@@ -81,6 +81,10 @@ $lang = array (
   'your_mobile_browser' => 'Hãy chọn ',
   'e_redo' => 'Làm lại',
   'e_undo' => 'Lùi lại',
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
   'header_add_frame' => 'Thêm frame',
   'header_add_module' => 'Thêm module',
   'header_clearall' => 'Xóa trắng',
@@ -367,11 +371,11 @@ $lang = array (
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'	=> 'Sky',//'[name]天空[/name]',
+	'sky'		=> 'Sky',//'[name]天空[/name]',
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'	=> 'Cat',//'[name]猫猫[/name]',
+	'cat'		=> 'Cat',//'[name]猫猫[/name]',
 
 //---------------------------
 //static/space/t5/style.css
@@ -415,7 +419,7 @@ $lang = array (
 	'nav_4'		=> 'Không gian',//'Space',//'家园',//4,
 	'nav_5'		=> 'Trò chơi',//'Applications',//'应用',//5,
 	'nav_6'		=> 'Ứng dụng',//'Plugins',//'插件',//6,
-	'nav_6'		=> 'Trợ giúp',//'Help',//'帮助',//7,
+	'nav_7'		=> 'Trợ giúp',//'Help',//'帮助',//7,
 	'nav_8'		=> 'Xếp hạng danh sách',//'RankList',//'排行榜',//8,
 	'nav_stat'	=> 'Thống kê',//'Statistics',//'站点统计',
 	'nav_report'	=> 'Báo cáo',//'Reports',//'举报',

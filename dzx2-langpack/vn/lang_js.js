@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	Javascript Language variables for English
+	Javascript Language variables for Vietnamese
 
 	$Id: static/js/lang_js.js by Valery Votintsev, vot at sources.ru
 	Vietnamese by Discuz.vn
@@ -150,6 +150,7 @@ var lng = {
 	'today'		: 'Hôm nay',//'今天',
 	'hours'		: 'Giờ',//'点',
 	'minutes'	: 'Phút',//'分',
+	'ok'		: 'Ok',//'OK',
 
 //--------------------------------
 //static/js/common.js
