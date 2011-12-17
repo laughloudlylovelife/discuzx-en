@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `uchome_app_tw_gift` (
+CREATE TABLE IF NOT EXISTS `uchome_gift` (
   `id` int(11) NOT NULL auto_increment,
   `uid` int(11) default NULL,
   `username` varchar(64) default NULL,
