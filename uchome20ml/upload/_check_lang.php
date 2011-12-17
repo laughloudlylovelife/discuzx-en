@@ -32,6 +32,7 @@ $files = array(
 	"lang_source2.php",
 	"lang_template.php",
 	"lang_title.php",
+	"lang_gift.php",
 );
 
 

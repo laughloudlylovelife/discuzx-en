@@ -1,11 +1,14 @@
 <?php
 
 //Display Settings
-$_PERPAGE = 18; //Number of gifts per page for Gift List
+$_PERPAGE = 21; //Number of gifts per page for Gift List
 $_VPERPAGE = 10; //Number of gifts per page for personal received gifts
 
 include_once('./common.php');
 include_once(S_ROOT.'./gift/source/common.php');
+
+language_append('sourcelang','lang_gift');
+
 //Check for site closed
 checkclose();
 
@@ -32,10 +35,6 @@ $dos = array('index','list','send','view');
 //Get variable
 $isinvite = 0;
 $do = (!empty($_GET['do']) && in_array($_GET['do'], $dos))?$_GET['do']:'index';
-
-if( @file_exists(S_ROOT."./gift/gift_install.php") ) {
-  $do = "install";
-}
 
 //Whether is public
 if(empty($isinvite) && empty($_SCONFIG['networkpublic'])) {
