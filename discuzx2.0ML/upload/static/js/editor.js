@@ -1018,7 +1018,8 @@ function showEditorMenu(tag, params) {
 //googlemap by yongbing@ichangning.com
 			case 'googlemap':
 				stitle = lng['map_title'];
-				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./source/plugin/googlemap/googlemap.html"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
+//vot				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./source/plugin/googlemap/googlemap.html"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
+				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./misc.php?mod=googlemap"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
 				menuwidth = 600;
 				menupos = '00';
 				menutype = 'win';
