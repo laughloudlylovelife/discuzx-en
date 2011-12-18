@@ -439,6 +439,11 @@ $lang = array (
 	'nav_setfavorite'	=> 'เพิ่มในรายการโปรด',//'收藏本站',
 //	'nav_'		=> '',//'',
 
+// Google Maps
+	'e_map'		=> 'Map',//'地图',
+	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',
+	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
+
 //Do not edit copyright section, referrered to Comsenz License Agreement!
   'copyright'	=> '&copy; 2001-2011 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a> Thai Language by <a href="http://www.discuzthai.com" target="_blank">DiscuzThai.com</a>',
 );

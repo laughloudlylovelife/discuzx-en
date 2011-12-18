@@ -439,6 +439,10 @@ $lang = array (
 	'nav_setfavorite'	=> 'Đặt Bookmark',//'Add to Favorites',//'收藏本站',
 //	'nav_'		=> '',//'',
 
+// Google Maps
+	'e_map'		=> 'Map',//'地图',
+	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',
+	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
 );
 
 ?>
