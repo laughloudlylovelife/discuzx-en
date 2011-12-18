@@ -438,99 +438,11 @@ $lang = array (
 	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
 //	'nav_'		=> '',//'',
-/* Obsolete
-	'space_short'	=> 'Ortam',
 
-	'morethread'	=> 'Devam',
-	'task_unfinish'	=> 'Görev tamamlanamamış.',
-	'user_center'	=> 'Üye Panel',
-	'user_index'	=> 'Profil Sayfa',
-	'manager'	=> 'Manager',//Modify
-	'administrator'	=> 'Admin',
-	'contactus'	=> 'İletişim',
-	'thread_rewardend'	=> 'Çözülmüş',
-
-	'setup'	=> 'Ayarlar',
-
-	'batch'	=> 'Toplu',
-
-	'faq_search'	=> 'Arama SSS',
-	'faq_search_title_and_content'	=> 'Search FAQ title and content',
-	'faq_search_title'	=> 'SSS başlık arama',
-	'faq_search_content'	=> 'Search FAQ content',
-	'faq_related'	=> 'İlgili SSS',
-	'e_hr'	=> 'Yatay çizgi ekle',
-	'e_strike'	=> 'Ara çizgi ekle',
-	'e_bold_title'	=> 'Bold',
-	'e_italic_title'	=> 'Italik',
-	'e_underline_title'	=> 'Altçizgi',
-	'e_strike_title'	=> 'Araçizgi',
-	'e_paragraph'	=> 'Paragraf',
-	'e_floatleft'	=> 'Sola Kaydır',
-	'e_floatright'	=> 'Sağa Kaydır',
-	'e_list'	=> 'Liste',
-	'e_contract'	=> 'Daralt',
-	'e_expand'	=> 'Genişlet',
-	'e_email'	=> 'Email Ekle',
-
-
-	'e_img_local'	=> 'Resim Ekle',
-	'e_img_album'	=> 'Albümüm',
-	
-	'seccode_comment'	=> 'Lürfen kodu giriniz',
-	'secqaa_comment'	=> 'Lütfen soruyu cevaplayınız:',
-	'register_profile_seccode_invalid'	=> 'Güvenlik kodu hatası.',
-	'register_profile_secqaa_invalid'	=> 'Güvenlik cevap hatası.',
-	'search_friends'	=> 'Arkadaş Arama',
-	'new_message'	=> 'Yeni Mesaj',
-	'recent_contacts'	=> 'Son İletişim',
-
-
-	'group'	=> 'Gruplar',
-	'launch'	=> 'Mesajlar',
-	'sale'	=> 'Post',
-	'no_login'	=> 'Giriş yapınız',
-	'favorite'	=> 'Favoriler',
-
-	'fourm'	=> 'Forum',
-	'qmenu_register'	=> 'Kayıt',
-	'styleswitch'	=> 'Stil',
-	'report_current_page'	=> 'Uyar',
-
-	'userabout_thread'	=> 'Konular',
-
-	'header_savecache'	=> 'Saved temporarily',
-	'header_savecache_desc'	=> 'Save your DIY data temporarily, you can continue next time',
-
-
-	'header_savecachemsg'	=> 'Page temporary saved',
-	'header_tabframe'	=> 'Table frame',
-	'this_forum'	=> 'Bu Forum',
-
-	'search_user'	=> 'Üye Arama',
-	'advanced_search'	=> 'Gelişmiş',
-	'prompt'	=> 'Ipuçları',
-	'my_center'	=> 'Panel',
-	'modify_avatar'	=> 'Avatar',
-	'personal_profile'	=> 'Profil',
-	'privacy_filter'	=> 'Gizlilik',
-	'group_expiry_type'	=> 'Type',
-	'group_expiry_type_main'	=> 'Primary usergroup',
-	'preview_navcur'		=> 'Geçerli',
-	'preview_nav'	=> 'Menü',
-	'preview_inputtext'	=> 'It\'s a input box',
-	'e_attach'	=> 'Dosya',
-	'task_complete_time_start'	=> 'Task start time from the application,',//Modify
-	'task_complete_time_limit'	=> ' $taskvars[complete][time][value] saat içersinde, ',
-	'task_complete_act_buddy'	=> ' $taskvars[complete][num][value] arkadaş ekle.',
-	'task_complete_act_favorite'	=> ' $taskvars[complete][num][value] konu favorile.',
-	'task_complete_act_magic'	=> 'use props $taskvars[complete][num][value] times.',
-	'task_complete_forumid'	=> 'forum\'a git <a href="forum.php?mod=forumdisplay&fid=$taskvars[complete][forumid][value]" target="_blank">{$_G[cache][forums][$taskvars[complete][forumid][value]][name]}</a> and ',
-	'task_complete_act_newthread'	=> ' $taskvars[complete][num][value] yeni konu yaz.',
-	'task_complete_act_newpost'	=> 'yeni konu yaz veya $taskvars[complete][num][value] yeni cevap ekle.',
-	'task_complete_act_newreply_thread'	=> ' "<a href="forum.php?mod=viewthread&tid=$taskvars[complete][threadid][value]" target="_blank">$subject</a>" konusuna $taskvars[complete][num][value] cevap ekle.',
-	'task_complete_act_newreply_author'	=> ' "<a href="home.php?mod=space&uid=$taskvars[complete][authorid][value]" target="_blank">$author</a>"\'n konusuna $taskvars[complete][num][value] tane cevap ekle.',
-*/
+// Google Maps
+	'e_map'		=> 'Map',//'地图',
+	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',
+	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
 
 );
 

@@ -628,6 +628,15 @@ var lng = {
 //api/manyou/cloud_iframe.js
 	'add_operation'		: 'เพิ่มไปยังการดำเนินการทั่วไป',//'&#28155;&#21152;&#21040;&#24120;&#29992;&#25805;&#20316;',
 
+//--------------------------------------------
+//static/js/googlemap.js + static/js/editor.js
+
+	'map_title'		: 'Google Maps',//'google图',
+	'map_insert'		: 'Insert Google Map',//'插入google地图',
+	'map_insert_tips'	: 'Insert Google Maps by address searching (temporarily supported only single label!)',//'通过搜索插入google地图（暂只支持单点标注）！',
+	'map_center_changed'	: 'The map center is changed!',//'地图中心已经改变！',
+	'map_wrong_address'	: 'Wrong address! Current address was not found',//' 地址错误，未找到当前地址',
+
 //-------------------------------------
 //	''	: '',//'',
 
