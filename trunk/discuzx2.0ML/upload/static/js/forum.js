@@ -284,12 +284,12 @@ function loadData(quiet, formobj) {
 
 	if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
 		if(!quiet) {
-/*vot*/			showDialog(lng['recover_no'], 'info');
+/*vot*/			showDialog(lng['no_data_recover'], 'info');
 		}
 		return;
 	}
 
-	if(!quiet && !confirm(lng['recover_sure'])) {
+/*vot*/	if(!quiet && !confirm(lng['content_overwrite'])) {
 		return;
 	}
 
