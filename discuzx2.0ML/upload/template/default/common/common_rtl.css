@@ -181,7 +181,7 @@ Note on the CSS Hack:
 */
 	.xs0 { font-family: {SMFONT}; font-size: {SMFONTSIZE}; -webkit-text-size-adjust: none; }
 	.xs1 { font-size: 12px !important; }
-	.xs2 { font-size: 14px !important; }
+	.xs2 { font-size: 12px !important; }
 	.xs3 { font-size: 16px !important; }
 /*
 	Name:			mod_text_gray_level
@@ -586,14 +586,14 @@ Note on the CSS Hack:
 			#hd .fastlg { padding-top: 10px; }
 
 			#scbar { height: 44px; border: solid {SPECIALBG}; border-width: 0 1px 1px; background: url({IMGDIR}/search.png) repeat-x 0 0; line-height: 44px; overflow: hidden; }
-				.scbar_icon_td { width: 70px; background: url({IMGDIR}/search.png) no-repeat 0 -490px; }
+				.scbar_icon_td { width: 50px; background: url({IMGDIR}/search.png) no-repeat 100% -490px; }
 				.scbar_txt_td, .scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
 					#scbar_txt { width: 400px; border: 1px solid #FFF; outline: none; font-size: 14px; }
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
 /*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
 				.scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
-					#scbar_type { display: block; padding-right: 5px; text-align: right; text-decoration: none; width: 60px; }
+					#scbar_type { display: block; padding-right: 2px; text-align: right; text-decoration: none; width: 70px; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-right: 8px; height: 45px; overflow: hidden; }
 					#scbar_hot strong, #scbar_hot a { float: right; margin-left: 8px; white-space: nowrap; }
@@ -750,7 +750,7 @@ Note on the CSS Hack:
 	.tns table { width: 100%; }
 		.tns th, .tns td { text-align: center; font-size: 12px; }
 		.sd .tns th, .sd .tns td { width: 110px !important; }
-		.tns th { border-left: 1px solid #CCC; }
+		.tns th { border-right: 1px solid #CCC; }
 		.tns th p, .tns td p { font-size: 14px; margin: 0; }
 
 /* Page header with icon ih. --> icon header */
@@ -1279,7 +1279,7 @@ Note on the CSS Hack:
 
 #psd, appl { width: 140px; } /*vot*/
 #psd .bn .mbn input, #postbox input { margin-left: 4px; }
-#postbox .mbn, #psd .mbn { height: 1.6em; line-height: 1.6em; }
+/*vot*/ #postbox .mbn, #psd .mbn { /*height: 1.6em;*/ line-height: 1.6em; }
 
 /* Prompt for the reward points and other popup tips */
 .popupcredit {}
