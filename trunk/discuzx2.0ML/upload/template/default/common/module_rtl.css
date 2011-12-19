@@ -88,7 +88,7 @@ Translated by Valery Votintsev
 
 /* Hot Forums by Pony */
 	.heat { width: 370px; }
-	.heatl { padding-right: 15px; margin-right: 385px; background: url({IMGDIR}/vline.png) repeat-y 0 0; }
+/*vot*/	.heatl { padding-right: 15px; margin-right: 385px; background: url({IMGDIR}/vline.png) repeat-y 100% 0; }
 /** end **/
 
 
