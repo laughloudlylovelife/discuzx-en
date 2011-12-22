@@ -112,6 +112,7 @@ if(!$operation || $operation == 'open') {
 
 			echo <<<EOT
 <link rel="stylesheet" type="text/css" href="static/image/admincp/cloud/cloud.css" />
+
 <script type="text/javascript" src="static/image/admincp/cloud/cloud.js"></script>
 <script type="text/JavaScript">
 var cloudStatus = "$cloudstatus";

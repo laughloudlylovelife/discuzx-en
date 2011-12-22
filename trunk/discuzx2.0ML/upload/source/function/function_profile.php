@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_profile.php 24331 2011-09-08 08:29:58Z zhangguosheng $
+ *      $Id: function_profile.php 25613 2011-11-16 07:08:48Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -65,7 +65,6 @@ function profile_setting($fieldid, $space=array(), $showstatus=false, $ignoreunc
 /*vot*/		$monthname = lang('core','month_name');
 		for ($i=1; $i<13; $i++) {
 			$selectstr = $i == $space['birthmonth']?' selected':'';
-//vot			$birthmonthhtml .= "<option value=\"$i\"$selectstr>$i</option>";
 /*vot*/			$birthmonthhtml .= "<option value=\"$i\"$selectstr>".$monthname[$i]."</option>";
 		}
 		$birthdayhtml = '';

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: install_function.php 24681 2011-10-08 02:55:14Z maruitao $
+ *      $Id: install_function.php 26347 2011-12-09 08:19:04Z svn_project_zhangjie $
  *		English by Valery Votintsev at sources.ru
  */
 
@@ -407,7 +407,7 @@ function show_license() {
 	<div class="licenseblock">$license</div>
 	<div class="btnbox marginbot">
 		<form method="get" autocomplete="off" action="index.php">
-<!-- //vot -->	<input type='hidden' name='language' value='$language' />
+<!--vot-->	<input type='hidden' name='language' value='$language' />
 		<input type="hidden" name="step" value="$next">
 		<input type="hidden" name="uchidden" value="$uchidden">
 		<input type="submit" name="submit" value="{$lang_agreement_yes}" style="padding: 2px">&nbsp;
@@ -802,6 +802,18 @@ function var_to_hidden($k, $v) {
 	return "<input type=\"hidden\" name=\"$k\" value=\"$v\" />\n";
 }
 
+function fsocketopen($hostname, $port = 80, &$errno, &$errstr, $timeout = 15) {
+	$fp = '';
+	if(function_exists('fsockopen')) {
+		$fp = @fsockopen($hostname, $port, $errno, $errstr, $timeout);
+	} elseif(function_exists('pfsockopen')) {
+		$fp = @pfsockopen($hostname, $port, $errno, $errstr, $timeout);
+	} elseif(function_exists('stream_socket_client')) {
+		$fp = @stream_socket_client($hostname.':'.$port, $errno, $errstr, $timeout);
+	}
+	return $fp;
+}
+
 function dfopen($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE, $ip = '', $timeout = 15, $block = TRUE) {
 	$return = '';
 	$matches = parse_url($url);
@@ -811,32 +823,39 @@ function dfopen($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE, $
 
 	if($post) {
 		$out = "POST $path HTTP/1.0\r\n";
-		$out .= "Accept: */*\r\n";
-		$out .= "Accept-Language: zh-cn\r\n";
-		$out .= "Content-Type: application/x-www-form-urlencoded\r\n";
-		$out .= "User-Agent: $_SERVER[HTTP_USER_AGENT]\r\n";
-		$out .= "Host: $host\r\n";
-		$out .= 'Content-Length: '.strlen($post)."\r\n";
-		$out .= "Connection: Close\r\n";
-		$out .= "Cache-Control: no-cache\r\n";
-		$out .= "Cookie: $cookie\r\n\r\n";
-		$out .= $post;
+		$header = "Accept: */*\r\n";
+		$header .= "Accept-Language: zh-cn\r\n";
+		$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+		$header .= "User-Agent: $_SERVER[HTTP_USER_AGENT]\r\n";
+		$header .= "Host: $host\r\n";
+		$header .= 'Content-Length: '.strlen($post)."\r\n";
+		$header .= "Connection: Close\r\n";
+		$header .= "Cache-Control: no-cache\r\n";
+		$header .= "Cookie: $cookie\r\n\r\n";
+		$out .= $header.$post;
 	} else {
 		$out = "GET $path HTTP/1.0\r\n";
-		$out .= "Accept: */*\r\n";
-		$out .= "Accept-Language: zh-cn\r\n";
-		$out .= "User-Agent: $_SERVER[HTTP_USER_AGENT]\r\n";
-		$out .= "Host: $host\r\n";
-		$out .= "Connection: Close\r\n";
-		$out .= "Cookie: $cookie\r\n\r\n";
+		$header = "Accept: */*\r\n";
+		$header .= "Accept-Language: zh-cn\r\n";
+		$header .= "User-Agent: $_SERVER[HTTP_USER_AGENT]\r\n";
+		$header .= "Host: $host\r\n";
+		$header .= "Connection: Close\r\n";
+		$header .= "Cookie: $cookie\r\n\r\n";
+		$out .= $header;
 	}
 
-	if(function_exists('fsockopen')) {
-		$fp = @fsockopen(($ip ? $ip : $host), $port, $errno, $errstr, $timeout);
-	} elseif (function_exists('pfsockopen')) {
-		$fp = @pfsockopen(($ip ? $ip : $host), $port, $errno, $errstr, $timeout);
-	} else {
-		$fp = false;
+	$fpflag = 0;
+	if(!$fp = @fsocketopen(($ip ? $ip : $host), $port, $errno, $errstr, $timeout)) {
+		$context = array(
+			'http' => array(
+				'method' => $post ? 'POST' : 'GET',
+				'header' => $header,
+				'content' => $post,
+			),
+		);
+		$context = stream_context_create($context);
+		$fp = @fopen($url, 'b', false, $context);
+		$fpflag = 1;
 	}
 
 	if(!$fp) {
@@ -847,7 +866,7 @@ function dfopen($url, $limit = 0, $post = '', $cookie = '', $bysocket = FALSE, $
 		@fwrite($fp, $out);
 		$status = stream_get_meta_data($fp);
 		if(!$status['timed_out']) {
-			while (!feof($fp)) {
+			while (!feof($fp) && !$fpflag) {
 				if(($header = @fgets($fp)) && ($header == "\r\n" ||  $header == "\n")) {
 					break;
 				}
@@ -1033,7 +1052,7 @@ function show_step($step) {
 			<li class="$stepclass[3]">$step_title_3</li>
 			<li class="$stepclass[4]">$step_title_4</li>
 		</ul>
-		<div class="stepstatbg stepstat{$step}"></div>
+<!--vot-->	<div class="stepstatbg stepstat{$step}"></div>
 	</div>
 </div>
 <div class="main">
