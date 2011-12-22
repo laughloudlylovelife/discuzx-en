@@ -182,6 +182,7 @@ $_config['languages'] = array(
 //	'zh' => array('icon'=>'zh.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
 //	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
 	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
+//	'fr' => array('icon'=>'fr.gif', 'title'=>'French', 'dir'=>'ltr'),
 //	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
 //	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
 //	'tr' => array('icon'=>'tr.gif', 'title'=>'Turkish', 'dir'=>'ltr'),
