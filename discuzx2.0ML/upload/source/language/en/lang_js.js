@@ -339,7 +339,7 @@ var lng = {
 //	'q&a_invalid'			: 'Wrong answer, please try again',//'验证问答错误，请重新填写',
 //	'code_invalid'			: 'Wrong security code, please try again',//'验证码错误，请重新填写',
 	'no_data_recover'	: 'No data can be recoverd!',//'没有可以恢复的数据！',
-	'content_overwrite'	: 'Current thread content will be overwritten by this operation, are you sure to restore the data?',//'此操作将覆盖当前帖子内容，确定要恢复数据吗？',
+	'content_overwrite'	: 'Warning:\nCurrent content will be overwritten with the saved data!\nAre you sure to restore the data?',//'此操作将覆盖当前帖子内容，确定要恢复数据吗？',
 	'upload_finished'	: 'Uploading is finished!',//'附件上传完成！',
 	'successfull'		: 'Successfull:',//'成功',
 	'failed'		: 'Failed:',//'失败',

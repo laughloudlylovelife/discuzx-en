@@ -14,10 +14,10 @@ if(!defined('IN_DISCUZ')) {
 $sql = <<<EOF
 
 CREATE TABLE IF NOT EXISTS pre_common_member_connect (
-  `uid` mediumint(8) unsigned NOT NULL default '0',
-  `conuin` char(40) NOT NULL default '',
-  `conuinsecret` char(16) NOT NULL default '',
-  `conopenid` char(32) NOT NULL default '',
+  `uid` int(11) unsigned NOT NULL default '0',
+  `conuin` varchar(64) NOT NULL default '',
+  `conuinsecret` varchar(64) NOT NULL default '',
+  `conopenid` varchar(64) NOT NULL default '',
   `conisfeed` tinyint(1) unsigned NOT NULL default '0',
   `conispublishfeed` tinyint(1) unsigned NOT NULL default '0',
   `conispublisht` tinyint(1) unsigned NOT NULL default '0',
@@ -29,23 +29,23 @@ CREATE TABLE IF NOT EXISTS pre_common_member_connect (
 ) ENGINE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS pre_connect_feedlog (
-  flid mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  tid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  uid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  publishtimes mediumint(8) unsigned NOT NULL DEFAULT '0',
-  lastpublished int(10) unsigned NOT NULL DEFAULT '0',
-  dateline int(10) unsigned NOT NULL DEFAULT '0',
+  flid int(11) unsigned NOT NULL AUTO_INCREMENT,
+  tid int(11) unsigned NOT NULL DEFAULT '0',
+  uid int(11) unsigned NOT NULL DEFAULT '0',
+  publishtimes int(11) unsigned NOT NULL DEFAULT '0',
+  lastpublished int(11) unsigned NOT NULL DEFAULT '0',
+  dateline int(11) unsigned NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (flid),
   UNIQUE KEY tid (tid)
 ) TYPE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS pre_connect_memberbindlog (
-  mblid mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  uid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  uin char(40) NOT NULL,
+  mblid int(11) unsigned NOT NULL AUTO_INCREMENT,
+  uid int(11) unsigned NOT NULL DEFAULT '0',
+  uin varchar(64) NOT NULL,
   `type` tinyint(1) NOT NULL DEFAULT '0',
-  dateline int(10) unsigned NOT NULL DEFAULT '0',
+  dateline int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (mblid),
   KEY uid (uid),
   KEY uin (uin),
@@ -53,21 +53,21 @@ CREATE TABLE IF NOT EXISTS pre_connect_memberbindlog (
 ) TYPE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS pre_connect_tlog (
-  tlid mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  tid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  uid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  publishtimes mediumint(8) unsigned NOT NULL DEFAULT '0',
-  lastpublished int(10) unsigned NOT NULL DEFAULT '0',
-  dateline int(10) unsigned NOT NULL DEFAULT '0',
+  tlid int(11) unsigned NOT NULL AUTO_INCREMENT,
+  tid int(11) unsigned NOT NULL DEFAULT '0',
+  uid int(11) unsigned NOT NULL DEFAULT '0',
+  publishtimes int(11) unsigned NOT NULL DEFAULT '0',
+  lastpublished int(11) unsigned NOT NULL DEFAULT '0',
+  dateline int(11) unsigned NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (tlid),
   UNIQUE KEY tid (tid)
 ) TYPE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS pre_common_uin_black (
-  uin char(40) NOT NULL,
-  uid mediumint(8) unsigned NOT NULL DEFAULT '0',
-  dateline int(10) unsigned NOT NULL DEFAULT '0',
+  uin varchar(64) NOT NULL,
+  uid int(11) unsigned NOT NULL DEFAULT '0',
+  dateline int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (uin),
   UNIQUE KEY uid (uid)
 ) TYPE=MyISAM;

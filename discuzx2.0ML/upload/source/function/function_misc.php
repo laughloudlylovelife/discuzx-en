@@ -4,7 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_misc.php 23042 2011-06-15 03:30:48Z zhangguosheng $
+ *      $Id: function_misc.php 26292 2011-12-08 03:07:00Z zhengqingpeng $
+ *	GeoIP Support by Valery Votintsev, http://codersclub.org/discuzx/
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -24,11 +25,11 @@ function convertip($ip) {
 		} elseif($iparray[0] > 255 || $iparray[1] > 255 || $iparray[2] > 255 || $iparray[3] > 255) {
 			$return = '- Invalid IP Address';
 		} else {
-			$geoipfile = DISCUZ_ROOT.'./data/ipdata/GeoIP.dat';//vot
+/*vot*/			$geoipfile = DISCUZ_ROOT.'./data/ipdata/GeoIP.dat';
 			$tinyipfile = DISCUZ_ROOT.'./data/ipdata/tinyipdata.dat';
 			$fullipfile = DISCUZ_ROOT.'./data/ipdata/wry.dat';
-			if(@file_exists($geoipfile)) { //vot
-				$return = convertip_geo($ip, $geoipfile); //vot
+/*vot*/			if(@file_exists($geoipfile)) {
+/*vot*/				$return = convertip_geo($ip, $geoipfile);
 			} elseif(@file_exists($tinyipfile)) {
 				$return = convertip_tiny($ip, $tinyipfile);
 			} elseif(@file_exists($fullipfile)) {
@@ -443,9 +444,9 @@ function undeletethreads($tids) {
 			$query = DB::query('SELECT fid, first, authorid FROM '.DB::table(getposttable($posttableid))." WHERE tid IN (".dimplode($ptids).")");
 			while($post = DB::fetch($query)) {
 				if($post['first']) {
-					$tuidarray[] = $post['authorid'];
+					$tuidarray[$post['fid']][] = $post['authorid'];
 				} else {
-					$ruidarray[] = $post['authorid'];
+					$ruidarray[$post['fid']][] = $post['authorid'];
 				}
 				if(!in_array($post['fid'], $fidarray)) {
 					$fidarray[] = $post['fid'];
@@ -454,10 +455,14 @@ function undeletethreads($tids) {
 			updatepost(array('invisible' => '0'), "tid IN (".dimplode($ptids).")", true, $posttableid);
 		}
 		if($tuidarray) {
-			updatepostcredits('+', $tuidarray, 'post');
+			foreach($tuidarray as $fid => $tuids) {
+				updatepostcredits('+', $tuids, 'post', $fid);
+			}
 		}
 		if($ruidarray) {
-			updatepostcredits('+', $ruidarray, 'reply');
+			foreach($ruidarray as $fid => $ruids) {
+				updatepostcredits('+', $ruids, 'reply', $fid);
+			}
 		}
 
 		DB::query("UPDATE ".DB::table('forum_thread')." SET displayorder='0', moderated='1' WHERE tid IN ($tids)");
@@ -511,7 +516,7 @@ function recyclebinpostundelete($undeletepids, $posttableid = false) {
 
 	foreach($postarray as $key => $post) {
 		if(!$post['first']) {
-			$ruidarray[] = $post['authorid'];
+			$ruidarray[$post['fid']][] = $post['authorid'];
 		}
 		$fidarray[$post['fid']] = $post['fid'];
 		$tidarray[$post['tid']] = $post['tid'];
@@ -521,7 +526,9 @@ function recyclebinpostundelete($undeletepids, $posttableid = false) {
 
 	include_once libfile('function/post');
 	if($ruidarray) {
-		updatepostcredits('+', $ruidarray, $creditspolicy['reply']);
+		foreach($ruidarray as $fid => $ruids) {
+			updatepostcredits('+', $ruids, 'reply', $fid);
+		}
 	}
 	foreach($tidarray as $tid) {
 		updatethreadcount($tid, 1);

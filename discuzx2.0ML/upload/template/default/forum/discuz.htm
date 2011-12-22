@@ -82,7 +82,7 @@
 					<!--{eval $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';}-->
 					<h2><a href="{if !empty($caturl)}$caturl{else}forum.php?gid=$cat[fid]{/if}" style="{if $cat[extra][namecolor]}color: {$cat[extra][namecolor]};{/if}">$cat[name]</a></h2>
 				</div>
-				<div id="category_$cat[fid]" class="bm_c" style="$collapse['category_'.$cat[fid]]">
+				<div id="category_$cat[fid]" class="bm_c" style="{$collapse['category_'.$cat[fid]]}">
 					<table cellspacing="0" cellpadding="0" class="fl_tb">
 						<tr>
 						<!--{loop $cat[forums] $forumid}-->
@@ -182,10 +182,10 @@
 					<span class="o"><a href="forum.php?showoldetails=no#online" title="{lang spread}"><img src="{IMGDIR}/collapsed_no.gif" alt="{lang spread}" /></a></span>
 					<h3>
 						<strong><a href="home.php?mod=space&do=friend&view=online&type=member">{lang onlinemember}</a></strong>
-						<span class="xs1">- <strong>$onlinenum</strong> &nbsp;
-						( {lang index_members}: <strong>$membercount</strong>, {lang index_invisibles}: <strong>$invisiblecount</strong>,
-						{lang index_guests}: <strong>$guestcount</strong> )
-						- {lang index_mostonlines}: <strong>$onlineinfo[0]</strong> {lang on} <strong>$onlineinfo[1]</strong>.</span>
+<!--vot-->					<span class="xs1">- <strong>$onlinenum</strong> &nbsp;
+<!--vot-->					( {lang index_members}: <strong>$membercount</strong>, {lang index_invisibles}: <strong>$invisiblecount</strong>,
+<!--vot-->					{lang index_guests}: <strong>$guestcount</strong> )
+<!--vot-->					- {lang index_mostonlines}: <strong>$onlineinfo[0]</strong> {lang on} <strong>$onlineinfo[1]</strong>.</span>
 					</h3>
 				<!--{else}-->
 					<span class="o"><a href="forum.php?showoldetails=yes#online" title="{lang spread}"><img src="{IMGDIR}/collapsed_yes.gif" alt="{lang spread}" /></a></span>
