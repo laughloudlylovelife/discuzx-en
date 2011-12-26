@@ -9,15 +9,15 @@
 
 $lang = array
 (
-	'open_name'			=> 'Open Thread Card',//'喧嚣卡',
-	'open_desc'			=> 'Set the thread open to replies',//'可以将主题开启，可以回复',
-	'open_forum'			=> 'Target forums',//'允许使用本道具的版块',
-	'open_info'			=> 'For open specified thread, enter the thread ID',//'开放指定的主题，请输入主题的 ID',
-	'open_info_nonexistence'	=> 'Enter the thread ID for opening',//'请指定要开放的主题',
-	'open_succeed'			=> 'The thread was opened successfully',//'你操作的主题已开放回复',
-	'open_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
-	'open_info_user_noperm'		=> 'You have no permission to use magic',//'对不起，你不能对此人使用本道具',
+	'open_name'		=> 'Carte Bruyante',   // Noisy card 
+	'open_desc'		=> 'Vous pouvez ouvrir un sujet, il peut &#234;tre laiss&#233; r&#233;pondu',   //  You can open a thread, let it can be replied
+	'open_forum'		=> 'Forums Autoris&#233;s',   // Allowed forums 
+	'open_info'		=> 'Ouvrir un sujet sp&#233;cifique, Svp. entrez l\'ID du sujet',   //  Open specific thread, please enter thread ID
+	'open_info_nonexistence'	=> 'Svp. sp&#233;cifi&#233; le sujet',   // Please sepcific thread 
+	'open_succeed'		=> 'Ouverture sujet avec Succ&#232;s',   //  Open thread successfully
+	'open_info_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cet accessoire dans le forum actuel',   //  Sorry, you cannot use this props in current forum
+	'open_info_user_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cet accessoire sur cet Utilisateur',   //  Sorry, you cannot use this props on this user
 
-	'open_notification'		=> '{actor} used a magic &quot;{magicname}&quot; for your thread &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">view</a>',//'你的主题 {subject} 被 {actor} 使用了{magicname}，<a href="forum.php?mod=viewthread&tid={tid}">快去看看吧！</a>',
+	'open_notification'	=> 'Votre sujet <em>{subject}</em> a &#233;t&#233; utilis&#233; {magicname} par {actor}, <a href="forum.php?mod=viewthread&tid={tid}">voir</a>.',   // Your thread <em>{subject}</em> was used {magicname} by {actor}, <a href="forum.php?mod=viewthread&tid={tid}">view</a>. 
 );
 

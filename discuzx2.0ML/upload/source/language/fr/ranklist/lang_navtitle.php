@@ -10,63 +10,63 @@
  */
 
 $lang = array(
-	'ranklist_title_member_credit'	=> 'Top points',//'用户积分排行',
-	'ranklist_title_member_bid'	=> 'Top bids',//'用户竞价排行',
-	'ranklist_title_member_girl'	=> 'Top girls',//'美女排行',
-	'ranklist_title_member_boy'	=> 'Top boys',//'帅哥排行',
-	'ranklist_title_member_friend'	=> 'Top friendly',//'好友数排行',
-	'ranklist_title_member_invite'	=> 'Top inviters',//'邀请排行',
-	'ranklist_title_member_post'	=> 'Top posters',//'发帖数排行',
-	'ranklist_title_member_blog'	=> 'Top bloggers',//'日志数排行',
-	'ranklist_title_member_onlinetime'	=> 'Top online',//'在线时间排行',
+  'ranklist_title_member_credit'	=> 'Points rang',   // Points ranking 
+  'ranklist_title_member_bid'		=> 'Note du Classement',   //  Bidding ranking
+  'ranklist_title_member_girl'		=> 'Filles',   //  Girls
+  'ranklist_title_member_boy'		=> 'Garcons',   //  Boys
+  'ranklist_title_member_friend'	=> 'Amis',   //  Friends
+  'ranklist_title_member_invite'	=> 'Invitations',   // Invites 
+  'ranklist_title_member_post'		=> 'Posts',   //  Posts
+  'ranklist_title_member_blog'		=> 'Blogs',   // Blogs 
+  'ranklist_title_member_onlinetime'	=> 'Tmps. En-Ligne',   //  Online Time
 
-	'ranklist_title_thread_reply'	=> 'Top replied',//'帖子回复排行',
-	'ranklist_title_thread_view'	=> 'Top viewed',//'帖子查看排行',
-	'ranklist_title_thread_share'	=> 'Top shared',//'帖子分享排行',
-	'ranklist_title_thread_favorite'	=> 'Top favorited',//'帖子收藏排行',
-	'ranklist_title_thread_heat'	=> 'Top Hot Posts',//'帖子热度排行',
+  'ranklist_title_thread_reply'		=> 'R&#233;ponses(sujet)',   //  Replies(thread)
+  'ranklist_title_thread_view'		=> 'Vues(sujet)',   //  Views(thread)
+  'ranklist_title_thread_share'		=> 'Partages(sujet)',   //  Shares(thread)
+  'ranklist_title_thread_favorite'	=> 'Favoris(sujet)',   //  Favorites(thread)
+  'ranklist_title_thread_heat'		=> 'Top Chauds Posts',   // Top Heat Posts 
 
-	'ranklist_title_blog_heat'	=> 'Top rated',//'日志人气排行',
-	'ranklist_title_blog_reply'	=> 'Top replied',//'日志评论排行',
-	'ranklist_title_blog_view'	=> 'Top viewed',//'日志查看排行',
-	'ranklist_title_blog_share'	=> 'Top shared',//'日志分享排行',
-	'ranklist_title_blog_favorite'	=> 'Top favorited',//'日志收藏排行',
-	'ranklist_title_blog_1'		=> 'Top Pass',//'日志路过排行',
-	'ranklist_title_blog_2'		=> 'Top Ray',//'日志雷人排行',
-	'ranklist_title_blog_3'		=> 'Top Handshake',//'日志握手排行',
-	'ranklist_title_blog_4'		=> 'Top Flowers',//'日志鲜花排行',
-	'ranklist_title_blog_5'		=> 'Top Eggs',//'日志鸡蛋排行',
+  'ranklist_title_blog_heat'	=> 'Hot(blog)',   //  Hot(blog)
+  'ranklist_title_blog_reply'	=> 'Commentaires(blog)',   //  Comments(blog)
+  'ranklist_title_blog_view'	=> 'Vues(blog)',   //  Views(blog)
+  'ranklist_title_blog_share'	=> 'Partages(blog)',   //  Shares(blog)
+  'ranklist_title_blog_favorite'	=> 'Favoris(blog)',   //  Favorites(blog)
+  'ranklist_title_blog_1'	=> 'Passe-passe(blog)',   //  Pass(blog)
+  'ranklist_title_blog_2'	=> 'Incroyable(blog)',   //  Unbelievable(blog)
+  'ranklist_title_blog_3'	=> 'Approuve(blog)',   //  Agrees(blog)
+  'ranklist_title_blog_4'	=> 'Fleurs(blog)',   // Flowers(blog) 
+  'ranklist_title_blog_5'	=> 'Oeufs(blog)',   //  Eggs(blog)
 
-	'ranklist_title_poll_heat'	=> 'Top rated',//'投票热度排行',
-	'ranklist_title_poll_favorite'	=> 'Top favorited',//'投票收藏排行',
-	'ranklist_title_poll_share'	=> 'Top shared',//'投票分享排行',
+  'ranklist_title_poll_heat'		=> 'Hots(sondage)',   //  Hots(poll)
+  'ranklist_title_poll_favorite'	=> 'Favoris(sondage)',   // Favorites(poll) 
+  'ranklist_title_poll_share'		=> 'Partages(sondage)',   //  Shares(poll)
 
-	'ranklist_title_activity_heat'		=> 'Top rated',//'活动热度排行',
-	'ranklist_title_activity_favorite'	=> 'Top favorited',//'活动收藏排行',
-	'ranklist_title_activity_share'		=> 'Top shared',//'活动分享排行',
+  'ranklist_title_activity_heat'	=> 'Hots(activit&#233;)',   //  Hots(activity)
+  'ranklist_title_activity_favorite'	=> 'Favoris(activit&#233;)',   //  Favorites(activity)
+  'ranklist_title_activity_share'	=> 'Partages(activit&#233;)',   // Shares(activity) 
 
-	'ranklist_title_picture_heat'	=> 'Top rated',//'图片热图排行',
-	'ranklist_title_picture_share'	=> 'Top shared',//'图片分享排行',
-	'ranklist_title_picture_1'	=> 'Top Pretty',//'图片漂亮排行',
-	'ranklist_title_picture_2'	=> 'Top Cool',//'图片酷毙排行',
-	'ranklist_title_picture_3'	=> 'Top Ray',//'图片雷人排行',
-	'ranklist_title_picture_4'	=> 'Top Flowers',//'图片鲜花排行',
-	'ranklist_title_picture_5'	=> 'Top Eggs',//'图片鸡蛋排行',
+  'ranklist_title_picture_heat'		=> 'Hots(image)',   //  Hots(image)
+  'ranklist_title_picture_share'	=> 'Partages(image)',   //  Shares(image)
+  'ranklist_title_picture_1'		=> 'Beaut&#233;s(image)',   //  Beauties(image)
+  'ranklist_title_picture_2'		=> 'Cools(image)',   //  Cools(image)
+  'ranklist_title_picture_3'		=> 'Incroyable(image)',   //  Unbelievable(image)
+  'ranklist_title_picture_4'		=> 'Fleurs(image)',   //  Flowers(image)
+  'ranklist_title_picture_5'		=> 'Oeufs(image)',   //  Eggs(image)
 
-	'ranklist_title_forum_thread'	=> 'Top rated',//'版块发帖排行',
-	'ranklist_title_forum_post'	=> 'Top posted',//'版块回复排行',
-	'ranklist_title_forum_post_30'	=> 'Top posted last month',//'版块 30 天发帖排行',
-	'ranklist_title_forum_post_24'	=> 'Top posted last day',//'版块最近 24 小时发帖排行',
+  'ranklist_title_forum_thread'		=> 'Posts(forum)',   //  Posts(forum)
+  'ranklist_title_forum_post'		=> 'R&#233;ponses(forum)',   //  Replies(forum)
+  'ranklist_title_forum_post_30'	=> 'Posts il y a 30 jours(forum)',   //  Posts in 30 days(forum)
+  'ranklist_title_forum_post_24'	=> 'Posts il y a 24 heures(forum)',   // Posts in 24 hours(forum) 
 
-	'ranklist_title_group_credit'	=> 'Top points',//'群组积分排行',
-	'ranklist_title_group_member'	=> 'Top participated',//'群组成员数排行',
-	'ranklist_title_group_thread'	=> 'Top threads',//'群组发帖排行',
-	'ranklist_title_group_post'	=> 'Top posted',//'群组回复排行',
-	'ranklist_title_group_post_30'	=> 'Top posted last month',//'群组最近 30 天发帖排行',
-	'ranklist_title_group_post_24'	=> 'Top posted last day',//'群组最近 24 小时发帖排行',
-
-	'ranklist_title_app_today'	=> 'Top Active Applications Today',//'今日应用活跃排行',
-	'ranklist_title_app_all'	=> 'The most popular applications',//'最流行应用',
+  'ranklist_title_group_credit'		=> 'Points(groupe)',   //  Points(group)
+  'ranklist_title_group_member'		=> 'Membres(groupe)',   // Members(group)
+  'ranklist_title_group_thread'		=> 'Posts(groupe)',   //  Posts(group)
+  'ranklist_title_group_post'		=> 'R&#233;ponses(groupe)',   //  Replies(group)
+  'ranklist_title_group_post_30'	=> 'Posts il y a 30 jours(groupe)',   //  Posts in 30 days(group)
+  'ranklist_title_group_post_24'	=> 'Posts il y a 24 heures(groupe)',   //  Posts in 24 hours(group)
+  
+  'ranklist_title_app_today'	=> 'Top Demande Aujourdhui',   //  Application Top Today
+  'ranklist_title_app_all'	=> 'Demandes plus Populaires',   // The most popular applications 
 );
 
 ?>

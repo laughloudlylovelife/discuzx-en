@@ -7,8 +7,8 @@
  */
 $lang = array
 (
-	'flicker_name'		=> 'Flicker',//'彩虹炫',
-	'flicker_desc'		=> 'Enable to use a rainbow flicker on your post',//'在日志、相册评论中使用彩虹炫',
-	'flicker_info'		=> 'Enable to use a rainbow flicker on your post',//'在日志、相册评论中使用彩虹炫',
-	'flicker_succeed'	=> 'Flicker used successfully',//'彩虹炫使用成功。',
+	'flicker_name'		=> 'Carte Clignotante',   // Flicker card 
+	'flicker_desc'		=> 'Vous pouvez utiliser Scintillement dans le blog et les commentaires(image)',   // You can use flicker in blog and comments(image) 
+	'flicker_info'		=> 'Vous pouvez utiliser Scintillement dans le blog et les commentaires(image)',   // You can use flicker in blog and comments(image) 
+	'flicker_succeed'	=> 'Op&#233;rer avec Succ&#232;s.',   //  Operate successfully.
 );

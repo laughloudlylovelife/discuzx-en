@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_dz_feed.php by Valery Votintsev at sources.ru
+ *	Traduction en French par Andre13
  */
 
 $lang = array

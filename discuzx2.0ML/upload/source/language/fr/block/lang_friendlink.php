@@ -9,18 +9,18 @@
 
 $lang = array
 (
-	'friendlink_content'		=> 'Display style',//'展示样式',
-	'friendlink_content_both'	=> 'Logo and text',//'logo和文字',
-	'friendlink_content_logo'	=> 'Logo only',//'仅logo',
-	'friendlink_content_text'	=> 'Text only',//'仅文字',
-	'friendlink_type'		=> 'Link Group',//'链接分组',
-	'friendlink_type_group1'	=> 'Group 1',//'分组1',
-	'friendlink_type_group2'	=> 'Group 2',//'分组2',
-	'friendlink_type_group3'	=> 'Group 3',//'分组3',
-	'friendlink_type_group4'	=> 'Group 4',//'分组4',
-	'friendlink_titlelength'	=> 'Site name length',
-	'friendlink_titlelength_comment'	=> 'Set the maximum length of site name',
-	'friendlink_summarylength'		=> 'Summary length',
-	'friendlink_summarylength_comment'	=> 'Set the maximum length of site summary',
+	'friendlink_content'		=> 'Voir Style',  //  '展示样式'
+	'friendlink_content_both'	=> 'Logo et Texte',  //  'logo和文字'
+	'friendlink_content_logo'	=> 'Logo Seul',  //  '仅logo'
+	'friendlink_content_text'	=> 'Texte Seul',  //  '仅文字'
+	'friendlink_type'		=> 'Liens du Groupe',  //  '链接分组'
+	'friendlink_type_group1'	=> 'Groupe 1',  //  '分组1'
+	'friendlink_type_group2'	=> 'Groupe 2',  //  '分组2'
+	'friendlink_type_group3'	=> 'Groupe 3',  //  '分组3'
+	'friendlink_type_group4'	=> 'Groupe 4',  //  '分组4'
+	'friendlink_titlelength'	=> 'Longueur du Nom du Site',  //  '站点名称长度'
+	'friendlink_titlelength_comment'	=> 'D&#233;finissez une longueur Max. du Nom du Site',  //  '设置站点名称的最大长度'
+	'friendlink_summarylength'		=> 'A Propos de la Longueur',  //  '简介长度'
+	'friendlink_summarylength_comment'	=> 'R&#233;glez la Longueur Max. du Profil du Site',  // '设置站点简介最大长度' 
 );
 

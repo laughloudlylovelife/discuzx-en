@@ -9,295 +9,295 @@
 
 $lang = array(
 
-	'by'			=> 'Accept by',//'通过',
-	'tab_space'		=> ' ',
+	'by'			=> 'par',  //  by
+	'tab_space'		=> ' ',  // ' ' 
 
-	'share'			=> 'Shares',//'分享',
-	'share_action'		=> 'shared',//'分享了',
+	'share'			=> 'Partage',  //  Share
+	'share_action'		=> 'a partag&#233;',  // shared 
 
-	'pm_comment'		=> 'Reply message',//'答复点评',
-	'pm_thread_about'	=> 'About your post in "{subject}"',//'关于你在“{subject}”的帖子',
+	'pm_comment'		=> 'R&#233;p. au comment.',  //  Reply comment
+	'pm_thread_about'	=> 'A propos de votre post dans "{subject}"',  //  'About your post in "{subject}"'
 
-	'wall_pm_subject'	=> 'New wall message',//'您好，我给您留言了',
-	'wall_pm_message'	=> 'Hi, you have a new message at your wall, [url=\\1]click here to view it[/url]',//'我在您的留言板给你留言了，[url=\\1]点击这里去留言板看看吧[/url]',
-	'reward'		=> 'Reward',//'悬赏',
-	'reward_info'		=> 'A vote get to you: + \\1 points.',//'参与投票可获得  \\1 积分',
-	'poll_separator'	=> ', ',//'"、"',
+	'wall_pm_subject'	=> 'Bonjour, je laisse un message pour vous',  // Hello, I leave a message to you 
+	'wall_pm_message'	=> 'Je laisse un message pour vous, [url=\\1]cliquer ici pour voir[/url]',  // I leave a message to you, [url=\\1]click here to view[/url] 
+	'reward'		=> 'R&#233;comp.',  //  Reward
+	'reward_info'		=> 'Vote: + \\1',  //  'Vote: + \\1'
+	'poll_separator'	=> '","',  //  '","'	//modify'poll_separator'	=> '"、"',  //  
+	
+	'pm_report_content'	=> '<a href="home.php?mod=space&uid={reporterid}" target="_blank">{reportername}</a>Rapport Message Court:<br>From<a href="home.php?mod=space&uid={uid}" target="_blank">{username}</a>Court message<br> contenu:{message}',  //  '<a href="home.php?mod=space&uid={reporterid}" target="_blank">{reportername}</a>Report Short Message:<br>From<a href="home.php?mod=space&uid={uid}" target="_blank">{username}</a>Short message<br> content:{message}'
+	'message_can_not_send_1'	=> 'Impossible de vous envoyer dans les 24 heures actuellement au-del&#224; de cette limite sup&#233;rieure des deux sessions',  // 'Failed to send you within 24 hours of the current beyond the upper limit of two sessions' 
+	'message_can_not_send_2'	=> 'Envoyer un court message &#224; deux reprises trop rapidement, Svp. attendre avant de re-envoyer',  // Send a short message twice too fast, please wait before sending 
+	'message_can_not_send_3'	=> 'D&#233;sol&#233;, vous pouvez envoyer un court message de non-Amis-du volume',  //  Sorry, you can send a short message of non-friends-volume
+	'message_can_not_send_4'	=> 'D&#233;sol&#233;, vous ne pouvez pas actuellement utiliser la fonction Envoyer un message',  // Sorry, you currently can not use the Send Message feature 
+	'message_can_not_send_5'	=> 'Vous avez d&#233;pass&#233; la session de discussion du groupe d&#233;lai de 24 heures maximum',  // You have exceeded the group chat session within 24 hours maximum 
+	'message_can_not_send_6'	=> 'Autres protection votre message court',  //  Others shielding your short message
+	'message_can_not_send_7'	=> 'D&#233;passe le nombre maximum de messages',  //  Exceeded the maximum number of messages
+	'message_can_not_send_8'	=> 'D&#233;sol&#233;, vous ne pouvez pas vous en envoyer',  //  Sorry, you cannot send yourself
+	'message_can_not_send_9'	=> 'Message vide',  //  Empty message
+	'message_can_not_send_10'	=> 'Ne pas &#234;tre inf&#233;rieur au nombre de discussion du Groupe initi&#233; par les deux',  // Not be less than the number of group chat initiated by two 
+	'message_can_not_send_11'	=> 'La session est inexistante',  // The session does not exist 
+	'message_can_not_send_12'	=> 'D&#233;sol&#233;, vous n\'avez pas la permission d\'op&#233;rer',  //  Sorry, you do not have permission to operate
+	'message_can_not_send_13'	=> 'Ce n\'est pas un message du Groupe',  //  This is not a group message
+	'message_can_not_send_14'	=> 'Ce n\'est pas un Message Priv&#233;',  //  This is not a Private Message
+	'message_can_not_send_15'	=> 'Donn&#233;es sont incorrectes',  //  Data is incorrect
+	'message_can_not_send_onlyfriend'	=> 'L\'utilisateur n\'acceptera qu\'un Ami envoit un court message &#224; envoyer',  // The user will only accept friend a short message to send 
 
-	'pm_report_content'		=> '<a href="home.php?mod=space&uid={reporterid}" target="_blank">{reportername}</a> Report message:<br>from <a href="home.php?mod=space&uid={uid}" target="_blank">{username}</a> short message<br>content: {message}',//'<a href="home.php?mod=space&uid={reporterid}" target="_blank">{reportername}</a>举报短消息：<br>来自<a href="home.php?mod=space&uid={uid}" target="_blank">{username}</a>的短消息<br>内容：{message}',
-	'message_can_not_send_1'	=> 'Failed to send. You have exceeds the 24 hours limit of sent messages',//'发送失败，您当前超出了24小时内两人会话的上限',
-	'message_can_not_send_2'	=> 'You have sent a short message twice too fast - please wait',//'两次发送短消息太快，请稍候再发送',
-	'message_can_not_send_3'	=> 'Sorry, you can not to send PM to non-friends',//'抱歉，您不能给非好友批量发送短消息',
-	'message_can_not_send_4'	=> 'Sorry, currently you can not use the Send Message function',//'抱歉，您目前还不能使用发送短消息功能',
-	'message_can_not_send_5'	=> 'You have exceeded the group chat number of messages within 24 hours session',//'您超出了24小时内群聊会话的上限',
-	'message_can_not_send_6'	=> 'Recipient have blocked your message',//'对方屏蔽了您的短消息',
-	'message_can_not_send_7'	=> 'The group chat maximum number of messages exceeded',//'超过了群聊人数上限',
-	'message_can_not_send_8'	=> 'Sorry, you can not send PM to yourself',//'抱歉，您不能给自己发短消息',
-	'message_can_not_send_9'	=> 'The message is empty or the recipient blocked your message',//'收件人为空或对方屏蔽了您的短消息',
-	'message_can_not_send_10'	=> 'Initiated group chat must have at least two members',//'发起群聊人数不能小于两人',
-	'message_can_not_send_11'	=> 'The session does not exist',//'该会话不存在',
-	'message_can_not_send_12'	=> 'Sorry, you do not have permission for this operation',//'抱歉，您没有权限操作',
-	'message_can_not_send_13'	=> 'This is not a group chat message',//'这不是群聊消息',
-	'message_can_not_send_14'	=> 'This is not private message',//'这不是私人消息',
-	'message_can_not_send_15'	=> 'Wrong data',//'数据有误',
-	'message_can_not_send_onlyfriend'	=> 'The user can receive short message only from friends',//'该用户只接收好友发送的短消息',
 
+	'friend_subject'	=> '<a href="{url}" target="_blank">{username} voulez-vous l\'Ajouter comme Ami</a>',  // '<a href="{url}" target="_blank">{username} want to add you as friend</a>' 
+	'friend_request_note'	=> ', PS: {note}',  //  ',  //   PS:{note}'
+	'comment_friend'	=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un message pour vous</a>',  // '<a href="\\2" target="_blank">\\1 left a message to you</a>' 
+	'photo_comment'		=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un commentaire sur votre image</a>',  //  '<a href="\\2" target="_blank">\\1 left a comment on your image</a>'
+	'blog_comment'		=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un commentaire sur votre blog</a>',  //  '<a href="\\2" target="_blank">\\1 left a comment on your blog</a>'
+	'poll_comment'		=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un commentaire sur votre sondage</a>',  //  '<a href="\\2" target="_blank">\\1 left a comment on your poll</a>'
+	'share_comment'		=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un commentaire sur votre partage</a>',  //  '<a href="\\2" target="_blank">\\1 left a comment on your share</a>'
+	'friend_pm'		=> '<a href="\\2" target="_blank">\\1 vous a envoy&#233; un message</a>',  // '<a href="\\2" target="_blank">\\1 sent you a message</a>' 
+	'poke_subject'		=> '<a href="\\2" target="_blank">\\1 poke &#224; vous</a>',  //  '<a href="\\2" target="_blank">\\1 poke to you</a>'
+	'mtag_reply'		=> '<a href="\\2" target="_blank">\\1 a r&#233;pondu votre sujet</a>',  //  '<a href="\\2" target="_blank">\\1 replied your thread</a>'
+	'event_comment'		=> '<a href="\\2" target="_blank">\\1 a laiss&#233; un commentaire sur votre activit&#233;</a>',  // '<a href="\\2" target="_blank">\\1 left a comment on your activity</a>' 
 
-	'friend_subject'	=> '<a href="{url}" target="_blank">{username} asked to add you to the friend list</a>',//'<a href="{url}" target="_blank">{username} 请求加你为好友</a>',
-	'friend_request_note'	=> ', PS: {note}',//'，附言：{note}',
-	'comment_friend'	=> '<a href="\\2" target="_blank">\\1 leave a message to you</a>',//'<a href="\\2" target="_blank">\\1 给你留言了</a>',
-	'photo_comment'		=> '<a href="\\2" target="_blank">\\1 commented your image</a>',//'<a href="\\2" target="_blank">\\1 评论了你的照片</a>',
-	'blog_comment'		=> '<a href="\\2" target="_blank">\\1 commented your blog</a>',//'<a href="\\2" target="_blank">\\1 评论了你的日志</a>',
-	'poll_comment'		=> '<a href="\\2" target="_blank">\\1 commented your poll</a>',//'<a href="\\2" target="_blank">\\1 评论了你的投票</a>',
-	'share_comment'		=> '<a href="\\2" target="_blank">\\1 commented your share</a>',//'<a href="\\2" target="_blank">\\1 评论了你的分享</a>',
-	'friend_pm'		=> '<a href="\\2" target="_blank">\\1 sent PM to you</a>',//'<a href="\\2" target="_blank">\\1 给你发私信了</a>',
-	'poke_subject'		=> '<a href="\\2" target="_blank">\\1 sent greeting to you</a>',//'<a href="\\2" target="_blank">\\1 向你打招呼</a>',
-	'mtag_reply'		=> '<a href="\\2" target="_blank">\\1 replied to your group topic</a>',//'<a href="\\2" target="_blank">\\1 回复了你的话题</a>',
-	'event_comment'		=> '<a href="\\2" target="_blank">\\1 commented your event</a>',//'<a href="\\2" target="_blank">\\1 评论了你的活动</a>',
+	'friend_pm_reply'	=> '\\1 a r&#233;pondu &#224; votre message',  // '\\1 replied your message' 
+	'comment_friend_reply'	=> '\\1 a r&#233;pondu votre message',  //  '\\1 replied your message'
+	'blog_comment_reply'	=> '\\1 a r&#233;pondu votre commentaire du Blog',  //  '\\1 replied your comment of blog'
+	'photo_comment_reply'	=> '\\1 a r&#233;pondu votre commentaire de la photo',  //  '\\1 replied your comment of photo'
+	'poll_comment_reply'	=> '\\1 a r&#233;pondu votre commentaire du sondage',  //  '\\1 replied your comment of poll'
+	'share_comment_reply'	=> '\\1 a r&#233;pondu votre commentaire du partage ',  //  '\\1 replied your comment of share'
+	'event_comment_reply'	=> '\\1 a r&#233;pondu votre commentaire de cette activit&#233;',  //  '\\1 replied your comment of activity'
 
-	'friend_pm_reply'	=> '\\1 replied to your private message',//'\\1 回复了你的私信',
-	'comment_friend_reply'	=> '\\1 replied to your message',//'\\1 回复了你的留言',
-	'blog_comment_reply'	=> '\\1 replied to your blog comment',//'\\1 回复了你的日志评论',
-	'photo_comment_reply'	=> '\\1 replied to your image comment',//'\\1 回复了你的照片评论',
-	'poll_comment_reply'	=> '\\1 replied to your poll comment',//'\\1 回复了你的投票评论',
-	'share_comment_reply'	=> '\\1 replied to your share comment',//'\\1 回复了你的分享评论',
-	'event_comment_reply'	=> '\\1 replied to your event comment',//'\\1 回复了你的活动评论',
+	'mail_my'		=> 'Interagir avec mes Amis pour rappeler',  //  'Interact with my friends to remind'
+	'mail_system'		=> 'Alertes Syst&#232;me',  //  'System alerts'
 
-	'mail_my'		=> 'Remind about interaction with my friends',//'好友与我的互动提醒',
-	'mail_system'		=> 'System alerts',//'系统提醒',
-
-	'invite_subject'	=> '{username} invited you to join the {sitename}, and become friends',//'{username}邀请您加入{sitename}，并成为好友',
+	'invite_subject'	=> '{username} a invit&#233; &#224; vous joindre {sitename} et de devenir Amis',  //  '{username} invited you to join {sitename} and become friends'
 	'invite_massage'	=> '<table border="0">
 				<tr>
 				<td valign="top">{avatar}</td>
 				<td valign="top">
-				<h3>Hi, I am {username}. I invite you to join the (sitename) and be my friend</h3><br>
-				Please join to my friends, and you can understand my current situation, communicate with me, and contact with me at any time.<br>
+				<h3>Salut, Je suis {username}. Je vous invite &#224; rejoindre {sitename} et devenir mon Ami</h3><br>
+				Svp. ajouter-moi comme votre Amis, vous pouvez recevoir mon dernier Flux, sur le Forum et contactez-moi &#224; tout moment.<br>
 				<br>
-				Invite P.S.:<br>{saymsg}
+				Message Suppl&#233;mentaire:<br>{saymsg}
 				<br><br>
-				<strong>Please click the link below to receive the Friend Invite:</strong><br>
+				<strong>Svp. cliquer sur le lien ci-dessous pour accepter votre invitation d\'Amis:</strong><br>
 				<a href="{inviteurl}">{inviteurl}</a><br>
 				<br>
-				<strong>If you have an account at {sitename}, please click the following link to see my personal page:</strong><br>
+				<strong>Si Vous Avez un Compte chez {sitename}, Svp. cliquer sur le lien ci-dessous pour voir ma page personnelle:</strong><br>
 				<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
-				</td></tr></table>',
+				</td></tr></table>',  
 
-	'app_invite_subject'	=> '{username} invite you to join the {sitename} and play with {appname}',//'{username}邀请您加入{sitename}，一起来玩{appname}',
+	'app_invite_subject'	=> '{username} vous invite &#224; rejoindre {sitename}, et jouer {appname} ensemble',    
 	'app_invite_massage'	=> '<table border="0">
 				<tr>
 				<td valign="top">{avatar}</td>
 				<td valign="top">
-				<h3>Hi, I am {username} from {sitename}. I invite you to join and play together with &quot;{appname}&quot;</h3><br>
+				<h3>Salut, Je suis {username}, Je suis en train de jouer {appname} sur {sitename}, Je vous invite &#224; jouer ensemble</h3><br>
 				<br>
-				Invite P.S.:<br>
+				Message suppl&#233;mentaire:<br>
 				{saymsg}
 				<br><br>
-				<strong>Please click the link below to receive the invite to play with {appname}:</strong><br>
+				<strong>Svp. cliquer sur le lien ci-dessous pour accepter l\'invitation de votre Ami de jouer {appname}:</strong><br>
 				<a href="{inviteurl}">{inviteurl}</a><br>
 				<br>
-				<strong>if you have an account at {sitename}, please click the following link to see my personal page:</strong><br>
+				<strong>Si vous avez un compte dans {sitename}, Svp. cliquer sur le lien ci-dessous pour voir ma page personnelle:</strong><br>
 				<a href="{siteurl}home.php?mod=space&uid={uid}">{siteurl}home.php?mod=space&uid={uid}</a><br>
 				</td></tr></table>',
 
-	'person'		=> 'people',//'人',
-	'delete'		=> 'Delete',//'删除',
+	'person'		=> ' Individu(s)',  //  ' person(s)'
+	'delete'		=> 'Supprimer',  //  'Delete'
 
-	'space_update'		=> '{actor} updated his space',//'{actor} 被SHOW了一下',
+	'space_update'		=> '{actor} a  d&#233;montr&#233;',  //'{actor} was shown'  //Modify
 
-	'active_email_subject'	=> 'Email Activation',//'您的邮箱激活邮件',
-	'active_email_msg'	=> 'Please copy the following link to your browser in order to activate your mailbox.<br>E-mail activation link:<br><a href="{url}" target="_blank">{url}</a>',//'请复制下面的激活链接到浏览器进行访问，以便激活你的邮箱。<br>邮箱激活链接:<br><a href="{url}" target="_blank">{url}</a>',
-	'share_space'		=> 'shared the space',//'分享了一个用户',
-	'share_blog'		=> 'share blog',//'分享了一篇日志',
-	'share_album'		=> 'shared album',//'分享了一个相册',
-	'default_albumname'	=> 'Default Album',//'默认相册',
-	'share_image'		=> 'shared image',//'分享了一张图片',
-	'share_article'		=> 'Share an article',//'分享了一篇文章',
-	'album'			=> 'Albums',//'相册',
-	'share_thread'		=> 'shared thread',//'分享了一个帖子',
-	'mtag'			=> 'Groups',
-	'share_mtag'		=> 'Share the group',
-	'share_mtag_membernum'	=> 'has (membernum) members',//'现有 {membernum} 名成员',
-	'share_tag'		=> 'shared tag',//'分享了一个标签',
-	'share_tag_blognum'	=> 'used in {blognum} blogs',//'现有 {blognum} 篇日志',
-	'share_link'		=> 'shared link',//'分享了一个网址',
-	'share_video'		=> 'shared video',//'分享了一个视频',
-	'share_music'		=> 'shared music',//'分享了一个音乐',
-	'share_flash'		=> 'shared Flash',//'分享了一个 Flash',
-	'share_event'		=> 'shared event',//'分享了一个活动',
-	'share_poll'		=> 'shared the poll \\1',//'分享了一个\\1投票',
-	'event_time'		=> 'Time',//'活动时间',
-	'event_location'	=> 'Location',//'活动地点',
-	'event_creator'		=> 'Author',//'发起人',
-	'the_default_style'	=> 'Default Style',//'默认风格',
-	'the_diy_style'		=> 'Custom style',//'自定义风格',
+	'active_email_subject'	=> 'Activez votre email',  //  'Activate your email'
+	'active_email_msg'	=> 'Svp. copier et le coller dans la barre d\'adresse de votre navigateur pour activer votre courriel.<br>LiEN:<br><a href="{url}" target="_blank">{url}</a>',  // 'Please copy and paste it into the address bar of your browser to activate your email.<br>Link:<br><a href="{url}" target="_blank">{url}</a>' 
+	'share_space'		=> ' a partag&#233; &#224; un Membre',  //  ' shared a member'
+	'share_blog'		=> ' a partag&#233; un blog',  //  ' shared a blog'
+	'share_album'		=> ' a partag&#233; un album',  //  ' shared an album'
+	'default_albumname'	=> 'Album par D&#233;faut',  //  'Default album'
+	'share_image'		=> ' a partag&#233; une image',  //  ' shared an image'
+	'share_article'		=> ' a partag&#233; un article',  // ' shared an article' 
+	'album'			=> 'Album',  //  'Album'
+	'share_thread'		=> ' a partag&#233; un sujet',  //  ' shared a thread'
+	'mtag'			=> 'Group',  //  'Group'
+	'share_mtag'		=> ' a partag&#233; un groupe',  //  ' shared a group'
+	'share_mtag_membernum'	=> 'est {membernum} Membres',  // 'has {membernum} members' //Modify
+	'share_tag'		=> ' a partag&#233; un label',  // ' shared a tag' 
+	'share_tag_blognum'	=> 'est {blognum} blog(s)',  //'has {blognum} blog(s)'  //Modify
+	'share_link'		=> ' a partag&#233; une URL',  //  ' shared a URL'
+	'share_video'		=> ' a partag&#233; une vid&#233;o',  //  ' shared a video'
+	'share_music'		=> ' a partag&#233; une musique',  //  ' shared a music'
+	'share_flash'		=> ' a partag&#233; Flash',  //  ' shared a Flash
+	'share_event'		=> ' a partag&#233; une activit&#233;',  // ' shared an activity' 
+	'share_poll'		=> ' a partag&#233; un \\1 sondage',  //  ' shared a \\1 poll'
+	'event_time'		=> 'Heure',  //  'Time'
+	'event_location'	=> 'Lieu',  //  'Location'
+	'event_creator'		=> 'Cr&#233;ateur',  //  'Creator'
+	'the_default_style'	=> 'Style par D&#233;faut',  //  'Default Style'
+	'the_diy_style'		=> 'Style Personnaliser',  //  'Customize Style'
 
-	'thread_edit_trail'		=> '<ins class="modify">[Thread was edited by \\1 at \\2]</ins>',//'<ins class="modify">[本话题由 \\1 于 \\2 编辑]</ins>',
-	'create_a_new_album'		=> 'created a new album',//'创建了新相册',
-	'not_allow_upload'		=> 'You have no permission to upload image',//'您现在没有权限上传图片',
-	'not_allow_upload_extend'	=> 'It is not allowed to upload images of {extend} type',//'不允许上传{extend}类型的图片',
-	'files_can_not_exceed_size'	=> '{extend} type files can not exceed the {size}',//'{extend}类文件不能超过{size}',
-	'get_passwd_subject'		=> 'Recover password by email',//'取回密码邮件',
-	'get_passwd_message'		=> 'You should use the link below to reset your password in 3 days:<br />\\1<br />If clicking the URL in this message does not work, just copy and paste it into the address bar of your browser.<br />At the page opened just enter your new password and submit. After this you can login with new password.',//'您只需在提交请求后的三天之内，通过点击下面的链接重置您的密码：<br />\\1<br />(如果上面不是链接形式，请将地址手工粘贴到浏览器地址栏再访问)<br />上面的页面打开后，输入新的密码后提交，之后您即可使用新的密码登录了。',
-	'file_is_too_big'		=> 'File is too large',//'文件过大',
+	'thread_edit_trail'		=> '<ins class="modify">[Ce sujet a &#233;t&#233; &#233;dit&#233; par \\1 sur \\2]</ins>',  // '<ins class="modify">[This thread was edited by \\1 on \\2]</ins>' 
+	'create_a_new_album'		=> ' a cr&#233;&#233; un nouvel album',  //  ' created a new album'
+	'not_allow_upload'		=> 'Vous n\'&#234;tes pas autoris&#233;s &#224; t&#233;l&#233;charger l\'image maintenant',  //   'You are not allowed to upload image now'
+	'not_allow_upload_extend'	=> 'Pas autoris&#233;s &#224; t&#233;l&#233;charger des images du type {extend}',  //  'Not allowed to upload pictures of type {extend}'
+	'files_can_not_exceed_size'	=> '{extend} fichiers ne peuvent pas d&#233;passer{size}',  // '{extend} files can not exceed{size}' 
+	'get_passwd_subject'		=> 'R&#233;initialiser votre mot de passe',  //   'Reset your password'
+	'get_passwd_message'		=> 'Vous devez r&#233;initialiser votre mot de passe en cliquant sur le lien ci-dessous dans les 3 jours:<br />\\1<br />(Si ce n\'est pas un lien, Svp. coller dans votre navigateur manuellement)<br />Svp. r&#233;initialiser votre mot de passe selon les conseils.',  // 'You need to reset your password by clicking the link below within 3 days:<br />\\1<br />(If it is not a link, please paste it to your browser manually)<br />Please reset your password according the tips.' 
+	'file_is_too_big'		=> 'trop grand',  //  'Too big'
 
-	'take_part_in_the_voting'		=> '{actor} voted the {touser} poll  <a href="{url}" target="_blank">{subject}</a> and get reward {reward} points.',//'{actor} 参与了 {touser} 的{reward}投票 <a href="{url}" target="_blank">{subject}</a>',
-	'lack_of_access_to_upload_file_size'	=> 'Unable to get uploaded file size',//'无法获取上传文件大小',
-	'only_allows_upload_file_types'		=> 'Enabled to upload image file types: jpg,jpeg,gif,png',//'只允许上传jpg、jpeg、gif、png标准格式的图片',
-	'unable_to_create_upload_directory_server'	=> 'Unable to create upload directory at the server',//'服务器无法创建上传目录',
-	'inadequate_capacity_space'		=> 'Can not upload new attachments, insufficient space capacity.',//'空间容量不足，不能上传新附件',
-	'mobile_picture_temporary_failure'	=> 'Can not move temporary files to specified server directory',//'无法转移临时文件到服务器指定目录',
-	'ftp_upload_file_size'		=> 'Remote FTP upload failed (file size)',//'远程上传图片失败',
-	'comment'			=> 'Comment',//'评论',
-	'upload_a_new_picture'		=> 'uploaded new image',//'上传了新图片',
-	'upload_album'			=> 'updated album',//'更新了相册',
-	'the_total_picture'		=> 'Total \\1 images',//'共 \\1 张图片',
+	'take_part_in_the_voting'		=> '{actor} a rejoint {touser}\'s {reward} sondage <a href="{url}" target="_blank">{subject}</a>',  //  '{actor} joined {touser}\'s {reward} poll <a href="{url}" target="_blank">{subject}</a>'
+	'lack_of_access_to_upload_file_size'	=> 'Impossible d\'obtenir la taille du fichier',  //  'Cannot get size of file'
+	'only_allows_upload_file_types'		=> 'Uniquement jpg, jpeg, gif, png sont autoris&#233;s',  //  'Only jpg, jpeg, gif, png is allowed'
+	'unable_to_create_upload_directory_server'	=> 'Impossible de cr&#233;er le r&#233;pertoire sur le serveur',  // 'Cannot create directory on server' 
+	'inadequate_capacity_space'		=> 'L\'espace n\'est pas suffisant, ne peuvent pas t&#233;l&#233;charger les pi&#232;ces jointes',  //  'Space is not enough, cannot upload attachments'
+	'mobile_picture_temporary_failure'	=> 'Impossible de d&#233;placer les fichiers temporaires dans le r&#233;pertoire sp&#233;cifi&#233;s',  //  'Cannot move temporary files to specific directory'
+	'ftp_upload_file_size'		=> 'T&#233;l&#233;charger l\'image sur le serveur distant a &#233;chou&#233;',  //  'Upload image to remote server failed'
+	'comment'			=> 'Commentaire',  //  'Comment'
+	'upload_a_new_picture'		=> ' t&#233;l&#233;charg&#233; nouvelle image',  //  ' uploaded new image'
+	'upload_album'			=> ' album mis &#224; jour',  //  ' updated album'
+	'the_total_picture'		=> 'Total \\1 image(s)',  //  'Total \\1 image(s)'
 
-	'space_open_subject'	=> 'Come to your personal page and take care about it',//'快来打理一下您的个人主页吧',
-	'space_open_message'	=> 'Hi, today I visited your personal page and found out you do not customize it. Take a look! The address is: \\1space.php',//'hi，我今天去拜访了一下您的个人主页，发现您自己还没有打理过呢。赶快来看看吧。地址是：\\1space.php',
-
-
-
-	'apply_mtag_manager'	=> 'Want to be a moderator of the group <a href="\\1" target="_blank">\\2</a>. The reason:\\3 <br><a href="\\1" target="_blank">(click here to manage)</a>',//'想申请成为 <a href="\\1" target="_blank">\\2</a> 的群主，理由如下:\\3。<a href="\\1" target="_blank">(点击这里进入管理)</a>',
+	'space_open_subject'	=> 'Venez &#224; votre espace DIY bricolage',  //  'Come to DIY your space'
+	'space_open_message'	=> 'Salut, aujourd\'hui j\'ai visit&#233; votre page web personnelle et j\'ai d&#233;couvert que vous n\'avez pas DIY fait de bricolage sur celle-ci. Jetez un coup d\'oeil! L\'adresse est:\\1space.php',  // 'hi, today I visited your personal home page and found out you do not DIY it. Take a look! The address is:\\1space.php' 
 
 
-	'magicunit'		=> 'ones',//'个',
-	'magic_note_wall'	=> 'left a message on your <a href="{url}" target="_blank">Wall</a>',//'在留言板上给你<a href="{url}" target="_blank">留言</a>',
-	'magic_call'		=> 'mid-pointed your name in blog, <a href="{url}" target="_blank">click here to view</a>',//'在日志中点了你的名，<a href="{url}" target="_blank">快去看看吧</a>',
+
+	'apply_mtag_manager'	=> ' veux &#234;tre le propri&#233;taire du Groupe <a href="\\1" target="_blank">\\2</a>, raison:\\3.<a href="\\1" target="_blank">(Cliquez ici pour g&#233;rer)</a>',  //  ' want to be the owner of group <a href="\\1" target="_blank">\\2</a>, reason:\\3.<a href="\\1" target="_blank">(click here to manage)</a>'
 
 
-	'present_user_magics'	=> 'You have received the magic gift \\1 from administrator',//'您收到了管理员赠送的道具：\\1',
-	'has_not_more_doodle'	=> 'You have no Graffiti.',//'您没有涂鸦板了',
+	'magicunit'		=> ' ',  //  ' '
+	'magic_note_wall'	=> ' a laiss&#233; un message sur votre <a href="{url}" target="_blank">Message Board</a>',  // ' left a message on your <a href="{url}" target="_blank">Message Board</a>'  
+	'magic_call'		=> ' vous a appel&#233; dans le blog, <a href="{url}" target="_blank">Cliquer ici pour voir</a>',  //  ' called you in blog, <a href="{url}" target="_blank">click here to view</a>'
 
-	'do_stat_login'		=> 'Logins',//'来访用户',
-	'do_stat_mobilelogin'	=> 'Mobile login',//'手机访问',
-	'do_stat_connectlogin'	=> 'QQ login',//'QQ登录访问',
-	'do_stat_register'	=> 'Registrations',//'新注册用户',
-	'do_stat_invite'	=> 'Friend Invites',//'好友邀请',
-	'do_stat_appinvite'	=> 'App invites',//'应用邀请',
-	'do_stat_add'		=> 'Publish info',//'信息发布',
-	'do_stat_comment'	=> 'Replies info',//'信息互动',
-	'do_stat_space'		=> 'Members interaction',//'用户互动',
-	'do_stat_doing'		=> 'Doings',//'记录',
-	'do_stat_blog'		=> 'Blogs',//'日志',
-	'do_stat_activity'	=> 'Events',//'活动',
-	'do_stat_reward'	=> 'Rewards',//'悬赏',
-	'do_stat_debate'	=> 'Debates',//'辩论',
-	'do_stat_trade'		=> 'Sales',//'商品',
-	'do_stat_group'		=> 'Groups',//'群组',
-	'do_stat_tgroup'	=> 'Groups',
-	'do_stat_home'		=> 'Space',
-	'do_stat_forum'		=> 'Forum',
-	'do_stat_groupthread'	=> 'Group threads',//'群组主题',
-	'do_stat_post'		=> 'Replies',//'主题回复',
-	'do_stat_grouppost'	=> 'Group replies',//'群组回复',
-	'do_stat_pic'		=> 'Images',//'图片',
-	'do_stat_poll'		=> 'Polls',//'投票',
-	'do_stat_event'		=> 'Events',//'活动',
-	'do_stat_share'		=> 'Shares',//'分享',
-	'do_stat_thread'	=> 'Threads',//'主题',
-	'do_stat_docomment'	=> 'Twit comments',//'记录回复',
-	'do_stat_blogcomment'	=> 'Blog comments',//'日志评论',
-	'do_stat_piccomment'	=> 'Image comments',//'图片评论',
-	'do_stat_pollcomment'	=> 'Poll comments',//'投票评论',
-	'do_stat_pollvote'	=> 'Poll Votes',//'参与投票',
-	'do_stat_eventcomment'	=> 'Event comments',//'活动评论',
-	'do_stat_eventjoin'	=> 'Event joins',//'参加活动',
-	'do_stat_sharecomment'	=> 'Share comments',//'分享评论',
-//	'do_stat_post'		=> 'Replies',//'主题回帖',
-	'do_stat_click'		=> 'Sticks',//'表态',
-	'do_stat_wall'		=> 'Wall',//'留言',
-	'do_stat_poke'		=> 'Greetings',//'打招呼',
-	'do_stat_sendpm'	=> 'Send PM',//'发短消息',
-	'do_stat_addfriend'	=> 'Friend request',//'好友请求',
-	'do_stat_friend'	=> 'Become friends',//'成为好友',
-	'do_stat_post_number'	=> 'Post count',//'发帖量',
-	'do_stat_statistic'	=> 'Merged Statistics',//'合并统计',
-	'logs_credit_update_TRC'	=> 'Task reward',//'任务奖励',
-	'logs_credit_update_RTC'	=> 'Reward Topic',//'悬赏主题',
-	'logs_credit_update_RAC'	=> 'Best Reply Award',//'最佳答案',
-	'logs_credit_update_MRC'	=> 'Magic random get',//'道具随机获取',
-	'logs_credit_update_BMC'	=> 'Buy magic',//'购买道具',
-	'logs_credit_update_TFR'	=> 'Transfer return',//'转账转出',
-	'logs_credit_update_RCV'	=> 'Transfer received',//'转账接收',
-	'logs_credit_update_CEC'	=> 'Redeem Points',//'积分兑换',
-	'logs_credit_update_ECU'	=> 'UCenter points Exchange Spending',//'UCenter积分兑换支出',
-	'logs_credit_update_SAC'	=> 'Sale attachment',//'出售附件',
-	'logs_credit_update_BAC'	=> 'Buy attachment',//'购买附件',
-	'logs_credit_update_PRC'	=> 'Post was rated',//'帖子被评分',
-	'logs_credit_update_RSC'	=> 'Rate Post',//'帖子评分',
-	'logs_credit_update_STC'	=> 'Sold Topic',//'出售主题',
-	'logs_credit_update_BTC'	=> 'Buy Topic',//'购买主题',
-	'logs_credit_update_AFD'	=> 'Buy points',//'购买积分',//?????????
-	'logs_credit_update_UGP'	=> 'Purchase Group access',//'购买扩展用户组',
-	'logs_credit_update_RPC'	=> 'Report reward',//'举报奖惩',
-	'logs_credit_update_ACC'	=> 'Participate in activities',//'参与活动',
-	'logs_credit_update_RCT'	=> 'Create Replies award',//'回帖奖励',
-	'logs_credit_update_RCA'	=> 'Replies winning',//'回帖中奖',
-	'logs_credit_update_RCB'	=> 'Return Replies award',//'返还回帖奖励积分',
-	'logs_credit_update_CDC'	=> 'Recharge card secret',//'卡密充值',
 
-	'logs_credit_update_RGC'	=> 'Remove Gift',//'回收红包',
-	'logs_credit_update_BGC'	=> 'Return Gift',//'埋下红包',
-	'logs_credit_update_AGC'	=> 'Receive Gift',//'获得红包',
-	'logs_credit_update_RKC'	=> 'Bid rank',//'竞价排名',
-	'logs_select_operation'		=> 'Please select the operation type',//'请选择操作类型',
-	'task_credit'			=> 'Task reward points',//'任务奖励积分',
-	'special_3_credit'		=> 'Reward Topic points deduction',//'悬赏主题扣除积分',
-	'special_3_best_answer'		=> 'Reward points get best answer',//'最佳答案获取悬赏积分',
-	'magic_credit'			=> 'Magic random get points',//'道具随机获取积分',
-	'magic_space_gift'		=> 'Own Space Home lay gift',//'在自已空间首页埋下红包',
-	'magic_space_re_gift'		=> 'Return not run out gift',//'回收还没有用完的红包',
-	'magic_space_get_gift'		=> 'Access to space to receive gift',//'访问空间领取的红包',
-	'credit_transfer'		=> 'Transfer points',//'进行积分转帐',
-	'credit_transfer_tips'		=> 'Income transfers',//'的转账收入',
-	'credit_exchange_tips_1'	=> 'Perform the points exchange',//'执行积分对兑换操作,将 ',
-	'credit_exchange_to'		=> 'Converted to',//'兑换成',
-	'credit_exchange_center'	=> 'UCenter Exchange Points Center',//'通过UCenter兑换积分',
-	'attach_sell'			=> 'Sell',//'出售',
-	'attach_sell_tips'		=> 'Get points for attachments',//'的附件获得积分',
-	'attach_buy'			=> 'Buy',//'购买',
-	'attach_buy_tips'		=> 'Spent points for attachments',//'的附件支出积分',
-	'grade_credit'			=> 'Points obtained by Rating',//'被评分获得的积分',
-	'grade_credit2'			=> 'Posts rating deducted points',//'帖子评分扣除的积分',
-	'thread_credit'			=> 'Get points for Topic access',//'主题获得积分',
-	'thread_credit2'		=> 'Spent points for Topic access',//'主题支出积分',
-	'buy_credit'			=> 'Recharge points',//'对积分充值',
-	'buy_usergroup'			=> 'Spend points to buy Group access',//'购买扩展用户组支出积分',
-	'report_credit'			=> 'Report function of rewards and punishments',//'举报功能中的奖惩',
-	'join'				=> 'Join',//'参与',
-	'activity_credit'		=> 'Activity points deducted',//'活动扣除积分',
-	'thread_send'			=> 'Post thread deduct points',//'扣除发表',
-	'replycredit'			=> 'Reply points',//'散发的积分',
-	'add_credit'			=> 'Rewards Points',//'奖励积分',
-	'recovery'			=> 'Recovery',//'回收',
-	'replycredit_post'		=> 'Replies award',//'回帖奖励',
-	'replycredit_thread'		=> 'Create thread points',//'散发的帖子',
-	'card_credit'			=> 'Points obtained by recharge card',//'卡密充值获得的积分',
-	'ranklist_top'			=> 'Spend points to participate in bid ranking',//'参加竞价排名消费积分',
+	'present_user_magics'	=> 'Vous avez recu les accessoires du gestionnaire:\\1',  //  'You received props from manager:\\1'
+	'has_not_more_doodle'	=> 'Vous n\'avez pas griffoner tout les conseils de la board .',  //  'You don\'t have any doodle board.'
 
-	'profile_unchangeable'		=> 'This information could not be edited after sumbit',//'此项资料提交后不可修改',
-	'profile_is_verifying'		=> 'This information is verifying',//'此项资料正在审核中',
-	'profile_mypost'		=> 'My postings',//'我提交的内容',
-	'profile_need_verifying'	=> 'This information have to be verified',//'此项资料提交后需要审核',
-	'profile_edit'			=> 'Edit',//'修改',
-	'profile_censor'		=> '(bad words)',//'（含有敏感词汇）',
-	'profile_verify_modify_error'	=> 'The {verify} was certified. Modification is disabled.',//'{verify}已经认证通过不允许修改',
-	'profile_verify_verifying'	=> 'Your {verify} information has been submitted, please wait for verification.',//'您的{verify}信息已提交，请耐心等待核查。',
+	'do_stat_login'		=> 'Invit&#233;s',  //  'Guest'
+	'do_stat_mobilelogin'	=> 'Acc&#232;s Mobile',  // 'Mobile Access' 
+	'do_stat_connectlogin'	=> 'QQ Connexion',  //  'QQ Login'
+	'do_stat_register'	=> 'Nouvel enregistrement',  //'New registeration'  //Modify
+	'do_stat_invite'	=> 'Invitations des Amis',  //'Friends invitation'  //Modify
+	'do_stat_appinvite'	=> 'Apps invitation',  //  'Apps invitation'
+	'do_stat_add'		=> 'Publier les informations',  //  'Publish information'
+	'do_stat_comment'	=> 'Informations Interactives',  // 'Information interactive' 
+	'do_stat_space'		=> 'Interaction avec L\'utilisateur',  // 'User interaction' 
+	'do_stat_doing'		=> 'Agiss.',  //  'Doing'
+	'do_stat_blog'		=> 'Blog',  //  Blog
+	'do_stat_activity'	=> 'Activit&#233;',  //  Activity
+	'do_stat_reward'	=> 'R&#233;comp.',  //  Reward
+	'do_stat_debate'	=> 'D&#233;bats',  //  Debate
+	'do_stat_trade'		=> 'Commerce',  //  Trade
+	'do_stat_group'		=> "Cr&#233;er un Groupe",
+	'do_stat_tgroup'	=> "{$_G[setting][navs][3][navname]}", 
+	'do_stat_home'		=> "{$_G[setting][navs][4][navname]}",   
+	'do_stat_forum'		=> "{$_G[setting][navs][2][navname]}",  
+	'do_stat_groupthread'	=> 'Discussions de Groupe',  //  'Group threads'
+	'do_stat_post'		=> 'R&#233;ponses',  //  'Replies'
+	'do_stat_grouppost'	=> 'R&#233;ponses du Groupe ',  //  'Group replies'
+	'do_stat_pic'		=> 'Image',  //  'Image'
+	'do_stat_poll'		=> 'Sondage',  //  Poll
+	'do_stat_event'		=> 'Activit&#233;',  //  Activity
+	'do_stat_share'		=> 'Partage',  //  Share
+	'do_stat_thread'	=> 'Sujet',  //  Thread
+	'do_stat_docomment'	=> 'R&#233;ponses Agiss.',  //  'Doing replies'
+	'do_stat_blogcomment'	=> 'Blog commentaires',  //  'Blog comments'
+	'do_stat_piccomment'	=> 'Image commentaires',  //  'Image comments'
+	'do_stat_pollcomment'	=> 'Sondage commentaires',  // 'Poll comments' 
+	'do_stat_pollvote'	=> 'Vote',  //  Vote
+	'do_stat_eventcomment'	=> 'Activit&#233; commentaires',  //  'Activity comments'
+	'do_stat_eventjoin'	=> 'Joindre Activit&#233;',  //  'Join activity'
+	'do_stat_sharecomment'	=> 'Partages commentaires',  //  'Share comments'
+//	'do_stat_post'		=> 'posts',  //  posts
+	'do_stat_click'		=> 'Attitude',  // Attitude //Modify
+	'do_stat_wall'		=> 'Message',  // Message //Modify
+	'do_stat_poke'		=> 'Appuyer',  // Poke //Modify
+	'do_stat_sendpm'	=> 'Env. MP',  //  'Send PM'
+	'do_stat_addfriend'	=> 'Demande d\'Ami',  //  'Friend request'
+	'do_stat_friend'	=> 'Devenir Amis',  //  'Become friends'
+	'do_stat_post_number'	=> 'Posts',  //  'Posts'
+	'do_stat_statistic'	=> 'Combinez statistiques',  // 'Combine statistic' 
+	'logs_credit_update_TRC'	=> 'Qu&#234;te',  //  Quest
+	'logs_credit_update_RTC'	=> 'R&#233;comp.',  //  Reward
+	'logs_credit_update_RAC'	=> 'Meilleure r&#233;ponse',  //  'Best answer'
+	'logs_credit_update_MRC'	=> 'Accessoires Al&#233;atoire',  //  'Random props'
+	'logs_credit_update_BMC'	=> 'Acheter Accessoires',  //  'Buy Props'
+	'logs_credit_update_TFR'	=> 'Transfert d&#233;ploiement',  // 'Transfer roll-out' 
+	'logs_credit_update_RCV'	=> 'Transfert recu',  //  'Transfer received'
+	'logs_credit_update_CEC'	=> 'Racheter',  //  Redeem
+	'logs_credit_update_ECU'	=> 'D&#233;penses UCenter',  //  'UCenter expenditures'
+	'logs_credit_update_SAC'	=> 'Vente Accessoires',  //  'Sale accessories'
+	'logs_credit_update_BAC'	=> 'Acheter Accessoires',  // 'Buy Accessories' 
+	'logs_credit_update_PRC'	=> 'Messages par rang',  //  'Posts by rating'
+	'logs_credit_update_RSC'	=> 'Post Rang',  //  'Post Rating'
+	'logs_credit_update_STC'	=> 'Topics pour la vente',  //  'Topics for sale'
+	'logs_credit_update_BTC'	=> 'Acheter Th&#232;me',  //  'Buy Theme'
+	'logs_credit_update_AFD'	=> 'Acheter Points',  //  'Buy Points'
+	'logs_credit_update_UGP'	=> 'Acheter Groupe Utilisateurs &#233;largie',  //  'Buy Extended User Group'
+	'logs_credit_update_RPC'	=> 'Encouragement pour le signalement',  // 'Incentive to report' 
+	'logs_credit_update_ACC'	=> 'Participer &#224; des activit&#233;s',  //  'Participate in activities'
+	'logs_credit_update_RCT'	=> 'R&#233;compenses ??r&#233;ponses',  //  'Replies Awards'
+	'logs_credit_update_RCA'	=> 'R&#233;ponses Gagnante',  //  'Replies winning'
+	'logs_credit_update_RCB'	=> 'R&#233;ponses retour de points de bonus',  //  'Replies return of bonus points'
+	'logs_credit_update_CDC'	=> 'Rechargez le secret de la carte',  // 'Recharge card secret' 
+
+	'logs_credit_update_RGC'	=> 'Recycl&#233; enveloppes rouges',  // 'Recycled red envelopes' 
+	'logs_credit_update_BGC'	=> 'Plant&#233; enveloppe rouge',  //  'Planted red envelope'
+	'logs_credit_update_AGC'	=> 'Obtenez paquets rouges',  //  'Get red packets'
+	'logs_credit_update_RKC'	=> 'PPC',  // 'PPC' 
+	'logs_select_operation'		=> 'Svp. choisissez une op&#233;ration',  // 'Please choose an operation' 
+	'task_credit'			=> 'Des points de r&#233;compense des t&#226;ches',  //  'Task reward points'
+	'special_3_credit'		=> 'Des points de r&#233;compense Th&#232;me d&#233;duits',  //  'Theme reward points deducted'
+	'special_3_best_answer'		=> 'Les points de r&#233;compense pour la meilleure r&#233;ponse',  //  'Reward points for best answer'
+	'magic_credit'			=> 'Accessoires al&#233;atoire pour gagner des points',  //  'Random props to earn points'
+	'magic_space_gift'		=> 'Accueil plant&#233; une enveloppe rouge dans leur propre espace',  //  'Home planted a red envelope in their own space'
+	'magic_space_re_gift'		=> 'Le recouvrement n\'a pas &#233;puis&#233; l\'enveloppe rouge',  // 'Recovery has not run out of the red envelope' 
+	'magic_space_get_gift'		=> 'Acc&#232;s &#224; l\'espace pour recevoir l\'enveloppe rouge',  // 'Access to space to receive the red envelope' 
+	'credit_transfer'		=> 'L\'int&#233;gration des transferts',  //  'Integrating the transfer'
+	'credit_transfer_tips'		=> 'Les transferts de revenus',  // 'Income transfers' 
+	'credit_exchange_tips_1'	=> 'La mise en œuvre de points sur l\'op&#233;ration de conversion ',  // 'Implementation of points on the conversion operation ' 
+	'credit_exchange_to'		=> 'converti en',  //  'Converted into'
+	'credit_exchange_center'	=> 'Echangez vos points par UCenter',  // 'Redeem Points by UCenter' 
+	'attach_sell'			=> 'Vente',  //  'Sale'
+	'attach_sell_tips'		=> 'Annexe pour gagner des points',  // 'Annex to earn points' 
+	'attach_buy'			=> 'Acheter',  //  'Buy'
+	'attach_buy_tips'		=> 'Partie Int&#233;grante des D&#233;penses Annexe',  // 'Annex spending integral' 
+	'grade_credit'			=> 'Marquez des points On a obtenu',  //  'Score points were obtained'
+	'grade_credit2'			=> 'Marquer des points apr&#232;s d&#233;duction',  //  'Post score points deducted'
+	'thread_credit'			=> 'Les points d\'acc&#232;s Sous r&#233;serve',  // 'Subject access points' 
+	'thread_credit2'		=> 'Sujets des D&#233;penses Partie Int&#233;grante',  //  'Topics spending integral'
+	'buy_credit'			=> 'Rechargez l\'int&#233;grale',  //  'Recharge the integral'
+	'buy_usergroup'			=> 'D&#233;penses points pour acheter des du Groupe Utilisateurs &#233;tendu',  //  'Spending points to buy extended user group'
+	'report_credit'			=> 'Fonction de la prime pour le signalement',  //  'Function of the incentive to report'
+	'join'				=> 'Participation',  //  'Participation'
+	'activity_credit'		=> 'Activit&#233;s, d&#233;duction faite de points',  //  'Activities, net of points'
+	'thread_send'			=> 'Net Lib&#233;r&#233;',  //  'Net released'
+	'replycredit'			=> 'Points de Distribution',  //   'Distribution points'
+	'add_credit'			=> 'Points de R&#233;compense',  //  'Rewards Points'
+	'recovery'			=> 'Recyclage',  //  'Recycling'
+	'replycredit_post'		=> 'Px. R&#233;comp.r&#233;ponses',  //  'Replies Awards'
+	'replycredit_thread'		=> 'R&#233;partition des postes',  //  'Distribution of posts'
+	'card_credit'			=> 'Rechargez la carte des points d\'acc&#232;s fermer',  // 'Recharge card access points close' 
+	'ranklist_top'			=> ' Des points de consommation &#224; participer &#224; PPC',  //  'Consumer points to participate in PPC'
+
+	'profile_unchangeable'		=> 'Immuable, apr&#232;s envoie',  //  'Unchangeable after submit'
+	'profile_is_verifying'		=> 'En attendant la mod&#233;ration',  //  'Pending moderate'
+	'profile_mypost'		=> 'je soumets',  //  'I sumbit'
+	'profile_need_verifying'	=> 'Besoin de mod&#233;ration',  //  'Need moderation'
+	'profile_edit'			=> 'Modifier',  //  'Edit'
+	'profile_censor'		=> '(Contiennent des Mots Interdits)',  //  '(Contian banned words)'
+	'profile_verify_modify_error'	=> '{verify} a v&#233;rifi&#233;, peut pas &#234;tre modifi&#233;',  //  '{verify} has verfied, cannot be edited'
+	'profile_verify_verifying'	=> 'Vos informations ont &#233;t&#233; envoy&#233; {verify}, Svp. soyez  patient pour la v&#233;rification.',  //  'Your information has been submitted {verify}, please be patient verification.'
 
 //'district_level_0'		=> '- Country -',//'-国家-',
-	'district_level_1'		=> '- Country -',//'-国家-',
-	'district_level_2'		=> '- Region -',//'-省份-',
-	'district_level_3'		=> '- City -',//'-城市-',
-	'district_level_4'		=> '- County/Village -',//'-州县/乡镇-',
-	'invite_you_to_visit'		=> '{user} invite you to {bbname}',//'{user}邀请您访问{bbname}',
+	'district_level_1'		=> '-Pays-',  //  '-Country-'
+	'district_level_2'		=> '-Ville-',  //  '-City-'
+	'district_level_3'		=> '-Commune-',  //  '-Town-'
+	'district_level_4'		=> '-Village-',  //  '-Village-'
+	'invite_you_to_visit'		=> '{user} vous invites &#224; d&#233;couvrir {bbname}',  //  '{user} invites you to visit {bbname}'
 
-	'spacecp_message_prompt'	=> '(supported {msg} code, maximum 1000 characters)',//'(支持 {msg} 代码,最大 1000 字)',
-	'card_update_doing'		=> ' <a class="xi2" href="###">[update doings]</a>',//' <a class="xi2" href="###">[更新记录]</a>',
-	'email_acitve_message'		=> '<img src="{imgdir}/mail_inactive.png" alt="Unverified" class="vm" />
-						<span class="xi1">New E-mail ({newemail}) wait for validation ...</span><br />
-						The system has sent a verification email to you, please check your mailbox for activate this e-maill.<br>
-						If you did not receive the verification message, you can replace a mailbox, or <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2">Re-send the verification message</a>',
+	'spacecp_message_prompt'	=> '(Support {msg} code, max 1000 caract&#232;res)',  //  
+	'card_update_doing'		=> ' <a class="xi2" href="###">[Agissements &#224; jour]</a>',  //  
+	'email_acitve_message'		=> '<img src="{imgdir}/mail_inactive.png" alt="pas v&#233;rifier" class="vm" />
+						<span class="xi1">Nouveau email ({newemail}) Attendre pour la Validation ...</span><br />
+						Le syst&#232;me a envoy&#233; un courriel de v&#233;rification pour l\'activation, Svp. consulter votre courrier &#233;lectronique.<br>
+						Si vous ne recevez pas de courriel de v&#233;rification, changer votre email, ou <a href="home.php?mod=spacecp&ac=profile&op=password&resend=1" class="xi2"> appliquer &#224; nouveau</a>',  
 
 );
 

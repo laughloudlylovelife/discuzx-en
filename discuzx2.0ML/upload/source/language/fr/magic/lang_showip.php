@@ -9,13 +9,13 @@
 
 $lang = array
 (
-	'showip_name'			=> 'Show IP Card',//'窥视卡',
-	'showip_desc'			=> 'Enable to view the specified user IP',//'可以查看指定用户的 IP',
-	'showip_targetuser'		=> 'You have to enter username to see the user IP',//'您要查看谁的 IP',
-	'showip_info_nonexistence'	=> 'Enter the user name',//'请输入用户名',
-	'showip_ip_message'		=> '{username} IP address is {ip}',
-	'showip_info_noperm'		=> 'You have no permission to see members IP',//'对不起，您无权查看此人的 IP',
+	'showip_name'		=> 'Carte IP',   // IP card 
+	'showip_desc'		=> 'Vous pouvez afficher l\'IP de cet Utilisateur en particulier',   //  You can view specific user\'s IP
+	'showip_targetuser'	=> 'Utilisateur Cible',   //  Target user
+	'showip_info_nonexistence'	=> 'Svp. Tapez le Nom Utilisateur',   //  Please enter username
+	'showip_ip_message'	=> '{username}\'s IP est {ip}',   //  {username}\'s IP is {ip}
+	'showip_info_noperm'	=> 'D&#233;sol&#233;, vous n\'&#234;tes pas autoris&#233; &#224; voir IP de cet Utilisateur',   //  Sorry, you are not allowed to view this user\'s IP
 
-	'showip_notification'		=> 'You have been used the magic &quot;{magicname}&quot;',//'你被人使用了{magicname}',
+	'showip_notification'	=> 'Vous aviez utilis&#233; {magicname}',   // You were used {magicname} 
 );
 

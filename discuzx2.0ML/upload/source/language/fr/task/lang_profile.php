@@ -9,30 +9,30 @@
 
 $lang = array
 (
-	'profile_name'		=> 'Update the personal info',//'完善用户资料任务',
-	'profile_desc'		=> 'Fill in specified user info and receive award.',//'完善指定的用户资料获得相应的奖励。',
+	'profile_name'		=> 'T&#226;che Profil personnalis&#233;',
+	'profile_desc'		=> 'Compl&#233;ter profil particulier et obtenez une r&#233;compense.',
 
-	'profile_fields'		=> array(
-		'mp.realname'		=> 'Real Name',//'姓名',
-		'mp.gender'		=> 'Gender',//'性别',
-		'mp.birthyear'		=> 'Birth year',//'生日(年)',
-		'mp.birthmonth'		=> 'Birth month',//'生日(月)',
-		'mp.birthday'		=> 'Birth Day',//'生日(日)',
-		'mp.bloodtype'		=> 'Blood type',//'血型',
-		'mp.affectivestatus'	=> 'Emotional category',//'情感状态',
+	'profile_fields'	=> array(
+		'mp.realname'		=> 'Nom R&#233;el',
+		'mp.gender'		=> 'Gendre',
+		'mp.birthyear'		=> 'Ann&#233;e de naissance',
+		'mp.birthmonth'		=> 'Mois de Naissance',
+		'mp.birthday'		=> 'Jour de Naissance',
+		'mp.bloodtype'		=> 'Groupe Sanguin',
+		'mp.affectivestatus'	=> 'Emotion',
 'mp.birthcountry'	=> 'Birth country',//'家乡(国)',
-		'mp.birthprovince'	=> 'Birth region',//'家乡(省)',
-		'mp.birthcity'		=> 'Birth city',//'家乡(市)',
-		'mp.resideprovince'	=> 'Reside region',//'居住地(省)',
-		'mp.residecity'		=> 'Reside city',//'居住地(市)'
+		'mp.birthprovince'	=> 'Province de Naissance',
+		'mp.birthcity'		=> 'Ville de Naissance',
+		'mp.resideprovince'	=> 'R&#233;side en Province',
+		'mp.residecity'		=> 'Ville de R&#233;sidence '
 	),
 
-	'profile_view'	=> '<strong>You have to fill the following items in your personal information:</strong><br>
+	'profile_view'	=> '<strong>Vous devez complter le profil ci-dessous:</strong><br>
 		<span style="color:red;">{profiles}</span><br><br>
-		<strong>Follow this instructions to complete the task:</strong>
+		<strong>Svp. suivre les &#233;tapes ci-dessous:</strong>
 		<ul>
-		<li><a href="home.php?mod=spacecp&ac=profile" target="_blank">Open in a new window your personal information page</a>;</li>
-		<li>Add the listed above your personal information.</li>
+		<li><a href="home.php?mod=spacecp&ac=profile" target="_blank">Ouvrez la page de profil personnel dans une nouvelle fen&#234;tre</a>;</li>
+		<li>Remplissez votre profil dans une nouvelle fen&#234;tre.</li>
 		</ul>',
 );
 

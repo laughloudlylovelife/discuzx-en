@@ -9,17 +9,17 @@
 
 $lang = array
 (
-	'close_name'			=> 'Silent card',//'沉默卡',
-	'close_desc'			=> 'Disable replies in a thread',//'可以将主题关闭，禁止回复',
-	'close_expiration'		=> 'Close for period',//'关闭有效期',
-	'close_expiration_comment'	=> 'Set the time when a thread will be closed for reply, the default is 24 hours',//'设置主题可以被关闭多长时间，默认 24 小时',
-	'close_forum'			=> 'Allowed forums',//'允许使用本道具的版块',
-	'close_info'			=> 'For close specified thread for {expiration} hours, enter the thread ID',//'关闭指定的主题 {expiration} 小时，请输入主题的 ID',
-	'close_info_nonexistence'	=> 'Enter the thread ID to close',//'请指定要关闭的主题',
-	'close_succeed'			=> 'Specified thread was closed successfully,',//'你操作的主题已关闭',
-	'close_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
-	'close_info_user_noperm'	=> 'You have no permission to use magic',//'对不起，你不能对此人使用本道具',
+	'close_name'			=> 'Carte du Silence',   //  Silence card
+	'close_desc'			=> 'Fermer un sujet',   // Close one thread 
+	'close_expiration'		=> 'P&#233;riode de validit&#233;',   // Valid period 
+	'close_expiration_comment'	=> 'R&#233;glez le temps de sujet de cl&#244;ture, par d&#233;faut est de 24 heures',   // Set the time of closing thread, default is 24 hours 
+	'close_forum'			=> 'Forums Autoris&#233;s',   //  Allowed forums
+	'close_info'			=> 'Fermer le sujet sp&#233;cifi&#233; {expiration} heure, Svp. entrez ID du sujet',   // Close specific thread {expiration} hours, please enter thread ID 
+	'close_info_nonexistence'	=> 'Svp. Merci de sp&#233;cifier le sujet',   // Please specific thread 
+	'close_succeed'			=> 'Sujet Clos avec Succs',   // Close thread successfully 
+	'close_info_noperm'		=> 'D&#233;sol&#233;, cet accessoires n\'est pas autoris&#233; &#224; utiliser dans ce forum',   //  Sorry, this props is not allowed to use in this forum
+	'close_info_user_noperm'	=> 'D&#233;sol&#233;, vous n\'&#234;tes pas autoris&#233; &#224; utiliser ce accessoires sur cet Utilisateur',   // Sorry, you are not allowed to use this props on this user 
 
-	'close_notification'		=> '{actor} used a magic &quot;{magicname}&quot; for your thread &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">view</a>',//'你的主题 {subject} 被 {actor} 使用了{magicname}，<a href="forum.php?mod=viewthread&tid={tid}">快去看看吧！</a>',
+	'close_notification'		=> 'Votre sujet <em>{subject}</em>  a &#233;t&#233; utilis&#233; {magicname} par {actor}, <a href="forum.php?mod=viewthread&tid={tid}">voir</a>!',   // Your thread <em>{subject}</em> is used {magicname} by {actor}, <a href="forum.php?mod=viewthread&tid={tid}">view</a>! 
 );
 

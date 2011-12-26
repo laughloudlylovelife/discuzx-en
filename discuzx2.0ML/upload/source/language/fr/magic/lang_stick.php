@@ -9,16 +9,16 @@
 
 $lang = array
 (
-	'stick_name'			=> 'Stick Card',//'置顶卡',
-	'stick_desc'			=> 'Stick the thread',//'可以将主题置顶',
-	'stick_expiration'		=> 'Action period',//'置顶有效期',
-	'stick_expiration_comment'	=> 'Set the time when a thread will be sticked, the default is 24 hours',//'设置主题可以被置顶多长时间，默认 24 小时',
-	'stick_forum'			=> 'Target forums',//'允许使用本道具的版块',
-	'stick_info'			=> 'Stick designated thread for {expiration} hours, enter the thread ID',//'置顶指定的主题 {expiration} 小时，请输入主题的 ID',
-	'stick_info_nonexistence'	=> 'Enter the thread ID to stick',//'请指定要置顶的主题',
-	'stick_succeed'			=> 'The thread is sticked successfully',//'你操作的主题已置顶',
-	'stick_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
+	'stick_name'			=> 'Carte Scotch',   // Stick card 
+	'stick_desc'			=> 'Scotch&#233; un sujet',   //  Stick one thread
+	'stick_expiration'		=> 'Expiration',   //  Expiration
+	'stick_expiration_comment'	=> 'R&#233;glez le temps de scotcher le sujet, par d&#233;faut est de 24 heures',   // Set the stick time of thread, default is 24 hours 
+	'stick_forum'			=> 'Forums Autoris&#233;s',   //  Allowed forums
+	'stick_info'			=> 'Scotchez le sujet sp&#233;cifi&#233; {expiration} heure, Svp. entrez l\'ID du sujet',   // Stick specific thread {expiration} hours, pleas enter thread ID 
+	'stick_info_nonexistence'	=> 'Svp. sp&#233;cifi&#233; un sujet',   //  Please specific a thread
+	'stick_succeed'			=> 'Sujet Scotch&#233; avec Succ&#232;s',   // Stick thread successfully 
+	'stick_info_noperm'		=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoire dans le forum actuel',   // Sorry, you cannot use this props in current forum 
 
-	'stick_notification'		=> '{actor} used a magic &quot;{magicname}&quot; for your thread &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">view</a>',//'你的主题 {subject} 被 {actor} 使用了{magicname}，<a href="forum.php?mod=viewthread&tid={tid}">快去看看吧！</a>',
+	'stick_notification'		=> 'Votre sujet <em>{subject}</em>  a &#233;t&#233; utilis&#233; {magicname} par {actor}, <a href="forum.php?mod=viewthread&tid={tid}">voir</a>.',   // Your thread <em>{subject}</em> was used {magicname} by {actor}, <a href="forum.php?mod=viewthread&tid={tid}">view</a>. 
 );
 

@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'doodle_name'	=> 'Graffiti',//'涂鸦板',
-	'doodle_desc'	=> 'Enable use of graffiti board in a posting',//'在日志、帖子中使用涂鸦板',
-	'doodle_info'	=> 'Enable use of graffiti board in a posting',//'在日志、帖子中使用涂鸦板',
+	'doodle_name'	=> 'Tableau Griffonnage',   //  Doodle Board
+	'doodle_desc'	=> 'Utilisez bord griffonner dans les blogs et les messages',   // Use doodle board in blogs and posts 
+	'doodle_info'	=> 'Utilisez bord griffonner dans les blogs et les messages',   // Use doodle board in blogs and posts
 );
 

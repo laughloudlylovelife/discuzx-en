@@ -9,6 +9,6 @@
 
 $lang = array
 (
-	'myapp_titlelength'	=> 'Title length',//'名称长度',
-	'myapp_startrow'	=> 'Start row',//'起始位置',
+	'myapp_titlelength'	=> 'Longueur du Nom',
+	'myapp_startrow'	=> 'Position de D&#233;part',
 );

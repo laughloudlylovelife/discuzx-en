@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'detector_name'	=> 'Detector',//'探测器',
-	'detector_desc'	=> 'Detection of Red envelope buried by members',//'探测埋了红包的会员空间',
-	'detector_num'	=> 'Maximum number of detected members',//'最大探测数',
-	'detector_info'	=> 'Detect (up to {num}) members buried a Red envelope',//'探测(最多 {num} 个)埋了红包的会员空间',
+	'detector_name'	=> 'Carte D&#233;tecteur',   //  Detect card
+	'detector_desc'	=> 'D&#233;tecter le sac rouge',   //  Detect the redbag
+	'detector_num'	=> 'Maximum de d&#233;tection par moments',   //  Max detect times
+	'detector_info'	=> 'D&#233;tection(max {num} fois) espaces sac rouge',   //  Detect(max {num} times) space\'s redbag
 );
 

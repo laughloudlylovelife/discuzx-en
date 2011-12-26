@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'vedio_url'	=> 'Video URL',//'视频地址',
-	'vedio_width'	=> 'Video width',//'视频宽度',
-	'vedio_height'	=> 'Video height',//'视频高度',
+	'vedio_url'	=> 'Adresse Vid&#233;o',
+	'vedio_width'	=> 'Largeur Vid&#233;o',
+	'vedio_height'	=> 'Hauteur Vid&#233;o',
 );

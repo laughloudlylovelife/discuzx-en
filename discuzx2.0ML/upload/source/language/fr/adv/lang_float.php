@@ -9,18 +9,18 @@
 
 $lang = array
 (
-	'float_name'			=> 'Global Float Adv',//'全局 漂浮广告',
-	'float_desc'			=> 'The Adv will float at lower left corner of a page. If there are multiple float advs, they will be displayed in random.<br />Please do not use images or Flashs which are too big.',//'展现方式: 漂浮广告展现于页面左下角，当页面滚动时广告会自行移动以保持原来的位置，通常使用小图片或 Flash 的形式。当前页面有多个漂浮广告时，系统会随机选取其中之一显示。<br />价值分析: 漂浮广告是进行强力商业推广的有效手段，其在页面中的浮动性，使其与固定的图片和文字相比，更容易被关注，正因为如此，这种强制性的关注也可能招致对此广告内容不感兴趣的访问者的反感。请注意不要将过大的图片或 Flash 以漂浮广告的形式显示，以免影响页面阅读。',
-	'float_index'			=> 'Home',//'首页',
-	'float_fids'			=> 'Target Forums',//'投放版块',
-	'float_fids_comment'		=> 'Set forums to diplay the Adv',//'设置广告投放的论坛版块，当广告投放范围中包含“论坛”时有效',
-	'float_groups'			=> 'Target Groups',//'投放群组分类',
-	'float_groups_comment'		=> 'Set the groups to show advertising. Take effect only when ads included in the scope of &quot;group&quot;.',//'设置广告投放的群组分类，当广告投放范围中包含“群组”时有效',
-	'float_position'		=> 'Position',//'漂浮位置',
-	'float_position_comment'	=> 'Set the postion of floating adv',//'设置广告漂浮的位置',
-	'float_position_left'		=> 'Left',//'左侧',
-	'float_position_right'		=> 'Right',//'右侧',
-	'float_category'		=> 'Portal Category',
-	'float_category_comment'	=> 'Set a portal category for show the Float Banner. This take effect only when Ads is assigned to the Portal',
+	'float_name'		=> 'Globaux des publicitaires flottantes',
+	'float_desc'		=> 'Montrer le chemin:. Annonce flottante de montrer sur le coin inf&#233;rieur gauche de la page lorsque la page d&#233;file lorsque l\'annonce elle-m&#234;me se d&#233;place afin de maintenir la position d\'origine, g&#233;n&#233;ralement sous la forme de petites images ou Flash Current page quand il y a plusieurs publicitaires flottante, le syst&#232;me va s&#233;lectionner au hasard un d\'affichage.<br />Analyse des valeurs: annonce flottante est un moyen fort et efficace de promotion des entreprises, et de son flottant sur la page, le faire avec des photos et du texte que fixes, plus susceptibles d\'&#234;tre pr&#233;occup&#233;, et en tant que telle, cette pr&#233;occupation peut &#234;tre obligatoire la teneur en plomb de cette publicit&#233; n\'est pas int&#233;ress&#233; par le ressentiment des visiteurs. Svp. noter que la photo ne doit pas &#234;tre trop grands ou flash pour afficher la forme d\'publicitaires flottante, afin de ne pas affecter la lecture page.',
+	'float_index'		=> 'Accueil',
+	'float_fids'		=> 'Emplacement dans le forum',
+	'float_fids_comment'	=> 'Forum ensemble un forum pour la publicit&#233;, quand la publicit&#233; de la gamme avec "Forum" efficaces',
+	'float_groups'		=> 'Emplacement dans le classement du groupe',
+	'float_groups_comment'	=> 'R&#233;gler le Groupe publicitaire annonce, quand la publicit&#233; de la gamme avec "Groupe" est effective',
+	'float_position'	=> 'Position flottante',
+	'float_position_comment'	=> 'D&#233;finissez l\'emplacement des publicitaires flottantes',
+	'float_position_left'		=> 'A gauche',
+	'float_position_right'		=> 'A droite',
+	'float_category'		=> 'Portail des canaux Emplacement',
+	'float_category_comment'	=> 'Jeu de cha&#238;nes publicitaires annonce, quand la publicit&#233; de la gamme avec un "portail" est effective',
 );
 

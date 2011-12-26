@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'thunder_name'	=> 'Thunder',//'雷鸣之声',
-	'thunder_desc'	=> 'Generate a global feed record about you are online',//'发布一条全站动态，通知大家自己上线了',
-	'thunder_info'	=> 'Generate a global feed record about you are online',//'发布一条全站动态，通知大家自己上线了',
+	'thunder_name'	=> 'Carte du Tonnerre',   // Thunder card 
+	'thunder_desc'	=> 'Ajoutez un flux mondiaux, d\'autres remarqu&#233; que vous &#234;tes en ligne',   //  Add a global feed, notice others you online
+	'thunder_info'	=> 'Ajoutez un flux mondiaux, d\'autres remarqu&#233; que vous &#234;tes en ligne',   // Add a global feed, notice others you online 
 );
 

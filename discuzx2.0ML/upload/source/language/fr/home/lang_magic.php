@@ -9,17 +9,17 @@
 
 $lang = array
 (
-	'target_tid'		=> 'Target Thread Id',//'目标主题tid',
-	'target_pid'		=> 'Target Post Id',//'目标帖子pid',
-	'target_username'	=> 'Target User name',//'目标用户名',
-	'magics_type_1'		=> 'Messages',//'帖子类',
-	'magics_type_2'		=> 'Members',//'会员类',
-	'magics_type_3'		=> 'Other',//'其他类',
+	'target_tid'		=> 'ID du sujet Cible',   // Target thread id 
+	'target_pid'		=> 'ID du post Cible',   //  Target post id
+	'target_username'	=> 'Nom Utilisateur Cible',   //  Target username
+	'magics_type_1'		=> 'Posts',   //  Posts
+	'magics_type_2'		=> 'Membre',   //  Member
+	'magics_type_3'		=> 'Autre',   // Other 
 
-	'CCK_color'		=> 'Color',//'颜色',
-	'MOK_info'		=> 'Get the number of rules of money: the random number in range from 1 to 150% of the purchase price',//'获得的钱币数目规则：大于1且小于购买价格150%的随机数',
-	'CODE_info'		=> 'Get Discuz! Test invitation code',//'获得Discuz!测试邀请码一个',
-	'MVK_target'		=> 'Move to the page',//'要移动到的版面',
-	'SOFA_message'		=> 'A lightning pierced the blue sky, with a loud noise, the sofa was I robbed! Haha!',//'一道闪电划破湛蓝的天空，随着一声巨响，沙发被我抢了！哈哈！',
+	'CCK_color'	=> 'Couleur',   //  Color
+	'MOK_info'	=> 'R&#232;gle: Vous recevrez de l\'argent entre 1 &#224; 150% du prix',   //  Rule: You will get money between 1 to 150% of price
+	'CODE_info'	=> 'Obtenez un code d\'invitation terrain d\'essai',   // Get a site test invitation code 
+	'MVK_target'	=> 'Forum Cible ',   //  Target forum
+	'SOFA_message'	=> 'Le Canap&#233; est &#224; moi maintenant!',   //  Sofa is mine now!
 );
 

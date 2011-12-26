@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'attachsize_name'	=> 'Attachment Card',//'附件增容卡',
-	'attachsize_desc'	=> 'Enlarge your attachment space',//'增加附件容量上限',
-	'attachsize_info'	=> 'Increase your attach space on {num} Mb',//'额外增加 {num} M 附件容量上限',
-	'attachsize_addsize'	=> 'Add size',//'增加容量',
+	'attachsize_name'	=> 'Carte pi&#232;ce jointe',   // Attachment card 
+	'attachsize_desc'	=> 'Augmenter la taille des pi&#232;ces jointes',   // Increase the size of attachments 
+	'attachsize_info'	=> 'Augmentation de {num} M',   //  Increase {num} M
+	'attachsize_addsize'	=> 'Augmentation en taille',   //  Increase size 
 );
 

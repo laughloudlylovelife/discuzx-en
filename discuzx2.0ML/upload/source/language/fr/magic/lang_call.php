@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'call_name'	=> 'Call Card',//'点名卡',
-	'call_desc'	=> 'Send notification to your friends to come see your blog',//'发通知给自己的好友，让他们来查看自己的日志',
-	'call_info'	=> 'Send notification to your friends to come see your blog',//'发通知给自己的好友，让他们来查看自己的日志',
+	'call_name'	=> 'Carte Sur Appel',   // Call card 
+	'call_desc'	=> 'Envoyer une notification &#224; vos Amis et les inviter &#224; visionner vos blogs',   // Send a notification to your friends and invite them to view your blogs 
+	'call_info'	=> 'Envoyer une notification &#224; vos Amis et les inviter &#224; visionner vos blogs',   // Send a notification to your friends and invite them to view your blogs 
 );
 

@@ -9,14 +9,14 @@
 
 $lang = array
 (
-	'repent_name'			=> 'Repentance Card',//'悔悟卡',
-	'repent_desc'			=> 'Enable to delete your own posts',//'可以删除自己的帖子',
-	'repent_forum'			=> 'Target forums',//'允许使用本道具的版块',
-	'repent_info'			=> 'For delete your post, please enter the post ID',//'删除自己的帖子，请输入帖子的 ID',
-	'repent_info_nonexistence'	=> 'Enter the post to delete',//'请指定要删除的帖子',
-	'repent_succeed'		=> 'Your post was deleted successfully',//'你操作的帖子已删除',
-	'repent_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
-	'repent_info_user_noperm'	=> 'You can delete only your own posts',//'对不起，你只能删除自己的帖子',
+	'repent_name'			=> 'Carte Repentance',   //  Repentance Card
+	'repent_desc'			=> 'Vous pouvez supprimer vos messages',   //  You can delete your posts
+	'repent_forum'			=> 'Forums Autoris&#233;s',   //  Allowed forums
+	'repent_info'			=> 'Supprimer vos posts, Svp. entrer l\'ID des messages',   //  Delete your posts, please enter posts ID
+	'repent_info_nonexistence'	=> 'Svp. sp&#233;cifii&#233; le message',   //  Please specific posts
+	'repent_succeed'		=> 'Supprimer messages avec Succ&#232;s',   //  Delete posts successfully
+	'repent_info_noperm'		=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoires dans le forum actuel',   // Sorry, you cannot use this props in current forum 
+	'repent_info_user_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez supprimer vos messages',   // Sorry, you can only delete your posts 
 	'repent_do_not_rushreply'	=> 'Can not use this magic for grabbed floor posts',//'不能在抢楼帖中使用此道具',
 );
 

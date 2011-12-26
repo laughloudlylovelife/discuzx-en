@@ -9,14 +9,14 @@
 
 $lang = array
 (
-	0	=> 'Register/Login',// '注册/登录',
-	1	=> 'Space',// '空间',
-	2	=> 'Forum',// '论坛',
-	3	=> 'Groups',// '群组',
-	4	=> 'Home',// '首页',
+	0	=> 'Inscription/Connexion', // Register/Login
+	1	=> 'Espace', // Space
+	2	=> 'Forum', // Forum
+	3	=> 'Groupe', // Group
+	4	=> 'Portail', // Portal
 
-	100	=> 'Other',// '其他',
-	127	=> 'Plugins',// '插件',
+	100	=> 'Autre', // Other
+	127	=> 'Plugin', // Plugin
 
 );
 

@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'downdateline_name'	=> 'Time Machine',//'时光机',
-	'downdateline_desc'	=> 'Enable to modify a publish time of your post to the past time',//'把自己日志的发布时间修改为过去',
-	'downdateline_info'	=> 'Enable to modify a publish time of your post to the past time',//'把自己日志的发布时间修改为过去',
+	'downdateline_name'	=> 'Heure Machine',   //  Time machine 
+	'downdateline_desc'	=> 'Modifiez heure de d&#233;part du temps pass&#233; au blog',   //  Modify the post time of blog to past
+	'downdateline_info'	=> 'Modifiez heure de d&#233;part du temps pass&#233; au blog',   //  Modify the post time of blog to past
 );
 

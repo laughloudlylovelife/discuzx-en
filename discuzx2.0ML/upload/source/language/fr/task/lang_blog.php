@@ -9,12 +9,12 @@
 
 $lang = array
 (
-	'blog_name'	=> 'Post Blog Task',//'发表日志任务',
-	'blog_desc'	=> 'To complete the task, post a blog and get award.',//'发表日志即可完成任务，获得相应的奖励。',
-	'blog_view'	=> '<strong>Follow the next steps below to complete the task:</strong>
+	'blog_name'	=> 'T&#226;ches Articles du blog',
+	'blog_desc'	=> 'Message d\'un blog pour terminer la t&#226;che et obtenir des prix.',
+	'blog_view'	=> '<strong>Svp. suivre les &#233;tapes ci-dessous:</strong>
 		<ul>
-		<li>1. <a href="home.php?mod=spacecp&ac=blog" target="_blank">Click here to open new window to post blog</a>;</li>
-		<li>2. Write you first blog and publish it.</li>
+		<li>1. <a href="home.php?mod=spacecp&ac=blog" target="_blank">Ouvrez publier des blogs dans sur nouvelle fen&#234;tre</a>;</li>
+		<li>2. Ecrire un nouveau blog et le publier.</li>
 		</ul>',
 );
 

@@ -9,12 +9,12 @@
 
 $lang = array
 (
-	'custom_name'		=> 'Custom Adv',//'自定义广告',
-	'custom_desc'		=> 'Add custom adv code in templates or HTML file.<br /><br />
-				<a href="javascript:;" onclick="prompt(\'Please copy (CTRL+C) the content below to templates\', \'<!--{ad/custom_'.$_G['gp_customid'].'}-->\')" />Internal js call/a>&nbsp;
-				<a href="javascript:;" onclick="prompt(\'Please copy (CTRL+C) the content below to HTML files\', \'&lt;script type=\\\'text/javascript\\\' src=\\\''.$_G['siteurl'].'api.php?mod=ad&adid=custom_'.$_G['gp_customid'].'\\\'&gt;&lt;/script&gt;\')" />External js call</a>',
-	'custom_id_notfound'	=> 'Custom adv does not exist',//'自定义广告不存在',
-	'custom_codelink'	=> 'Internal js call',//'内部调用',
-	'custom_text'		=> 'Custom advertising',//'自定义广告',
+	'custom_name'		=> 'Publicitaires personnalis&#233;e',
+	'custom_desc'		=> 'Gr&#226;ce au mod&#232;le, le fichier HTML, ajoutez le code des annonces, vous pouvez ajouter n\'importe quelle page sur le site de publicitaires. Pour les propri&#233;taires pour comprendre simplement les connaissances en HTML.<br /><br />
+				<a href="javascript:;" onclick="prompt(\'Svp. copier(CTRL+C)Et ajoutez la ligne suivante au mod&#232;le de, Ajouter cette publicit&#233;\', \'<!--{ad/custom_'.$_G['gp_customid'].'}-->\')" />Les communications internes</a>&nbsp;
+				<a href="javascript:;" onclick="prompt(\'Svp. copier(CTRL+C)Et ajoutez la ligne suivante au fichier HTML, Ajouter cette publicit&#233;\', \'&lt;script type=\\\'text/javascript\\\' src=\\\''.$_G['siteurl'].'api.php?mod=ad&adid=custom_'.$_G['gp_customid'].'\\\'&gt;&lt;/script&gt;\')" />Appel ext&#233;rieur</a>',
+	'custom_id_notfound'	=> 'Publicit&#233; personnalis&#233; innexistant',
+	'custom_codelink'	=> 'Les communications internes',
+	'custom_text'		=> 'Publicit&#233; personnalis&#233;',
 );
 

@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'friendnum_name'	=> 'Friends expander',//'好友增容卡',
-	'friendnum_desc'	=> 'Increase the limit of your Friend list',//'增加好友容量上限',
-	'friendnum_info'	=> 'Add {num} friends places',//'额外增加 {num} 个好友上限',
-	'friendnum_addnum'	=> 'Increase the number of friends',//'增加好友数',
+	'friendnum_name'	=> 'Carte Amis',   //  Friends card
+	'friendnum_desc'	=> 'Augmenter le nombre d\'Amis',   // Increase the number of friends 
+	'friendnum_info'	=> 'Hausse de {num} Amis',   //  Increase {num} friends
+	'friendnum_addnum'	=> 'Augmentation du nombre d\'Amis',   //  Increase friends numbers
 );
 

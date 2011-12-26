@@ -9,30 +9,30 @@
 
 $lang = array
 (
-	'bloglist_blogids'		=> 'Specified blogs',//'指定日志',
-	'bloglist_blogids_comment'	=> 'Please fill in specific blog ID (blogid), use comma (,) to separate blog IDs',//'填入指定日志的ID(blogid)，多个日志之间用逗号(,)分隔',
-	'bloglist_uids'			=> 'Author UID',//'作者UID',
-	'bloglist_uids_comment'		=> 'Please fill in specific users ID (uid), use comma (,) to separate users',//'填入指定用户的ID(uid)，多个用户之间用逗号(,)分隔',
-	'bloglist_catid'		=> 'Select category',//'指定分类',
-	'bloglist_catid_comment'	=> 'Select blog category',//'选择日志所属的系统日志分类，可多选',
-	'bloglist_startrow'		=> 'Start Row',//'起始数据行数',
-	'bloglist_startrow_comment'	=> 'If you need to set start row, please enter a number, 0 is the first row',//'如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'bloglist_titlelength'		=> 'Title length',//'标题长度',
-	'bloglist_summarylength'	=> 'Summary length',//'简介长度',
-	'bloglist_picrequired'		=> 'Blog image filter',//'过滤无封面日志',
-	'bloglist_picrequired_comment'	=> 'Filter the blogs without cover',//'是否过滤没有封面图片的日志',
-	'bloglist_hours'		=> 'Time filter',//'时间范围',
-	'bloglist_hours_nolimit'	=> 'No limit',//'不限制',
-	'bloglist_hours_hour'		=> '1 hour',//'1小时内',
-	'bloglist_hours_day'		=> '1 day',//'24小时内',
-	'bloglist_hours_week'		=> '1 week',//'7天内',
-	'bloglist_hours_month'		=> '1 month',//'1月内',
-	'bloglist_hours_year'		=> '1 year',//'1年内',
-	'bloglist_orderby'		=> 'Order by',//'日志排序方式',
-	'bloglist_orderby_comment'	=> 'Set the order of blogs',//'设置以哪一字段或方式对日志进行排序',
-	'bloglist_orderby_dateline'	=> 'Post time',//'按发布时间倒序',
-	'bloglist_orderby_viewnum'	=> 'Views',//'按查看数倒序',
-	'bloglist_orderby_replynum'	=> 'Replies',//'按回复数倒序',
-	'bloglist_orderby_hot'		=> 'Hot',//'按热度倒序'
+	'bloglist_blogids'		=> 'Pr&#233;cisez le journal',  //  '指定日志'
+	'bloglist_blogids_comment'	=> 'Remplissez l\'ID journal sp&#233;cifi&#233; (blogid), entre les grumes par une virgule (,) pour s&#233;parer',  //  '填入指定日志的ID(blogid), 多个日志之间用逗号(,)分隔'
+	'bloglist_uids'			=> 'l\'Auteur Uid',  // '作者UID' 
+	'bloglist_uids_comment'		=> 'Remplissez l\'ID utilisateur sp&#233;cifi&#233; (UID), les utilisateurs multiples avec une virgule (,) pour s&#233;parer',  // '填入指定用户的ID(uid), 多个用户之间用逗号(,)分隔' 
+	'bloglist_catid'		=> 'D&#233;signation Classification',  //  '指定分类'
+	'bloglist_catid_comment'	=> 'Choisissez le journal qui appartient &#224; la classification du journal syst&#232;me, peuvent &#234;tre s&#233;lectionn&#233;s',  //  '选择日志所属的系统日志分类, 可多选'
+	'bloglist_startrow'		=> 'Nombre initial de lignes de donn&#233;es',  //  '起始数据行数'
+	'bloglist_startrow_comment'	=> 'Pour la prise initiale de lignes de donn&#233;es, entrez la valeur 0 particuli&#232;res de la premi&#232;re ligne et ainsi de suite',  //  '如需设定起始的数据行数, 请输入具体数值, 0 为从第一行开始, 以此类推'
+	'bloglist_titlelength'		=> 'La Longueur du Titre',  //  '标题长度'
+	'bloglist_summarylength'	=> 'A propos de la longueur',  //  '简介长度'
+	'bloglist_picrequired'		=> 'Ne couvres pas les journaux de filtrage',  //  '过滤无封面日志'
+	'bloglist_picrequired_comment'	=> 'N\'a pas d\'image de couverture du filtre au journal',  //  '是否过滤没有封面图片的日志'
+	'bloglist_hours'		=> 'Plage de Temps',  //  '时间范围'
+	'bloglist_hours_nolimit'	=> 'Aucune Restriction',  //  '不限制'
+	'bloglist_hours_hour'		=> '1 heure',  //  '1小时内'
+	'bloglist_hours_day'		=> 'Dans les 24 heures',  //  '24小时内'
+	'bloglist_hours_week'		=> '7 jours',  //  '7天内'
+	'bloglist_hours_month'		=> '1 mois',  //  '1月内'
+	'bloglist_hours_year'		=> '1 ann&#233;e',  //  '1年内'
+	'bloglist_orderby'		=> 'Le Mode de Tri des  Journaux',  //  '日志排序方式'
+	'bloglist_orderby_comment'	=> 'Param&#232;tres pour quel champ ou une m&#233;thode pour trier le journal',  //  '设置以哪一字段或方式对日志进行排序'
+	'bloglist_orderby_dateline'	=> 'Post&#233;s par inversion',  //  '按发布时间倒序'
+	'bloglist_orderby_viewnum'	=> 'Cliquez pour voir le nombre d\'Inverser',  //  '按查看数倒序'
+	'bloglist_orderby_replynum'	=> 'En Fonction R&#233;ponses Desc',  //  '按回复数倒序'
+	'bloglist_orderby_hot'		=> 'Trier par Redu',  // '按热度倒序'
 );
 
