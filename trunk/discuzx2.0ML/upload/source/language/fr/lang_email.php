@@ -10,251 +10,238 @@
 
 $lang = array
 (
-	'hello'				=> 'Hello',//'你好',
-	'moderate_member_invalidate'	=> 'Decline',//'否决',
-	'moderate_member_delete'	=> 'Delete',//'删除',
-	'moderate_member_validate'	=> 'Accept',//'通过',
+	'hello'				=> 'Bonjour',
+	'moderate_member_invalidate'	=> 'Invalider',
+	'moderate_member_delete'	=> 'Supprimer',
+	'moderate_member_validate'	=> 'Agr&#233;ment',
 
 
-	'get_passwd_subject'	=> 'Retrieve Password Help',//'取回密码说明',
+	'get_passwd_subject'	=> 'R&#233;initialiser Mot de Passe',
 	'get_passwd_message'	=> '
 <p>{username},
-This letter was sent from the {bbname}.</p>
+Ce Courrier est Envoy&#233; Par {bbname}.</p>
 
-<p>You have received this message, because this email address is registered as a user in our forums,
-and the user requests to reset the password by Email.</p>
+<p>Vous Recevez ce Mail Car votre E-mail est Enregistr&#233; Sur notre Site,
+Et Vous Demander un Nouveau Mot de Passe.</p>
 <p>
 ----------------------------------------------------------------------<br />
 <strong>Important!</strong><br />
 ----------------------------------------------------------------------</p>
-<p>If you did not requested password reset or if you have not registered at our forum,
-please ignore and delete this message.
-In the case you confirm the password reset,
-you need to read the following content.</p>
+<p>Vous Recevez ce Mail Parce Que Vous ou Quelqu\'un d\'Autre a Tent&#233; De
+R&#233;initialiser votre Mot de Passe dans notre Site. si Vous n\'Avez pas Demander un Nouveau Mot ou Que Vous
+Ne sont pas un Membre de notre Site, Svp. Ignorer ce Message</p>
 <p>
 ----------------------------------------------------------------------<br />
-<strong>Password reset instructions</strong><br />
+<strong>Comment R&#233;initialiser le Mot de Passe</strong><br />
 ----------------------------------------------------------------------</p>
 </p>
-You only need to submit within three days after a request by clicking the link below to reset your password:<br />
+Pour R&#233;initialiser Votre Mot De Passe, Svp. Visiter Le Lien Ci-dessous Les 3 Jours Ouvrables:<br />
 
 <a href="{siteurl}member.php?mod=getpasswd&amp;uid={uid}&amp;id={idstring}" target="_blank">{siteurl}member.php?mod=getpasswd&amp;uid={uid}&amp;id={idstring}</a>
 <br />
-(If the link above is not worked, please paste thist address manually into your browser address bar.)</p>
+(Si En Cliquant Sur L\'url de ce Message ne fonctionne Pas, Il Suffit de Copier et De
+Le Coller dans la Barre d\'Adresse de votre Navigateur.)</p>
 
-<p>After the above page open, enter a new password and submit a form, after then you can use your new password.
-You can change your password at any time in a user control panel.</p>
+<p>Svp. Visitez la Page Sur et R&#233;initialiser le Mot, Alors Vous Pouvez L\'utiliser pour Vous Connecter Sur notre Site. Vous Pouvez Changer votre Mot de Passe dans Param&#232;tre.</p>
 
-<p>This request was submitted from the IP address: {clientip}</p>
+<p>Demande IP: {clientip}</p>
 
 
 <p>
-Sincerely yours,<br />
+Votre,<br />
 </p>
-<p>{bbname} management team.
+<p>{bbname} Team.
 {siteurl}</p>',
 
 
-	'email_verify_subject'	=> 'Email Address Verification',//'Email 地址验证',
+	'email_verify_subject'	=> 'V&#233;rif. Courr. Electr. E-mail',
 	'email_verify_message'	=> '
 <p>{username},
-This letter was sent from the {bbname}.</p>
-<p>You have received this message, because of new user registration at our Forum,
-or some user have used Your address when modified his/her Email.
-If you did not visited our forum, or not carry out about such operations,
-please ignore this message.
-You do not need to unsubscribe or other further action.</p>
+Ce Courrier est Envoy&#233; Par {bbname}.</p>
+
+<p>Vous Recevez ce Mail Car Vous Vous &#202;tes Enregistr&#233; Sur notre Site,
+Ou Quelqu\'un a Utilis&#233; votre Adresse Email. si Vous n\'Avez pas Visit&#233; notre Site ou de V&#233;rifier
+Votre E-mail, Svp. Ignorer ce Mail.</p>
 <br />
 ----------------------------------------------------------------------<br />
-<strong>Account activation instructions</strong><br />
+<strong>Comment Activer le Compte</strong><br />
 ----------------------------------------------------------------------<br />
 
-<p>You are new to our forum, or modify your registration Email address to use this,
-We need to verify the validity of your email address to avoid spam or other abuse actions.</p>
+<p>Vous &#202;tes un D&#233;butant de notre Site ou Que Vous Modifiez votre Adresse Email,
+Nous Avons Besoin de V&#233;rifier votre Adresse Email pour &#201;viter un Mail Invalide.</p>
 
-<p>To activate your email account you need to click the link below:<br />
+<p>Svp. Visitez le Lien Ci-dessous pour Activer votre Compte: <br />
 
 <a href="{url}" target="_blank">{url}</a>
 <br />
-(If the link above is not worked, please paste link address manually into your browser address bar.)</p>
+(Si En Cliquant Sur L\'url de ce Message ne Fonctionne Pas, Il Suffit de Copier et De
+Le Coller dans la Barre d\'Adresse de votre Navigateur.)</p>
 
-<p>Thank you for your visit and wish you be happy! </p>
+<p>Merci pour votre visite!</p>
 
 
 <p>
-Sincerely yours,<br />
+Votre,<br />
 
-{bbname} management team.<br />
+{bbname} Team.<br />
 {siteurl}</p>',
 
-	'add_member_subject'	=> 'You are added as a member',//'您被添加成为会员',
+	'add_member_subject'	=> 'Renseignements Sur le Compte Important',
 	'add_member_message'	=> '
 {newusername},
-This letter was sent from the {bbname}.
+Ce Courrier est Envoy&#233; Par {bbname}.
 
-I am {adminusername}, one of the managers at {bbname}. You have received this message because you are just has been added as a member
-at our forum, which is our current Email address you have registered.
+Je Suis {adminusername}, l\'un des {bbname} Administrateur. Vous recevez ce mail
+Parce Que Vous Avez &#233;t&#233; Ajout&#233; En Tant Que Membre de notre Site. ce Courriel est votre Email Inscrits.
 
 ----------------------------------------------------------------------
 Important!
 ----------------------------------------------------------------------
 
-If you are not interested in our Forum or do not intend to become a member, please ignore this message.
+Si Vous N\'&#234;tes pas Int&#233;ress&#233;s &#224; notre Site ou ne Souhaitez pas &#234;tre un Membre,
+Svp. Ignorer ce Mail.
 
 ----------------------------------------------------------------------
-Your Account Information
+Informations sur le compte
 ----------------------------------------------------------------------
 
-Forum Name: {bbname}
-Forum Address:{siteurl}
+Nom du Forum: {bbname}
+URL du Forum: {siteurl}
 
-User Name: {newusername}
-Password: {newpassword}
+Identifiant: {newusername}
+Mot de Passe: {newpassword}
 
-From now, you can use your account to log in to our forum, I wish you a pleasant to use!
+Maintenant, Vous Pouvez Utiliser votre Compte pour Vous Connecter Sur notre Site, Merci!
 
 
 
-Sincerely yours,
+Votre,
 
-{bbname} management team.
+{bbname} Team.
 {siteurl}',
 
 
-	'birthday_subject'	=> 'Happy Birthday to you!',//'祝您生日快乐',
+	'birthday_subject'	=> 'Joyeux Anniversaire',
 	'birthday_message'	=> '
 {username},
-This letter was sent from the {bbname}.
+Ce Courrier est Envoy&#233; Par {bbname}.
 
-You have received this message, because this email address is registered in our forum.
-In accordance with the information in your profile, today is your Birthday.
+Vous Recevez ce Mail Car votre E-mail est Enregistr&#233; Sur notre Site,
+Et Aujourd\'hui c\'est Ton Anniversaire.
+Joyeux Anniversaire {username} ! .
 
-Forum management team have pleased to congratulate you with your Birthday,
-and sincerely wish you a happy birthday!
-
-P.S.
-If you are not a member of our forum, or have no birthday today,
-may be a mistake occure.
-Check for your email address and birthday in your profile.
-This message will not be sent to this e-mail address, please ignore this 
-Message.
+Si Vous n\'&#234;tes pas un Membre de notre Site ou Aujourd\'hui  ce n\'est  pas votre Anniversaire, Il y a
+Peut-&#234;tre Une Erreur D\'information Dans La Liste De Notre Base De Donn&#233;es Ou, Que Votre Profil A &#201;t&#233; Chang&#233; Involontairement
+Mais heureusement que ce  mail est uniquement envoyer une fois par an, vous pouvez ignorer ce message, et excusez nous du d&#233;sagr&#233;ment..
 
 
-Sincerely yours,
 
-{bbname} management team.
+Votre,
+
+{bbname} Team.
 {siteurl}',
 
-	'email_to_friend_subject'	=> '{$_G[member][username]} recommends you to visit: $thread[subject]',//'{$_G[member][username]} 推荐给您: $thread[subject]',
+	'email_to_friend_subject'	=> '{$_G[member][username]} recommande $thread[subject] pour vous',
 	'email_to_friend_message'	=> '
-This letter was sent to you by {$_G[member][username]} from the {$_G[setting][bbname]}.
+Ce Courrier est Envoy&#233; Par {$_G[member][username]} de {$_G[setting][bbname]}.
 
-You have received this message because of {$_G[member][username]} from the {$_G[setting][bbname]}
-clicked the "Email to Friend" link for recommend to you the following.
-If you are not interested in this, please ignore this message.
-You do not need to unsubscribe or other further action.
+Vous Recevez ce Mail car {$_G[member][username]} a utilis&#233; "Recommandons &#224; des Amis" de {$_G[setting][bbname]}
+et de recommander le contenu ci-dessous. Si cela ne vous int&#233;resses pas, vous pouvez ignorer ce message.
+Vous n\'avez pas besoin de faire d\'autres op&#233;rations.
 
 ----------------------------------------------------------------------
-Start of original message
+D&#233;but secteur de son contenu
 ----------------------------------------------------------------------
 
 $message
 
 ----------------------------------------------------------------------
-End of the original message
+Fin du contenu
 ----------------------------------------------------------------------
 
-Please note that this letter was initiated by the forum user by "Email to a Friend" link!
-Forum management team is not responsible for such messages.
+Ce mail est envoy&#233; en utilisant "Recommandons &#224; des amis" de cette fonction,
+ceci n\'est pas un courrier officiel, nous ne serons pas tenus responsables.
 
-
-Welcome to {$_G[setting][bbname]}
+Bienvenue pour visiter {$_G[setting][bbname]}
 $_G[siteurl]',
 
-	'email_to_invite_subject'	=> 'Your friend {$_G[member][username]} invites you to register at {$_G[setting][bbname]}',//'您的朋友 {$_G[member][username]} 发送 {$_G[setting][bbname]} 论坛注册邀请码给您',
+	'email_to_invite_subject'	=> 'Votre Ami {$_G[member][username]} a envoy&#233; un code d\'invitation de {$_G[setting][bbname]} pour vous',
 	'email_to_invite_message'	=> '
 $sendtoname,
-This letter was sent to you by {$_G[member][username]} from {$_G[setting][bbname]}.
+Ce courrier est envoy&#233; par {$_G[member][username]} de {$_G[setting][bbname]}.
 
-You have received this message because the user {$_G[member][username]}
-from our forum sent you an invitation code, that enable you to register
-at our form, and said additionally the following.
-
-!!! If you are not interested in this, please ignore this message.
-You do not need to unsubscribe or other further action.
+Vous recevez ce mail car {$_G[member][username]} a utilis&#233; "Envoyer le code d\'invitation &#224; des amis" de notre forum
+&#224; recommander certains contenus pour vous. Si vous n\'&#234;tes pas interess&#233; eux, vous pouvez ignorer cet e-mail.
+Vous n\'avez pas besoin de faire d\'autres op&#233;rations.
 
 ----------------------------------------------------------------------
-Original letter began
+D&#233;but secteur de son contenu
 ----------------------------------------------------------------------
 
 $message
 
 ----------------------------------------------------------------------
-End of the original letter
+Contenu Fin
 ----------------------------------------------------------------------
 
-Please note that this letter was initiated by the user.
-Forum management team is not responsible for such messages.
+Ce mail est envoy&#233; en utilisant "Envoyer le code d\'invitation &#224; des Amis" de cette fonction,
+ceci n\'est pas un courrier officiel, nous ne serons pas tenus responsables.
 
-Welcome to {$_G[setting][bbname]}
+Bienvenue pour visiter {$_G[setting][bbname]}
 $_G[siteurl]',
 
 
-	'moderate_member_subject'	=> 'Audit results to inform the user',//'用户审核结果通知',
-	'moderate_member_message'	=> '<p>{username},
-This letter was sent from the {bbname}.</p>
-<p>You have received this message, because of every new user registration
-at our forum require to verify registered email address by site administrator.
-After the manual verification you will be notified about the audition results.
-</p>
+	'moderate_member_subject'	=> 'Result. Moderation Utilisateur',
+	'moderate_member_message'	=> '
+<p>{username} ,
+Ce courrier est envoy&#233; par {bbname}.</p>
+
+<p>Vous recevez ce mail car vous vous &#234;tes enregistr&#233; sur notre site ou quelqu\'un a utilis&#233; votre adresse email.
+Ce mail est utilis&#233; pour envoyer le r&#233;sultat de la mod&#233;ration.</p>
 
 ----------------------------------------------------------------------<br />
-<strong>Registration info and audit results</strong><br />
+<strong>Enreg. information et Resul. moderation</strong><br />
 ----------------------------------------------------------------------<br />
 
-User Name: {username}<br />
-Registration time: {regdate}<br />
-Submission time: {submitdate}<br />
-Submit number: {submittimes}<br />
-Registration reason: {message}<br />
+Identifiant: {username}<br />
+Date Enreg.: {regdate}<br />
+Date Env.: {submitdate}<br />
+Heure Env.: {submittimes}<br />
+Enreg. Raison: {message}<br />
 <br />
-Audit Results: {modresult}<br />
-Audit time: {moddate}<br />
-Audit Manager: {adminusername}<br />
-Administrator Message: {remark}<br />
+Resultat Moderation: {modresult}<br />
+Temps de Moder.: {moddate}<br />
+Standard.: {adminusername}<br />
+Message: {remark}<br />
 <br />
 ----------------------------------------------------------------------<br />
-<strong>Audit results explanation</strong><br />
+<strong>Explication de la mod&#233;ration</strong><br />
 ----------------------------------------------------------------------<br />
 
-<p>Approved: Your registration has been approved, you have become an official user of our forum.</p>
+<p>Agr&#233;ment: Votre inscription a &#233;t&#233; l\'approbation, vous &#234;tes le membre de notre site maintenant.</p>
 
-<p>Rejected:
-Your registration information is incomplete,
-or does not meet some our requirements.
-You can send a message to administrator,
-complete your registration information,
-and then submit.</p>
+<p>Invalide:
+Vos informations d\'enregistrements ne sont pas termin&#233;s ou ne r&#233;pondent pas &#224; nos exigences,
+You can <a href="home.php?mod=spacecp&ac=profile" target="_blank">Compl&#233;ter Vos Informations</a> et de pr&#233;senter &#224; nouveau.</p>
 
-<p>Deleted:
-Your request for registration does not meet our requirements,
-or number of new registrations exceed our possibilities.
-Your request is completely rejected, your account removed from the database.
-It can not be used for log in or submitted for re-examine,
-please understand.</p>
+<p>Suppression:
+Vos informations ne r&#233;pondent pas &#224; nos besoins ou le nombre de membres est remplis
+Votre demande a &#233;t&#233; invalid&#233;e. Votre compte a &#233;t&#233; supprim&#233; &#224; partir de notre
+base de donn&#233;es. Vous ne pouvez pas l\'utiliser pour vous connecter ou pr&#233;senter la requ&#234;te de mod&#233;ration &#224; nouveau.</p>
+
 <br />
 <br />
-Sincerely yours,<br />
+Sinc&#232;rement,<br />
 <br />
-{bbname} management team.<br />
+{bbname} Les Gestionnaires de la Team<br />
 {siteurl}',
 
-	'adv_expiration_subject' =>	'Your site ad will be {day} days after the due, Please timely processing',
-	'adv_expiration_message' =>	'The following ads on your site will be expired {day} days, please deal with:<br /><br />{advs}',
+	'adv_expiration_subject' =>	'La publicit&#233; de votre site sera expir&#233; dans {day} jours, Svp. faire face au cas &#233;ch&#233;ant.',
+	'adv_expiration_message' =>	'Les annonces suivantes sur votre site sont expir&#233;s {day} jours, Svp. faire face:<br /><br />{advs}',
 	'invite_payment_email_message'	=> '
-Thank you for using the {bbname} ({siteurl}), Your order {orderid} has been paid completed, Order has been validated.<br />
+Bienvenue sur {bbname} ({siteurl}), votre commande a &#233;t&#233; pay&#233; {orderid} commande achev&#233; ont &#233;t&#233; valid&#233;s.<br />
 <br />----------------------------------------------------------------------<br />
-Here is what you get the invitation code
+Voici ce Que Vous Obtenez Code Invitation
 <br />----------------------------------------------------------------------<br />
 
 {codetext}

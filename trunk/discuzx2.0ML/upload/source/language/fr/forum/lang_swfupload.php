@@ -8,22 +8,22 @@
  */
 
 $lang = "
-<okbtn>OK</okbtn>
-<ctnbtn>Continue</ctnbtn>
-<fileName>File name</fileName>
-<size>File size</size>
-<stat>Upload progress</stat>
-<browser>Browser</browser>
-<delete>Delete</delete>
-<return>Return</return>
-<upload>Upload</upload>
-<okTitle>Upload completed</okTitle>
-<okMsg>File uploaded successfully</okMsg>
-<uploadTitle>Uploading</uploadTitle>
-<uploadMsg1>Total</uploadMsg1>
-<uploadMsg2>Wait for file uploading, progress is</uploadMsg2>
-<uploadMsg3>Files</uploadMsg3>
-<bigFile>File too large</bigFile>
-<uploaderror>Upload failed</uploaderror>
+<okbtn>Envoyer</okbtn>
+<ctnbtn>Continuer</ctnbtn>
+<fileName>Nom de Fichier</fileName>
+<size>Taille</size>
+<stat>Stats</stat>
+<browser>Parcourir</browser>
+<delete>Supprimer</delete>
+<return>Retour</return>
+<upload>Charger</upload>
+<okTitle>Finis</okTitle>
+<okMsg>Charger avec Succs</okMsg>
+<uploadTitle>T&#233;l&#233;ch.</uploadTitle>
+<uploadMsg1>Total </uploadMsg1>
+<uploadMsg2> fichier en attente,tlchargement... </uploadMsg2>
+<uploadMsg3> fichiers</uploadMsg3>
+<bigFile>Trop grand</bigFile>
+<uploaderror>Charge. Echec</uploaderror>
 ";
 

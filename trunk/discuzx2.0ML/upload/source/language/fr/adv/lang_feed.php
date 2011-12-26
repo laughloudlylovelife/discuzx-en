@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'feed_name'	=> 'Space Feed Adv',//'空间 动态广告',
-	'feed_desc'	=> 'Display Adv at the top of feeds.',//'展现方式: 日志广告显示于动态的上方。',
+	'feed_name'	=> 'Espace publicitaire dynamique',
+	'feed_desc'	=> 'Montrer le chemin: le journal montre la dynamique de l\'annonce du haut.',
 );
 

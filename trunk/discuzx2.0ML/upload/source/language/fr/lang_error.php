@@ -9,33 +9,32 @@
 
 $lang = array
 (
-	'System Message'		=> 'Site Base Settings',//'站点信息',
+	'System Message'	=> 'Conseils', // Tips
 
-	'config_notfound'		=> 'Configuration file &quot;config_global.php&quot; not found or unaccessible.',//'配置文件 "config_global.php" 未找到或者无法访问。',
-	'template_notfound'		=> 'Template file &quot;$tplfile&quot; not found or unaccessible.',//'模版文件 "$tplfile" 未找到或者无法访问。',
-	'directory_notfound'		=> 'Directory &quot;$dir&quot; not found or unaccessible.',//'目录 "$dir" 未找到或者无法访问。',
-	'request_tainting'		=> 'The request submit is illegal.',//'非法的提交请求。',
-	'db_help_link'			=> 'Click here for help',//'点击这里寻求帮助',
-	'db_error_message'		=> '<b>Error Message</b>: $dberror<br />',//'<b>错误信息</b>: $dberror<br />',
-	'db_error_sql'			=> '<b>SQL</b>: $sql<br />',//'<b>SQL</b>: $sql<br />',
-	'db_error_backtrace'		=> '<b>Backtrace</b>: $backtrace<br />',
-	'db_error_no'			=> ' [$dberrno]',//' [$dberrno]',
-	'db_notfound_config'		=> 'Configuration file &quot;config_global.php&quot; not found or unaccessible.',//'配置文件 "config_global.php" 未找到或者无法访问。',
-	'db_notconnect'			=> 'Unable to connect to database server',//'无法连接到数据库服务器',
-	'db_security_error'		=> 'Query security error',//'查询语句安全威胁',
-	'db_query_sql'			=> 'SQL query',//'查询语句',
-	'db_query_error'		=> 'Query error',//'查询语句错误',
-	'db_config_db_not_found'	=> 'Database configuration error, please double-check the &quot;config_global.php&quot; file.',//'数据库配置错误，请仔细检查 config_global.php 文件',
-	'system_init_ok'		=> 'Site system initialization completed, please <a href="index.php">Click here</a> to enter.',//'网站系统初始化完成，请<a href="index.php">点击这里</a>进入',
-	'backtrace'			=> 'operational info',//'运行信息',
-	'error_end_message'		=> '<a href="http://{host}">{host}</a> has detailed records of this error message, which brings you access. We have apologize for the inconvenience.',//'<a href="http://{host}">{host}</a> 已经将此出错信息详细记录, 由此给您带来的访问不便我们深感歉意',
-	'mobile_error_end_message'	=> '<a href="http://{host}">{host}</a> Error. Sorry for inconvenience.',//'<a href="http://{host}">{host}</a> 此错误给您带来的不便我们深感歉意',
+	'config_notfound'	=> 'Fichier de configuration "config_global.php" n\'existe pas ou ne peut pas acc&#233;der.', // 'Configuration file "config_global.php" does not exist or cannot access.'
+	'template_notfound'	=> 'Fichier de gabarit "$tplfile" n\'existe pas ou ne peut pas acc&#233;der.', // 'Template file "$tplfile" does not exist or cannot access.'
+	'directory_notfound'	=> 'R&#233;pertoire "$dir" n\'existe pas ou ne peut pas acc&#233;der.', // 'Directory "$dir" does not exist or cannot access.'
+	'request_tainting'	=> 'Requ&#234;te incorrecte.', // 'Invalid requrest.'
+	'db_help_link'		=> 'Besoin d\'aide?', // 'Need help?'
+	'db_error_message'	=> 'Message d\'erreur', // 'Error Message'
+	'db_error_sql'		=> '<b>SQL</b>: $sql<br />', // '<b>SQL</b>: $sql<br />'
+	'db_error_backtrace'	=> '<b>Backtrace</b>: $backtrace<br />', // '<b>Backtrace</b>: $backtrace<br />'
+	'db_error_no'		=> ' [$dberrno]', // ' [$dberrno]'
+	'db_notfound_config'	=> 'Fichier de configuration "config_global.php" n\'existe pas ou ne pouvez pas acc&#233;der.', // 'Configuration file "config_global.php" does not exist or cannot access.' 
+	'db_notconnect'		=> 'Impossible de se connecter au serveur de base', // 'Cannot connect to database server'
+	'db_security_error'	=> 'Menaces contre la s&#233;curit&#233; de requ&#234;tes', // 'Query security threats'
+	'db_query_sql'		=> 'Requ&#234;te SQL', // 'Query SQL'
+	'db_query_error'	=> 'Erreur de requ&#234;te', // 'Query error'
+	'db_config_db_not_found'	=> 'Erreur de configuration de base de donn&#233;es, Svp. v&#233;rifier config_global.php', // 'Database configuration error, please check config_global.php'
+	'system_init_ok'		=> 'Initialiser le site avec succ&#232;s, Svp. <a href="index.php">cliquez ici</a> pour entrer', // 'Initialize site successfully, please <a href="index.php">click here</a> to enter'
+	'backtrace'			=> 'Run Information', // 'Run Information'
+	'error_end_message'		=> '<a href="http://{host}">{host}</a> a enregistr&#233; ce message d\'erreur, nous nous en excusons', // '<a href="http://{host}">{host}</a> has recorded this error message, we apologize for it'
+	'mobile_error_end_message'	=> '<a href="http://{host}">{host}</a> nous sommes profond&#233;ment d&#233;sol&#233;s pour le d&#233;sagr&#233;ment', // '<a href="http://{host}">{host}</a> we are deeply sorry for the inconvenience'
 
-	'file_upload_error_-101'	=> 'Upload failed! Upload file does not exist or is invalid. Please return.',//'上传失败！上传文件不存在或不合法，请返回。',
-	'file_upload_error_-102'	=> 'Upload failed! Non-image file type, please return.',//'上传失败！非图片类型文件，请返回。',
-	'file_upload_error_-103'	=> 'Upload failed! Can not write to file or write fails, return.',//'上传失败！无法写入文件或写入失败，请返回。',
-	'file_upload_error_-104'	=> 'Upload failed! Unrecognized image file format, please return.',//'上传失败！无法识别的图像文件格式，请返回。',
+	'file_upload_error_-101'	=> 'Impossible de t&#233;l&#233;charger! Le fichier n\'existe pas ou ill&#233;gale, Svp. revenir.', // 'Failed to upload! The file does not exist or illegal, please return.'
+	'file_upload_error_-102'	=> 'Impossible de t&#233;l&#233;charger! Le fichier n\'est pas une image, Svp. revenir.', // 'Failed to upload! The file is not a iamge, please return.'
+	'file_upload_error_-103'	=> 'Impossible de t&#233;l&#233;charger! Le fichier n\'est pas accessible en &#233;criture ou omis d\'&#233;crire, Svp. revenir.', // 'Failed to upload! The file is not writeable or failed to write, please return.'
+	'file_upload_error_-104'	=> 'Impossible de t&#233;l&#233;charger! Impossible de reconna&#238;tre le type de fichier image, Svp. revenir.', // 'Failed to upload! Cannot recognize image file type, please return.'
 );
-//	'db_error'			=> '<b>$message</b>$errorno<br />$info $sql<br /><a href="$helplink" target="_blank">Click here for help</a><br /><br />',//'<b>$message</b>$errorno<br />$info$sql<br /><a href="$helplink" target="_blank">点击这里寻求帮助</a><br /><br />',
 
 ?>

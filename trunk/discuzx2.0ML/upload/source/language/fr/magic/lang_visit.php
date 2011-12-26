@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'visit_name'	=> 'Visit Card',//'互访卡',
-	'visit_desc'	=> 'Visit friends / Send greeting to friends / Leave message to friends in a random',//'随机访问好友空间/向好友打招呼/给好友留言',
-	'visit_num'	=> 'Friends number to visit',//'访问好友数',
-	'visit_info'	=> 'Visit Max {num} friends / Send greetings to friends / Leave message to friends in a random',//'随机访问（最多 {num} 个）好友空间/向好友打招呼/给好友留言',
+	'visit_name'	=> 'Carte de visite',   //  Visit card
+	'visit_desc'	=> 'Visiter espace/coup de pouce/laisser des messages',   //  Visit space/poke/leave messages
+	'visit_num'	=> 'Nombre',   //  Amount
+	'visit_info'	=> 'Visite(Max. {num}) amis\' espace/coup de pouce aux Amis/laisser un message &#224; des amis dans un ordre al&#233;atoire',   //  Visit(Max {num}) friends\' space/poke to friends/leave message to friends in random
 );
 

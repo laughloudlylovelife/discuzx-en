@@ -9,12 +9,12 @@
 
 $lang = array
 (
-	'intercat_name'			=> 'Forum Category adv',//'论坛 分类间广告',
-	'intercat_desc'			=> 'Display Adv between two forums in a category. In general, it is 468x60 images or Flash. If there are multipe category advs, they will be displayed in random.',//'展现方式: 论坛分类间广告显示于版块列表相邻的两个版块分类之间，可使用 468x60 或其他尺寸图片和 Flash 的形式。当前页面有多个分类间广告时，系统会从中抽取与版块分类数相等的条目进行随机显示。<br />价值分析:由于出现在版块列表页比较明显的位置，广告展示效果较好，但是过多过大的广告可能会招致访问者反感。 ',
-	'intercat_fids'			=> 'Target forums category',//'投放分区',
-	'intercat_fids_comment'		=> 'Set the target forum categories where  to show the Adv',//'设置广告投放的版块分区',
-	'intercat_position'		=> 'Ads Position',//'投放位置',
-	'intercat_position_comment'	=> 'Set the adv positon below which area',//'设置广告在哪个分区的下方显示',
-	'intercat_position_random'	=> 'Radom position',//'所有位置随机',
+	'intercat_name'			=> 'Des petites annonces entre les Forums',
+	'intercat_desc'			=> 'Montrer le chemin:. La liste des cat&#233;gories de publicit&#233; affich&#233;e sur Forums les cat&#233;gories du forum forum entre deux voisines, vous pouvez utiliser des images de taille 960x60 et Flash, ou toute autre forme d\'Avoir plus d\'une cat&#233;gorie entre les de publicit&#233; page actuelle, le syst&#232;me va extraire et de Forum le m&#234;me nombre de points Class&#233; affichage al&#233;atoire.<br />Analyse des valeurs: Comme dans la page de la liste des forums endroit plus visible, mieux de publicit&#233;, mais trop est trop de publicit&#233; peut conduire &#224; des visiteurs du ressentiment. ',
+	'intercat_fids'			=> 'Placez une partition',
+	'intercat_fids_comment'		=> 'La publicit&#233; du Forum pour r&#233;gler la Partition',
+	'intercat_position'		=> 'Emplacement',
+	'intercat_position_comment'	=> 'R&#233;glez la partition dans laquelle la publicit&#233; est affich&#233;e ci-dessous',
+	'intercat_position_random'	=> 'Toutes positions al&#233;atoires',
 );
 

@@ -9,19 +9,19 @@
 
 $lang = array
 (
-	'thread_name'			=> 'Forum/Group thread content adv',//'论坛/群组 帖内广告',
-	'thread_desc'			=> 'Display the Adv at top, bottom, or right of post content. In general, you can use a text or suitable images. In global settings you can modify the other settings such as a number of ads per quote.',//'展现方式: 帖内广告显示于帖子内容的上方、下方或右方，帖子内容的上方和下方通常使用文字的形式，帖子内容右方通常使用图片的形式。当前页面有多个帖内广告时，系统会从中抽取与每页帖数相等的条目进行随机显示。您可以在 全局设置中的其他设置中修改每帖显示的广告数量。<br />价值分析: 由于帖子是论坛最核心的组成部分，嵌入帖子内容内部的帖内广告，便可在用户浏览帖子内容时自然的被接受，加上随机播放的特性，适合于特定内容的有效推广，也可用于论坛自身的宣传和公告之用。建议设置多条帖内广告以实现广告内容的差异化，从而吸引更多访问者的注意力。',
-	'thread_fids'			=> 'Target Forums',//'投放版块',
-	'thread_fids_comment'		=> 'Set forums to diplay the Adv',//'设置广告投放的论坛版块，当广告投放范围中包含“论坛”时有效',
-	'thread_groups'			=> 'Target Groups',//'投放群组分类',
-	'thread_groups_comment'		=> 'Set the groups to show advertising. Take effect only when ads included in the scope of &quot;group&quot;.',//'设置广告投放的群组分类，当广告投放范围中包含“群组”时有效',
-	'thread_position'		=> 'Ads Position',//'投放位置',
-	'thread_position_comment'	=> 'The textual ads suitable for use in above and below the post content, and image or Flash format ads usefull for the right of post. It is possible to display more than one text ads',//'帖子内容上方和下方的广告适合使用文字形式，而帖子右侧广告适合使用图片或 Flash 形式，也可以同时显示多条文字广告',
-	'thread_position_bottom'	=> 'Bottom',//'帖子下方',
-	'thread_position_top'		=> 'Top',//'帖子上方',
-	'thread_position_right'		=> 'Right',//'帖子右侧',
-	'thread_pnumber'		=> 'Target Post number',//'广告显示楼层',
-	'thread_pnumber_comment'	=> 'Select #1 #2 #3 ... Use CTRL key fo multiple choice.',//'选项 #1 #2 #3 ... 表示帖子楼层，可以按住 CTRL 多选',
-	'thread_pnumber_all'		=> 'All',//'全部',
+	'thread_name'		=> 'Forum/Postes au sein du Groupes d\'annonces',
+	'thread_desc'		=> 'Montrer le chemin: les messages postes au sein du contenu des annonces affich&#233;es sur le haut, en bas ou &#224; droite, apr&#232;s le contenu du texte ci-dessus et en dessous de la forme commun&#233;ment utilis&#233;e, apr&#232;s le contenu du droit &#224; utiliser les images se forment habituellement plus d\'un poste au sein de l\'annonces page en cours, syst&#232;me et extraire avec les entr&#233;es &#233;gales par page Messages hasard afficher les param&#232;tres globaux, vous pouvez modifier les param&#232;tres d\'autres le nombre d\'annonces affich&#233;es par poste.<br />Analyse de la Valeur: Comme le post sur le forum fait partie de la base, int&#233;gr&#233;e dans le contenu de poste dans les annonces de poste, l\'Utilisateur peut parcourir le contenu d\'un poste naturel est accept&#233;, avec la lecture al&#233;atoire pr&#233;sente un contenu sp&#233;cifique pour la promotion efficace, &#233;galement &#234;tre utilis&#233; pour l\'auto-publicit&#233; et annonces du forum pour l\'utilisation est recommand&#233; de r&#233;gler un certain nombre de postes au sein du contenu publicitaire de la publicit&#233; afin de parvenir &#224; la diff&#233;renciation, afin d\'attirer plus d\'attention des visiteurs.',
+	'thread_fids'		=> 'Emplacement dans le forum',
+	'thread_fids_comment'	=> 'Forum ensemble un forum pour la publicit&#233;, quand la publicit&#233; de la gamme avec "Forum" efficaces',
+	'thread_groups'		=> 'Emplacement dans le classement du groupe',
+	'thread_groups_comment'	=> 'R&#233;gler le groupe publicitaire Class&#233;, quand la publicit&#233; de la gamme avec "groupe" est efficace',
+	'thread_position'	=> 'Emplacement',
+	'thread_position_comment'	=> 'Message du contenu des annonces ci-dessus et ci-dessous le texte dans la forme appropri&#233;e pour l\'utilisation, et publier des publicit&#233;s pour la bonne utilisation des images ou des formulaires Flash, vous pouvez &#233;galement afficher un nombre de caract&#232;res larges告',
+	'thread_position_bottom'	=> 'Posts bas',
+	'thread_position_top'		=> 'Posts En-T&#234;te',
+	'thread_position_right'		=> 'Posts &#224; droite',
+	'thread_pnumber'		=> 'Les annonces s\'affichent vers le bas',
+	'thread_pnumber_comment'	=> 'Option # 1 # 2 # 3 ... que les planchers de posts , vous pouvez maintenir enfonc&#233;e la touche CTRL &#224; choix multiple',
+	'thread_pnumber_all'		=> 'Ensemble',
 );
 

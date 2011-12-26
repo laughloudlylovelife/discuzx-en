@@ -9,15 +9,15 @@
 
 $lang = array
 (
-	'namepost_name'			=> 'Continue Anonimous Post',//'帖子显身卡',
-	'namepost_desc'			=> 'You can specify an anonymous post to stay still anonymous',//'可以将指定的匿名贴显身',
-	'namepost_forum'		=> 'Target forums',//'允许使用本道具的版块',
+	'namepost_name'			=> 'Carte visible',   //  Visible card
+	'namepost_desc'			=> 'Vous pouvez faire des posts anonymes visibles',   // You can make annonymous posts visible 
+	'namepost_forum'		=> 'Forums Autoris&#233;s',   // Allowed forums 
 	'namepost_num'			=> 'Has a number: {magicnum}',//'拥有个数: {magicnum}',
-	'namepost_info'			=> 'For specify the stay anonymous post, please enter the post ID',//'指定要显身的帖子，请输入帖子的 ID',
-	'namepost_info_nonexistence'	=> 'Specify the stay anonymous post',//'请指定要显身的帖子',
-	'namepost_succeed'		=> 'Your post successfully stayed still anonymous',//'你操作的帖子已显身',
-	'namepost_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
-	'namepost_info_user_noperm'	=> 'You have no permission to use magic',//'对不起，你不能对此人使用本道具',
+	'namepost_info'			=> 'Postes sp&#233;cifiques, Svp. entrer l\'ID messages',   //  Specific posts, please enter posts ID
+	'namepost_info_nonexistence'	=> 'Svp. sp&#233;cifii&#233; les posts',   // Please sepcific posts 
+	'namepost_succeed'		=> 'Op&#233;rer avec Succ&#232;s',   //  Operate successfully
+	'namepost_info_noperm'		=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoires dans ce forum',   //  Sorry, you cannot use this props in this forum
+	'namepost_info_user_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoires sur cet Utilisateur',   //  Sorry, you cannot use this props on this user
 	'magic_namepost_succeed'	=> 'The user is anonymous',//'匿名的用户是',
 );
 

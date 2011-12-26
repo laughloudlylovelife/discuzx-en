@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'money_name'	=> 'Money card',//'金钱卡',
-	'money_desc'	=> 'Can get some money',//'可以随机获得一些金币',
-	'money_info'	=> 'Get a random amount of money: the random number in range from 1 to 150% of the purchase price',//'获得的钱币数目规则：大于1且小于购买价格150%的随机数',
+	'money_name'	=> 'Carte Argent',   //  Money card
+	'money_desc'	=> 'Vous pouvez obtenir quelques m&#233;dailles d\'or dans un ordre al&#233;atoire',   // You can get some golds in random 
+	'money_info'	=> 'R&#232;gle: Vous pouvez obtenir de l\'or sup&#233;rieur &#224; 1 et inf&#233;rieur &#224; 150% du prix',   // Rule: You can get gold more than 1 and less than 150% of price 
 );
 

@@ -9,16 +9,16 @@
 
 $lang = array
 (
-	'anonymouspost_name'			=> 'Anonymous card',//'帖子匿名卡',
-	'anonymouspost_desc'			=> 'Publish posts as anonymous',//'可以将自己的帖子匿名，隐藏身份',
-	'anonymouspost_num'			=> 'Has a number: {magicnum}',//'拥有个数: {magicnum}',
-	'anonymouspost_forum'			=> 'Allowed forums',//'允许使用本道具的版块',
-	'anonymouspost_info'			=> 'Set your post as from anonymous, please input thread ID',//'将自己的帖子设置为匿名身份，请输入帖子的 ID',
-	'anonymouspost_info_nonexistence'	=> 'Enter the thread ID',//'请指定要匿名的帖子',
-	'anonymouspost_succeed'			=> 'Your post is set as anonymous successfully',//'你操作的帖子已设置为匿名',
-	'anonymouspost_use_error'		=> 'Parameter error, you can not use the magic here.',//'参数错误，不能在此处使用本道具。',
-	'anonymouspost_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
-	'anonymouspost_info_user_noperm'	=> 'You have no permission to use magic',//'对不起，你不能对此人使用本道具',
-	'anonymouspost_once_limit'		=> 'Is already anonymous, and can not re-use the magic.',//'已经是匿名状态了，不能重复使用本道具。',
+	'anonymouspost_name'		=> 'Carte Anonyme',   //  Annonymous card
+	'anonymouspost_desc'		=> 'Vous pouvez cacher vos information dans les discussions',   //  You can hide your info in threads
+	'anonymouspost_num'		=> 'Total: {magicnum}',   //  Total: {magicnum}
+	'anonymouspost_forum'		=> 'Forums Autoris&#233;s',   // Allowed forums 
+	'anonymouspost_info'		=> 'Cacher vos informations dans les messages, Svp. entrez ID du sujet',   // Hide your info in posts, please enter thread ID 
+	'anonymouspost_info_nonexistence'	=> 'Svp. indiquer un sujet',   // Please specific a thread 
+	'anonymouspost_succeed'		=> 'Fonctionnement avec Succs',   //  Operate successfully
+	'anonymouspost_use_error'	=> 'Erreur de param&#232;tre, vous ne pouvez pas utiliser les accessoires.',   //  Parameter error, you can not use the props.
+	'anonymouspost_info_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoires dans le forum actuel',   // Sorry, you cannot use this props in current forum 
+	'anonymouspost_info_user_noperm'	=> 'D&#233;sol&#233;, vous ne pouvez pas utilisez cette accessoires sur cet Utilisateur',   // Sorry, you cannot use this props on this user 
+	'anonymouspost_once_limit'	=> 'Vous &#234;tes d&#233;j&#224; anonyme, et vous ne pouvez les r&#233;utiliser ',   // 'Already anonymous, and can not re-use the ' 
 );
 

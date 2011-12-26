@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'blog_name'	=> 'Space Adv',// '空间 日志广告',
-	'blog_desc'	=> 'Display mode: Ads displayed on the blog right side.',// '展现方式: 日志广告显示于日志右方。',
+	'blog_name'	=> 'Connexion Espace publicitaire',
+	'blog_desc'	=> 'Montrer le chemin: annonces affich&#233;es sur le journal &#224; droite connecter.',
 );
 

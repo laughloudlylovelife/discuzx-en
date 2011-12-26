@@ -9,12 +9,12 @@
 
 $lang = array
 (
-	'avatar_name'	=> 'Avatar Task',//'头像类任务',
-	'avatar_desc'	=> 'This task is only for users not uploaded their avatar. To complete the task, upload an avatar and get award.',//'该任务仅限没有上传头像的会员申请，申请后只要上传头像即可完成任务，获得相应的奖励。',
-	'avatar_view'	=> '<strong>Please follow the instructions to participate in this task:</strong>
+	'avatar_name'	=> 'Avatar T&#226;ches',
+	'avatar_desc'	=> 'Apr&#232;s avoir termin&#233; la t&#226;che, vous obtiendrez des prix.',
+	'avatar_view'	=> '<strong>Svp. suivre les &#233;tapes ci-dessous:</strong>
 		<ul>
-		<li>1. <a href="home.php?mod=spacecp&ac=avatar" target="_blank">Open a new window for avatar modify</a>;</li>
-		<li>2. Upload your avatar</li>
+		<li>1. <a href="home.php?mod=spacecp&ac=avatar" target="_blank">Ouvrez la page de modifier avatar dans nouvelle fen&#234;tre</a>;</li>
+		<li>2. Ajouter une image personnaliser.</li>
 		</ul>',
 );
 

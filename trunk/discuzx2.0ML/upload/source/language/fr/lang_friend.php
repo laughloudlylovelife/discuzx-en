@@ -8,15 +8,15 @@
  */
 
 $lang = array(
-	'friend_group_default'	=> 'Others',//'其他',
-	'friend_group_1'	=> 'From the site',//'通过本站认识',
-	'friend_group_2'	=> 'Known by Common activity',//'通过活动认识',
-	'friend_group_3'	=> 'Know through a friend',//'通过朋友认识',
-	'friend_group_4'	=> 'Family',//'亲人',
-	'friend_group_5'	=> 'Colleagues',//'同事',
-	'friend_group_6'	=> 'Classmates',//'同学',
-	'friend_group_7'	=> 'Not known',//'不认识',
-	'friend_group_more'	=> 'Customize {num}'//'自定义{num}'
+	'friend_group_default'	=> 'Autre', // Other
+	'friend_group_1'	=> 'Connaissance par le biais du Site', // Know by site
+	'friend_group_2'	=> 'Connaissance par des Ev&#233;nements', // Know by events
+	'friend_group_3'	=> 'Connaissance par des Amis', // Know by friends
+	'friend_group_4'	=> 'Famille', // Family
+	'friend_group_5'	=> 'Coll&#232;gue', // Colleague
+	'friend_group_6'	=> 'Camarade de classe', // Classmate
+	'friend_group_7'	=> 'Ne sais pas', // Do not know
+	'friend_group_more'	=> 'Personnalisation {num}', // 'Customize {num}'
 //vot: !!!!!!!!!!!!!!!!! Add other categoies from UCHome lang_source.php !!!!!
 //	'friend_group_0'	=> 'Others',//'其他',
 );

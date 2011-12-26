@@ -9,5 +9,5 @@
 
 $lang = array
 (
-	'blank_content'	=> 'HTML code',//'HTML代码',
+	'blank_content'	=> 'Le code HTML',  //  'HTML代码'
 );

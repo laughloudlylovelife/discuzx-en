@@ -9,14 +9,14 @@
 
 $lang = array
 (
-	'bump_name'			=> 'Bump Card',//'提升卡',
-	'bump_forum'			=> 'Allowed forums',//'允许使用本道具的版块',
-	'bump_desc'			=> 'Bump a thread',//'可以提升某个主题',
-	'bump_info'			=> 'For bump specific thread, enter thread ID',//'提升指定的主题，请输入主题的 ID',
-	'bump_info_nonexistence'	=> 'Enter the thread ID',//'请指定要提升的主题',
-	'bump_succeed'			=> 'The thread was bumped successfully',//'你操作的主题已提升',
-	'bump_info_noperm'		=> 'Using this magic for this forum is disabled',//'对不起，主题所在版块不允许使用本道具',
+	'bump_name'		=> 'Carte Baston',   //  Bump Card
+	'bump_forum'		=> 'Forums Autoris&#233;s',   // Allowed forums 
+	'bump_desc'		=> 'Bastonne un sujet',   //  Bump one thread
+	'bump_info'		=> 'Cogner un sujet, Svp. entrez ID du sujet',   //  Bump one thread, please enter thread ID
+	'bump_info_nonexistence'	=> 'Svp. indiquer un sujet',   //  Please specific a thread
+	'bump_succeed'		=> 'Baston du sujet avec Succ&#232;s',   //  Bump thread successfully
+	'bump_info_noperm'	=> 'D&#233;sol&#233;, cette accessoires n\'est pas autoris&#233; &#224; utiliser dans ce forum',   //  Sorry, this props is not allowed to use in this forum
 
-	'bump_notification'		=> '{actor} used a magic &quot;{magicname}&quot; for your thread &quot;{subject}&quot;, <a href="forum.php?mod=viewthread&tid={tid}">view</a>',//'你的主题 {subject} 被 {actor} 使用了{magicname}，<a href="forum.php?mod=viewthread&tid={tid}">快去看看吧！</a>',
+	'bump_notification'	=> 'Votre sujet <em>{subject}</em> a &#233;t&#233; utilis&#233; {magicname} par {actor}, <a href="forum.php?mod=viewthread&tid={tid}">voir</a>.',   //  Your thread <em>{subject}</em> was used {magicname} by {actor}, <a href="forum.php?mod=viewthread&tid={tid}">view</a>.
 );
 

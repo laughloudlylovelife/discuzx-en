@@ -9,12 +9,12 @@
 
 $lang = array
 (
-	'connect_bind_name'	=> 'Bind QQ account',//'QQ 帐号绑定任务',
-	'connect_bind_desc'	=> 'Bind your QQ account to obtain the corresponding reward',//'绑定 QQ 帐号即可获得相应的奖励',
-	'connect_bind_view'	=> '<strong>Follow the instructions to participate in the task:</strong>
+	'connect_bind_name'	=> 'Contraintes QQ t&#226;che en compte',
+	'connect_bind_desc'	=> 'Liaison compte QQ pour obtenir la r&#233;compense correspondante',
+	'connect_bind_view'	=> '<strong>Suivez les instructions pour participer &#224; la t&#226;che</strong>
 		<ul>
-		<li>1. <a href="connect.php?mod=config" target="_blank">Open the page for binding QQ account in a new window</a></li>
-		<li>2. When the new page opened, click the "Bind QQ account" button, and fill in your QQ account number and password to complete the binding</li>
+		<li>1. <a href="connect.php?mod=config" target="_blank">Ouvrir un nouveau compte tenu des pages QQ</a></li>
+		<li>2. Dans la nouvelle page qui s\'ouvre, cliquez sur "Liaison QQ compte", entrez votre num&#233;ro de compte sur le mot de passe QQ pour compl&#233;ter la liaison</li>
 		</ul>',
 );
 /*

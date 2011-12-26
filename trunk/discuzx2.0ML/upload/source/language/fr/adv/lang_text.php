@@ -9,14 +9,14 @@
 
 $lang = array
 (
-	'text_name'		=> 'Forum/Group List Adv',//'论坛/群组 格子广告',
-	'text_desc'		=> 'Display the Adv at page of forum or group with table style. In general, it is a text, also you can use small image and Flash.',//'展现方式: 页内文字广告以表格的形式，显示于论坛、群组页面的中上方，通常使用文字的形式，也可使用小图片和 Flash。当前页面有多个文字广告时，系统会以表格的形式按照设定的显示顺序全部展现，同时能够对表格列数在 3～5 的范围内动态排布，以自动实现最佳的广告排列效果。<br />价值分析: 由于此类广告通常以文字形式展现，但其所在的较靠上的页面位置，使得此类广告成为了访问者必读的内容之一。同一页面可以呈现多达十几条文字广告的特性，也决定了它是一种平民化但性价比较高的推广方式，同时还可用于论坛自身的宣传和公告之用。',
-	'text_index'		=> 'Home',//'首页',
-	'text_fids'		=> 'Target Forums',//'投放版块',
-	'text_fids_comment'	=> 'Set forums to diplay the Adv',//'设置广告投放的论坛版块，当广告投放范围中包含“论坛”时有效',
-	'text_groups'		=> 'Target Groups',//'投放群组分类',
-	'text_groups_comment'	=> 'Set the groups to show advertising. Take effect only when ads included in the scope of &quot;group&quot;.',//'设置广告投放的群组分类，当广告投放范围中包含“群组”时有效',
-	'text_category'		=> 'Target Category',//'投放频道分类',
-	'text_category_comment'	=> 'Set the category to show the Adv',//'设置广告投放的频道分类',
+	'text_name'		=> 'Portail/Forum/Groupe/R&#233;seau espaces publicitaires',
+	'text_desc'		=> 'Mode d\'affichage: de publicit&#233; texte dans une page sous forme de tableau, en montrant dans le forum, la page du Groupe dans le haut, g&#233;n&#233;ralement sous forme de texte, peut aussi utiliser de petites images et Flash La page actuelle avec plusieurs annonces textuelles, le syst&#232;me va se former. en conformit&#233; avec le formulaire de d&#233;finir l\'ordre d\'affichage de tout le spectacle, tandis que le nombre de colonnes dans la table peut &#234;tre de 3 &#224; 5 dispos&#233; dans la dynAmique, pour organiser automatiquement les meilleurs r&#233;sultats publicitaires.<br />Analyse des valeurs: Parce que ces publicit&#233;s sont souvent affich&#233;es sous forme de texte, mais plus ils d&#233;pendent de l\'emplacement de la page, ce qui rend ce type de contenu publicitaire comme la lecture des visiteurs, on peut montrer la m&#234;me page plus de dix annonces textuelles caract&#233;ristiques, mais aussi d&#233;termine qu\'il est un civil, mais rentable &#224; promouvoir un niveau &#233;lev&#233;, mais peut aussi utiliser le forum et l\'annonce de leurs fins de propagande.',
+	'text_index'		=> 'Accueil',
+	'text_fids'		=> 'Emplacement dans le forum',
+	'text_fids_comment'	=> 'Forum R&#233;glez un forum pour la publicit&#233;, quand la publicit&#233; de la gamme avec "Forum" efficaces',
+	'text_groups'		=> 'Emplacement dans le classement du Groupe',
+	'text_groups_comment'	=> 'R&#233;gler le Groupe publicitaire Class&#233;, quand la publicit&#233; de la gamme avec "Groupe" est effective',
+	'text_category'		=> 'Emplacement des canaux Class&#233;',
+	'text_category_comment'	=> 'Canal de publicit&#233; Class&#233; R&#233;glez',
 );
 

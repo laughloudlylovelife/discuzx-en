@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'hot_name'	=> 'Add Hot',//'热点灯',
-	'hot_desc'	=> 'Add hot value to your own blog',//'把自己的日志热度增加站点推荐的热点值',
-	'hot_info'	=> 'Add {num} points to your blog hot value',//'把自己的日志热度增加 {num} 个热点值',
+	'hot_name'	=> 'Carte Hot',   //  Hot card
+	'hot_desc'	=> 'Augmenter la chaleur Hot  de votre blog',   //  Increase the hot of your blog
+	'hot_info'	=> 'Augmentation de {num} hot du blog',   // Increase {num} hot of blog 
 );
 

@@ -10,96 +10,96 @@
 $lang = array
 (
 
-	'feed_blog_password'	=> '{actor} published a new password protected blog {subject}',//'{actor} 发表了新加密日志 {subject}',
-	'feed_blog_title'	=> '{actor} published a new log',//'{actor} 发表了新日志',
-	'feed_blog_body'	=> '<b>{subject}</b><br />{summary}',//'<b>{subject}</b><br />{summary}',
-	'feed_album_title'	=> '{actor} updated album',//'{actor} 更新了相册',
-	'feed_album_body'	=> '<b>{album}</b><br />Total images: {picnum}',//'<b>{album}</b><br />共 {picnum} 张图片',
-	'feed_pic_title'	=> '{actor} uploaded new image',//'{actor} 上传了新图片',
-	'feed_pic_body'		=> '{title}',
+	'feed_blog_password'	=> '{actor} a post&#233; un nouveau mot de passe au blog {subject}', // '{actor} posted a new password blog {subject}'
+	'feed_blog_title'	=> '{actor} a publi&#233; un nouveau blog', // '{actor} published a new blog'
+	'feed_blog_body'	=> '<b>{subject}</b><br />{summary}', // '<b>{subject}</b><br />{summary}'
+	'feed_album_title'	=> '{actor} a t&#233;l&#233;charg&#233; un album', // '{actor} updated album'
+	'feed_album_body'	=> '<b>{album}</b><br />Total {picnum} images', // '<b>{album}</b><br />Total {picnum} images'
+	'feed_pic_title'	=> '{actor} a t&#233;l&#233;charg&#233; de nouvelles images', // '{actor} uploaded new images'
+	'feed_pic_body'		=> '{title}', // '{title}'
 
 
 
-	'feed_poll'		=> '{actor} started new poll',//'{actor} 发起了新投票',
+	'feed_poll'		=> '{actor} a post&#233; un nouveau sondage', // '{actor} posted a new poll'
 
-	'feed_comment_space'	=> '{actor} left a message in {touser} wall',//'{actor} 在 {touser} 的留言板留了言',
-	'feed_comment_image'	=> '{actor} commented the image of {touser}',//'{actor} 评论了 {touser} 的图片',
-	'feed_comment_blog'	=> '{actor} commented the blog {blog} of {touser}',//'{actor} 评论了 {touser} 的日志 {blog}',
-	'feed_comment_poll'	=> '{actor} commented the poll {poll} of {touser}',//'{actor} 评论了 {touser} 的投票 {poll}',
-	'feed_comment_event'	=> '{actor} commented the event {event} started by {touser}',//'{actor} 在 {touser} 组织的活动 {event} 中留言了',
-	'feed_comment_share'	=> '{actor} commented the share {share} of {touser}',//'{actor} 对 {touser} 分享的 {share} 发表了评论',
+	'feed_comment_space'	=> '{actor} a laiss&#233; un commentaire &#224; {touser}\'s message conseil board', // '{actor} left a message at {touser}\'s message board'
+	'feed_comment_image'	=> '{actor} a laiss&#233; un commentaire &#224; {touser}\'s image', // '{actor} left a comment to {touser}\'s image'
+	'feed_comment_blog'	=> '{actor} a laiss&#233; un commentaire &#224; {touser}\'s blog {blog}', // '{actor} left a comment to {touser}\'s blog {blog}'
+	'feed_comment_poll'	=> '{actor} a laiss&#233; un commentaire &#224; {touser}\'s sondage {poll}', // '{actor} left a comment to {touser}\'s poll {poll}'
+	'feed_comment_event'	=> '{actor} a r&#233;pondu {touser}\'s activit&#233; {event}', // '{actor} replied {touser}\'s activity {event}'
+	'feed_comment_share'	=> '{actor} a laiss&#233; un commentaire &#224; {touser}\'s partage {share}', // '{actor} left a comment to {touser}\'s share {share}'
 
-	'feed_showcredit'	=> '{actor} presented {credit} points to {fusername} for raise in <a href="home.php?mod=space&do=top">Top list</a>',//'{actor} 赠送给 {fusername} 竞价积分 {credit} 个，帮助好友提升在<a href="home.php?mod=space&do=top" target="_blank">竞价排行榜</a>中的名次',
-	'feed_showcredit_self'	=> '{actor} spent {credit} points to raise himself in <a href="home.php?mod=space&do=top">Top list</a>',//'{actor} 增加竞价积分 {credit} 个，提升自己在<a href="home.php?mod=space&do=top" target="_blank">竞价排行榜</a>中的名次',
-	'feed_doing_title'	=> '{actor} wrote doing: {message}',//'{actor}：{message}',
-	'feed_friend_title'	=> '{actor} and {touser} become friends',//'{actor} 和 {touser} 成为了好友',
-
-
-
-	'feed_click_blog'	=> '{actor} sent a &quot;{click}&quot; to {touser} blog {subject}',//'{actor} 送了一个“{click}”给 {touser} 的日志 {subject}',
-	'feed_click_thread'	=> '{actor} sent a &quot;{click}&quot; to {touser} thread {subject}',//'{actor} 送了一个“{click}”给 {touser} 的话题 {subject}',
-	'feed_click_pic'	=> '{actor} sent a &quot;{click}&quot; to {touser} image',//'{actor} 送了一个“{click}”给 {touser} 的图片',
-	'feed_click_article'	=> '{actor} sent a &quot;{click}&quot; to {touser} article {subject}',//'{actor} 送了一个“{click}”给 {touser} 的文章 {subject}',
+	'feed_showcredit'	=> '{actor} present {credit} points d\'appel d\'offres pour {fusername}, aider des Amis a s\'&#233;lever au rang de <a href="home.php?mod=space&do=top" target="_blank">Liste Appel Offres</a>', // '{actor} present {credit} bidding points to {fusername}, help friends raised the rank of <a href="home.php?mod=space&do=top" target="_blank">Bidding List</a>'
+	'feed_showcredit_self'	=> '{actor} a ajout&#233; {credit} appel d\'offres par points, s\'&#233;l&#233;vera du rang de <a href="home.php?mod=space&do=top" target="_blank">Liste Appel Offres</a>', // '{actor} added {credit} bidding points, raised his rank of <a href="home.php?mod=space&do=top" target="_blank">Bidding List</a>'
+	'feed_doing_title'	=> '{actor}: {message}', // '{actor}: {message}'
+	'feed_friend_title'	=> '{actor} et {touser} deviennent des Amis', // '{actor} and {touser} become friends'
 
 
-	'feed_task'			=> '{actor} completed the task {task}',//'{actor} 完成了有奖任务 {task}',
-	'feed_task_credit'		=> '{actor} completed the task {task} and get bonus {credit} points',//'{actor} 完成了有奖任务 {task}，领取了 {credit} 个奖励积分',
 
-	'feed_profile_update_base'	=> '{actor} updated profile info',//'{actor} 更新了自己的基本资料',
-	'feed_profile_update_contact'	=> '{actor} updated contact info',//'{actor} 更新了自己的联系方式',
-	'feed_profile_update_edu'	=> '{actor} updated education info',//'{actor} 更新了自己的教育情况',
-	'feed_profile_update_work'	=> '{actor} updated work info',//'{actor} 更新了自己的工作信息',
-	'feed_profile_update_info'	=> '{actor} updated personal data, hobbies, etc.',//'{actor} 更新了自己的兴趣爱好等个人信息',
-	'feed_profile_update_bbs'	=> '{actor} updated personal info',//'{actor} 更新了自己的个人信息',
-	'feed_profile_update_verify'	=> '{actor} updated verified personal info',//'{actor} 更新了自己的认证信息',
-
-	'feed_add_attachsize'		=> '{actor} spent {credit} points to enlarge the upload space on {size}. Now more images may be uploaded. (<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want this too!</a>)',//'{actor} 用 {credit} 个积分兑换了 {size} 附件空间，可以上传更多的图片啦(<a href="home.php?mod=spacecp&ac=credit&op=addsize">我也来兑换</a>)',
-
-	'feed_invite'				=> '{actor} invited {username}, and they became friends',//'{actor} 发起邀请，和 {username} 成为了好友',
-
-	'magicuse_thunder_announce_title'	=> '<strong>{username} issued a &quot;Sound of Thunder&quot;</strong>',//'<strong>{username} 发出了“雷鸣之声”</strong>',
-	'magicuse_thunder_announce_body'	=> 'Hi everybody!<br /><a href="home.php?mod=space&uid={uid}">Welcome to my home page</a>',//'大家好，我上线啦<br /><a href="home.php?mod=space&uid={uid}" target="_blank">欢迎来我家串个门</a>',
+	'feed_click_blog'	=> '{actor} a envoy&#233; un "{click}" &#224; {touser}\'s blog {subject}', // '{actor} sent a "{click}" to {touser}\'s blog {subject}'
+	'feed_click_thread'	=> '{actor} a envoy&#233; un "{click}" &#224; {touser}\'s sujet {subject}', // '{actor} sent a "{click}" to {touser}\'s thread {subject}'
+	'feed_click_pic'	=> '{actor} a envoy&#233; un "{click}" &#224; {touser}\'s image', // '{actor} sent a "{click}" to {touser}\'s image'
+	'feed_click_article'	=> '{actor} a envoy&#233; un "{click}" &#224; {touser}\'s article {subject}', // '{actor} sent a "{click}" to {touser}\'s article {subject}'
 
 
-	'feed_thread_title'		=> '{actor} started new thread',//'{actor} 发表了新话题',
-	'feed_thread_message'		=> '<b>{subject}</b><br />{message}',//'<b>{subject}</b><br />{message}',
+	'feed_task'		=> '{actor} a compl&#233;t&#233; la t&#226;che {task}', // '{actor} completed task {task}'
+	'feed_task_credit'	=> '{actor} a compl&#233;t&#233; la t&#226;che {task}, pour obtenir des points {credit}', // '{actor} completed task {task}, got points {credit}'
 
-	'feed_reply_title'		=> '{actor} replied the topic {subject} of {author}',//'{actor} 回复了 {author} 的话题 {subject}',
-	'feed_reply_title_anonymous'	=> 'Anonymous replied the topic {subject} of {author}',//'{actor} 回复了话题 {subject}',
-	'feed_reply_message'		=> '',
+	'feed_profile_update_base'	=> '{actor} a mis &#224; jour le profil de base', // '{actor} updated basic profile'
+	'feed_profile_update_contact'	=> '{actor} a mis &#224; jour sa pr&#233;sence de contact', // '{actor} updated contact'
+	'feed_profile_update_edu'	=> '{actor} a mis l\'enseignement &#224; jour', // '{actor} updated education'
+	'feed_profile_update_work'	=> '{actor} a mis &#224; jour les informations de travaux effectu&#233;s', // '{actor} updated work information'
+	'feed_profile_update_info'	=> '{actor} a mis &#224; jour information personel', // '{actor} updated personal information'
+	'feed_profile_update_bbs'	=> '{actor} a mis &#224; jour l\'information du forum', // '{actor} updated forum information'
+	'feed_profile_update_verify'	=> '{actor} a mis &#224; jour et v&#233;rifier les informations', // '{actor} updated verified information'
 
-	'feed_thread_poll_title'	=> '{actor} started new poll',//'{actor} 发起了新投票',
-	'feed_thread_poll_message'	=> '<b>{subject}</b><br />{message}',//'<b>{subject}</b><br />{message}',
+	'feed_add_attachsize'		=> '{actor} a utilis&#233; des points {credit} pour &#233;changer {size} pi&#232;ces jointes de l\'espace.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want to exchange</a>)', // '{actor} used points {credit} to exchange {size} attachment space.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want to exchange</a>)'
 
-	'feed_thread_votepoll_title'	=> '{actor} voted in the poll {subject}',//'{actor} 参与了关于 {subject} 的投票',
-	'feed_thread_votepoll_message'	=> '',
+	'feed_invite'			=> '{actor} a envoy&#233; une invitation et deviennent ses Amis {username}', // '{actor} sent an invitation and become friends with {username}'
 
-	'feed_thread_goods_title'	=> '{actor} put a new product for sell',//'{actor} 出售了一个新商品',
-	'feed_thread_goods_message_1'	=> '<b>{itemname}</b><br />Price: {itemprice} per additional(???) {itemcredit} {creditunit}',//'<b>{itemname}</b><br />售价 {itemprice} 元 附加 {itemcredit}{creditunit}',
-	'feed_thread_goods_message_2'	=> '<b>{itemname}</b><br />Price: {itemprice} USD',//'<b>{itemname}</b><br />售价 {itemprice} 元',
-	'feed_thread_goods_message_3'	=> '<b>{itemname}</b><br />Price: {itemcredit} {creditunit}',//'<b>{itemname}</b><br />售价 {itemcredit}{creditunit}',
+	'magicuse_thunder_announce_title'	=> '<strong>{username} a utilis&#233; une carte de tonnerre</strong>', // '<strong>{username} used a thunder card</strong>'
+	'magicuse_thunder_announce_body'	=> 'Bonjour tout le monde, Je suis maintenant en ligne.<br /><a href="home.php?mod=space&uid={uid}" target="_blank">Bienvenue pour visiter mon Espace</a>', // 'Hello everyone, I\'m online now.<br /><a href="home.php?mod=space&uid={uid}" target="_blank">Welcome to visit my space</a>'
 
-	'feed_thread_reward_title'	=> '{actor} started a new reward thread',//'{actor} 发起了新悬赏',
-	'feed_thread_reward_message'	=> '<b>{subject}</b><br />Reward: {rewardprice} {extcredits}',//'<b>{subject}</b><br />悬赏 {rewardprice}{extcredits}',
 
-	'feed_reply_reward_title'	=> '{actor} replied the reward thread {subject}',//'{actor} 回复了关于 {subject} 的悬赏',
-	'feed_reply_reward_message'	=> '',
+	'feed_thread_title'		=> '{actor} a post&#233; un nouveau sujet', // '{actor} posted a new thread'
+	'feed_thread_message'		=> '<b>{subject}</b><br />{message}', // '<b>{subject}</b><br />{message}'
 
-	'feed_thread_activity_title'	=> '{actor} started new event',//'{actor} 发起了新活动',
-	'feed_thread_activity_message'	=> '<b>{subject}</b><br />Start time: {starttimefrom}<br />Location: {activityplace}<br />{message}',//'<b>{subject}</b><br />开始时间：{starttimefrom}<br />活动地点：{activityplace}<br />{message}',
+	'feed_reply_title'		=> '{actor} a r&#233;pondu {author}\'s sujet {subject}', // '{actor} replied {author}\'s thread {subject}'
+	'feed_reply_title_anonymous'	=> '{actor} a r&#233;pondu au {subject}', //       '{actor} replied thread {subject}'
+	'feed_reply_message'		=> '', // ''
 
-	'feed_reply_activity_title'	=> '{actor} enrolled in the activitiy: {subject}',//'{actor} 报名参加了 {subject} 的活动',
-	'feed_reply_activity_message'	=> '',
+	'feed_thread_poll_title'	=> '{actor} a post&#233; un nouveau sondage', // '{actor} posted a new poll'
+	'feed_thread_poll_message'	=> '<b>{subject}</b><br />{message}', // '<b>{subject}</b><br />{message}'
 
-	'feed_thread_debate_title'	=> '{actor} started new debate',//'{actor} 发起了新辩论',
-	'feed_thread_debate_message'	=> '<b>{subject}</b><br />Square: {affirmpoint}<br />Anti-square: {negapoint}<br />{message}',//'<b>{subject}</b><br />正方：{affirmpoint}<br />反方：{negapoint}<br />{message}',
+	'feed_thread_votepoll_title'	=> '{actor} a rejoint un sondage de {subject}', // '{actor} joined a poll about {subject}'
+	'feed_thread_votepoll_message'	=> '', // ''
 
-	'feed_thread_debatevote_title_1'	=> '{actor} marked as positively the debate {subject}',//'{actor} 以正方身份参与了关于 {subject} 的辩论',
-	'feed_thread_debatevote_title_2'	=> '{actor} marked as negatively the debate {subject}',//'{actor} 以反方身份参与了关于 {subject} 的辩论',
-	'feed_thread_debatevote_title_3'	=> '{actor} marked as neutral the debate {subject}',//'{actor} 以中立身份参与了关于 {subject} 的辩论',
-	'feed_thread_debatevote_message_1'	=> '',
-	'feed_thread_debatevote_message_2'	=> '',
-	'feed_thread_debatevote_message_3'	=> '',
+	'feed_thread_goods_title'	=> '{actor} a ajout&#233; une nouvelle marchandise', // '{actor} added a new goods'
+	'feed_thread_goods_message_1'	=> '<b>{itemname}</b><br />Prix {itemprice} USD et {itemcredit}{creditunit}', // '<b>{itemname}</b><br />Price {itemprice} USD and {itemcredit}{creditunit}'
+	'feed_thread_goods_message_2'	=> '<b>{itemname}</b><br />Prix {itemprice} USD', // 
+	'feed_thread_goods_message_3'	=> '<b>{itemname}</b><br />Prix {itemcredit}{creditunit}', // '<b>{itemname}</b><br />Price {itemcredit}{creditunit}'
+
+	'feed_thread_reward_title'	=> '{actor} a post&#233; une nouvelle r&#233;compense', // '{actor} posted a new reward'
+	'feed_thread_reward_message'	=> '<b>{subject}</b><br />R&#233;compense {rewardprice}{extcredits}', // '<b>{subject}</b><br />Reward {rewardprice}{extcredits}'
+
+	'feed_reply_reward_title'	=> '{actor} a r&#233;pondu au sujet de la r&#233;compense  {subject}', // '{actor} replied a reward about {subject}'
+	'feed_reply_reward_message'	=> '', // ''
+
+	'feed_thread_activity_title'	=> '{actor} a post&#233; une nouvelle activit&#233;', // '{actor} posted a new activity'
+	'feed_thread_activity_message'	=> '<b>{subject}</b><br />Temps: {starttimefrom}<br />Lieu: {activityplace}<br />{message}', // '<b>{subject}</b><br />Time: {starttimefrom}<br />Location: {activityplace}<br />{message}'
+
+	'feed_reply_activity_title'	=> '{actor} a rejoint l\'activit&#233; de {subject}', // '{actor} joined activity about {subject}'
+	'feed_reply_activity_message'	=> '', // ''
+
+	'feed_thread_debate_title'	=> '{actor} a post&#233; un nouveau d&#233;bat', // '{actor} posted a new debate'
+	'feed_thread_debate_message'	=> '<b>{subject}</b><br />Place: {affirmpoint}<br />Adversaire: {negapoint}<br />{message}', // '<b>{subject}</b><br />Square: {affirmpoint}<br />Opponent: {negapoint}<br />{message}'
+
+	'feed_thread_debatevote_title_1'	=> '{actor} rejoint un d&#233;bat sur {subject} comme plac&#233;', // '{actor} joined a debate about {subject} as square'
+	'feed_thread_debatevote_title_2'	=> '{actor} rejoint un d&#233;bat sur {subject} comme adversaire', // '{actor} joined a debate about {subject} as opponent'
+	'feed_thread_debatevote_title_3'	=> '{actor} rejoint un d&#233;bat sur {subject} comme neutre', // '{actor} joined a debate about {subject} as neutral'
+	'feed_thread_debatevote_message_1'	=> '', // ''
+	'feed_thread_debatevote_message_2'	=> '', // ''
+	'feed_thread_debatevote_message_3'	=> '', // ''
 
 );
 

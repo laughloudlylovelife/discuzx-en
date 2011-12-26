@@ -9,11 +9,11 @@
 
 $lang = array
 (
-	'interthread_name'		=> 'Forum/Group interthread adv',//'论坛/群组 帖间通栏广告',
-	'interthread_desc'		=> 'Display the Adv between first and second posts of a thread. In general, it is 468x60 or other size images and Flash.',//'展现方式: 帖间通栏广告显示于主题帖和第一个回帖之间，可使用 468x60 或其他尺寸图片和 Flash 的形式。<br />当前页面有多个帖间通栏广告时，系统会随机选取其中之一显示。价值分析: 由于能够将主题与回帖分开，广告尺寸大而且不影响帖子内容，因此不会招致帖子作者及访问者反感，适合在帖内进行商业宣传或品牌推广。',
-	'interthread_fids'		=> 'Target Forums',//'投放版块',
-	'interthread_fids_comment'	=> 'Set forums to diplay the Adv',//'设置广告投放的论坛版块，当广告投放范围中包含“论坛”时有效',
-	'interthread_groups'		=> 'Target Groups',//'投放群组分类',
-	'interthread_groups_comment'	=> 'Set the groups to show advertising. Take effect only when ads included in the scope of &quot;group&quot;.',//'设置广告投放的群组分类，当广告投放范围中包含“群组”时有效',
+	'interthread_name'		=> 'Forum/Groupe banni&#232;res entre postes',
+	'interthread_desc' 		=> 'Montrer le chemin: des banni&#232;res publicitaires message affich&#233; sur le sujet entre les poteaux et entre les premi&#232;res r&#233;ponses peuvent utiliser la taille 468x60 ou une autre forme d\'images et Flash <br /> Entre les annonces actuelles banni&#232;re de la page ont plus d\'un poste, le syst&#232;me va choisir au hasard. l\'un des Analyse des valeurs spectacle:. la capacit&#233; de s&#233;parer le sujet et r&#233;ponses, la publicit&#233; n\'affecte pas la taille du contenu large et , afin que les visiteurs ne conduira pas &#224; des postes offensifs et auteur pour des postes au sein de la publicit&#233; commerciale ou de promotion de la marque.',
+	'interthread_fids'		=> 'Emplacement dans le forum',
+	'interthread_fids_comment'	=> 'Forum ensemble un forum pour la publicit&#233;, quand la publicit&#233; de la gamme avec "Forum" efficaces',
+	'interthread_groups'		=> 'Emplacement dans le classement du groupe',
+	'interthread_groups_comment'	=> 'R&#233;gler le Groupe publicitaire annonce, quand la publicit&#233; de la gamme avec "Groupe" est effective',
 );
 

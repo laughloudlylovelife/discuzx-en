@@ -9,10 +9,10 @@
 
 $lang = array
 (
-	'announcement_type'		=> 'Announce type',//'公告类型',
-	'announcement_type_text'	=> 'Announce text',//'文字公告',
-	'announcement_type_link'	=> 'Link',//'网站链接',
-	'announcement_titlelength'	=> 'Title length',//'标题长度',
-	'announcement_summarylength'	=> 'Content length',//'内容长度',
-	'announcement_startrow'		=> 'Start row',//'起始位置',
+	'announcement_type'		=> 'Type de l\'Avis',  //  '公告类型'
+	'announcement_type_text'	=> 'Avis &#233;crit',  //  '文字公告'
+	'announcement_type_link'	=> 'Lien Web',  //  '网站链接'
+	'announcement_titlelength'	=> 'Long. Titre',  //  '标题长度'
+	'announcement_summarylength'	=> 'Long. Contenu',  // '内容长度'  
+	'announcement_startrow'		=> 'Position D&#233;part',  // '起始位置' 
 );

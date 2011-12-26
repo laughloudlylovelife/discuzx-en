@@ -9,15 +9,15 @@
 
 $lang = array
 (
-	'doinglist_uids'		=> 'User ID',//'用户UID',
-	'doinglist_uids_comment'	=> 'Set the user you want to display, use "," to seperate UIDs',//'填入指定用户的ID(uid)，多个用户之间用逗号(,)分隔',
-	'doinglist_startrow'		=> 'Start Row',//'起始数据行数',
-	'doinglist_startrow_comment'	=> 'If you need to set start row, please enter a number, 0 is the first row',//'如需设定起始的数据行数，请输入具体数值，0 为从第一行开始，以此类推',
-	'doinglist_titlelength'		=> 'Title length',//'记录长度',
-	'doinglist_titlelength_comment'	=> 'Set Max length of title',//'指定记录的最大长度',
-	'doinglist_orderby'		=> 'Order by',//'动态排序方式',
-	'doinglist_orderby_comment'	=> 'Set the order of twit feeds',//'设置以哪一字段或方式对动态进行排序',
-	'doinglist_orderby_dateline'	=> 'Post time',//'按发布时间倒序',
-	'doinglist_orderby_replynum'	=> 'Replies',//'按回复数倒序'
+	'doinglist_uids'		=> 'UID Utilisateur',  //  '用户UID'
+	'doinglist_uids_comment'	=> 'Remplissez l\'ID Utilisateur sp&#233;cifi&#233; (UID), les Utilisateurs multiples avec une virgule (,) pour s&#233;parer',  //  '填入指定用户的ID(uid), 多个用户之间用逗号(,)分隔'
+	'doinglist_startrow'		=> 'Nbres. initiaux de lignes de Donn&#233;es',  //  '起始数据行数'
+	'doinglist_startrow_comment'	=> 'Pour la prise initiale de lignes de donn&#233;es, entrez la valeur 0 particuli&#232;res de la premi&#232;re ligne et ainsi de suite',  //  '如需设定起始的数据行数, 请输入具体数值, 0 为从第一行开始, 以此类推'
+	'doinglist_titlelength'		=> 'Longueur Enregist.',  //  '记录长度'
+	'doinglist_titlelength_comment'	=> 'Sp&#233;cifiez la dur&#233;e Max. d\'enreg. est fix&#233; &#224; 0 pour soutenir les &#233;motic&#244;nes',  //  '指定记录的最大长度, 设置为0则支持表情图片'
+	'doinglist_orderby'		=> 'Genre dynamique trier',  //  '动态排序方式'
+	'doinglist_orderby_comment'	=> 'Param&#232;tres pour lesquels le champ ou moyen de trier des dynamiques',  //  '设置以哪一字段或方式对动态进行排序'
+	'doinglist_orderby_dateline'	=> 'Publi&#233; par inversion',  //  '按发布时间倒序'
+	'doinglist_orderby_replynum'	=> 'En r&#233;ponses DESC'  // '按回复数倒序'
 );
 

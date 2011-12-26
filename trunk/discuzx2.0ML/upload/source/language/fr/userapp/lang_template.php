@@ -10,41 +10,41 @@
  */
 
 $lang = array (
-	'no_maxthon2_message'	=> 'This page is temporarily support only 2 browsers, please use IE or Firefox. Sorry for this inconvenience.',//'本页面暂时不支持遨游2浏览器, 请你使用IE或Firefox, 我们对由此给你带来的不便深表歉意',
-	'page_loading'		=> 'Loading...',//'页面加载中...',
-	'add_app'		=> 'Add New Application',//'添加新应用',
-	'app_index'		=> 'Application Home',//'应用首页',
-	'boy_like'		=> 'Boy love',//'男孩喜欢',
-	'girl_like'		=> 'Girl love',//'女孩喜欢',
-	'just_look_dynamic'	=> 'Just look at these feeds',//'只看此类动态',
-	'latest_release'	=> 'Latest releases',//'最新发布',
-	'no_feed'		=> 'No related feeds.',//'还没有相关动态',
-	'own'			=> 'I play',//'我在玩的',
-	'popular_app'		=> 'Most popular applications',//'最流行应用',
-	'today_active_app'	=> 'Active today applications',//'今日活跃应用',
-	'what_everybody_playing'	=> 'What everybody playing',//'大家在玩什么',
-	'what_friend_playing'		=> 'What friends are playing',//'好友在玩什么',
-	'all'				=> 'All',//'全部',
-	'app_add'			=> 'Add application',//'添加应用',
-	'app_management'	=> 'Manage application',//'管理应用',
-	'close'			=> 'Close',//'关闭',
-	'default_app'		=> 'Default Applications',//'默认应用',
-	'determine'		=> 'Ok',//'确定',
-	'edit_settings'		=> 'Settings',//'编辑设置',
-	'introduction'		=> 'Introduction',//'介绍',
-	'left_menu_view_num'	=> 'Left menu shows the number of personal applications',//'左侧菜单显示个性应用的数量',
-	'my'			=> 'My',//'我的',
-	'remove'		=> 'Remove',//'移除',
-	'remove_app'		=> 'Remove Application',//'移除应用',
-	'remove_app_message'	=> 'After removed, the application will not displayed at your personal page, the start menu, and manage my applications.<br/>To display this application later, you have to add it again.<br>Sure to continue?',//'移除后，你的个人主页、开始菜单、管理我的应用<br/>将不会显示此应用，你以后需要重新添加才能使用。<br>确定继续吗？',
-	'save_settings'		=> 'Save',//'保存设置',
-	'use_assistant'		=> 'Use Assistant',//'使用助手',
-	'user_assistant_message'	=> '<ol><li>You can reorder your applications by <img src="{IMGDIR}/drag.gif" /> drag and drop;</li>
-					<li>The more the application is above, the more forward it will be displayed in the menu;</li>
-					<li>You can manage added by you application, you can set permissions for an application or remove it;</li>
-					<li>If you want to manage your space, blogs, photo albums and other privacy, please go to your profile for privacy settings;</li>
-					<li>If the application is set as default, it will associated only with the removal, but still will be displayed after removal at the right side of your menu.</li></ol>',
-	'open'			=> 'Open',//'展开',
+  'no_maxthon2_message'	=> 'Votre navigateur ne supporte pas, Svp. utiliser IE ou Firefox',
+  'page_loading'	=> 'Chargement ....',
+  'add_app'		=> 'Savoir plus $_G[setting][navs][5][navname]',
+  'app_index'		=> 'Applications',
+  'boy_like'		=> 'Aimez Jx. de Garcons',
+  'girl_like'		=> 'Aimez Jx. de Filles',
+  'just_look_dynamic'	=> 'Il suffit de regarder ici',
+  'latest_release'	=> 'Plus r&#233;cents',
+  'no_feed'		=> 'Pas de News, liaisons',
+  'own'			=> 'Je joue',
+  'popular_app'		=> 'Populaire $_G[setting][navs][5][navname]',
+  'today_active_app'	=> 'Aujourdhui $_G[setting][navs][5][navname]',
+  'what_everybody_playing'	=> 'Ce que nous jouons',
+  'what_friend_playing'	=> 'Ce que vos Amis jouent',
+  'all'			=> 'Tous',
+  'app_add'		=> 'Savoir plus $_G[setting][navs][5][navname]',
+  'app_management'	=> 'La gestion $_G[setting][navs][5][navname]',
+  'close'		=> 'Fermer',
+  'default_app'		=> 'Valeur par D&#233;faut $_G[setting][navs][5][navname]',
+  'determine'		=> 'OK',
+  'edit_settings'	=> 'Installation',
+  'introduction'	=> 'A propos de la Pr&#233;sentation',
+  'left_menu_view_num'	=> 'Menu de gauche $_G[setting][navs][5][navname] No.',
+  'my'			=> 'J\'ai',
+  'remove'		=> 'Retirer',
+  'remove_app'		=> 'Suppression $_G[setting][navs][5][navname]',
+  'remove_app_message'	=> 'Pour supprimer vos applications de gestion du site<br/>Cette application ne sera pas afficher, vous pouvez ajouter et de r&#233;utiliser.<br>Assurez-vous de continuer?',
+  'save_settings'	=> 'Enregistrez Param&#232;tres',
+  'use_assistant'	=> 'Utilisation des aides',
+  'user_assistant_message'	=> '<ol><li>Vous &#234;tes libre de glisser-d&#233;poser <img src="{IMGDIR}/drag.gif" /> application du maillon de la cha&#238;ne</li>
+					<li>Les applications sont affich&#233;s dans plusieurs front suppl&#233;mentaires</li>
+					<li>Vous pouvez g&#233;rer vos applications qui ont &#233;t&#233; ajout&#233;s, vous pouvez ajouter ou supprimer des applications</li>
+					<li>Si vous souhaitez g&#233;rer votre espace, agendas, albums photo et la vie priv&#233;e des autres, Svp. aller aux param&#232;tres de s&#233;curit&#233; de votre espace</li>
+					<li>Ne peut d&#233;finir l\'application par d&#233;faut associ&#233;e &#224; l\'&#233;limination, mais restent visibles apr&#232;s le retrait du droit de votre menu.</li></ol>',
+  'open'	=> 'D&#233;velopper',// Open
 );
 
 ?>

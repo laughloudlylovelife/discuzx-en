@@ -10,36 +10,36 @@
 $lang = array
 (
 
-	'feed_sync_success'		=> 'Feed Synchronized successfully',//'同步发 Feed 成功',
-	'deletethread_sync_success'	=> 'Delete thread synchronized successfully',//'删除主题同步成功',
-	'deletethread_sync_failed'	=> 'Delete thread synchronization failed',//'删除主题同步失败',
-	'server_busy'			=> 'Sorry, there are network problems or server busy for now, please try again later. Thank you.',//'抱歉，当前存在网络问题或服务器繁忙，请您稍候再试。谢谢。',
-	'share_success'			=> 'Shared successfully',//'分享成功',
-	'broadcast_success'		=> 'Broadcasted successfully',//'转播成功',
+	'feed_sync_success'		=> 'Flux synchronisation r&#233;ussie', // 'Feed successful synchronization'
+	'deletethread_sync_success'	=> 'Effacer Rubrique de la synchronisation avec Succ&#232;s ', // 'Delete topic successful synchronization'
+	'deletethread_sync_failed'	=> 'La synchronisation a &#233;chou&#233; le sujet Effacer', // 'Delete topic synchronization failed'
+	'server_busy'			=> 'D&#233;sol&#233;, Il existe actuellement des probl&#232;mes de r&#233;seau ou de serveur occup&#233;, Svp. essayer &#224; nouveau plus tard. ', // 'Sorry, currently there are network problems or server busy, please try again later. '
+	'share_success'			=> 'Partage en cours avec Succ&#232;s', // 'Sharing success'
+	'broadcast_success'		=> 'Diffusion r&#233;ussie', // Successful broadcast
 
-	'qzone_title'			=> 'Title',//'标题',
-	'qzone_reason'			=> 'Reason',//'理由',
-	'qzone_picture'			=> 'Image',//'图片',
-	'qzone_shareto'			=> 'Share to QQ space',//'分享到QQ空间',
-	'qzone_to_friend'		=> 'Share to friends',//'分享给好友',
-	'qzone_reason_default'		=> 'You can enter the reason or details to share',//'可以在这里输入分享原因或详细内容',
-	'qzone_subject_is_empty'	=> 'The Sharing title can not be empty',//'分享标题不能为空',
-	'qzone_subject_is_long'		=> 'The Sharing title exceeds the length limit',//'分享标题超过了长度限制',
-	'qzone_reason_is_long'		=> 'The Sharing reason exceeds the length limit',//'分享理由超过了长度限制',
+	'qzone_title'			=> 'Titre', // 'Title'
+	'qzone_reason'			=> 'Raison', // 'Reason'
+	'qzone_picture'			=> 'Images', // 'Pictures'
+	'qzone_shareto'			=> 'QQ espace de partage', // 'QQ space to share'
+	'qzone_to_friend'		=> 'Partagez avec vos Amis', // 'Share with friends'
+	'qzone_reason_default'		=> 'Pouvez saisir les d&#233;tails de la raison ou &#224; partager', // 'Can enter the reason or details to share'
+	'qzone_subject_is_empty'	=> 'Le titre ne peut pas &#234;tre vide', // 'The title can not be empty'
+	'qzone_subject_is_long'		=> 'Le titre d&#233;passe la limite en longueur', // 'The title over the length limit'
+	'qzone_reason_is_long'		=> 'La raison d&#233;passe la limite en longueur', // 'The reason more than the length limit'
 
-	'weibo_title'			=> 'To share my microblogging, by the way say something',//'分享到我的微博，顺便说点什么吧',
-	'weibo_input'			=> 'You can enter <strong id=checklen></strong> characters',//'还能输入<strong id=checklen></strong>字',
-	'weibo_select_picture'		=> 'Please choose an image to share',//'请选择分享图片',
-	'weibo_share'			=> 'Share',//'转播',
-	'weibo_share_to'		=> 'Share to Tencent microblogging',//'转播到腾讯微博',
-	'weibo_reason_is_long'		=> 'Microblogging content exceeds the length limit',//'微博内容超过了长度限制',
-	'weibo_account_not_signup'	=> 'Sorry, you have not open your microblogging account, can not share the content, <a href=http://t.qq.com/reg/index.php target=_blank>Click here to open now</a>.',//'抱歉，您还未开通微博账号，无法分享内容，<a href=http://t.qq.com/reg/index.php target=_blank>点击这里马上开通</a>。',
-	'user_unauthorized'		=> 'Sorry, you are not authorized to share the space post to the QQ, Tencent, Tencent microblog and friends.',//'抱歉，您未授权分享主题到QQ空间、腾讯微博和腾讯朋友。',
+	'weibo_title'			=> 'Pour partager mon microblog, par la mani&#232;re Dites quelque chose', // 'To share my microblogging, by the way Say something'
+	'weibo_input'			=> 'Peut entrer dans le  <strong id=checklen></strong> mot', // 'Can enter the  <strong id=checklen></strong> word'
+	'weibo_select_picture'		=> 'Svp. choisissez de partager des photos', // 'Please choose to share pictures'
+	'weibo_share'			=> 'Partage', // Share
+	'weibo_share_to'		=> 'Tencent pour diffusions microblogging', // 'Tencent broadcasts to microblogging'
+	'weibo_reason_is_long'		=> 'Blog micro contenu sup&#233;rieures &#224; la limite en longueur', // 'Microblogging content exceeds the length limit'
+	'weibo_account_not_signup'	=> 'D&#233;sol&#233;, vous ne pouvez pas ouvrir Blog micro, ne peut pas partager le contenu <a href=http://t.qq.com/reg/index.php target=_blank>Cliquez ici pour ouvrir imm&#233;diatement</a>.', // 'Sorry,your can not open microblogging,can not share content <a href=http://t.qq.com/reg/index.php target=_blank>Click here to immediately open</a>.'
+	'user_unauthorized'		=> 'D&#233;sol&#233;, vous n\'&#234;tes pas autoris&#233; &#224; partager le th&#232;me de cette Espace pour le QQ, Tencent, Tencent micro-Bo et ses Amis.', // 'Sorry, you are not authorized to share the space theme to the QQ, Tencent, Tencent micro-Bo and friends.'
 
-	'connect_errlog_server_no_response'		=> 'Server not responding',//'服务器无响应',
-	'connect_errlog_access_token_incomplete'	=> 'Interface AccessToken returned incomplete data',//'接口返回的AccessToken数据不完整',
-	'connect_errlog_request_token_not_authorized'	=> 'User TmpToken is unauthorized or return incomplete data',//'用户TmpToken未授权或返回的数据不完整',
-	'connect_errlog_sig_incorrect'			=> 'URL signature incorrect',//'URL签名不正确',
+	'connect_errlog_server_no_response'		=> 'Serveur n\'a pas r&#233;pondu', // 'Server did not respond'
+	'connect_errlog_access_token_incomplete'	=> 'L\'insuffisance des donn&#233;es jeton d\'Acc&#232;s', // 'Incomplete Access Token data'
+	'connect_errlog_request_token_not_authorized'	=> 'Jeton Utilisateurs non autoris&#233;s ou retourner sur des donn&#233;es incompl&#232;tes', // 'Token unauthorized users or return incomplete data'
+	'connect_errlog_sig_incorrect'			=> 'Signature URL n\'est pas correcte', // 'URL Signature is not correct'
 );
 
 ?>

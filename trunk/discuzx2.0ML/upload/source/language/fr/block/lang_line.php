@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'line_style'		=> 'Dotted Line',//'分割线样式',
-	'line_style_line'	=> 'Solid Line',//'实线',
-	'line_style_dash'	=> 'Dashed Line',//'虚线',
+	'line_style'		=> 'Ligne S&#233;par&#233;e',  //  '分割线样式'
+	'line_style_line'	=> 'Ligne Continue',  //  '实线'
+	'line_style_dash'	=> 'Pointill&#233;',  //  '虚线'
 );

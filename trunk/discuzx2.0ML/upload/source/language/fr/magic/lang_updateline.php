@@ -9,8 +9,8 @@
 
 $lang = array
 (
-	'updateline_name'	=> 'Change Update Time',//'救生圈',
-	'updateline_desc'	=> 'Change the post update time to the current time',//'把自己日志的发布时间更新为当前时间',
-	'updateline_info'	=> 'Change the post update time to the current time',//'把自己日志的发布时间更新为当前时间',
+	'updateline_name'	=> 'Carte Bou&#233;e',   // Buoy card 
+	'updateline_desc'	=> 'Mise &#224; jour du post temps de votre blog au moment actuel',   // Update post time of your blog to current time 
+	'updateline_info'	=> 'Mise &#224; jour du post temps de votre blog au moment actuel',   // Update post time of your blog to current time
 );
 
