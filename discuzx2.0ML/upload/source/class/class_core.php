@@ -1020,6 +1020,12 @@ class db_mysql
 class DB
 {
 
+//-----------------------------------------------
+//vot Escape string before write to Database
+function escape_str($string = '' /*, $db=false*/) {
+  return mysql_real_escape_string($string /*, $db*/);
+}
+
 	function table($table) {
 		return DB::_execute('table_name', $table);
 	}
