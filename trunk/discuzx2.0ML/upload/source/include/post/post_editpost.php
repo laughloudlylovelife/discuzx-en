@@ -622,7 +622,7 @@ if(!submitcheck('editsubmit')) {
                                             readperm='$readperm', price='$price' $closedadd $authoradd $polladd $replycreditadd".($_G['forum_auditstatuson'] && $audit == 1 ? ",displayorder='0', moderated='1'" : ",displayorder='$displayorder'").", status='$thread[status]' WHERE tid='$_G[tid]'", 'UNBUFFERED');
 //vot escape_str added
 			$_G['tid'] > 1 && DB::query("UPDATE ".DB::table('forum_thread')."
-                                           SET subject='".DB::escape_str($subject)".'
+                                           SET subject='".DB::escape_str($subject)."'
                                            WHERE closed='$_G[tid]'", 'UNBUFFERED');
 
 			$tagstr = modthreadtag($_G['gp_tags'], $_G[tid]);
