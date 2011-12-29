@@ -807,13 +807,17 @@ if(!submitcheck('editsubmit')) {
 
 		$message = preg_replace('/\[attachimg\](\d+)\[\/attachimg\]/is', '[attach]\1[/attach]', $message);
 		$parseurloff = !empty($_G['gp_parseurloff']);
+//vot escape_str added
 		DB::query("UPDATE ".DB::table($posttable)." SET message='$message', usesig='$_G[gp_usesig]', htmlon='$htmlon', bbcodeoff='$bbcodeoff', parseurloff='$parseurloff',
-			smileyoff='$smileyoff', subject='$subject' $anonymousadd ".($_G['forum_auditstatuson'] && $audit == 1 ? ",invisible='0'" : ", invisible='$pinvisible'")." , tags='".$tagstr."'  WHERE pid='$pid'");
+			smileyoff='$smileyoff',
+                        subject='".DB::escape_str($subject)."'
+                        $anonymousadd ".($_G['forum_auditstatuson'] && $audit == 1 ? ",invisible='0'" : ", invisible='$pinvisible'")." , tags='".$tagstr."'  WHERE pid='$pid'");
 
 		$_G['forum']['lastpost'] = explode("\t", $_G['forum']['lastpost']);
 
 		if($orig['dateline'] == $_G['forum']['lastpost'][2] && ($orig['author'] == $_G['forum']['lastpost'][3] || ($_G['forum']['lastpost'][3] == '' && $orig['anonymous']))) {
-			$lastpost = "$_G[tid]\t".($isfirstpost ? $subject : addslashes($thread['subject']))."\t$orig[dateline]\t".($isanonymous ? '' : addslashes($orig['author']));
+//vot escape_str added
+			$lastpost = "$_G[tid]\t".($isfirstpost ? DB::escape_str($subject) : DB::escape_str($thread['subject']))."\t$orig[dateline]\t".($isanonymous ? '' : addslashes($orig['author']));
 			DB::query("UPDATE ".DB::table('forum_forum')." SET lastpost='$lastpost' WHERE fid='$_G[fid]'", 'UNBUFFERED');
 		}
 
