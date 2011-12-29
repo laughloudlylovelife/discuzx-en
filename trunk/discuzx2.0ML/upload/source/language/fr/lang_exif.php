@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *       Traduit par Andre13 et Bertrand online Website on Discuz-fr.fr - 27-déc.2011
  *		$Id: lang_exif.php by Valery Votintsev at sources.ru
  */
 

@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *      Traduit par Andre13 : discuz-fr.fr 27-déc-2011
  *      $Id: lang_core.php by Valery Votintsev at sources.ru
  */
 
@@ -38,10 +38,10 @@ $lang = array
 	'portal'	=> 'Portail', // Portal
 	'end'		=> 'Fin', // End
 
-	'seccode_image_tips'		=> 'Svp. entrer les mots<br />',  
-	'seccode_image_ani_tips'	=> 'Svp. entrez le nombre maximum<br />', 
-	'seccode_sound_tips'		=> 'Svp. entrer les mots que vous avez entendu ou vu<br />',  
-	'secqaa_tips'			=> 'svp. entrez la r&#233;ponse de la question<br />', 
+	'seccode_image_tips'		=> 'Svp.Entrez les mots<br />',  
+	'seccode_image_ani_tips'	=> 'Svp.Entrez le nombre maximum<br />', 
+	'seccode_sound_tips'		=> 'Svp.Entrez les mots que vous avez entendu ou vu<br />',  
+	'secqaa_tips'			=> 'Svp.Entrez la r&#233;ponse de la question<br />', 
 
 	'fullblankspace'	=> '&nbsp;',//'　',
 
@@ -55,23 +55,23 @@ $lang = array
 	'title_newest_activity'	=> 'Derni&#232;res Activit&#233;s', // 'Latest activities'
 	'title_top_activity'	=> 'Hot Activit&#233;s', // 'Hot activities'
 	'title_album'		=> 'Album', // Album
-	'title_friend_album'	=> 'Amis\' album', // 'Friends\' alubm'
-	'title_my_album'	=> 'Mon album', // 'My album'
+	'title_friend_album'	=> 'Amis\' Album', // 'Friends\' alubm'
+	'title_my_album'	=> 'Mon Album', // 'My album'
 	'title_newest_update_album'	=> 'Derniers albums mis &#224; jour', // 'Latest updated albums'
-	'title_hot_pic_recommend'	=> 'Recommand&#233; images', // 'Recommended images'
-	'title_blog'		=> 'Blog', // Blog
-	'title_friend_blog'	=> 'Amis\' blogs', // 'Friends\' blogs'
-	'title_my_blog'		=> 'Mon blog', // 'My blog'
-	'title_post_new_blog'	=> 'Post un nouveau blog', // 'Post new blog'
-	'title_newest_blog'	=> 'Dernier blogs', // 'Latest blogs'
-	'title_recommend_blog'	=> 'Recommand&#233; blogs', // 'Recommended blogs'
-	'title_debate'		=> 'D&#233;bat', // Debate
-	'title_friend_debate'	=> 'Amis\' d&#233;bats', // 'Friends\' debates'
-	'title_my_debate'	=> 'Mes d&#233;bats', // 'My debates'
-	'title_create_new_debate'	=> 'Post nouveau d&#233;bats', // 'Post new debates'
+	'title_hot_pic_recommend'	=> 'Recommand&#233; Images', // 'Recommended images'
+	'title_blog'			=> 'Blog', // Blog
+	'title_friend_blog'		=> 'Amis\' Blogs', // 'Friends\' blogs'
+	'title_my_blog'			=> 'Mon Blog', // 'My blog'
+	'title_post_new_blog'		=> 'Post un New Blog', // 'Post new blog'
+	'title_newest_blog'		=> 'Dernier Blogs', // 'Latest blogs'
+	'title_recommend_blog'		=> 'Recommand&#233; blogs', // 'Recommended blogs'
+	'title_debate'			=> 'D&#233;bats', // Debate
+	'title_friend_debate'		=> 'Amis\' D&#233;bats', // 'Friends\' debates'
+	'title_my_debate'		=> 'Mes D&#233;bats', // 'My debates'
+	'title_create_new_debate'	=> 'Post New D&#233;bats', // 'Post new debates'
 	'title_my_create_debate'	=> 'j\ai cr&#233;&#233; un d&#233;bat', // 'I created debates'
 	'title_my_join_debate'	=> 'Rejoint un d&#233;bat', // 'Joined debates'
-	'title_newest_debate'	=> 'Dernier d&#233;bats', // 'Latest debates'
+	'title_newest_debate'	=> 'Dernier D&#233;bats', // 'Latest debates'
 	'title_top_debate'	=> 'Hot d&#233;bats', // 'Hot debates'
 	'title_doing'		=> 'Agiss.', // Doing
 	'title_newest_doing'	=> 'Agiss.', // Doing
@@ -90,12 +90,12 @@ $lang = array
 	'title_we_poll'		=> 'Amis sondages', // 'Friends\' polls'
 	'title_me_poll'		=> 'Mes sondages', // 'My polls'
 	'title_hot_poll'	=> 'Hot sondages', // 'Hot polls'
-	'title_dateline_poll'	=> 'Dernier sondages', // 'Latest polls'
-	'title_all_reward'	=> 'Tout les prix', // 'All rewards'
-	'title_we_reward'	=> 'Amis\' r&#233;comp.', // 'Friends\' rewards'
-	'title_me_reward'	=> 'Mes r&#233;comp.', // 'My rewards'
+	'title_dateline_poll'	=> 'Dernier Sondages', // 'Latest polls'
+	'title_all_reward'	=> 'Tout les Prix', // 'All rewards'
+	'title_we_reward'	=> 'Amis\' Px.R&#233;comp.', // 'Friends\' rewards'
+	'title_me_reward'	=> 'Mes Prix', // 'My rewards'
 	'title_hot_reward'	=> 'Hot r&#233;comp.', // 'Hot rewards'
-	'title_dateline_reward'	=> 'Derni&#232;re r&#233;comp.', // 'Latest rewards'
+	'title_dateline_reward'	=> 'Derni&#232;r Prix', // 'Latest rewards'
 	'title_share_all'	=> 'Tout', // All
 	'title_share_link'	=> 'Site Web', // Website
 	'title_share_video'	=> 'Vid&#233;o', // Video
@@ -112,10 +112,10 @@ $lang = array
 	'title_share'		=> 'Partage', // Share
 	'title_thread'		=> 'Sujet', // Thread
 	'title_all_thread'	=> 'Tout Sujets', // 'All threads'
-	'title_we_thread'	=> 'Amis\' sujets', // 'Friends\' threads'
-	'title_me_thread'	=> 'Mes sujets', // My threads
-	'title_hot_thread'	=> 'Hot sujets', // Hot threads
-	'title_dateline_thread'	=> 'Dernier sujets', // Latest threads
+	'title_we_thread'	=> 'Amis\' Sujets', // 'Friends\' threads'
+	'title_me_thread'	=> 'Mes Sujets', // My threads
+	'title_hot_thread'	=> 'Hot Sujets', // Hot threads
+	'title_dateline_thread'	=> 'Dernier Sujets', // Latest threads
 	'title_trade'		=> 'Commerces', // Trade
 	'title_all_trade'	=> 'Tout les commerces', // All trades
 	'title_we_trade'	=> 'Amis\' commercants', // Friends\' trades
@@ -125,7 +125,7 @@ $lang = array
 	'title_tradelog_trade'	=> 'Journaux du Commerce', // Trade logs
 	'title_eccredit_trade'	=> 'Cotes Cr&#233;dit', // Credit rating
 	'title_credit'		=> 'Points', // Points
-	'title_friend_add'	=> 'Ajout. Amis', // Add friends
+	'title_friend_add'	=> 'Ajout.Amis', // Add friends
 	'title_people_might_know'	=> 'Vous savez peut-&#234;tre', // You may know
 	'title_friend_request'		=> 'Amis demande', // Friends request
 	'title_search_friend'		=> 'Rech. Amis', // Search friends
@@ -139,8 +139,8 @@ $lang = array
 	'title_edit_post'	=> 'Modif. sujets', // Edit threads
 	'title_newtrade_post'	=> 'Posts M&#233;tiers', // Post trades
 	'title_magics_shop'	=> 'Accessoires Magasin', // Props shop
-	'title_magics_hot'	=> 'Hot accessoires', // Hot props
-	'title_magics_user'	=> 'Mes accessoires', // My props
+	'title_magics_hot'	=> 'Accessoires Hot', // Hot props
+	'title_magics_user'	=> 'Mes Accessoires', // My props
 	'title_magics_log'	=> 'Accessoires Journaux', // Props logs
 	'title_medals_list'	=> 'M&#233;dailles', // Medals
 	'title_setup'		=> 'Param&#232;tres', // Setting
@@ -175,7 +175,7 @@ $lang = array
 	'title_ranklist_index'		=> 'Tout les Rangs', // All rankings
 //	'title_ranklist_index'		=> 'liste Rang', // Ranking list
 	'title_search'			=> 'Recherche ', // 'Search '
-	'title_topic_management'	=> 'Gestion topics', // Create topics
+	'title_topic_management'	=> 'Gestion Topics', // Create topics
 	'title_portal_management'	=> 'Gestion portail', // Manage portal
 	'title_portalblock_management'	=> 'Gestion modules', // Manage modules
 	'title_block_management'	=> 'Gestion modules', // Manage modules
@@ -203,15 +203,15 @@ $lang = array
 	'search'			=> 'Recherche', // 'Search'
 	'page'				=> 'Premi&#232;re page{page}', // 'First page{page}'
 //vot source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> 'Refresh frequency limit',
-	'attackevasive_1_message'	=> 'You visit the site too fast, less than two seconds! Please wait a little...',
-	'attackevasive_2_subject'	=> 'Access throug proxy servers is restricted',
-	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
-	'attackevasive_4_subject'	=> 'Open the page reload',
-	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
+	'attackevasive_1_subject'	=> 'Limite de fr&#233;quence de rafra&#238;chissement', // 'Limite de fr&#233;quence de rafra&#238;chissement'
+	'attackevasive_1_message'	=> 'Vous visitez le site trop rapidement, moins de deux secondes! Svp. patienter encore un peu...', // 'You visit the site too fast, less than two seconds! Please wait a little...'
+	'attackevasive_2_subject'	=> 'Acc&#232;s via des serveurs proxy est limit&#233;e', // 'Access throug proxy servers is restricted'
+	'attackevasive_2_message'	=> 'L\'accès au site via un serveur proxy est restreinte pour tondre. Svp. supprimer vos paramètres de configuration de proxy, et l\'accès au site directement.', // 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.'
+	'attackevasive_4_subject'	=> 'Ouvrir le rechargement de la page', // 'Open the page reload'
+	'attackevasive_4_message'	=> 'Bienvenue sur le site, la page est en rechargement, Svp. attendre ...', // 'Welcome to the site, the page is re-loading, please wait ...'
 
 //vot Months Names
-	'month_name'	=> array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
+	'month_name'	=> array('Mois','Janvier','F&#233;vrier','Mars','Avril','Mai','Juin','Juillet','Ao&#251;t','Septembre','Octobre','Novembre','D&#233;cembre'), // array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
 
 );
 

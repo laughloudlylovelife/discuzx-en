@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *       Traduit par Andre13 sur discuz-fr.fr 27-12-2011
  *      $Id: lang_feed.php by Valery Votintsev at sources.ru
  */
 
@@ -53,7 +53,7 @@ $lang = array
 	'feed_profile_update_bbs'	=> '{actor} a mis &#224; jour l\'information du forum', // '{actor} updated forum information'
 	'feed_profile_update_verify'	=> '{actor} a mis &#224; jour et v&#233;rifier les informations', // '{actor} updated verified information'
 
-	'feed_add_attachsize'		=> '{actor} a utilis&#233; des points {credit} pour &#233;changer {size} pi&#232;ces jointes de l\'espace.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want to exchange</a>)', // '{actor} used points {credit} to exchange {size} attachment space.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want to exchange</a>)'
+	'feed_add_attachsize'		=> '{actor} a utilis&#233; des points {credit} pour &#233;changer {size} pi&#232;ces jointes de l\'espace.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">Je tiens &#224; &#233;changer</a>)', // '{actor} used points {credit} to exchange {size} attachment space.(<a href="home.php?mod=spacecp&ac=credit&op=addsize">I want to exchange</a>)'
 
 	'feed_invite'			=> '{actor} a envoy&#233; une invitation et deviennent ses Amis {username}', // '{actor} sent an invitation and become friends with {username}'
 

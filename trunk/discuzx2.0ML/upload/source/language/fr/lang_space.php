@@ -98,35 +98,35 @@ $lang = array(
 	'block4'		=> 'Personnaliser Module 4', //  Customize Moule 4 
 	'block5'		=> 'Personnaliser Module 5', //  Customize Moule 5  
 	'blockdata'		=> array(
-		'personalinfo'	=> 'Personal Info',//'个人资料',
-		'profile'	=> 'Profile',
-		'doing'		=> 'Doing',
-		'feed'		=> 'Feed',
-		'blog'		=> 'Blog',
-		'stickblog'	=> 'Top blogs',//'置顶日志',
-		'album'		=> 'Album',
-		'friend'	=> 'Friend',
-		'visitor'	=> 'Guest',
-		'wall'		=> 'Message board',
-		'share'		=> 'Share',
-		'thread'	=> 'Thread',
+		'personalinfo'	=> 'Infos Perso.',// 'Personal Info'
+		'profile'	=> 'Profil', // 'Profile'
+		'doing'		=> 'Agiss.', // 'Doing'
+		'feed'		=> 'Flux rss', // 'Feed'
+		'blog'		=> 'Blog', // 'Blog'
+		'stickblog'	=> 'Top Blogs',//'Top blogs'
+		'album'		=> 'Album', // 'Album'
+		'friend'	=> 'Amis', // 'Friend'
+		'visitor'	=> 'Invit&#233;',  //  'Guest'
+		'wall'		=> 'Message board',  //  'Message board'
+		'share'		=> 'Partage',  //  'Share'
+		'thread'	=> 'Sujet',  //  'Thread'
 		'group'		=> $_G[setting][navs][3][navname],
-		'music'		=> 'Music',
-		'statistic'	=> 'Statistics',
-		'myapp'		=> 'Applications',//'应用',
-		'block1'	=> 'Customize Module 1',
-		'block2'	=> 'Customize Module 2',
-		'block3'	=> 'Customize Module 3',
-		'block4'	=> 'Customize Module 4',
-		'block5'	=> 'Customize Module 5'
+		'music'		=> 'Musique', //  'Music'
+		'statistic'	=> 'Statistiques',  //   'Statistics'
+		'myapp'		=> 'Applications',// 'Applications'
+		'block1'	=> 'Module personnaliser 1',  //  'Customize Module 1'
+		'block2'	=> 'Module personnaliser 2',  //  'Customize Module 2'
+		'block3'	=> 'Module personnaliser 3',  //  'Customize Module 3'
+		'block4'	=> 'Module personnaliser 4',  //  'Customize Module 4'
+		'block5'	=> 'Module personnaliser 5'
 		),
 
-	'block_title'		=> '<div class="blocktitle title"><span>{bname}</span>{more}</div>', 
+	'block_title'		=> '<div class="blocktitle title"><span>{bname}</span>{more}</div>', // '<div class="blocktitle title"><span>{bname}</span>{more}</div>'
 	'blog_li'		=> '<dl class="bbda cl"><dt><a href="home.php?mod=space&uid={uid}&do=blog&id={blogid}" target="_blank">{subject}</a><span class="xg2 xw0"> {date}</span></dt>', // 
 	'blog_li_img'		=> '<dd class="atc"><a href="home.php?mod=space&uid={uid}&do=blog&id={blogid}" target="_blank"><img src="{src}" class="summaryimg" /></a></dd>', // 
 	'blog_li_ext'		=> '<dd class="xg1"><a href="home.php?mod=space&uid={uid}&do=blog&id={blogid}" target="_blank">({viewnum}) vues</a><span class="pipe">|</span><a href="home.php?mod=space&uid={uid}&do=blog&id={blogid}#comment" target="_blank">({replynum}) commentaires</a></dd>', // 
 	'album_li'		=> '<li><div class="c"><a href="home.php?mod=space&uid={uid}&do=album&id={albumid}" target="_blank"><img src="{src}" alt="{albumname}" width="120" /></a></div><p><a href="home.php?mod=space&uid={uid}&do=album&id={albumid}" target="_blank" title="{albumname}">{albumname}</a></p><span>Images:({picnum})</span><span>Mise &#224; jour {date}</span></li>', // 
-	'doing_li'		=> '<li>{message}</li><br />{date} {from} Reply({replynum})', // 
+	'doing_li'		=> '<li>{message}</li><br />{date} {from} R&#233;ponse({replynum})', // 
 	'visitor_anonymity'	=> '<div class="avatar48"><img src="image/magic/hidden.gif" alt="Anonyme"></div><p>Anonyme</p>', // 
 	'visitor_list'		=> '<a href="home.php?mod=space&uid={uid}" target="_blank"><em class="{class}"></em>{avatar}</a><p><a href="home.php?mod=space&uid={uid}" title="{username}">{username}</a></p>', // 
 	'wall_form'		=> '<div class="space_wall_post">
@@ -138,7 +138,7 @@ $lang = array(
 						<input type="hidden" name="idtype" value="uid" />
 						<input type="hidden" name="commentsubmit" value="true" />' :
 						'<div class="pt hm">Vous devez vous connecter en premier <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href)" class="xi2">Login</a> | <a href="member.php?mod='.$_G['setting']['regname'].'" onclick="showWindow(\'register\', this.href)" class="xi2">'.$_G['setting']['reglinkname'].'</a></div>').'
-						<p class="ptn"><button '.($_G['uid'] ? 'type="submit"' : 'type="button" onclick="showWindow(\'login\', \'member.php?mod=logging&action=login&guestmessage=yes\')"').' name="commentsubmit_btn" value="true" id="commentsubmit_btn" class="pn"><strong>Laissez un message</strong></button></p>
+						<p class="ptn"><button '.($_G['uid'] ? 'type="submit"' : 'type="button" onclick="showWindow(\'login\', \'member.php?mod=logging&action=login&guestmessage=yes\')"').' name="commentsubmit_btn" value="true" id="commentsubmit_btn" class="pn"><strong>Laissez un Message</strong></button></p>
 						<input type="hidden" name="handlekey" value="commentwall_{uid}" />
 						<span id="return_commentwall_{uid}"></span>
 						<input type="hidden" name="formhash" value="{FORMHASH}" />
@@ -166,10 +166,10 @@ $lang = array(
 	'wall_del'		=> '<a href="home.php?mod=spacecp&ac=comment&op=delete&cid={cid}&handlekey=delcommenthk_{cid}" id="c_{cid}_delete" onclick="showWindow(this.id, this.href, \'get\', 0);">Supprimer</a> ', // '<a href="home.php?mod=spacecp&ac=comment&op=delete&cid={cid}&handlekey=delcommenthk_{cid}" id="c_{cid}_delete" onclick="showWindow(this.id, this.href, \'get\', 0);">Delete</a> '
 	'wall_reply'		=> '<a href="home.php?mod=spacecp&ac=comment&op=reply&cid={cid}&handlekey=replycommenthk_{cid}" id="c_{cid}_reply" onclick="showWindow(this.id, this.href, \'get\', 0);">R&#233;ponse</a>', // '<a href="home.php?mod=spacecp&ac=comment&op=reply&cid={cid}&handlekey=replycommenthk_{cid}" id="c_{cid}_reply" onclick="showWindow(this.id, this.href, \'get\', 0);">Reply</a>'
 	'group_li'		=> '<li><a href="forum.php?mod=group&fid={groupid}" target="_blank"><img src="{icon}" alt="{name}" /></a><p><a href="forum.php?mod=group&fid={groupid}" target="_blank">{name}</a></p></li>', // '<li><a href="forum.php?mod=group&fid={groupid}" target="_blank"><img src="{icon}" alt="{name}" /></a><p><a href="forum.php?mod=group&fid={groupid}" target="_blank">{name}</a></p></li>'
-	'poll_li'		=> '<div class="c z"><img alt="poll" src="static/image/feed/poll.gif" alt="poll" class="t" /><h4 class="h"><a target="_blank" href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a></h4><div class="mtn xg1">Heure du Post: {dateline}</div></div>', // '<div class="c z"><img alt="poll" src="static/image/feed/poll.gif" alt="poll" class="t" /><h4 class="h"><a target="_blank" href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a></h4><div class="mtn xg1">Post Time: {dateline}</div></div>'
+	'poll_li'		=> '<div class="c z"><img alt="sondage" src="static/image/feed/poll.gif" alt="sondage" class="t" /><h4 class="h"><a target="_blank" href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a></h4><div class="mtn xg1">Heure du Post: {dateline}</div></div>', // '<div class="c z"><img alt="poll" src="static/image/feed/poll.gif" alt="poll" class="t" /><h4 class="h"><a target="_blank" href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a></h4><div class="mtn xg1">Post Time: {dateline}</div></div>'
 	'myapp_li_icon'		=> '<li><img src="{icon}" onerror="this.onerror=null;this.src=\'http://appicon.manyou.com/icons/{appid}\'" alt="{appname}" class="vm" /> <a href="userapp.php?mod=app&id={appid}">{appname}</a></li>', // '<li><img src="{icon}" onerror="this.onerror=null;this.src=\'http://appicon.manyou.com/icons/{appid}\'" alt="{appname}" class="vm" /> <a href="userapp.php?mod=app&id={appid}">{appname}</a></li>'
 	'myapp_li_logo'		=> '<li><a href="userapp.php?mod=app&id={appid}"><img src="http://appicon.manyou.com/logos/{appid}" alt="{appname}" /><p><a href="userapp.php?mod=app&id={appid}">{appname}</a></p></li>', // '<li><a href="userapp.php?mod=app&id={appid}"><img src="http://appicon.manyou.com/logos/{appid}" alt="{appname}" /><p><a href="userapp.php?mod=app&id={appid}">{appname}</a></p></li>'
-	'music_no_content'	=> 'Vous n\'avez aucune musique', // You do not have any music
+	'music_no_content'	=> 'Vous avez aucune Musique', // You do not have any music
 	'block_profile_diy'	=> 'DIY Espace', // DIY Space
 	'block_profile_wall'	=> 'Voir message', // View message
 	'block_profile_avatar'	=> 'Editer Avatar', // Edit Avatar
@@ -180,25 +180,25 @@ $lang = array(
 	'block_profile_poke'		=> 'Dit "salut"', // 'Say "hi"'
 	'block_profile_sendmessage'	=> 'Envoyer M.P.', // 'Send P.M.'
 	'block_doing_reply'		=> 'R&#233;pondre', // Reply
-	'block_doing_no_content'	=> 'Vous n\'avez aucune agiss..', // 'You do not have any doing.'
+	'block_doing_no_content'	=> 'Vous avez Aucun Agissements.', // 'You do not have any doing.'
 	'block_doing_no_content_publish'	=> ',<a href ="home.php?mod=space&uid={uid}&do=doing&view=me&from=space">Mise &#224; jour</a>', // ',<a href ="home.php?mod=space&uid={uid}&do=doing&view=me&from=space">Update</a>'
-	'block_blog_no_content'		=> 'Pas encore de Blogs', // No any blog yet
-	'block_blog_no_content_publish'	=> ',<a href ="home.php?mod=spacecp&ac=blog">Bloguer</a>', // ',<a href ="home.php?mod=spacecp&ac=blog">Blogging</a>'
-	'block_album_no_content'	=> 'Pas encore d\'albums', // No albums yet
+	'block_blog_no_content'			=> 'Pas encore de Blogs', // No any blog yet
+	'block_blog_no_content_publish'		=> ',<a href ="home.php?mod=spacecp&ac=blog">Bloguer</a>', // ',<a href ="home.php?mod=spacecp&ac=blog">Blogging</a>'
+	'block_album_no_content'		=> 'Pas encore d\'albums', // No albums yet
 	'block_album_no_content_publish'	=> ',<a href ="home.php?mod=spacecp&ac=upload">Charger</a>', // ',<a href ="home.php?mod=spacecp&ac=upload">Upload</a>'
-	'block_feed_no_content'		=> 'Il n\'y a pas dynamisme maintenant', // There is no dynamic now
-	'block_thread_no_content'	=> 'Sujets n\'ont pas encore essayer', // Topics have not yet
+	'block_feed_no_content'			=> 'Il n\'y a pas de flux rss actuellement', // There is no dynamic now
+	'block_thread_no_content'		=> 'Sujets n\'ont pas encore essayer', // Topics have not yet
 	'block_thread_no_content_publish'	=> ',<a href ="forum.php?mod=misc&action=nav&special=0&from=home" onclick="showWindow(\'nav\', this.href);return false;">Post un sujet</a>', // ',<a href ="forum.php?mod=misc&action=nav&special=0&from=home" onclick="showWindow(\'nav\', this.href);return false;">Post a topic</a>'
-	'block_friend_no_content'	=> 'Pas encore d\'Amis', // No friends yet
+	'block_friend_no_content'		=> 'Pas encore d\'Amis', // No friends yet
 	'block_friend_no_content_publish'	=> ',<a href ="home.php?mod=spacecp&ac=search">Trouver Amis</a> or <a href ="home.php?mod=spacecp&ac=invite">Inviter Amis</a>', // ',<a href ="home.php?mod=spacecp&ac=search">Find Friends</a> or <a href ="home.php?mod=spacecp&ac=invite">Invite Friends</a>'
-	'block_visitor_no_content'	=> 'Aucun visiteurs en ce moment', // No visitors now
+	'block_visitor_no_content'		=> 'Aucun visiteurs en ce moment', // No visitors now
 	'block_visitor_no_content_publish'	=> ',<a href ="home.php?mod=space&do=friend&view=online&type=member">La porte de la cha&#238;ne</a>', // 
-	'block_share_no_content'	=> 'Vous n\'avez pas encore partag&#233;', // Have not yet shared
-	'block_wall_no_content'		=> 'Aucun contenu', // No shout
-	'block_group_no_content'	=> 'Il n\'existe aucun Groupe &#224; rejoindre', // There is no group joined
+	'block_share_no_content'		=> 'Vous n\'avez pas encore partag&#233;', // Have not yet shared
+	'block_wall_no_content'			=> 'Aucun contenu', // No shout
+	'block_group_no_content'		=> 'Il n\'existe aucun Groupe &#224; rejoindre', // There is no group joined
 	'block_group_no_content_publish'	=> ',<a href ="forum.php?mod=group&action=create">Cr&#233;ez votre propre Groupe</a> or <a href ="group.php?mod=index">Joindre Groupe</a>', // ',<a href ="forum.php?mod=group&action=create">Create your own group</a> or <a href ="group.php?mod=index">Join group</a>'
-	'block_group_no_content_join'	=> ',<a href ="group.php?mod=index">Joindre Groupe</a>', // 
-	'block_myapp_no_content'	=> 'N\'ont pas encore d\'applications', // 
+	'block_group_no_content_join'		=> ',<a href ="group.php?mod=index">Joindre Groupe</a>', // 
+	'block_myapp_no_content'		=> 'N\'ont pas encore d\'applications', // 
 	'block_myapp_no_content_publish'	=> ',<a href ="userapp.php?mod=manage&my_suffix=/app/list">Je veux jouer aux applications</a>', // ',<a href ="userapp.php?mod=manage&my_suffix=/app/list">I want to play applications</a>'
 	'block_view_noperm'		=> 'Pas de permission', // No permission
 	'block_view_profileinfo_noperm'	=> 'Aucune entr&#233;e de donn&#233;es ou de droite pour voir', // 'No data entry or right to view'
@@ -245,12 +245,12 @@ $lang = array(
 	'viewthread_userinfo_albums'	=> 'Albums', // Albums
 	'viewthread_userinfo_sharings'	=> 'Partages', // Shares
 	'viewthread_userinfo_friends'	=> 'Amis', // Friends
-	'viewthread_userinfo_digest'	=> 'Sommaires', // Digests
+	'viewthread_userinfo_digest'	=> 'R&#233;sum&#233;s', // Digests
 	'viewthread_userinfo_credits'	=> 'Int&#233;grale', // Integral
 	'viewthread_userinfo_readperm'	=> 'Lire les Autorisations', // Read Permissions
 	'viewthread_userinfo_regtime'	=> 'Inscrits', // Registered
 	'viewthread_userinfo_lastdate'	=> 'Derni&#232;re Connexion', // Last Login
-	'viewthread_userinfo_oltime'	=> 'Temps en Ligne', // Online Time
+	'viewthread_userinfo_oltime'	=> 'Temps En-Ligne', // Online Time
 	
 );
 

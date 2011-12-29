@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *       Traduction By: Andre13 et Bertrand discuz-fr.fr Support French
  *      $Id: lang_connect.php by Valery Votintsev at sources.ru
  */
 
@@ -39,7 +39,7 @@ $lang = array
 	'connect_errlog_server_no_response'		=> 'Serveur n\'a pas r&#233;pondu', // 'Server did not respond'
 	'connect_errlog_access_token_incomplete'	=> 'L\'insuffisance des donn&#233;es jeton d\'Acc&#232;s', // 'Incomplete Access Token data'
 	'connect_errlog_request_token_not_authorized'	=> 'Jeton Utilisateurs non autoris&#233;s ou retourner sur des donn&#233;es incompl&#232;tes', // 'Token unauthorized users or return incomplete data'
-	'connect_errlog_sig_incorrect'			=> 'Signature URL n\'est pas correcte', // 'URL Signature is not correct'
+	'connect_errlog_sig_incorrect'			=> 'URL de la Signature est Incorrecte', // 'URL Signature is not correct'
 );
 
 ?>

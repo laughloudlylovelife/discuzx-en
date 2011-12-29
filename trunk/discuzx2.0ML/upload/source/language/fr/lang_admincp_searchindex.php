@@ -14,11 +14,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Page d\'accueil Gestion'	=> 'action=index',
+      'Gestion Page Accueil'	=> 'action=index',
     ),
     'text' =>
     array (
-      0 => 'Page d\'accueil Gestion',
+      0 => 'Gestion Page Accueil',
     ),
   ),
   1 =>
@@ -47,11 +47,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Forum d\'informations'	=> 'action=setting&operation=basic',
+      'Forum Informations'	=> 'action=setting&operation=basic',
     ),
     'text' =>
     array (
-      0 => 'Forum d\'informations',
+      0 => 'Forum Informations',
     ),
   ),
   4 =>
@@ -157,11 +157,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'R&#233;glage de l\'heure du moment'	=> 'action=setting&operation=datetime',
+      'R&#233;glage Heure du moment'	=> 'action=setting&operation=datetime',
     ),
     'text' =>
     array (
-      0 => 'R&#233;glage de l\'heure du moment',
+      0 => 'R&#233;glage Heure du moment',
     ),
   ),
   14 =>
@@ -300,11 +300,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Rate management'	=> 'action=click',
+      'La Gestion des Taux'	=> 'action=click',
     ),
     'text' =>
     array (
-      0 => 'Rate Actions',
+      0 => 'Actions Taux',
     ),
   ),
   27 =>
@@ -322,11 +322,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Editor Settings'	=> 'action=setting&operation=editor',
+      'Param&#232;tres de l\'&#233;diteur'	=> 'action=setting&operation=editor',
     ),
     'text' =>
     array (
-      0 => 'Editor Settings',//'编辑器设置',
+      0 => 'Param&#232;tres de l\'&#233;diteur',
     ),
   ),
   29 =>
@@ -630,11 +630,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Image avec'	=> 'action=pic',
+      'Avec Image'	=> 'action=pic',
     ),
     'text' =>
     array (
-      0 => 'Image avec',
+      0 => 'Avec Image',
     ),
   ),
   57 =>
@@ -960,11 +960,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Classification des Informations'	=> 'action=threadtypes',
+      'Classement des Informations'	=> 'action=threadtypes',
     ),
     'text' =>
     array (
-      0 => 'Classification des Informations',
+      0 => 'Classement des Informations',
     ),
   ),
   87 =>
@@ -982,11 +982,11 @@ $lang = array (
   array (
     'index' =>
     array (
-      'Classification des Equipes'	=> 'action=group&operation=type',
+      'Classement des Equipes'	=> 'action=group&operation=type',
     ),
     'text' =>
     array (
-      0 => 'Classification des Equipes',
+      0 => 'Classement des Equipes',
     ),
   ),
   89 =>
@@ -1261,7 +1261,7 @@ $lang = array (
     ),
     'text' =>
     array (
-      0 => 'Configurer email',
+      0 => 'Configurer E-mail',
     ),
   ),
   114 =>
@@ -1543,7 +1543,7 @@ $lang = array (
       2 => 'Portail de Gestion Autorit&#233;',
       3 => 'admingroup_edit_manage_article',
       4 => 'Permet une Gestion de Tous les Articles',
-      5 => 'S&#233;lectionnez "Oui" pour permettre aux membres de ce groupe de de gestion r&#233;dacteur en chef pour supprimer tous les canaux de l\'article du cadre',
+      5 => 'Choisissez "Oui" pour permettre aux membres de ce groupe de de gestion r&#233;dacteur en chef pour supprimer tous les canaux de l\'article du cadre',
       6 => 'admingroup_edit_add_topic',
       7 => 'Permet de cr&#233;er des particularit&#233;s sp&#233;ciales',
       8 => 'D&#233;finissez si pour permettre la cr&#233;ation de particularit&#233;s sp&#233;ciales',
@@ -1580,7 +1580,7 @@ $lang = array (
     array (
       0 => 'Gestion de l\'Album &raquo; liste la plus r&#233;cente',
       1 => 'album_tips',
-      2 => 'de Gestion utilis&#233; pour enlever par lots baths pour les albums les albums M&#234;me si des photos sont supprim&#233;es rappeler:. La page de r&#233;sultats de recherche cliquez sur le bouton Supprimer permet de supprimer les informations pertinentes directement!',
+      2 => 'de Gestion utilis&#233; pour enlever par lots pour les albums, les albums M&#234;me si des photos sont supprim&#233;es rappeler:. La page de r&#233;sultats de recherche cliquez sur le bouton Supprimer permet de supprimer les informations pertinentes directement!',
     ),
   ),
   127 =>
@@ -2233,7 +2233,7 @@ Comme il s\'agit de transactions en esp&#232;ces, afin d\'&#233;viter un mauvais
       19 => 'feed_global_image_4',
       20 => '4 photos d\'adresse',
       21 => 'feed_global_image_4_link',
-      22 => '4 lien photos',
+      22 => '4 liens photos',
       23 => 'feed_global_dateline',
       24 => 'Laps de temps',
       25 => '(Format：yyyy-mm-dd H:i)Vous pouvez remplir une date future et du temps,Donc cette dynamique &#224; l\'avenir avant la date d\'arriv&#233;e, a &#233;t&#233; d&#233;montr&#233; dans la premi&#232;re',
