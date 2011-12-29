@@ -184,7 +184,7 @@ $message
 Contenu Fin
 ----------------------------------------------------------------------
 
-Ce mail est envoy&#233; en utilisant "Envoyer le code d\'invitation &#224; des Amis" de cette fonction,
+Ce mail est envoy&#233; en utilisant "Envoyer le code d\'invitation &#224; des Amis" pour cette fonction,
 ceci n\'est pas un courrier officiel, nous ne serons pas tenus responsables.
 
 Bienvenue pour visiter {$_G[setting][bbname]}

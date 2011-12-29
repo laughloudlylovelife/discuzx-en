@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_template.php by Valery Votintsev at sources.ru
- *
+ *      Traduit par Andre13 and Bertrand: discuz-fr.fr 27-déc.2011-
  *      This file is automatically generate
  */
 
@@ -66,9 +66,9 @@ $lang = array (
   'logout'			=> 'D&#233;connexion',  //  Logout
   'my_nav'			=> 'Mon menu',  //  My menu
   'my_nav_login'		=> 'Svp. <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>Connexion </strong></a> ou <br /> <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',  // 'Please <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>login </strong></a> or <br /> <a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>' 
-  'open_diy'			=> 'Ouvrir DIY',  //  Open DIY
+  'open_diy'			=> 'Ouvrir BRICO',  //  Open DIY
   'pm_center'			=> 'MP',  //  PM
-	'portal_block_manage'		=> 'Block Management',//'模块管理',
+	'portal_block_manage'		=> 'Gestion des Blocs',//'模块管理', // 'Block Management'
   'portal_manage'	=> 'Portail CP',  // Portal CP 
   'remind'		=> 'Penser',  // Remind 
   'setup'		=> 'Installation',  //  Setup
@@ -88,20 +88,20 @@ $lang = array (
   'header_add_frame'		=> 'Ajout. frame',  //  Add frame
   'header_add_module'		=> 'Ajout. module',  // Add module 
   'header_clearall'		=> 'Nettoyer Tout',  //  Clear all
-  'header_clearall_desc'	=> 'Nettoyer Tout les donn&#233;es DIY',  //  Clear all DIY data
+  'header_clearall_desc'	=> 'Nettoyer Toutes les donn&#233;es BRICO',  //  Clear all DIY data
   'header_diy'			=> 'Personnaliser',  //  Customize
   'header_diy_backup_tip'	=> 'Diy Conseils',  //  Diy tips
   'header_diy_i_know'		=> 'Je sais',  //  I know
   'header_diy_sample_mode'	=> 'actuellement<strong>modele simple</strong>，Vous pouvez mettre à jour le module，Modifier les attributs et le module de données，Pour utiliser le glisser-déposer complète，<a href="javascript:;" onclick="spaceDiy.init();" class="xw1 xi2">Cliquez pour entrer en mode avancé</a>', 
   'header_export'		=> 'Exporter',  //  Export
-  'header_export_desc'		=> 'DIY  exporter toutes les donn&#233;es dans la page courante',  //  DIY export all data in the current page
+  'header_export_desc'		=> 'BRICO exporter toutes les donn&#233;es dans la page Actuelle',  //  DIY export all data in the current page
   'header_frame'		=> 'Frame',  // Frame 
   'header_import'		=> 'Importer',  // Import 
   'header_import_desc'		=> 'Importer Donn&#233;es DIY',  //  Import DIY data
   'header_module'		=> 'Module',  //  Module
   'header_more_actions'		=> 'Plus d\'Op&#233;rations',  //  More operations
-  'header_perview'		=> 'Apercus',  //  Preview
-  'header_perview_desc'		=> 'Apercus DIY',  //  Preview DIY
+  'header_perview'		=> 'Vu',  //  Preview
+  'header_perview_desc'		=> 'Vu BRICO',  //  Preview DIY
   'header_restore_backup'	=> 'Restaurer',  // Restore 
   'header_restore_backup_desc'	=> 'Restaurer',  //  Restore
   'header_start'		=> 'D&#233;marrer',  //  Start
@@ -109,7 +109,7 @@ $lang = array (
   'header_update_desc'		=> 'Mise &#224; jour toutes les donn&#233;es des mod&#232;les',  //  Update all data of moudles
   'save'			=> 'Sauver',  //  Save
   'style'			=> 'Style',  // Style 
-	'find'				=> 'Find',//'查找',
+	'find'				=> 'Trouver',//'查找', // 'Find'
   'invite'			=> 'Inviter',  //  Invite
   'invite_all_friend'		=> 'Tout les Amis',  //  All friends
   'invite_friend'		=> 'Inviter Amis',  //  Invite friends
@@ -125,12 +125,12 @@ $lang = array (
   'preview_lighttext'		=> 'Texte clair',  // Light text 
   'preview_link'		=> 'Texte lien',  // Link text 
   'preview_midtext'		=> 'Texte centrer',  // Middle text 
-  'preview_msg'			=> '<a href="javascript:;" class="xi2">DiscuzX French</a> System<stong class="xw1 xi1">Discuz!X</stong>) est construit sur PHP et MySQL. Traduction par <a href="http://www.discuz.eu/" target="_blank">Discuz.eu Fr non officiel Traduit par Andre13</a>.',  //  '<a href="javascript:;" class="xi2">DiscuzX English</a> System<stong class="xw1 xi1">Discuz!X</stong>) is bulit on PHP and MySQL. Translated by <a href="http://www.discuz.eu/" target="_blank">Discuz.eu</a>.'
+  'preview_msg'			=> '<a href="javascript:;" class="xi2">DiscuzX French</a> System<stong class="xw1 xi1">Discuz!X</stong>) est construit sur PHP et MySQL. Traduction par <a href="http://discuz-fr.fr/" target="_blank">Discuz-fr.fr No-official-Traduit par Andre13</a>.',  //  '<a href="javascript:;" class="xi2">DiscuzX English</a> System<stong class="xw1 xi1">Discuz!X</stong>) is bulit on PHP and MySQL. Translated by <a href="http://www.discuz.eu/" target="_blank">Discuz.eu</a>.'
   'preview_smalltext'		=> 'Petite police',  //  Small Font
   'preview_text'		=> 'Texte ordinaire',  //  Common text
   'preview_threadtext'		=> 'Texte de la liste du sujet',  //  Thread list text
   'table_header'		=> 'En-t&#234;te Table',  //  Table header
- 'album'			=> 'Album',  //  Album
+  'album'			=> 'Album',  //  Album
   'article'			=> 'Article',  // Article 
   'blog'			=> 'Blog',  //  Blog
   'enter_content'		=> 'Svp. Saisir vos mots cl&#233;s',  //  Please enter keywords
@@ -158,7 +158,7 @@ $lang = array (
   'message_forward'		=> 'Si votre navigateur n\'accepte pas de vous rediriger automatiquement, Svp. , cliquez ici',  //  If your browser does not redirect your automatically, please click here
   'message_go_back'		=> '[Cliquez ici pour retourner &#224; la page pr&#233;c&#233;dente]',  //  '[Click here to return to previous page]'
   'message_locationtime'	=> ' secondes apr&#232;s le saut de page',  // ' seconds after the page jump' 
-  'basic_situation'		=> 'Basic Info',  //  Basic Info
+  'basic_situation'		=> 'Infos de Base',  //  Basic Info
   'forum_stat'			=> 'Forum stats',  //  Forum stats
   'manage_team'			=> 'Gestion team',  // Manager team 
   'member_list'			=> 'Liste Membre',  // member list 
@@ -168,7 +168,7 @@ $lang = array (
   'app_add'			=> 'Ajouter $_G[setting][navs][5][navname]',  //  'Add $_G[setting][navs][5][navname]'
   'app_management'		=> 'Gestion $_G[setting][navs][5][navname]',  //  'Manage $_G[setting][navs][5][navname]'
   'e_audio'		=> 'Music',  //  Music
-  'e_audio_title'	=> 'Ajout. musics',  // Add musics 
+  'e_audio_title'	=> 'Ajout. Musiques',  // Add musics 
   'e_autotypeset'	=> 'Disposition Auto.',  //  Auto layout
   'e_center'		=> 'Centrer',  //  Center
   'e_code_title'	=> 'Code titre',  //  Code title
@@ -246,7 +246,7 @@ $lang = array (
   'recommend'		=> 'Appuyer',  //  Push
   'trade'		=> 'Meilleurs',  // Goods 
   'manage'		=> 'Gestion',  //  Manage
-  'not_enough'		=> 'pas suffisant',  //  not enough
+  'not_enough'		=> 'Insuffisant',  //  not enough
   'moderate_need'	=> 'Attente de mod&#233;ration',  //  Pending moderate
   'portal'		=> 'Portail',  //  Portal
   'reward_answer'	=> 'Il faut r&#233;pondre',  //  I anwser
@@ -323,8 +323,8 @@ $lang = array (
   'login_id'		=> 'Compte No:',  // Account No: 
   'login_password'	=> 'Mot de passe:',  //Password:  
   'login_permanent'	=> 'Auto-Connexion',  //  Auto Login
-	'security_a'			=> 'Answer',//'答案',
-	'security_q'			=> 'Security Question',//'安全提问',
+	'security_a'			=> 'R&#233;ponse',//'答案',
+	'security_q'			=> 'Question de S&#233;curit&#233;',//'安全提问',
   'forgotpw'		=> 'Oubli&#233; Pass?',  //  Forgot Pass?
   'image'		=> 'Images',  //  Pictures
   'remote'		=> 'Distant',  //  Remote
@@ -332,116 +332,116 @@ $lang = array (
   'auction_ranking'	=> 'Top offre',  //  Top bid
   'close_ranking_note'	=> 'Le classement a &#233;t&#233; ferm&#233;, vous ne pouvez pas Ench&#233;rir maintenant',  //  Ranking has been closed, you cannot bid now
   'credit_is_not_number'	=> 'Le nombre {$extcredits[$creditid][title]} ce que vous avez entr&#233; est interdit',  //  The number {$extcredits[$creditid][title]} you entered is illegal
-  'credit_title_error'	=> 'Le nombre {$extcredits[$creditid][title]} ne peut pas &#234;tre inf&#233;rieur &#224; 1',  //  The number {$extcredits[$creditid][title]} cannot be smaller than 1
-  'credit_title_message'	=> 'Vous actuel. {$extcredits[$creditid][title]} est "+maxCredit+", Svp. entrez un nombre plus petite qu\'elle',  //  Your current {$extcredits[$creditid][title]} is "+maxCredit+", please enter a number smaller than it
+  'credit_title_error'		=> 'Le nombre {$extcredits[$creditid][title]} ne peut pas &#234;tre inf&#233;rieur &#224; 1',  //  The number {$extcredits[$creditid][title]} cannot be smaller than 1
+  'credit_title_message'	=> 'Vous en ce moment {$extcredits[$creditid][title]} est "+maxCredit+", Svp. entrez un nombre plus petite qu\'elle',  //  Your current {$extcredits[$creditid][title]} is "+maxCredit+", please enter a number smaller than it
   'current_ranking'	=> 'Actuel. Rang',  // Current Ranking 
   'friend_need_help'	=> 'Amis besoin d\'Aide',  //  Friends needed help
   'friend_num_ranking'	=> 'Amis rang',  //  Friends ranking
-  'friend_top_note'	=> 'Rang annonce',  //  Ranking announcement
+  'friend_top_note'	=> 'Rang Annonce',  //  Ranking announcement
   'handsel'		=> 'Cadeau',  //  Present
   'handsel_bid'		=> 'Pr&#233;sentez offre',  // Present bid 
   'help_friend_in_top'	=> 'Aider les Amis pour &#234;tre au Top',  //  Help friends to top
   'i_ranking'		=> 'Je veux &#234;tre au Top',  //  I wang to top
   'increase_bid'	=> 'Ajout. Offre',  //  Add bid
-  'make_persistent_efforts'	=> 'Faites des efforts constament',  // Make persistent efforts 
-  'max_char_ranking'	=> 'Max. 50 caract&#232;res, ils seront affich&#233;s dans la liste de classement',  // Max 50 character, they will be displayed in ranking list 
+  'make_persistent_efforts'	=> 'Faites des efforts souvent',  // Make persistent efforts 
+  'max_char_ranking'		=> 'Max. 50 caract&#232;res, ils seront affich&#233;s dans la liste de classement',  // Max 50 character, they will be displayed in ranking list 
   'my_ranking_declaration'	=> 'D&#233;claration rang',  //  Ranking declaration
-  'not_exceed'		=> 'Ne pas d&#233;passer ',  //  'Not exceed your '
-  'ranking_message_0'	=> 'Vous n\'&#234;tes pas sur la liste de classement. Laissez-vous sur la liste, les heurtes de votre point de vue de l\'espace personnel.',  //  You are not on the ranking list. Let yourself on list, bump your views of personal space.
-  'ranking_message_1'	=> 'Plus d\'offres({$extcredits[$creditid][title]}), Plus de visiteurs avant et davantage;',  // More bidding({$extcredits[$creditid][title]}), more front and more visitors; 
-  'ranking_message_2'	=> 'Chaque espace visitez des Utilisateurs sur la liste de classement, leurs appels d\'offres({$extcredits[$creditid][title]}) permettra de r&#233;duire d\'un (y compris la visite non valides).',  //  Each visit space of users on ranking list, their bidding({$extcredits[$creditid][title]}) will reduce one(not including invalid visit).
-  'self_current_credit'	=> 'Actuel points',  //  Current points
+  'not_exceed'			=> 'Ne pas d&#233;passer ',  //  'Not exceed your '
+  'ranking_message_0'		=> 'Vous n\'&#234;tes pas sur la liste de classement. Laissez-vous sur la liste, les heurtes de votre point de vue de l\'espace personnel.',  //  You are not on the ranking list. Let yourself on list, bump your views of personal space.
+  'ranking_message_1'		=> 'Plus d\'offres({$extcredits[$creditid][title]}), Plus de visiteurs avant et davantage;',  // More bidding({$extcredits[$creditid][title]}), more front and more visitors; 
+  'ranking_message_2'		=> 'Chaque espace visitez des Utilisateurs sur la liste de classement, leurs appels d\'offres({$extcredits[$creditid][title]}) permettra de r&#233;duire d\'un (y compris la visite non valides).',  //  Each visit space of users on ranking list, their bidding({$extcredits[$creditid][title]}) will reduce one(not including invalid visit).
+  'self_current_credit'		=> 'Points Actuel',  //  Current points
   'self_current_friend_num'	=> 'Amis Actuel',  //  Current Friends
-  'top_100_update'	=> 'Top 100 est ci-dessous, les donn&#233;es seront actualis&#233;es tous les $cache_time min.',  // Top 100 is listed below, the data will be updated every $cache_time min. 
-  'your_current_bid'	=> 'Votre offre actuel.',  //  Your current bid
-  'top_orderby_blogs'	=> 'Nombre de blogs',  //  Number of blogs
-  'top_orderby_credits'	=> 'Nombre de points',  // Number of points 
-  'top_orderby_posts'	=> 'Nombre de posts',  // Number of posts 
+  'top_100_update'	=> 'Top 100 sont ci-dessous, les donn&#233;es seront actualis&#233;es tous les $cache_time min.',  // Top 100 is listed below, the data will be updated every $cache_time min. 
+  'your_current_bid'	=> 'Votre Offre Actuel.',  //  Your current bid
+  'top_orderby_blogs'	=> 'Nombre de Blogs',  //  Number of blogs
+  'top_orderby_credits'	=> 'Nombre de Points',  // Number of points 
+  'top_orderby_posts'	=> 'Nombre de Posts',  // Number of posts 
   'top_orderby_uid'	=> 'inscription',  //  registration
 
 //---------------------------
 // Added by Valery Votintsev
 
 //static/space/t1/style.css
-	'default_style'	=> 'Default style',//'[name]默认风格[/name]',
+	'default_style'	=> 'Style par D&#233;faut',//'[name]默认风格[/name]', // 'Default style'
 
 //---------------------------
 //static/space/t2/style.css
-	'nature'	=> 'Nature',//'[name]自然[/name]',
+	'nature'	=> 'Nature',//'[name]自然[/name]', // 'Nature'
 
 //---------------------------
 //static/space/t3/style.css
-	'sky'		=> 'Sky',//'[name]天空[/name]',
+	'sky'		=> 'Ciel',//'[name]天空[/name]', // Sky'
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'		=> 'Cat',//'[name]猫猫[/name]',
+	'cat'		=> 'Chat',//'[name]猫猫[/name]',  // 'Cat'
 
 //---------------------------
 //static/space/t5/style.css
-	'courtyard'	=> 'Courtyard',//'[name]庭院[/name]',
+	'courtyard'	=> 'Courtyard',//'[name]庭院[/name]', //  'Courtyard'
 
 //---------------------------
 //static/space/t6/style.css
-	'green_wall'	=> 'Green Wall',//'[name]绿墙[/name]',
+	'green_wall'	=> 'Mur Vert',//'[name]绿墙[/name]', // 'Wall green'
 
 //---------------------------
 //static/space/t7/style.css
-	'cowboy'	=> 'Cowboy',//'[name]牛仔[/name]',
+	'cowboy'	=> 'Cow-Boy',//'[name]牛仔[/name]', // 'Cowboy'
 
 //---------------------------
 //static/space/t8/style.css
-	'christmas'	=> 'Christmas',//'[name]圣诞[/name]',
+	'christmas'	=> 'No&#235;l',//'[name]圣诞[/name]', // 'Chrismas'
 
 //---------------------------
 //static/topic/t1/style.css
-	'default_skin'	=> 'Default Skin',//'[name]默认皮肤[/name]',
+	'default_skin'	=> 'Skin par D&#233;faut',//'[name]默认皮肤[/name]', // 'Skin default'
 
 //---------------------------
 //static/topic/t2/style.css
-	'skin_2'	=> 'Skin 2',//'[name]皮肤2[/name]',
+	'skin_2'	=> 'Skin 2',//'[name]皮肤2[/name]', // 'Skin 2'
 
 //---------------------------
 //Change Language
-	'change_language'	=> 'Change language',
+	'change_language'	=> 'Changer la langue', // 'Change language'
 
 //vot:
-	'new'		=> 'New',//'全新',
+	'new'		=> 'Nouveau',//'全新', // 'New' // - Where in language in French: ==>'New' <==
 
 //---------------------------
 //vot: Titles from install_var.php, pre_common_nav table
 
-	'register'	=> 'Register',//'注册',
+	'register'	=> 'Inscription',//'注册', // 'Register'
 
-	'nav_1'		=> 'Portal',//'门户',//1,
-	'nav_2'		=> 'Forum',//'论坛',//2,
-	'nav_3'		=> 'Groups',//'群组',//3,
-	'nav_4'		=> 'Space',//'家园',//4,
-	'nav_5'		=> 'Applications',//'应用',//5,
-	'nav_6'		=> 'Plugins',//'插件',//6,
-	'nav_7'		=> 'Help',//'帮助',//7,
-	'nav_8'		=> 'RankList',//'排行榜',//8,
-	'nav_stat'	=> 'Statistics',//'站点统计',
-	'nav_report'	=> 'Reports',//'举报',
-	'nav_archiver'	=> 'Archive',
-	'nav_mobile'	=> 'Mobile',//'手机版',
-	'nav_blog'	=> 'Blogs',//'日志',
-	'nav_album'	=> 'Albums',//'相册',
-	'nav_share'	=> 'Shares',//'分享',
-	'nav_doing'	=> 'Doings',//'记录',
-	'nav_friend'	=> 'Friends',//'好友',
-	'nav_thread'	=> 'Threads',//'帖子',
-	'nav_favorite'	=> 'Favorites',//'收藏',
-	'nav_magic'	=> 'Magic',//'道具',
-	'nav_medal'	=> 'Medals',//'勋章',
-	'nav_task'	=> 'Tasks',//'任务',
-	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
-	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
-//	'nav_'		=> '',//'',
+	'nav_1'		=> 'Portail',//'门户',//1, // 'Portal'
+	'nav_2'		=> 'Forum',//'论坛',//2, // Forum'
+	'nav_3'		=> 'Groupes',//'群组',//3, // 'Groups'
+	'nav_4'		=> 'Espace',//'家园',//4, // 'Space'
+	'nav_5'		=> 'Applications',//'应用',//5,  // 'Applications'
+	'nav_6'		=> 'Plugins',//'插件',//6,  // 'Plugins'
+	'nav_7'		=> 'Aide',//'帮助',//7, // 'Help'
+	'nav_8'		=> 'Liste Rang',//'排行榜',//8, // 'RankList' //  - Where in language in French: ==>'Liste des Rangs.' <==
+	'nav_stat'	=> 'Statistiques',//'站点统计', // 'Statistics' // - Where in language in French: ==>'Stats.' <==
+	'nav_report'	=> 'Rapports',//'举报', // 'Reports'
+	'nav_archiver'	=> 'Archive', // 'Archive'
+	'nav_mobile'	=> 'Mobile',//'手机版', // 'Mobile'
+	'nav_blog'	=> 'Blogs',//'日志', // 'Blogs'
+	'nav_album'	=> 'Albums',//'相册', // 'Albums'
+	'nav_share'	=> 'Partages',//'分享', // 'Shares'
+	'nav_doing'	=> 'Agiss.',//'记录', // 'Doings'
+	'nav_friend'	=> 'Amis',//'好友', // 'Friends'
+	'nav_thread'	=> 'Sujets',//'帖子', // 'Threads'
+	'nav_favorite'	=> 'Favoris',//'收藏', // 'Favorites'
+	'nav_magic'	=> 'Magies',//'道具', // 'Magic'
+	'nav_medal'	=> 'M&#233;dailles',//'勋章', // 'Medals'
+	'nav_task'	=> 'T&#226;ches',//'任务', // 'Tasks'// - Where in language in French: ==>'Mission WHERE Missions' <==
+	'nav_sethomepage'	=> 'D&#233;finir comme page d\'accueil',//'设为首页', // 'Set as Homepage'
+	'nav_setfavorite'	=> 'Ajouter aux Favoris',//'收藏本站', // 'Add to Favorites'
+//	'nav_'		=> '',//'', // 
 
 // Google Maps
-	'e_map'		=> 'Map',//'地图',
-	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',
-	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
+	'e_map'		=> 'Carte',//'地图', // 'Map'
+	'e_map_insert'	=> 'Ins&#233;rez la Carte Google',//'插入google地图', // 'Insert Google Map'
+	'e_map_address'	=> 'Entrez l\'adresse pour la recherche: ',//'地址： ', // 'Enter address for search: '
 );
 

@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *      Traduit par Andre13 27-déc-2011 - http://discuz-fr.fr support French
  *      $Id: lang_admincp_menu.php by Valery Votintsev at sources.ru
  */
 
@@ -76,7 +76,7 @@ $lang = array
 	'menu_members_stat'		=> 'Stats',
 	'menu_moderate_modmembers'	=> 'V&#233;rif. New Utilis.',
 	'menu_profilefields'		=> 'Champs Profil',
-	'menu_admingroups'		=> 'Gpes Admin',
+	'menu_admingroups'		=> 'Grpes Admin',
 	'menu_usergroups'		=> 'Grpes. Utilis.',
 	'menu_hotuser'			=> 'Star Membres',
 	'menu_defaultuser'		=> 'Utilis. par D&#233;faut',
@@ -98,7 +98,7 @@ $lang = array
 	'menu_posting_tags'		=> 'Balises',
 	'menu_posting_censors'		=> 'Mot filtrer',
 	'menu_maint_report'		=> 'Rapport Utilisateur',
-	'menu_threads_forumstick'	=> 'Forum/Scotch',
+	'menu_threads_forumstick'	=> 'Forum/Scotch&#233;',
 	'menu_post_position_index'	=> 'Post Optimisation',
 	'menu_postcomment'		=> 'Post Commentaires',
 	'menu_maint_doing'		=> 'Enreg. Agiss.',
@@ -106,7 +106,7 @@ $lang = array
 	'menu_maint_feed'		=> 'Flux Rss',
 	'menu_maint_album'		=> 'Albums',
 	'menu_maint_pic'		=> 'Images',
-	'menu_maint_comment'		=> 'Comme./Messages',
+	'menu_maint_comment'		=> 'Comment./Posts',
 	'menu_maint_share'		=> 'Partages',
 
 	'menu_posting_attachtypes'	=> 'Fixez Type Taille',
@@ -144,9 +144,9 @@ $lang = array
 	'menu_adv_custom'	=> 'Publicitaires',
 
 	'menu_misc_announce'		=> 'Annonces',
-	'menu_tools_updatecaches'	=> 'Maj. jour cache',
-	'menu_tools_postposition'	=> 'Optimization',
-	'menu_tools_updatecounters'	=> 'Maj. Stats.',
+	'menu_tools_updatecaches'	=> 'Maj.du Cache',
+	'menu_tools_postposition'	=> 'Optimisation',
+	'menu_tools_updatecounters'	=> 'Maj.Stats.',
 	'menu_tools_javascript'		=> 'Appel de Donn&#233;es',
 	'menu_tools_relatedtag'		=> 'Balises Associ&#233;es',
 	'menu_tools_creditwizard'	=> 'Assistant Points ',
@@ -171,10 +171,10 @@ $lang = array
 	'menu_diytemplate'		=> 'Diy Brico Pages',
 
 	'menu_group_setting'		=> 'Groupes',
-	'menu_group_type'		=> 'Grpe. Cat&#233;gories',
+	'menu_group_type'		=> 'Groupe Cat&#233;gories',
 	'menu_group_manage'		=> 'Groupe Gestion',
-	'menu_group_userperm'		=> 'Grpe.Perms.',
-	'menu_group_level'		=> 'Grpe. Niveau',
+	'menu_group_userperm'		=> 'GroupePerms.',
+	'menu_group_level'		=> 'Groupe Niveau',
 
 	'menu_setting_manyou'		=> 'Manyou',
 	'menu_setting_qqconnect'	=> 'QQ ',
