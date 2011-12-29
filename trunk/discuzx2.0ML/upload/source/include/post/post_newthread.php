@@ -373,14 +373,21 @@ if(!submitcheck('topicsubmit', 0, $seccodecheck, $secqaacheck)) {
 		}
 	}
 
-
+//vot added escape_str
 	DB::query("INSERT INTO ".DB::table('forum_thread')." (fid, posttableid, readperm, price, typeid, sortid, author, authorid, subject, dateline, lastpost, lastposter, displayorder, digest, special, attachment, moderated, status, isgroup, replycredit, closed)
-		VALUES ('$_G[fid]', '0', '$readperm', '$price', '$typeid', '$sortid', '$author', '$_G[uid]', '$subject', '$_G[timestamp]', '$_G[timestamp]', '$author', '$displayorder', '$digest', '$special', '0', '$moderated', '$thread[status]', '$isgroup', '$replycredit', '".($closed ? "1" : '0')."')");
+		VALUES ('$_G[fid]', '0', '$readperm', '$price', '$typeid', '$sortid',
+                        '".DB::escape_str($author)."',
+                        '$_G[uid]',
+                        '".DB::escape_str($subject)."',
+                        '$_G[timestamp]', '$_G[timestamp]',
+                        '".DB::escape_str($author)."',
+                        '$displayorder', '$digest', '$special', '0', '$moderated', '$thread[status]', '$isgroup', '$replycredit', '".($closed ? "1" : '0')."')");
 	$tid = DB::insert_id();
 	useractionlog($_G['uid'], 'tid');
 
 
-	DB::update('common_member_field_home', array('recentnote'=>$subject), array('uid'=>$_G['uid']));
+	DB::update('common_member_field_home', array(
+			'recentnote'=>DB::escape_str($subject)), array('uid'=>$_G['uid']));
 
 	if($special == 3 && $_G['group']['allowpostreward']) {
 		updatemembercount($_G['uid'], array($_G['setting']['creditstransextra'][2] => -$realprice), 1, 'RTC', $tid);
@@ -472,9 +479,9 @@ if(!submitcheck('topicsubmit', 0, $seccodecheck, $secqaacheck)) {
 		'fid' => $_G['fid'],
 		'tid' => $tid,
 		'first' => '1',
-		'author' => $_G['username'],
+/*vot*/		'author' => DB::escape_str($_G['username']),
 		'authorid' => $_G['uid'],
-		'subject' => $subject,
+/*vot*/		'subject' => DB::escape_str($subject),
 		'dateline' => $_G['timestamp'],
 		'message' => $message,
 		'useip' => $_G['clientip'],
@@ -651,10 +658,12 @@ if(!submitcheck('topicsubmit', 0, $seccodecheck, $secqaacheck)) {
 			}
 
 			$subject = str_replace("\t", ' ', $subject);
-			$lastpost = "$tid\t$subject\t$_G[timestamp]\t$author";
+/*vot*/			$lastpost = "$tid\t".DB::escape_str($subject)."\t$_G[timestamp]\t$author";
 			DB::query("UPDATE ".DB::table('forum_forum')." SET lastpost='$lastpost', threads=threads+1, posts=posts+1, todayposts=todayposts+1 WHERE fid='$_G[fid]'", 'UNBUFFERED');
 			if($_G['forum']['type'] == 'sub') {
-				DB::query("UPDATE ".DB::table('forum_forum')." SET lastpost='$lastpost' WHERE fid='".$_G['forum'][fup]."'", 'UNBUFFERED');
+/*vot*/				DB::query("UPDATE ".DB::table('forum_forum')."
+                                           SET lastpost='$lastpost'
+                                           WHERE fid='".$_G['forum'][fup]."'", 'UNBUFFERED');
 			}
 		}
 
