@@ -201,7 +201,8 @@ $lang = array
 	'title_userapp_manage'		=> 'Gestion {userapp}', // 'Manage {userapp}'
 	'faq'				=> 'FAQ', // FAQ
 	'search'			=> 'Recherche', // 'Search'
-	'page'				=> 'Premi&#232;re page{page}', // 'First page{page}'
+	'page'				=> 'Page {page}', // 'First page{page}'
+
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'Limite de fr&#233;quence de rafra&#238;chissement', // 'Limite de fr&#233;quence de rafra&#238;chissement'
 	'attackevasive_1_message'	=> 'Vous visitez le site trop rapidement, moins de deux secondes! Svp. patienter encore un peu...', // 'You visit the site too fast, less than two seconds! Please wait a little...'

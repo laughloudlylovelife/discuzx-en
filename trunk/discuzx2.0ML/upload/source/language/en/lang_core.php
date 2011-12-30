@@ -201,6 +201,7 @@ $lang = array
 	'title_userapp_manage'		=> 'Manage Application &quot;{userapp}&quot;',//'{userapp}管理',
 	'faq'				=> 'FAQ',//'帮助',
 	'search'			=> 'Search',//'搜索',
+	'page'				=> 'page {page}',
 
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'Refresh frequency limit',
