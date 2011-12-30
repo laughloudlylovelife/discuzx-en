@@ -201,6 +201,7 @@ $lang = array
 	'title_userapp_manage'		=> 'Управление приложением {userapp}',
 	'faq'				=> 'Вопросы и ответы',
 	'search'			=> 'Поиск',
+	'page'				=> 'page {page}',
 
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'Лимит обновления страницы',

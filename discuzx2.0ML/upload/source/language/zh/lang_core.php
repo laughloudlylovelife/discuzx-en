@@ -202,16 +202,17 @@ $lang = array
 	'faq' => '帮助',
 	'search' => '搜索',
 	'page' => '第{page}页',
+
 //vot source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> 'Refresh frequency limit',
-	'attackevasive_1_message'	=> 'You visit the site too fast, less than two seconds! Please wait a little...',
-	'attackevasive_2_subject'	=> 'Access throug proxy servers is restricted',
-	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
-	'attackevasive_4_subject'	=> 'Open the page reload',
-	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
+	'attackevasive_1_subject'	=> '刷新频率限制',//'Refresh frequency limit',
+	'attackevasive_1_message'	=> '您访问网站的速度太快，不到两秒钟！请等一下...',//'You visit the site too fast, less than two seconds! Please wait a little...',
+	'attackevasive_2_subject'	=> '通过代理服务器的访问是受到限制',//'Access through proxy servers is restricted',
+	'attackevasive_2_message'	=> '通过代理服务器访问网站限制亩。请删除您的代理设置配置，并直接访问该网站。',//'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
+	'attackevasive_4_subject'	=> '打开页面重载',//'Open the page reload',
+	'attackevasive_4_message'	=> '欢迎的网站，页面重新载入，请稍候...',//'Welcome to the site, the page is re-loading, please wait ...',
 
 //vot Months Names
-	'month_name'	=> array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
+	'month_name'	=> array('月','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'),//array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
 
 );
 
