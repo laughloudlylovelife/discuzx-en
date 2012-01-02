@@ -11,5 +11,5 @@
  */
 
 $_SGLOBAL['language_title'] = 'Traditional Chinese';
-$_SGLOBAL['language_icon'] = 'zh.gif';
+$_SGLOBAL['language_icon'] = 'tw.gif';
 

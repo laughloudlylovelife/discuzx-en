@@ -180,7 +180,7 @@ $_config['remote']['cron'] = 0;
 $_config['languages'] = array(
 //	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
 //	'zh' => array('icon'=>'zh.gif', 'title'=>'Simp. Chinese', 'dir'=>'ltr'),
-//	'tc' => array('icon'=>'zh.gif', 'title'=>'Trad. Chinese', 'dir'=>'ltr'),
+//	'tc' => array('icon'=>'tw.gif', 'title'=>'Trad. Chinese', 'dir'=>'ltr'),
 //	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
 	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
 //	'fr' => array('icon'=>'fr.gif', 'title'=>'French', 'dir'=>'ltr'),

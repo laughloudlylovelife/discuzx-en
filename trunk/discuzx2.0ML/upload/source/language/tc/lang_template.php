@@ -82,9 +82,9 @@ $lang = array (
   'e_redo' => '重做',
   'e_undo' => '撤銷',
 	'e_full_screen'			=> '全屏',//'Full Screen',
-	'e_restore_size'		=> '恢复',//'Restore size',
+	'e_restore_size'		=> '恢復',//'Restore size',
 	'e_simple'			=> '常用',//'General Mode',
-	'e_advanced'			=> '高级',//'Advanced Mode',
+	'e_advanced'			=> '高級',//'Advanced Mode',
   'header_add_frame' => '添加框架',
   'header_add_module' => '添加模塊',
   'header_clearall' => '清空',
@@ -363,7 +363,7 @@ $lang = array (
 // Added by Valery Votintsev
 
 //static/space/t1/style.css
-	'default_style'	=> '默认风格',
+	'default_style'	=> '默認風格',
 
 //---------------------------
 //static/space/t2/style.css
@@ -375,7 +375,7 @@ $lang = array (
 
 //---------------------------
 //static/space/t4/style.css
-	'cat'		=> '猫猫',
+	'cat'		=> '貓貓',
 
 //---------------------------
 //static/space/t5/style.css
@@ -383,7 +383,7 @@ $lang = array (
 
 //---------------------------
 //static/space/t6/style.css
-	'green_wall'	=> '绿墙',
+	'green_wall'	=> '綠牆',
 
 //---------------------------
 //static/space/t7/style.css
@@ -391,19 +391,19 @@ $lang = array (
 
 //---------------------------
 //static/space/t8/style.css
-	'christmas'	=> '圣诞',
+	'christmas'	=> '聖誕',
 
 //---------------------------
 //static/topic/t1/style.css
-	'default_skin'	=> '默认皮肤',
+	'default_skin'	=> '默認皮膚',
 
 //---------------------------
 //static/topic/t2/style.css
-	'skin_2'	=> '皮肤2',
+	'skin_2'	=> '皮膚2',
 
 //---------------------------
 //Change Language
-	'change_language'	=> '更改语言',//'Change language',
+	'change_language'	=> '更改語言',//'Change language',
 
 //vot:
 	'new'		=> '全新',//'New',
@@ -411,37 +411,37 @@ $lang = array (
 //---------------------------
 //vot: Titles from install_var.php, pre_common_nav table
 
-	'register'	=> '注册',//'Register',
+	'register'	=> '註冊',//'Register',
 
-	'nav_1'		=> '门户',//'Portal',
-	'nav_2'		=> '论坛',//'Forum',
-	'nav_3'		=> '群组',//'Groups',
-	'nav_4'		=> '家园',//'Space',
-	'nav_5'		=> '应用',//'Applications',
+	'nav_1'		=> '門戶',//'Portal',
+	'nav_2'		=> '論壇',//'Forum',
+	'nav_3'		=> '群組',//'Groups',
+	'nav_4'		=> '家園',//'Space',
+	'nav_5'		=> '應用',//'Applications',
 	'nav_6'		=> '插件',//'Plugins',
-	'nav_7'		=> '帮助',//'Help',
+	'nav_7'		=> '幫助',//'Help',
 	'nav_8'		=> '排行榜',//'RankList',
-	'nav_stat'	=> '站点统计',//'Statistics',
-	'nav_report'	=> '举报',//'Reports',
+	'nav_stat'	=> '站點統計',//'Statistics',
+	'nav_report'	=> '舉報',//'Reports',
 	'nav_archiver'	=> 'Archive',
-	'nav_mobile'	=> '手机版',//'Mobile',
-	'nav_blog'	=> '日志',//'Blogs',
-	'nav_album'	=> '相册',//'Albums',
+	'nav_mobile'	=> '手機版',//'Mobile',
+	'nav_blog'	=> '日誌',//'Blogs',
+	'nav_album'	=> '相冊',//'Albums',
 	'nav_share'	=> '分享',//'Shares',
-	'nav_doing'	=> '记录',//'Doings',
+	'nav_doing'	=> '記錄',//'Doings',
 	'nav_friend'	=> '好友',//'Friends',
 	'nav_thread'	=> '帖子',//'Threads',
 	'nav_favorite'	=> '收藏',//'Favorites',
 	'nav_magic'	=> '道具',//'Magic',
-	'nav_medal'	=> '勋章',//'Medals',
-	'nav_task'	=> '任务',//'Tasks',
-	'nav_sethomepage'	=> '设为首页',//'Set as Homepage',
+	'nav_medal'	=> '勳章',//'Medals',
+	'nav_task'	=> '任務',//'Tasks',
+	'nav_sethomepage'	=> '設為首頁',//'Set as Homepage',
 	'nav_setfavorite'	=> '收藏本站',//'Add to Favorites',
 //	'nav_'		=> '',//'',
 
 // Google Maps
-	'e_map'		=> '地图',//'Map',
-	'e_map_insert'	=> '插入google地图',//'Insert Google Map',
+	'e_map'		=> '地圖',//'Map',
+	'e_map_insert'	=> '插入google地圖',//'Insert Google Map',
 	'e_map_address'	=> '地址： ',//'Enter address for search: ',
 );
 
