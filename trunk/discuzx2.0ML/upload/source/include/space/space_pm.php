@@ -173,6 +173,7 @@ if($_GET['subop'] == 'view') {
 if(!empty($list)) {
 	$today = $_G['timestamp'] - ($_G['timestamp'] + $_G['setting']['timeoffset'] * 3600) % 86400;
 	foreach ($list as $key => $value) {
+/*vot*/		$value['lastsummary'] = stripslashes($value['lastsummary']);
 		$value['lastsummary'] = str_replace('&amp;', '&', $value['lastsummary']);
 		$value['lastsummary'] = preg_replace("/&[a-z]+\;/i", '', $value['lastsummary']);
 		$value['daterange'] = 5;
