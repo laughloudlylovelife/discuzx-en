@@ -974,7 +974,8 @@ Note on the CSS Hack:
 	Explain:		Switch style menu
 	Last Modify:	lushnis
 */
-	#toptb a#sslct { width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden; }
+	#toptb a#sslct { /*width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden;*/ }
+	#sslct img { vertical-align:middle; }
 /*vot*/	#sslct_menu { padding: 2px; }
 /*vot*/		 .sslct_btn { display: block; margin: 0; cursor: pointer; }
 /*vot*/			.sslct_btn i { float: left; display: inline; margin: 2px; width: 10px; height: 10px; background: #2E80D1; overflow: hidden; font-style: normal; }
@@ -1621,7 +1622,7 @@ DIY image is not loaded when the Hide Slide
 	Last Modify:		Valery Votintsev
 */
 .flag {
-	padding-top: 6px;
+	vertical-align: middle;
 }
 /*
 	Name:			Print page copyrights

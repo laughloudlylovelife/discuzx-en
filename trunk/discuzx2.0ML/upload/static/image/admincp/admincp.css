@@ -38,29 +38,29 @@ h3{ margin-bottom:10px; font-size:14px; color:#09C; }
 .mainhd{ position:relative; overflow:hidden; text-align:left; height:90px; line-height:88px; background:url(bg_repx.gif) repeat-x; }
 	.logo{ display: block; text-indent:-9999px; width:135px; height:80px; background:url(logo.gif) no-repeat 15px 13px; }
 		.logo:hover{ background-image:url(logo_hover.gif); }
-	.uinfo{ position:absolute; z-index:4; line-height:32px; top:10px; right:15px; }
+	.uinfo{ position:absolute; z-index:4; line-height:24px; top:0px; right:15px; }
 		.uinfo a{ color:#666; }
 		.uinfo em{ margin-right:5px; font-weight:700; }
 			.uinfo em a{ text-decoration:underline; }
 		.uinfo p{ float:left; }
 			.btnlink a{ display:block; margin-left:10px; width:63px; height:32px; text-align:center; background:url(bg_repno.gif) no-repeat -50px -150px; }
 	.navbg{ position:absolute; z-index:1; top:52px; left:153px; width:6px; height:37px; background:#F7FAFD; }
-	.nav{ position:absolute; z-index:2; top:14px; left:159px; width:100%; height:75px; }
-		.nav ul{ overflow:hidden; position:relative; z-index:4; font-size:14px; }
-			.nav li{ float:left; height:43px; line-height:43px; background:url(btn_block.gif) right -115px no-repeat; }
+/*vot*/	.nav{ position:absolute; z-index:2; top:0; /*left:159px;*/ width:100%; height:90px; }
+/*vot*/		.nav ul{ overflow:hidden; position:relative; z-index:4; font-size:14px; margin: 20px 0 8px 0; }
+/*vot*/			.nav li{ float:left; height:28px; line-height:28px; background:url(btn_block.gif) right -124px no-repeat; }
 				.nav li em{ display:block; }
-				.nav li a{ padding:5px 5px; color:#639BB0; font-weight:700; }
+/*vot*/				.nav li a{ padding:0 7px; color:#639BB0; font-weight:700; }
 				.nav li a:hover{ color:#09C; text-decoration:none; }
 				.nav li .diffcolor{ color:#F60; }
-			.nav li.navon{ line-height:33px; background:url(btn_block.gif) no-repeat; }
+/*vot*/			.nav li.navon{ background:url(btn_block.gif) no-repeat; }
 				.nav li.navon em{ display:block; background:url(btn_block.gif) right -50px no-repeat; }
-				.nav li.navon em a{ display:block; background:url(btn_block.gif) center bottom no-repeat; color:#FFF; }
+/*vot*/				.nav li.navon em a{ display:block; /*background:url(btn_block.gif) center bottom no-repeat;*/ color:#FFF; }
 					.nav li.navon em a:hover{ color:#FFF; }
 		.nav ul #header_uc { font-size:12px; }
-		.navbd { overflow:hidden; clear:both; position:absolute; z-index:3; top:38px; width:100%; height:5px; background:#09C; }
-	.currentloca{ clear:both; height:32px; border-left:1px solid #B5CFD9; }
-		.currentloca p{ padding-left:10px; line-height:25px; border-top:5px solid #FFF; border-bottom:2px solid #FFF; border-left:1px solid #FFF; background:#F2F9FD; }
-		.sitemapbtn{ position:absolute; right:175px; *right:170px; top:50px; line-height:100%; }
+/*vot*/		.navbd { overflow:hidden; clear:both; position:absolute; z-index:3; top:46px; width:100%; height:5px; background:#09C; }
+/*vot*/	.currentloca{ /*clear:both;*/ height:38px; border-left:1px solid #B5CFD9; position: absolute; top: 51px; left: -1px; }
+/*vot*/		.currentloca p{ padding-left:10px; line-height:25px; /*border-top:5px solid #FFF; border-bottom:2px solid #FFF; border-left:1px solid #FFF; background:#F2F9FD;*/ }
+/*vot*/		.sitemapbtn{ position:absolute; right:175px; *right:170px; top:60px; line-height:100%; }
 			.sitemapbtn span{ margin-right:3px; }
 
 a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px; }
@@ -74,7 +74,7 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	#ugselect_menu { width:450px; }
 	.popupmenu_popup em { display:block; clear: both; padding: 2px 4px; font-weight:700; background:#EAF4FB; }
 		.popupmenu_popup em.hover { cursor:pointer; }
-	.popupmenu_popup a { float: left; margin: 1px 9px 1px 0; padding-left:3px; width: 100px; }
+/*vot*/	.popupmenu_popup a { float: left; margin: 1px 9px 1px 0; padding-left:3px; width: 120px; }
 	.popupmenu_popup .ck { width: 25px; margin-top: 4px; }
 	.popupmenu_popup .current { font-weight:700; }
 		.popupmenu_popup a.f, .popupmenu_popup a.s { float: none; display: block; width:80%; }
@@ -188,7 +188,7 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.tips a:hover, .tips2 a:hover, .tipsblock a:hover{ color:#09C; }
 
 /* table */
-.tb{ clear:both; width:100%; margin-top: 8px}
+.tb{ clear:both; width:100%; margin-top: 8px; }
 	.tb th, .tb td{ padding:5px !important; height:25px; }
 .tb1{}
 	.th11, .th12{ width:60px; font-weight:700; }

@@ -31,8 +31,8 @@ $basescript = ADMINSCRIPT;
 $change_language = cplang('change_language');
 $lang_list='';
 foreach($_G['config']['languages'] AS $lng => $lngarray) {
-  $lang_list .= '	<a href="javascript:;" onclick="setlang(\''.$lng.'\')">
-	<img src="'.$_G[siteroot].'source/language/'.$lng.'/'.$lngarray['icon'].'"/> '.$lngarray['title'].'
+  $lang_list .= '	<a href="javascript:;" onclick="setlang(\''.$lng.'\')" title="'.$lngarray['title'].'">
+	<img src="'.$_G[siteroot].'source/language/'.$lng.'/'.$lngarray['icon'].'"/> '.$lngarray['name'].'
       	</a>'."\n";
 }
 
@@ -61,21 +61,31 @@ var admincpfilename = '$basescript', IMGDIR = '$IMGDIR', STYLEID = '$STYLEID', V
       </div>
 
 <table id="frametable" cellpadding="0" cellspacing="0" width="100%" height="100%">
- <tr>
-  <td colspan="2" height="90">
-   <div class="mainhd">
+ <tr height="90" valign="top"><!--vot-->
+  <td width="160" class="mainhd">
     <a href="admin.php?action=index" class="logo">Discuz! $admincp</a>
+  </td>
+  <td class="mainhd">
     <div class="uinfo" id="frameuinfo">
 
-      <!-- vot Multi-Lingual -->
-      <p><a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="$change_language"><img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>&nbsp;</p>
+      <p>
+       $header_welcome, $cpadmingroup <em>{$_G['member']['username']}</em>
+       <span class="pipe">|</span>
 
-      <p>$header_welcome, $cpadmingroup <em>{$_G['member']['username']}</em> [<a href="$basescript?action=logout" target="_top">$header_logout</a>]</p>
-      <p class="btnlink"><a href="index.php" target="_blank">$header_bbs</a></p>
+       <!-- vot Multi-Lingual -->
+       <a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="$change_language">$change_language:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+       <span class="pipe">|</span>
+
+       <a href="$basescript?action=logout" target="_top">$header_logout</a>
+       <span class="pipe">|</span>
+
+       <a href="index.php" target="_blank">$header_bbs</a>
+
+      </p>
     </div>
-    <div class="navbg"></div>
+<!--    <div class="navbg"></div>-->
 
-<div class="nav">
+<div id="nav" class="nav">
 <ul id="topmenu">
 
 EOT;
@@ -110,7 +120,7 @@ echo <<<EOT
 	<a href="###" id="cpmap" onclick="showMap();return false;"><img src="static/image/admincp/btn_map.gif" title="$lang[admincp_maptext]" width="46" height="18" /></a>
 </div>
 </div>
-</div>
+<!--/div-->
 </td>
 </tr>
 <tr>
@@ -218,7 +228,8 @@ echo <<<EOT
 	}
 	function resizeHeadermenu() {
 		var lis = $('topmenu').getElementsByTagName('li');
-		var maxsize = $('frameuinfo').offsetLeft - 160, widths = 0, moi = -1, mof = '';
+/*vot*/		var maxsize = document.body.clientWidth - 180;
+		var widths = 0, moi = -1, mof = '';
 		if($('menu_mof')) {
 			$('topmenu').removeChild($('menu_mof'));
 		}

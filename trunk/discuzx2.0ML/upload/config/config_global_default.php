@@ -178,16 +178,16 @@ $_config['remote']['cron'] = 0;
 // Enabled Language List:
 
 $_config['languages'] = array(
-//	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
-//	'zh' => array('icon'=>'zh.gif', 'title'=>'Simp. Chinese', 'dir'=>'ltr'),
-//	'tc' => array('icon'=>'tw.gif', 'title'=>'Trad. Chinese', 'dir'=>'ltr'),
-//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
-	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
-//	'fr' => array('icon'=>'fr.gif', 'title'=>'French', 'dir'=>'ltr'),
-//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
-//	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
-//	'tr' => array('icon'=>'tr.gif', 'title'=>'Turkish', 'dir'=>'ltr'),
-//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
+//	'ar' => array('icon'=>'ar.gif', 'name'=>'العربية', 'title'=>'Arabic', 'dir'=>'rtl'),
+//	'zh' => array('icon'=>'zh.gif', 'name'=>'简体中文', 'title'=>'Simplified Chinese', 'dir'=>'ltr'),
+//	'tc' => array('icon'=>'tw.gif', 'name'=>'繁體中文', 'title'=>'Traditional Chinese', 'dir'=>'ltr'),
+//	'de' => array('icon'=>'de.gif', 'name'=>'Deutsch', 'title'=>'Deutsch', 'dir'=>'ltr'),
+	'en' => array('icon'=>'en.gif', 'name'=>'English', 'title'=>'English', 'dir'=>'ltr'),
+//	'fr' => array('icon'=>'fr.gif', 'name'=>'Française', 'title'=>'French', 'dir'=>'ltr'),
+//	'ru' => array('icon'=>'ru.gif', 'name'=>'Русский', 'title'=>'Russian', 'dir'=>'ltr'),
+//	'th' => array('icon'=>'th.gif', 'name'=>'ภาษาไทย', 'title'=>'Thai', 'dir'=>'ltr'),
+//	'tr' => array('icon'=>'tr.gif', 'name'=>'Türkçe', 'title'=>'Turkish', 'dir'=>'ltr'),
+//	'vn' => array('icon'=>'vn.gif', 'name'=>'Tiếng Việt', 'title'=>'Vietnamese', 'dir'=>'ltr'),
 );
 $_config['detect_language'] = true;	// Auto-detect user language: true|false
 

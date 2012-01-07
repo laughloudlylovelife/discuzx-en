@@ -202,6 +202,7 @@ $lang = array
 	'title_userapp_manage'		=> '{userapp} Management',
 	'faq'				=> 'FAQ',
 	'search'			=> 'Suche',
+	'page'				=> 'Page {page}',
 
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'refresh Grenzfrequenz',

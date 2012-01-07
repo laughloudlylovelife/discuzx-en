@@ -58,12 +58,16 @@
 					<!--{/loop}-->
 					<!--{if $_G['basescript'] == 'forum' && empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']}-->
 						<a href="javascript:;" onclick="widthauto(this)"><!--{if !$_G['forum_widthauto']}-->{lang switch_wide}<!--{else}-->{lang switch_narrow}<!--{/if}--></a>
+						<span class="pipe">|</span>
 					<!--{/if}-->
 
 					<!-- vot Multi-Lingual -->
-					<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}"><img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+					<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}">{lang change_language}:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+					<span class="pipe">|</span>
 
-					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}</a><!--{/if}-->
+					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
+						<a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}:<img src="{IMGDIR}/style_switch.png"></a>
+					<!--{/if}-->
 					<!--{if CURMODULE != 'topic' && $_G['group']['allowdiy'] && !empty($_G['style']['tplfile']) || CURMODULE == 'topic' && !empty($_G['style']['tplfile']) && ($_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic'])}-->
 						<a id="diy-tg" href="javascript:openDiy();" title="{lang open_diy}" class="xi1 xw1">DIY</a>
 					<!--{/if}-->
@@ -77,8 +81,8 @@
 
 			<!--{loop $_G[config][languages] $lng $lngarray}-->
 
-				<a href="javascript:;" onclick="setlang('$lng')">
-					<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[title]}
+				<a href="javascript:;" onclick="setlang('$lng')" title="{$lngarray[title]}">
+					<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[name]}
 				</a>
 			<!--{/loop}-->
 			</div>
