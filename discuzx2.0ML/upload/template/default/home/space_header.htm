@@ -20,7 +20,7 @@
 			<div class="y">
 
 				<!-- vot Multi-Lingual -->
-				<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}"><img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+				<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}">{lang change_language}:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
 
 				<!--{if $_G['uid']}-->
 					<a href="home.php?mod=space&uid=$_G[uid]" class="xw1" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a>
@@ -56,8 +56,8 @@
 
 			<!--{loop $_G[config][languages] $lng $lngarray}-->
 
-			<a href="javascript:;" onclick="setlang('$lng')">
-				<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[title]}
+			<a href="javascript:;" onclick="setlang('$lng')" title="{$lngarray[title]}">
+				<img src="{$_G[siteroot]}source/language/{$lng}/{$lngarray[icon]}"/> {$lngarray[name]}
 			</a>
 			<!--{/loop}-->
 		</div>

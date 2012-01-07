@@ -268,7 +268,14 @@ class discuz_core {
 //		$lng = $default_lang;
 		$lng = '';
 
-		// set from cookies
+		// Adjust language names with language titles
+		foreach($this->var['config']['languages'] AS $k=>$v) {
+			if(empty($v['name'])) {
+				$this->var['config']['languages'][$k]['name'] = $v['title'];
+			}
+		}
+
+		// set language from cookies
 		if($this->var['cookie']['language']) {
 			$lng = strtolower($this->var['cookie']['language']);
 //DEBUG
@@ -315,6 +322,7 @@ class discuz_core {
 		$this->var['langpath']  = DISCUZ_ROOT . 'source/language/'.$lng . '/';
 		$this->var['langurl']   = $this->var['siteroot'] . 'source/language/'.$lng . '/';
 		$this->var['langicon']  = $this->var['config']['languages'][$lng]['icon'];
+		$this->var['langname'] = $this->var['config']['languages'][$lng]['name'];
 		$this->var['langtitle'] = $this->var['config']['languages'][$lng]['title'];
 		$this->var['langdir']   = strtolower($this->var['config']['languages'][$lng]['dir']);
 
@@ -344,6 +352,7 @@ class discuz_core {
 			$_config['languages'] = array(
 				'en' => array(
 					'icon' => 'en.gif',
+					'name' => 'English',
 					'title' => 'English',
 					'dir' => 'ltr',
 					)

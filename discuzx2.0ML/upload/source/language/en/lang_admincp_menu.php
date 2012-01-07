@@ -27,7 +27,7 @@ $lang = array
 	'header_bbs'		=> 'The&nbsp;Site',//'站点首页',
 	'header_portal'		=> 'Portal',//'门户',
 	'header_group'		=> 'Groups',//'群组',
-	'header_founder'	=> 'Admin',//'站长',
+	'header_founder'	=> 'Admins',//'站长',
 	'header_addons'		=> 'Addons',//'扩展中心',
 
 

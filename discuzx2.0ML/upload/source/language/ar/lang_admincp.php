@@ -6210,6 +6210,11 @@ RepeatLimit 32
 	'quick_members'			=> 'الخصائص المتعلقة بالاعضاء',//'会员操作相关',
 	'quick_clean_trans'		=> 'مسح سجلات المعاملة لجميع الاعضاء',//'清空 所有会员 积分交易记录',
 
+//---------------------------
+//Change Language
+'change_language'	=> 'Change language',
+'change_style'		=> 'Change style',
+
 //	'setting_seo_rewritestatus_all_script'		=> 'جميع صفحات الموقع',//'全站动态页面',
 //	'postsplit_manage_update_tabletype_submit'	=> 'تحديث نوع الجدول',//'更新表类型',
 //	'custommenu_edit_succeed'	=> 'تم التحديث بنجاح',

@@ -7,7 +7,7 @@
  *      $Id: install_lang.php by Valery Votintsev at sources.ru
  */
 
-define('UC_VERNAME', 'English Version');
+define('UC_VERNAME', 'International Version');
 
 $lang = array(
 	'SC_GBK'		=> '简体中文版',//'Simplified Chinese GBK encoding',
@@ -351,8 +351,8 @@ $lang = array(
 	'topic'				=> '专题',//'Topic',
 //---------------------------------------------------------------
 //vot 2 vars for language select:
-	'welcome'			=> 'Welcome to Discuz! X Installation!',
-	'select_language'		=> '<b>Select the installation language</b>:',
+	'welcome'			=> '欢迎到Discuz！ X安装！',//'Welcome to Discuz! X Installation!',
+	'select_language'		=> '<b>选择安装语言</b>',//'<b>Select the installation language</b>:',
 
 //---------------------------------------------------------------
 

@@ -971,7 +971,7 @@ function dstrlen($str) {
 }
 
 function cutstr($string, $length, $dot = ' ...') {
-	if(strlen($string) <= $length) {
+	if(strlen($string) <= $length) { //vot mb_strlen?
 		return $string;
 	}
 
@@ -983,7 +983,7 @@ function cutstr($string, $length, $dot = ' ...') {
 	if(strtolower(CHARSET) == 'utf-8') {
 
 		$n = $tn = $noc = 0;
-		while($n < strlen($string)) {
+		while($n < strlen($string)) { //vot mb_strlen?
 
 			$t = ord($string[$n]);
 			if($t == 9 || $t == 10 || (32 <= $t && $t <= 126)) {

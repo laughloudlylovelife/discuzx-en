@@ -10,6 +10,6 @@
  *
  */
 
-$_SGLOBAL['language_title'] = 'Chinese';
-$_SGLOBAL['language_icon'] = 'cn.gif';
+$_SGLOBAL['language_title'] = 'Simplified Chinese';
+$_SGLOBAL['language_icon'] = 'zh.gif';
 
