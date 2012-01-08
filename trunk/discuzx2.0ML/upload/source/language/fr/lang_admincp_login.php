@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *
+ *      Traduit par Andre13 - 27-déc.2011 http://discuz-fr.fr Support French
  *      $Id: lang_admincp_login.php by Valery Votintsev at sources.ru
  */
 

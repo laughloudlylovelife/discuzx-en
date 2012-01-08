@@ -326,7 +326,7 @@ $lang = array (
     ),
     'text' =>
     array (
-      0 => 'Param&#232;tres de l\'&#233;diteur',
+      0 => 'Param&#232;tres de l\'&#233;diteur',//'编辑器设置',
     ),
   ),
   29 =>
