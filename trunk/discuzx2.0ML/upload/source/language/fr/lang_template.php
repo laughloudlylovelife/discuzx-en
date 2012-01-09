@@ -437,6 +437,7 @@ $lang = array (
 	'nav_task'	=> 'T&#226;ches',//'任务', // 'Tasks'// - Where in language in French: ==>'Mission WHERE Missions' <==
 	'nav_sethomepage'	=> 'D&#233;finir comme page d\'accueil',//'设为首页', // 'Set as Homepage'
 	'nav_setfavorite'	=> 'Ajouter aux Favoris',//'收藏本站', // 'Add to Favorites'
+	'nav_uchome'		=> 'UCHome',//'',
 //	'nav_'		=> '',//'', // 
 
 // Google Maps

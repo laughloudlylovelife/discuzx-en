@@ -14,7 +14,7 @@ if(!defined('IN_DISCUZ')) {
 if(!defined('DISCUZ_VERSION')) {
 	define('DISCUZ_VERSION', 'X2');
 	define('DISCUZ_RELEASE', '20111221');
-	define('EN_VERSION', '296');
+	define('EN_VERSION', '297');
 }
 
 ?>

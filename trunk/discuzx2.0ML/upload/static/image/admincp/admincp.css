@@ -158,7 +158,7 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 			.itemtitle .tab1 .current a span, .itemtitle .tab1 .current a:hover span{ background:url(btn_block_3.gif) no-repeat right -20px; color:#FFF; }
 		.itemtitle .tab1 .dropmenu a{ background:none !important; }
 			.itemtitle .tab1 .dropmenu a:hover, .itemtitle .tab1 .dropmenu a.current{ background:#DEEFFA !important; }
-.floattop { position:fixed; z-index:200; top:0; left:0; margin-left: 20px; padding:8px 20px 8px 0; width:99%; background:#FFF; }
+/*vot*/	.floattop { /*position:fixed;*/ z-index:200; top:0; left:0; margin-left: 20px; padding:8px 20px 8px 0; width:99%; background:#FFF; }
 	.floattop #fselect, .floattop #ugselect { margin-right: 20px; }
 	* html .floattop { position:relative; top:expression(offsetParent ? offsetParent.scrollTop : 0); left: -20px; margin-top: -10px; width: 100%; }
 	.floattopempty { height: 35px !important; height: auto; }
@@ -189,7 +189,10 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 
 /* table */
 .tb{ clear:both; width:100%; margin-top: 8px; }
-	.tb th, .tb td{ padding:5px !important; height:25px; }
+/*vot*/	.tb th, .tb td{ padding:2px !important; height:25px;
+	vertical-align: top;
+/*DEBUG*/ /*border: 1px solid red;*/
+}
 .tb1{}
 	.th11, .th12{ width:60px; font-weight:700; }
 	.tb1 .th12{ padding-top:7px; vertical-align:top; }
@@ -224,16 +227,17 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.tb2 tr.hover:hover td { background: #F2F9FD; }
 	.tb2.tdhover tr:hover td { background: none; }
 	.tb2.tdhover tr td:hover { background: #F2F9FD; }
-	.tb2 td{ padding:5px 5px 3px 0; border-top: 1px dotted #DEEFFB; }
-	.tb2 th{ padding:5px 5px 3px 0; line-height:21px; font-size: 12px; }
-/*vot*/	.tb2 .txt, .tb2 .txtnobd{ width:100%; margin-right:10px; }
+/*vot*/	.tb2 td{ padding:2px; border-top: 1px dotted #DEEFFB; }
+/*vot*/	.tb2 th{ padding:2px; line-height:21px; font-size: 12px; }
+/*vot*/	.tb2 .txt, .tb2 .txtnobd{ width:90%; }
+/*vot*/	.tb2 .txtid { width:100px; }
 	.tb2 .smtxt { margin-right: 5px; width: 25px; }
 	.nowrap { white-space: nowrap; }
 	.td21{ width:150px; font-weight:700; }
 	.td22{ width:100px; font-weight:700; }
 	.td23{ width:100px; }
 	.td24{ width:120px; }
-	.td25{ width:50px; }
+	.td25{ width:25px; }
 		.td25 .txt{ width:40px; }
 	.td26{}
 		.td26 .txt, .td26 .txtnobd{ width:90%; *width:280px; }

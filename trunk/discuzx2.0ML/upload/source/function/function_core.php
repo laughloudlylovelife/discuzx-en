@@ -540,25 +540,46 @@ function nav_language() {
 		} else {
 			$navs = $_G['setting'][$type];
 		}
-		foreach($navs AS $nav) {
+//DEBUG
+//echo "<pre>";
+//echo "type=".$type.", navs=";
+//print_r($_G['setting'][$type]);
+//print_r($navs);
+//echo "</pre>";
+
+		foreach($navs AS $id=>$nav) {
+$oldname = $nav['navname'];
+$newname = lang('template','nav_'.$nav['id']);
 			if($nav['id']) {
 				if($type=='topnavs') {
-					$_G['setting'][$type][0][$nav['id']]['navname'] = lang('template','nav_'.$nav['id']);
+					$_G['setting'][$type][0][$id]['navname'] = $newname;
 				} else {
-					$_G['setting'][$type][$nav['id']]['navname'] = lang('template','nav_'.$nav['id']);
+					$_G['setting'][$type][$id]['navname'] = $newname;
 				}
+//DEBUG
+//echo "<pre>";
+//echo $oldname." ---&gt; ".$newname." ---&gt; ".$_G['setting'][$type][$nav['id']]['navname']."\n";
+//echo "</pre>";
 			}
 		}
 	}
 //DEBUG
 //echo "<pre>";
-//echo "lng=";
-//print_r($_G['language']);
+//echo "lng=".$_G['language']."\n";
+//echo "setting=";
+//print_r($_G['setting']);
+//echo "\nnavs=";
 //print_r($_G['setting']['navs']);
+//echo "\ntopnavs=";
 //print_r($_G['setting']['topnavs']);
+//echo "\nfooternavs=";
 //print_r($_G['setting']['footernavs']);
+//echo "\nmynavs=";
 //print_r($_G['setting']['mynavs']);
+//echo "\nspacenavs=";
 //print_r($_G['setting']['spacenavs']);
+//echo "\nusergroups=";
+//print_r($_G['setting']['usergroups']);
 //echo "</pre>";
 }
 

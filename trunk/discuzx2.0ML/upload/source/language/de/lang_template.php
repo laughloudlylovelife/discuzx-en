@@ -131,7 +131,7 @@ $lang = array (
 'preview_threadtext'		=> 'Preview thread',//'主题列表字体',
 	'table_header'		=> 'Header',
 'album'		=> 'Albums',
-	'article'		=> 'Artkel',
+	'article'		=> 'Artikel',
 	'blog'			=> 'Blog',
 	'enter_content'		=> 'Suche Inhalt',
 	'hot_search'		=> 'Hot Suche',
@@ -437,6 +437,7 @@ $lang = array (
 	'nav_task'	=> 'Tasks',//'任务',
 	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
+	'nav_uchome'		=> 'UCHome',//'',
 //	'nav_'		=> '',//'',
 
 // Google Maps

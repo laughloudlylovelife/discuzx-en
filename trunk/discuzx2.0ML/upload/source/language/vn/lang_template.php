@@ -437,6 +437,7 @@ $lang = array (
 	'nav_task'	=> 'Nhiệm vụ',//'Tasks',//'任务',
 	'nav_sethomepage'	=> 'Đặt trang chủ',//'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'Đặt Bookmark',//'Add to Favorites',//'收藏本站',
+	'nav_uchome'		=> 'UCHome',//'',
 //	'nav_'		=> '',//'',
 
 // Google Maps

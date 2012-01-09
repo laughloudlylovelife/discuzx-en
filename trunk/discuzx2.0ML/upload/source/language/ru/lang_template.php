@@ -437,6 +437,7 @@ $lang = array (
 	'nav_task'	=> 'Задачи',//'任务',
 	'nav_sethomepage'	=> 'Установить как домашнюю',//'设为首页',
 	'nav_setfavorite'	=> 'Добавить в избранное',//'收藏本站',
+	'nav_uchome'		=> 'ЮЦХ0ме',//'',
 //	'nav_'		=> '',//'',
 
 // Google Maps
