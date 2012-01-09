@@ -30,7 +30,7 @@ if($operation == 'headernav') {
 
 			showformheader('nav&operation=headernav');
 			showtableheader();
-			showsubtitle(array('', 'display_order', 'name', 'misc_customnav_subtype', 'url', 'type', 'setindex', 'available', ''));
+/*vot*/			showsubtitle(array('', 'display_order', 'name', 'ID', 'misc_customnav_subtype', 'url', 'type', 'setindex', 'available', ''));
 			showtagheader('tbody', '', true);
 
 			$navlist = $subnavlist = $pluginsubnav = array();
@@ -69,8 +69,10 @@ if($operation == 'headernav') {
 				showtablerow('', array('class="td25"', 'class="td25"', '', '', '',''), array(
 					($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ? '<a href="javascript:;" class="right" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : '').(in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />'),
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
-					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\"$readonly>".
-						($nav['identifier'] == 6 && $nav['type'] == 0 ? '' : "<a href=\"###\" onclick=\"addrowdirect=1;addrow(this, 1, $nav[id])\" class=\"addchildboard\">$lang[misc_customnav_add_submenu]</a></div>"),
+/*vot*/					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\"$readonly></div>".
+/*vot*/						($nav['identifier'] == 6 && $nav['type'] == 0 ? '' : "<a href=\"###\" onclick=\"addrowdirect=1;addrow(this, 1, $nav[id])\" class=\"addchildboard\">$lang[misc_customnav_add_submenu]</a>"),
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"16\" name=\"identifiernew[$nav[id]]\" value=\"$nav[identifier]\">",
+
 					$nav['identifier'] == 6 && $nav['nav'] == 0 ? $lang['misc_customnav_subtype_menu'] : "<select name=\"subtypenew[$nav[id]]\"><option value=\"0\" $navsubtype[0]>$lang[misc_customnav_subtype_menu]</option><option value=\"1\" $navsubtype[1]>$lang[misc_customnav_subtype_sub]</option></select>",
 					$nav['type'] == '0' || $nav['type'] == '4' ? "<span title='{$nav['url']}'>".$nav['url'].'<span>' : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
@@ -119,7 +121,7 @@ if($operation == 'headernav') {
 				}
 			}
 			showtagfooter('tbody');
-			echo '<tr><td colspan="1"></td><td colspan="8"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['misc_customnav_add_menu'].'</a></div></td></tr>';
+/*vot*/			echo '<tr><td colspan="2"></td><td colspan="8"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['misc_customnav_add_menu'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -129,7 +131,7 @@ if($operation == 'headernav') {
 
 			$applist = '';
 			if(count($ucapparray) > 1) {
-				$applist = $lang['misc_customnav_add_ucenter'].'<select name="applist" onchange="app(this)"><option value=""></option>';
+/*vot*/				$applist = "<br/>".$lang['misc_customnav_add_ucenter'].'<select name="applist" onchange="app(this)"><option value=""></option>';
 				foreach($ucapparray as $app) {
 					if($app['appid'] != UC_APPID) {
 						$applist .= "<option value=\"$app[url]\">$app[name]</option>";
@@ -141,7 +143,7 @@ if($operation == 'headernav') {
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '', ''], [5, '<input name="newurl[]" value="" size="15" type="text" class="txt"> $applist <input type="hidden" name="newparentid[]" value="0" />']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [1, '', ''], [5, '<input name="newurl[]" value="" size="15" type="text" class="txt"> $applist <input type="hidden" name="newparentid[]" value="0" />']],
 		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<div class=\"board\"><input name="newname[]" value="" size="15" type="text" class="txt"></div>'], [1, '', ''], [5, '<input name="newurl[]" value="" size="15" type="text" class="txt"> $applist <input type="hidden" name="newparentid[]" value="{1}" />']]
 	];
 	function app(obj) {
@@ -157,7 +159,7 @@ if($operation == 'headernav') {
 </script>
 EOT;
 
-		} else {
+		} else { //if(!submitcheck('submit')) == Save nav list/order
 
 			if($ids = dimplode($_G['gp_delete'])) {
 				DB::query("DELETE FROM ".DB::table('common_nav')." WHERE navtype='0' AND id IN ($ids)");
@@ -166,14 +168,16 @@ EOT;
 
 			if(is_array($_G['gp_namenew'])) {
 				foreach($_G['gp_namenew'] as $id => $name) {
+/*vot*/					$identifier = trim(dhtmlspecialchars($_G['gp_identifiernew'][$id]));
 					$name = trim(dhtmlspecialchars($name));
 					$urlnew = str_replace(array('&amp;'), array('&'), dhtmlspecialchars($_G['gp_urlnew'][$id]));
 					$urladd = !empty($_G['gp_urlnew'][$id]) ? ", url='$urlnew'" : '';
 					$availablenew[$id] = $name && (!isset($_G['gp_urlnew'][$id]) || $_G['gp_urlnew'][$id]) && $_G['gp_availablenew'][$id];
 					$displayordernew[$id] = intval($_G['gp_displayordernew'][$id]);
 					$nameadd = !empty($name) ? ", name='$name'" : '';
+/*vot*/					$identifieradd = !empty($identifier) ? ", identifier='$identifier'" : '';
 					$subtypeadd = isset($_G['gp_subtypenew'][$id]) ? ", subtype='".intval($_G['gp_subtypenew'][$id])."'" : '';
-					DB::query("UPDATE ".DB::table('common_nav')." SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $nameadd $subtypeadd WHERE id='$id'");
+/*vot*/					DB::query("UPDATE ".DB::table('common_nav')." SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $identifieradd $nameadd $subtypeadd WHERE id='$id'");
 				}
 			}
 
@@ -197,7 +201,9 @@ EOT;
 						$newparentid[$k] = intval($_G['gp_newparentid'][$k]);
 						$newdisplayorder[$k] = intval($_G['gp_newdisplayorder'][$k]);
 						$newurl[$k] = str_replace('&amp;', '&', dhtmlspecialchars($_G['gp_newurl'][$k]));
+/*vot*/						$newidentifier[$k] = $_G['gp_newidentifier'][$k];
 						$data = array(
+/*vot*/							'identifier' => $newidentifier[$k],
 							'parentid' => $newparentid[$k],
 							'name' => $v,
 							'displayorder' => $newdisplayorder[$k],
@@ -256,6 +262,7 @@ EOT;
 			showformheader("nav&operation=headernav&do=edit&id=$id", 'enctype');
 			showtableheader();
 			showtitle(cplang('nav_nav_headernav').$parentname.' - '.$nav['name']);
+/*vot*/	//showsetting('misc_customnav_idendifier', 'idendifiernew', $nav['idendifier'], 'text', $nav['type'] == '4');
 			showsetting('misc_customnav_name', 'namenew', $nav['name'], 'text', $nav['type'] == '4');
 			showsetting('misc_customnav_parent', array('parentidnew', $parentselect), $nav['parentid'], 'select');
 			showsetting('misc_customnav_title', 'titlenew', $nav['title'], 'text');
@@ -298,6 +305,7 @@ EOT;
 
 		} else {
 
+/*vot*/			//$identifiernew = trim(dhtmlspecialchars($_G['gp_identifiernew']));
 			$namenew = trim(dhtmlspecialchars($_G['gp_namenew']));
 			$titlenew = trim(dhtmlspecialchars($_G['gp_titlenew']));
 			$urlnew = str_replace(array('&amp;'), array('&'), dhtmlspecialchars($_G['gp_urlnew']));
@@ -334,7 +342,7 @@ EOT;
 			}
 			$logoadd = ", logo='$logonew'";
 
-			DB::query("UPDATE ".DB::table('common_nav')." SET name='$namenew', parentid='$parentidnew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd $subcols $logoadd WHERE id='$id'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_nav')." SET name='$namenew', parentid='$parentidnew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd $subcols $logoadd WHERE id='$id'");
 
 			updatecache('setting');
 			cpmsg('nav_add_succeed', 'action=nav&operation=headernav', 'succeed');
@@ -354,7 +362,7 @@ EOT;
 
 			showformheader('nav&operation=footernav');
 			showtableheader();
-			showsubtitle(array('', 'display_order', 'name', 'url', 'type', 'available', ''));
+/*vot*/			showsubtitle(array('', 'display_order', 'name', 'ID', 'url', 'type', 'available', ''));
 
 			$navlist = array();
 			$query = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='1' ORDER BY displayorder");
@@ -367,13 +375,14 @@ EOT;
 					in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />',
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">",
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
 					$nav['type'] == '0' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
 					"<input class=\"checkbox\" type=\"checkbox\" name=\"availablenew[$nav[id]]\" value=\"1\" ".($nav['available'] ? 'checked' : '').">",
 					"<a href=\"".ADMINSCRIPT."?action=nav&operation=footernav&do=edit&id=$nav[id]\" class=\"act\">$lang[edit]</a>"
 				));
 			}
-			echo '<tr><td colspan="1"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_footernav_add'].'</a></div></td></tr>';
+			echo '<tr><td colspan="2"></td><td colspan="6"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_footernav_add'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -381,7 +390,7 @@ EOT;
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
 	];
 </script>
 EOT;
@@ -446,6 +455,7 @@ EOT;
 			showformheader("nav&operation=footernav&do=edit&id=$id");
 			showtableheader();
 			showtitle(cplang('nav_nav_footernav').' - '.$nav['name']);
+/*vot*/	//showsetting('misc_customnav_identifier', 'identifiernew', $nav['identifier'], 'text');
 			showsetting('misc_customnav_name', 'namenew', $nav['name'], 'text');
 			showsetting('misc_customnav_title', 'titlenew', $nav['title'], 'text');
 			showsetting('misc_customnav_url', 'urlnew', $nav['url'], 'text', $nav['type'] == '0');
@@ -480,6 +490,7 @@ EOT;
 
 		} else {
 
+/*vot*/			$identifiernew = trim(dhtmlspecialchars($_G['gp_identifiernew']));
 			$namenew = trim(dhtmlspecialchars($_G['gp_namenew']));
 			$titlenew = trim(dhtmlspecialchars($_G['gp_titlenew']));
 			$urlnew = str_replace(array('&amp;'), array('&'), dhtmlspecialchars($_G['gp_urlnew']));
@@ -493,7 +504,7 @@ EOT;
 			$levelnew = $nav['type'] ? (intval($_G['gp_levelnew']) && $_G['gp_levelnew'] > 0 && $_G['gp_levelnew'] < 4 ? intval($_G['gp_levelnew']) : 0) : 0;
 			$urladd = $nav['type'] != '0' && $urlnew ? ", url='".$urlnew."'" : '';
 
-			DB::query("UPDATE ".DB::table('common_nav')." SET name='$namenew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew' $urladd WHERE id='$id'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_nav')." SET identifier='$identifiernew', name='$namenew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew' $urladd WHERE id='$id'");
 
 			updatecache('setting');
 			cpmsg('nav_add_succeed', 'action=nav&operation=footernav', 'succeed');
@@ -513,7 +524,7 @@ EOT;
 
 			showformheader('nav&operation=spacenav');
 			showtableheader();
-			showsubtitle(array('', 'display_order', 'name', 'url', 'type', 'available', ''));
+/*vot*/			showsubtitle(array('', 'display_order', 'name', 'ID', 'url', 'type', 'available', ''));
 
 			$navlist = array();
 			$query = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='2' ORDER BY displayorder");
@@ -531,13 +542,14 @@ EOT;
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 					!in_array($nav['name'], array('{userpanelarea1}', '{userpanelarea2}', '{hr}')) ? ("<input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">".
 					($nav['icon'] ? '<img src="'.$navicon.'" width="16" height="16" class="vmiddle" />' : '')) : "<input type=\"hidden\" name=\"namenew[$nav[id]]\" value=\"$nav[name]\">".cplang('nav_spacenav_'.str_replace(array('{', '}'), '', $nav['name']), array('navname' => $_G['setting']['navs'][5]['navname'])),
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
 					$nav['type'] == '0' || $nav['name'] == '{hr}' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
 					"<input class=\"checkbox\" type=\"checkbox\" name=\"availablenew[$nav[id]]\" value=\"1\" ".($nav['available'] ? 'checked' : '').">",
 					!in_array($nav['name'], array('{userpanelarea1}', '{userpanelarea2}', '{hr}')) ? "<a href=\"".ADMINSCRIPT."?action=nav&operation=spacenav&do=edit&id=$nav[id]\" class=\"act\">$lang[edit]</a>" : ''
 				));
 			}
-			echo '<tr><td colspan="1"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_spacenav_add'].'</a> &nbsp; <a href="###" onclick="addrow(this, 1, 0)" class="addtr">'.$lang['nav_spacenav_add_hr'].'</a></div></td></tr>';
+/*vot*/			echo '<tr><td colspan="2"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_spacenav_add'].'</a> &nbsp; <a href="###" onclick="addrow(this, 1, 0)" class="addtr">'.$lang['nav_spacenav_add_hr'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -545,7 +557,7 @@ EOT;
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
 		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="{hr}" type="hidden">$lang[nav_spacenav_hr]'], [4, '<input name="newurl[]" value="" type="hidden">']],
 	];
 </script>
@@ -573,10 +585,12 @@ EOT;
 				foreach($_G['gp_newname'] as $k => $v) {
 					$v = dhtmlspecialchars(trim($v));
 					if(!empty($v)) {
+/*vot*/						$newidentifier = $v && $_G['gp_newidentifier'][$k];
 						$newavailable = $v && $_G['gp_newurl'][$k];
 						$newdisplayorder[$k] = intval($_G['gp_newdisplayorder'][$k]);
 						$newurl[$k] = str_replace('&amp;', '&', dhtmlspecialchars($_G['gp_newurl'][$k]));
 						$data = array(
+/*vot*/							'identifier' => $newidentifier,
 							'name' => $v,
 							'displayorder' => $newdisplayorder[$k],
 							'url' => $newurl[$k],
@@ -698,7 +712,7 @@ EOT;
 
 			showformheader('nav&operation=mynav');
 			showtableheader();
-			showsubtitle(array('', 'display_order', 'name', 'url', 'type', 'available', ''));
+/*vot*/			showsubtitle(array('', 'display_order', 'Icon', 'name', 'ID', 'url', 'type', 'available', ''));
 
 			$navlist = array();
 			$query = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='3' ORDER BY displayorder");
@@ -714,15 +728,16 @@ EOT;
 				showtablerow('', array('class="td25"', 'class="td25"', '', ''), array(
 					in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />',
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
-					"<input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">".
-					($nav['icon'] ? '<img src="'.$navicon.'" width="40" height="40" class="vmiddle" />' : ''),
+/*vot*/					($nav['icon'] ? '<img src="'.$navicon.'" width="40" height="40" class="vmiddle" />' : ''),
+/*vot*/					"<input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">",
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
 					$nav['type'] == '0' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
 					"<input class=\"checkbox\" type=\"checkbox\" name=\"availablenew[$nav[id]]\" value=\"1\" ".($nav['available'] ? 'checked' : '').">",
 					"<a href=\"".ADMINSCRIPT."?action=nav&operation=mynav&do=edit&id=$nav[id]\" class=\"act\">$lang[edit]</a>"
 				));
 			}
-			echo '<tr><td colspan="1"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_mynav_add'].'</a></div></td></tr>';
+/*vot*/			echo '<tr><td colspan="2"></td><td colspan="8"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_mynav_add'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -730,7 +745,7 @@ EOT;
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
 	];
 </script>
 EOT;
@@ -872,7 +887,7 @@ EOT;
 
 			showformheader('nav&operation=topnav');
 			showtableheader();
-			showsubtitle(array('', 'display_order', 'name', 'setting_styles_global_topnavtype', 'url', 'type', 'available', ''));
+/*vot*/			showsubtitle(array('', 'display_order', 'name', 'ID', 'setting_styles_global_topnavtype', 'url', 'type', 'available', ''));
 
 			$navlist = array();
 			$query = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='4' ORDER BY displayorder");
@@ -887,6 +902,7 @@ EOT;
 					in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />',
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">",
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
 					"<select name=\"subtypenew[$nav[id]]\"><option value=\"0\" $navtype[0]>$lang[setting_styles_global_topnavtype_0]</option><option value=\"1\" $navtype[1]>$lang[setting_styles_global_topnavtype_1]</option></select>",
 					$nav['type'] == '0' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
@@ -894,7 +910,7 @@ EOT;
 					"<a href=\"".ADMINSCRIPT."?action=nav&operation=topnav&do=edit&id=$nav[id]\" class=\"act\">$lang[edit]</a>"
 				));
 			}
-			echo '<tr><td colspan="1"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_topnav_add'].'</a></div></td></tr>';
+/*vot*/			echo '<tr><td colspan="2"></td><td colspan="7"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_topnav_add'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -902,7 +918,7 @@ EOT;
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [2, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [1, '', 'td25'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
 	];
 </script>
 EOT;

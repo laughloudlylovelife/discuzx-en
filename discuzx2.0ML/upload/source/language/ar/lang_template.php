@@ -438,6 +438,7 @@ $lang = array (
 	'nav_task'	=> 'المهام',//'Tasks',//'任务',
 	'nav_sethomepage'	=> 'اجعلنا صفحتك الرئيسية',//'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'أضف إلى المفضلة',//'Add to Favorites',//'收藏本站',
+	'nav_uchome'		=> 'UCHome',//'',
 //	'nav_'		=> '',//'',
 
 // Google Maps

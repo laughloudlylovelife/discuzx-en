@@ -437,6 +437,7 @@ $lang = array (
 	'nav_task'	=> 'Tasks',//'任务',
 	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
+	'nav_uchome'		=> 'UCH0me',//'',
 //	'nav_'		=> '',//'',
 
 // Google Maps
