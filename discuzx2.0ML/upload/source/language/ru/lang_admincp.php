@@ -6213,7 +6213,7 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	@include $adminextendfile;
 	foreach($adminextend as $extend) {
 		$extend_lang = array();
-		@include DISCUZ_ROOT.'./source/language/lang_admincp_'.$extend;
+		@include DISCUZ_ROOT.'./source/language/ru/lang_admincp_'.$extend;
 		$lang = array_merge($lang, $extend_lang);
 	}
 }
