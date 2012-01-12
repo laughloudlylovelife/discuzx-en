@@ -54,9 +54,9 @@ function convertip_geo($ip='', $ipdatafile='') {
 	geoip_close($gi);
 
 	if($country) {
-		return $country;
+		return lang('country',$country);
 	} else {
-		return 'Unknown';
+		return lang('country','??');
 	}
 
 }
