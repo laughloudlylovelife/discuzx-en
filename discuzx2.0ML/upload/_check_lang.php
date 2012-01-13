@@ -37,6 +37,7 @@ $files = array(
 	"lang_blockclass.php",
 	"lang_connect.php",
 	"lang_core.php",
+	"lang_country.php",
 	"lang_email.php",
 	"lang_error.php",
 	"lang_exif.php",
