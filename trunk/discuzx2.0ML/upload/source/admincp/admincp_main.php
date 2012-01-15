@@ -35,14 +35,14 @@ foreach($_G['config']['languages'] AS $lng => $lngarray) {
 	<img src="'.$_G[siteroot].'source/language/'.$lng.'/'.$lngarray['icon'].'"/> '.$lngarray['name'].'
       	</a>'."\n";
 }
-
+$rtl_suffix = RTLSUFFIX;
 echo <<<EOT
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{$_G[langdir]}"><head>
 <title>$title</title>
 <meta http-equiv="Content-Type" content="text/html; charset=$charset">
 <meta content="Comsenz Inc." name="Copyright" />
-<link rel="stylesheet" href="static/image/admincp/admincp.css?{$_G[style][verhash]}" type="text/css" media="all" />
+<link rel="stylesheet" href="static/image/admincp/admincp{$rtl_suffix}.css?{$_G[style][verhash]}" type="text/css" media="all" />
 
 <!-- Multi-Lingual Javascript Support by Valery Votintsev  -->
 <script type="text/javascript" src="{$_G[langurl]}lang_js.js?{$_G[style][verhash]}"></script>
