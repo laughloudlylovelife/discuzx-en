@@ -350,7 +350,7 @@ Note on the CSS Hack:
 	Explain:		Drop-down menu
 	Last Modify:	lushnis
 */
-	.showmenu { padding-right: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 4px 50%; cursor: pointer; white-space: nowrap; }
+	.showmenu { padding-right: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 100% 50%; cursor: pointer; white-space: nowrap; }
 		#um .showmenu { margin-left: -5px; }
 
 /*
@@ -1269,8 +1269,8 @@ Note on the CSS Hack:
 		.pg a, .pg strong, .pgb a { float: right; display: inline; margin-right: 4px; padding: 0 8px; height: 26px; border: 1px solid; border-color: {SPECIALBORDER}; background-color: {WRAPBG}; background-repeat: no-repeat; color: {LINK}; overflow: hidden; text-decoration: none; }
 			.pg a.nxt, .pgb a { padding: 0 10px; }
 			.pg a:hover, .pgb a:hover { border-color: {HIGHLIGHTLINK}; color: {HIGHLIGHTLINK}; }
-			.pg a.nxt { padding-right: 25px; background-image: url({IMGDIR}/arw_r.gif); background-position: 90% 50%; }
-			.pg a.prev { background-image: url({IMGDIR}/arw_l.gif); background-position: 50% 50%; }
+			.pg a.nxt { padding-right: 25px; background-image: url({IMGDIR}/arw_l.gif); background-position: 90% 50%; }
+			.pg a.prev { background-image: url({IMGDIR}/arw_r.gif); background-position: 50% 50%; }
 			.pg strong { background-color: {SPECIALBG}; }
 		.pgb a { padding-left: 25px; background-image: url({IMGDIR}/arw_l.gif); background-position: 10px 50%; }
 	#pgt .pg, #pgt .pgb { margin-top: 5px; }
