@@ -129,6 +129,7 @@ if($id) {
 	dsetcookie('home_diymode', $diymode);
 	$_G['gp_type'] = empty($_G['gp_type']) ? 'all' : $_G['gp_type'];
 	$navtitle = lang('core', 'title_share_'.$_G['gp_type']);
+/*vot*/	if(DISCUZ_LANG != 'zh' && DISCUZ_LANG!='tc') $navtitle .= ' ';
 	$navtitle .= lang('core', 'title_share');
 	if($space['username']) {
 		$navtitle = lang('space', 'sb_sharing', array('who' => $space['username']));
