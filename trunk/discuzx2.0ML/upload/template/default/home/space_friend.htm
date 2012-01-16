@@ -197,7 +197,7 @@
 											<!--{if $_GET['view'] == 'blacklist'}-->
 												<a href="home.php?mod=spacecp&ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">{lang delete_blacklist}</a>
 											<!--{elseif $_GET['view'] == 'visitor' || $_GET['view'] == 'trace'}-->
-												<!--{date($value[dateline], 'n{lang month}j{lang day}')}-->
+<!--vot-->											<!--{date($value[dateline], $_G[setting][dateformat])}-->
 											<!--{elseif $_GET['view'] == 'online'}-->
 												<!--{date($ols[$value[uid]], 'H:i')}-->
 											<!--{else}-->
