@@ -35,7 +35,9 @@ function updatesession($force = false) {
 		}
 		$discuz = & discuz_core::instance();
 		$oltimespan = $_G['setting']['oltimespan'];
-		$lastolupdate = $discuz->session->var['lastolupdate'];
+//16.01.2012
+//vot		//$lastolupdate = $discuz->session->var['lastolupdate'];
+/*vot*/		$lastolupdate = DB::result_first("SELECT lastupdate FROM ".DB::table('common_onlinetime')." WHERE uid='$_G[uid]'");
 		if($_G['uid'] && $oltimespan && TIMESTAMP - ($lastolupdate ? $lastolupdate : $ulastactivity) > $oltimespan * 60) {
 			DB::query("UPDATE ".DB::table('common_onlinetime')."
 				SET total=total+'$oltimespan', thismonth=thismonth+'$oltimespan', lastupdate='" . TIMESTAMP . "'
@@ -68,8 +70,10 @@ function updatesession($force = false) {
 			if($oltimespan && TIMESTAMP - $ulastactivity > 43200) {
 				$total = DB::result_first("SELECT total FROM ".DB::table('common_onlinetime')." WHERE uid='$_G[uid]'");
 				DB::update('common_member_count', array('oltime' => round(intval($total) / 60)), "uid='$_G[uid]'", 1);
+//16.01.2012
+/*vot*/				dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
 			}
-			dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
+//vot			//dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
 			DB::update('common_member_status', array('lastip' => $_G['clientip'], 'lastactivity' => TIMESTAMP, 'lastvisit' => TIMESTAMP), "uid='$_G[uid]'", 1);
 		}
 	}
@@ -495,7 +499,13 @@ function detect_language() {
 
 		//start going through each one
 		foreach ($langs as $value){
-			$choice = strtolower(substr($value,0,2));
+			// zh-tw/zh-hk patch by ken
+			if(($value=='zh-tw')||($value=='zh-hk')){
+				$choice = 'tc';
+			} else {
+				$choice = strtolower(substr($value,0,2));
+			}
+
 			if(isset($_G['config']['languages'][$choice])){
 				return $choice;
 			}
