@@ -84,8 +84,8 @@ function securitymessage($subject, $message, $reload = TRUE, $form = FALSE) {
 	);
 */
 
-/*vot*/	$subject = lang('core', $subject) ? lang($subject) : $subject;
-/*vot*/	$message = lang('core', $message) ? lang($message) : $message;
+/*vot*/	$subject = lang('core', $subject) ? lang('core', $subject) : $subject;
+/*vot*/	$message = lang('core', $message) ? lang('core', $message) : $message;
 	if($_GET['inajax']) {
 		security_ajaxshowheader();
 		echo '<div id="attackevasive_1" class="popupmenu_option"><b style="font-size: 16px">'.$subject.'</b><br /><br />'.$message.'</div>';
