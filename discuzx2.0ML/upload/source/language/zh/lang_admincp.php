@@ -5106,13 +5106,13 @@ $lang = array
 				<li>DIY 模块分类缓存：更新 DIY 模块分类，当你安装或修改了 DIY 模块分类，但是没有立即生效的时候使用</li>
 				',
 
-	'tools_updatecache_data' =>'数据缓存',
-	'tools_updatecache_tpl' =>'模板缓存',
-	'tools_updatecache_blockclass' =>'DIY 模块分类缓存',
-	'tools_updatecache_waiting' =>'正在更新缓存，请稍候......',
+	'tools_updatecache_data' => '数据缓存',
+	'tools_updatecache_tpl' => '模板缓存',
+	'tools_updatecache_blockclass' => 'DIY 模块分类缓存',
+	'tools_updatecache_waiting' => '正在更新缓存，请稍候......',
 
 	'fileperms_check_note' => '主要检查文件及文件夹的写入权限，点击下面按钮开始进行检查',
-	'fileperms_check_waiting' =>'正在进行文件权限检查，请稍候......',
+	'fileperms_check_waiting' => '正在进行文件权限检查，请稍候......',
 	'fileperms_tips' => '<li>如果某个文件或目录被检查到“无法写入”(以红色列出)，请即刻通过 FTP 或其他工具修改其属性(例如设置为 777)，以确保站点功能的正常使用。</li>',
 	'fileperms_check_ok' => '文件及目录属性全部正确',
 	'fileperms_unwritable' => '无法写入',

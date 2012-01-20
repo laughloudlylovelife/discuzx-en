@@ -24,7 +24,7 @@ $lang = array
 	'google_client' => '搜索联盟 ID',
 	'google_client_comment' => '如果你加入了 Google 搜索联盟，可以在这里填写 ID',
 // Added by vot
-	'google_lang_ru'	=> 'Russian',//'俄语',
+	'google_lang_ru'	=> '俄语',//'Russian',
 );
 
 ?>

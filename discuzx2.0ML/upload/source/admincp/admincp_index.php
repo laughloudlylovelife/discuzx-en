@@ -224,7 +224,12 @@ loaducenter();
 showtableheader('home_sys_info', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_discuz_version'),
-/*vot*/	'Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.' <a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.CHARSET.'&dbcharset='.$dbcharset.'" class="lightlink2 smallfont" target="_blank">'.cplang('home_check_newversion').'</a> <a href="http://www.comsenz.com/purchase/discuz/" class="lightlink2 smallfont" target="_blank">Professional support and services</a> <a href="http://idc.comsenz.com" class="lightlink2 smallfont" target="_blank">Discuz! Dedicated Hosting</a>'
+/*vot*/	'International Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.', Revision '.DISCUZ_ML_REVISION.'
+        <br/><strong><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.CHARSET.'&dbcharset='.$dbcharset.'" class="lightlink2 smallfont" target="_blank">'.cplang('home_check_newversion').'</a></strong>
+	<span class="pipe">|</span>
+        <a href="http://www.comsenz.com/purchase/discuz/" class="lightlink2 smallfont" target="_blank">Professional support and services</a>
+	<span class="pipe">|</span>
+        <a href="http://idc.comsenz.com" class="lightlink2 smallfont" target="_blank">Discuz! Dedicated Hosting</a>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_ucclient_version'),

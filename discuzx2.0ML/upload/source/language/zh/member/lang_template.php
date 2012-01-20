@@ -10,6 +10,7 @@
  */
 
 $lang = array (
+
   'getpassword' => '找回密码',
   'login_guest' => '没有帐号？注册',
   'new_password' => '新密码',
