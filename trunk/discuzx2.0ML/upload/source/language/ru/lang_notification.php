@@ -151,9 +151,9 @@ $lang = array
 
 	'reward_bestanswer_moderator'	=> 'Вы получили бонус за лучший ответ в теме <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=viewthread&tid={tid}" target="_blank" class="lit">Открыть &rsaquo;</a>',
 
-	'comment_add'	=> '{actor} ответил в Вашей теме <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank" class="lit">Открыть &rsaquo;</a>',
+	'comment_add'		=> '{actor} ответил в Вашей теме <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank" class="lit">Открыть &rsaquo;</a>',
 
-	'reppost_noticeauthor'	=> '{actor} ответил на Ваше пост в теме <a href="forum.php?mod=redirect&goto=findpost&ptid={tid}&pid={pid}" target="_blank">{subject}</a>. &nbsp; <a class="lit" href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">Открыть</a>',
+	'reppost_noticeauthor'	=> '{actor} ответил на Ваш пост в теме <a href="forum.php?mod=redirect&goto=findpost&ptid={tid}&pid={pid}" target="_blank">{subject}</a>. &nbsp; <a class="lit" href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">Открыть</a>',
 
 	'task_reward_credit'	=> 'Поздравляем! Вы выполнили задачу: <a href="home.php?mod=task&do=view&id={taskid}" target="_blank">{name}</a>, и получили бонус: {creditbonus}. &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">Показать баланс &rsaquo;</a></p>',
 
@@ -171,15 +171,15 @@ $lang = array
 
 	'grouplevel_update'	=> 'Поздравляем! Уровень Вашей группы {groupname} был повышен до: {newlevel}',
 
-	'thread_invite'	=> '{actor} приглашает Вас {invitename} <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=viewthread&tid={tid}" target="_blank" class="lit">Открыть &rsaquo;</a>',
-	'invite_friend'	=> 'Поздравляем! Ваше приглашение завершено, и {actor} стал Вашим другом',
+	'thread_invite'		=> '{actor} приглашает Вас {invitename} <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a>. &nbsp; <a href="forum.php?mod=viewthread&tid={tid}" target="_blank" class="lit">Открыть &rsaquo;</a>',
+	'invite_friend'		=> 'Поздравляем! Ваше приглашение завершено, и {actor} стал Вашим другом',
 
-	'poke_request'	=> 'Привет от <a href="{fromurl}" class="xi2">{fromusername}</a>: <span class="xw0">{pokemsg}</span>. &nbsp; <a href="home.php?mod=spacecp&ac=poke&op=reply&uid={fromuid}&from=notice" id="a_p_r_{fromuid}" class="xw1" onclick="showWindow(this.id, this.href, \'get\', 0);">Отправить привет</a><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=poke&op=ignore&uid={fromuid}&from=notice" id="a_p_i_{fromuid}" onclick="showWindow(\'pokeignore\', this.href, \'get\', 0);">Игнорировать</a>',
+	'poke_request'		=> 'Привет от <a href="{fromurl}" class="xi2">{fromusername}</a>: <span class="xw0">{pokemsg}</span>. &nbsp; <a href="home.php?mod=spacecp&ac=poke&op=reply&uid={fromuid}&from=notice" id="a_p_r_{fromuid}" class="xw1" onclick="showWindow(this.id, this.href, \'get\', 0);">Отправить привет</a><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=poke&op=ignore&uid={fromuid}&from=notice" id="a_p_i_{fromuid}" onclick="showWindow(\'pokeignore\', this.href, \'get\', 0);">Игнорировать</a>',
 
-	'profile_verify_error'	=> 'Ваши данные: {verify} не прошли модерацию, Вам необходимо заполнить следующие поля:<br/>{profile}<br/>Причина отказа: {reason}',
-	'profile_verify_pass'	=> 'Поздравляем! Ваши данные: {verify} успешно прошли модерацию.',
+	'profile_verify_error'		=> 'Ваши данные: {verify} не прошли модерацию, Вам необходимо заполнить следующие поля:<br/>{profile}<br/>Причина отказа: {reason}',
+	'profile_verify_pass'		=> 'Поздравляем! Ваши данные: {verify} успешно прошли модерацию.',
 	'profile_verify_pass_refusal'	=> 'Извините, но Ваши данные: {verify} были отклонены.',
-	'member_ban_speak'	=> '{user}, Вы переведены в режим Read-Only и не можете отправлять сообщения в течение {day} дн. ("0" означает пожизненный R/O). Причина: {reason}',
+	'member_ban_speak'		=> '{user}, Вы переведены в режим Read-Only и не можете отправлять сообщения в течение {day} дн. ("0" означает пожизненный R/O). Причина: {reason}',
 
 	'member_moderate_invalidate'	=> 'Ваша учетная запись была отклонена администратором. <a href="home.php?mod=spacecp&ac=profile" target="_blank">Заполните заново Ваши данные для регистрации</a><br />Сообщение администратора: <b>{remark}</b>',
 	'member_moderate_validate'	=> 'Поздравляем! Ваша учетная запись была одобрена.<br />Сообщение администратора: <b>{remark}</b>',

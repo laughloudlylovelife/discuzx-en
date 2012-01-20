@@ -1,7 +1,7 @@
 ||==================================||
 || Discuz! X upgrade documentation  ||
 ||==================================||
-|| ENGLISH Version                  ||
+|| INTERNATIONAL Version            ||
 || by Valery Votintsev at sources.ru||
 ||==================================||
 
@@ -75,13 +75,13 @@ with this one!
 // Enabled Language List:
 
 $_config['languages'] = array(
-//	'ar' => array('icon'=>'ar.gif', 'title'=>'Arabic', 'dir'=>'rtl'),
-//	'zh' => array('icon'=>'zh.gif', 'title'=>'Chinese', 'dir'=>'ltr'),
-//	'de' => array('icon'=>'de.gif', 'title'=>'Deutsch', 'dir'=>'ltr'),
-	'en' => array('icon'=>'en.gif', 'title'=>'English', 'dir'=>'ltr'),
-//	'ru' => array('icon'=>'ru.gif', 'title'=>'Russian', 'dir'=>'ltr'),
-//	'th' => array('icon'=>'th.gif', 'title'=>'Thai', 'dir'=>'ltr'),
-//	'vn' => array('icon'=>'vn.gif', 'title'=>'Vietnamese', 'dir'=>'ltr'),
+//	'ar' => array('icon'=>'ar.gif', 'name'=>'Arabic', 'title'=>'Arabic', 'dir'=>'rtl'),
+//	'zh' => array('icon'=>'zh.gif', 'name'=>'Chinese', 'title'=>'Arabic', 'dir'=>'ltr'),
+//	'de' => array('icon'=>'de.gif', 'name'=>'Deutsch', 'title'=>'Arabic', 'dir'=>'ltr'),
+	'en' => array('icon'=>'en.gif', 'name'=>'English', 'title'=>'Arabic', 'dir'=>'ltr'),
+//	'ru' => array('icon'=>'ru.gif', 'name'=>'Russian', 'title'=>'Arabic', 'dir'=>'ltr'),
+//	'th' => array('icon'=>'th.gif', 'name'=>'Thai', 'title'=>'Arabic', 'dir'=>'ltr'),
+//	'vn' => array('icon'=>'vn.gif', 'name'=>'Vietnamese', 'title'=>'Arabic', 'dir'=>'ltr'),
 );
 $_config['detect_language'] = true;	// Auto-detect user language: true|false
 
@@ -110,8 +110,11 @@ $_config['output']['language'] 		= 'en';		// Page language en/zh_cn/zh_tw
 2. View detailed update guidance documents
    http://faq.comsenz.com/category-202
 
-3. International support and help forum
+3. International (Multi-lingual) version discussion forum
+   http://codersclub.org/discuzx/
+
+4. International support and help forum
    http://msg2me.com
 
-4. Commercial users can purchase a service by phone calls,
+5. Commercial users can purchase a service by phone calls,
    MSN, QQ, forums for technical support and other ways.

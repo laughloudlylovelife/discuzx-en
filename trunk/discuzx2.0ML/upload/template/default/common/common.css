@@ -97,7 +97,7 @@ Note on the CSS Hack:
 		caption, th { text-align: left; font-weight: 400; }
 	ul li, .xl li { list-style: none; }
 	h1, h2, h3, h4, h5, h6 { font-size: 1em; }
-	em, cite { font-style: normal; }
+	em, cite, i { font-style: normal; }
 	a { color: {LINK}; text-decoration: none; }
 		a:hover { text-decoration: underline; }
 		a img { border: none; }
@@ -429,7 +429,7 @@ Note on the CSS Hack:
 
 	.pnc, a.pnc { border-color: #235994; background-color: #06C; background-position: 0 -48px; color: #FFF !important; }
 		.pnc:active { background-position: 0 -71px; }
-	
+
 	.pnpost .pn { height: 26px; }
 
 /*
@@ -479,7 +479,7 @@ Note on the CSS Hack:
 		.sltm li:hover { color: {HIGHLIGHTLINK}; }
 		.sltm li.current { color: {NOTICETEXT}; }
 
-/* Share button */	.oshr { float: right; margin-left: 5px; padding: 0 5px 0 22px; border: 1px solid; border-color: #CCC #A9A9A9 #A9A9A9 #CCC; background: {WRAPBG} url({IMGDIR}/oshr.png) no-repeat 5px 50%;  }
+/* Share button */	.oshr { float: right; margin-left: 5px; padding: 0 5px 0 22px; border: 1px solid; border-color: #CCC #A9A9A9 #A9A9A9 #CCC; background: {WRAPBG} url({IMGDIR}/oshr.png) no-repeat 5px 50%; }
 /* Save button with oshr */	.ofav { background-image: url({IMGDIR}/fav.gif); }
 
 
@@ -592,8 +592,8 @@ Note on the CSS Hack:
 				.scbar_btn_td { width: 67px; background: url({IMGDIR}/search.png) no-repeat 0 -296px; text-align: center; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; }
 /*vot*/				.scbar_sep_td { width: 4px; background: url({IMGDIR}/search.png) no-repeat 0 -444px; }
-				.scbar_type_td { width: background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
-					#scbar_type { display: block; padding-left: 2px; text-align: left; text-decoration: none; width: 70px; }
+				.scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
+/*vot*/					#scbar_type { display: block; padding-left: 2px; text-align: left; text-decoration: none; width: 70px; }
 						#scbar_type_menu { margin-top: -8px; }
 				#scbar_hot { padding-left: 8px; height: 45px; overflow: hidden; }
 					#scbar_hot strong, #scbar_hot a { float: left; margin-right: 8px; white-space: nowrap; }
@@ -785,7 +785,7 @@ Note on the CSS Hack:
 		.tb_h li { margin-right: 0; }
 		.tb_h a { border-top: none; border-left: none; }
 	.tb_s { margin-top: 0; line-height: 26px; }
-		
+
 	/* Similar to the menu of the Tab */
 .tbmu { padding: 10px; border-bottom: 1px dashed {COMMONBORDER}; }
 	.tbmu a { color: {HIGHLIGHTLINK}; }
@@ -819,7 +819,7 @@ Note on the CSS Hack:
 	/* Couplet (double) ads */ .a_cb { top: 20px }
 		* html .a_cb { top: expression(offsetParent.scrollTop+20); }
 	/* Article floating ads */ .a_af { float:left; margin-right: 10px; margin-bottom: 10px; }
-	/* lower right corner ads  */  .a_cn { position: fixed; right: 10px; bottom: 10px; z-index: 300; }
+	/* lower right corner ads  */ .a_cn { position: fixed; right: 10px; bottom: 10px; z-index: 300; }
 		* html .a_cn { position: absolute; top: expression(offsetParent.scrollTop+document.documentElement.clientHeight-this.offsetHeight); }
 		.a_cn .close { text-align: right; }
 
@@ -922,7 +922,7 @@ Note on the CSS Hack:
 /*vot*/		.tbn .mt { padding: 10px; font-size: 14px;}
 
 /* Magics */
-.mg_img { padding: 10px; width: 76px; height: 76px; background: url({IMGDIR}/magic_imgbg.gif) no-repeat 0 0; } 
+.mg_img { padding: 10px; width: 76px; height: 76px; background: url({IMGDIR}/magic_imgbg.gif) no-repeat 0 0; }
 
 /*
 	Name:			mod_link
@@ -963,7 +963,7 @@ Note on the CSS Hack:
 .sllt { padding: 10px 5px 5px !important; }
 	.sllt td { padding: 8px; border: none; cursor: pointer; }
 /*vot*/	.sllt_p { border-top: 1px solid gray; text-align: right; padding: 4px 0; }
-/*vot*/		.sllt_p a { margin-right: 5px;  color: #069; text-decoration: underline; border: 1px solid gray; }
+/*vot*/		.sllt_p a { margin-right: 5px; color: #069; text-decoration: underline; border: 1px solid gray; }
 	.sl_pv { margin-top: 5px; padding: 8px; background: #FAFAFA; border: 1px solid #CCC; }
 	.ie6 .slg, .ie7 .slg { width: expression(this.parentNode.offsetWidth); }
 
@@ -974,7 +974,7 @@ Note on the CSS Hack:
 	Explain:		Switch style menu
 	Last Modify:	lushnis
 */
-	#toptb a#sslct { /*width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden;*/ }
+/*vot*/	#toptb a#sslct { /*width: 10px; background: url({IMGDIR}/style_switch.png) no-repeat 50% 50%; text-indent: -9999px; overflow: hidden;*/ }
 	#sslct img { vertical-align:middle; }
 /*vot*/	#sslct_menu { padding: 2px; }
 /*vot*/		 .sslct_btn { display: block; margin: 0; cursor: pointer; }
@@ -1139,7 +1139,7 @@ Note on the CSS Hack:
 
 .rfm { margin: 0 auto; width: 760px; border-bottom: 1px dotted {COMMONBORDER}; }
 		.rfm a { color: {HIGHLIGHTLINK}; }
-		.rfm .rq {  }
+		.rfm .rq {}
 		.rfm th, .rfm td { padding: 10px 2px; vertical-align: top; line-height: 24px; }
 		.rfm th { padding-right: 10px; width: 10em; text-align: right; }
 		.rfm .px { width: 220px; }
@@ -1219,7 +1219,7 @@ Note on the CSS Hack:
 	#ls_fastloginfield_ctrl { line-height: 20px; border: none; background-color: transparent; background-position: 100% -1px; }
 		#ls_fastloginfield_ctrl:hover { background-position: 100% -24px; }
 	.psw_w { padding-left: 5px; }
-	
+
 	.fastlg_l { padding-right: 4px !important; border-right: 1px solid {SPECIALBG}; }
 
 /* Greeting by Pony */
@@ -1290,7 +1290,7 @@ Note on the CSS Hack:
 			* html .pc_inner span { display: inline-block; }
 				.pc_inner span a { color: #FFEA97; text-decoration: underline; }
 				.pc_inner span em { color: {LIGHTLINK}; font-size: 18px; font-weight: 400; }
-				.pc_inner span u { font-size: 10px; text-decoration: none; }				
+				.pc_inner span u { font-size: 10px; text-decoration: none; }
 				.pc_inner span em.desc { color: #930; }
 			.pc_btn img { opacity: 0.5; }
 				.pc_btn:hover img { opacity: 1; }
@@ -1355,7 +1355,7 @@ Note on the CSS Hack:
 .frame, .frame-tab { margin-bottom: 10px; border: 1px solid {WRAPBORDERCOLOR}; background: {WRAPBG}; }
 	.title { padding: 0 10px; height: 32px; font-size: 14px; font-weight: 700; line-height: 32px; overflow: hidden; }
 		.frame-title, .frametitle, .tab-title { background: {COMMONBG} url({IMGDIR}/title.png) repeat-x 0 100%; }
-		
+
 	/* new frame */
 	.frame-1-1-l, .frame-1-1-1-l, .frame-1-1-1-c, .frame-2-1-l, .frame-1-2-l, .frame-3-1-l, .frame-1-3-l { float: left; }
 	.frame-1-1-r, .frame-1-1-1-r, .frame-2-1-r, .frame-1-2-r, .frame-3-1-r, .frame-1-3-r { float: right; }
@@ -1388,7 +1388,7 @@ Note on the CSS Hack:
 	.frame-1-1-1 .col-l { float: left; width: 33.3%; }
 	.frame-1-1-1 .col-c { float: left; width: 33.3%; }
 	.frame-1-1-1 .col-r { float: right; width: 33.3%; }
-	
+
 	.frame .frame-1-1-1 .col-l, .frame .frame-1-1-1 .col-c, .frame .frame-1-1-1 .col-r { padding: 0; width: 33%; }
 	.frame .frame-1-1 .col-l, .frame .frame-1-1 .col-r { width: 49.9%; }
 	/* End */
