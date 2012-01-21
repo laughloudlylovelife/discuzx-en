@@ -190,5 +190,6 @@ $_config['languages'] = array(
 //	'vn' => array('icon'=>'vn.gif', 'name'=>'Tiếng Việt', 'title'=>'Vietnamese', 'dir'=>'ltr'),
 );
 $_config['detect_language'] = true;	// Auto-detect user language: true|false
+$_config['enable_multilingual'] = false;	// Enable/Disable multi-langual feature
 
 ?>
