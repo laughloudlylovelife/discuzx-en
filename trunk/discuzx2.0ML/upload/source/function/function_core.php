@@ -500,10 +500,11 @@ function detect_language() {
 		//start going through each one
 		foreach ($langs as $value){
 			// zh-tw/zh-hk patch by ken
+			$value = strtolower($value);
 			if(($value=='zh-tw')||($value=='zh-hk')){
 				$choice = 'tc';
 			} else {
-				$choice = strtolower(substr($value,0,2));
+				$choice = substr($value,0,2);
 			}
 
 			if(isset($_G['config']['languages'][$choice])){
