@@ -265,44 +265,46 @@ class discuz_core {
 
 		// set default
 		$default_lang = strtolower($this->var['config']['output']['language']);
-//		$lng = $default_lang;
 		$lng = '';
 
-		// Adjust language names with language titles
-		foreach($this->var['config']['languages'] AS $k=>$v) {
-			if(empty($v['name'])) {
-				$this->var['config']['languages'][$k]['name'] = $v['title'];
-			}
-		}
+		if($this->var['config']['enable_multilingual']) {
 
-		// set language from cookies
-		if($this->var['cookie']['language']) {
-			$lng = strtolower($this->var['cookie']['language']);
+			// Adjust language names with language titles
+			foreach($this->var['config']['languages'] AS $k=>$v) {
+				if(empty($v['name'])) {
+					$this->var['config']['languages'][$k]['name'] = $v['title'];
+				}
+			}
+
+			// set language from cookies
+			if($this->var['cookie']['language']) {
+				$lng = strtolower($this->var['cookie']['language']);
 //DEBUG
 //echo "Cookie lang=",$lng,"<br>";
-		}
-
-		// check if the language from GET is valid
-		if(isset($this->var['gp_language'])) {
-			$tmp = strtolower($this->var['gp_language']);
-			if(isset($this->var['config']['languages'][$tmp])) {
-				// set from GET
-				$lng = $tmp;
 			}
+
+			// check if the language from GET is valid
+			if(isset($this->var['gp_language'])) {
+				$tmp = strtolower($this->var['gp_language']);
+				if(isset($this->var['config']['languages'][$tmp])) {
+					// set from GET
+					$lng = $tmp;
+				}
 //DEBUG
 //echo "_GET lang=",$lng,"<br>";
-		}
+			}
 
-		// Check for language auto-detection
-		if(!$lng) {
-			$detect = (boolean) $this->var['config']['detect_language'];
-			if($detect) {
-				$lng = detect_language($this->var['config']['languages'],$default_lang);
+			// Check for language auto-detection
+			if(!$lng) {
+				$detect = (boolean) $this->var['config']['detect_language'];
+				if($detect) {
+					$lng = detect_language($this->var['config']['languages'],$default_lang);
 //DEBUG
 //echo "Detect lang=",$lng,"<br>";
+				}
 			}
 		}
-
+		// Set language to default if no language detected
 		if(!$lng) {
 			$lng = $default_lang;
 		}
@@ -378,6 +380,11 @@ class discuz_core {
 					break;
 				}
 			}
+		}
+		//vot: Check for multilingual enabled.
+		// Enable multilingual by default
+		if(!isset($_config['enable_multilingual'])) {
+			$_config['enable_multilingual'] = true;
 		}
 
 		if(empty($_config['security']['authkey'])) {

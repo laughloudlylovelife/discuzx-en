@@ -72,10 +72,19 @@ var admincpfilename = '$basescript', IMGDIR = '$IMGDIR', STYLEID = '$STYLEID', V
        $header_welcome, $cpadmingroup <em>{$_G['member']['username']}</em>
        <span class="pipe">|</span>
 
+EOT;
+
+if($_G['config']['enable_multilingual']) {
+  echo <<<EOT
+
        <!-- vot Multi-Lingual -->
        <a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="$change_language">$change_language:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
        <span class="pipe">|</span>
 
+EOT;
+}
+
+echo <<<EOT
        <a href="$basescript?action=logout" target="_top">$header_logout</a>
        <span class="pipe">|</span>
 
