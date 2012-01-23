@@ -10,7 +10,7 @@
 $lang = array
 (
 
-	'feed_blog_password'	=> '{actor} создал запись в блоге {subject}, защищённую паролем',
+	'feed_blog_password'	=> '{actor} создал защищённую паролем запись в блоге {subject}',
 	'feed_blog_title'	=> '{actor} создал новую запись в блоге',
 	'feed_blog_body'	=> '<b>{subject}</b><br />{summary}',
 	'feed_album_title'	=> '{actor} обновил свой альбом',

@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: function_feed.php 13398 2010-07-27 01:48:11Z wangjinbo $
+ *	Modified for Multilingual by Valery Votintsev
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -14,8 +15,8 @@ if(!defined('IN_DISCUZ')) {
 function feed_add($icon, $title_template='', $title_data=array(), $body_template='', $body_data=array(), $body_general='', $images=array(), $image_links=array(), $target_ids='', $friend='', $appid='', $returnid=0, $id=0, $idtype='', $uid=0, $username='') {
 	global $_G;
 
-	$title_template = $title_template?lang('feed', $title_template):'';
-	$body_template = $body_template?lang('feed', $body_template):'';
+//vot	$title_template = $title_template?lang('feed', $title_template):'';
+//vot	$body_template = $body_template?lang('feed', $body_template):'';
 	$body_general = $body_general?lang('feed', $body_general):'';
 	if(empty($uid) || empty($username)) {
 		$uid = $username = '';
@@ -89,6 +90,7 @@ function mkfeed($feed, $actors=array()) {
 
 	$searchs[] = '{actor}';
 	$replaces[] = empty($actors)?"<a href=\"home.php?mod=space&uid=$feed[uid]\" target=\"_blank\">$feed[username]</a>":implode(lang('core', 'dot'), $actors);
+/*vot*/	$feed['title_template'] = lang('feed',$feed['title_template']);
 	$feed['title_template'] = str_replace($searchs, $replaces, $feed['title_template']);
 	$feed['title_template'] = feed_mktarget($feed['title_template']);
 
@@ -107,6 +109,7 @@ function mkfeed($feed, $actors=array()) {
 		$feed['magic_class'] = 'magicthunder';
 	}
 
+/*vot*/	$feed['body_template'] = lang('feed',$feed['body_template']);
 	$feed['body_template'] = str_replace($searchs, $replaces, $feed['body_template']);
 	$feed['body_template'] = feed_mktarget($feed['body_template']);
 
@@ -241,8 +244,8 @@ function feed_publish($id, $idtype, $add=0) {
 	}
 
 	if($setarr['icon']) {
-		$setarr['title_template'] = $setarr['title_template']?lang('feed', $setarr['title_template']):'';
-		$setarr['body_template'] = $setarr['body_template']?lang('feed', $setarr['body_template']):'';
+//vot		$setarr['title_template'] = $setarr['title_template']?lang('feed', $setarr['title_template']):'';
+//vot		$setarr['body_template'] = $setarr['body_template']?lang('feed', $setarr['body_template']):'';
 		$setarr['body_general'] = $setarr['body_general']?lang('feed', $setarr['body_general']):'';
 
 		$setarr['title_data']['hash_data'] = "{$idtype}{$id}";

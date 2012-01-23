@@ -11,7 +11,7 @@ $lang = array
 (
 
 	'feed_blog_password'	=> '{actor} published a new password protected blog {subject}',//'{actor} 发表了新加密日志 {subject}',
-	'feed_blog_title'	=> '{actor} published a new log',//'{actor} 发表了新日志',
+	'feed_blog_title'	=> '{actor} published a new blog',//'{actor} 发表了新日志',
 	'feed_blog_body'	=> '<b>{subject}</b><br />{summary}',//'<b>{subject}</b><br />{summary}',
 	'feed_album_title'	=> '{actor} updated album',//'{actor} 更新了相册',
 	'feed_album_body'	=> '<b>{album}</b><br />Total images: {picnum}',//'<b>{album}</b><br />共 {picnum} 张图片',
