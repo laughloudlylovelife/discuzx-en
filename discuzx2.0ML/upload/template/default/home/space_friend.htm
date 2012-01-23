@@ -201,18 +201,18 @@
 											<!--{elseif $_GET['view'] == 'online'}-->
 												<!--{date($ols[$value[uid]], 'H:i')}-->
 											<!--{else}-->
-<!--vot-->											<a href="home.php?mod=spacecp&ac=friend&op=changenum&uid=$value[uid]&handlekey=hotuserhk_{$value[uid]}" id="friendnum_$value[uid]" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang hot}">{lang hot}: <span id="spannum_$value[uid]">$value[num]</span></a>
+<!--vot-->										<a href="home.php?mod=spacecp&ac=friend&op=changenum&uid=$value[uid]&handlekey=hotuserhk_{$value[uid]}" id="friendnum_$value[uid]" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang hot}">{lang hot}: <span id="spannum_$value[uid]">$value[num]</span></a>
 											<!--{/if}-->
 											<!--{if $value[uid] != $_G['uid'] && $value[username] != ''}-->
 											<span class="pipe">|</span>
-											<a href="javascript:;" id="interaction_$value[uid]" onmouseover="showMenu(this.id);" class="showmenu">{lang interactive}</a>
+<!--vot-->										<a href="javascript:;" id="interaction_$value[uid]" onclick="showMenu(this.id);" title="{lang interactive}"><img src="{STATICURL}image/common/personal.png"/></a>
 											<!--{/if}-->
 											<!--{if !$value[isfriend] && $value[username] != ''}-->
 											<span class="pipe">|</span>
-											<a href="home.php?mod=spacecp&ac=friend&op=add&uid=$value[uid]&handlekey=adduserhk_{$value[uid]}" id="a_friend_$key" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang add_friend}">{lang add_friend}</a>
+<!--vot-->										<a href="home.php?mod=spacecp&ac=friend&op=add&uid=$value[uid]&handlekey=adduserhk_{$value[uid]}" id="a_friend_$key" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang add_friend}" title="{lang add_friend}"><img src="{STATICURL}image/common/user_add.gif"/></a>
 											<!--{elseif !in_array($_GET['view'], array('blacklist', 'visitor', 'trace', 'online'))}-->
 											<span class="pipe">|</span>
-											<a href="javascript:;" id="opfrd_$value[uid]" onmouseover="showMenu(this.id);" class="showmenu">{lang manage}</a>
+<!--vot-->										<a href="javascript:;" id="opfrd_$value[uid]" onclick="showMenu(this.id);" title="{lang manage}"><img src="{STATICURL}image/common/manage.png"/></a>
 											<!--{/if}-->
 										</div>
 										<!--{if $value[isfriend] && !in_array($_GET['view'], array('blacklist', 'visitor', 'trace', 'online'))}-->
@@ -255,7 +255,8 @@
 		                                            </h4>
 		                                            <p class="maxh">$value[reason]</p>
 		                                            <div class="xg1">
-													<a href="home.php?mod=spacecp&ac=friend&op=add&uid=$value[uid]&handlekey=adduserhk_{$value[uid]}" id="a_friend_$key" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang add_friend}">{lang add_friend}</a></div>
+<!--vot-->							<a href="home.php?mod=spacecp&ac=friend&op=add&uid=$value[uid]&handlekey=adduserhk_{$value[uid]}" id="a_friend_$key" onclick="showWindow(this.id, this.href, 'get', 0);" title="{lang add_friend}">{lang add_friend}</a>
+<!--vot-->						    </div>
 		                                        </li>
 		                                    <!--{/loop}-->
 		                                </ul>

@@ -40,7 +40,7 @@ body { background-color: transparent; }
 	#pcd { padding: 15px 4px 15px 6px; }
 
 	.mla li, .mlp li { width: 133px; }
-	.buddy li { width: 156px; }
+/*vot*/	.buddy li { width: 156px; height: 75px; }
 	.pic .c img { max-width: 714px; }
 		* html .pic .c img { width: expression(this.width > 714 ? 714 : true); }
 	.ul_list {}

@@ -1484,7 +1484,7 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 	Last Modify:	Pony
 */
 	.buddy { margin: 0 -4px 10px -2px; }
-/*vot*/		.buddy li { overflow: hidden; display: inline; float: left; margin: 10px 5px 0; padding: 10px 10px 10px 70px; width: 175px; /*height: 58px;*/ border: 1px solid #F3F3F3; background: #F9F9F9; }
+/*vot*/		.buddy li { overflow: hidden; display: inline; float: left; margin: 10px 5px 0; padding: 10px 10px 10px 70px; width: 175px; height: 75px; border: 1px solid #F3F3F3; background: #F9F9F9; }
 			.ct_vw_mn .buddy li { width: 190px; }
 		.buddy h4 { overflow: hidden; height: 20px; }
 		.buddy .avt { position: absolute; margin-left: -60px; }
