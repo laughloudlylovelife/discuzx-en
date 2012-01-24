@@ -284,11 +284,11 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 		.crons .txt{ margin-bottom:3px; width:150px; }
 
 	/* faqlist & boardlist */
-	.node, .board{ padding-left:55px; background:url(bg_repno.gif) no-repeat -240px -550px; }
+/*vot*/	.node, .board{ padding-left:25px; background:url(bg_repno.gif) no-repeat -245px -550px; }
 		.node .txt, .lastnode .txt, .newnode .txt{ width:250px; }
 		.parentnode .txt{ width:250px; font-weight:700; }
 		.parentboard .txt{ font-weight:700; }
-	.lastnode, .lastboard{ padding-left:55px; background:url(bg_repno.gif) no-repeat -240px -600px; }
+/*vot*/	.lastnode, .lastboard{ padding-left:25px; background:url(bg_repno.gif) no-repeat -245px -600px; }
 	.childboard{ padding-left:110px; background:url(bg_repno.gif) no-repeat -185px -550px; }
 	.lastchildboard{ padding-left:110px; background:url(bg_repno.gif) no-repeat -185px -600px; }
 	.boardattr{ position:absolute; left:402px; margin-top:-20px !important; margin-top:-19px; color:#999; }
