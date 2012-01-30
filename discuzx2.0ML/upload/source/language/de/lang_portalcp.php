@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_portalcp.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array(
@@ -46,7 +46,7 @@ $lang = array(
 'forum/forumdisplay'	=> 'Forum List Page (&Ouml;ffentliches)',
 	'group/index'		=> 'Gruppe Home',//'群组首页',
 	'group/group_my'	=> 'Meine Gruppe Home',//'我的群组首页',
-	'group/group'		=> 'Gruppen Content-Seite',//'群组内容页',
+	'group/group'		=> 'Gruppen Inhalt-Seite',//'群组内容页',
 	'home/space_home'	=> 'Spaces-Startseite',
 	'home/space_trade'	=> 'Space Produkt-Seite',
 	'home/space_top'	=> 'Space-Liste',
@@ -74,17 +74,17 @@ $lang = array(
 'ranklist/poll'		=> 'Vote Ranking Page',
 'ranklist/activity'	=> 'Events Top Seite',
 'ranklist/forum'	=> 'Forum Page-Ranking',
-	'ranklist/picture'	=> 'Image-Liste Seite',
-'ranklist/group'	=> 'Liste Groups Seite',
+	'ranklist/picture'	=> 'Bilder-Liste Seite',
+	'ranklist/group'	=> 'Gruppen-Liste Seite',
 	'ranklist/thread'	=> 'Top-Beitrags Seite',
 	'ranklist/member'	=> 'Benutzer-Bewertung Seite',
 	'other_page'		=> 'Non-DIY-Modul',
-	'upload'		=> 'Upload',//'上传',
-'remote'		=> 'Remote',//'远程',
+	'upload'		=> 'hochladen',//'上传',
+	'remote'		=> 'Fernbedienung',//'远程',
 	'portal_index'		=> 'Portal',//'门户首页',
-	'portal_topic_blue'	=> 'Blau-Thema',//'蓝色调专题',
-	'portal_topic_green'	=> 'Grün-Thema',//'绿色调专题',
-	'portal_topic_grey'	=> 'Grau-Thema',//'灰色调专题',
-	'portal_topic_red'	=> 'Rot-Thema',//'红色调专题',
+	'portal_topic_blue'	=> 'Blaues-Thema',//'蓝色调专题',
+	'portal_topic_green'	=> 'Gr&uuml;nes, Thema',//'绿色调专题',
+	'portal_topic_grey'	=> 'Graues Thema',//'灰色调专题',
+	'portal_topic_red'	=> 'Rotes-Thema',//'红色调专题',
 
 );

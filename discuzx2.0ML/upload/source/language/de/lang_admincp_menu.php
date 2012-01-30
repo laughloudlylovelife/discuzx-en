@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_admincp_menu.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -17,7 +17,7 @@ $lang = array
 	'header_forum'		=> 'Foren',
 	'header_user'		=> 'User',
 	'header_topic'		=> 'Themen',
-	'header_extended'	=> 'Ext.',
+	'header_extended'	=> 'Erweiterungen',
 	'header_plugin'		=> 'Plugins',
 	'header_style'		=> 'Interface',
 	'header_adv'		=> 'Ads',
@@ -32,7 +32,7 @@ $lang = array
 	'header_addons'		=> 'Addons',//'扩展中心',
 
 
-	'menu_home'			=> 'Admin Center',//'管理中心首页',
+	'menu_home'			=> 'AdminCP',//'管理中心首页',
 	'menu_home_clearhistorymenus'	=> 'Verlauf bereinigen',
 
 	'menu_setting_basic'		=> 'Forum Info',
@@ -112,13 +112,13 @@ $lang = array
 
 	'menu_posting_attachtypes'	=> 'Anhang Typ',
 	'menu_moderate_recyclebin'	=> 'Papierkorb',
-	'menu_moderate_recyclebinpost'	=> 'Posts Recycle Bin',//'回帖回收站',
+	'menu_moderate_recyclebinpost'	=> 'Antworten Papierkorb',//'回帖回收站',
 
 	'menu_founder'			=> 'Site Information',
 	'menu_founder_perm'		=> 'Admin Team',
 	'menu_founder_groupperm'	=> 'Redaktion Pflichten Berechtigungen - {group}',
 	'menu_founder_permgrouplist'	=> 'Bearbeiten von Berechtigungen - {perm}',
-	'menu_founder_memberperm'	=> 'Perm Redaktion - {username}',
+	'menu_founder_memberperm'	=> 'Redaktion - {username}',
 
 	'menu_addons'			=> 'Addons',//'扩展中心',
 	'menu_plugins'			=> 'Plugins',//'插件',
@@ -127,8 +127,8 @@ $lang = array
 	'menu_medals'			=> 'Medailien',
 	'menu_misc_help'		=> 'FAQ',
 	'menu_google'			=> 'Google Suche',
-	'menu_ec'			=> 'E-commerce',//'电子商务',
-	'menu_card'			=> 'Recharge card close',//'充值卡密',
+	'menu_ec'			=> 'E-Commerce',//'电子商务',
+	'menu_card'			=> 'Recharge-Karte Geheimnis',//'充值卡密',
 
 	'menu_styles'			=> 'Skinen',//'风格管理',
 	'menu_styles_templates'		=> 'Templaten',//'模板管理',
@@ -139,10 +139,9 @@ $lang = array
 	'menu_posting_editor'		=> 'Posting Editor',
 	'menu_misc_onlinelist'		=> 'Mitglieder Online Icon',
 
-	'menu_misc_link'		=> 'Links',//'友情链接',
+	'menu_misc_link'		=> 'Link',//'友情链接',
 	'memu_focus_topic'		=> 'Elternkategorie',
-	'menu_adv_custom'		=> 'Werbung',
-	'menu_adv_custom'		=> 'Site Advertising',//'站点广告',
+	'menu_adv_custom'		=> 'Werbung',//'站点广告',
 
 	'menu_misc_announce'		=> 'Ank&uuml;ndigungen',
 	'menu_tools_updatecaches'	=> 'Update Cache',
@@ -153,7 +152,7 @@ $lang = array
 	'menu_tools_creditwizard'	=> 'Credit Einstellungen',
 	'menu_tools_fileperms'		=> 'Datei Berechtigungen',
 	'menu_tools_filecheck'		=> 'Datei Check',
-	'menu_forum_scheme'		=> 'Pre-set Example',
+	'menu_forum_scheme'		=> 'Pre-Set Example',
 	'menu_db'			=> 'Datenbank',
 	'menu_postsplit'		=> 'Beitr&auml;ge Punktetabelle',
 	'menu_threadsplit'		=> 'Themen Table',
@@ -167,7 +166,7 @@ $lang = array
 	'menu_albumcategory'		=> 'Album Kategorien',
 	'menu_block'			=> 'Modul-Management',
 	'menu_blockstyle'		=> 'Modul Styles',
-	'menu_blockxml'			=> 'Third-party blocks',//'第三方模块',
+	'menu_blockxml'			=> 'Third-Party Modul',//'第三方模块',
 	'menu_topic'			=> 'Topic-Management',
 	'menu_diytemplate'		=> 'DIY Page Management',
 
@@ -177,8 +176,8 @@ $lang = array
 	'menu_group_userperm'		=> 'Haupt-Gruppe Berechtigungen',
 	'menu_group_level'		=> 'Gruppen-Level',
 
-	'menu_setting_manyou'		=> 'Manyou settings',//'Manyou 设置',
-	'menu_setting_qqconnect'	=> 'QQ binding settings',//'QQ 绑定设置',
+	'menu_setting_manyou'		=> 'Manyou einrichten',//'Manyou 设置',
+	'menu_setting_qqconnect'	=> 'QQ Bound setzen',//'QQ 绑定设置',
 
 	'admincp_title'			=> $_G['setting']['bbname'].' Admin Center',//$_G['setting']['bbname'].' 管理中心',
 

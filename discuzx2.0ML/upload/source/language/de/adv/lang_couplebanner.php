@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_couplebanner.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -22,7 +23,7 @@ $lang = array
 	'couplebanner_position_right'		=> 'Right',//'右侧',
 	'couplebanner_coupleadid'		=> 'Second line Adv',//'上/下联广告',
 	'couplebanner_coupleadid_comment'	=> 'Set the paired advertising for  current advertising',//'设置和当前广告配对的上/下联广告',
-	'couplebanner_category'			=> 'Double Banner Portal Category',
+	'couplebanner_category'			=> 'Lieferung Portal Kategorie',
 	'couplebanner_category_comment'		=> 'Set a portal category for show the Double Banner. This take effect only when Ads is assigned to the Portal',
 );
 

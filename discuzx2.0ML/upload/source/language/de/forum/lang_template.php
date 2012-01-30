@@ -6,7 +6,7 @@
  *
  *      $Id: lang_template.php by Valery Votintsev at sources.ru
  *
- *      This file is automatically generate
+ *      German Discuz!X Translation (2011-08-14) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array (
@@ -205,7 +205,7 @@ $lang = array (
 	'select_album'			=> 'Album w&auml;hlen',
 	'size_no_limit'			=> 'Keine Gr&ouml;&szlig;enbeschr&auml;nkung',
 	'uch_selectfromalbum'		=> 'W&auml;hle aus meinem Fotoalbum',
-'upload_after_selected'		=> 'Click the &quot;Upload button&quot; after selecting your files',//'?????????“??”??',
+'upload_after_selected'		=> 'Click the &quot;Upload button&quot; after selecting your files',//'?????????????',
 	'uploading'			=> 'Uploading... Bitte warte einen Moment. Du kannst <a href="javascript:;" onclick="hideMenu()">dieses Fenster tempor&auml;r</a> schlie&szlig;en. De bekommst eine Nachricht wenn es beendet ist.',
 	'forum_activeusers'		=> 'Aktive Benutzer',
 	'forum_archive'			=> 'Archiv',

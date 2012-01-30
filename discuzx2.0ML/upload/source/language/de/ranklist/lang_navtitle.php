@@ -6,7 +6,7 @@
  *
  *      $Id: lang_template.php by Valery Votintsev at sources.ru
  *
- *      This file is automatically generate
+ *      German Discuz!X Translation (2011-08-16) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array(
@@ -24,7 +24,7 @@ $lang = array(
 	'ranklist_title_thread_view'	=> 'Top-Beitr&auml;ge angesehen',
 	'ranklist_title_thread_share'	=> 'Beitr&auml;ge geteilt',
 	'ranklist_title_thread_favorite'	=> 'Top-Favorit Beitr&auml;ge',
-'ranklist_title_thread_heat'	=> 'Top Hot Posts',//'??????',
+'ranklist_title_thread_heat'	=> 'Top Hot Beitr&auml;ge',//'??????',
 
 	'ranklist_title_blog_heat'	=> 'Beliebtheits Ranking',
 	'ranklist_title_blog_reply'	=> 'Blog  Antworten',
@@ -65,8 +65,8 @@ $lang = array(
 	'ranklist_title_group_post_30'	=> 'Gruppen Beitrags-Ranking der letzten 30 Tage',
 	'ranklist_title_group_post_24'	=> 'Gruppen Beitrags-Ranking der letzten 24 Stunden',
 
-'ranklist_title_app_today'	=> 'Top Active Applications Today',//'????????',
-'ranklist_title_app_all'	=> 'The most popular applications',//'?????',
+'ranklist_title_app_today'	=> 'Anwendung heute der aktiven Rangliste',//'????????',
+'ranklist_title_app_all'	=> 'Die beliebtesten Anwendungen',//'?????',
 );
 
 ?>

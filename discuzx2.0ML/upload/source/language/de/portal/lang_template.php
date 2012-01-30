@@ -6,7 +6,7 @@
  *
  *      $Id: lang_template.php by Valery Votintsev at sources.ru
  *
- *      This file is automatically generate
+ *      German Discuz!X Translation (2011-08-16) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array (
@@ -31,7 +31,7 @@ $lang = array (
 	'view_all_comments'	=> 'Alle Kommentare',
 'diyhelp_doit'		=> 'For set your personal layout, Please click the above button to start DIY, or',//'????,????????????????????? DIY,??',
 'diyhelp_import'	=> 'Import existing template',//'????????',
-'diyhelp_no_content'	=> 'Under construction, please wait ...',//'?????,???……',
+'diyhelp_no_content'	=> 'Under construction, please wait ...',//'?????,???',
 'diyhelp_start_diy'	=> 'Start DIY ',//'?? DIY',
 	'frame'			=> 'Frame',
 'article_add_page'	=> 'Add a page to the articles',//'????????',

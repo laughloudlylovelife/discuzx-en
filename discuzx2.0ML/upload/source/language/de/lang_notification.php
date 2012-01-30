@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_notification.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -37,7 +37,7 @@ $lang = array
 	'share_article'		=> '{actor} teilte den Artikel <a href="{url}" target="_blank">{subject}</a>',
 	'magic_present_note'	=> 'Requisiten <a href="{url}" target="_blank">{name}</a>',
 	'friend_add'		=> '{actor} hat einen Freund hinzugef&uuml;gt',
-	'friend_request'	=> '{actor} angefordert Sie als Freund hinzufugen: {note}&nbsp;&nbsp;<a onclick="showWindow(this.id, this.href, \'get\', 0);" class="xw1" id="afr_{uid}" href="{url}">Bestatigen Sie die Anfrage</a>',//'{actor} ???????{note}&nbsp;&nbsp;<a onclick="showWindow(this.id, this.href, \'get\', 0);" class="xw1" id="afr_{uid}" href="{url}">????</a>',
+	'friend_request'	=> '{actor} hat einen Freund eine Anfrage gesendet {note}&nbsp;&nbsp;<a onclick="showWindow(this.id, this.href, \'get\', 0);" class="xw1" id="afr_{uid}" href="{url}">Anwendung genehmigen</a>',//'{actor} ???????{note}&nbsp;&nbsp;<a onclick="showWindow(this.id, this.href, \'get\', 0);" class="xw1" id="afr_{uid}" href="{url}">????</a>',
 	'doing_reply'		=> '{actor} antwortete auf den <a href="{url}" target="_blank">Shout</a>',
 	'wall_reply'		=> '{actor} antwortete auf die <a href="{url}" target="_blank">Pinwand</a>',
 	'pic_comment_reply'	=> '{actor} antwortete auf deinen <a href="{url}" target="_blank">Foto-Kommentar</a>',
@@ -53,7 +53,7 @@ $lang = array
 	'show_out'		=> '{actor} besuchte deine Startseite, Diagramm, das die letzte im Wettbewerb Ranking Punkte wurden durch verbraucht',
 	'puse_article'		=> 'Gl&uuml;ckwunsch! Dein Artikel <a href="{url}" target="_blank">{subject}</a> wurde gepusht. <a href="{newurl}" target="_blank">Klicke hier</a> um ihn anzusehen.',
 
-	'myinvite_request'	=> 'Anwendung neue Nachricht <a href="home.php?mod=space&do=notice&view=userapp">Klicken Sie hier, um die Anwendung Infoseite und damit zusammenhangenden Vorgangen in Kraft</a>',//'???????<a href="home.php?mod=space&do=notice&view=userapp">????????????????</a>',
+	'myinvite_request'	=> 'Eine neue Anwendung Nachricht <a href="home.php?mod=space&do=notice&view=userapp">Hier entsteht eine neue Anwendung Informationsseite damit zusammenhängenden Vorgängen</a>',//'???????<a href="home.php?mod=space&do=notice&view=userapp">????????????????</a>',
 
 
 	'group_member_join'		=> '{actor} wollen Ihre Gruppe beizutreten, bitte moderate es in <a href="{url}" target="_blank">Gruppe CP</a>',

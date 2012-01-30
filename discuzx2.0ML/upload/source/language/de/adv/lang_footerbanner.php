@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_footerbanner.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -21,7 +22,7 @@ $lang = array
 	'footerbanner_position_up'	=> 'Up',//'上',
 	'footerbanner_position_middle'	=> 'Middle',//'中',
 	'footerbanner_position_down'	=> 'Down',//'下',
-	'footerbanner_category'		=> 'Portal Category',
-	'footerbanner_category_comment'	=> 'Set a portal category for show the Footer Banner. This take effect only when Ads is assigned to the Portal',
+	'footerbanner_category'		=> 'Lieferung Portal Kategorie',
+	'footerbanner_category_comment'	=> 'Anzeigenmarkt Kategorie setzen, wenn die Anzeigen in den Anwendungsbereich der "Portal" enthalten ist wirksam',
 );
 

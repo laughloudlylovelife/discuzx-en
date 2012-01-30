@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_float.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -20,7 +21,7 @@ $lang = array
 	'float_position_comment'	=> 'Lege den Speicherort der Floating Ads fest',
 	'float_position_left'		=> 'Links',
 	'float_position_right'		=> 'Rechts',
-	'float_category'		=> 'Portal Category',
-	'float_category_comment'	=> 'Set a portal category for show the Float Banner. This take effect only when Ads is assigned to the Portal',
+	'float_category'		=> 'Lieferung Portal Kategorie',
+	'float_category_comment'	=> 'Anzeigenmarkt Kategorie setzen, wenn die Anzeigen in den Anwendungsbereich der "Portal" enthalten ist wirksam',
 );
 

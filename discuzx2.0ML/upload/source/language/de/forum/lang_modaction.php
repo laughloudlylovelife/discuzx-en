@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_modaction.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-14) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -81,7 +82,7 @@ $lang = array
 
 	'MAG'	=> 'Requisiten',
 
-	'REB'	=> 'Get promotion',//'??',
+	'REB'	=> 'dr&uuml;cken',//'??',
 
 );
 

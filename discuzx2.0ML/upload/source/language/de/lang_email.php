@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_email.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 
@@ -93,6 +93,7 @@ Der folgende Inhalt wurde durch {bbname} versandt:
 
 Du erhältst diese Nachricht,
 weil du von {adminusername} von {bbname} freigeschalten wurdest.
+Hinzugefügt wurdest du auch zu den {bbname} Mitgiedern. Die aktuelle Email Adresse wurde registriert.
 
 ----------------------------------------------------------------------
 Wichtig!
@@ -237,18 +238,18 @@ Mit freundlichen Grüßen,<br />
 {bbname} Management Team.<br />
 {siteurl}',
 
-	'adv_expiration_subject' =>	'Your site ad will be {day} days after the due, Please timely processing',
-	'adv_expiration_message' =>	'The following ads on your site will be expired {day} days, please deal with:<br /><br />{advs}',
+	'adv_expiration_subject'	=> 'Die Anmeldung ist seit {day} Tagen abgelaufen. Bitte um Zeitgerechte bearbeitung.',
+	'adv_expiration_message'	=> 'Die Anzeige wird in {day} Tagen ablaufen. Bitte um Zeitgerechte bearbeitung.<br /><br />{advs}',
 	'invite_payment_email_message'	=> '
-Thank you for using the {bbname} ({siteurl}), Your order {orderid} has been paid completed, Order has been validated.<br />
+Willkommen im {bbname} bei {siteurl}! Deine Bestellung {orderid} wurde erhalten und vervollständigt.<br />
 <br />----------------------------------------------------------------------<br />
-Here is what you get the invitation code
+Hier ist der Einladung Code
 <br />----------------------------------------------------------------------<br />
 
 {codetext}
 
 <br />----------------------------------------------------------------------<br />
-Important!
+Wichtig!
 <br />----------------------------------------------------------------------<br />',
 );
 
