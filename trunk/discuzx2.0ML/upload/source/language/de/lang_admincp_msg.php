@@ -6,15 +6,15 @@
  *
  *      $Id: lang_admincp_msg.php by Valery Votintsev at sources.ru
  *
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2010-08-14) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array (
 
 'addons_provider_nonexistence'		=> 'Addon provider does not exist, please return.',//'资源提供商不存在，请返回。',
 'addons_provider_disabled'		=> 'Addon provider does not exist or has been closed, please return',//'资源提供商不存在或已被关闭，请返回',
-	'admingroups_edit_succeed'	=> 'Die Berechtigungen wurden erfolgreich aktualisiert.',
-	'adv_succeed'			=> 'Die Werbung wurde erfolgreich hinzugef&uuml;gt',
+	'admingroups_edit_succeed'		=> 'Die Berechtigungen wurden erfolgreich aktualisiert.',
+	'adv_succeed'				=> 'Die Werbung wurde erfolgreich hinzugef&uuml;gt',
 	'albumcategory_move_category_failed'	=> 'Verschieben der Album-Kategorie nicht m&ouml;glich.',
 	'albumcategory_delete_succeed'		=> 'Album-Kategorie erfolgreich gel&ouml;scht.',
 	'announce_time_invalid'			=> 'Es wurde entweder keine Startzeit angegeben, oder die gew&auml;hlte Zeitperiode ist ung&uuml;ltig. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
@@ -63,10 +63,10 @@ $lang = array (
 	'crons_succeed'				=> 'Die Cron-Jobs wurden erfolgreich aktualisiert.',
 'nav_add_succeed'			=> 'Navigation successfully updated.',//'导航栏成功更新。',
 'nav_not_found'				=> 'Navigation not found or the type does not match',//'导航未找到或类型不符',
-'plugin_not_found'			=> 'Plugin not found',//'插件未找到',
+	'plugin_not_found'			=> 'Plugin nicht gefunden',//'插件未找到',
 	'plugins_edit_identifier_invalid'	=> 'Du hast einen ung&uuml;ltigen bzw. bereits vorhandenen Kennzeichner angegeben. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 'plugins_install_succeed'		=> 'Plugin successfully installed!<br />In order to properly use this plug-in, you may also need to upload or modify the appropriate file or template, please see the installation instructions for this plug-in',//'插件成功安装！<br />为了正常使用此插件，您可能还需要上传或修改相应的文件或模板，详情请查看本插件的安装说明',
-'plugin_file_error'			=> 'Plug-in file not found',//'插件文件缺失',
+	'plugin_file_error'			=> 'Plug-in-Dateien fehlen',//'插件文件缺失',
 'plugins_upgrade_succeed'		=> 'Plug-in successfully upgraded to version {toversion}.',//'插件成功升级到 {toversion}！',
 	'plugins_edit_name_invalid'		=> 'Du hast keinen Namen f&uuml;r das Plugin angegeben. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'plugins_edit_succeed'			=> 'Das Plugin wurde erfolgreich aktualisiert.',
@@ -85,7 +85,7 @@ $lang = array (
 'smilies_type_nonexistence'		=> 'Specified smile category does not exist.',//'指定的表情分类不存在。',
 'specialuser_defaultuser_edit_succeed'	=> 'Edited successfully ',//'编辑成功 ',
 	'styles_edit_succeed'			=> 'Die Stile wurden erfolgreich aktualisiert.',
-'parameters_error'			=> 'Parameter error',//'参数错误',
+	'parameters_error'			=> 'Parameterfehler',//'参数错误',
 'tasks_succeed'				=> 'Task successfully added or updated.',//'任务成功添加或更新。',
 'tasks_basic_invalid'			=> 'Task settings are not complete, please return!',//'任务设置不完整，请返回！',
 'tasks_time_invalid'			=> 'Task time setting is invalid or out of enabled range, go back!',//'上线时间或下线时间设置不合理，请返回！',
@@ -111,7 +111,7 @@ $lang = array (
 'admingroups_edit_nonexistence'	=> 'Please select the admin group to operate with:',//'请先选择您要进行操作的管理组：',
 
 	'adv_update_succeed'		=> 'Die Werbung wurde erfolgreich aktualisiert.',
-'advertisement_nonexistence'	=> 'Ad ID does not exist',//'广告ID不存在',
+	'advertisement_nonexistence'	=> 'ID existiert nicht',//'广告ID不存在',
 	'adv_title_invalid'		=> 'Es wurde kein Name angegeben. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'adv_title_more'		=> 'Der Name &uuml;berschreitet das System-Limit von 50 Zeichen. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'adv_endtime_invalid'		=> 'Die gew&auml;hlte Zeitperiode ist ung&uuml;ltig. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
@@ -182,7 +182,7 @@ $lang = array (
 	'counter_blog_replynum_succeed'		=> 'Melde wieder ein paar umgebaut.',
 	'counter_friendnum_succeed'		=> 'Anzahl der abgeschlossenen Rekonstruktion der Freunde.',
 	'counter_album_picnum_succeed'		=> 'Foto Album Nummer umgebaut',
-'counter_thread_cover_fiderror'		=> 'Forum ID error',//'版块ID错误',
+'counter_thread_cover_fiderror'		=> 'Forum ID Error',//'版块ID错误',
 'counter_thread_cover_fidnopicstyle'	=> 'Forum does not enable the specified image list mode',//'指定版块没有开启图片列表模式',
 'counter_thread_cover_succeed'		=> 'Thread cover reconstruction completed',//'主题封面重建完成',
 
@@ -217,7 +217,7 @@ $lang = array (
 'ecommerce_must_larger'		=> 'Rating {rank} of the credit must be greater than in the previous level! Return to modify.',//'信用等级 {rank} 的信用度必须大于上一等级的信用度！请返回修改。',
 'ec_credit_succeed'		=> 'System credit rate successfully set.',//'信用评价体系成功设定。',
 
-'faq_nonexistence'		=> 'Specified help does not exist',//'指定帮助不存在',
+	'faq_nonexistence'		=> 'Hilfe existiert nicht',//'指定帮助不存在',
 	'faq_no_title'			=> 'Du hast keinen Titel angegeben. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'faq_identifier_invalid'	=> 'Der Kennzeichner f&uuml;r die Hilfe existiert bereits. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'faq_keyword_toolong'		=> 'Die angegebenen Schl&uuml;sselw&ouml;rter sind zu lang. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
@@ -306,7 +306,7 @@ $lang = array (
 	'members_edit_medals_succeed'		=> 'Die Medaillen wurden erfolgreich aktualisiert.',
 	'members_edit_illegal'			=> 'Du kannst spezielle Mitglieder nicht bearbeiten.',
 	'members_edit_reason_invalid'		=> 'Du hast keine Begr&uuml;ndung f&uuml;r die Bearbeitung festgelegt. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
-'members_not_found'		=> 'Specified user not found',//'指定用户未找到',
+	'members_not_found'		=> 'Benutzer wurde nicht gefunden',//'指定用户未找到',
 	'members_access_succeed'		=> 'Die Berechtigungen wurden erfolgreich aktualisiert.',
 	'members_ipban_nopermission'		=> 'Nur Administratoren k&ouml;nnen Wildcards verwenden.',
 	'members_ipban_illegal'			=> 'Die gew&auml;hlte IP ist in der Auflistung bereits vorhanden.',
@@ -370,7 +370,7 @@ $lang = array (
 	'plugins_setting_module_nonexistence'	=> 'Das gew&auml;hlte Modul ({modfile}) existiert nicht bzw. hat einen Fehler in der Syntax.',
 	'plugins_add_succeed'			=> 'Das Plugin wurde erfolgreich hinzugef&uuml;gt.',
 'plugins_nonexistence'			=> 'You did not select a plugin for operate with. Please select plug-in:',//'您即将进行的操作：设计插件。请先选择插件：',
-'plugin_donot_edit'			=> 'Editing not allowed',//'不允许编辑',
+	'plugin_donot_edit'			=> 'Bearbeiten nicht erlaubt',//'不允许编辑',
 	'plugins_edit_directory_invalid'	=> 'Das gew&auml;hlte Verzeichnis existiert nicht bzw. du hast das \"/\" am Ende vergessen. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 'plugins_edit_language_invalid'		=> 'Plugin language pack file ({langfile}) does not exist.',//'插件语言包文件({langfile})不存在。',
 	'plugins_edit_modules_name_invalid'	=> 'Der angegebene Name enth&auml;lt ung&uuml;ltige Zeichen. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
@@ -462,7 +462,7 @@ $lang = array (
 	'styles_edit_variable_duplicate'	=> 'Eine Variable mit diesem Namen existiert bereits. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'styles_edit_variable_illegal'		=> 'Der Name der Variable ist ung&uuml;ltig. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 
-'tag_empty'		=> 'New tag can not be empty',//'新标签不能为空',
+	'tag_empty'		=> 'Tags d&uuml;rfen nicht leer sein',//'新标签不能为空',
 'tag_length'		=> 'New tag length must be in 3-20 characters',//'新标签不在3-20字符内',
 'tag_admin_updated'	=> 'Tags updated successfully',//'标签更新成功 ',
 
@@ -506,7 +506,7 @@ $lang = array (
 	'forums_threadtypes_duplicate'		=> 'Ein Pr&auml;fix mit diesem Namen ist bereits vorhanden. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'forums_threadtypes_succeed'		=> 'Der Pr&auml;fix wurde erfolgreich hinzugef&uuml;gt.',
 	'threadtype_infotypes_noexist'		=> 'Das gew&auml;hlte Pr&auml;fix existiert nicht.',
-'typeoption_not_found'			=> 'Option not found',//'选项未找到',
+	'typeoption_not_found'			=> 'Optionen nicht gefunden',//'选项未找到',
 	'threadtype_infotypes_option_succeed'	=> 'Erfolgreich aktualisiert.',
 	'threadtype_infotypes_invalid'		=> 'Du musst mindestens eine Option angeben.',
 'threadtype_content_no_choice'		=> 'Categories have no choice',//'没有选择分类信息',

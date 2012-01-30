@@ -5,13 +5,13 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_friend.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2012-01-23) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array(
 	'friend_group_default'	=> 'Andere',
-	'friend_group_1'	=> 'Verstehen der Website',
-	'friend_group_2'	=> 'Wissen durch Aktivit&auml;ten',
+	'friend_group_1'	=> 'Von der Website',
+	'friend_group_2'	=> 'Bekannt durch Aktivit&auml;ten',
 	'friend_group_3'	=> 'Durch einen Freund',
 	'friend_group_4'	=> 'Familie',
 	'friend_group_5'	=> 'Kollege',

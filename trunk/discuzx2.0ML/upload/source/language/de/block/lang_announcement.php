@@ -14,5 +14,5 @@ $lang = array
 	'announcement_type_link'	=> 'Link',//'网站链接',
 	'announcement_titlelength'	=> 'Titel L&auml;nge',
 	'announcement_summarylength'	=> 'Content L&auml;nge',
-	'announcement_startrow'		=> 'Start row',//'起始位置',
+	'announcement_startrow'		=> 'Startreihe',//'起始位置',
 );

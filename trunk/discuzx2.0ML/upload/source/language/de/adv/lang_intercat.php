@@ -15,6 +15,6 @@ $lang = array
 	'intercat_fids_comment'		=> 'Set the target forum categories where  to show the Adv',//'设置广告投放的版块分区',
 	'intercat_position'		=> 'Ads Position',//'投放位置',
 	'intercat_position_comment'	=> 'Set the adv positon below which area',//'设置广告在哪个分区的下方显示',
-	'intercat_position_random'	=> 'Radom position',//'所有位置随机',
+	'intercat_position_random'	=> 'Random position',//'所有位置随机',
 );
 

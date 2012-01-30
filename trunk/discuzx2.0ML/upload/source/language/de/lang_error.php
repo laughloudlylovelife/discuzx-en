@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_error.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-25) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -30,7 +30,7 @@ $lang = array
 	'system_init_ok'		=> 'Site-System-Initialisierung abgeschlossen <a href="index.php">Klicke hier</a>.',
 	'backtrace'			=> 'Betriebsinformationen',
 	'error_end_message'		=> '<a href="http://{host}">{host}</a> Enthält detaillierte Aufzeichnungen über diese Fehlermeldung, Wir entschuldigen uns f&uuml;r diese Unannehmlichkeiten.',
-	'mobile_error_end_message'	=> '<a href="http://{host}">{host}</a> Error. Sorry for inconvenience.',//'<a href="http://{host}">{host}</a> 此错误给您带来的不便我们深感歉意',
+	'mobile_error_end_message'	=> '<a href="http://{host}">{host}</a> Fehler. Wir entschuldigen uns für diese Unann&auml;mlichkeiten.',//'<a href="http://{host}">{host}</a> 此错误给您带来的不便我们深感歉意',
 
 	'file_upload_error_-101'	=> 'Upload failed! Upload-Datei existiert nicht oder ist nicht legitim, bitte zur&uuml;ck.',
 	'file_upload_error_-102'	=> 'Upload failed! Non-Bildtyp-Datei, bitte zur&uuml;ck.',

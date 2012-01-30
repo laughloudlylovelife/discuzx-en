@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_core.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -44,7 +44,7 @@ $lang = array
 	'seccode_sound_tips'		=> 'Gib die Zeichen ein die du h&ouml;hrst.<br />',
 	'secqaa_tips'			=> 'Gib die Antwort f&uuml;r die Frage ein.<br />',
 	
-	'fullblankspace'		=> '&nbsp;',//'?',
+	'fullblankspace'		=> '&nbsp;',
 
 	'title_goruptype'		=> 'Gruppe Typ',
 	'title_of'			=> 'Von',
@@ -160,8 +160,8 @@ $lang = array
 	'title_memcp_poke'		=> 'Gr&uuml;&szlig;en',
 	'title_memcp_videophoto'	=> 'Video-Zertifizierung',
 	'title_memcp_comment'		=> 'Kommentar',
-	'title_memcp_eccredit'		=> 'Punkte Transaktionen',//'????',
-	'title_memcp_promotion'		=> 'Greifen Sie auf die Forderung',//'????',
+	'title_memcp_eccredit'		=> 'Punkte Transaktionen',
+	'title_memcp_promotion'		=> 'Greifen Sie auf die Forderung',
 	'title_task'			=> 'Aufgabe',
 	'title_login'			=> 'Login',
 	'title_ranklist_picture'	=> 'Top Foto',
@@ -172,9 +172,9 @@ $lang = array
 	'title_ranklist_activity'	=> 'Top Event',
 	'title_ranklist_forum'		=> 'Forum Ranking',
 	'title_ranklist_group'		=> 'Gruppen Ranking',
-	'title_ranklist_app'		=> 'Anwendung Rangliste',//'????',
+	'title_ranklist_app'		=> 'Anwendung Rangliste',
 	'title_ranklist_index'		=> 'Alle Ranglisten',
-//	'title_ranklist_index'		=> 'Rank',//'???',
+//	'title_ranklist_index'		=> 'Rank',
 	'title_search'			=> 'Suche',
 	'title_topic_management'	=> 'Thema erstellen',
 	'title_portal_management'	=> 'Portal-Management',
@@ -205,7 +205,7 @@ $lang = array
 	'page'				=> 'Page {page}',
 
 //vot source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> 'refresh Grenzfrequenz',
+	'attackevasive_1_subject'	=> 'auffrischen Grenzfrequenz',
 	'attackevasive_1_message'	=> 'Sie besuchen die Website zu schnell, weniger als zwei Sekunden! Bitte warten Sie einen Augenblick ...',
 	'attackevasive_2_subject'	=> 'Zugang uber Proxy-Server beschrankt ist',
 	'attackevasive_2_message'	=> 'Der Zugriff auf die Website uber einen Proxy-Server ist fur mahen beschrankt. Bitte entfernen Sie Ihre Proxy-Einstellungen Konfiguration und Zugriff auf die Website direkt.',

@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_headerbanner.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -16,7 +17,7 @@ $lang = array
 	'headerbanner_fids_comment'	=> 'Forum ein Forum einrichten, f&uuml;r die Werbung, als Anzeigen in den Geltungsbereich des Forum ist g&uuml;ltig inbegriffen',
 	'headerbanner_groups'		=> 'Setze die Gruppen Klassifizierung fest',
 	'headerbanner_groups_comment'	=> 'Stelle der Gruppe zugeordnet, Werbung, Anzeigen, wenn im Rahmen der Gruppe die effektive inbegriffen',
-	'headerbanner_category'		=> 'Portal Category',
-	'headerbanner_category_comment'	=> 'Set a portal category for show the Header Banner. This take effect only when Ads is assigned to the Portal',
+	'headerbanner_category'		=> 'Lieferung Portal Kategorie',
+	'headerbanner_category_comment'	=> 'Anzeigenmarkt Kategorie setzen, wenn die Anzeigen in den Anwendungsbereich der "Portal" enthalten ist wirksam',
 );
 

@@ -5,11 +5,12 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_friend.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-16) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
 (
-	'friend_name'	=> 'Add 5 Freunde',
+	'friend_name'	=> 'Freundes Task hinzuf&uuml;gen',
 	'friend_desc'	=> '5 Freunde werden belohnt.',
 	'friend_view'	=> '<strong>Bitte folge den Anweisungen, um dich bei dieser Aufgabe zu beteiligen:</strong>
 		<ul>

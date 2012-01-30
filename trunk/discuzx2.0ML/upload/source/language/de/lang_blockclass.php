@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_blockclass.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-20) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array(
@@ -13,7 +13,7 @@ $lang = array(
 
 	'blockclass_html_html'			=> 'Display-Typ',
 	'blockclass_html_script_blank'		=> 'Custom HTML',
-	'blockclass_html_script_search'		=> 'Artikel suchen',//'???',
+	'blockclass_html_script_search'		=> 'Artikel suchen',
 	'blockclass_html_script_line'		=> 'Schnittlinie',
 	'blockclass_html_script_banner'		=> 'Foto Banner',
 	'blockclass_html_script_vedio'		=> 'Network Video',
@@ -33,14 +33,14 @@ $lang = array(
 	'blockclass_announcement_field_endtime'		=> 'Endzeit',
 	'blockclass_announcement_script_announcement'	=> 'Seiten Ank&uuml;ndigung',
 
-	'blockclass_html_myapp'		=> 'Apps',
-	'blockclass_myapp_field_url'	=> 'URL',
-	'blockclass_myapp_field_title'	=> 'Name',
-	'blockclass_myapp_field_icon'	=> 'Bild',
+	'blockclass_html_myapp'			=> 'Apps',
+	'blockclass_myapp_field_url'		=> 'URL',
+	'blockclass_myapp_field_title'		=> 'Name',
+	'blockclass_myapp_field_icon'		=> 'Bild',
 	'blockclass_myapp_field_icon_small'	=> 'Application-Ikon',
 	'blockclass_myapp_script_myapp'		=> 'Apps',
 
-	'blockclass_forum'		=> 'Forum',
+	'blockclass_forum'			=> 'Forum',
 
 	'blockclass_forum_thread'		=> 'Themen',
 	'blockclass_thread_field_url'		=> 'URL',
@@ -50,7 +50,7 @@ $lang = array(
 	'blockclass_thread_field_author'	=> 'Autor',
 	'blockclass_thread_field_authorid'	=> 'Autor UID',
 	'blockclass_thread_field_avatar'	=> 'Avatar',
-	'blockclass_thread_field_avatar_middle'	=> 'Avatar mitte',//'????(?)',
+	'blockclass_thread_field_avatar_middle'	=> 'Avatar mitte',
 	'blockclass_thread_field_avatar_big'	=> 'Avatar gro&szlig;',
 	'blockclass_thread_field_icon'		=> 'Ikon',
 	'blockclass_thread_field_forumurl'	=> 'Forum URL',
@@ -101,7 +101,7 @@ $lang = array(
 	'blockclass_trade_field_title'		=> 'Produktname',
 	'blockclass_trade_field_url'		=> 'Produktlink',
 	'blockclass_trade_field_summary'	=> 'Beschreibung',
-	'blockclass_trade_field_pic'		=> 'Bild',
+	'blockclass_trade_field_pic'		=> 'Bild URL',
 	'blockclass_trade_field_totalitems'	=> 'Gesamtzahl der verkauften Waren',
 	'blockclass_trade_field_author'		=> 'Verk&auml;ufer von Waren',
 	'blockclass_trade_field_authorid'	=> 'Verk&auml;fer UID',

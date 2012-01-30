@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_groupattachment.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -50,16 +51,16 @@ $lang = array
 	'groupattachment_special_reward_0'		=> 'All',//'全部',
 	'groupattachment_special_reward_1'		=> 'Finished',//'已解决',
 	'groupattachment_special_reward_2'		=> 'Active',//'未解决',
-	'groupattachment_dateline'			=> 'Upload time',//'附件上传时间',
-	'groupattachment_dateline_nolimit'		=> 'No limit',//'不限制',
-	'groupattachment_dateline_hour'			=> 'Last hour',//'最近1小时',
-	'groupattachment_dateline_day'			=> 'Last day',//'最近24小时',
-	'groupattachment_dateline_week'			=> 'Last week',//'最近1周',
-	'groupattachment_dateline_month'		=> 'Last month',//'最近1月',
-	'groupattachment_gviewperm'			=> 'Group view permissions',//'群组浏览权限',
-	'groupattachment_gviewperm_nolimit'		=> 'No limits',
-	'groupattachment_gviewperm_only_member'		=> 'Members only',//'仅成员',
-	'groupattachment_gviewperm_all_member'		=> 'All',//'所有人',
-	'groupattachment_highlight'			=> 'Highlight found words',
+	'groupattachment_dateline'			=> 'Zubeh&ouml;r Uploaded',//'附件上传时间',
+	'groupattachment_dateline_nolimit'		=> 'keine Einschr&auml;nkungen',//'不限制',
+	'groupattachment_dateline_hour'			=> 'Die letzte Stunde',//'最近1小时',
+	'groupattachment_dateline_day'			=> 'Letzten 24 Stunden',//'最近24小时',
+	'groupattachment_dateline_week'			=> 'Letzte Woche',//'最近1周',
+	'groupattachment_dateline_month'		=> 'Im vergangenen Monat',//'最近1月',
+	'groupattachment_gviewperm'			=> 'Browse Gruppen Rechte',//'群组浏览权限',
+	'groupattachment_gviewperm_nolimit'		=> 'keine Einschr&auml;nkungen',
+	'groupattachment_gviewperm_only_member'		=> 'Nur f&uuml;r Mitglieder',//'仅成员',
+	'groupattachment_gviewperm_all_member'		=> 'Alle',//'所有人',
+	'groupattachment_highlight'			=> 'Markiere den Wert',
 );
 

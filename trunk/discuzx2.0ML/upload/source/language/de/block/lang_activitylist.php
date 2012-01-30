@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: lang_activitylist.php by Valery Votintsev at sources.ru
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array
@@ -91,8 +92,8 @@ $lang = array
 	'activitylist_orderby_monthexp'		=> 'Expired last month',//'按一月内报名截止时间排序',
 	'activitylist_orderby_weekhot'		=> 'Hots last week',//'按一周内热度排序',
 	'activitylist_orderby_monthhot'		=> 'Hots last month',//'按一月内热度排序',
-	'activitylist_orderby_alltimehot'	=> 'At the end of activity has not participated in any order of the number',//'按所有未结束活动已参加人数排序',
-	'activitylist_highlight'		=> 'Highlight found words',
+	'activitylist_orderby_alltimehot'	=> 'Bis zum Ende der T&auml;tigkeit nicht in beliebiger Reihenfolge der Anzahl teilgenommen',//'按所有未结束活动已参加人数排序',
+	'activitylist_highlight'		=> 'Markieren den Wert',
 );
 
 ?>

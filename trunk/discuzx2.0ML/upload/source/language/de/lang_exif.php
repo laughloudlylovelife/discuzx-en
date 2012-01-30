@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *	$Id: lang_exif.php by Valery Votintsev at sources.ru
- *      German Discuz!X Translation (2010-09-25) by Coldcut - http://www.cybertipps.com
+ *      German Discuz!X Translation (2011-08-12) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array(

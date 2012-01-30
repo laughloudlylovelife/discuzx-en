@@ -6,7 +6,7 @@
  *
  *      $Id: lang_template.php by Valery Votintsev at sources.ru
  *
- *      This file is automatically generate
+ *      German Discuz!X Translation (2011-08-14) by Coldcut - http://www.cybertipps.com
  */
 
 $lang = array (
@@ -574,7 +574,7 @@ $lang = array (
 'delete_chatpm'			=> 'Delete group chat',//'????',
 'delete_chatpm_comment'		=> 'Delete the group chat topic',//'???????',
 'delete_privatepm_user'		=> 'Delete all private messages to the user',//'?????????????',
-'dots'				=> '...',//'……',
+'dots'				=> '...',//'',
 	'ignore_list'		=> 'Ignorieren-Liste',
 	'ignore_member_pm_message'	=> '<p>Benutzer werden die Nachricht nicht empfangen.</p>
 					<p>Mehere Empf&auml;ger mit "," trennen. Getrennt, wie z.B. "Joe Smith, John Doe, Wang V" usw.</p>
@@ -1325,7 +1325,7 @@ $lang = array (
 	'space_domain'		=> 'Space Domain',
 'mode_one'			=> 'Method 1:',//'???:',
 'mode_two'			=> 'Method 2:',//'???:',
-'mode_two_desc'			=> 'Promote to your friends the links listed above, and will have a chance to reward a bonus! &nbsp; <a href="forum.php" class="xi2">Promote the post &raquo;</a>',//'??????????“????”,?????????????? &nbsp; <a href="forum.php" class="xi2">?????&raquo;</a>',
+'mode_two_desc'			=> 'Promote to your friends the links listed above, and will have a chance to reward a bonus! &nbsp; <a href="forum.php" class="xi2">Promote the post &raquo;</a>',//'??????????????,?????????????? &nbsp; <a href="forum.php" class="xi2">?????&raquo;</a>',
 	'post_promotion'	=> 'Wenn einer deiner Freunde durch einen Link auf die Webseite zugreift, sich anmeldet und deren Freunde sich ebenfalls durch ihn anmelden, bekommst du Bonuspunkte.',
 	'post_promotion_reg'	=> 'Wenn dein Freund nicht nur die Seite besucht, sondern sich auch anmeldet bekommst du Bonuspunkte.',
 	'post_promotion_url'	=> 'Wenn einer deiner Freunde durch einen Link auf die Webseite zugreift bekommst du Bonuspunkte.',
