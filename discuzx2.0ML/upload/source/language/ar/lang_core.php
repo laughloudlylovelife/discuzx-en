@@ -203,7 +203,7 @@ $lang = array
 	'title_userapp_manage'		=> 'ادارة التطبيقات &quot;{userapp}&quot;',//'{userapp}管理',
 	'faq'				=> 'التعليمات',//'帮助',
 	'search'			=> 'بحث',//'搜索',
-	'page'				=> 'page {page}',
+	'page'				=> 'الصفحة {page}',
 
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'تحديث حد التردد',

@@ -12,7 +12,7 @@ $lang = array(
 	'restore_title'		=> 'Discuz! data recovery tool',//'Discuz! 数据恢复工具',
 	'restore_questions'	=> 'For any Recovering questions, please visit the support site',//'恢复当中有任何问题请访问技术支持站点',
 	'browser_jump'		=> 'Browser will automatically jump page, without human intervention. Unless a long time when your browser does not support frames, please click here',//'浏览器会自动跳转页面，无需人工干预。除非当您的浏览器长时间没有自动跳转时，请点击这里',
-	'ok'			=> 'OK',//'确定',
+	'ok'			=> 'موافق',//'确定',
 	'cancel'		=> 'Cancel',//'取消',
 	'filename'		=> 'File Name',//'文件名称',
 
