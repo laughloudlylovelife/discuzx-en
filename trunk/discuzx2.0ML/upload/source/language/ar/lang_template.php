@@ -12,12 +12,12 @@
 
 $lang = array (
 	'activity_about_member'		=> 'مكان متبقي',//'剩余名额',
-	'activity_already'		=> 'حد الاقصى لعدد المشتركين موجود مسبقا',//'已参加人数',
+	'activity_already'		=> 'حد الاقصى لعدد المشتركين موجود مسبقاً',//'已参加人数',
 	'additional'			=> 'اضافي',//'附加',
 	'debate_opponent'		=> 'المنافس',//'反方',
 	'debate_square'			=> 'الخصم',//'正方',
 	'thread_poll'			=> 'استطلاعات',//'投票',
-	'credits'			=> 'المال فقط',//'积分',
+	'credits'			=> 'النقاط',//'积分',
 	'login'				=> 'تسجيل الدخول',//'登录',
 	'active_email'			=> 'بريد الاستقبال',
 	'active_email_comment'		=> 'مطلوب لارسال رمز التفعيل',
@@ -55,7 +55,7 @@ $lang = array (
 	'login_invisible_mode'		=> 'مخفي',//'隐身',
 	'login_normal_mode'		=> 'متواجد',//'在线',
 	'scrolltop'			=> 'عودة إلى الأعلى',
-	'thread_groupupgrade'		=> 'تحتاج للوصول الى المستوى التالي',//'距离下一级还需',
+	'thread_groupupgrade'		=> 'تحتاج للوصول الى المستوى التالي ',//'距离下一级还需',
 	'time_now'			=> 'بتوقيت جرينتش  {$_G[timenow][offset]}, {$_G[timenow][time]}',
 	'activation'			=> 'التفعيل',//'激活',
 	'admincp'			=> 'لوحة الادارة',//'管理中心',
@@ -442,9 +442,9 @@ $lang = array (
 //	'nav_'		=> '',//'',
 
 // Google Maps
-	'e_map'		=> 'Map',//'地图',
-	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',
-	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
+	'e_map'		=> 'خريطة',//'地图',
+	'e_map_insert'	=> 'إداراج خريطة جوجل',//'插入google地图',
+	'e_map_address'	=> 'أدخل مكان البحث: ',//'地址： ',
 );
 
 ?>
