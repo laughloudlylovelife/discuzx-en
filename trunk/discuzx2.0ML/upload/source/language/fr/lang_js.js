@@ -583,7 +583,7 @@ var lng = {
 //static/js/register.js
 
 	'username_invalid'	: 'Nom Utilisateur Contient des Caractères Invalides',//'用户名包含敏感字符', // 'User name contains invalid characters'
-	'username_short'	: 'Nom Utilisateur est Infèrieure a 3 Caractères',//'用户名小于 3 个字符', // 'User name is shorter than 3 characters'
+	'username_short'	: 'Nom Utilisateur est Infèrieure a 2 Caractères',//'用户名小于 3 个字符', // 'User name is shorter than 3 characters'
 	'username_long'		: 'Nom Utilisateur est Plus Long que 15 Caractères',//'用户名超过 15 个字符',  // 'User name is longer than 15 characters'
 	'passwords_not_equal'	: 'Les 2 Mots de Passe ne Correspondent Pas',//'两次输入的密码不一致',  // 'Two passwords does not match'
 	'email_invalid'		: 'E-mail Contient des Caractères Invalides',//'Email 包含敏感字符', // 'Email contains invalid characters'

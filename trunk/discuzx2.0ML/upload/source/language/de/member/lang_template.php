@@ -41,7 +41,7 @@ $lang = array (
 	'register_message1'		=> 'So, if you decided to create a new account here, please fill in the registration info carefully. We will verify all the registration info before approove your apply.',//'您填写的注册原因会被当作申请注册的重要参考依据，请务必认真填写，我们会认真审核。',
 	'register_password_tips'	=> 'Bitte Kennwort eingeben',//'请填写密码',
 	'register_repassword_tips'	=> 'Bitte Kennwort erneut eingeben',//'请再次输入密码',
-	'register_username_tips'	=> 'Benutzername muss zwischen 3 und 15 Zeichen bestehen',//'用户名由 3 到 15 个字符组成',
+	'register_username_tips'	=> 'Benutzername muss zwischen 2 und 15 Zeichen bestehen',//'用户名由 3 到 15 个字符组成',
 	'rulemessage'			=> 'Bitte lese dir vor der Registration die Nutzungsbedingungen sorgf&auml;ltig durch!',//'网站服务条款',
 //	'return_login'			=> 'Return to login',//'返回登录',
 );

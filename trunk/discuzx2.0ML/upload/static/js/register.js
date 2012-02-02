@@ -236,9 +236,18 @@ function checkusername(id) {
 		errormessage(id, lng['username_invalid']);
 		return;
 	}
-	var unlen = username.replace(/[^\x00-\xff]/g, "**").length;
-	if(unlen < 3 || unlen > 15) {
-		errormessage(id, unlen < 3 ? lng['username_short'] : lng['username_long']);
+//vot	var unlen = username.replace(/[^\x00-\xff]/g, "**").length;
+/*vot*/	var unlen = username.length;
+/*vot*/	var utf8len = utf8length(username);
+
+/*vot*/	if(unlen < 2) {
+/*vot*/		errormessage(id, lng['username_short']);
+		return;
+/*vot*/	} else if(unlen > 15) {
+		errormessage(id, lng['username_long']);
+		return;
+/*vot*/	} else if(utf8len > 64) { // Max DB Field Length in bytes
+/*vot*/		errormessage(id, lng['username_long']);
 		return;
 	}
 	var x = new Ajax();

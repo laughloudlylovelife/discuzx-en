@@ -42,7 +42,7 @@ $lang = array (
 	'register_message1'		=> 'Por lo tanto, si usted decidió crear una nueva cuenta aquí, por favor llene la información de registro con cuidado. Vamos a verificar toda la información de registro antes de aprobar su solicitud de inscripción.',//'您填写的注册原因会被当作申请注册的重要参考依据，请务必认真填写，我们会认真审核。',
 	'register_password_tips'	=> 'Por favor, rellene la contraseña',//'请填写密码',
 	'register_repassword_tips'	=> 'Por favor, introduzca la contraseña de nuevo',//'请再次输入密码',
-	'register_username_tips'	=> 'Longitud de nombre de usuario debe estar en el rango de 3-15 caracteres',//'用户名由 3 到 15 个字符组成',
+	'register_username_tips'	=> 'Longitud de nombre de usuario debe estar en el rango de 2-15 caracteres',//'用户名由 3 到 15 个字符组成',
 	'rulemessage'			=> 'Término del servicio',//'网站服务条款',
 //	'return_login'			=> 'Volver a entrar',//'返回登录',
 );

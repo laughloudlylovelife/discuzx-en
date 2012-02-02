@@ -583,7 +583,7 @@ var lng = {
 //static/js/register.js
 
 	'username_invalid'	: 'Tên người dùng chứa các ký tự không hợp lệ',//'用户名包含敏感字符',
-	'username_short'	: 'Tên người dùng không được ngắn hơn 3 ký tự',//'用户名小于 3 个字符',
+	'username_short'	: 'Tên người dùng không được ngắn hơn 2 ký tự',//'用户名小于 3 个字符',
 	'username_long'		: 'Tên người dùng dài hơn 15 ký tự',//'用户名超过 15 个字符',
 	'passwords_not_equal'	: 'Hai mật khẩu không giống nhau',//'两次输入的密码不一致',
 	'email_invalid'		: 'Email chứa các ký tự không hợp lệ',//'Email 包含敏感字符',

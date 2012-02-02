@@ -2089,3 +2089,35 @@ if(typeof IN_ADMINCP == 'undefined') {
 if(BROWSER.ie) {
 	document.documentElement.addBehavior("#default#userdata");
 }
+
+//------------------------------------------------------------
+// Count UTF-8 Multibyte string length in bytes
+// Written by Valery Votintsev, http://codersclub.org/discuzx/
+// Thanx to O'Reilly !
+//------------------------------------------------------------
+function utf8length(data) {
+
+  if (data == '' || data == null) return 0; // Empty string
+
+  data = data.toString();
+  var len = 0;
+  
+  for(var i=0; i<data.length; i++) {
+
+    var c = data.charCodeAt(i);
+
+    if (c < 0) return -1;		// Illegal codePoint
+    if (c < 0x80) len += 1;		// 1 byte
+    else if (c < 0x800) len += 2;	// 2 bytes
+    else if(c >= 0xD800 && c <= 0xDFFF) return -1; // Illegal codePoint
+    else if (c < 0x10000) len += 3;	// 3 bytes
+    else if (c < 0x20000) len += 4;	// 4 bytes
+    else if (c < 0x4000000) len += 5;	// 5 bytes
+    else if (c < 0x80000000) len += 6;	// 6 bytes
+    else return -1;			// Illegal codePoint > 0x7FFFFFFF
+
+  }
+
+  return len;	// Return calculated byte counter
+}
+
