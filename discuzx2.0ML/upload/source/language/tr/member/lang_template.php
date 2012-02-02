@@ -41,7 +41,7 @@ $lang = array (
 	'register_message1'		=> 'Lütfen kayıt nedenini giriniz,onaylanmak için gerekebilir.',
 	'register_password_tips'	=> 'Şifreyi doldurunuz',
 	'register_repassword_tips'	=> 'Tekrar şifrenizi giriniz',
-	'register_username_tips'	=> 'Kullanıcı adı 3-15 karakter arası olmalıdır.',
+	'register_username_tips'	=> 'Kullanıcı adı 2-15 karakter arası olmalıdır.',
 	'rulemessage'			=> 'Site Kuralları',
 );
 

@@ -41,7 +41,7 @@ $lang = array (
   'register_message1'		=> 'Svp. entrez votre raison de votre inscription, il vous aidera &#224; passer la mod&#233;ration plus ais&#233;ment.',   // Please enter your register reason, it will help you pass the moderation. 
   'register_password_tips'	=> 'Svp. remplir le mot de passe',   //  Please fill in the password
   'register_repassword_tips'	=> 'Svp. entrez le mot de passe',   // Please enter the password again 
-  'register_username_tips'	=> 'Nom d\'Utilisateur 3-15 caract&#232;res',   //  Username 3-15 characters
+  'register_username_tips'	=> 'Nom d\'Utilisateur 2-15 caract&#232;res',   //  Username 3-15 characters
   'rulemessage'			=> 'Terme et Services',   //  Term of Service
 //	'return_login'			=> 'Return to login',//'返回登录',
 );

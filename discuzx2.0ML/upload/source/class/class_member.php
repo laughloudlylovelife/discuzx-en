@@ -447,13 +447,17 @@ class register_ctl {
 			}
 
 			if(!$activation) {
+/*vot*/				$username = addslashes(trim(dstripslashes($username)));
 				$usernamelen = dstrlen($username);
-				if($usernamelen < 3) {
-					showmessage('profile_username_tooshort');
-				} elseif($usernamelen > 15) {
+/*vot*/				$username_mblen = mb_strlen($username);
+/*vot*/				if($usernamelen > 64) {
 					showmessage('profile_username_toolong');
+/*vot*/				} elseif($username_mblen > 15) {
+					showmessage('profile_username_toolong');
+/*vot*/				} elseif($username_mblen < 2) {
+					showmessage('profile_username_tooshort');
 				}
-				$username = addslashes(trim(dstripslashes($username)));
+//vot				$username = addslashes(trim(dstripslashes($username)));
 				if(uc_get_user($username) && !DB::result_first("SELECT uid FROM ".DB::table('common_member')." WHERE username='$username'")) {
 					if($_G['inajax']) {
 						showmessage('profile_username_duplicate');

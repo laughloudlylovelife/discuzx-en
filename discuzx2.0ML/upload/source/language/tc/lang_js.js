@@ -587,7 +587,7 @@ var lng = {
 //static/js/register.js
 
 	'username_invalid'	: '用戶名包含敏感字符',
-	'username_short'	: '用戶名小於 3 個字符',
+	'username_short'	: '用戶名小於 2 個字符',
 	'username_long'		: '用戶名超過 15 個字符',
 	'passwords_not_equal'	: '兩次輸入的密碼不一致',
 	'email_invalid'		: 'Email 包含敏感字符',
