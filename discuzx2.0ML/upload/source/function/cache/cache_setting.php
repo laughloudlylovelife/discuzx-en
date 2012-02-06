@@ -692,13 +692,45 @@ function get_cachedata_mainnav() {
 		$data['navs'][$id]['filename'] = $nav['url'];
 		$data['navs'][$id]['available'] = $nav['available'];
 		$nav['name'] = $nav['name'].($nav['title'] ? '<span>'.$nav['title'].'</span>' : '');
-		$subquery = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='0' AND parentid='$nav[id]' AND available='1' ORDER BY displayorder");
-		$subnavs = '';
+
+//--------------------------------
+//vot Get All Sub-navigation links
+/*vot*/		$sql = "SELECT * FROM ".DB::table('common_nav')." WHERE navtype='0' AND parentid='$nav[id]' AND available='1' ORDER BY displayorder";
+//DEBUG
+//echo "subquery=".$sql."<br>\n";
+
+/*vot*/		$subquery = DB::query($sql);
+
+/*vot*/		$subnavs = array();
+/*vot*/		$subindex = 0;
+
 		while($subnav = DB::fetch($subquery)) {
-			$item = "<a href=\"$subnav[url]\" hidefocus=\"true\" ".($subnav['title'] ? "title=\"$subnav[title]\" " : '').($subnav['target'] == 1 ? "target=\"_blank\" " : '').parsehighlight($subnav['highlight']).">$subnav[name]</a>";
+//DEBUG
+//echo "<pre>";
+//echo "subnav=";
+//print_r($subnav);
+//echo "</pre>";
+
+/*vot*/			$subnavs[$subindex] = $subnav;
+
+//vot			$item = "<a href=\"$subnav[url]\" hidefocus=\"true\" ".($subnav['title'] ? "title=\"$subnav[title]\" " : '').($subnav['target'] == 1 ? "target=\"_blank\" " : '').parsehighlight($subnav['highlight']).">$subnav[name]</a>";
 			$liparam = !$nav['subtype'] || !$nav['subcols'] ? '' : ' style="width:'.sprintf('%1.1f', (1 / $nav['subcols']) * 100).'%"';
-			$subnavs .= '<li'.$liparam.'>'.$item.'</li>';
+
+//vot			$subnavs .= '<li'.$liparam.'>'.$item.'</li>';
+
+/*vot*/			$extra = " hidefocus=\"true\" ".($subnav['target'] == 1 ? "target=\"_blank\" " : '').parsehighlight($subnav['highlight']);
+
+//			$subnavs[$subindex]['title'] = $title; // Translate this!,
+			$subnavs[$subindex]['extra'] = $extra;
+			$subnavs[$subindex]['liparam'] = $liparam;
+
+/*vot*/			$subindex++;
 		}
+//DEBUG
+//echo "<pre>";
+//echo "subnavs=";
+//print_r($subnavs);
+//echo "</pre>";
 		list($navid) = explode('.', basename($nav['url']));
 		if($nav['type'] || $navid == 'misc' || $nav['identifier'] == 6) {
 			if($nav['type'] == 4) {

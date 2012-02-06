@@ -67,7 +67,7 @@ if($operation == 'headernav') {
 				$navsubtype = array();
 				$navsubtype[$nav['subtype']] = 'selected="selected"';
 				$readonly = $nav['type'] == '4' ? ' readonly="readonly"' : '';
-				showtablerow('', array('class="td25"', 'class="td25"', '', '', '',''), array(
+/*vot*/				showtablerow('', array('', '', '', '', '',''), array(
 /*vot*/					(in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />').($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ? '<a href="javascript:;" class="left" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : ''),
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 /*vot*/					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\"$readonly>".
@@ -106,7 +106,7 @@ if($operation == 'headernav') {
 					foreach($subnavlist[$nav['id']] as $sub) {
 						$readonly = $sub['type'] == '4' ? ' readonly="readonly"' : '';
 						$subnavnum--;
-/*vot*/						showtablerow('', array('class="td25"', 'class="td25"', 'class="td25"', 'class="td25"','colspan="2"',), array(
+/*vot*/						showtablerow('class="trsub"', array('', '', '', '','colspan="2"',), array(
 							$sub['type'] == '0' || $sub['type'] == '4' ? '' : "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$sub[id]\">",
 							"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$sub[id]]\" value=\"$sub[displayorder]\">",
 							"<div class=\"".($subnavnum ? 'board' : 'lastboard')."\"><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$sub[id]]\" value=\"".dhtmlspecialchars($sub['name'])."\"$readonly></div>",

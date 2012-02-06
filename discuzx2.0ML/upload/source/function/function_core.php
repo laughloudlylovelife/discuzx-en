@@ -541,9 +541,27 @@ function checktplrefresh($maintpl, $subtpl, $timecompare, $templateid, $cachefil
 	return FALSE;
 }
 
-//vot Replace default navigation links with national language values
-function nav_language() {
+//--------------------------------------------------
+//vot Localize default settings and navigation links
+function settings_localize() {
 	global $_G;
+
+	lang('setting');
+
+//DEBUG
+//echo "<pre>";
+//echo "lang=";
+//print_r($_G['lang']);
+//echo "</pre>";
+//exit;
+	$lang = & $_G['lang']['setting'];
+
+	//-------------------------------------
+	// Localize the Settings Values
+
+	//-------------------------------------
+	// Localize the Navigation Links
+
 	$navtypes = array('navs','footernavs','spacenavs','mynavs','topnavs');
 	foreach($navtypes AS $type) {
 		if($type=='topnavs') {
@@ -559,8 +577,10 @@ function nav_language() {
 //echo "</pre>";
 
 		foreach($navs AS $id=>$nav) {
-$oldname = $nav['navname'];
-$newname = lang('template','nav_'.$nav['id']);
+			$newname = $nav['navname'];
+			if(isset($lang['nav_'.$nav['id']])) {
+				$newname = $lang['nav_'.$nav['id']];
+			}
 			if($nav['id']) {
 				if($type=='topnavs') {
 					$_G['setting'][$type][0][$id]['navname'] = $newname;
@@ -592,12 +612,31 @@ $newname = lang('template','nav_'.$nav['id']);
 //echo "\nusergroups=";
 //print_r($_G['setting']['usergroups']);
 //echo "</pre>";
+
+	// Localize the Sub-Navigation Links
+
+	foreach($_G['setting']['subnavs'] as $navid => $subnav) {
+		if(is_array($subnav)) {
+			foreach($subnav as $subid => $sub) {
+//DEBUG
+//echo "<pre>";
+//echo "sub=";
+//print_r($sub);
+//echo "</pre>";
+				if(isset($lang['nav_'.$sub['identifier']])) {
+					$newname = $lang['nav_'.$sub['identifier']];
+					$_G['setting']['subnavs'][$navid][$subid]['name'] = $newname;
+				}
+			}
+		}
+	}
 }
 
 function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primaltpl='') {
 	global $_G;
 
-/*vot*/	nav_language(); // Localize Navigation
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 	static $_init_style = false;
 	if($_init_style === false) {
 		$discuz = & discuz_core::instance();
