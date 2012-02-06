@@ -189,10 +189,24 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 
 /* table */
 .tb{ clear:both; width:100%; margin-top: 8px; }
-/*vot*/	.tb th, .tb td{ padding:2px !important; height:25px;
+
+/*vot*/	.tb tr {
+	border: 1px solid #9CF;
+	border-width: 1px 1px 0 1px;
+}
+/*vot*/	.tb th, .tb td{ padding:8px 2px 8px !important; height:25px;
 	vertical-align: top;
 /*DEBUG*/ /*border: 1px solid red;*/
 }
+
+/*vot*/	tr.trsub {
+	border-width: 0 1px;
+}
+/*vot*/	tr.trsub td {
+	padding: 0 2px 8px;
+}
+
+
 .tb1{}
 	.th11, .th12{ width:60px; font-weight:700; }
 	.tb1 .th12{ padding-top:7px; vertical-align:top; }
@@ -227,8 +241,8 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.tb2 tr.hover:hover td { background: #F2F9FD; }
 	.tb2.tdhover tr:hover td { background: none; }
 	.tb2.tdhover tr td:hover { background: #F2F9FD; }
-/*vot*/	.tb2 td{ padding:2px; border-top: 1px dotted #DEEFFB; }
-/*vot*/	.tb2 th{ padding:2px; line-height:21px; font-size: 12px; }
+/*vot*/	.tb2 td{ padding:8px 2px; /*border-top: 1px dotted #DEEFFB;*/ }
+/*vot*/	.tb2 th{ padding:8px 2px; line-height:21px; font-size: 12px; }
 /*vot*/	.tb2 .txt, .tb2 .txtnobd{ width:90%; }
 /*vot*/	.tb2 .txtid { width:100px; }
 	.tb2 .smtxt { margin-right: 5px; width: 25px; }

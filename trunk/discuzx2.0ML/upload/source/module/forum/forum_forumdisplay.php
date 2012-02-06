@@ -235,13 +235,18 @@ foreach($_G['cache']['forums'] as $sub) {
 		}
 		$subexists = 1;
 		$sublist = array();
-		$sql = !empty($_G['member']['accessmasks']) ? "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect, a.allowview FROM ".DB::table('forum_forum')." f
-						LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid
-						LEFT JOIN ".DB::table('forum_access')." a ON a.uid='$_G[uid]' AND a.fid=f.fid
-						WHERE fup='$_G[fid]' AND status>'0' AND type='sub' ORDER BY f.displayorder"
-					: "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect FROM ".DB::table('forum_forum')." f
-						LEFT JOIN ".DB::table('forum_forumfield')." ff USING(fid)
-						WHERE f.fup='$_G[fid]' AND f.status>'0' AND f.type='sub' ORDER BY f.displayorder";
+/*vot*/		$sql = !empty($_G['member']['accessmasks']) ?
+				"SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect, a.allowview
+				 FROM ".DB::table('forum_forum')." f
+				 LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid
+				 LEFT JOIN ".DB::table('forum_access')." a ON a.uid='$_G[uid]' AND a.fid=f.fid
+				 WHERE fup='$_G[fid]' AND status>'0' AND type='sub'
+				 ORDER BY f.displayorder"
+			      : "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect
+				 FROM ".DB::table('forum_forum')." f
+				 LEFT JOIN ".DB::table('forum_forumfield')." ff USING(fid)
+				 WHERE f.fup='$_G[fid]' AND f.status>'0' AND f.type='sub'
+				 ORDER BY f.displayorder";
 		$query = DB::query($sql);
 		while($sub = DB::fetch($query)) {
 			$sub['extra'] = unserialize($sub['extra']);
@@ -421,7 +426,11 @@ if(($_G['forum']['status'] != 3 && $_G['forum']['allowside']) || !empty($_G['for
 			$whosonline = array();
 			$forumname = strip_tags($_G['forum']['name']);
 
-			$query = DB::query("SELECT uid, groupid, username, invisible, lastactivity FROM ".DB::table('common_session')." WHERE uid>'0' AND fid='$_G[fid]' AND invisible='0' ORDER BY lastactivity DESC LIMIT 12");
+/*vot*/			$query = DB::query("SELECT uid, groupid, username, invisible, lastactivity
+					    FROM ".DB::table('common_session')."
+					    WHERE uid>'0' AND fid='$_G[fid]' AND invisible='0'
+					    ORDER BY lastactivity DESC
+					    LIMIT 12");
 			$_G['setting']['whosonlinestatus'] = 1;
 			while($online = DB::fetch($query)) {
 				if($online['uid']) {
@@ -535,20 +544,24 @@ if(($start_limit && $start_limit > $stickycount) || !$stickycount || $filterbool
 		$indexadd = " FORCE INDEX (digest) ";
 	}
 	$querysticky = '';
-	$query = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t $indexadd
-		WHERE $fidsql $filteradd AND ($displayorderadd)
-		ORDER BY t.displayorder DESC, t.$_G[gp_orderby] $_G[gp_ascdesc]
-		LIMIT ".($filterbool ? $start_limit : $start_limit - $stickycount).", $_G[tpp]");
+/*vot*/	$query = DB::query("SELECT t.*
+			FROM ".DB::table($threadtable)." t
+			$indexadd
+			WHERE $fidsql $filteradd AND ($displayorderadd)
+			ORDER BY t.displayorder DESC, t.$_G[gp_orderby] $_G[gp_ascdesc]
+			LIMIT ".($filterbool ? $start_limit : $start_limit - $stickycount).", $_G[tpp]");
 
 } else {
 
-	$querysticky = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t
-		WHERE t.tid IN ($stickytids) AND (t.displayorder IN (2, 3, 4))
-		ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
-		LIMIT $start_limit, ".($stickycount - $start_limit < $_G['tpp'] ? $stickycount - $start_limit : $_G['tpp']));
+/*vot*/	$querysticky = DB::query("SELECT t.*
+			FROM ".DB::table($threadtable)." t
+			WHERE t.tid IN ($stickytids) AND (t.displayorder IN (2, 3, 4))
+			ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
+			LIMIT $start_limit, ".($stickycount - $start_limit < $_G['tpp'] ? $stickycount - $start_limit : $_G['tpp']));
 
 	if($_G['tpp'] - $stickycount + $start_limit > 0) {
-		$query = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t
+/*vot*/		$query = DB::query("SELECT t.*
+			FROM ".DB::table($threadtable)." t
 			WHERE $fidsql $filteradd AND ($displayorderadd)
 			ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
 			LIMIT ".($_G['tpp'] - $stickycount + $start_limit));
