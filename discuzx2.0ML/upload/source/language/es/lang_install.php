@@ -17,6 +17,7 @@ $lang = array(
 	'TC_UTF8'		=> 'Traditional Chinese UTF8 encoding',//'繁体中文 UTF8 版',
 	'EN_ISO'		=> 'ENGLISH ISO8859',
 	'EN_UTF8'		=> 'ENGLISH UTF-8',
+	'ES_UTF8'		=> 'Español UTF-8',
 
 	'title_install'		=> SOFT_NAME.' asistente de instalación',//SOFT_NAME.' 安装向导',
 	'agreement_yes'		=> 'Estoy de acuerdo',//'我同意',
