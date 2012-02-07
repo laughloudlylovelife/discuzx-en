@@ -357,7 +357,7 @@ Translated by Valery Votintsev
 .bdl .tbn { margin: 10px; }
 	/* Zoning */
 	.bdl dl { margin: -1px -10px 0; }
-		.bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #CCE0EB; border-width: 1px 0; background: #F5F9FB url({IMGDIR}/titlebg_sd.png) repeat-x 100% 0; }
+		.bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #CCE0EB; border-width: 1px 0; background: #F5F9FB url({IMGDIR}/titlebg_sd_rtl.png) repeat-x 0% 0; } /* charaf > .bdl dt { overflow: hidden; height: 27px; line-height: 27px; border: solid #CCE0EB; border-width: 1px 0; background: #F5F9FB url({IMGDIR}/titlebg_sd.png) repeat-x 100% 0; }*/
 			.bdl dt a { display: block; padding: 0 10px 0 15px; }
 				.bdl dt a:hover, .bdl_a a:hover { text-decoration: none; }
 	/* District Forum, the default away */
@@ -365,7 +365,7 @@ Translated by Valery Votintsev
 		.bdl dd a { display: block; margin: 0 3px; padding: 0 7px; height: 26px; line-height: 26px; overflow: hidden; }
 	/* Expand Partition */
 	.bdl dl.a { padding-bottom: 4px; background-color: #FFF; }
-		.bdl dl.a dt { margin-bottom: 3px; background-position: 100% -27px; }
+		.bdl dl.a dt { margin-bottom: 3px; background-position: 0% -27px; } /* charaf > .bdl dl.a dt { margin-bottom: 3px; background-position: 100% -27px; }*/
 		.bdl dl.a dd, .bdl_fav dd { display: block; overflow: hidden; zoom: 1; }
 			/* Current Forum */
 			.bdl dd.bdl_a a { background-color: #F5F9FB; font-weight: 700; color: {HIGHLIGHTLINK}; }

@@ -350,7 +350,7 @@ Note on the CSS Hack:
 	Explain:		Drop-down menu
 	Last Modify:	lushnis
 */
-	.showmenu { padding-right: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 100% 50%; cursor: pointer; white-space: nowrap; }
+	.showmenu { padding-left: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 10% 50%; cursor: pointer; white-space: nowrap; }
 		#um .showmenu { margin-left: -5px; }
 
 /*
@@ -572,7 +572,7 @@ Note on the CSS Hack:
 /* Header */
 	#toptb { line-height: 24px; }
 		#toptb a { float: right; padding: 0 4px; height: 24px; }
-		#toptb a.showmenu { padding-right: 15px; }
+		#toptb a.showmenu { padding-left: 20px; }
 		#toptb a.hover { background-color: #FFF; }
 		#toptb .pipe { float: right;}/* display: none; */
 	#hd { border-bottom: {HEADERBORDER} solid {SPECIALBORDER}; {HEADERBGCODE} }
@@ -595,7 +595,7 @@ Note on the CSS Hack:
 				.scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -222px; }
 					#scbar_type { display: block; padding-right: 2px; text-align: right; text-decoration: none; width: 70px; }
 						#scbar_type_menu { margin-top: -8px; }
-				#scbar_hot { padding-right: 8px; height: 45px; overflow: hidden; }
+				#scbar_hot { padding-right: 8px; height: 45px; overflow: hidden; line-height: 44px; }
 					#scbar_hot strong, #scbar_hot a { float: right; margin-left: 8px; white-space: nowrap; }
 			
 			#sc { display: none; }
@@ -639,12 +639,12 @@ Note on the CSS Hack:
 					#task_ntc { background-image: url({STATICURL}image/feed/task.gif); }
 				#um .pipe { margin: 0 0 0 5px; }
 
-				#extcreditmenu { margin-left: 2px !important; padding-top: 3px; padding-bottom: 3px; padding-right: 10px; }
+				#extcreditmenu { margin-left: 2px !important; padding-top: 3px; padding-bottom: 3px; padding-left: 20px; }
 					#extcreditmenu.a { position: relative; z-index: 302; margin-left: 1px !important; border: 1px solid; border-color: {DROPMENUBORDER}; border-bottom: none; background-color: {WRAPBG}; }
 					#extcreditmenu_menu { margin-top: -1px; width: auto; }
 						#extcreditmenu_menu li { float: none; display: block; padding-right: 10px !important; padding-left: 3em !important; }
 
-				#qmenu { float: left; display: inline; margin: 3px 4px 0; padding: 0 0 0 12px; width: 83px; height: 26px; background: url({IMGDIR}/qmenu.png) no-repeat 100% 0; line-height: 26px; text-align: center; color: {HIGHLIGHTLINK}; font-weight: 700; text-shadow: 0 1px 0 #FFF; overflow: hidden; font-size: 11px; }
+				#qmenu { float: left; display: inline; margin: 3px 4px 0; padding: 0 12px 0 0; width: 83px; height: 26px; background: url({IMGDIR}/qmenu.png) no-repeat 100% 0; line-height: 26px; text-align: center; color: {HIGHLIGHTLINK}; font-weight: 700; text-shadow: 0 1px 0 #FFF; overflow: hidden; font-size: 11px; }
 					#qmenu:hover { text-decoration: none; }
 					#qmenu.a { position: relative; z-index: 302; background-position: 100% -30px; }
 					.ie8 #qmenu { line-height: 30px; }
@@ -1153,7 +1153,7 @@ Note on the CSS Hack:
 		#returnmessage4.onerror { display: block; }
 		.rfm .l { margin: 0; }
 	.blr .c { padding: 0 10px 10px; }
-	.login_slct a { margin-left: -8px; padding-left: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 100% 50%; }
+	.login_slct a { margin-left: -8px; padding-left: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 10% 50%; }
 	.fwin .rfm, .nfl .f_c .rfm { width: 500px; }
 	.fwin .rfm th, .fwin .rfm td, .nfl .f_c .rfm th, .nfl .f_c .rfm td { padding: 6px 2px; }
 	.fwin .loginb button { margin-right: 11.3em; }
@@ -1269,10 +1269,10 @@ Note on the CSS Hack:
 		.pg a, .pg strong, .pgb a { float: right; display: inline; margin-right: 4px; padding: 0 8px; height: 26px; border: 1px solid; border-color: {SPECIALBORDER}; background-color: {WRAPBG}; background-repeat: no-repeat; color: {LINK}; overflow: hidden; text-decoration: none; }
 			.pg a.nxt, .pgb a { padding: 0 10px; }
 			.pg a:hover, .pgb a:hover { border-color: {HIGHLIGHTLINK}; color: {HIGHLIGHTLINK}; }
-			.pg a.nxt { padding-right: 25px; background-image: url({IMGDIR}/arw_r.gif); background-position: 90% 50%; }
-			.pg a.prev { background-image: url({IMGDIR}/arw_l.gif); background-position: 50% 50%; }
+			.pg a.nxt { padding-right: 25px; background-image: url({IMGDIR}/arw_l.gif); background-position: 90% 50%; }
+			.pg a.prev { background-image: url({IMGDIR}/arw_r.gif); background-position: 50% 50%; }
 			.pg strong { background-color: {SPECIALBG}; }
-		.pgb a { padding-left: 25px; background-image: url({IMGDIR}/arw_l.gif); background-position: 10px 50%; }
+		.pgb a { padding-right: 25px; background-image: url({IMGDIR}/arw_r.gif); background-position: 90% 50%; }
 	#pgt .pg, #pgt .pgb { margin-top: 5px; }
 /* Action buttons */
 .bac {margin: 0; padding: 0; width: 70px; height: 30px;line-height: 30px; color: {LINK}; overflow: hidden; text-decoration: none; background: url({IMGDIR}/pg_arw.png) no-repeat 0 0; text-align: center; text-indent: -7px; display: block;}
@@ -1295,7 +1295,7 @@ Note on the CSS Hack:
 				.pc_inner span em.desc { color: #930; }
 			.pc_btn img { opacity: 0.5; }
 				.pc_btn:hover img { opacity: 1; }
-	.pc_r { background-position: -30px 0; }
+	.pc_l { background-position: -30px 0; }
 
 /* Quick Jump Menu */
 	#fjump_menu dl { width: 200px; }
