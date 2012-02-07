@@ -6,10 +6,11 @@
  *
  *	Spanish Language Pack
  *
- *      $Id: lang_title.php por jhoxi de discuzhispano.com
+ *      $Id: lang_title.php by Valery Votintsev, codersclub.org/discuzx/
  *
+ *      Translated to Spanish by jhoxi, discuzhispano.com
  */
 
-$_SGLOBAL['language_title'] = 'Espaol';
+$_SGLOBAL['language_title'] = 'Español';
 $_SGLOBAL['language_icon'] = 'es.gif';
 
