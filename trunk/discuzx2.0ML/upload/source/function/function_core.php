@@ -445,7 +445,7 @@ function lang($file, $langvar = null, $vars = array(), $default = null) {
 	if($path != 'plugin') {
 		$key = $path == '' ? $file : $path.'_'.$file;
 		if(!isset($_G['lang'][$key])) {
-/*vot ML*/		include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php';
+/*vot ML*/		include_once( DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php' );
 			$_G['lang'][$key] = $lang;
 		}
 		if(defined('IN_MOBILE') && !defined('TPL_DEFAULT')) {

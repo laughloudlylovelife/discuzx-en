@@ -21,9 +21,9 @@ function convertip($ip) {
 		$iparray = explode('.', $ip);
 
 		if($iparray[0] == 10 || $iparray[0] == 127 || ($iparray[0] == 192 && $iparray[1] == 168) || ($iparray[0] == 172 && ($iparray[1] >= 16 && $iparray[1] <= 31))) {
-			$return = '- LAN';
+			$return = 'LAN';
 		} elseif($iparray[0] > 255 || $iparray[1] > 255 || $iparray[2] > 255 || $iparray[3] > 255) {
-			$return = '- Invalid IP Address';
+			$return = 'Invalid IP Address';
 		} else {
 /*vot*/			$geoipfile = DISCUZ_ROOT.'./data/ipdata/GeoIP.dat';
 			$tinyipfile = DISCUZ_ROOT.'./data/ipdata/tinyipdata.dat';
@@ -49,7 +49,7 @@ function convertip_geo($ip='', $ipdatafile='') {
 
 	$gi = geoip_open($ipdatafile,GEOIP_STANDARD);
 
-	$country = geoip_country_name_by_addr($gi, $ip);
+	$country = geoip_country_code_by_addr($gi, $ip);
 
 	geoip_close($gi);
 
