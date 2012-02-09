@@ -467,7 +467,7 @@ Note on the CSS Hack:
 */
 .ftid { float: right; margin-left: 6px; }
 	.ftid select { float: right; height: 23px; }
-	.ftid a { display: block; overflow: hidden; padding: 0 4px 0 17px; height: 21px; line-height: 21px; text-decoration: none !important; font-size: 12px; font-weight: 400; color: {TABLETEXT} !important; border: 1px solid; border-color: {INPUTBORDERDARKCOLOR} {INPUTBORDER} {INPUTBORDER} {INPUTBORDERDARKCOLOR}; background: {WRAPBG} url({IMGDIR}/newarow.gif) no-repeat 0 0; }
+	.ftid a { display: block; overflow: hidden; padding: 0 4px 0 25px; height: 21px; line-height: 21px; text-decoration: none !important; font-size: 12px; font-weight: 400; color: {TABLETEXT} !important; border: 1px solid; border-color: {INPUTBORDERDARKCOLOR} {INPUTBORDER} {INPUTBORDER} {INPUTBORDERDARKCOLOR}; background: {WRAPBG} url({IMGDIR}/newarow.gif) no-repeat 0 0; }
 		.ftid a:hover, .ftid a:focus { background-position: 0 -23px; }
 	/* ctrl 'select' width */
 	.ftid select { width: 94px; }
@@ -660,9 +660,10 @@ Note on the CSS Hack:
 		.ct2 .mn { float: right; width: 730px; margin-bottom: 1em; }
 		.ct2 .sd { float: left; width: 220px; overflow: hidden; _overflow-y: visible; }
 
-		.appl { float: right; overflow: hidden; margin-bottom: 10px; padding: 6px 10px; width: 125px; }/*117px*/
+		.appl { float: right; overflow: hidden; margin-bottom: 10px; padding: 6px 5px; width: 125px; }/*117px*/
 
-		.ct2_a, .ct3_a { border: 1px solid {WRAPBORDERCOLOR}; {SIDEBGCODE} }
+		.ct2_a, .ct3_a { border: 1px solid {WRAPBORDERCOLOR}; {SIDEBGCODE};}
+			.ct2_a, .ct3_a {background-position: 100% 0;} /*ovewrite above LTR parameters*/
 			.ct2_a_r { border: none; background-image: none; }
 			 .ct2_a h1.mt { display: none; }
 			 .ct2_a .tb { margin-top: 3px; }
@@ -1217,8 +1218,8 @@ Note on the CSS Hack:
 /*vot*/ .fastlg { width: 60%; line-height: 24px; float:left;}
 	.fastlg td { padding: 2px 4px 2px 0; }
 	.fastlg_fm { margin-left: 5px; padding-left: 5px; border-left: 1px solid {COMMONBORDER}; }
-	#ls_fastloginfield_ctrl { line-height: 20px; border: none; background-color: transparent; background-position: 100% -1px; }
-		#ls_fastloginfield_ctrl:hover { background-position: 100% -24px; }
+	#ls_fastloginfield_ctrl { line-height: 20px; border: none; background-color: transparent; background-position: 0% -1px; }
+		#ls_fastloginfield_ctrl:hover { background-position: 0% -24px; }
 	.psw_w { padding-right: 5px; }
 	
 	.fastlg_l { padding-left: 4px !important; border-left: 1px solid {SPECIALBG}; }
