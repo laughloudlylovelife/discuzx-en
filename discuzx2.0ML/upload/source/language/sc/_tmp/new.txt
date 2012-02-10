@@ -1,2 +1,0 @@
-Set Home = '设为首页'
-Set Favorite = '收藏本站'
