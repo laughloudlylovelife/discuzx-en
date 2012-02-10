@@ -650,7 +650,7 @@ Note on the CSS Hack:
 					.ie8 #qmenu { line-height: 30px; }
 				#qmenu_menu { margin-top: -1px; padding: 20px 5px 10px; width: 180px; border-color: #9A9A9A; }
 					#qmenu_menu ul li { float: left; }
-/*vot*/					#qmenu_menu ul a { margin-bottom: 10px; padding: 42px 0 0; width: 90px; border: none; border-radius: 4px; background: url({IMGDIR}/noicon.gif) no-repeat 50% 0; text-align: center; }
+/*vot*/					#qmenu_menu ul a { margin-bottom: 10px; padding: 42px 0 0; width: 90px; border: none; border-radius: 4px; background: url({IMGDIR}/noicon.gif) no-repeat 50% 5px; text-align: center; }
 						#qmenu_menu ul a:hover { background-color: {SPECIALBG}; color: {HIGHLIGHTLINK}; text-shadow: none; }
 
 /* Page main area */
