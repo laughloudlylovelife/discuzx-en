@@ -1049,11 +1049,15 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 	#g_commend {}
 		#g_commend .xld { float: left; margin-right: 0.3%; width: 24.5%; height: 64px; overflow: hidden; }
 		#g_commend dt { padding-bottom: 0; }
-	#g_guide { background: url({IMGDIR}/g_guide.png) no-repeat 10px 18px; }
-		#g_guide li { border-bottom: 1px dashed {COMMONBORDER}; }
-		#g_guide a, #g_guide label { display: block; padding: 7px 0 7px 40px; height: 36px; }
+/*vot*/	#g_guide { }
+/*vot*/		#g_guide li { border-bottom: 1px dashed {COMMONBORDER}; background: url({IMGDIR}/g_guide.png) no-repeat; }
+/*vot*/		#g_guide a, #g_guide label { display: block; padding: 7px 0 7px 40px; height: auto; }
 			#g_guide label { cursor: text; }
 		#g_guide strong { display: block; }
+/*vot*/		#g_guide li.step1 { background-position: 10px 10px; }
+/*vot*/		#g_guide li.step2 { background-position: 10px -65px; }
+/*vot*/		#g_guide li.step3 { background-position: 10px -145px; }
+/*vot*/		#g_guide li.step4 { background-position: 10px -225px; }
 	.fl .bm_h { border-bottom: none; background-color: transparent; }
 
 /* Group list by Pony */
