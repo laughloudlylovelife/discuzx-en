@@ -178,7 +178,9 @@ EOT;
 					$nameadd = !empty($name) ? ", name='$name'" : '';
 /*vot*/					$identifieradd = !empty($identifier) ? ", identifier='$identifier'" : '';
 					$subtypeadd = isset($_G['gp_subtypenew'][$id]) ? ", subtype='".intval($_G['gp_subtypenew'][$id])."'" : '';
-/*vot*/					DB::query("UPDATE ".DB::table('common_nav')." SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $identifieradd $nameadd $subtypeadd WHERE id='$id'");
+/*vot*/					DB::query("UPDATE ".DB::table('common_nav')."
+						   SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $identifieradd $nameadd $subtypeadd
+						   WHERE id='$id'");
 				}
 			}
 
@@ -343,7 +345,9 @@ EOT;
 			}
 			$logoadd = ", logo='$logonew'";
 
-/*vot*/			DB::query("UPDATE ".DB::table('common_nav')." SET name='$namenew', parentid='$parentidnew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd $subcols $logoadd WHERE id='$id'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_nav')."
+				   SET name='$namenew', parentid='$parentidnew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd $subcols $logoadd
+				   WHERE id='$id'");
 
 			updatecache('setting');
 			cpmsg('nav_add_succeed', 'action=nav&operation=headernav', 'succeed');
@@ -941,7 +945,9 @@ EOT;
 					$displayordernew[$id] = intval($_G['gp_displayordernew'][$id]);
 					$nameadd = !empty($name) ? ", name='$name'" : '';
 					$subtypeadd = isset($_G['gp_subtypenew'][$id]) ? ", subtype='".intval($_G['gp_subtypenew'][$id])."'" : '';
-					DB::query("UPDATE ".DB::table('common_nav')." SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $nameadd $subtypeadd WHERE id='$id'");
+/*vot*/					DB::query("UPDATE ".DB::table('common_nav')."
+						   SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $nameadd $subtypeadd
+						   WHERE id='$id'");
 				}
 			}
 
@@ -1039,7 +1045,9 @@ EOT;
 			$levelnew = $nav['type'] ? (intval($_G['gp_levelnew']) && $_G['gp_levelnew'] > 0 && $_G['gp_levelnew'] < 4 ? intval($_G['gp_levelnew']) : 0) : 0;
 			$urladd = $nav['type'] != '0' && $urlnew ? ", url='".$urlnew."'" : '';
 
-			DB::query("UPDATE ".DB::table('common_nav')." SET name='$namenew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd WHERE id='$id'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_nav')."
+				   SET name='$namenew', title='$titlenew', highlight='$stylenew$colornew', target='$targetnew', level='$levelnew', subtype='$subtypenew' $urladd
+				   WHERE id='$id'");
 
 			updatecache('setting');
 			cpmsg('nav_add_succeed', 'action=nav&operation=topnav', 'succeed');
