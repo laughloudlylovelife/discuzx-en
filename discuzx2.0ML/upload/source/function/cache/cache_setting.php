@@ -663,7 +663,12 @@ function get_cachedata_mainnav() {
 	global $_G;
 
 	$data['navs'] = $data['subnavs'] = $data['menunavs'] = $data['navmns'] = $data['navmn'] = $data['navdms'] = array();
-	$query = DB::query("SELECT * FROM ".DB::table('common_nav')." WHERE navtype='0' AND (available='1' OR type='0') AND parentid='0' ORDER BY displayorder");
+/*vot*/	$query = DB::query("SELECT *
+			    FROM ".DB::table('common_nav')."
+			    WHERE navtype='0'
+				AND (available='1' OR type='0')
+				AND parentid='0'
+			    ORDER BY displayorder");
 	while($nav = DB::fetch($query)) {
 		$id = $nav['type'] == 0 ? $nav['identifier'] : 100 + $nav['id'];
 		if($nav['identifier'] == 1 && $nav['type'] == 0 && !$_G['setting']['portalstatus']) {
@@ -695,7 +700,12 @@ function get_cachedata_mainnav() {
 
 //--------------------------------
 //vot Get All Sub-navigation links
-/*vot*/		$sql = "SELECT * FROM ".DB::table('common_nav')." WHERE navtype='0' AND parentid='$nav[id]' AND available='1' ORDER BY displayorder";
+/*vot*/		$sql = "SELECT *
+			FROM ".DB::table('common_nav')."
+			WHERE navtype='0'
+				AND parentid='$nav[id]'
+				AND available='1'
+			ORDER BY displayorder";
 //DEBUG
 //echo "subquery=".$sql."<br>\n";
 
@@ -707,6 +717,7 @@ function get_cachedata_mainnav() {
 		while($subnav = DB::fetch($subquery)) {
 //DEBUG
 //echo "<pre>";
+//echo "get_cachedata_mainnav::\n";
 //echo "subnav=";
 //print_r($subnav);
 //echo "</pre>";
@@ -726,11 +737,6 @@ function get_cachedata_mainnav() {
 
 /*vot*/			$subindex++;
 		}
-//DEBUG
-//echo "<pre>";
-//echo "subnavs=";
-//print_r($subnavs);
-//echo "</pre>";
 		list($navid) = explode('.', basename($nav['url']));
 		if($nav['type'] || $navid == 'misc' || $nav['identifier'] == 6) {
 			if($nav['type'] == 4) {
@@ -747,7 +753,8 @@ function get_cachedata_mainnav() {
 				$data['subnavs'][$navid] = $subnavs;
 			} else {
 				$onmouseover = 'showMenu({\'ctrlid\':this.id,\'ctrlclass\':\'hover\',\'duration\':2})';
-				$data['menunavs'][] = '<ul class="p_pop h_pop" id="'.$navid.'_menu" style="display: none">'.$subnavs.'</ul>';
+//vot				$data['menunavs'][] = '<ul class="p_pop h_pop" id="'.$navid.'_menu" style="display: none">'.$subnavs.'</ul>';
+/*vot*/				$data['menunavs'][$navid] = $subnavs;
 			}
 		}
 		if($nav['identifier'] == 6 && $nav['type'] == 0) {
@@ -787,8 +794,17 @@ function get_cachedata_mainnav() {
 		$data['navs'][$id]['navid'] = $navid;
 		$data['navs'][$id]['level'] = $nav['level'];
 /*vot*/		$data['navs'][$id]['nav'] = "id=\"$navid\" ".($onmouseover ? 'onmouseover="'.$onmouseover.'"' : '')."><a href=\"$nav[url]\" hidefocus=\"true\" ".($nav['title'] ? "title=\"$nav[title]\" " : '').($nav['target'] == 1 ? "target=\"_blank\" " : '')." $nav[style]";
+
+//DEBUG
+//echo "<pre>";
+//echo "get_cachedata_mainnav::after\n";
+//echo "subnavs=";
+//print_r($subnavs);
+//echo "\nmenunavs=";
+//print_r($data['menunavs']);
+//echo "</pre>";
 	}
-	$data['menunavs'] = implode('', $data['menunavs']);
+//vot	$data['menunavs'] = implode('', $data['menunavs']);
 
 	return array($data['navs'], $data['subnavs'], $data['menunavs'], $data['navmns'], $data['navmn'], $data['navdms'], $data['navlogos']);
 

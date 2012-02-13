@@ -186,7 +186,19 @@
 					<!--{/loop}-->
 					</ul>
 				<!--{/if}-->
-				$_G[setting][menunavs]
+
+<!--vot-->			<!--{if $_G[setting][menunavs]}-->
+<!--vot-->				<!--{loop $_G[setting][menunavs] $navid $subnav}-->
+<!--vot-->				<ul class="p_pop h_pop" id="{$navid}_menu" style="display: none">
+<!--vot-->					<!--{loop $subnav $subid $sub}-->
+<!--vot-->					<li{$sub['liparam']}>
+<!--vot-->					<a href="{$sub['url']}"{$sub['extra']}<!--{if $sub['title']}-->title="$sub['title']" <!--{/if}-->>{$sub['name']}</a>
+<!--vot-->					</li>
+<!--vot-->					<!--{/loop}-->
+<!--vot-->				</ul>
+<!--vot-->				<!--{/loop}-->
+<!--vot-->			<!--{/if}-->
+
 				<div id="mu" class="cl">
 				<!--{if $_G['setting']['subnavs']}-->
 					<!--{loop $_G[setting][subnavs] $navid $subnav}-->
