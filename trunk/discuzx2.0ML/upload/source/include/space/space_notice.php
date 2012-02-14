@@ -43,7 +43,10 @@ if($view == 'userapp') {
 	$count = 0;
 	$apparr = array();
 	$type = intval($_GET['type']);
-	$query = DB::query("SELECT * FROM ".DB::table('common_myinvite')." WHERE touid='$_G[uid]' ORDER BY dateline DESC");
+/*vot*/	$query = DB::query("SELECT *
+			    FROM ".DB::table('common_myinvite')."
+			    WHERE touid='$_G[uid]'
+			    ORDER BY dateline DESC");
 	while ($value = DB::fetch($query)) {
 		$count++;
 		$key = md5($value['typename'].$value['type']);
@@ -84,10 +87,16 @@ if($view == 'userapp') {
 
 
 	$newnotify = false;
-	$count = DB::result(DB::query("SELECT COUNT(*) FROM ".DB::table('home_notification')." WHERE uid='$_G[uid]' $sql"), 0);
+/*vot*/	$count = DB::result(DB::query("SELECT COUNT(*)
+					FROM ".DB::table('home_notification')."
+					WHERE uid='$_G[uid]' $sql"), 0);
 	if($count) {
 		$limitstr = $isread ? " LIMIT $start,$perpage" : '';
-		$query = DB::query("SELECT * FROM ".DB::table('home_notification')." WHERE uid='$_G[uid]' $sql ORDER BY new DESC, dateline DESC $limitstr");
+/*vot*/		$query = DB::query("SELECT *
+				    FROM ".DB::table('home_notification')."
+				    WHERE uid='$_G[uid]' $sql
+				    ORDER BY new DESC, dateline DESC
+				    $limitstr");
 		while ($value = DB::fetch($query)) {
 			if($value['new']) {
 				$newnotify = true;
@@ -100,6 +109,11 @@ if($view == 'userapp') {
 				$value['rowid'] = ' id="'.($value['type'] == 'friend' ? 'pendingFriend_' : 'pokeQuery_').$value['authorid'].'" ';
 			}
 			if($value['from_num'] > 0) $value['from_num'] = $value['from_num'] - 1;
+//vot
+$notevars = unserialize($value['note']);
+$template = $notevars['template'];
+unset($notevars['template']);
+$value['note'] = lang('notification',$template,$notevars);
 			$list[$value['id']] = $value;
 		}
 
@@ -108,6 +122,14 @@ if($view == 'userapp') {
 			$multi = multi($count, $perpage, $page, "home.php?mod=space&do=$do&isread=1");
 		}
 	}
+//DEBUG
+//echo "<pre>";
+//echo "source/include/space/space_notice.php.\n";
+//echo "list=";
+//print_r($list);
+//echo "\nmulti=";
+//print_r($multi);
+//echo "</pre>";
 
 	if($newnotify) {
 		DB::query("UPDATE ".DB::table('home_notification')." SET new='0' WHERE uid='$_G[uid]' AND new='1'");

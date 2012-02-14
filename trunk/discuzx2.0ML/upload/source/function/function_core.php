@@ -2067,6 +2067,7 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 	}
 
 	$notevars['actor'] = "<a href=\"home.php?mod=space&uid=$_G[uid]\">".$_G['member']['username']."</a>";
+//vot Move this to DISPLAY notification !!!!!!!!!!!!!!!
 	if(!is_numeric($type)) {
 		$vars = explode(':', $note);
 		if(count($vars) == 2) {
@@ -2082,11 +2083,18 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 
 	$oldnote = array();
 	if($notevars['from_id'] && $notevars['from_idtype']) {
-		$oldnote = DB::fetch_first("SELECT * FROM ".DB::table('home_notification')."
-			WHERE from_id='$notevars[from_id]' AND from_idtype='$notevars[from_idtype]' AND uid='$touid'");
+/*vot*/		$oldnote = DB::fetch_first("SELECT *
+				FROM ".DB::table('home_notification')."
+				WHERE from_id='$notevars[from_id]'
+					AND from_idtype='$notevars[from_idtype]'
+					AND uid='$touid'");
 	}
 	if(empty($oldnote['from_num'])) $oldnote['from_num'] = 0;
 	$notevars['from_num'] = $notevars['from_num'] ? $notevars['from_num'] : 1;
+//vot
+$notevars['template'] = $note;
+$notestring = serialize($notevars);
+
 	$setarr = array(
 		'uid' => $touid,
 		'type' => $type,
@@ -2104,6 +2112,18 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 		$setarr['author'] = '';
 	}
 
+//DEBUG
+//$log = 'notification_add::'."\n";
+//$log .= ' touid='.$touid.';'."\n";
+//$log .= ' type='.$type.';'."\n";
+//$log .= ' system='.$system.';'."\n";
+//$log .= ' note='.var_export($note,true).';'."\n";
+//$log .= ' notevars='.var_export($notevars,true).';'."\n";
+//$log .= ' setarr='.var_export($setarr,true).';'."\n";
+//$log .= "-----------------------------------------\n";
+//$log .= "\n";
+//writelog('notification', $log);
+
 	if($oldnote['id']) {
 		DB::update('home_notification', $setarr, array('id'=>$oldnote['id']));
 	} else {
@@ -2112,7 +2132,9 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 	}
 
 	if(empty($oldnote['new'])) {
-		DB::query("UPDATE ".DB::table('common_member')." SET newprompt=newprompt+1 WHERE uid='$touid'");
+/*vot*/		DB::query("UPDATE ".DB::table('common_member')."
+			   SET newprompt=newprompt+1
+			   WHERE uid='$touid'");
 
 		require_once libfile('function/mail');
 		$mail_subject = lang('notification', 'mail_to_user');
@@ -2120,7 +2142,9 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 	}
 
 	if(!$system && $_G['uid'] && $touid != $_G['uid']) {
-		DB::query("UPDATE ".DB::table('home_friend')." SET num=num+1 WHERE uid='$_G[uid]' AND fuid='$touid'");
+/*vot*/		DB::query("UPDATE ".DB::table('home_friend')."
+			   SET num=num+1
+			   WHERE uid='$_G[uid]' AND fuid='$touid'");
 	}
 }
 
