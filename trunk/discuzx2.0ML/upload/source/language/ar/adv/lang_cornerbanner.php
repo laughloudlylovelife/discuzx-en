@@ -9,17 +9,17 @@
 
 $lang = array
 (
-	'cornerbanner_name'	=> 'الزاوية السفلى من الاعلان العام',
+	'cornerbanner_name'	=> 'الزاوية السفلى من الإعلان العام',
 	'cornerbanner_desc'	=> '',
 	'cornerbanner_index'	=> 'الرئيسية',
 	'cornerbanner_fids'	=> 'المنتديات',
-	'cornerbanner_fids_comment'	=> 'حدد المنتديات التي تريد اظهار الاعلان فيها',
+	'cornerbanner_fids_comment'	=> 'حدد المنتديات التي تريد إظهار الإعلان فيها',
 	'cornerbanner_groups'	=> 'المجموعات',
-	'cornerbanner_groups_comment'	=> 'حدد المجموعات التي تريد ان تظهر الاعلانات فيها',
+	'cornerbanner_groups_comment'	=> 'حدد المجموعات التي تريد أن تظهر الإعلانات فيها',
 	'cornerbanner_animator'	=> 'صور متحركة',
 	'cornerbanner_animator_comment'	=> 'تعيين ما اذا كان هناك تأثيرات حركية',
 	'cornerbanner_category'	=> 'المجلة',
-	'cornerbanner_category_comment'	=> 'حدد اقسام المجلة التي تريد اظهار الاعلان فيها',
+	'cornerbanner_category_comment'	=> 'حدد أقسام المجلة التي تريد إظهار الإعلان فيها',
 );
 
 ?>

@@ -9,7 +9,7 @@
 
 $lang = array
 (
-	'portalcategory_thecatid'		=> 'اقسام المجلة',//'指定栏目',
+	'portalcategory_thecatid'		=> 'أقسام المجلة',//'指定栏目',
 	'portalcategory_thecatid_comment'	=> 'Set the designated category ID, separate multiple ID with a comma (,)',//'指定栏目的ID，多个ID之间用半角逗号（,）分割',
 	'portalcategory_catid'			=> 'القسم الام',//'父级栏目',
 	'portalcategory_catid_comment'		=> 'Select parent category',//'选择父级栏目',

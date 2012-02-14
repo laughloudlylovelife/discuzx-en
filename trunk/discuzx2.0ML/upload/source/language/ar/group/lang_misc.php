@@ -13,6 +13,6 @@ $lang = array
 	'group_goaway'			=> 'طرد من المجموعة',//'????',
 	'group_demise_message_title'	=> " المجموعة {forum} نقلت بنجاح لك",//"?群组论坛????????",
 	'group_demise_message_body'	=> "ال مجموعة {forum} نقلت بنجاح لك. [url={siteurl}forum.php?mod=group&fid={fid}]لضغط هنا لعرض الـمجموعة[/url]",//"??群组论坛???????,[url={siteurl}forum.php?mod=group&fid={fid}]?????群组[/url]",
-	'group_join'			=> 'الانضمام الى المجموعة &quot;{groupname}&quot;',//'??{groupname}??',
+	'group_join'			=> 'الانضمام إلى المجموعة &quot;{groupname}&quot;',//'??{groupname}??',
 );
 

@@ -31,11 +31,11 @@ $lang = array(
 	'install_wizard'	=> 'الاعداد والتثبيت ',//'安装向导',
 	'config_nonexistence'	=> 'ملف الاعدادت الكونفيج غير موجود',//'配置文件不存在',
 	'nodir'			=> 'الدليل غير موجود',//'目录不存在',
-	'redirect'		=> 'سيتم التوجيه التلقائي<br>اذا كان متصفحك لا يدعم الانتقال التلقائي اضغط هنا',
+	'redirect'		=> 'سيتم التوجيه التلقائي<br>اذا كان متصفحك لا يدعم الإنتقال التلقائي إضغط هنا',
 	'auto_redirect'		=> 'سيتم التوجيه التلقائي',
 	'database_errno_2003'	=> 'لا يمكن الاتصال بقاعدة البيانات، تحقق ما إذا كان يتم تشغيل قاعدة البيانات وعنوان ملقم قاعدة البيانات بشكل صحيح.',//'无法连接数据库，请检查数据库是否启动，数据库服务器地址是否正确',
-	'database_errno_1044'	=> 'غير قادر على إنشاء قاعدة بيانات جديدة، الرجاء التحقق من اسم قاعدة بيانات غير صحيحة.',//'无法创建新的数据库，请检查数据库名称填写是否正确',
-	'database_errno_1045'	=> 'لا يمكن الاتصال بقاعدة البيانات، تحقق من صحة اسم مستخدم قاعدة البيانات وكلمة المرور.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
+	'database_errno_1044'	=> 'غير قادر على إنشاء قاعدة بيانات جديدة، الرجاء التحقق من إسم قاعدة بيانات غير صحيحة.',//'无法创建新的数据库，请检查数据库名称填写是否正确',
+	'database_errno_1045'	=> 'لا يمكن الاتصال بقاعدة البيانات، تحقق من صحة إسم مستخدم قاعدة البيانات وكلمة المرور.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
 	'database_errno_1064'	=> 'SQL Syntax error',//'SQL 语法错误',
 
 	'dbpriv_createtable'	=> 'لا يوجد صلاحية  CREATE TABLE , لا يمكن مواصلة عملية التثبيت.',//'没有CREATE TABLE权限，无法继续安装',
@@ -45,7 +45,7 @@ $lang = array(
 	'dbpriv_delete'		=> 'لا يوجد صلاحية DELETE , لا يمكن مواصلة عملية التثبيت.',//'没有DELETE权限，无法继续安装',
 	'dbpriv_droptable'	=> 'لا يوجد صلاحية DROP TABLE  للتثبيت.',//'没有DROP TABLE权限，无法安装',
 
-	'db_not_null'		=> ' قاعدة بيانات UCenter مثبتة مسبقا, continue the installation will clear the old data.',//'数据库中已经安装过 UCenter, 继续安装会清空原有数据。',
+	'db_not_null'		=> ' قاعدة بيانات UCenter مثبتة مسبقاً, continue the installation will clear the old data.',//'数据库中已经安装过 UCenter, 继续安装会清空原有数据。',
 	'db_drop_table_confirm'	=> 'لاستكمال التثبيت يجب مسح كافة البيانات القديمة ,استمرار?',
 
 	'writeable'		=> 'مسموح للكتابة',//'可写',
@@ -54,8 +54,8 @@ $lang = array(
 	'new_step'		=> 'الخطوة التالية',//'下一步',
 
 	'database_errno_2003'	=> 'لا يمكن الاتصال بقاعدة البيانات, تحقق من اتصال السيرفر.',//'无法连接数据库，请检查数据库是否启动，数据库服务器地址是否正确',
-	'database_errno_1044'	=> 'لا يمكن انشاء قاعدة بيانات جديدة , تفحص من ان اسم قاعدة البيانات صحيح.',//'无法创建新的数据库，请检查数据库名称填写是否正确',
-	'database_errno_1045'	=> 'لا يمكن الاتصال بقاعدة البيانات, تفحص اسم المستخدم وكلمة المرور الخاصة بقاعدة البيانات.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
+	'database_errno_1044'	=> 'لا يمكن إنشاء قاعدة بيانات جديدة , تفحص من أن إسم قاعدة البيانات صحيح.',//'无法创建新的数据库，请检查数据库名称填写是否正确',
+	'database_errno_1045'	=> 'لا يمكن الاتصال بقاعدة البيانات, تفحص إسم المستخدم وكلمة المرور الخاصة بقاعدة البيانات.',//'无法连接数据库，请检查数据库用户名或者密码是否正确',
 	'database_connect_error'	=> 'خطأ اتصال قاعدة البيانات.',//'数据库连接错误',
 
 	'step_title_1'		=> 'تحقق من بيئة التثبيت',
@@ -72,15 +72,15 @@ $lang = array(
 	'step1_status'		=> 'الحالة',//'当前状态',
 	'not_continue'		=> 'الرجاء, قم بتصحيح الاخطاء التي امامها X باللون الاحمر ',//'请将以上红叉部分修正再试',
 
-	'tips_dbinfo'		=> 'اعدادات ملعومات قاعدة البيانات',//'填写数据库信息',
+	'tips_dbinfo'		=> 'إعدادات ملعومات قاعدة البيانات',//'填写数据库信息',
 	'tips_dbinfo_comment'	=> '',//'',
-	'tips_admininfo'	=> 'اعدادات معلومات المدير',//'填写管理员信息',
+	'tips_admininfo'	=> 'إعدادات معلومات المدير',//'填写管理员信息',
 	'step_ext_info_title'	=> 'تم التثبيت بنجاح.',//'安装成功。',
-	'step_ext_info_comment'	=> 'اضغط هنا لتسجيل الدخول',//'点击进入登陆',
+	'step_ext_info_comment'	=> 'إضغط هنا لتسجيل الدخول',//'点击进入登陆',
 
 	'ext_info_succ'		=> 'تم التثبيت بنجاح.',//'安装成功。',
 	'install_submit'	=> 'موافق',//'提交',
-	'install_locked'	=> 'تم اقفال التثبيت.<br><br>اذا كنت تريد اعادة التثبي قم من فضلك بحذف ملف <br />'.str_replace(ROOT_PATH, '', $lockfile),//'安装锁定，已经安装过了，如果您确定要重新安装，请到服务器上删除<br /> '.str_replace(ROOT_PATH, '', $lockfile),
+	'install_locked'	=> 'تم اقفال التثبيت.<br><br>اذا كنت تريد إعادة التثبي قم من فضلك بحذف ملف <br />'.str_replace(ROOT_PATH, '', $lockfile),//'安装锁定，已经安装过了，如果您确定要重新安装，请到服务器上删除<br /> '.str_replace(ROOT_PATH, '', $lockfile),
 	'error_quit_msg'	=> 'ويجب أن حل المشاكل المذكورة أعلاه، قبل متابعة التثبيت.',//'您必须解决以上问题，安装才可以继续',
 
 	'step_app_reg_title'	=> 'اخيار البيئة',//'设置运行环境',
@@ -101,15 +101,15 @@ $lang = array(
 	'ucip_comment'			=> 'In most cases you can leave this empty',//'绝大多数情况下您可以不填',
 
 	'tips_siteinfo'			=> 'الرجاء قم بملئ معلومات الموقع',//'请填写站点信息',
-	'sitename'			=> 'اسم الموقع',//'站点名称',
+	'sitename'			=> 'إسم الموقع',//'站点名称',
 	'siteurl'			=> 'رابط الموقع',//'站点 URL',
 
 	'forceinstall'			=> 'Mandatory installation',//'强制安装',
 	'dbinfo_forceinstall_invalid'	=> 'Current database table prefix is already used by the same data table! You can modify the "Table name prefix" to avoid deleting the old data, or choose to force the mandatory installation. Mandatory installation will delete all the old data, and this old data can not be restored.',//'当前数据库当中已经含有同样表前缀的数据表，您可以修改“表名前缀”来避免删除旧的数据，或者选择强制安装。强制安装会删除旧数据，且无法恢复',
 
-	'click_to_back'			=> 'اضغط هنا للرجوع للخلف',//'点击返回上一步',
-	'adminemail'			=> 'بريد الادارة',//'系统信箱 Email',
-	'adminemail_comment'		=> 'يستخدم لارسال اخطاء النظام',//'用于发送程序错误报告',
+	'click_to_back'			=> 'إضغط هنا للرجوع للخلف',//'点击返回上一步',
+	'adminemail'			=> 'بريد الإدارة',//'系统信箱 Email',
+	'adminemail_comment'		=> 'يستخدم لإرسال اخطاء النظام',//'用于发送程序错误报告',
 	'dbhost_comment'		=> 'عادة يكون localhost',//'数据库服务器地址, 一般为 localhost',
 	'tablepre_comment'		=> 'For use multiple applications with the same database, please modify the teble prefix',//'同一数据库运行多个论坛时，请修改前缀',
 	'forceinstall_check_label'	=> 'أريد حذف كافة البيانات، وبدء تثبيت جديدة!',//'我要删除数据，强制安装 !!!',
@@ -142,16 +142,16 @@ $lang = array(
 	'install_dzfull'		=> '<br><label><input type="radio"'.(getgpc('install_ucenter') != 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="yes" onclick="if(this.checked)$(\'form_items_2\').style.display=\'none\';" /> تثبيت جديد لـ Discuz! X 2 (يحتوي على UCenter (مستحسن))</label>',//'<br><label><input type="radio"'.(getgpc('install_ucenter') != 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="yes" onclick="if(this.checked)$(\'form_items_2\').style.display=\'none\';" /> 全新安装 Discuz! X (含 UCenter Server)</label>',
 	'install_dzonly'		=> '<br><label><input type="radio"'.(getgpc('install_ucenter') == 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="no" onclick="if(this.checked)$(\'form_items_2\').style.display=\'\';" /> تثبيت Discuz! X فقط (غير مستحسن)</label>',//'<br><label><input type="radio"'.(getgpc('install_ucenter') == 'no' ? ' checked="checked"' : '').' name="install_ucenter" value="no" onclick="if(this.checked)$(\'form_items_2\').style.display=\'\';" /> 仅安装 Discuz! X (手工指定已经安装的 UCenter Server)</label>',
 
-	'username'			=> 'اسم المدير',//'管理员账号',
+	'username'			=> 'إسم المدير',//'管理员账号',
 	'email'				=> 'بريد المدير',//'管理员 Email',
 	'password'			=> 'كلمة مرور المدير',//'管理员密码',
 	'password_comment'		=> 'لا يمكنك تركها فارغة',//'管理员密码不能为空',
 	'password2'			=> 'اعد كلمة المرور',//'重复密码',
 
-	'admininfo_invalid'		=> 'معلومات المدير غير كاملة, تأكد من اسم المستخدم,كلمة المرور,البريد..الخ',//'管理员信息不完整，请检查管理员账号，密码，邮箱',
-	'dbname_invalid'		=> 'اسم قاعدة البيانات فارغ, الرجاء قم بكتابة اسم قاعدة البيانات',//'数据库名为空，请填写数据库名称',
-	'tablepre_invalid'		=> 'بادئة الجداول فارغة او صيغة خاطئة, تأكد منها',//'数据表前缀为空，或者格式错误，请检查',
-	'admin_username_invalid'	=> 'اسم المستخدم غير صالح! تأكد من ان اسم المستخدم لم يتجاوز 15 حرف, ولا يحتوي على احرف غير صالحة',//'非法用户名，用户名长度不应当超过 15 个英文字符，且不能包含特殊字符，一般是中文，字母或者数字',
+	'admininfo_invalid'		=> 'معلومات المدير غير كاملة, تأكد من إسم المستخدم,كلمة المرور,البريد..الخ',//'管理员信息不完整，请检查管理员账号，密码，邮箱',
+	'dbname_invalid'		=> 'إسم قاعدة البيانات فارغ, الرجاء قم بكتابة إسم قاعدة البيانات',//'数据库名为空，请填写数据库名称',
+	'tablepre_invalid'		=> 'بادئة الجداول فارغة أو صيغة خاطئة, تأكد منها',//'数据表前缀为空，或者格式错误，请检查',
+	'admin_username_invalid'	=> 'إسم المستخدم غير صالح! تأكد من أن إسم المستخدم لم يتجاوز 15 حرف, ولا يحتوي على احرف غير صالحة',//'非法用户名，用户名长度不应当超过 15 个英文字符，且不能包含特殊字符，一般是中文，字母或者数字',
 	'admin_password_invalid'	=> 'Password and the above discrepancies, please re-enter',//'密码和上面不一致，请重新输入',
 	'admin_email_invalid'		=> 'The e-mail address used is invalid or the format is invalid, please change to other address',//'Email 地址错误，此邮件地址已经被使用或者格式无效，请更换为其他地址',
 	'admin_invalid'			=> 'You did not fill in complete administrator information, please carefully fill in each item',//'您的信息管理员信息没有填写完整，请仔细填写每个项目',
@@ -167,7 +167,7 @@ $lang = array(
 	'config_unwriteable'		=> 'Setup Wizard can not write the configuration file. Enable the config.inc.php write permissions (666 or 777)',//'安装向导无法写入配置文件, 请设置 config.inc.php 程序属性为可写状态(777)',
 
 	'install_in_processed'		=> 'التثبيت ...',//'正在安装...',
-	'install_succeed'		=> 'تم التثبيت بنجاح! اضغط هنا للدخول للمنتدى',//'安装成功，点击进入',
+	'install_succeed'		=> 'تم التثبيت بنجاح! إضغط هنا للدخول للمنتدى',//'安装成功，点击进入',
 	'install_cloud'			=> 'After successful installation, Welcome to the opening Discuz! Cloud platform<br>Discuz! Cloud platform dedicated to help website owners to increase their websites traffic, enhance the ability of Web site operators, and increase a website revenue.<br>Discuz! Cloud platform currently provides a free QQ Internet, Tencent analysis, Cloud search, QQ Group Community,Roaming,SOSO emoticon services.Discuz! Cloud platform will continue to provide more quality services to the project.<br>Before open the Discuz! Platform make sure that your website (Discuz!, UCHome or SupeSite) has been upgraded to Discuz! X2.',//'安装成功，欢迎开通Discuz!云平台<br>Discuz!云平台致力于帮助站长提高网站流量，增强网站运营能力，增加网站收入。<br>Discuz!云平台目前免费提供了QQ互联、腾讯分析、纵横搜索、社区QQ群、漫游应用、SOSO表情服务。Discuz!云平台将陆续提供更多优质服务项目。<br>开通Discuz!平台之前，请确保您的网站（Discuz!、UCHome或SupeSite）已经升级到Discuz!X2。',
 	'to_install_cloud'		=> 'Open Admin-Center',//'到后台开通',
 	'to_index'			=> 'Temporarily not open',//'暂不开通',
@@ -303,17 +303,17 @@ $lang = array(
 	'curr_server'		=> 'الخادم الحالي',//'当前服务器',
 	'env_check'		=> 'التحقق من وجود بيئات',//'环境检查',
 	'os'			=> 'نظام التشغيل',//'操作系统',
-	'php'			=> ' اصدار PHP ',//'PHP 版本',
+	'php'			=> ' إصدار PHP ',//'PHP 版本',
 	'attachmentupload'	=> 'رفع المرفقات',//'附件上传',
 	'unlimit'		=> 'غير محدود',//'不限制',
-	'version'		=> 'الاصدار',//'版本',
+	'version'		=> 'الإصدار',//'版本',
 	'gdversion'		=> 'GD Library',//'GD 库',
 	'allow'			=> 'مسموح',//'允许',
 	'unix'			=> 'Unix-like',//'类Unix',
 	'diskspace'		=> 'المساحة',//'磁盘空间',
 	'priv_check'		=> 'Check for directory/file permissions',//'目录、文件权限检查',
 	'func_depend'		=> 'تفحص الدوال',//'函数依赖性检查',
-	'func_name'		=> 'اسم الدالة',//'函数名称',
+	'func_name'		=> 'إسم الدالة',//'函数名称',
 	'check_result'		=> 'نتائج الفحص',//'检查结果',
 	'suggestion'		=> 'مستحسن',//'建议',
 	'advice_mysql'		=> 'Please check the mysql module is loaded correctly',//'请检查 mysql 模块是否正确加载',
@@ -322,10 +322,10 @@ $lang = array(
 	'advice_xml'			=> 'This function require the PHP support for XML. Please contact the server administrator to resolve this problem.',//'该函数需要 PHP 支持 XML。请联系空间商，确定开启了此项功能',
 	'none'				=> 'لا شئ',//'无',
 
-	'dbhost'		=> 'اسم خادم قاعدة البيانات',//'数据库服务器',
-	'dbuser'		=> 'اسم مستخدم قاعدة البيانات',//'数据库用户名',
+	'dbhost'		=> 'إسم خادم قاعدة البيانات',//'数据库服务器',
+	'dbuser'		=> 'إسم مستخدم قاعدة البيانات',//'数据库用户名',
 	'dbpw'			=> 'كلمة مرور قاعدة البيانات',//'数据库密码',
-	'dbname'		=> 'اسم قاعدة البيانات',//'数据库名',
+	'dbname'		=> 'إسم قاعدة البيانات',//'数据库名',
 	'tablepre'		=> 'بادئة الجداول',//'数据表前缀',
 
 	'ucfounderpw'		=> 'UCenter admin password',//'创始人密码',
@@ -334,7 +334,7 @@ $lang = array(
 	'init_log'		=> 'تهيئة السجلات',//'初始化记录',
 	'clear_dir'		=> 'مسح الدليل',//'清空目录',
 	'select_db'		=> 'حدد قاعدة البيانات',//'选择数据库',
-	'create_table'		=> 'انشاء جدول ',//'建立数据表',
+	'create_table'		=> 'إنشاء جدول ',//'建立数据表',
 	'succeed'		=> ' تم بنجاح ',//'成功 ',
 
 	'testdata'		=> 'بيانات إضافية)باللغة الانجليزية)',
@@ -355,7 +355,7 @@ $lang = array(
 //---------------------------------------------------------------
 //vot 2 vars for language select:
 	'welcome'			=> 'أهلا ومرحبا بك في برنامج تثبيت Discuz!',
-	'select_language'		=> '<b>الرجاء اختيار لغة برنامج التثبيت</b>:',
+	'select_language'		=> '<b>الرجاء إختيار لغة برنامج التثبيت</b>:',
 //vot !!!Translate to Chinese!!!
 //vot	'regiondata'			=> 'Add regions data',//'Add location data',
 //vot	'regiondata_check_label'	=> 'Install additional regional data (countries/regions/cities)',//'Install additional regional data (countries/regions/cities)',
@@ -368,7 +368,7 @@ $lang = array(
 );
 
 $msglang = array(
-	'config_nonexistence'	=> 'ملف config.inc.php غير موجود, غير قادر على متابعة التثبيت، الرجاء استخدام بروتوكول نقل الملفات لتحميل الملف وحاول مرة أخرى.',
+	'config_nonexistence'	=> 'ملف config.inc.php غير موجود, غير قادر على متابعة التثبيت، الرجاء إستخدام بروتوكول نقل الملفات لتحميل الملف وحاول مرة أخرى.',
 );
 
 ?>
