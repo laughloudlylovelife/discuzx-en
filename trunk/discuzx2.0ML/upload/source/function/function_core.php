@@ -548,20 +548,25 @@ function settings_localize() {
 
 	lang('setting');
 
+	$lang = & $_G['lang']['setting'];
+
 //DEBUG
 //echo "<pre>";
 //echo "lang=";
-//print_r($_G['lang']);
+//print_r($lang);
 //echo "</pre>";
 //exit;
-	$lang = & $_G['lang']['setting'];
-
 	//-------------------------------------
 	// Localize the Settings Values
 
 	//-------------------------------------
 	// Localize the Navigation Links
 
+//DEBUG
+//echo "<pre>";
+//echo "setting=";
+//print_r($_G['setting']);
+//echo "</pre>";
 	$navtypes = array('navs','footernavs','spacenavs','mynavs','topnavs');
 	foreach($navtypes AS $type) {
 		if($type=='topnavs') {
@@ -572,6 +577,7 @@ function settings_localize() {
 //DEBUG
 //echo "<pre>";
 //echo "type=".$type.", navs=";
+//print_r($_G['setting'][$type]);
 //print_r($_G['setting'][$type]);
 //print_r($navs);
 //echo "</pre>";
@@ -615,17 +621,23 @@ function settings_localize() {
 
 	// Localize the Sub-Navigation Links
 
-	foreach($_G['setting']['subnavs'] as $navid => $subnav) {
-		if(is_array($subnav)) {
-			foreach($subnav as $subid => $sub) {
+	$navtypes = array('menunavs', 'subnavs');
+	foreach($navtypes AS $type) {
+
+		foreach($_G['setting'][$type] as $navid => $subnav) {
+			if(is_array($subnav)) {
+				foreach($subnav as $subid => $sub) {
+					if(isset($lang['nav_'.$sub['identifier']])) {
+						$newname = $lang['nav_'.$sub['identifier']];
+						$_G['setting'][$type][$navid][$subid]['name'] = $newname;
+					}
 //DEBUG
 //echo "<pre>";
-//echo "sub=";
+//echo $type.'['.$navid.']['.$subid.']=';
 //print_r($sub);
+//print_r($_G['setting'][$type][$navid][$subid]);
 //echo "</pre>";
-				if(isset($lang['nav_'.$sub['identifier']])) {
-					$newname = $lang['nav_'.$sub['identifier']];
-					$_G['setting']['subnavs'][$navid][$subid]['name'] = $newname;
+
 				}
 			}
 		}
