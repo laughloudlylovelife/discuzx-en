@@ -8,7 +8,7 @@
 $lang = array
 (
 	'flicker_name'	=> ' بطاقة Flicker ',
-	'flicker_desc'	=> 'يمكنك استخدام  flicker في تعليقات المدونة(صورة)',
-	'flicker_info'	=> 'يمكنك استخدام  flicker في تعليقات المدونة(صورة)',
+	'flicker_desc'	=> 'يمكنك إستخدام  flicker في تعليقات المدونة(صورة)',
+	'flicker_info'	=> 'يمكنك إستخدام  flicker في تعليقات المدونة(صورة)',
 	'flicker_succeed'	=> 'تمت العملية بنجاح.',
 );

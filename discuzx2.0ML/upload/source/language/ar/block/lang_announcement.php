@@ -9,10 +9,10 @@
 
 $lang = array
 (
-	'announcement_type'		=> 'نوع الاعلان',//'公告类型',
-	'announcement_type_text'	=> 'اعلان نصي',//'文字公告',
+	'announcement_type'		=> 'نوع الإعلان',//'公告类型',
+	'announcement_type_text'	=> 'إعلان نصي',//'文字公告',
 	'announcement_type_link'	=> 'وصلة',//'网站链接',
-	'announcement_titlelength'	=> 'طول الاعلان',//'标题长度',
+	'announcement_titlelength'	=> 'طول الإعلان',//'标题长度',
 	'announcement_summarylength'	=> 'طول المحتوى',//'内容长度',
 	'announcement_startrow'		=> 'صف البدء',//'起始位置',
 );

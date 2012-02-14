@@ -13,7 +13,7 @@ $lang = array
 (
 	'sofa_name'	=> 'بطاقة السحب',
 	'sofa_desc'	=> 'سحب / جلب موضوع محدد',
-	'sofa_forum'	=> 'الاقسام المسموحة',
+	'sofa_forum'	=> 'الأقسام المسموحة',
 	'sofa_info'	=> 'Grab sofa of specific thread, please enter thread ID',
 	'sofa_info_nonexistence'	=> 'Please specific thread',
 	'sofa_succeed'	=> 'Grab sofa successfully',

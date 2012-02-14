@@ -11,7 +11,7 @@ $lang = array
 (
 	'target_tid'	=> 'رقم الموضوع الهدف',
 	'target_pid'	=> 'رقم المشاركة الهدف',
-	'target_username'	=> 'اسم المستخدم الهدف',
+	'target_username'	=> 'إسم المستخدم الهدف',
 	'magics_type_1'	=> 'المشاركات',
 	'magics_type_2'	=> 'عضو',
 	'magics_type_3'	=> 'آخر',
@@ -20,6 +20,6 @@ $lang = array
 	'MOK_info'	=> 'القاعدة : سوف تحصل على المال بين 1 إلى 150 ? من السعر',
 	'CODE_info'	=> 'احصل على   كود دعوة تجريبي Discuz!',
 	'MVK_target'	=> 'المنتدى الهدف',
-	'SOFA_message'	=> 'Sofa هي ملكك الان!',
+	'SOFA_message'	=> 'Sofa هي ملكك الآن!',
 );
 

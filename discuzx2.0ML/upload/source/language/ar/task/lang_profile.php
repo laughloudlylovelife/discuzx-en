@@ -13,7 +13,7 @@ $lang = array
 	'profile_desc'		=> 'قم بتعبئة الحقول التالية وسوف تحصل على مكافأة.',//'完善指定的用户资料获得相应的奖励。',
 
 	'profile_fields'		=> array(
-		'mp.realname'		=> 'الاسم الحقيقي',//'姓名',
+		'mp.realname'		=> 'الإسم الحقيقي',//'姓名',
 		'mp.gender'			=> 'النوع',//'性别',
 		'mp.birthyear'		=> 'سنة الميلاد',//'生日(年)',
 		'mp.birthmonth'		=> 'شهر الميلاد',//'生日(月)',
@@ -26,7 +26,7 @@ $lang = array
 		'mp.residecity'		=> 'مدينة التواجد',//'居住地(市)'
 	),
 
-	'profile_view'	=> '<strong>عليك ان تعبئة العناصر التالية في المعلومات الشخصية الخاصة بك:</strong><br>
+	'profile_view'	=> '<strong>عليك أن تعبئة العناصر التالية في المعلومات الشخصية الخاصة بك:</strong><br>
 		<span style="color:red;">{profiles}</span><br><br>
 		<strong>اتبع هذه الإرشادات لإتمام المهمة:</strong>
 		<ul>

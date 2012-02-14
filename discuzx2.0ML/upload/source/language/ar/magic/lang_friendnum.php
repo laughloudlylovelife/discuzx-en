@@ -9,9 +9,9 @@
 
 $lang = array
 (
-	'friendnum_name'	=> 'بطاقة الاصدقاء',
-	'friendnum_desc'	=> 'زيادة عدد الاصدقاء',
+	'friendnum_name'	=> 'بطاقة الأصدقاء',
+	'friendnum_desc'	=> 'زيادة عدد الأصدقاء',
 	'friendnum_info'	=> 'زيادة {num} صديق',
-	'friendnum_addnum'	=> 'زيادة عدد الاصدقاء',
+	'friendnum_addnum'	=> 'زيادة عدد الأصدقاء',
 );
 

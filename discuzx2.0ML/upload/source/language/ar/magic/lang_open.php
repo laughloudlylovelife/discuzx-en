@@ -16,7 +16,7 @@ $lang = array
 	'open_info_nonexistence'	=> 'الرجاء تحديد الموضوع',
 	'open_succeed'	=> 'تم الفتح بنجاح',
 	'open_info_noperm'	=> 'عذرا,لا يمكنك فتح الموضوع في هذا المنتدى',
-	'open_info_user_noperm'	=> 'آسف ، لا يمكنك استخدام هذه الدعائم على هذا المستخدم',
+	'open_info_user_noperm'	=> 'آسف ، لا يمكنك إستخدام هذه الدعائم على هذا المستخدم',
 
 	'open_notification'	=> 'الموضوع الخاص بك  <em>{subject}</em> استخدم فيه {magicname} بواسطة {actor}, <a href="forum.php?mod=viewthread&tid={tid}">عرض</a>.',
 );
