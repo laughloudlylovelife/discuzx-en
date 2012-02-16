@@ -909,7 +909,7 @@ EOT;
 					in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />',
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">",
-/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
+/*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifiernew[$nav[id]]\" value=\"$nav[identifier]\">",
 					"<select name=\"subtypenew[$nav[id]]\"><option value=\"0\" $navtype[0]>$lang[setting_styles_global_topnavtype_0]</option><option value=\"1\" $navtype[1]>$lang[setting_styles_global_topnavtype_1]</option></select>",
 					$nav['type'] == '0' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),
@@ -925,7 +925,7 @@ EOT;
 			echo <<<EOT
 <script type="text/JavaScript">
 	var rowtypedata = [
-/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [1, '', 'td25'], [4, '<input name="newurl[]" value="" size="15" type="text" class="txt">']],
+/*vot*/		[[1, '', 'td25'], [1,'<input name="newdisplayorder[]" value="" size="3" type="text" class="txt">', 'td25'], [1, '<input name="newname[]" value="" size="15" type="text" class="txt">'], [1, '<input name="newidentifier[]" value="" size="16" type="text" class="txtid">'], [4, '<input name="newurl[]" value="" size="32" type="text" class="txt">']],
 	];
 </script>
 EOT;
@@ -944,9 +944,10 @@ EOT;
 					$availablenew[$id] = $name && (!isset($_G['gp_urlnew'][$id]) || $_G['gp_urlnew'][$id]) && $_G['gp_availablenew'][$id];
 					$displayordernew[$id] = intval($_G['gp_displayordernew'][$id]);
 					$nameadd = !empty($name) ? ", name='$name'" : '';
+/*vot*/					$identifiernew = !empty($_G['gp_identifiernew'][$id]) ? ", identifier='".$_G['gp_identifiernew'][$id]."'" : '';
 					$subtypeadd = isset($_G['gp_subtypenew'][$id]) ? ", subtype='".intval($_G['gp_subtypenew'][$id])."'" : '';
 /*vot*/					DB::query("UPDATE ".DB::table('common_nav')."
-						   SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $nameadd $subtypeadd
+						   SET displayorder='$displayordernew[$id]', available='$availablenew[$id]' $titleadd $urladd $nameadd $subtypeadd $identifiernew
 						   WHERE id='$id'");
 				}
 			}
@@ -958,10 +959,12 @@ EOT;
 						$newavailable = $v && $_G['gp_newurl'][$k];
 						$newdisplayorder[$k] = intval($_G['gp_newdisplayorder'][$k]);
 						$newurl[$k] = str_replace('&amp;', '&', dhtmlspecialchars($_G['gp_newurl'][$k]));
+/*vot*/						$newidentifier[$k] = trim($_G['gp_newidentifier'][$k]);
 						$data = array(
 							'name' => $v,
 							'displayorder' => $newdisplayorder[$k],
 							'url' => $newurl[$k],
+/*vot*/							'identifier' => $newidentifier[$k],
 							'type' => 1,
 							'available' => $newavailable,
 							'navtype' => 4
