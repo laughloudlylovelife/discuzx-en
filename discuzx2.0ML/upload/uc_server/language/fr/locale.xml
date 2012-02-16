@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+
+	<language type="fr" using="true">
+		<item key="inefficacy_save" value="Veuillez uploader ou capturer une image avec la webcam" />
+		<item key="camera_muted" value="Veuillez allumer la webcam!" />
+		<item key="camera_not_exist" value="La Webcam n’existe pas" />
+		<item key="face_save_success" value="Avatar enregistré avec succès\21" />
+		<item key="face_save_error" value="Échec de l’enregistrement de l’avatar! Veuillez re-essayer !" />
+		<item key="face_saving" value="Enregistrement de l’avatar..." />
+		<item key="face_save_ioerror" value="Erreur I/O ! Échec de l’enregistrement de l’avatar! Veuillez re-essayer " />
+		<item key="upload_volume_1M" value="Veuillez sélectionner une autre photo de moins de 1024kb (1Mb)" />
+		<item key="upload_type_label" value="Fichiers Image" />
+		<item key="upload_type_error" value="Impossible d’uploader cette photo! Veuillez re-essayer plus tard" />
+		<item key="upload_uploading" value="Upload en cours..." />
+		<item key="upload_ioerror" value="Erreur I/O ! Veuillez re-essayer" />
+		<item key="upload_httperror" value="Erreur http ! Veuillez re-essayer" />
+		<item key="upload_securityerror" value="Erreur de sécurité.. Veuillez re-essayer" />
+		<item key="upload_progress" value="Upload en cours..." />
+		<item key="please_select_region" value="Veuillez sélectionner la région" />
+		<item key="browse_file_cancel" value="Déselectionner ?" />
+		<item key="callback_uploaded_ioerror" value="Erreur I/O Callback uploadé" />
+		<item key="uploaded_invalid_type" value="Type de fichier uploadé invalide" />
+		<item key="preview_note" value="Cliquer sur SOUMETTRE pour confirmer la selection de l’avatar. Cliquez RETOUR pour re-sélectionner." />
+		<item key="gif_submitting" value="Soumission en cours..." />
+		<item key="gif_reopen" value="Réouverture de l’image..." />
+		<item key="gif_frame_overflow" value="Débordement de cadre du Gif..." />
+		<item key="button_browse" value="Parcourir" />
+		<item key="button_camera_screen" value="Capturer" />
+		<item key="button_reset" value="Réinitialiser" />
+		<item key="button_return" value="Retour" />
+		<item key="button_save" value="Enregistrer" />
+		<item key="button_submit" value="Soumettre" />
+		<item key="tab_upload" value="Uploader" />
+		<item key="tab_camera" value="Webcam" />
+		<item key="note_right_text" value="Sélectionner la Région" />
+		<item key="note_right_move" value="Bouger" />
+		<item key="note_right_zoom" value="Zoom" />
+		<item key="note_right_face" value="Aperçu" />
+		<item key="note_main" value="Uploader une photo à partir de votre ordinateur pour l’utiliser comme avatar " />
+		<item key="note_success" value="Uploadée avec succès !" />
+		<item key="note_3size" value="Voici trois tailles de votre avatar" />
+		<item key="button_finish" value="Terminé" />
+		<item key="upload_downing" value="Chargement en cours, veuillez patienter..." />
+		<item key="camera_no_device" value="La Webcam n’est pas détectée" />
+		<item key="js_connect_error" value="Erreur de connexion javascript, Veuillez raffraîchir pour afficher le nouvel avatar" />
+		<item key="player_ver_error">
+			<value>
+				<![CDATA[
+					<font size='14' color='#FF0000'>Vous utilisez une ancienne version de flash player, veuillez <font color='#0000FF'><u> le mettre à jour !</u></font></font>
+				]]>
+			</value>
+		</item>
+        </language>
+
+</strings>

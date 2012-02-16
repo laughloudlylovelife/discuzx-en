@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+
+	<language type="ru" using="true">
+		<item key="inefficacy_save" value="Выберите фото для аватара" />
+		<item key="camera_muted" value="Камера отключена!" />
+		<item key="camera_not_exist" value="Камера не найдена!" />
+		<item key="face_save_success" value="Аватар успешно сохранен" />
+		<item key="face_save_error" value="Аватар не может быть сохранен, попробуйте еще раз!" />
+		<item key="face_saving" value="Сохранение аватара..." />
+		<item key="face_save_ioerror" value="Ошибка ввода / вывода. Аватар не может быть сохранен, попробуйте еще раз..." />
+		<item key="upload_volume_1M" value="Попробуйте другую фотографию. Неправильный размер 1024KB (1Mb)" />
+		<item key="upload_type_label" value="Файлы изображений" />
+		<item key="upload_type_error" value="Фото не может быть загружено, попробуйте еще раз" />
+		<item key="upload_uploading" value="Загружаю..." />
+		<item key="upload_ioerror" value="Ошибка ввода / вывода! Попробуйте еще раз" />
+		<item key="upload_httperror" value="Ошибка HTTP! Попробуйте еще раз" />
+		<item key="upload_securityerror" value="Ошибка безопасности! ... Попробуйте еще раз" />
+		<item key="upload_progress" value="Процесс загрузки..." />
+		<item key="please_select_region" value="Выберите область" />
+		<item key="browse_file_cancel" value="Отменить выбранные изображения?" />
+		<item key="callback_uploaded_ioerror" value="Ошибка входящего сообщения / вывода" />
+		<item key="uploaded_invalid_type" value="Неверный тип файла" />
+		<item key="preview_note" value="Нажмите на кнопку Отправить для подтверждения выбранного аватара. Нажмите Назад, чтобы вернуться к выбору.." />
+		<item key="gif_submitting" value="Отправить..." />
+		<item key="gif_reopen" value="Открыть изображения..." />
+		<item key="gif_frame_overflow" value="Gif рамка..." />
+		<item key="button_browse" value="Обзор" />
+		<item key="button_camera_screen" value="С вебкамеры" />
+		<item key="button_reset" value="Сброс" />
+		<item key="button_return" value="Назад" />
+		<item key="button_save" value="Сохранить" />
+		<item key="button_submit" value="Ok" />
+		<item key="tab_upload" value="Загрузить" />
+		<item key="tab_camera" value="Вебкамера" />
+		<item key="note_right_text" value="Выберите регион" />
+		<item key="note_right_move" value="Позиция" />
+		<item key="note_right_zoom" value="Увеличить" />
+		<item key="note_right_face" value="Предпросмотр" />
+		<item key="note_main" value="Выберите фото для аватара" />
+		<item key="note_success" value="Ваш аватар закачен!" />
+		<item key="note_3size" value="Три размера Вашего аватара" />
+		<item key="button_finish" value="Сохранить" />
+		<item key="upload_downing" value="Загрузка, пожалуйста подождите..." />
+		<item key="camera_no_device" value="На Вашем компьютере вебкамера не обнаружена!" />
+		<item key="js_connect_error" value="Ошибка javascriptConnect! Обновите, чтобы увидеть новый аватар" />
+		<item key="player_ver_error">
+			<value>
+				<![CDATA[
+					<font size='14' color='#FF0000'>Используйте Flash для загрузки <font color='#0000FF'><u>аватара</u></font></font>
+				]]>
+			</value>
+		</item>
+	</language>
+
+</strings>
