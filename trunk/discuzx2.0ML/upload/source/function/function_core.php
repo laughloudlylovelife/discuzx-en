@@ -505,6 +505,7 @@ function detect_language() {
 				$choice = 'tc';
 			} else {
 				$choice = substr($value,0,2);
+				if($choice=='zh') $choice = 'sc';
 			}
 
 			if(isset($_G['config']['languages'][$choice])){
