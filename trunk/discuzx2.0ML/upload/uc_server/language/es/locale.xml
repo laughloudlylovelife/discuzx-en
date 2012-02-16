@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+	
+	<language type="es" using="true">
+		<item key="inefficacy_save" value="Por favor, sube o captura de imagenes utilizando la camara web \ 21" />
+		<item key="camera_muted" value="Error al conectar la c�mara web \ 21" />
+		<item key="camera_not_exist" value="C�mara web no se detecta \ 21" />
+		<item key="face_save_success" value="El avatar fue subido correctamente !\21" />
+		<item key="face_save_error" value="Durante el proceso de subida al servidor se produjo un error de Internet.. Porfavor intentalo denuevo\21" />
+		<item key="face_saving" value="Guardando avatar...  PPor favor espera..." />
+		<item key="face_save_ioerror" value="I/O Error durante la subida de la imagen\21" />
+		<item key="upload_volume_1M" value="Por favor, busca otra imagen que sea menor que 1 MB\21" />
+		<item key="upload_type_label" value="Documento de imagen" />
+		<item key="upload_type_error" value="Error extensi�n de archivo no valida . Por favor, obtener una imagen con extension jpg, gif, png" />
+		<item key="upload_uploading" value="Cargando de im�gen, por favor espere..." />
+		<item key="upload_ioerror" value="I/O Se produjo un error durante la carga\21" />
+		<item key="upload_httperror" value="HTTP Error durante la carga al servidor\21" />
+		<item key="upload_securityerror" value="Se produjo un error de seguridad durante la carga de la imagen al servidor\21" />
+		<item key="upload_progress" value="Imagen subida" />
+		<item key="please_select_region" value="Selecionar la region de la imagen" />
+		<item key="browse_file_cancel" value="Cancelar\21" />
+		<item key="callback_uploaded_ioerror" value="Carga de lag en contra de la imagen subida\21" />
+		<item key="uploaded_invalid_type" value="El archivo que deseas subir no es una imagen\21" />
+		<item key="preview_note" value="La modificacion del avatar se ah completado. Las imagenes a continuacion deben ser de tamaño de tres diferentes de la imagen\3A" />
+		<item key="gif_submitting" value="La imagen se esta guardando..." />
+		<item key="gif_reopen" value=" Error al abrir la imagen, por favor, intentelo de nuevo ..." />
+		<item key="gif_frame_overflow" value="La imagen tiene muchos cuadros, por favor seleccione otra imagen ..." />
+		<item key="button_browse" value="Buscar" />
+		<item key="button_camera_screen" value="Capturar foto" />
+		<item key="button_reset" value="Resetear" />
+		<item key="button_return" value="Volver" />
+		<item key="button_save" value="Guardar avatar" />
+		<item key="button_submit" value="Confirmar\20" />
+		<item key="tab_upload" value="Subir imagen" />
+		<item key="tab_camera" value="Camara web" />
+		<item key="note_right_text" value="Selecionar la region de la imagen" />
+		<item key="note_right_move" value="Mover" />
+		<item key="note_right_zoom" value="Reajustar" />
+		<item key="note_right_face" value="Vista previa del avatar" />
+		<item key="note_main" value="Por favor, seleccione una imagen para su Avatar desde su PC" />
+
+		<item key="note_success" value="La imagen se subio con �xito!"/>
+		<item key="note_3size" value="These are three sizes of your avatar" />
+		<item key="button_finish" value="Completado" />
+		<item key="upload_downing" value="Cargando , porfavor esperar"/>
+		<item key="camera_no_device" value="Camara web no detectatada/>
+		<item key="js_connect_error" value="javascriptConnect Error, Please refresh to show new avatar" />
+		<item key="player_ver_error">
+			<value>
+				<![CDATA[
+					<font size='14' color='#FF0000'>Esta utilizando una version antigua de Flash Player, por favor <font color='#0000FF'><u>Actualiza</u></font></font>
+				]]>
+			</value>
+		</item>
+	</language>
+</strings>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<strings>
+
+	<language type="de" using="true">
+                <item key="inefficacy_save" value="Foto waehlen, welches dein Avatar werden soll!!!" />
+                <item key="camera_muted" value="Schliesse eine Kamera an!" />
+                <item key="camera_not_exist" value="Kamera nicht gefunden" />
+                <item key="face_save_success" value="Avatar erfolgreich gespeichert" />
+                <item key="face_save_error" value="Avatar konnte nicht gespeichert werden, versuch es noch einmal!" />
+                <item key="face_saving" value="Speichere Dein Avatar..." />
+                <item key="face_save_ioerror" value="Eingabe/Ausgabe-Fehler. Avatar konnte nicht gespeichert werden, versuche es noch einmal..." />
+                <item key="upload_volume_1M" value="Waehle ein anderes Foto. Groesse liegt ueber 1024kb(1Mb)" />
+                <item key="upload_type_label" value="Bilddateien" />
+                <item key="upload_type_error" value="Foto kann nicht hochgeladen werden, versuche es spaeter noch einmal" />
+                <item key="upload_uploading" value="Wird hochgeladen..." />
+                <item key="upload_ioerror" value="Eingabe/Ausgabe-Fehler! Versuche es noch einmal" />
+                <item key="upload_httperror" value="Http Fehler! Versuche es noch einmal" />
+                <item key="upload_securityerror" value="Sicherheitsfehler!..Versuche es noch einmal" />
+                <item key="upload_progress" value="ladet..." />
+                <item key="please_select_region" value="Waehle eine Region" />
+                <item key="browse_file_cancel" value="Bildwahl abbrechen!?" />
+                <item key="callback_uploaded_ioerror" value="Fehlerrueckmeldung Eingabe/Ausgabe" />
+                <item key="uploaded_invalid_type" value="Geladener ungueltiger Dateityp" />
+                <item key="preview_note" value="Klicke SENDEN, um das ausgesuchte Avatar zu bestaetigen. Klicke ZURUECK, um zur Auswahl zu gelangen.." />
+                <item key="gif_submitting" value="senden..." />
+                <item key="gif_reopen" value="Bild nochmals oeffnen..." />
+                <item key="gif_frame_overflow" value="Gif Rahmen ueberflutet..." />
+                <item key="button_browse" value="Durchsuchen" />
+                <item key="button_camera_screen" value="Aufnahme" />
+                <item key="button_reset" value="Zurueck" />
+                <item key="button_return" value="zurueck" />
+                <item key="button_save" value="Speichern" />
+                <item key="button_submit" value="senden" />
+                <item key="tab_upload" value="Hochladen" />
+                <item key="tab_camera" value="Webcam" />
+                <item key="note_right_text" value="Waehle eine Region" />
+                <item key="note_right_move" value="Zieh" />
+                <item key="note_right_zoom" value="Zoom" />
+                <item key="note_right_face" value="Avatarvorschau" />
+                <item key="note_main" value="Foto waehlen, welches dein Avatar werden soll!!!" />
+        </language>
+
+</strings>
