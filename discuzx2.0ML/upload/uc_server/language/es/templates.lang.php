@@ -1,9 +1,16 @@
 <?php
-
- // Traducido por DiscuzHispano.com
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, http://codersclub.org/
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// Spanish Language Pack
+// by jhoxi, http://discuzhispano.com
+//------------------------------------------------------
 
 $languages = array(
-	'title'			=> 'Titulo',
+	'title'			=> 'Título',
 	'return'		=> 'Volver',
 	'dateline'		=> 'Tiempo',
 	'delete'		=> 'Borrar',
@@ -12,20 +19,20 @@ $languages = array(
 	'yes'			=> 'Si',
 	'no'			=> 'No',
 	'tips'			=> 'Tips',
-	'list_empty'		=> 'Nada por aqui',
-	'shortcut_tips'		=> 'Haga clic para editar y luego actualizar configuracion',
+	'list_empty'		=> 'Nada por aqui!',
+	'shortcut_tips'		=> 'Haga clic para editar y luego actualizar configuración',
 	'welcome'		=> 'Bienvenido',
 	'edit'			=> 'Editar',
 	'plugin'		=> 'Plugins',
-	'to'			=> 'a',
+	'to'			=> ' a ',
 	'menu'			=> 'Menu',
 
 	'founder'		=> 'Fundador',
 	'login_username'	=> 'Nombre de usuario',
 	'login_password'	=> 'Contraseña',
-	'login_submit'		=> 'Iniciar Sesion',
-	'login_seccode'		=> 'Codigo de seguridad',
-	'login_incorrect'	=> '<em> Eroor al inicar sesion </em> <br/> Nombre de usuario o contraseña no válidos.',
+	'login_submit'		=> 'Iniciar sesión',
+	'login_seccode'		=> 'Código de seguridad',
+	'login_incorrect'	=> '<em>Error al inicar sesión</em><br />Nombre de usuario o contraseña son inválidos.',
 	'login_founder_incorrect' => 'La contraseña del fundador es incorrecta ',
 	'login_admin_noexists'	=> 'El admin especificado no existe',
 	'login_seccode_error'	=> 'Codigo de seguridad incorrecto',
@@ -47,9 +54,9 @@ $languages = array(
 	'menu_data_list'	=> 'Lista de datos',
 	'menu_domain_list'	=> 'Dominios',
 	'menu_db'		=> 'Base de datos',
-	'menu_update_cache'	=> 'Actlz. de canche',
+	'menu_update_cache'	=> 'Actualizar caché',
 	'menu_log'		=> 'Registros de sesiones',
-	'menu_logout'		=> 'Cerrar seion',
+	'menu_logout'		=> 'Cerrar sesión',
 	'menu_otheradmincp'	=> 'Otro Panel de admin',
 	'menu_admin_user'	=> 'Administrador',
 
@@ -59,7 +66,7 @@ $languages = array(
 	'pm_total_pm'		=> 'Total $pmnum[$pmnumindex] de mensajes',
 	'pm_system_pm'		=> 'Sistema de mensaje ',
 	'pm_ignore_list'	=> 'Lista de ingnorados',
-	'pm_ignore_list_comment' =>'Si va aagregar usuarios en esta lista, usted no recibirá mensajes el / ella <br. /> Usa "," para añadir más de un usuario, tales como "Tom, Lilei, Jim" <br /> Si no desea recibir ningún mensaje de usuario(s), se debe establecer el valor de "&#123;ALL&#125;""',
+	'pm_ignore_list_comment' =>'Si va agregar usuarios en esta lista, usted no recibirá mensajes el/ella.<br. />Usa "," para añadir más de un usuario, tales como "Tom, Lilei, Jim" <br />Si no desea recibir ningún mensaje de usuario\'s, se debe establecer el valor de "&#123;ALL&#125;"',
 	'save'			=> 'Guardar',
 	'pm_central'		=> 'Centro de mensajes',
 	'pm_send'		=> 'Enviar mensaje',
@@ -71,10 +78,10 @@ $languages = array(
 	'pm_savebox'		=> 'Caja de borradores',
 	'pm_outbox'		=> 'Caja',
 	'pm_ignorelist'		=> 'Lista de ignorados',
-	'pm_preview'		=> 'Previsualizacion de el mensaje',
+	'pm_preview'		=> 'Previsualización de el mensaje',
 	'back'			=> 'Volver',
 	'pm_tofriends'		=> 'Para amigo(s)',
-	'pm_subject'		=> 'Titulo',
+	'pm_subject'		=> 'Título',
 	'pm_notitle'		=> '[Sin titulo]',
 	'pm_message'		=> 'Contenido',
 	'pm_replymessage'	=> 'Responder',
@@ -95,8 +102,8 @@ $languages = array(
 	'pm_daterange_2'	=> 'Ayer',
 	'pm_daterange_3'	=> 'Antes de ayer',
 	'pm_daterange_4'	=> 'Ultima semana',
-	'pm_daterange_5'	=> 'Earlier',
-	'pm_prompt_list'	=> 'Por favor introduce el elemento de la lista,dejar en blanco o haga clic en "Cancelar" para cerrar esta lista.',
+	'pm_daterange_5'	=> 'Más temprano',
+	'pm_prompt_list'	=> 'Por favor introduce el elemento de la lista.\r\nDejar en blanco o haga clic en "Cancelar" para terminar esta lista.',
 	'pm_prompt_img'		=> 'Por favor introduce el URL de la imagen:',
 	'pm_prompt_url'		=> 'Por favor, introduce URL:',
 	'pm_prompt_email'	=> 'Por favor, intruduce correo electrónico :',
@@ -124,7 +131,7 @@ $languages = array(
 	'chatpm'		=> 'Chat del grupo',
 
 	'editor_b'		=> 'Negrita',
-	'editor_i'		=> 'Italic',
+	'editor_i'		=> 'Cursiva',
 	'editor_u'		=> 'Subrayado',
 	'editor_list1'		=> 'Lista ordenada',
 	'editor_lista'		=> 'Lista desordenada',
@@ -164,17 +171,17 @@ $languages = array(
 	'app_charset'		=> 'Charset',
 	'app_dbcharset'		=> 'Base de datos Charset',
 	'app_detail'		=> 'Detalles',
-	'app_detail_tips'	=> 'Si usted ve src="images/error.gif" <img /> <font color="red"> Error en la conexión </ font>, por favor haga clic en "Editar" para configurar la IP de la aplicacion',
+	'app_detail_tips'	=> 'Si usted ve <img src="images/error.gif" /> <font color="red">Error en la conexión</font>, por favor haga clic en "Editar" para configurar la IP de la aplicacion',
 	'app_edit'		=> 'Editar',
-	'app_setting'		=> 'Editar aplicacion',
-	'app_type'		=> 'Tipo de aplicacion',
-	'app_linkstatus'	=> 'Estatus de la conexion',
-	'app_link'		=> 'CVonectando...',
+	'app_setting'		=> 'Editar aplicación',
+	'app_type'		=> 'Tipo de aplicación',
+	'app_linkstatus'	=> 'Estatus de la conexión',
+	'app_link'		=> 'Conectando...',
 	'app_recvnote'		=> 'Recibir avisos?',
 	'app_tagtemplates'		=> 'Etiquetas de la planilla',
 	'app_tagtemplates_comment'	=> 'La etiqueta de la plantilla de la aplicación actual se mostro en otras aplicaciones..',
 	'app_tagfields'			=> 'Descripcion de la etiqueta de la planilla',
-	'app_tagfields_comment'		=> 'Sólo una descripción por cada línea, separa el nombre y el título con ",". Ejemplo: <br/> tema, Título de la discusión <br /> Tema Dirección',
+	'app_tagfields_comment'		=> 'Sólo una descripción por cada línea, separa el nombre y el título con ",". Ejemplo:<br />tema, Título de la discusión<br />url, dirección del tema',
 	'app_install_type'		=> 'Elegir un tipo de instalación',
 	'app_install_url'		=> 'Instalación de la aplicación via URL',
 	'app_install_by_url'		=> 'Instalacion por URL (recomendado)',
@@ -190,7 +197,7 @@ $languages = array(
 	'app_code_comment'		=> 'Si usted perdió su la solicitud de información de configuración, usted puede copiar el siguiente código para el archivo de configuración de aplicaciones',
 
 
-	'tag_tips'			=> 'Establece que la aplicación actual para obtener otras aplicaciones, así como datos de la etiqueta en la proporción de la ampliación de la plantilla de datos. plantilla:"&#123;xxx&#125;" express the index of tag, representing the corresponding data',
+	'tag_tips'			=> 'Establece que la aplicación actual para obtener otras aplicaciones, así como datos de la etiqueta en la proporción de la ampliación de la plantilla de datos. Plantilla: "&#123;xxx&#125;" expresar el índice de etiqueta, que representa los datos correspondientes',
 	'tag_global_template'		=> 'Plantilla Global',
 	'tag_percent'			=> 'Porcentaje',
 	'tag_template'			=> 'Planilla',
@@ -205,18 +212,18 @@ $languages = array(
 	'badword_keyword'		=> 'Malas palabras',
 	'badword_replace'		=> 'Remplazar por',
 	'badword_admin' 		=> 'Operador',
-	'badword_multi_add'		=> 'Agregar Bulk',
-	'badword_multi_add_comment'	=> '<li> Un punto por cada línea, use "=" para separar las malas palabras de la palabra de sustitución. </ li>
-<li> Si desea sustituir algunas palabras como **, sólo necesita que el tipo de palabras este escrito. </ li>
+	'badword_multi_add'		=> 'Agregar Volumen',
+	'badword_multi_add_comment'	=> '<li>Un punto por cada línea, use "=" para separar las malas palabras de la palabra de sustitución.</li>
+                    			<li>Si desea sustituir algunas palabras como **, sólo necesita que el tipo de palabras este escrito.</li>
 					<li><strong>Ejemplo:</strong></li>
-					<li> La mala palabra</li>
-					<li>mala palabra = buena palabra</li>',
+					<li>La mala palabra</li>
+					<li>mala palabra=buena palabra</li>',
 	'badword_skip'			=> 'Saltar las malas palabras actuales, en el conflicto',
 	'badword_overwrite'		=> 'Cubir la lista actual de malas palabras en el conflicto',
-	'badword_truncate'		=> 'Cubir la lista actual mala palabra, y luego importar nuevas palabras (Esta operación no se puede restaurar, recomendamos que valla a <a href="admin.php?m=badword&a=export" target="_blanks">Exportación de la lista de palabras  </ a>, y hacer una copia de seguridad)',
+	'badword_truncate'		=> 'Cubir la lista actual mala palabra, y luego importar nuevas palabras (Esta operación no se puede restaurar, recomendamos que valla a <a href="admin.php?m=badword&a=export" target="_blanks">Exportación de la lista de palabras</a>, y hacer una copia de seguridad)',
 
-	'announcepm'			=> 'Mensaje publico',
-	'announcepm_deleted'		=> 'El mensaje publico ah sido eliminado con exito',
+	'announcepm'			=> 'Mensaje público',
+	'announcepm_deleted'		=> 'El mensaje publico ha sido eliminado con éxito',
 	'clear_pm'			=> 'Borrar mensaje',
 	'clearpm_deleted'		=> 'Mensaje borrardo correctamente',
 	'clearpm_totalnum'		=> 'Mensajes totales',
@@ -224,11 +231,11 @@ $languages = array(
 	'clearpm_cleardays'		=> 'Eliminar los mensajes mas viejos',
 	'clearpm_cleardays_comment'	=> 'Introduce el número de días, 0 significa ilimitado',
 	'clearpm_usernames'		=> 'Borrat algunos de los mensajes del usuario',
-	'clearpm_usernames_comment'	=> 'Por favor, introduzca el nombre de usuario (s), utilice "", para separar varios nombres de usuario',
+	'clearpm_usernames_comment'	=> 'Por favor, introduzca el nombre de usuario(s), utilice "," para separar varios nombres de usuario',
 	'announcepm_send_succeed'	=> 'Mensaje público se ah recibido con éxito ',
 	'pm_clear'			=> 'Borrar mensajes',
 	'pm_search'			=> 'Buscador',
-	'pm_whichtable'			=> 'Selecnr. a las sub-tablas',
+	'pm_whichtable'			=> 'Seleccionar las sub-tablas',
 	'pm_auhtor'			=> 'Remitente',
 	'pm_dateline'			=> 'Rango de tiempo',
 	'pm_list'			=> 'Lista de mensajes',
@@ -242,7 +249,7 @@ $languages = array(
 	'creditexchange_ratio'		=> 'Proporción',
 	'creditexchange'		=> 'Cambio de dinero',
 	'creditexchange_syncappcredits'	=> 'Sincronizar la política de aplicación de dinero',
-	'creditexchange_tips'		=> 'Haga clic en "Sincronizar la política de aplicación de dinero" para obtener dicha politica, y enviar la notificación dela aplicación',
+	'creditexchange_tips'		=> 'Haga clic en "Sincronizar la política de aplicación de dinero" para obtener dicha politica, y enviar la notificación de la aplicación',
 
 	'note_deleteuser'	=> 'Borrar Usuario',
 	'note_deletefriend'	=> 'Borrar amigo',
@@ -258,7 +265,7 @@ $languages = array(
 	'note_last_note_time'	=> ' El tiempo del aviso de última noticia',
 	'note_view'			=> 'Ver',
 	'setting_forbidden_username'	=> 'Banear a este usuario',
-	'setting_ceonsor_comment'	=> 'Puede utilizar comodines "*", una palabra clave por cada línea, tales como "* Moderador *" (sin comillas).',
+	'setting_ceonsor_comment'	=> 'Puede utilizar comodines "*", una palabra clave por cada línea, tales como "*Moderador*" (sin comillas).',
 	'note_view'			=> 'Ver',
 	'note_status'		=> 'Estado del aviso',
 	'note_fail_apps'	=> 'El aviso de la aplicación no se efectuo',
@@ -276,12 +283,12 @@ $languages = array(
 	'anonymity'		=> 'Anonimo',
 	'mail_send'		=> 'Enviar email',
 	'mail_list_updated'	=> 'Lista de correo electrónico actualizado correctamente.',
-	'mail_send'		=> 'Enviar email',
+//	'mail_send'		=> 'Enviar mail',
 
 	'setting'			=> 'Opciones',
 	'setting_tips' 			=> 'Tips',
 	'setting_dateformat'		=> 'Formato de la fecha',
-	'setting_dateformat_comment'	=> 'Usa yyyy(yy) para el año, mm para el mes, dd usalo para el dia. Ejemplo: yyyy-mm-dd el resultado seria 2012-07-28',
+	'setting_dateformat_comment'	=> 'Usa yyyy(yy) para el año, mm para el mes, dd usalo para el dia. Ejemplo: yyyy-mm-dd el resultado sería 2012-07-28',
 	'setting_timeformat'		=> 'Formato del tiempo',
 	'setting_timeformat_hr24'	=> '24 Horas',
 	'setting_timeformat_hr12'	=> '12 Horas',
@@ -303,12 +310,12 @@ $languages = array(
 	'setting_pmfloodctrl_comment'	=> 'Intervalo entre las 14:00, en segundos, de 0 para un número ilimitado, esto es para evitar el spam de los robots...',
 
 	'setting_register'		=> 'Opciones de registro',
-	'setting_register_tips'		=> 'Permitido / prohibido lista de correo electrónico. Usted sólo tiene que introducir su dominio. Un correo electrónico por línea. Ejemplo: @ hotmail.com',
+	'setting_register_tips'		=> 'Permitido/prohibido lista de correo electrónico. Usted sólo tiene que introducir su dominio. Un correo electrónico por línea. Ejemplo: @hotmail.com',
 	'setting_register_doublee'	=> 'Permitir los registros múltiples con el mismo correo electrónico',
 	'setting_register_accessemail'		=> 'Permitir direccion de email',
-	'setting_register_accessemail_comment'	=> 'Permiten registrar solamente por correo electrónico de este dominio . Ejemplo <br\> : Hotmail.com',
+	'setting_register_accessemail_comment'	=> 'Permiten registrar solamente por correo electrónico de este dominio.<br \>Ejemplo: hotmail.com',
 	'setting_register_censoremail'		=> 'Direccion de emails proibidas',
-	'setting_register_censoremail_comment'	=> 'Desactivar el registro de dominios de correo electrónico para este dominio . Ejemplo <br\>: Hotmail.com',
+	'setting_register_censoremail_comment'	=> 'Desactivar el registro de dominios de correo electrónico para este dominio.<br \>Ejemplo: hotmail.com',
 
 	'settings_mail_settings_emailfrom'		=> 'Correo electrónico de',
 	'settings_mail_settings_emailfrom_comment'	=> 'Usar esta dirección como remitente del correo electrónico predeterminado',
@@ -375,7 +382,7 @@ $languages = array(
 	'user_edit_profile_failed'	=> 'Error al Editar perfil de usuario',
 	'user_keep_blank'		=> 'Dejar en blanco para usar la antigua contraseña .',
 
-	'cache_update'			=> 'Actualizar canche',
+	'cache_update'			=> 'Actualizar caché',
 	'cache_update_data'		=> 'Actualización de Datos de caché',
 	'cache_update_tpl'		=> 'Actualización de la caché de plantillas',
 
@@ -420,14 +427,14 @@ $languages = array(
 	'home_environment'	=> 'Sistema & PHP',
 	'home_server_software'	=> 'Software',
 	'home_server_ip'	=> 'Nombre del host',
-	'home_database'		=> 'Version MySQL',
+	'home_database'		=> 'Versión MySQL',
 	'home_note_count'	=> 'Mensajees no enviados',
 	'home_pm_count'		=> 'Mensajes',
 	'home_friend_count'	=> 'Amigos',
 	'home_upload_perm'	=> 'Permisos de Subida',
-	'home_database_size'	=> 'Tamaño de la BD',
+	'home_database_size'	=> 'Tamaño de la DB',
 	'home_attach_size'	=> 'Tamaño actual de todos los adjuntos',
-	'home_dev'		=> 'Discuz! PHP',
+	'home_dev'		=> 'Discuz! Equipo de Desarrollo',
 	'home_dev_copyright'	=> 'Copyright',
 	'home_dev_manager'	=> 'Gerente',
 	'home_dev_team'		=> 'Grupo PHP',
@@ -453,8 +460,8 @@ $languages = array(
 	'admin_config_unwritable'		=> '/data/config.inc.php no se puede escribir(777)',
 	'admin_founder_pw_incorrect'		=> 'La contraseña del administrador es incorrecta',
 	'admin_pw_incorrect'			=> 'Las dos contraseñas no concuerdan',
-	'admin_pw_oldpw'			=> 'Por Favor ,  ingresar la contraseña vieja',
-	'admin_pw_newpw'			=> 'Por Favor ,  ingresar la nueva contraseña ',
+	'admin_pw_oldpw'			=> 'Por Favor, ingresar la contraseña vieja',
+	'admin_pw_newpw'			=> 'Por Favor, ingresar la nueva contraseña ',
 	'admin_pw_newpw2'			=> 'Re-ingresar la contraseña de nuevo',
 	'admin_pw_too_short'			=> 'La nueva contraseña es demasiado corta, para confirmar que establece como su contraseña?',
 	'admin_founder_pw_modified'		=> 'La contraseña del administrador ah sido modificada con éxito',
@@ -481,17 +488,18 @@ $languages = array(
 	'profile'			=> 'Perfil',
 	'privilege'			=> 'Permisos',
 	'admin_edit_priv'		=> 'Editar los permisos del administrador',
-	'admin_priv_modified_successfully'	=> 'Los permisos del administrador se editaron con exito',
+	'admin_priv_modified_successfully'	=> 'Los permisos del administrador se editaron con éxito',
 	'admin_priv_modified_failed'		=> 'Error al editar permisos del administrador',
-	'admin_modification_notice'	=> 'Por favor, habilite la opción "Administrar aplicaciones", "Administrar usuarios", "Manejo de la base de datos"',
-	'admin_allow_pm'		=> 'Manejar mensajes',
+	'admin_modification_notice'	=> 'Por favor, habilite la opción "Administrar aplicaciones", "Administrar usuarios", "Administrar base de datos"',
+	'admin_allow_pm'		=> 'Administrar mensajes',
 	'admin_admin'			=> 'Administrador',
 	'admin_return_admin_ls'		=> 'Regresar a la lista de administradores',
 	'admin_return_user_ls'		=> 'Regresar a la lista de usuarios',
-	'view_new_version'		=> 'Mira la ultima version en Chino',
+	'view_new_version'		=> 'Mira la ultima versión en Chino',
 
  	'app_allowips'			=> 'Permitir el acceso mediante IP ',
  	'app_allowips_comment'		=> 'Dejar en blanco en el caso común. Si se establece esto, todas las IPs que otros no tienen acceso a esta aplicación',
-
- // Traducido por DiscuzHispano.com
+//Added by vot
+	'view_en_new_version'		=> 'Ver la versión más reciente Internacional',
+	'home_dev_english'		=> 'Versión Internacional',
 );

@@ -1,6 +1,15 @@
 <?php
-//	Traducido por discuzhispano.com
-define('UC_VERNAME', 'Spanish Version');
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, http://codersclub.org/
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// Spanish Language Pack
+// by jhoxi, http://discuzhispano.com
+//------------------------------------------------------
+
+define('UC_VERNAME', 'International Version');
 
 $lang = array(
 
@@ -225,5 +234,5 @@ $lang = array(
 	'ucfounderpw2'	=> 'Repita la contraseña',
 
 	'create_table'	=> 'Crear tabla',
-	'succeed'	=> 'Exito',
+	'succeed'	=> 'Éxito',
 );
