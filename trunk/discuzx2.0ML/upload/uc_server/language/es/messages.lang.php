@@ -1,8 +1,16 @@
 <?php
-// Translated by http://discuzhispano.com
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, http://codersclub.org/
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// Spanish Language Pack
+// by jhoxi, http://discuzhispano.com
+//------------------------------------------------------
 
 $lang = array(
-	'please_login'				=> 'Porfavor , Identificate de nuevo',
+	'please_login'				=> 'Porfavor , Identifícate de nuevo',
 	'receiver_no_exists'			=> 'El receptor no existe',
 	'pm_save_succeed'			=> 'Mensaje guardado como borrador con éxito',
 	'pm_send_succeed'			=> 'Mensaje eniado $sent fue enviado con éxito',
@@ -30,9 +38,9 @@ $lang = array(
 	'db_import_multivol_succeed'	=> 'Varios volúmenes de datos se ha importado a la base de datos con éxito.',
 	'db_import_file_illegal'	=> 'El archivo de datos no existe: El servidor no se le permite cargar el archivo o el archivo es demasiado grande.',
 	'db_import_multivol_redirect'	=> 'Volumen de datos #$volume fue importado a la base de datos con éxito, el programa de importación de otros volúmenes se realizo de forma automática.',
-	'db_back_api_url_invalid'	=> 'No se puede conectar con  la copia de archivos de aplicaciones , por favor, copie el archivo en UCenter "api / dbbak.php" a la carpeta "API"',
+	'db_back_api_url_invalid'	=> 'No se puede conectar con  la copia de archivos de aplicaciones , por favor, copie el archivo en UCenter "api/dbbak.php" a la carpeta "API"',
 	'delete_dumpfile_success'	=> 'Archivos de respaldo eliminado con éxito',
-	'delete_dumpfile_redirect'	=> 'El archivo de la copia de seguridad de # of $appname eliminado con éxito, el programa eliminará otros archivos de la copia de seguridad de forma automática.',
+	'delete_dumpfile_redirect'	=> 'El archivo de la copia de seguridad de # de $appname eliminado con éxito, el programa eliminará otros archivos de la copia de seguridad de forma automática.',
 	'dbback_error_code_1'		=> 'No se puede crear carpeta',
 	'dbback_error_code_2'		=> 'Escribir el nombre delarchivo de copia de seguridad',
 	'dbback_error_code_3'		=> 'SQL error de consulta',
@@ -42,9 +50,9 @@ $lang = array(
 	'dbback_error_code_7'		=> 'El directorio no existe ',
 	'dbback_error_code_8'		=> 'La eliminacion de la copia de seguridad ah fallado',
 	'dbback_error_code_9'		=> 'La copia de seguridad de la API no es compatible con este tipo de copia de seguridad',
-	'undefine_error'		=> '	Error Desconocido',
+	'undefine_error'		=> 'Error Desconocido',
 
-	'app_add_url_invalid'		=> ' La url de la API no es válida ',
+	'app_add_url_invalid'		=> 'La url de la API no es válida ',
 	'app_add_ip_invalid'		=> 'IP no válida',
 	'app_add_name_invalid'		=> 'Nombre de la aplicación no es válida o duplicados con otras aplicaciones. Por favor, regresar y coregir el error',
 	'read_plugin_invalid'		=> 'La lectura del plugin ha fallado',
@@ -71,5 +79,4 @@ $lang = array(
 	'pm_send_floodctrl_error'	=> 'Lo sentimos, usted trata de enviar varios mensajes muy rápido, por favor regrese',
 	
 	'file_check_failed'		=> 'Compruebe que el archivo existe manualmente , ya que no puede comprobar automaticamente',
-// Translated by http://discuzhispano.com	
 );
