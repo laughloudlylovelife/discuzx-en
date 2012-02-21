@@ -118,6 +118,9 @@ if($_G['group']['allowpost']) {
 	$_G['group']['allowpostdebate'] = $_G['group']['allowpostdebate'] && $showdebate;
 }
 
+//DEBUG
+//echo "action=",$action,"<br>\n";
+//echo "status=",$status,"<br>\n";
 if($action == 'index') {
 
 	$newthreadlist = array();
@@ -278,7 +281,15 @@ if($action == 'index') {
 	if(!submitcheck('createsubmit')) {
 		$groupselect = get_groupselect(getgpc('fupid'), getgpc('groupid'));
 	} else {
-		$name = censor(addslashes(dhtmlspecialchars(cutstr(stripslashes(trim($_G['gp_name'])), 20, ''))));
+//vot		$name = censor(addslashes(dhtmlspecialchars(cutstr(stripslashes(trim($_G['gp_name'])), 20, ''))));
+/*vot*/		$name = stripslashes(trim($_G['gp_name']));
+/*vot*/		if(dstrlen($name) < 2 || dstrlen($name) > 80) {	// Name length in Characters
+			showmessage('group_name_oversize');
+		}
+/*vot*/		$name = addslashes(dhtmlspecialchars($name));
+/*vot*/		if(strlen($name) > 255) {	// Name length in Bytes
+			showmessage('group_name_oversize');
+		}
 		$censormod = censormod($name);
 		if(empty($name)) {
 			showmessage('group_name_empty');
@@ -365,22 +376,33 @@ if($action == 'index') {
 				}
 
 				if(isset($_G['gp_name'])) {
-					$_G['gp_name'] = censor(addslashes(dhtmlspecialchars(cutstr(stripslashes(trim($_G['gp_name'])), 20, ''))));
-					if(empty($_G['gp_name'])) {
+//vot					$_G['gp_name'] = censor(addslashes(dhtmlspecialchars(cutstr(stripslashes(trim($_G['gp_name'])), 20, ''))));
+/*vot*/					$name = stripslashes(trim($_G['gp_name']));
+/*vot*/					if(dstrlen($name) < 2 || dstrlen($name) > 80) {	// Name length in Characters
+						showmessage('group_name_oversize');
+					}
+/*vot*/					$name = addslashes(dhtmlspecialchars($name));
+/*vot*/					if(strlen($name) > 255) {	// Name length in Bytes
+						showmessage('group_name_oversize');
+					}
+/*vot*/					if(empty($name)) {
 						showmessage('group_name_empty');
 					}
-					$censormod = censormod($_G['gp_name']);
+/*vot*/					$censormod = censormod($name);
 					if($censormod) {
 						showmessage('group_name_failed');
 					}
 				} elseif(isset($_G['gp_fup']) && empty($_G['gp_fup'])) {
 					showmessage('group_category_empty');
 				}
-				if(!empty($_G['gp_name']) && $_G['gp_name'] != addslashes($_G['forum']['name'])) {
-					if(DB::result(DB::query("SELECT fid FROM ".DB::table('forum_forum')." WHERE name='$_G[gp_name]'"), 0)) {
+/*vot*/				if(!empty($name) && $name != addslashes($_G['forum']['name'])) {
+/*vot*/					if(DB::result(DB::query(
+						"SELECT fid
+						 FROM ".DB::table('forum_forum')."
+						 WHERE name='$name'"), 0)) {
 						showmessage('group_name_exist', $url);
 					}
-					$forumarr['name'] = $_G['gp_name'];
+/*vot*/					$forumarr['name'] = $name;
 				}
 
 				if(intval($_G['gp_fup']) != $_G['forum']['fup']) {
