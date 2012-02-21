@@ -500,6 +500,6 @@ $languages = array(
  	'app_allowips'			=> 'Permitir el acceso mediante IP ',
  	'app_allowips_comment'		=> 'Dejar en blanco en el caso común. Si se establece esto, todas las IPs que otros no tienen acceso a esta aplicación',
 //Added by vot
-	'view_en_new_version'		=> 'Ver la versión más reciente Internacional',
-	'home_dev_english'		=> 'Versión Internacional',
+	'view_ml_new_version'		=> 'Ver la versión más reciente Internacional',
+	'home_dev_international'	=> 'Versión Internacional',
 );

@@ -1,11 +1,11 @@
 //------------------------------------------------------
 // INTERNATIONAL UCenter v.1.6.0 (Multilingual)
-// by Valery Votintsev, http://codersclub.org/
+// by Valery Votintsev, codersclub.org
 //------------------------------------------------------
 // Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
 //------------------------------------------------------
-// English Language Pack
-// by Valery Votintsev, codersclub.org
+// Arabic Language Pack
+// by khalid nahhal at ar-discuz.com
 //------------------------------------------------------
 
 //--------------------------------

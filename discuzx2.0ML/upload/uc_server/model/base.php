@@ -37,6 +37,8 @@ class base {
 		$this->init_note();
 		$this->init_mail();
 		//		$this->cron();
+//vot
+@header('Content-Type: text/html; charset='.UC_CHARSET);
 	}
 
 	function init_var() {
@@ -60,7 +62,11 @@ class base {
 		define('FORMHASH', $this->formhash());
 		$_GET['page'] =  max(1, intval(getgpc('page')));
 
-		include_once UC_ROOT.'./view/default/main.lang.php';
+//vot Define UC Language !!!
+//vot		include_once UC_ROOT.'./view/default/main.lang.php';
+//vot	!!!! ToDo: Add Language detection by Cookie/Input !!!!!!!!!!!!!!!
+/*vot*/		define('UC_LANG',UC_DEFAULT_LANG);
+/*vot*/		include_once UC_ROOT.'./language/'.UC_LANG.'/main.lang.php';
 		$this->lang = &$lang;
 	}
 

@@ -32,7 +32,8 @@ class control extends adminbase {
 	}
 
 	function onmain() {
-		$ucinfo = '<sc'.'ript language="Jav'.'aScript" src="ht'.'tp:/'.'/cus'.'tome'.'r.disc'.'uz.n'.'et/ucn'.'ews'.'.p'.'hp?'.$this->_get_uc_info().'"></s'.'cri'.'pt>';
+//vot !!! ToDo: CHECK THIS!!!!
+		$ucinfo = '<script language="JavaScript" src="http://customer.discuz.net/ucnews.php?'.$this->_get_uc_info().'"></script>';
 		$this->view->assign('ucinfo', $ucinfo);
 
 		$members = $this->_get_uc_members();

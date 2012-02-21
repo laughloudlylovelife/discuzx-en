@@ -1,4 +1,13 @@
 <?php
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, codersclub.org
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// German Language Pack
+// by Coldcut - http://www.cybertipps.com
+//------------------------------------------------------
 
 $lang = array(
 	'user_search'	=> 'Benutzer suchen',
@@ -12,6 +21,6 @@ $lang = array(
 	'user_password'	=> 'Passwort',
 	'user_addsubmit'	=> 'Hinzuf&uuml;gen',
 	'delete'	=> 'L&ouml;schen',
-	'email'	=> 'Email',
+	'email'		=> 'Email',
 	'user_list'	=> 'Benutzerliste',
 );

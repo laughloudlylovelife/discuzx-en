@@ -1,4 +1,4 @@
-//	English by Valery Votintsev at sources.ru
+//	MultiLingual by Valery Votintsev, codersclub.org
 var controlid = null;
 var currdate = null;
 var startdate = null;

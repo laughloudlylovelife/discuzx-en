@@ -1,7 +1,16 @@
 <?php
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, codersclub.org
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// French Language Pack
+// by Andre13, discuz-fr.fr
+//------------------------------------------------------
 
 $lang = array(
-	'please_login'	=> 'Veuillez vous reconnecter',
+	'please_login'		=> 'Veuillez vous reconnecter',
 	'receiver_no_exists'	=> 'Le destinataire n’existe pas, veuillez en essayer un autre',
 	'pm_save_succeed'	=> 'Sauvegardé dans les Brouillons',
 	'pm_send_succeed'	=> '$sent MP envoyé avec succès !',
@@ -9,7 +18,7 @@ $lang = array(
 	'pm_send_ignore'	=> 'Échec de l’envoi du MP !',
 	'pm_delete_succeed'	=> 'Suppression du MP réussi !',
 	'pm_delete_invalid'	=> 'Échec de la suppression du MP !',
-	'pm_unread'	=> 'Marquer comme non lu',
+	'pm_unread'		=> 'Marquer comme non lu',
 	'blackls_updated'	=> 'Mettre à Jour la Liste Noire',
 
 	'db_export_filename_invalid'	=> 'Le nom de sauvegarde que vous avez entré est vide ou contient des caractères invalides, veuillez le corriger !',
@@ -39,22 +48,22 @@ $lang = array(
 
 	'syncappcredits_updated'	=> 'Synchronisation des paramètres de crédits avec les clients applis réussi',
 
-	'note_succeed'	=> 'Notification envoyée',
-	'note_false'	=> 'Échec de l’envoi de la notification',
+	'note_succeed'			=> 'Notification envoyée',
+	'note_false'			=> 'Échec de l’envoi de la notification',
 	'no_permission_for_this_module'	=> 'Aucun Privilège de gestion de module',
-	'admin_user_exists'	=> 'Le nom d’utilisateur existe, veuillez en essayer un autre',
+	'admin_user_exists'		=> 'Le nom d’utilisateur existe, veuillez en essayer un autre',
 
-	'mail_succeed'	=> 'Mail envoyé',
-	'mail_false'	=> 'Échec de l’envoi du mail',
+	'mail_succeed'			=> 'Mail envoyé',
+	'mail_false'			=> 'Échec de l’envoi du mail',
 	
-	'user_edit_noperm'	=> 'Aucune permission pour modifier cet utilisateur',
+	'user_edit_noperm'		=> 'Aucune permission pour modifier cet utilisateur',
 
-	'appid_invalid'	=> 'ID de l’appli invalide',
+	'appid_invalid'			=> 'ID de l’appli invalide',
 	'app_apifile_not_exists'	=> 'Le fichier #$apifile n’existe pas, veuillez vérifier le chemin de l’appli',
-	'app_apifile_too_low'	=> 'La version du fichier Api #$apifile est trop ancienne',
-	'app_path_not_exists'	=> 'Le chemin n’existe pas, veuillez vérifier',
-	'pm_send_seccode_error'	=> 'Erreur de Code de Vérification',
-	'pm_send_regdays_error'	=> 'Vous devez attendre #$pmsendregdays jours après votre inscription avant de pouvoir envoyer des MP',
+	'app_apifile_too_low'		=> 'La version du fichier Api #$apifile est trop ancienne',
+	'app_path_not_exists'		=> 'Le chemin n’existe pas, veuillez vérifier',
+	'pm_send_seccode_error'		=> 'Erreur de Code de Vérification',
+	'pm_send_regdays_error'		=> 'Vous devez attendre #$pmsendregdays jours après votre inscription avant de pouvoir envoyer des MP',
 	'pm_send_limit1day_error'	=> 'Vous avez atteint la limite journalière pour les envois de MPs.',
 	'pm_send_floodctrl_error'	=> 'Vous envoyez trop rapidement, veuillez attendre une minute avant d’envoyer à nouveau',
 );

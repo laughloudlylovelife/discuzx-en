@@ -5,7 +5,7 @@
 //------------------------------------------------------
 // Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
 //------------------------------------------------------
-// English Language Pack
+// Turkish Language Pack
 // by Valery Votintsev, codersclub.org
 //------------------------------------------------------
 
@@ -500,6 +500,6 @@ $languages = array(
 	'app_allowips'			=> 'IP allowed to access',//vot
 	'app_allowips_comment'		=> 'Leave blank in common case. If you set this, all others IPs will not have an access to this application',//vot
 //Added by vot
-	'view_en_new_version'		=> 'View Latest English Version',
-	'home_dev_english'		=> 'English Version',
+	'view_ml_new_version'		=> 'View Latest International Version',
+	'home_dev_international'	=> 'International Version',
 );

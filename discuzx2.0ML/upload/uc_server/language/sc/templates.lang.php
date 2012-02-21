@@ -497,9 +497,9 @@ $languages = array(
 	'admin_return_user_ls'		=> '返回用户列表',
 	'view_new_version'		=> '查看最新版本',
 
-	'app_allowips'		=> '允许的IP',
-	'app_allowips_comment'	=> '限定终端访问的IP, 设置哪些IP可以访问Ucenter  的数据接口',
+	'app_allowips'			=> '允许的IP',
+	'app_allowips_comment'		=> '限定终端访问的IP, 设置哪些IP可以访问Ucenter  的数据接口',
 //Added by vot
-	'view_en_new_version'		=> 'View Latest English Version',
-	'home_dev_english'		=> 'English Version',
+	'view_ml_new_version'		=> 'View Latest International Version',
+	'home_dev_international'	=> 'International Version',
 );

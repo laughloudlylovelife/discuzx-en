@@ -1,14 +1,12 @@
 //------------------------------------------------------
 // INTERNATIONAL UCenter v.1.6.0 (Multilingual)
-// by Valery Votintsev, http://codersclub.org/
+// by Valery Votintsev, codersclub.org
 //------------------------------------------------------
 // Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
 //------------------------------------------------------
-// DE Language Pack
-// by Valery Votintsev, codersclub.org
+// German Language Pack
+// by Coldcut - http://www.cybertipps.com
 //------------------------------------------------------
-
-//--------------------------------
 
 var lng = {
 

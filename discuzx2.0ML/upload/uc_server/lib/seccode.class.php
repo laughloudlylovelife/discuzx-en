@@ -10,16 +10,16 @@
 
 class seccode {
 
-	var $code;				// 100000-999999 range of random
-	var $type 	= 1;		// 0 - Chinese, 1 - English image verification code, 2 - Flash Code, 3 - voice verification code
-	var $width 	= 0;		// image width
+	var $code;		// 100000-999999 range of random
+	var $type 	= 1;	// 0 - Chinese, 1 - English image verification code, 2 - Flash Code, 3 - voice verification code
+	var $width 	= 0;	// image width
 	var $height 	= 0;	// image height
 	var $background	= 1;	// random image background
 	var $adulterate	= 1;	// Random Background Graphics
-	var $ttf 	= 0;		// random TTF fonts
-	var $angle 	= 0;		// random angle
-	var $color 	= 1;		// random color
-	var $size 	= 0;		// Random Size
+	var $ttf 	= 0;	// random TTF fonts
+	var $angle 	= 0;	// random angle
+	var $color 	= 1;	// random color
+	var $size 	= 0;	// Random Size
 	var $shadow 	= 1;	// text shadow
 	var $animator 	= 0;	// GIF Animation
 	var $fontpath	= '';	// TTF font directory
