@@ -500,6 +500,6 @@ $languages = array(
 	'app_allowips'		=> '允許的IP',
 	'app_allowips_comment'	=> '限定終端訪問的IP, 設置哪些IP可以訪問Ucenter  的數據接口',
 //Added by vot
-	'view_en_new_version'		=> 'View Latest International Version',
-	'home_dev_english'		=> 'International Version',
+	'view_ml_new_version'		=> 'View Latest International Version',
+	'home_dev_international'	=> 'International Version',
 );

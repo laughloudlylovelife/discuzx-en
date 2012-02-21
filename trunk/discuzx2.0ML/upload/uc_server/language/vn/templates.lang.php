@@ -500,6 +500,6 @@ $languages = array(
 	'app_allowips'			=> 'IP cho phép',
 	'app_allowips_comment'		=> 'Thiết lập IP đầu cuối để cho phép truy cập vào Ucenter',
 //Added by vot
-	'view_en_new_version'		=> 'View Latest International Version',
-	'home_dev_english'		=> 'International Version',
+	'view_ml_new_version'		=> 'View Latest International Version',
+	'home_dev_international'	=> 'International Version',
 );

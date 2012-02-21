@@ -1,5 +1,13 @@
 <?php
-// Translated by Valery Votintsev
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, codersclub.org
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// Arabic Language Pack
+// by khalid nahhal at ar-discuz.com
+//------------------------------------------------------
 
 $lang = array(
 	'please_login'				=> 'الرجاء قم بإعداة تسجيل الدخول',

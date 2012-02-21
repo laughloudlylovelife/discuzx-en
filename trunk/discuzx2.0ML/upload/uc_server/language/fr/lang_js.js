@@ -4,8 +4,8 @@
 //------------------------------------------------------
 // Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
 //------------------------------------------------------
-// English Language Pack
-// by Valery Votintsev, codersclub.org
+// French Language Pack
+// by Andre13, discuz-fr.fr
 //------------------------------------------------------
 
 //--------------------------------

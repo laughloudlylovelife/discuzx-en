@@ -500,6 +500,6 @@ $languages = array(
 	'app_allowips'			=> 'Разрешенные IP',
 	'app_allowips_comment'		=> 'Ограниченный доступ IP к терминалу. Вы можете указать несколько IP для запрещения доступа к терминалу UCenter',
 //Added by vot
-	'view_en_new_version'		=> 'View Latest ML Version',
-	'home_dev_english'		=> 'International Version',
+	'view_ml_new_version'		=> 'View Latest ML Version',
+	'home_dev_international'	=> 'International Version',
 );

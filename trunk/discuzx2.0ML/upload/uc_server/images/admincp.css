@@ -149,7 +149,7 @@ h3{ font-size:14px; }
 	.dblist li{ float:left; margin:0 0 0 -3px; *margin:0 0 5px -3px; width:25%; height:auto; *height:16px; }
 .memlist{ list-style:none; margin:7px 0 25px; padding-top:2px; border-top:2px solid #B5CFD9; }
 	.memlist li{ clear:both; overflow:hidden; zoom:1; padding:5px 0; *padding:1px 0 5px; line-height:150%; background:url(bg_repx.gif) repeat-x 0 bottom; }
-/*vot*/		.memlist em{ float:left; width:140px; }
+/*vot*/		.memlist em{ float:left; width:170px; }
 			.memlist .memcont{ width:480px; }
 .tiplist{ float:right; list-style:none; width:320px; }
 	.tiplist li{ line-height:160%; }

@@ -1,4 +1,13 @@
 <?php
+//------------------------------------------------------
+// INTERNATIONAL UCenter v.1.6.0 (Multilingual)
+// by Valery Votintsev, codersclub.org
+//------------------------------------------------------
+// Based on UCenter 1.6.0, (c) Comsenz.inc, discuz.net
+//------------------------------------------------------
+// French Language Pack
+// by Andre13, discuz-fr.fr
+//------------------------------------------------------
 
 $lang = array(
 	'user_search'	=> 'Rechercher Utilisateur',
@@ -12,6 +21,6 @@ $lang = array(
 	'user_password'	=> 'Mot de passe',
 	'user_addsubmit'	=> 'Soumettre',
 	'delete'	=> 'Supprimer',
-	'email'	=> 'Courriel',
+	'email'		=> 'Courriel',
 	'user_list'	=> 'Liste des Utilisateurs',
 );

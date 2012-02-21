@@ -431,7 +431,7 @@ $languages = array(
 	'home_note_count'	=> 'Unsent Messages',
 	'home_pm_count'		=> 'Messages',
 	'home_friend_count'	=> 'Friends',
-	'home_upload_perm'	=> 'Upload Permissions',
+	'home_upload_perm'	=> 'Upload Size',
 	'home_database_size'	=> 'Current Database Size',
 	'home_attach_size'	=> 'Current Attach Size',
 	'home_dev'		=> 'Discuz! Development Team',
@@ -500,6 +500,6 @@ $languages = array(
 	'app_allowips'			=> 'IP allowed to access',//vot
 	'app_allowips_comment'		=> 'Leave blank in common case. If you set this, all others IPs will not have an access to this application',//vot
 //Added by vot
-	'view_en_new_version'		=> 'View Latest International Version',
-	'home_dev_english'		=> 'International Version',
+	'view_ml_new_version'		=> 'View Latest International Version',
+	'home_dev_international'	=> 'International Version',
 );
