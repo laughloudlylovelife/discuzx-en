@@ -137,8 +137,9 @@ if($_G['gp_action'] == 'checkusername') {
 	if(empty($groupname)) {
 		showmessage('group_name_empty', '', array(), array('msgtype' => 3));
 	}
-	$tmpname = cutstr($groupname, 20, '');
-	if($tmpname != $groupname) {
+//vot	$tmpname = cutstr($groupname, 20, '');
+//vot	if($tmpname != $groupname) {
+/*vot*/	if(dstrlen($groupname) < 2 || dstrlen($groupname) > 80) {
 		showmessage('group_name_oversize', '', array(), array('msgtype' => 3));
 	}
 	if(DB::result_first("SELECT fid FROM ".DB::table('forum_forum')." WHERE name='".addslashes($groupname)."'")) {
