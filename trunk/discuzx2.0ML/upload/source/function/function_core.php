@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: function_core.php 26648 2011-12-19 03:03:50Z zhangguosheng $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -48,7 +48,8 @@ function updatesession($force = false) {
 					'thismonth' => $oltimespan,
 					'total' => $oltimespan,
 					'lastupdate' => TIMESTAMP,
-				));
+					)
+				);
 			}
 			$discuz->session->set('lastolupdate', TIMESTAMP);
 		}
@@ -445,11 +446,11 @@ function lang($file, $langvar = null, $vars = array(), $default = null) {
 	if($path != 'plugin') {
 		$key = $path == '' ? $file : $path.'_'.$file;
 		if(!isset($_G['lang'][$key])) {
-/*vot ML*/		include_once( DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php' );
+/*vot*/			include_once( DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.($path == '' ? '' : $path.'/').'lang_'.$file.'.php' );
 			$_G['lang'][$key] = $lang;
 		}
 		if(defined('IN_MOBILE') && !defined('TPL_DEFAULT')) {
-/*vot ML*/		include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/mobile/lang_template.php';
+/*vot*/			include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/mobile/lang_template.php';
 			$_G['lang'][$key] = array_merge($_G['lang'][$key], $lang);
 		}
 		$returnvalue = &$_G['lang'];
@@ -747,7 +748,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 		}
 	}
 
-/*vot ML*/	$cachefile = './data/template/'.DISCUZ_LANG.'_'.(defined('STYLEID') ? STYLEID.'_' : '_').$templateid.'_'.str_replace('/', '_', $file).'.tpl.php';
+/*vot*/	$cachefile = './data/template/'.DISCUZ_LANG.'_'.(defined('STYLEID') ? STYLEID.'_' : '_').$templateid.'_'.str_replace('/', '_', $file).'.tpl.php';
 
 	if($templateid != 1 && !file_exists(DISCUZ_ROOT.$tplfile)) {
 		$tplfile = './template/default/'.$filebak.'.htm';
@@ -1055,7 +1056,7 @@ function dstrlen($str) {
 }
 
 function cutstr($string, $length, $dot = ' ...') {
-	if(strlen($string) <= $length) { //vot mb_strlen?
+/*vot*/	if(dstrlen($string) <= $length) {
 		return $string;
 	}
 
