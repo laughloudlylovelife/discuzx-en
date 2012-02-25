@@ -66,6 +66,7 @@ class base {
 //vot		include_once UC_ROOT.'./view/default/main.lang.php';
 //vot	!!!! ToDo: Add Language detection by Cookie/Input !!!!!!!!!!!!!!!
 /*vot*/		define('UC_LANG',UC_DEFAULT_LANG);
+/*vot*/		define('RTLSUFFIX',UC_DEFAULT_DIR == 'rtl' ? '_rtl' : '');
 /*vot*/		include_once UC_ROOT.'./language/'.UC_LANG.'/main.lang.php';
 		$this->lang = &$lang;
 	}
