@@ -24,6 +24,9 @@ $mod = !in_array($discuz->var['mod'], $modarray) ? 'register' : $discuz->var['mo
 define('CURMODULE', $mod);
 
 $discuz->init();
+
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if($mod == 'register' && $discuz->var['mod'] != $_G['setting']['regname'] && !defined('IN_CONNECT')) {
 	showmessage('undefined_action');
 }

@@ -26,6 +26,8 @@ $discuz = & discuz_core::instance();
 $mod = $discuz->var['mod'];
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if(!in_array($mod, array('config', 'login', 'feed', 'check'))) {
 	showmessage('undefined_action');
 }

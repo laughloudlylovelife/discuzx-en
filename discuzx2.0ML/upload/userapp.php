@@ -27,6 +27,8 @@ if($appid) {
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if(empty($_G['uid']) && $mod == 'app') {
 	if($_SERVER['REQUEST_METHOD'] == 'GET') {
 		dsetcookie('_refer', rawurlencode($_SERVER['REQUEST_URI']));

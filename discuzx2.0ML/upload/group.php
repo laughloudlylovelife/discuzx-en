@@ -19,6 +19,8 @@ $cachelist = array('grouptype', 'groupindex', 'diytemplatenamegroup');
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if(!$_G['setting']['groupstatus']) {
 	showmessage('group_status_off');
 }

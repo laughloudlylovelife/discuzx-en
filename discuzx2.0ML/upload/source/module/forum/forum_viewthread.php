@@ -79,6 +79,11 @@ $thread['subjectenc'] = rawurlencode($_G['forum_thread']['subject']);
 $thread['short_subject'] = cutstr($_G['forum_thread']['subject'], 52);
 
 $navigation = '';
+//DEBUG
+//echo "<pre>";
+//echo "_G['setting']['navs']=";
+//print_r($_G['setting']['navs']);
+//echo "</pre>";
 if($_G['gp_from'] == 'portal') {
 
 	$_G['setting']['ratelogon'] = 1;

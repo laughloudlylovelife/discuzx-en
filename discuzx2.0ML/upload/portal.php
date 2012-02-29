@@ -17,6 +17,8 @@ $cachelist = array('userapp', 'portalcategory', 'diytemplatenameportal');
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 require DISCUZ_ROOT.'./source/function/function_home.php';
 require DISCUZ_ROOT.'./source/function/function_portal.php';
 

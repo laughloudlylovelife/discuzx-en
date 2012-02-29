@@ -22,6 +22,8 @@ $cachelist = array('plugin');
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if(!empty($_G['gp_id'])) {
 	list($identifier, $module) = explode(':', $_G['gp_id']);
 	$module = $module !== NULL ? $module : $identifier;

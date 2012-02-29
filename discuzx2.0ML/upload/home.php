@@ -23,6 +23,8 @@ $cachelist = array('magic','userapp','usergroups', 'diytemplatenamehome');
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 $space = array();
 
 $mod = getgpc('mod');

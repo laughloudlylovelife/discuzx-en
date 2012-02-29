@@ -61,6 +61,12 @@ if($_G['forum']['archive']) {
 $forum_up = $_G['cache']['forums'][$_G[forum][fup]];
 if($_G['forum']['type'] == 'forum') {
 	$fgroupid = $_G['forum']['fup'];
+//DEBUG
+//echo "<pre>";
+//echo "_G['setting']['navs']=";
+//print_r($_G['setting']['navs']);
+//echo "</pre>";
+
 	if(empty($_G['gp_archiveid'])) {
 		$navigation = '<em>&rsaquo;</em> <a href="forum.php">'.$_G['setting']['navs'][2]['navname'].'</a> <em>&rsaquo;</em> <a href="forum.php?gid='.$forum_up['fid'].'">'.$forum_up['name'].'</a><em>&rsaquo;</em> <a href="forum.php?mod=forumdisplay&fid='.$_G['forum']['fid'].'">'.$_G['forum']['name'].'</a>';
 	} else {
@@ -228,6 +234,11 @@ if($_G['forum']['autoclose']) {
 }
 
 $subexists = 0;
+//DEBUG
+//echo "<pre>";
+//echo "_G['cache']['forums']=";
+//print_r($_G['cache']['forums']);
+//echo "</pre>";
 foreach($_G['cache']['forums'] as $sub) {
 	if($sub['type'] == 'sub' && $sub['fup'] == $_G['fid'] && (!$_G['setting']['hideprivate'] || !$sub['viewperm'] || forumperm($sub['viewperm']) || strstr($sub['users'], "\t$_G[uid]\t"))) {
 		if(!$sub['status']) {
@@ -258,6 +269,11 @@ foreach($_G['cache']['forums'] as $sub) {
 				$sublist[] = $sub;
 			}
 		}
+//DEBUG
+//echo "<pre>";
+//echo "sublist=";
+//print_r($sublist);
+//echo "</pre>";
 		break;
 	}
 }
