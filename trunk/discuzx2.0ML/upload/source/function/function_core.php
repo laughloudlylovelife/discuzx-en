@@ -553,6 +553,7 @@ function settings_localize() {
 	$lang = & $_G['lang']['setting'];
 
 //DEBUG
+//echo "function settings_localize started.<br>\n";
 //echo "<pre>";
 //echo "lang=";
 //print_r($lang);
@@ -649,7 +650,9 @@ function settings_localize() {
 function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primaltpl='') {
 	global $_G;
 
-/*vot*/	settings_localize(); // Localize Navigation & Settings
+//DEBUG
+//echo "function template started.<br>\n";
+///*vot*/	settings_localize(); // Localize Navigation & Settings
 
 	static $_init_style = false;
 	if($_init_style === false) {

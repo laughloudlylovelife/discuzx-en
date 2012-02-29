@@ -21,6 +21,8 @@ $mod = '';
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 if(in_array($discuz->var['mod'], $modarray) || !empty($_G['setting']['search'][$discuz->var['mod']]['status'])) {
 	$mod = $discuz->var['mod'];
 } else {

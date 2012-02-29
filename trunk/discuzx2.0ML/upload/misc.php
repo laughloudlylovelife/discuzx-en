@@ -52,6 +52,8 @@ switch ($mod) {
 
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 define('CURMODULE', $mod);
 runhooks();
 

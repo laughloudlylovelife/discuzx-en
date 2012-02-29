@@ -50,6 +50,8 @@ if($discuz->var['mod'] == 'group') {
 $discuz->cachelist = $cachelist;
 $discuz->init();
 
+/*vot*/	settings_localize(); // Localize Navigation & Settings
+
 loadforum();
 set_rssauth();
 runhooks();
