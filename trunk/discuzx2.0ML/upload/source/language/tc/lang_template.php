@@ -410,6 +410,8 @@ $lang = array (
 
 	'register'	=> '註冊',//'Register',
 
+	'or'		=> '或者',//'or',
+
 // Google Maps
 	'e_map'		=> '地圖',//'Map',
 	'e_map_insert'	=> '插入google地圖',//'Insert Google Map',

@@ -5,6 +5,8 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: frame.php 1059 2011-03-01 07:25:09Z monkey $
+
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');

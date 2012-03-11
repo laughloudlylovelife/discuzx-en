@@ -482,9 +482,9 @@ EOT;
 }
 
 function show_footer($quit = true) {
-
+/*vot*/	$y = date('Y');
 /*vot*/	echo <<<EOT
-		<div class="footer">&copy;2001 - 2011 <a href="http://www.comsenz.com/">Comsenz</a> Inc.
+		<div class="footer">&copy;2001-{$y} <a href="http://www.comsenz.com/">Comsenz Inc.</a>
 		  <div>English version by <a href="http://china.sources.ru">Valery Votintsev (aka "vot") at sources.ru</a></div>
                 </div>
 	</div>

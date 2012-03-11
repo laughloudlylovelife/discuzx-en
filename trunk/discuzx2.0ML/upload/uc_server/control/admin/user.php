@@ -5,6 +5,8 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: user.php 1096 2011-05-13 11:26:36Z svn_project_zhangjie $
+
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');

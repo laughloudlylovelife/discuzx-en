@@ -410,6 +410,8 @@ $lang = array (
 
 	'register'	=> 'Регистрация',
 
+	'or'		=> 'или',//'或者',
+
 // Google Maps
 	'e_map'		=> 'Map',//'地图',
 	'e_map_insert'	=> 'Insert Google Map',//'插入google地图',

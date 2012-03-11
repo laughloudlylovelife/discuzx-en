@@ -410,6 +410,8 @@ $lang = array (
 
 	'register'	=> 'التسجيل',
 
+	'or'		=> 'or',//'或者',
+
 // Google Maps
 	'e_map'		=> 'خريطة',//'地图',
 	'e_map_insert'	=> 'إداراج خريطة جوجل',//'插入google地图',
