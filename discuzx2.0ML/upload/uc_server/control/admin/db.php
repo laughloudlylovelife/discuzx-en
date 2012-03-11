@@ -1,5 +1,5 @@
 <?php
-
+// Modified by Valery Votintsev, codersclub.org
 class control extends adminbase {
 
 	var $startrow = 0;

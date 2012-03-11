@@ -410,6 +410,8 @@ $lang = array (
 
 	'register'	=> '회원가입',//'注册',
 
+	'or'		=> 'or',//'或者',
+
 // Google Maps
 	'e_map'		=> '지도',//'地图',
 	'e_map_insert'	=> '구글맵 삽입',//'插入google地图',

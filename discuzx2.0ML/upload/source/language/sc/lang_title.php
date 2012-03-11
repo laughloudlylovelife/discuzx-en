@@ -6,7 +6,7 @@
  *
  *      $Id: lang_title.php by Valery Votintsev at sources.ru
  *
- *	Language Title and Icon
+ *	Simplified Chinese Language Pack
  *
  */
 
