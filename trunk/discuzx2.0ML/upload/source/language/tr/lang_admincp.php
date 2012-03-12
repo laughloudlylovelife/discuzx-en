@@ -6190,6 +6190,9 @@ RepeatLimit 32
 //---------------------------
 // Added by Valery Votintsev
 
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> 'Subscribe',//'订阅',
+
 //source/admincp/admincp_quickquery.php
 	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',
 	'quick_enable_trash'		=> 'Enable Recycle Bin for all forums',//'开启 所有版块 主题回收站',
@@ -6229,4 +6232,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>

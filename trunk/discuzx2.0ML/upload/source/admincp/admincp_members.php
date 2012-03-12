@@ -145,11 +145,13 @@ EOF;
 	$detail = '';
 	if($uids && is_array($uids)) {
 		$conditions = 'p.uid IN ('.dimplode($uids).')';
-		$query = DB::query("SELECT p.uid,m.username AS username,p.realname,p.gender,p.birthyear,p.birthmonth,p.birthday,p.constellation,
-				p.zodiac,p.telephone,p.mobile,p.idcardtype,p.idcard,p.address,p.zipcode,p.nationality,p.birthprovince,p.birthcity,p.birthdist,
-				p.birthcommunity,p.resideprovince,p.residecity,p.residedist,p.residecommunity,p.residesuite,p.graduateschool,p.education,p.company,
-				p.occupation,p.position,p.revenue,p.affectivestatus,p.lookingfor,p.bloodtype,p.height,p.weight,p.alipay,p.icq,p.qq,
-				p.yahoo,p.msn,p.taobao,p.site,p.bio,p.interest,p.field1,p.field2,p.field3,p.field4,p.field5,p.field6,p.field7,p.field8 FROM ".
+/*vot*/		$query = DB::query("SELECT p.uid,m.username AS username,p.realname,p.gender,p.birthyear,p.birthmonth,p.birthday,p.constellation,
+				p.zodiac,p.telephone,p.mobile,p.idcardtype,p.idcard,p.address,p.zipcode,p.nationality,
+				p.birthcountry,p.birthprovince,p.birthcity,p.birthdist,p.birthcommunity,
+				p.residecountry,p.resideprovince,p.residecity,p.residedist,p.residecommunity,p.residesuite,p.graduateschool,p.education,p.company,
+				p.occupation,p.position,p.revenue,p.affectivestatus,p.lookingfor,p.bloodtype,p.height,p.weight,
+				p.alipay,p.icq,p.qq,p.yahoo,p.msn,p.taobao,p.site,p.bio,p.interest,
+				p.field1,p.field2,p.field3,p.field4,p.field5,p.field6,p.field7,p.field8 FROM ".
 				DB::table('common_member_profile')." p LEFT JOIN ".DB::table('common_member')." m ON p.uid =m.uid WHERE ".$conditions);
 		while($v = DB::fetch($query)) {
 			foreach($v as $key => $value) {
@@ -160,14 +162,62 @@ EOF;
 			$detail = $detail."\n";
 		}
 	}
-	$title = array('realname' => '', 'gender' => '', 'birthyear' => '', 'birthmonth' => '', 'birthday' => '', 'constellation' => '',
-		'zodiac' => '', 'telephone' => '', 'mobile' => '', 'idcardtype' => '', 'idcard' => '', 'address' => '', 'zipcode' => '','nationality' => '',
-		'birthprovince' => '', 'birthcity' => '', 'birthdist' => '', 'birthcommunity' => '', 'resideprovince' => '', 'residecity' => '', 'residedist' => '',
-		'residecommunity' => '', 'residesuite' => '', 'graduateschool' => '', 'education' => '', 'company' => '', 'occupation' => '',
-		'position' => '', 'revenue' => '', 'affectivestatus' => '', 'lookingfor' => '', 'bloodtype' => '', 'height' => '', 'weight' => '',
-		'alipay' => '', 'icq' => '', 'qq' => '', 'yahoo' => '', 'msn' => '', 'taobao' => '', 'site' => '', 'bio' => '', 'interest' => '',
-		'field1' => '', 'field2' => '', 'field3' => '', 'field4' => '', 'field5' => '', 'field6' => '', 'field7' => '', 'field8' => '');
-	$query = DB::query("SELECT fieldid, title FROM ".DB::table('common_member_profile_setting'));
+	$title = array(
+		'realname' => '',
+		'gender' => '',
+		'birthyear' => '',
+		'birthmonth' => '',
+		'birthday' => '',
+		'constellation' => '',
+		'zodiac' => '',
+		'telephone' => '',
+		'mobile' => '',
+		'idcardtype' => '',
+		'idcard' => '',
+		'address' => '',
+		'zipcode' => '',
+		'nationality' => '',
+///*vot*/		'birthcountry' => '',
+		'birthprovince' => '',
+		'birthcity' => '',
+		'birthdist' => '',
+		'birthcommunity' => '',
+///*vot*/		'residecountry' => '',
+		'resideprovince' => '',
+		'residecity' => '',
+		'residedist' => '',
+		'residecommunity' => '',
+		'residesuite' => '',
+/*vot*/		'graduateschool' => '',
+		'education' => '',
+/*vot*/		'company' => '',
+		'occupation' => '',
+		'position' => '',
+		'revenue' => '',
+		'affectivestatus' => '',
+		'lookingfor' => '',
+		'bloodtype' => '',
+		'height' => '',
+		'weight' => '',
+		'alipay' => '',
+		'icq' => '',
+		'qq' => '',
+		'yahoo' => '',
+		'msn' => '',
+		'taobao' => '',
+		'site' => '',
+		'bio' => '',
+		'interest' => '',
+		'field1' => '',
+		'field2' => '',
+		'field3' => '',
+		'field4' => '',
+		'field5' => '',
+		'field6' => '',
+		'field7' => '',
+		'field8' => '');
+/*vot*/	$query = DB::query("SELECT fieldid, title
+			    FROM ".DB::table('common_member_profile_setting'));
 	while($value = DB::fetch($query)) {
 		if(isset($title[$value['fieldid']])) {
 			$title[$value['fieldid']] = $value['title'];
@@ -185,6 +235,7 @@ EOF;
 	header('Content-Disposition: attachment; filename='.$filename);
 	header('Pragma: no-cache');
 	header('Expires: 0');
+//vot !!!!!!! VERIFY THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if($_G['charset'] != 'gbk') {
 		$detail = diconv($detail, $_G['charset'], 'GBK');
 	}
@@ -1464,14 +1515,14 @@ EOT;
 				<td colspan="2">
 					<ul class="dblist" onmouseover="altStyle(this);">
 						<li style="width: 100%;"><input type="checkbox" name="chkall" onclick="checkAll('prefix', this.form, 'clear')" class="checkbox">&nbsp;$lang[select_all]</li>
-						<li style="width: 8%;"><input type="checkbox" value="post" name="clear[post]" class="checkbox">&nbsp;$lang[members_ban_delpost]</li>
-						<li style="width: 8%;"><input type="checkbox" value="postcomment" name="clear[postcomment]" class="checkbox">&nbsp;$lang[members_ban_postcomment]</li>
-						<li style="width: 8%;"><input type="checkbox" value="doing" name="clear[doing]" class="checkbox">&nbsp;$lang[members_ban_deldoing]</li>
-						<li style="width: 8%;"><input type="checkbox" value="blog" name="clear[blog]" class="checkbox">&nbsp;$lang[members_ban_delblog]</li>
-						<li style="width: 8%;"><input type="checkbox" value="album" name="clear[album]" class="checkbox">&nbsp;$lang[members_ban_delalbum]</li>
-						<li style="width: 8%;"><input type="checkbox" value="share" name="clear[share]" class="checkbox">&nbsp;$lang[members_ban_delshare]</li>
-						<li style="width: 8%;"><input type="checkbox" value="avatar" name="clear[avatar]" class="checkbox">&nbsp;$lang[members_ban_delavatar]</li>
-						<li style="width: 8%;"><input type="checkbox" value="comment" name="clear[comment]" class="checkbox">&nbsp;$lang[members_ban_delcomment]</li>
+<!--vot-->					<li><input type="checkbox" value="post" name="clear[post]" class="checkbox">&nbsp;$lang[members_ban_delpost]</li>
+<!--vot-->					<li><input type="checkbox" value="postcomment" name="clear[postcomment]" class="checkbox">&nbsp;$lang[members_ban_postcomment]</li>
+<!--vot-->					<li><input type="checkbox" value="doing" name="clear[doing]" class="checkbox">&nbsp;$lang[members_ban_deldoing]</li>
+<!--vot-->					<li><input type="checkbox" value="blog" name="clear[blog]" class="checkbox">&nbsp;$lang[members_ban_delblog]</li>
+<!--vot-->					<li><input type="checkbox" value="album" name="clear[album]" class="checkbox">&nbsp;$lang[members_ban_delalbum]</li>
+<!--vot-->					<li><input type="checkbox" value="share" name="clear[share]" class="checkbox">&nbsp;$lang[members_ban_delshare]</li>
+<!--vot-->					<li><input type="checkbox" value="avatar" name="clear[avatar]" class="checkbox">&nbsp;$lang[members_ban_delavatar]</li>
+<!--vot-->					<li><input type="checkbox" value="comment" name="clear[comment]" class="checkbox">&nbsp;$lang[members_ban_delcomment]</li>
 					</ul>
 				</td>
 			</tr>
@@ -2184,13 +2235,17 @@ EOF;
 		$_G['setting']['privacy'] = !empty($_G['setting']['privacy']) ? $_G['setting']['privacy'] : array();
 		$_G['setting']['privacy'] = is_array($_G['setting']['privacy']) ? $_G['setting']['privacy'] : unserialize($_G['setting']['privacy']);
 
-		$field = DB::fetch_first("SELECT * FROM ".DB::table('common_member_profile_setting')." WHERE fieldid='$fieldid'");
+/*vot*/		$field = DB::fetch_first("SELECT *
+				FROM ".DB::table('common_member_profile_setting')."
+				WHERE fieldid='$fieldid'");
 		$fixedfields1 = array('uid', 'constellation', 'zodiac');
 		$fixedfields2 = array('realname', 'gender', 'birthday', 'birthcity', 'residecity');
 		$field['isfixed1'] = in_array($fieldid, $fixedfields1);
 		$field['isfixed2'] = $field['isfixed1'] || in_array($fieldid, $fixedfields2);
 		$field['customable'] = preg_match('/^field[1-8]$/i', $fieldid);
-		$result = DB::fetch_first("SELECT * FROM ".DB::table('common_setting')." WHERE skey='profilegroup'");
+/*vot*/		$result = DB::fetch_first("SELECT *
+					 FROM ".DB::table('common_setting')."
+					 WHERE skey='profilegroup'");
 		if(!empty($result['svalue'])) {
 			$profilegroup = unserialize($result['svalue']);
 		}
@@ -2366,7 +2421,9 @@ EOF;
 		}
 	} else {
 
-		$query = DB::query("SELECT title, displayorder, available, invisible, showincard, showinregister, fieldid FROM ".DB::table('common_member_profile_setting')." ORDER BY available DESC, displayorder");
+/*vot*/		$query = DB::query("SELECT title, displayorder, available, invisible, showincard, showinregister, fieldid
+				    FROM ".DB::table('common_member_profile_setting')."
+				    ORDER BY displayorder, available DESC");
 		$list = array();
 		while($value = DB::fetch($query)) {
 			$fieldid = $value['fieldid'];

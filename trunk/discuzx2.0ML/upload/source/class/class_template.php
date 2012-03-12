@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: class_template.php 21577 2011-04-01 02:07:21Z monkey $
- *	MultiLingual by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -126,7 +126,7 @@ class template {
 		}
 		if(!isset($langvar[$var])) {
 			$lang = array();
-/*vot ML*/		@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/lang_template.php';
+/*vot*/			@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/lang_template.php';
 			$this->language['inner'] = $lang;
 			if(!$isplugin) {
 
@@ -136,11 +136,11 @@ class template {
 					list($path) = explode('/', $this->file);
 				}
 
-/*vot ML*/			@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.$path.'/lang_template.php';
+/*vot*/				@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/'.$path.'/lang_template.php';
 				$this->language['inner'] = array_merge($this->language['inner'], $lang);
 
 				if(defined('IN_MOBILE')) {
-/*vot ML*/				@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/mobile/lang_template.php';
+/*vot*/					@include DISCUZ_ROOT.'source/language/'.DISCUZ_LANG.'/mobile/lang_template.php';
 					$this->language['inner'] = array_merge($this->language['inner'], $lang);
 				}
 			} else {

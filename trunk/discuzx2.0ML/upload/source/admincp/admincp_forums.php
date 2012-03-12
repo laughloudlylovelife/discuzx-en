@@ -186,6 +186,7 @@ var rowtypedata = [
 					$forumfields['fid'] = $fid = DB::insert('forum_forum', $data, 1);
 
 					$data = array();
+// Get Thread Types from source forum
 					$forumfields['threadtypes'] = copy_threadclasses($forumfields['threadtypes'], $fid);
 					foreach($table_forumfield_columns as $field) {
 						if(isset($forumfields[$field])) {

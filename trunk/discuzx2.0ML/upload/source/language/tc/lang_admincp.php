@@ -6183,6 +6183,32 @@ RepeatLimit 32
 {nginx}
 </pre>',
 
+
+//---------------------------
+// Added by Valery Votintsev
+
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> '订阅',//'Subscribe',
+
+//source/admincp/admincp_quickquery.php
+	'quick_enable'			=> '快速开启论坛版块功能',
+	'quick_enable_trash'		=> '开启 所有版块 主题回收站',
+	'quick_enable_bbcode'		=> '开启 所有版块 Discuz! 代码”',
+	'quick_enable_img'		=> '开启 所有版块 [IMG] 代码”',
+	'quick_enable_smilies'		=> '开启 所有版块 Smilies 代码',
+	'quick_enable_jammer'		=> '开启 所有版块 内容干扰码',
+	'quick_enable_anonymous'	=> '开启 所有版块 允许匿名发贴”',
+	'quick_disable'			=> '快速关闭论坛版块功能',
+	'quick_disable_trash'		=> '关闭 所有版块 主题回收站',
+	'quick_disable_html'		=> '关闭 所有版块 HTML 代码',
+	'quick_disable_bbcode'		=> '关闭 所有版块 Discuz! 代码',
+	'quick_disable_img'		=> '关闭 所有版块 [IMG] 代码',
+	'quick_disable_smilies'		=> '关闭 所有版块 Smilies 代码',
+	'quick_disable_jammer'		=> '关闭 所有版块 内容干扰码',
+	'quick_disable_anonymous'	=> '关闭 所有版块 允许匿名发贴',
+	'quick_members'			=> '会员操作相关',
+	'quick_clean_trans'		=> '清空 所有会员 积分交易记录',
+
 //---------------------------
 //Change Language
 'change_language'	=> '更改语言',//'Change language',
@@ -6202,4 +6228,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>
