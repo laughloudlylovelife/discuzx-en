@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	Javascript Language variables for English
+	Javascript Language variables
 
 	$Id: static/js/lang_js.js by Valery Votintsev, vot at sources.ru
 
@@ -16,6 +16,7 @@ var emaildomains = [
 		'aol.com',
 		'gmail.com',
 		'hotmail.com',
+		'msn.com',
 		'yahoo.com'
 		];
 
@@ -286,7 +287,7 @@ var lng = {
 	'width'			: 'Width',//'宽',
 	'height'		: 'Height',//'高',
 	'audio_support'		: 'Supported wma, mp3, ra, rm, and other music formats<br />Example: http://server/audio.wma',//'支持 wma mp3 ra rm 等音乐格式<br />示例: http://server/audio.wma',
-	'video_support'		: 'Supported for Youku, potatoes, 56, 6, cool video and other video stations at <br /> support wmv avi rmvb mov swf flv video formats <br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
+	'video_support'		: 'Supported for Youku, Potatoes, 56, 6, Cool video and other video services<br />Supported video formats: wmv avi rmvb mov swf flv.<br /> Example: http://server/movie.wmv',//'支持优酷、土豆、56、酷6等视频站的视频网址<br />支持 wmv avi rmvb mov swf flv 等视频格式<br />示例: http://server/movie.wmv',
 	'flash_support'		: 'Supported Flash formats: swf flv <br /> Example: http://server/flash.swf',//'支持 swf flv 等 Flash 网址<br />示例: http://server/flash.swf',
 	'paste_from_word'	: 'Paste a content from Word',//'从 Word 粘贴内容',
 	'paste_word_tip'	: 'Please use shortcut (Ctrl + V) to paste the content from Word document',//'请通过快捷键(Ctrl+V)把 Word 文件中的内容粘贴到上',

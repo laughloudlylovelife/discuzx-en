@@ -6191,6 +6191,9 @@ RepeatLimit 32
 //---------------------------
 // Added by Valery Votintsev
 
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> 'Subscribe',//'订阅',
+
 //source/admincp/admincp_quickquery.php
 	'quick_enable'			=> 'تفعيل السريع للخصائص',//'快速开启论坛版块功能',
 	'quick_enable_trash'		=> 'تفعيل سله المهملات لجميع الأقسام',//'开启 所有版块 主题回收站',

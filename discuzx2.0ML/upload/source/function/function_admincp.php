@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: function_admincp.php 22760 2011-05-20 01:03:11Z monkey $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -639,7 +639,7 @@ function showsetting($setname, $varname, $value, $type = 'radio', $disabled = ''
 	} elseif($type == 'mradio' || $type == 'mradio2') {
 		$nocomment = $type == 'mradio2' && !isset($_G['showsetting_multi']) ? true : false;
 		$addstyle = $nocomment ? ' style="float: left; width: 18%"' : '';
-		$ulstyle = $nocomment ? ' style="width: 830px"' : '';
+/*vot*/		$ulstyle = $nocomment ? ' style="width: 100%"' : '';
 		if(is_array($varname)) {
 			$radiocheck = array($value => ' checked');
 			$s .= '<ul'.(empty($varname[2]) ?  ' class="nofloat"' : '').' onmouseover="altStyle(this'.$check['disabledaltstyle'].');"'.$ulstyle.'>';
@@ -660,7 +660,7 @@ function showsetting($setname, $varname, $value, $type = 'radio', $disabled = ''
 	} elseif($type == 'mcheckbox' || $type == 'mcheckbox2') {
 		$nocomment = $type != 'mcheckbox2' && count($varname[1]) > 3 && !isset($_G['showsetting_multi']) ? true : false;
 		$addstyle = $nocomment ? ' style="float: left; width: 18%"' : '';
-		$ulstyle = $nocomment ? ' style="width: 830px"' : '';
+/*vot*/		$ulstyle = $nocomment ? ' style="width: 100%"' : '';
 		$s .= '<ul class="nofloat" onmouseover="altStyle(this'.$check['disabledaltstyle'].');"'.$ulstyle.'>';
 		foreach($varname[1] as $varary) {
 			if(is_array($varary) && !empty($varary)) {
@@ -682,7 +682,7 @@ function showsetting($setname, $varname, $value, $type = 'radio', $disabled = ''
 	} elseif($type == 'omcheckbox') {
 		$nocomment = count($varname[1]) > 3 ? true : false;
 		$addstyle = $nocomment ? 'style="float: left; width: 18%"' : '';
-		$ulstyle = $nocomment ? 'style="width: 830px"' : '';
+/*vot*/		$ulstyle = $nocomment ? ' style="width: 100%"' : '';
 		$s .= '<ul onmouseover="altStyle(this'.$check['disabledaltstyle'].');"'.(empty($varname[2]) ? ' class="nofloat"' : 'class="ckbox"').' '.$ulstyle.'>';
 		foreach($varname[1] as $varary) {
 			if(is_array($varary) && !empty($varary)) {
@@ -902,13 +902,22 @@ function cpfooter() {
 		$release = DISCUZ_RELEASE;
 
 /*vot*/		$newsurl =  'http://customer.discuz.net/news.php?'.siteinformation();
+/*vot*/		$subscribe = cplang('subscribe');
+/*vot*/		$lang = DISCUZ_LANG;
 		echo <<<EOT
 <script type="text/javascript">
 	var newhtml = '';
+/*vot*/	var lang = '{$lang}';
+/*vot*/	var code;
 /*vot*/	newhtml += '<table class="tb tb2"><tr><th class="partition edited">You are currently using up-to-date Discuz! program. To update, please refer to the prompts of following line</th></tr>';
 	newhtml += '<tr><td class="tipsblock"><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version={$version}&release={$release}&charset={$charset}" target="_blank"><img src="{$newsurl}" onload="shownews()" /></a></td></tr></table>';
+/*vot*/	var elem = document.getElementsByClassName('rssbutton')[0];
+/*vot*/	code = elem.innerHTML;
+/*vot*/	code = elem.innerHTML.replace(/订阅/, '{$subscribe}');
+
+/*vot*/	elem.innerHTML = code;
 	\$('boardnews').style.display = 'none';
-	\$('boardnews').innerHTML = newhtml;
+//vot	\$('boardnews').innerHTML = newhtml;
 	function shownews() {
 		\$('boardnews').style.display = '';
 	}
@@ -1337,4 +1346,3 @@ function rewritedata($alldata = 1) {
 	return $data;
 }
 
-?>

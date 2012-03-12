@@ -620,7 +620,7 @@ $lang = array
 	'setting_access_register_welcomemsgtxt_comment'	=> 'Текст оправляемого сообщения. Можно использовать переменные:<br />{username}: имя пользователя<br />{time}: дата отправки<br />{sitename}: название сайта<br />{bbname}: название сайта 2<br />{adminemail}: Email администратора',
 	'setting_access_register_bbrules'		=> 'Пользовательское Соглашение',
 	'setting_access_register_bbruleforce'		=> 'Обязательный показ Соглашения',
-	'setting_access_register_bbruleforce_comment'	=> 'Требуется ли обязательно показвать тест Соглашения при регистрации. Для продолжения регистрации пользователь должен согласиться с условиями Соглашения.',
+	'setting_access_register_bbruleforce_comment'	=> 'Требуется ли обязательно показывать тест Соглашения при регистрации. Для продолжения регистрации пользователь должен согласиться с условиями Соглашения.',
 	'setting_access_register_bbrules_comment'	=> 'Показ Пользовательское Соглашение пользователю',
 	'setting_access_register_bbrulestxt'		=> 'Текст Пользовательского Соглашения',
 	'setting_access_register_bbrulestxt_comment'	=> 'Подробное описание Соглашения',
@@ -2499,11 +2499,11 @@ $lang = array
 	'misc_customnav_subname'	=> 'Название субнавигации',
 	'misc_customnav_suburl'		=> 'Ссылки субнавигации',
 
-	'nav_nav_headernav'	=> 'Верхняя навигация',
-	'nav_nav_spacenav'	=> 'Домашняя навигация',
-	'nav_nav_footernav'	=> 'Нижняя навигация',
-	'nav_nav_mynav'		=> 'Персональная навигация',
-	'nav_nav_topnav'	=> 'Верхняя часть страницы',
+	'nav_nav_headernav'	=> 'Главное меню',
+	'nav_nav_spacenav'	=> 'Домашняя страница',
+	'nav_nav_footernav'	=> 'Подвал страниц',
+	'nav_nav_mynav'		=> 'Мой центр',
+	'nav_nav_topnav'	=> 'Шапка страниц',
 	'nav_topnav_add'	=> 'Добавить навигацию',
 	'nav_footernav_add'	=> 'Добавить навигацию',
 	'nav_spacenav_add'	=> 'Добавить навигацию',
@@ -6179,6 +6179,9 @@ RepeatLimit 32
 //---------------------------
 // Added by Valery Votintsev
 
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> 'Subscribe',//'订阅',
+
 //source/admincp/admincp_quickquery.php
 	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',
 	'quick_enable_trash'		=> 'Enable Recycle Bin for all forums',//'开启 所有版块 主题回收站',
@@ -6218,4 +6221,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>

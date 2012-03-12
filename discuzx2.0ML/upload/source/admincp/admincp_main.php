@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_main.php 22760 2011-05-20 01:03:11Z monkey $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -35,7 +35,7 @@ foreach($_G['config']['languages'] AS $lng => $lngarray) {
 	<img src="'.$_G[siteroot].'source/language/'.$lng.'/'.$lngarray['icon'].'"/> '.$lngarray['name'].'
       	</a>'."\n";
 }
-$rtl_suffix = RTLSUFFIX;
+/*vot*/	$rtl_suffix = RTLSUFFIX;
 echo <<<EOT
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{$_G[langdir]}"><head>
@@ -238,7 +238,7 @@ echo <<<EOT
 	function resizeHeadermenu() {
 		var lis = $('topmenu').getElementsByTagName('li');
 /*vot*/		var maxsize = document.body.clientWidth - 180;
-		var widths = 0, moi = -1, mof = '';
+/*vot*/		var widths = 0, moi = -1, mof = '';
 		if($('menu_mof')) {
 			$('topmenu').removeChild($('menu_mof'));
 		}

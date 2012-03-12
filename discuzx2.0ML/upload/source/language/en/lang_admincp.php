@@ -657,7 +657,7 @@ $lang = array
 	'setting_access_register_connect_credit'		=> 'QQ logged users credit',//'QQ注册用户奖励所用扩展积分',
 	'setting_access_register_connect_credit_comment'	=> 'Logged by QQ users must have points in their account',//'通过QQ注册后，用户奖励所用的扩展积分',
 	'setting_access_register_connect_addcredit'		=> 'Add bonus to registered by QQ users',//'QQ注册用户奖励积分数量',
-	'setting_access_register_connect_addcredit_comment'	=> 'When users registrered through QQ, they will get an award of points',//'通过QQ注册后，用户奖励的扩展积分数量',
+	'setting_access_register_connect_addcredit_comment'	=> 'When users registered through QQ, they will get an award of points',//'通过QQ注册后，用户奖励的扩展积分数量',
 	'setting_access_register_connect_group'			=> 'User groups enabled to register by QQ',//'QQ注册用户初始用户组',
 	'setting_access_register_connect_group_comment'		=> 'Set the groups who can access to the site by QQ number',//'通过QQ注册后，用户的初始用户组',
 	'setting_access_register_connect_regverify'		=> 'Skip verification for QQ users',//'QQ注册的用户忽略注册验证',
@@ -1062,11 +1062,11 @@ $lang = array
 	'setting_domain_allow_group_comment'		=> 'If this is turned ON, you need to set the root domain name, domain name and user group open only after the length of domain name applications',//'开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_hold_domain'			=> 'Reserved subdomain names',//'保留二级域名',
 	'setting_domain_hold_domain_comment'		=> 'Separate multiple domains with "|". You can use the wildcard "*"',//'多个之间用 | 隔开，可以使用通配符* ',
-	'setting_profile_group'				=> 'User groups',//'用户栏目分组',
-	'setting_profile_group_setting'			=> 'User group settings section',//'用户栏目分组设置',
+	'setting_profile_group'				=> 'Group Profile Fields',//'用户栏目分组',
+	'setting_profile_group_setting'			=> 'Group Profile Fields settings',//'用户栏目分组设置',
 	'setting_profile_group_available'		=> 'Available',//'显示',
 	'setting_profile_group_displayorder'		=> 'Display order',//'显示顺序',
-	'setting_profile_group_name'			=> 'Local group name',//'栏目分组名称',
+	'setting_profile_group_name'			=> 'Field name',//'栏目分组名称',
 	'setting_profile_group_list'			=> 'List',//'列表',
 	'setting_profile_permission_basic_status'	=> 'Custom Title',//'自定义头衔',
 	'setting_profile_personal_signature'		=> 'Personal signature',//'个人签名',
@@ -1967,7 +1967,7 @@ $lang = array
 	'setting_ranklist_index'		=> 'Top List Home',//'排行榜首页',
 	'setting_ranklist_cache_comment'	=> 'Set a reasonable choice to update the module cache according to your server loading. The more modules selected will cause the more the higher server loading.',//'请根据服务器的负载情况，合理选择需要更新缓存的模块，选的模块越多服务器的负载越高。',
 
-	'setting_profile_field'			=> 'Optional profile fields (<a href="?action=members&operation=profile">Click here to enable the new field</a>)',//'可选的资料项(<a href="?action=members&operation=profile">点此启用新资料项</a>)',
+	'setting_profile_field'			=> 'Optional profile fields (<a href="?action=members&operation=profile">Click here for manage all fields</a>)',//'可选的资料项(<a href="?action=members&operation=profile">点此启用新资料项</a>)',
 
 	'tag'				=> 'Tag Management',//'标签管理',
 	'tag_set'			=> 'Set',//'设置',
@@ -2470,8 +2470,8 @@ $lang = array
 	'misc_customnav_parent_top'		=> 'Main Menu',//'主菜单',
 	'misc_customnav_subtype'		=> 'Sub-menu style',//'二级导航样式',
 	'misc_customnav_subtype_comment'	=> 'If the main menu have a secondary navigation sub-menu, the sub-menu can be displayed as menu style, or horizontally',//'如果此主导航存在二级导航，设置二级导航样式是以菜单方式显示，还是以横排方式显示',
-	'misc_customnav_subtype_menu'		=> 'Menu Style',//'菜单样式',
-	'misc_customnav_subtype_sub'		=> 'Horizontal style',//'横排样式',
+	'misc_customnav_subtype_menu'		=> 'Drop-down Menu',//'菜单样式',
+	'misc_customnav_subtype_sub'		=> 'Horizontal Menu',//'横排样式',
 	'misc_customnav_title'			=> 'Menu Item Title',//'菜单说明',
 	'misc_customnav_title_comment'		=> 'Menu item description, when a mouse is over',//'导航的说明会在鼠标移动到其上面时显示',
 	'misc_customnav_url'			=> 'Menu Item URL',//'菜单链接',
@@ -2504,10 +2504,10 @@ $lang = array
 	'nav_nav_mynav'			=> 'Personal navigation',//'个人导航',
 	'nav_nav_topnav'		=> 'Top Navigation',//'顶部导航',
 	'nav_topnav_add'		=> 'Add top navigation',//'添加顶部导航',
-	'nav_footernav_add'		=> 'Add the footer navigation',//'添加页尾导航',
-	'nav_spacenav_add'		=> 'Add a space navigation',//'添加空间导航',
-	'nav_spacenav_add_hr'		=> 'Add a horizontal separator',//'添加分割线',
-	'nav_spacenav_hr'		=> 'Dividing lines',//'分割线',
+	'nav_footernav_add'		=> 'Add footer navigation',//'添加页尾导航',
+	'nav_spacenav_add'		=> 'Add space navigation',//'添加空间导航',
+	'nav_spacenav_add_hr'		=> 'Add horizontal separator',//'添加分割线',
+	'nav_spacenav_hr'		=> 'Horizontal separator',//'分割线',
 	'nav_spacenav_userpanelarea1'	=> '{navname} Area 1',//'{navname}区域1',
 	'nav_spacenav_userpanelarea2'	=> '{navname} Area 2',//'{navname}区域2',
 	'nav_mynav_add'			=> 'Add a personal navigation',//'添加个人导航',
@@ -2991,10 +2991,10 @@ $lang = array
 
 	'members_profile'				=> 'User profile',//'用户栏目',
 	'members_profile_edit'				=> 'Edit User profile',//'编辑用户栏目',
-	'members_profile_list'				=> 'Topic list',//'栏目列表',
-	'members_profile_group'				=> 'Local groups',//'栏目分组',
+	'members_profile_list'				=> 'Field list',//'栏目列表',
+	'members_profile_group'				=> 'Field groups',//'栏目分组',
 	'members_profile_tips'				=> '<li>Show or hide the user extended information</li><li>As a setting results the existing user information can be expanded.</li>',//'<li>增加或隐藏用户扩展资料</li><li>设置结果可以扩充现有的用户资料。</li>',
-	'members_profile_edit_name'			=> 'Category Name',//'栏目名称',
+	'members_profile_edit_name'			=> 'Field Name',//'栏目名称',
 	'members_profile_edit_field'			=> 'Field name',//'字段名',
 	'members_profile_edit_field_desc'		=> 'Field description',//'栏目描述',
 	'members_profile_edit_available'		=> 'Enable',//'启用',
@@ -3054,7 +3054,7 @@ $lang = array
 	'profilefields_invisible'		=> 'Hidden',//'隐藏',
 	'profilefields_unchangeable'		=> 'Unchangeable',//'不可修改',
 	'profilefields_fields'			=> 'User profile fields',//'用户栏目',
-	'profilefields_add'			=> 'Add a new field',//'添加新栏目',
+	'profilefields_add'			=> 'Add new field',//'添加新栏目',
 
 	'profilefields_edit'			=> 'Edit profile fields',//'编辑栏目信息',
 	'profilefields_edit_title'		=> 'Field title',//'栏目标题',
@@ -6189,6 +6189,9 @@ RepeatLimit 32
 
 //---------------------------
 // Added by Valery Votintsev
+
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> 'Subscribe',//'订阅',
 
 //source/admincp/admincp_quickquery.php
 	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',

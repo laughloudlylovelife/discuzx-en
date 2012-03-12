@@ -17,8 +17,7 @@ $lang = array(
 	'friend_group_6'	=> 'Classmates',//'同学',
 	'friend_group_7'	=> 'Not known',//'不认识',
 	'friend_group_more'	=> 'Customize {num}'//'自定义{num}'
-//vot: !!!!!!!!!!!!!!!!! Add other categoies from UCHome lang_source.php !!!!!
+//vot: !!!!!!!!!!!!!!!!! Add other categories from UCHome lang_source.php !!!!!
 //	'friend_group_0'	=> 'Others',//'其他',
 );
 
-?>

@@ -6188,6 +6188,9 @@ RepeatLimit 32
 //---------------------------
 // Added by Valery Votintsev
 
+//source/admincp/admincp_index.php - javascript function shownews()
+	'subscribe'			=> '订阅',//'Subscribe',
+
 //source/admincp/admincp_quickquery.php
 	'quick_enable'			=> '快速开启论坛版块功能',
 	'quick_enable_trash'		=> '开启 所有版块 主题回收站',
@@ -6210,6 +6213,7 @@ RepeatLimit 32
 //---------------------------
 //Change Language
 'change_language'	=> '更改语言',//'Change language',
+'change_style'		=> '切换风格',//'Change Style',
 
 );
 
@@ -6226,4 +6230,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>

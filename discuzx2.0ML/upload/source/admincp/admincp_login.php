@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_login.php 23799 2011-08-10 05:53:01Z cnteacher $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev at sources.ru
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {

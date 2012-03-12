@@ -146,7 +146,17 @@ if($isfounder) {
 
 	$view_mastermobile = !empty($save_mastermobile) ? substr($save_mastermobile, 0 , 3).'*****'.substr($save_mastermobile, -3) : '';
 
-	$securityadvise = '<li><p>'.cplang('home_security_service_info').'</p><form method="post" autocomplete="off" action="'.ADMINSCRIPT.'?action=index&securyservice=yes">'.cplang('home_security_service_mobile').': <input type="text" class="txt" name="new_mastermobile" value="'.$view_mastermobile.'" size="30" /> <input type="submit" class="btn" name="securyservice" value="'.cplang($view_mastermobile ? 'submit' : 'home_security_service_open').'"  /> <span class="lightfont">'.cplang($view_mastermobile ? 'home_security_service_mobile_save' : 'home_security_service_mobile_none').'</span></form></li>'.$securityadvise;
+/*vot*/	$securityadvise = 
+		'<li>'.
+		'<p>'.cplang('home_security_service_info').'</p>'.
+		'<form method="post" autocomplete="off" action="'.ADMINSCRIPT.'?action=index&securyservice=yes">'.
+			cplang('home_security_service_mobile').': '.
+			'<input type="text" class="txt" name="new_mastermobile" value="'.$view_mastermobile.'" size="30" />'.
+			'<input type="submit" class="btn" name="securyservice" value="'.cplang($view_mastermobile ? 'submit' : 'home_security_service_open').'"  />'.
+			'<span class="lightfont">'.cplang($view_mastermobile ? 'home_security_service_mobile_save' : 'home_security_service_mobile_none').'</span>'.
+		'</form>'.
+		'</li>'.
+		$securityadvise;
 }
 
 if($securityadvise) {
@@ -225,7 +235,7 @@ showtableheader('home_sys_info', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_discuz_version'),
 /*vot*/	'International Discuz! '.DISCUZ_VERSION.' Release '.DISCUZ_RELEASE.', Revision '.DISCUZ_ML_REVISION.'
-        <br/><strong><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.CHARSET.'&dbcharset='.$dbcharset.'" class="lightlink2 smallfont" target="_blank">'.cplang('home_check_newversion').'</a></strong>
+	<br/><a href="http://faq.comsenz.com/checkversion.php?product=Discuz&version='.DISCUZ_VERSION.'&release='.DISCUZ_RELEASE.'&charset='.CHARSET.'&dbcharset='.$dbcharset.'" class="lightlink2 smallfont" target="_blank">'.cplang('home_check_newversion').'</a>
 	<span class="pipe">|</span>
         <a href="http://www.comsenz.com/purchase/discuz/" class="lightlink2 smallfont" target="_blank">Professional support and services</a>
 	<span class="pipe">|</span>
@@ -323,7 +333,7 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), ar
 	cplang('home_dev_links'),
 /*vot*/	'<a href="http://www.comsenz.com" class="lightlink2" target="_blank">Website</a>,
 		<a href="http://idc.comsenz.com" class="lightlink2" target="_blank">Web Hosting</a>,
-		<a href="http://www.comsenz.com/category-51" class="lightlink2" target="_blank">Purchase</a>,
+		<a href="http://www.comsenz.com/purchase/discuzx" class="lightlink2" target="_blank">Purchase</a>,
 		<a href="http://www.discuz.com/" class="lightlink2" target="_blank">Discuz! Products</a>,
 		<a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink2" target="_blank">Templates</a>,
 		<a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink2" target="_blank">Plugins</a>,
