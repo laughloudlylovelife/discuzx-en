@@ -10,9 +10,9 @@ function getgpc($k, $t='GP') {
 	return '';
 }
 
-$lang = isset($_GET['lang']) ? $_GET['lang'] : '';
+$language = isset($_GET['lang']) ? $_GET['lang'] : '';
 
-if(!$lang) {
+if(!$language) {
   $uri = $_SERVER['REQUEST_URI'];
   $uri = preg_replace("/\.php.*$/i",'.php',$uri);
 
@@ -24,7 +24,7 @@ if(!$lang) {
 
 echo "CHECK LANGUAGE started.<br>";
 
-$dir = 'source/language/'.$lang.'/';
+$dir = 'source/language/'.$language.'/';
 
 $files = array(
 	"lang_action.php",
@@ -172,14 +172,17 @@ foreach($files AS $file) {
 
 echo "<br>------------------------<br>";
 
-$dir = 'uc_server/';
+
+$language = isset($_GET['lang']) ? $_GET['lang'] : '';
+
+$dir = 'uc_server/language/'.$language.'/';
 
 $files2 = array(
-	"install/lang.inc.php",
-	"view/default/admin.lang.php",
-	"view/default/main.lang.php",
-	"view/default/messages.lang.php",
-	"view/default/templates.lang.php",
+	"lang.inc.php",
+	"admin.lang.php",
+	"main.lang.php",
+	"messages.lang.php",
+	"templates.lang.php",
 );
 
 echo "Directory: ".$dir."<br><br>";
