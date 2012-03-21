@@ -19,6 +19,79 @@ define('ROOT_PATH', dirname(__FILE__).'/../');
 define('CHARSET', $_config['output']['charset']);
 define('DBCHARSET', $_config['db']['1']['dbcharset']);
 
+		//---------------------------
+		//vot: Multi-Lingual Support
+
+		// set default
+		$default_lang = strtolower($this->var['config']['output']['language']);
+		$lng = '';
+
+		if($this->var['config']['enable_multilingual']) {
+
+			// Adjust language names with language titles
+			foreach($this->var['config']['languages'] AS $k=>$v) {
+				if(empty($v['name'])) {
+					$this->var['config']['languages'][$k]['name'] = $v['title'];
+				}
+			}
+
+			// set language from cookies
+			if($this->var['cookie']['language']) {
+				$lng = strtolower($this->var['cookie']['language']);
+//DEBUG
+//echo "Cookie lang=",$lng,"<br>";
+			}
+
+			// check if the language from GET is valid
+			if(isset($this->var['gp_language'])) {
+				$tmp = strtolower($this->var['gp_language']);
+				if(isset($this->var['config']['languages'][$tmp])) {
+					// set from GET
+					$lng = $tmp;
+				}
+//DEBUG
+//echo "_GET lang=",$lng,"<br>";
+			}
+
+			// Check for language auto-detection
+			if(!$lng) {
+				$detect = (boolean) $this->var['config']['detect_language'];
+				if($detect) {
+					$lng = detect_language($this->var['config']['languages'],$default_lang);
+//DEBUG
+//echo "Detect lang=",$lng,"<br>";
+				}
+			}
+		}
+		// Set language to default if no language detected
+		if(!$lng) {
+			$lng = $default_lang;
+		}
+
+//DEBUG
+//echo "Result lang=",$lng,"<br>";
+		$this->var['oldlanguage'] = $lng; // Store Old Language Value for compare
+
+		// define DISCUZ_LANG
+		define('DISCUZ_LANG', $lng);
+
+		// set new language to cookie
+		dsetcookie('language', $lng);
+
+		// set new language variables
+		$this->var['language']  = $lng;
+		$this->var['langpath']  = DISCUZ_ROOT . 'source/language/'.$lng . '/';
+		$this->var['langurl']   = $this->var['siteroot'] . 'source/language/'.$lng . '/';
+		$this->var['langicon']  = $this->var['config']['languages'][$lng]['icon'];
+		$this->var['langname'] = $this->var['config']['languages'][$lng]['name'];
+		$this->var['langtitle'] = $this->var['config']['languages'][$lng]['title'];
+		$this->var['langdir']   = strtolower($this->var['config']['languages'][$lng]['dir']);
+
+		// define LANGUAGE RTL Suffix
+		define('RTLSUFFIX', $this->var['langdir'] == 'rtl' ? '_rtl' : '');
+
+//------------------------------------------------------------
+
 $lock_file = ROOT_PATH.'./data/restore.lock';
 if(file_exists($lock_file)) {
 	show_msg('restored_error');
@@ -404,12 +477,14 @@ function show_header() {
 	$charset = CHARSET;
 	$title = lang('restore_title');//vot
 	$intro = lang('restore_questions');//vot
+/*vot*/	$rtl_suffix = RTLSUFFIX;
 	print <<< EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=$charset" />
 <title>$title</title><!--vot-->
+<link href="static/image/admincp/admincp{$rtl_suffix}.css?{$_G[style][verhash]}" rel="stylesheet" type="text/css" media="all" />
 <style type="text/css">
 * { word-break: break-all; }
 body { text-align:center; margin:0; padding:0; background: #F5FBFF; font-size:12px; font-family:Verdana, Arial, Helvetica, 'SimSun', sans-serif; line-height: 1.8; }
