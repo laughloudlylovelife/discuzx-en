@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: adv_cornerbanner.php 20371 2011-02-22 09:31:03Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

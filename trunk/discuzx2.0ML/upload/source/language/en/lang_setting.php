@@ -35,10 +35,27 @@ $lang = array (
 	'nav_magic'	=> 'Magic',//'道具',
 	'nav_medal'	=> 'Medals',//'勋章',
 	'nav_task'	=> 'Tasks',//'任务',
-	'nav_sethomepage'	=> 'Set as Homepage',//'设为首页',
-	'nav_setfavorite'	=> 'Add to Favorites',//'收藏本站',
+	'nav_sethomepage'	=> '<img src="static/image/common/home.gif" title="Set as Homepage">',//'设为首页',
+	'nav_setfavorite'	=> '<img src="static/image/common/fav.gif" title="Add to Favorites">',//'收藏本站',
 	'nav_uchome'		=> 'UCH0me',//'',
+
 //	'nav_'		=> '',//'',
 
 );
 
+/*vot !!!!!!! ToDo !!!!!!!!!!!!!!!
+	'profile_fields'		=> array(
+		'mp.realname'		=> 'Real Name',//'姓名',
+		'mp.gender'		=> 'Gender',//'性别',
+		'mp.birthyear'		=> 'Birth year',//'生日(年)',
+		'mp.birthmonth'		=> 'Birth month',//'生日(月)',
+		'mp.birthday'		=> 'Birth Day',//'生日(日)',
+		'mp.bloodtype'		=> 'Blood type',//'血型',
+		'mp.affectivestatus'	=> 'Emotional category',//'情感状态',
+'mp.birthcountry'	=> 'Birth country',//'家乡(国)',
+		'mp.birthprovince'	=> 'Birth region',//'家乡(省)',
+		'mp.birthcity'		=> 'Birth city',//'家乡(市)',
+		'mp.resideprovince'	=> 'Reside region',//'居住地(省)',
+		'mp.residecity'		=> 'Reside city',//'居住地(市)'
+	),
+*/

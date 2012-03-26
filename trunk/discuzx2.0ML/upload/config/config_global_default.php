@@ -168,7 +168,10 @@ $_config['remote']['cron'] = 0;
 //-----------------------------------------------------------------------
 // Multi-Lingual support by Valery Votintsev
 //-----------------------------------------------------------------------
-// "dir" - text direction:
+// "icon" - Flag icon file name;
+// "name" - Language name in NATIONAL language;
+// "title" - Language name in ENGLISH language;
+// "dir" - Text direction:
 //	'ltr' (Left To Right) 
 //	'rtl' (Right To Left), i.e for Arabic, Hebrew, Urdu, etc.
 //-----------------------------------------------------------------------
@@ -192,6 +195,6 @@ $_config['languages'] = array(
 	'vn' => array('icon'=>'vn.gif', 'name'=>'Tiếng Việt', 'title'=>'Vietnamese', 'dir'=>'ltr'),
 );
 $_config['detect_language'] = true;	// Auto-detect user language: true|false
-$_config['enable_multilingual'] = false;	// Enable/Disable multi-langual feature
+$_config['enable_multilingual'] = true;	// Enable/Disable multi-lingual feature
 
 ?>

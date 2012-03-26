@@ -2,6 +2,7 @@
 [name]Orange[/name]
 [iconbgcolor]#FE9500[/iconbgcolor]
 Powered by Discuz! X
+Modified by Valery Votintsev, codersclub.org
 */
 
 body { background: #FCFAF0 url(bgimg.jpg) no-repeat 50% 0; }
@@ -46,7 +47,7 @@ body { background: #FCFAF0 url(bgimg.jpg) no-repeat 50% 0; }
 .el .ec .hot { background-image: url(hotspot.gif); }
 .pll .s { background-image:url(polljoins.gif); }
 
-/* Redefine Tab */
+/* Redefine Tabs */
 .tb .a a { border-bottom-color: #FCFAF0; background: #FCFAF0; }
 
 /* Redefine side navigation */

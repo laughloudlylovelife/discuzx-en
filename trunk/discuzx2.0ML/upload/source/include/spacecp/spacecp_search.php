@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: spacecp_search.php 24331 2011-09-08 08:29:58Z zhangguosheng $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -136,6 +137,20 @@ if(!empty($_GET['searchsubmit']) || !empty($_GET['searchmode'])) {
 	$marryarr = array($space['marry'] => ' selected');
 
 	include_once libfile('function/profile');
+/*vot*/
+/*
+	$countryhtml = '';
+	if(!isset($_G['lang']['admincp_menu'])) {
+		lang('country'); // Load country list
+	}
+	$country_list = & $_G['lang']['country'];
+	foreach ($country_list as $country_id=>$country_name) {
+		if(empty($_GET['all'])) {
+			$selectstr = $country_id == $space['residecountry']?' selected=\"selected\"' : '';
+		}
+		$countryhtml .= "<option value=\"$country_id\"$selectstr>$country_name</option>";
+	}
+*/
 	$birthcityhtml = showdistrict(array(0,0), array('birthprovince', 'birthcity'), 'birthcitybox', null, 'birth');
 	$residecityhtml = showdistrict(array(0,0, 0, 0), array('resideprovince', 'residecity', 'residedist', 'residecommunity'), 'residecitybox', null, 'reside');
 

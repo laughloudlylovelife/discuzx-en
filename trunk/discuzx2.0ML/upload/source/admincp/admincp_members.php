@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_members.php 25615 2011-11-16 07:14:10Z chenmengshu $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -162,7 +163,7 @@ EOF;
 			$detail = $detail."\n";
 		}
 	}
-	$title = array(
+/*vot*/	$title = array(
 		'realname' => '',
 		'gender' => '',
 		'birthyear' => '',
@@ -188,9 +189,9 @@ EOF;
 		'residedist' => '',
 		'residecommunity' => '',
 		'residesuite' => '',
-/*vot*/		'graduateschool' => '',
+		'graduateschool' => '',
 		'education' => '',
-/*vot*/		'company' => '',
+		'company' => '',
 		'occupation' => '',
 		'position' => '',
 		'revenue' => '',
@@ -2784,6 +2785,7 @@ function showsearchform($operation = '') {
 			$select .= "<option value=\"1\">".cplang('members_edit_gender_male')."</option>\n";
 			$select .= "<option value=\"2\">".cplang('members_edit_gender_female')."</option>\n";
 			showsetting($value['title'], '', '', '<select class="txt" name="gender">'.$select.'</select>');
+//vot !!!! ADD SEARCH BY residecountry !!!!!!!!!!!!!!!!!!!!!!!!
 		} elseif($fieldid == 'birthcity') {
 			$elems = array('birthprovince', 'birthcity', 'birthdist', 'birthcommunity');
 			showsetting($value['title'], '', '', '<div id="birthdistrictbox">'.showdistrict(array(0,0,0,0), $elems, 'birthdistrictbox', 1, 'birth').'</div>');
@@ -3196,4 +3198,3 @@ function get_newsletter($cachename) {
 	return $data;
 }
 
-?>

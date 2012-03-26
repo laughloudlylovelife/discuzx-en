@@ -2,6 +2,7 @@
 [name]Green[/name]
 [iconbgcolor]#429296[/iconbgcolor]
 Powered by Discuz! X
+Modified by Valery Votintsev, codersclub.org
 */
 
 body { background: #FFF url(bgimg.jpg) no-repeat 50% 0; }
@@ -43,7 +44,7 @@ body { background: #FFF url(bgimg.jpg) no-repeat 50% 0; }
 .el .ec .hot { background-image: url(hotspot.gif); }
 .pll .s { background-image:url(polljoins.gif); }
 
-/* Redefinition side navigation */
+/* Redefine side navigation */
 .bdl, .bdl dt, .bdl dd.bdl_a a { border-color: #C2D5E3; background-color: #EBF5F6; }
 	.bdl dt { background-image: url(titlebg_sd.png); }
 .bdl dd.bdl_a a { color: #429296; }

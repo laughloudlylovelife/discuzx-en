@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: portal.js 21566 2011-03-31 09:00:16Z zhangguosheng $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 function block_get_setting(classname, script, bid) {
@@ -69,7 +69,7 @@ function block_pushitem(bid, itemid) {
 }
 
 function block_delete_item(bid, itemid, itemtype, itemfrom, from) {
-	var msg = itemtype==1 ? lng['delete_sure'] : lng['ignore_sure'];
+/*vot*/	var msg = itemtype==1 ? lng['delete_sure'] : lng['ignore_sure'];
 	if(confirm(msg)) {
 		var url = 'portal.php?mod=portalcp&ac=block&op=remove&bid='+bid+'&itemid='+itemid;
 		if(itemfrom=='ajax') {
@@ -143,7 +143,7 @@ function recommenditem_check() {
 		document.forms['recommendform'].action = document.forms['recommendform'].action+'&bid='+sel.value;
 		return true;
 	} else {
-		alert(lng['select_block']);
+/*vot*/		alert(lng['select_block']);
 		return false;
 	}
 }
@@ -155,7 +155,7 @@ function recommenditem_byblock(bid, id, idtype) {
 		ajaxinnerhtml(olditemeditarea, editarea.innerHTML);
 		if(!$('recommendback')) {
 			var back = document.createElement('div');
-			back.innerHTML = '<em id="recommendback" onclick="recommenditem_back()" class="cur1">&nbsp;&nbsp;&laquo;'+lng['back']+'</em>';
+/*vot*/			back.innerHTML = '<em id="recommendback" onclick="recommenditem_back()" class="cur1">&nbsp;&nbsp;&laquo;'+lng['back']+'</em>';
 			var return_mods = $('return_mods') || $('return_');
 			if(return_mods) {
 				return_mods.parentNode.appendChild(back.childNodes[0]);
@@ -211,10 +211,10 @@ function blockSetCacheTime(timer) {
 function toggleSettingShow() {
 	if(!$('tbody_setting').style.display) {
 		$('tbody_setting').style.display = 'none';
-		$('a_setting_show').innerHTML = lng['show_settings'];
+/*vot*/		$('a_setting_show').innerHTML = lng['show_settings'];
 	} else {
 		$('tbody_setting').style.display = '';
-		$('a_setting_show').innerHTML = lng['hide_settings'];
+/*vot*/		$('a_setting_show').innerHTML = lng['hide_settings'];
 	}
 	doane();
 }
@@ -222,16 +222,16 @@ function switchSetting() {
 	var checked = $('isblank').checked;
 	if(checked) {
 		$('tbody_setting').style.display = 'none';
-		$('a_setting_show').innerHTML = lng['settings_expand'];
+/*vot*/		$('a_setting_show').innerHTML = lng['settings_expand'];
 	} else {
 		$('tbody_setting').style.display = '';
-		$('a_setting_show').innerHTML = lng['settings_hide'];
+/*vot*/		$('a_setting_show').innerHTML = lng['settings_hide'];
 	}
 }
 
 function checkblockname(form) {
 	if(!(trim(form.name.value) > '')) {
-		showDialog(lng['block_name_empty'], 'error', null, function(){form.name.focus();});
+/*vot*/		showDialog(lng['block_name_empty'], 'error', null, function(){form.name.focus();});
 		return false;
 	}
 	if(form.summary && form.summary.value) {
@@ -239,7 +239,7 @@ function checkblockname(form) {
 		if(tag) {
 			showBlockSummary();
 			form.summary.focus();
-			showDialog(lng['custom_content_error']+lng['html_error']+tag+lng['tags_not_match'], 'error', null, function(){form.summary.select();});
+/*vot*/			showDialog(lng['custom_content_error']+lng['html_error']+tag+lng['tags_not_match'], 'error', null, function(){form.summary.select();});
 			return false;
 		}
 	}
@@ -275,7 +275,7 @@ function blockCheckTag(summary, returnValue) {
 				if(returnValue) {
 					return tag;
 				} else {
-					showDialog(lng['html_error']+tag+lng['tags_not_match'], 'error', null, fn, true, fn);
+/*vot*/					showDialog(lng['html_error']+tag+lng['tags_not_match'], 'error', null, fn, true, fn);
 					return false;
 				}
 			}
@@ -300,7 +300,7 @@ function hideBlockSummary() {
 
 function blockconver(ele,bid) {
 	if(ele && bid) {
-		if(confirm(lng['block_convert_sure']+' '+ele.options[0].innerHTML+' '+lng['to']+' '+ele.options[ele.selectedIndex].innerHTML)) {
+/*vot*/		if(confirm(lng['block_convert_sure']+' '+ele.options[0].innerHTML+' '+lng['to']+' '+ele.options[ele.selectedIndex].innerHTML)) {
 			ajaxget('portal.php?mod=portalcp&ac=block&op=convert&bid='+bid+'&toblockclass='+ele.value,'blockshow');
 		} else {
 			ele.selectedIndex = 0;

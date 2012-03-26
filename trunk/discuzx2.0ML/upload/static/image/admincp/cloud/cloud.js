@@ -1,4 +1,4 @@
-// English by Valery Votintsev
+// Modified by Valery Votintsev, codersclub.org
 function submitForm() {
 
 	if (dialogHtml == '') {

@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: misc_diyhelp.php 21666 2011-04-07 04:57:15Z zhangguosheng $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

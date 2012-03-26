@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id qshare.js $
-	English by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var _share_tencent_weibo = function() {
@@ -98,7 +98,7 @@ var _share_tencent_weibo = function() {
     };
     share_btn.onclick = function() {
         var _str = _select();
-        var _strmaxlen = 280 - (lng['from_tencent'] + " " + _web.name).elength();//vot
+/*vot*/ var _strmaxlen = 280 - (lng['from_tencent'] + " " + _web.name).elength();//vot
         var _resultstr = "";
         if (_str.elength() > _strmaxlen) {
             _strmaxlen = _strmaxlen - 3;

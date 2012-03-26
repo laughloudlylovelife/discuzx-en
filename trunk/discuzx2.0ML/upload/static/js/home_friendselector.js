@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: home_friendselector.js 22000 2011-04-19 14:35:46Z svn_project_zhangjie $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 (function() {
@@ -170,11 +170,11 @@
 						this.selectUser[userName] = userName;
 					}
 					this.selectNumber++;
-					spanObj.innerHTML= '<a href="javascript:;" class="x" onclick="'+this.handleKey+'.delSelUser(\''+(spanObj.id)+'\');">'+lng['delete']+'</a><em class="z" title="' + userName + '">' + userName + '</em><input type="hidden" name="users[]" value="'+userName+'" uid="uid'+uid+'" />';
+/*vot*/					spanObj.innerHTML= '<a href="javascript:;" class="x" onclick="'+this.handleKey+'.delSelUser(\''+(spanObj.id)+'\');">'+lng['delete']+'</a><em class="z" title="' + userName + '">' + userName + '</em><input type="hidden" name="users[]" value="'+userName+'" uid="uid'+uid+'" />';
 					this.handleObj.parentNode.insertBefore(spanObj, this.handleObj);
 					this.showObj.style.display = 'none';
 				} else {
-					alert(lng['allready_exists']+': '+userName);
+/*vot*/					alert(lng['allready_exists']+': '+userName);
 				}
 			}
 		},
@@ -283,7 +283,7 @@
 				var select = false;
 				if(typeof this.selectUser[uid] == 'undefined') {
 					if(this.maxSelectNumber && this.selectNumber >= this.maxSelectNumber) {
-			            alert(lng['select_max']+' '+this.maxSelectNumber+' '+lng['users']);
+/*vot*/			            alert(lng['select_max']+' '+this.maxSelectNumber+' '+lng['users']);
 			            return false;
 			        }
 					this.selectUser[uid] = this.dataSource[uid];

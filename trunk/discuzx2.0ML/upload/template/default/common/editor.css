@@ -10,7 +10,7 @@ http://www.comsenz.com
 			.edt .bbar img { vertical-align: bottom; *margin-right: -4px; cursor: row-resize; }
 /*vot*/			.edt .bbar em { width: 150px; height: 20px; overflow: hidden; white-space: nowrap; float: left; text-align: left; }
 		.edt .bbar, .edt .bbar a { color: #999; }
-		.edt .btn { float: left; border-left: 1px solid #DDD; border-right: 1px solid #FEFEFE; }
+/*vot*/		.edt .btn { float: left; border-left: 1px solid #DDD; border-right: 1px solid #FEFEFE; }
 			.edt .b1r, .edt .b2r { position: relative; float: left; padding: 0 3px; height: 44px; border-right: 1px solid #DDD; border-left: 1px solid #FEFEFE; }
 			.edt .b2r p, .edt .b2r br { clear: both; }
 		.edt .bar a { float: left; border: 1px solid {COMMONBG}; background: transparent url({STATICURL}image/editor/editor.gif) no-repeat 0 0; overflow: hidden; }
@@ -38,7 +38,7 @@ http://www.comsenz.com
 
 	#e_bold			{ background-position: 0 0; }
 	#e_fontsize		{ width: 45px; }
-	#e_fontname		{ width: 50px; }
+/*vot*/	#e_fontname		{ width: 50px; }
 	#e_italic		{ background-position: -20px 0; }
 	#e_underline		{ background-position: -40px 0; }
 	#e_forecolor		{ background-position: -60px 0; }

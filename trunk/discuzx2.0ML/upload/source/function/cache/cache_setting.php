@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: cache_setting.php 23009 2011-06-14 02:23:53Z monkey $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

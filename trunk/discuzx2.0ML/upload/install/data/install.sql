@@ -768,6 +768,7 @@ CREATE TABLE pre_common_member_profile (
   address varchar(255) NOT NULL DEFAULT '',
   zipcode varchar(255) NOT NULL DEFAULT '',
   nationality varchar(255) NOT NULL DEFAULT '',
+  birthcountry varchar(2) NOT NULL DEFAULT '', -- vot
   birthprovince varchar(255) NOT NULL DEFAULT '',
   birthcity varchar(255) NOT NULL DEFAULT '',
   birthdist varchar(255) NOT NULL DEFAULT '',
@@ -775,6 +776,7 @@ CREATE TABLE pre_common_member_profile (
   resideprovince varchar(255) NOT NULL DEFAULT '',
   residecity varchar(255) NOT NULL DEFAULT '',
   residedist varchar(255) NOT NULL DEFAULT '',
+  resitecountry varchar(2) NOT NULL DEFAULT '', -- vot
   residecommunity varchar(255) NOT NULL DEFAULT '',
   residesuite varchar(255) NOT NULL DEFAULT '',
   graduateschool varchar(255) NOT NULL DEFAULT '',

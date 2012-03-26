@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_setting.php 23419 2011-07-14 03:49:57Z liulanbo $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 	exit('Access Denied');
@@ -49,6 +50,8 @@ if(!submitcheck('settingsubmit')) {
 		shownav('user', 'nav_members_profile_group');
 	} elseif(in_array($operation, array('mail', 'uc'))) {
 		shownav('founder', 'setting_'.$operation);
+///*vot*/	} elseif($operation == 'language') {
+///*vot*/		shownav('global', 'nav_language');
 	} else {
 		shownav('global', 'setting_'.$operation);
 	}
@@ -163,6 +166,13 @@ if(!submitcheck('settingsubmit')) {
 		showsubmenuanchors('setting_mobile', array(
 			array('setting_mobile_status', 'status', $_G['gp_anchor'] == 'status')
 		));
+///*vot*/	} elseif($operation == 'language') {
+//		showsubmenu('setting_language', array(
+//			array('setting_cachethread', 'setting&operation=cachethread', $current['cachethread']),
+//			array('setting_memory', 'setting&operation=memory', $current['memory']),
+//			array('setting_serveropti', 'setting&operation=serveropti', $current['serveropti'])
+//		));
+
 	} else {
 		showsubmenu('setting_'.$operation);
 	}
@@ -1973,6 +1983,31 @@ EOT;
 		showtablefooter();
 		exit;
 
+/*vot*/	} elseif ($operation == 'language') {
+///*vot*/		showtips('setting_language_tips');
+
+		showtableheader();
+		showsubtitle(array('setting_language_available', 'setting_language_order', 'setting_language_id', 'setting_language_flag', 'setting_language_name', 'setting_language_title', 'setting_language_dir', 'setting_language_actions'), '');
+
+		$langlist = $_G['config']['languages'];
+
+		foreach($langlist as $id => $lang) {
+			$enable = 1;
+//						Enable      Order           Id              Flag            Name  Title Direction       Actions
+			showtablerow('', array('width="1"', 'class="td25"', 'class="td25"', 'class="td25"', '',   '',   'class="td25"', ''), array(
+				"<input class=\"checkbox\" type=\"checkbox\" name=\"settingnew[langlist][$i][available]\" value=\"1\" ".($enable ? 'checked' : '')." />",
+				"<input type=\"text\" class=\"txt\" size=\"3\" name=\"settingnew[langlist][$i][order]\" value=\"{$lang['order']}\">",
+				"<input type=\"text\" class=\"txt\" size=\"16\" name=\"settingnew[langlist][$i][id]\" value=\"{$id}\">",
+				"<input type=\"text\" class=\"txt\" size=\"16\" name=\"settingnew[langlist][$i][icon]\" value=\"{$lang['icon']}\">",
+				"<input type=\"text\" class=\"txt\" size=\"66\" name=\"settingnew[langlist][$i][name]\" value=\"{$lang['name']}\">",
+				"<input type=\"text\" class=\"txt\" size=\"66\" name=\"settingnew[langlist][$i][title]\" value=\"{$lang['title']}\">",
+				"<input type=\"text\" class=\"txt\" size=\"16\" name=\"settingnew[langlist][$i][dir]\" value=\"{$lang['dir']}\">",
+				"<img src=\"static/image/admincp/edit.png\" title=\"".cplang('edit')."\" />
+				<span class=\"pipe\"></span>
+				<img src=\"static/image/admincp/delete.gif\" title=\"".cplang('delete')."\" />",
+			));
+		}
+		showtablefooter();
 	} else {
 		if($operation == 'mail' || $operation == 'uc') {
 			cpmsg('founder_action');
@@ -2053,6 +2088,8 @@ EOT;
 		}
 		$configfile = str_replace("define('UC_CONNECT', '".addslashes(UC_CONNECT)."')", "define('UC_CONNECT', '".$connect."')", $configfile);
 		$configfile = str_replace("define('UC_KEY', '".addslashes(UC_KEY)."')", "define('UC_KEY', '".$settingnew['uc']['key']."')", $configfile);
+//vot Remove URL Trailing Slash
+$settingnew['uc']['api'] = preg_replace("/\/$/",'',$settingnew['uc']['api']);
 		$configfile = str_replace("define('UC_API', '".addslashes(UC_API)."')", "define('UC_API', '".$settingnew['uc']['api']."')", $configfile);
 		$configfile = str_replace("define('UC_IP', '".addslashes(UC_IP)."')", "define('UC_IP', '".$settingnew['uc']['ip']."')", $configfile);
 		$configfile = str_replace("define('UC_APPID', '".addslashes(UC_APPID)."')", "define('UC_APPID', '".$settingnew['uc']['appid']."')", $configfile);

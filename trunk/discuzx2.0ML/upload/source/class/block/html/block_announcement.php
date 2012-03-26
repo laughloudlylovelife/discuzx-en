@@ -89,7 +89,13 @@ class block_announcement {
 		$time = TIMESTAMP;
 		$typesql = ' AND `type` IN ('.dimplode($type).')';
 		$bansql = $bannedids ? ' AND id NOT IN ('.dimplode($bannedids).')' : '';
-		$sql = 'SELECT * FROM '.DB::table('forum_announcement')." WHERE starttime <= '$time' AND (endtime = '' || endtime >= '$time') $typesql $bansql ORDER BY displayorder DESC LIMIT $startrow, $items";
+/*vot*/		$sql = 'SELECT *
+			FROM '.DB::table('forum_announcement')."
+			WHERE starttime <= '$time'
+				AND (endtime = '' || endtime >= '$time')
+				$typesql $bansql
+		ORDER BY displayorder DESC
+		LIMIT $startrow, $items";
 		$list = array();
 		$query = DB::query($sql);
 		while($data = DB::fetch($query)) {

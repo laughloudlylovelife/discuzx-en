@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: cache_styles.php 22806 2011-05-24 01:19:54Z congyushuai $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

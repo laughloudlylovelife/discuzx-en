@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum_post.js 22843 2011-05-25 09:39:50Z monkey $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var postSubmited = false;
@@ -16,19 +16,19 @@ var UPLOADWINRECALL = null;
 var imgexts = typeof imgexts == 'undefined' ? 'jpg, jpeg, gif, png, bmp' : imgexts;
 var ATTACHORIMAGE = '0';
 var STATUSMSG = {
-	'-1' : lng['internal_error'],
-	'0' :  lng['upload_ok'],
-	'1' :  lng['ext_not_supported'],
-	'2' :  lng['attach_big'],
-	'3' :  lng['attach_group_big'],
-	'4' :  lng['ext_not_supported'],
-	'5' :  lng['attach_type_big'],
-	'6' :  lng['attach_daily_big'],
-	'7' :  lng['select_image_files']+' (' + imgexts + ')',
-	'8' :  lng['can_not_save_attach'],
-	'9' :  lng['invalid_file'],
-	'10' : lng['illegal_operation'],
-	'11' : lng['today_upload_large']
+/*vot*/	'-1' : lng['internal_error'],
+/*vot*/	'0' :  lng['upload_ok'],
+/*vot*/	'1' :  lng['ext_not_supported'],
+/*vot*/	'2' :  lng['attach_big'],
+/*vot*/	'3' :  lng['attach_group_big'],
+/*vot*/	'4' :  lng['ext_not_supported'],
+/*vot*/	'5' :  lng['attach_type_big'],
+/*vot*/	'6' :  lng['attach_daily_big'],
+/*vot*/	'7' :  lng['select_image_files']+' (' + imgexts + ')',
+/*vot*/	'8' :  lng['can_not_save_attach'],
+/*vot*/	'9' :  lng['invalid_file'],
+/*vot*/	'10' : lng['illegal_operation'],
+/*vot*/	'11' : lng['today_upload_large']
 };
 
 EXTRAFUNC['validator'] = [];
@@ -57,7 +57,7 @@ function ctlent(event) {
 
 function checklength(theform) {
 	var message = wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value);
-	showDialog(lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+', ' + (postmaxchars != 0 ? lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']+'.' : ''), 'notice', lng['check_length']);
+/*vot*/	showDialog(lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+', ' + (postmaxchars != 0 ? lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']+'.' : ''), 'notice', lng['check_length']);
 }
 
 if(!tradepost) {
@@ -67,7 +67,7 @@ if(!tradepost) {
 function validate(theform) {
 	var message = wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value);
 	if(($('postsubmit').name != 'replysubmit' && !($('postsubmit').name == 'editsubmit' && !isfirstpost) && theform.subject.value == "") || !sortid && !special && trim(message) == "") {
-		showDialog(lng['enter_content']);
+/*vot*/		showDialog(lng['enter_content']);
 		return false;
 //vot	} else if(mb_strlen(theform.subject.value) > 80) {
 /*vot*/	} else if(theform.subject.value.length > 80) {
@@ -102,11 +102,11 @@ function validate(theform) {
 		return false;
 	}
 	if(UPLOADSTATUS == 0) {
-		if(!confirm(lng['ignore_pending_attach'])) {
+/*vot*/		if(!confirm(lng['ignore_pending_attach'])) {
 			return false;
 		}
 	} else if(UPLOADSTATUS == 1) {
-		showDialog(lng['still_uploading'], 'notice');
+/*vot*/		showDialog(lng['still_uploading'], 'notice');
 		AUTOPOST = 1;
 		return false;
 	}
@@ -198,11 +198,11 @@ function uploadNextAttach() {
 	var att = CURRENTATTACH.split('|');
 	var sizelimit = '';
 	if(arr[4] == 'ban') {
-		sizelimit = '('+lng['attach_type_disabled']+')';
+/*vot*/		sizelimit = '('+lng['attach_type_disabled']+')';
 	} else if(arr[4] == 'perday') {
-		sizelimit = '('+lng['attach_max'] + ' ' + arr[5] + ' ' + lng['bytes'] + ')';
+/*vot*/		sizelimit = '('+lng['attach_max'] + ' ' + arr[5] + ' ' + lng['bytes'] + ')';
 	} else if(arr[4] > 0) {
-		sizelimit = '('+lng['attach_max'] + ' ' + arr[4] + ' ' + lng['bytes'] + ')';
+/*vot*/		sizelimit = '('+lng['attach_max'] + ' ' + arr[4] + ' ' + lng['bytes'] + ')';
 	}
 	uploadAttach(parseInt(att[0]), arr[0] == 'DISCUZUPLOAD' ? parseInt(arr[1]) : -1, att[1], sizelimit);
 }
@@ -241,7 +241,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 				updateAttachList();
 			}
 			if(UPLOADFAILED > 0) {
-				showDialog(lng['upload_finished']+' '+lng['successfull']+' ' + UPLOADCOMPLETE + ', '+lng['failed']+' ' + UPLOADFAILED + ', '+lng['ones']+': ' + FAILEDATTACHS);
+/*vot*/				showDialog(lng['upload_finished']+' '+lng['successfull']+' ' + UPLOADCOMPLETE + ', '+lng['failed']+' ' + UPLOADFAILED + ', '+lng['ones']+': ' + FAILEDATTACHS);
 				FAILEDATTACHS = '';
 			}
 			UPLOADSTATUS = 2;
@@ -256,7 +256,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 				hideMenu();
 				validate($('postform'));
 			} else if(UPLOADFAILED == 0 && (prefix == 'img' || prefix == '')) {
-				showDialog(lng['upload_finished'], 'right', null, null, 0, null, null, null, null, 3);
+/*vot*/				showDialog(lng['upload_finished'], 'right', null, null, 0, null, null, null, null, 3);
 			}
 			UPLOADFAILED = UPLOADCOMPLETE = 0;
 			CURRENTATTACH = '0';
@@ -267,7 +267,7 @@ function uploadAttach(curId, statusid, prefix, sizelimit) {
 		$(prefix + 'uploadbtn').style.display = 'none';
 		$(prefix + 'uploading').style.display = '';
 	}
-	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="'+lng['uploading']+'" />';
+/*vot*/	$(prefix + 'cpdel_' + nextId).innerHTML = '<img src="' + IMGDIR + '/loading.gif" alt="'+lng['uploading']+'" />';
 	UPLOADSTATUS = 1;
 	$(prefix + 'attachform_' + nextId).submit();
 }
@@ -337,7 +337,7 @@ function insertAttach(prefix, id) {
 		return;
 	}
 
-	$(prefix + 'cpdel_' + id).innerHTML = '<a href="javascript:;" class="d" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">'+lng['delete']+'</a>';
+/*vot*/	$(prefix + 'cpdel_' + id).innerHTML = '<a href="javascript:;" class="d" onclick="reAddAttach(\'' + prefix + '\', ' + id + ')">'+lng['delete']+'</a>';
 	$(prefix + 'localfile_' + id).innerHTML = '<span>' + filename + '</span>';
 	$(prefix + 'attachnew_' + id).style.display = 'none';
 	$(prefix + 'deschidden_' + id).style.display = '';
@@ -410,7 +410,7 @@ function updateAttach(aid) {
 	obj = $('attach' + aid);
 	if(!objupdate.innerHTML) {
 		obj.style.display = 'none';
-		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">'+lng['cancel']+'</a>';
+/*vot*/		objupdate.innerHTML = '<input type="file" name="attachupdate[paid' + aid + ']"><a href="javascript:;" onclick="updateAttach(' + aid + ')">'+lng['cancel']+'</a>';
 	} else {
 		obj.style.display = '';
 		objupdate.innerHTML = '';
@@ -423,7 +423,7 @@ function updateattachnum(type) {
 	var num = ATTACHNUM[type + 'used'] + ATTACHNUM[type + 'unused'];
 	if(num) {
 		if($(editorid + '_' + type)) {
-			$(editorid + '_' + type).title = lng['contains']+' ' + num + (type == 'image' ? ' '+lng['img_attached_num'] : ' '+lng['files attached_num']);
+/*vot*/			$(editorid + '_' + type).title = lng['contains']+' ' + num + (type == 'image' ? ' '+lng['img_attached_num'] : ' '+lng['files attached_num']);
 		}
 		if($(editorid + '_' + type + 'n')) {
 			$(editorid + '_' + type + 'n').style.display = '';
@@ -431,7 +431,7 @@ function updateattachnum(type) {
 		ATTACHORIMAGE = 1;
 	} else {
 		if($(editorid + '_' + type)) {
-			$(editorid + '_' + type).title = type == 'image' ? lng['images'] : lng['attachments'];
+/*vot*/			$(editorid + '_' + type).title = type == 'image' ? lng['images'] : lng['attachments'];
 		}
 		if($(editorid + '_' + type + 'n')) {
 			$(editorid + '_' + type + 'n').style.display = 'none';
@@ -461,11 +461,11 @@ function updateImageList(action, aids) {
 
 function updateDownImageList(msg) {
 	if(msg == '') {
-		showError(lng['no_remote_attach']);
+/*vot*/		showError(lng['no_remote_attach']);
 	} else {
 		ajaxget('forum.php?mod=ajax&action=imagelist&pid=' + pid + '&posttime=' + $('posttime').value + (!fid ? '' : '&fid=' + fid), 'imgattachlist', null, null, null, function(){if(wysiwyg) {editdoc.body.innerHTML = msg;switchEditor(0);switchEditor(1)} else {textobj.value = msg;}});
 		switchImagebutton('imgattachlist');$('imgattach_notice').style.display = '';
-		showDialog(lng['remote_attach_loaded'], 'right', null, null, 0, null, null, null, null, 3);
+/*vot*/		showDialog(lng['remote_attach_loaded'], 'right', null, null, 0, null, null, null, null, 3);
 	}
 }
 
@@ -508,11 +508,11 @@ function uploadWindowload() {
 	} else {
 		var sizelimit = '';
 		if(arr[7] == 'ban') {
-			sizelimit = '('+lng['attach_type_disabled']+')';
+/*vot*/			sizelimit = '('+lng['attach_type_disabled']+')';
 		} else if(arr[7] == 'perday') {
-			sizelimit = '('+lng['attach_max']+' ' + arr[8] + ' '+lng['bytes']+')';
+/*vot*/			sizelimit = '('+lng['attach_max']+' ' + arr[8] + ' '+lng['bytes']+')';
 		} else if(arr[7] > 0) {
-			sizelimit = '('+lng['attach_max']+' ' + arr[7] + ' '+lng['bytes']+')';
+/*vot*/			sizelimit = '('+lng['attach_max']+' ' + arr[7] + ' '+lng['bytes']+')';
 		}
 		showError(STATUSMSG[arr[2]] + sizelimit);
 	}
@@ -601,7 +601,7 @@ function addpolloption() {
 		$('polloption_new').outerHTML = '<p>' + $('polloption_hidden').innerHTML + '</p>' + $('polloption_new').outerHTML;
 		curoptions++;
 	} else {
-		$('polloption_new').outerHTML = '<span>'+lng['vote_max_reached']+maxoptions+'</span>';
+/*vot*/		$('polloption_new').outerHTML = '<span>'+lng['vote_max_reached']+maxoptions+'</span>';
 	}
 }
 
@@ -657,8 +657,8 @@ function attachoption(type, op) {
 		display('attachnotice_' + type);
 	} else if(op == 2) {
 		showDialog('<div id="unusedwin" class="c altw" style="overflow:auto;height:100px;">' + $('unusedlist_' + type).innerHTML + '</div>' +
-			'<p class="o pns"><span class="z xg1"><label for="unusedwinchkall"><input id="unusedwinchkall" type="checkbox" onclick="attachoption(\'' + type + '\', 3)" checked="checked" />'+lng['select_all']+'</label></span>' +
-			'<button onclick="attachoption(\'' + type + '\', 1);hideMenu(\'fwin_dialog\', \'dialog\')" class="pn pnc"><strong>'+lng['ok']+'</strong></button></p>', 'info', lng['unused']+' ' + (type == 'attach' ? lng['attachment'] : lng['image']));
+/*vot*/			'<p class="o pns"><span class="z xg1"><label for="unusedwinchkall"><input id="unusedwinchkall" type="checkbox" onclick="attachoption(\'' + type + '\', 3)" checked="checked" />'+lng['select_all']+'</label></span>' +
+/*vot*/			'<button onclick="attachoption(\'' + type + '\', 1);hideMenu(\'fwin_dialog\', \'dialog\')" class="pn pnc"><strong>'+lng['ok']+'</strong></button></p>', 'info', lng['unused']+' ' + (type == 'attach' ? lng['attachment'] : lng['image']));
 	} else if(op == 3) {
 		list = $('unusedwin').getElementsByTagName('INPUT');
 		for(i = 0;i < list.length;i++) {
@@ -774,10 +774,10 @@ function getreplycredit() {
 	var reply_credits_sum = Math.ceil(parseInt(credit_once * times));
 
 	if(real_reply_credit > userextcredit) {
-		$('replycredit').innerHTML = '<b class="xi1">'+lng['award_more_total']+' ('+real_reply_credit+')</b>';
+/*vot*/		$('replycredit').innerHTML = '<b class="xi1">'+lng['award_more_total']+' ('+real_reply_credit+')</b>';
 	} else {
 		if(have_replycredit > 0 && real_reply_credit < 0) {
-			$('replycredit').innerHTML = "<font class='xi1'>"+lng['return']+" "+Math.abs(real_reply_credit)+"</font>";
+/*vot*/			$('replycredit').innerHTML = "<font class='xi1'>"+lng['return']+" "+Math.abs(real_reply_credit)+"</font>";
 		} else {
 			$('replycredit').innerHTML = replycredit_result_lang + (real_reply_credit > 0 ? real_reply_credit : 0 );
 		}
@@ -792,7 +792,7 @@ function extraCheckall() {
 }
 
 function deleteThread() {
-	if(confirm(lng['delete_post_sure']) != 0){
+/*vot*/	if(confirm(lng['delete_post_sure']) != 0){
 		$('delete').value = '1';
 		$('postform').submit();
 	}

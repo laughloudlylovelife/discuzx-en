@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_index.php 23425 2011-07-14 06:38:11Z liulanbo $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -146,7 +146,7 @@ if($isfounder) {
 
 	$view_mastermobile = !empty($save_mastermobile) ? substr($save_mastermobile, 0 , 3).'*****'.substr($save_mastermobile, -3) : '';
 
-/*vot*/	$securityadvise = 
+/*vot*/	$securityadvise =
 		'<li>'.
 		'<p>'.cplang('home_security_service_info').'</p>'.
 		'<form method="post" autocomplete="off" action="'.ADMINSCRIPT.'?action=index&securyservice=yes">'.

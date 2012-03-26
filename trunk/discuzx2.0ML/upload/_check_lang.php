@@ -10,6 +10,8 @@ function getgpc($k, $t='GP') {
 	return '';
 }
 
+define('IN_DISCUZ', true);
+
 $language = isset($_GET['lang']) ? $_GET['lang'] : '';
 
 if(!$language) {

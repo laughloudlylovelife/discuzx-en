@@ -1,4 +1,4 @@
-// English by Valery Votintsev at sources.ru
+// Modified by Valery Votintsev, codersclub.org
 function uploadEdit(obj) {
 	mainForm = obj.form;
 	forms = $('attachbody').getElementsByTagName("FORM");
@@ -87,7 +87,7 @@ function edit_insert(html) {
 	var obj = p.window.frames['HtmlEditor'];
 	var status = p.document.getElementById('uchome-editstatus').value;
 	if(status != 'html') {
-		alert(lng['wysiwyg_only']); //vot
+/*vot*/		alert(lng['wysiwyg_only']);
 		return;
 	}
 	obj.focus();

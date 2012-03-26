@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_menu.php 21972 2011-04-19 02:51:52Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 global $_G;
@@ -57,6 +58,7 @@ $menu['global'] = array(
 	array('menu_setting_district', 'district'),
 	array('menu_setting_ranklist', 'setting_ranklist'),
 	array('menu_setting_mobile', 'setting_mobile'),
+///*vot*/	array('menu_setting_language', 'setting_language'),
 );
 
 $menu['style'] = array(

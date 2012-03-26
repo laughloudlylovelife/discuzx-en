@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms'
  *
  *      $Id: admincp_plugins.php 22945 2011-06-08 00:45:38Z monkey $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {

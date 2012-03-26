@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum_viewthread.js 22866 2011-05-27 06:23:56Z zhangguosheng $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var replyreload = '', attachimgST = new Array(), zoomgroup = new Array(), zoomgroupinit = new Array();
@@ -369,16 +369,16 @@ function toggleRatelogCollapse(tarId, ctrlObj) {
 	if($(tarId).className == 'rate') {
 		$(tarId).className = 'rate rate_collapse';
 		setcookie('ratecollapse', 1, 2592000);
-		ctrlObj.innerHTML = lng['expand'];
+/*vot*/		ctrlObj.innerHTML = lng['expand'];
 	} else {
 		$(tarId).className = 'rate';
 		setcookie('ratecollapse', 0, -2592000);
-		ctrlObj.innerHTML = lng['collapse'];
+/*vot*/		ctrlObj.innerHTML = lng['collapse'];
 	}
 }
 
 function copyThreadUrl(obj) {
-	setCopy($('thread_subject').innerHTML.replace(/&amp;/g, '&') + '\n' + obj.href + '\n', lng['thread_to_clipboard']);
+/*vot*/	setCopy($('thread_subject').innerHTML.replace(/&amp;/g, '&') + '\n' + obj.href + '\n', lng['thread_to_clipboard']);
 	return false;
 }
 
@@ -388,11 +388,11 @@ function replyNotice() {
 	var status = replynotice.getAttribute("status");
 	if(status == 1) {
 		replynotice.href = newurl + 'receive';
-		replynotice.innerHTML = lng['notify_on_reply'];
+/*vot*/		replynotice.innerHTML = lng['notify_on_reply'];
 		replynotice.setAttribute("status", 0);
 	} else {
 		replynotice.href = newurl + 'ignore';
-		replynotice.innerHTML = lng['notify_on_reply_cancel'];
+/*vot*/		replynotice.innerHTML = lng['notify_on_reply_cancel'];
 		replynotice.setAttribute("status", 1);
 	}
 }
@@ -405,13 +405,13 @@ function connect_share(connect_share_url, connect_uin) {
 		if(connect_uin) {
 			setTimeout(function () {
 				if(!connect_share_loaded) {
-					showDialog(lng['share_connection_failed'], 'notice');
+/*vot*/					showDialog(lng['share_connection_failed'], 'notice');
 					$('append_parent').removeChild($('connect_load_js'));
 				}
 			}, 5000);
 			connect_load(connect_share_url);
 		} else {
-			showDialog($('connect_share_unbind').innerHTML, 'info', lng['qq_bind']);
+/*vot*/			showDialog($('connect_share_unbind').innerHTML, 'info', lng['qq_bind']);
 		}
 		return false;
 	}
@@ -434,7 +434,7 @@ function connect_show_dialog(title, html, type) {
 function connect_get_thread() {
 	connect_thread_info.subject = $('connect_thread_title').value;
 	if ($('postmessage_' + connect_thread_info.post_id)) {
-		connect_thread_info.html_content = preg_replace(["'"], ['%27'], encodeURIComponent(preg_replace([lng['quote_by'],'&nbsp;','<em onclick="copycode\\(\\$\\(\'code0\'\\)\\);">'+lng['copy_code']+'</em>'], ['',' ', ''], $('postmessage_' + connect_thread_info.post_id).innerHTML)));
+/*vot*/		connect_thread_info.html_content = preg_replace(["'"], ['%27'], encodeURIComponent(preg_replace([lng['quote_by'],'&nbsp;','<em onclick="copycode\\(\\$\\(\'code0\'\\)\\);">'+lng['copy_code']+'</em>'], ['',' ', ''], $('postmessage_' + connect_thread_info.post_id).innerHTML)));
 	}
 	return connect_thread_info;
 }

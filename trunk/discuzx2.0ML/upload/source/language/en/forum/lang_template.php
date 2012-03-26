@@ -1075,4 +1075,3 @@ $lang = array (
 	'warn_view_prompt'		=> '$warnuser was warned $warnnum times. If you were warned {$_G[setting][warninglimit]} times in {$_G[setting][warningexpiration]} days, you would be banned to post {$_G[setting][warningexpiration]} days (R/O mode)',//'$warnuser 已被累计警告 $warnnum 次，{$_G[setting][warningexpiration]} 天内累计被警告 {$_G[setting][warninglimit]} 次，将被自动禁止发帖 {$_G[setting][warningexpiration]} 天',
 );
 
-?>

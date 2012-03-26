@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: home_blog.js 15155 2010-08-19 08:16:19Z monkey $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 function validate_ajax(obj) {
@@ -11,7 +11,7 @@ function validate_ajax(obj) {
 	if (subject) {
 		var slen = strlen(subject.value);
 		if (slen < 1 || slen > 80) {
-			alert(lng['title_length_invalid']);
+/*vot*/			alert(lng['title_length_invalid']);
 			subject.focus();
 			return false;
 		}

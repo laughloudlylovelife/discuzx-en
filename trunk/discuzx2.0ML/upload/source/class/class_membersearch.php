@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: class_membersearch.php 24683 2011-10-08 04:15:03Z svn_project_zhangjie $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 class membersearch {
@@ -12,7 +13,7 @@ class membersearch {
 	function membersearch(){}
 
 	function getfield($fieldid='') {
-		static $fields = array(
+/*vot*/		static $fields = array(
 			'uid'=>'member',
 			'username'=>'member',
 			'groupid'=>'member',
@@ -42,7 +43,9 @@ class membersearch {
 			'verify2' => 'verify',
 			'verify3' => 'verify',
 			'verify4' => 'verify',
-			'verify5' => 'verify', 'verify6' => 'verify', 'verify7' => 'verify',
+			'verify5' => 'verify',
+			'verify6' => 'verify',
+			'verify7' => 'verify',
 			'regip'=>'status',
 			'lastip'=>'status',
 			'lastvisit'=>'status',
@@ -102,13 +105,30 @@ class membersearch {
 	}
 
 	function gettype($fieldid) {
-		static $types = array(
-			'uid'=>'int', 'groupid'=>'int', 'credits'=>'int',
-			'status'=>'int', 'emailstatus'=>'int', 'avatarstatus'=>'int','videophotostatus'=>'int',
-			'extcredits1'=>'int', 'extcredits2'=>'int', 'extcredits3'=>'int', 'extcredits4'=>'int',
-			'extcredits5'=>'int', 'extcredits6'=>'int', 'extcredits7'=>'int', 'extcredits8'=>'int',
-			'posts'=>'int', 'friends'=>'int', 'birthyear'=>'int', 'birthmonth'=>'int', 'birthday'=>'int', 'gender'=>'int',
-			'uin'=>'int', 'sid'=>'noempty'
+/*vot*/		static $types = array(
+			'uid'=>'int',
+			'groupid'=>'int',
+			'credits'=>'int',
+			'status'=>'int',
+			'emailstatus'=>'int',
+			'avatarstatus'=>'int',
+			'videophotostatus'=>'int',
+			'extcredits1'=>'int',
+			'extcredits2'=>'int',
+			'extcredits3'=>'int',
+			'extcredits4'=>'int',
+			'extcredits5'=>'int',
+			'extcredits6'=>'int',
+			'extcredits7'=>'int',
+			'extcredits8'=>'int',
+			'posts'=>'int',
+			'friends'=>'int',
+			'birthyear'=>'int',
+			'birthmonth'=>'int',
+			'birthday'=>'int',
+			'gender'=>'int',
+			'uin'=>'int',
+			'sid'=>'noempty'
 			);
 		return $types[$fieldid] ? $types[$fieldid] : 'string';
 	}

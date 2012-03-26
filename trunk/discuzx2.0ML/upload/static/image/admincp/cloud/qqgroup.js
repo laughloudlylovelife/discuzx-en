@@ -1,4 +1,4 @@
-// English by Valery Votintsev at sources.ru
+// Modified by Valery Votintsev, codersclub.org
 var j = jQuery.noConflict();
 
 if (typeof disallowfloat == 'undefined' || disallowfloat === null) {
@@ -66,13 +66,13 @@ function ajaxChangeSearch() {
 }
 
 function ajaxGetSearchResultThreads() {
-	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
+/*vot*/	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
 	qqgroupajaxpost('search_form', 'search_result', 'search_result', null, null, function() {initSelect(); return false});
 	return false;
 }
 
 function ajaxGetPageResultThreads(page, mpurl) {
-	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
+/*vot*/	j('#search_result').html('<tr><td colspan="3">'+lng['loading']+'</td></tr>');//vot
 	if (typeof page == 'undefined' || page === null) {
 		page = 1;
 	}
@@ -165,7 +165,7 @@ function addMiniportalList(tid) {
 		return false;
 	}
 	if (selectedNormalIds.length >= 5) {
-		alert(lng['push5reached']);//vot
+/*vot*/		alert(lng['push5reached']);
 		return false;
 	}
 	if (tid == selectedTopicId) {
@@ -300,14 +300,14 @@ function removeNormalThreadRecall(displayorder, inNormalEditor) {
 		if (inNormalEditor) {
 			saveAllThread();
 		}
-		firstThreadLi.html('<div class="tips">'+lng['click_left']+' <img src="static/image/admincp/cloud/qun_op_list.png" align="absmiddle" /> '+lng['push_to_list']+'</div>');//vot
+/*vot*/		firstThreadLi.html('<div class="tips">'+lng['click_left']+' <img src="static/image/admincp/cloud/qun_op_list.png" align="absmiddle" /> '+lng['push_to_list']+'</div>');//vot
 		firstThreadLi.show();
 	}
 }
 
 function ajaxUploadQQGroupImage() {
 	j('#uploadImageResult').parent().show();
-	j('#uploadImageResult').text(lng['wait_image_upload']);//vot
+/*vot*/	j('#uploadImageResult').text(lng['wait_image_upload']);
 	qqgroupajaxpost('uploadImage', 'uploadImageResult', 'uploadImageResult', null, null, 'uploadRecall()');
 }
 
@@ -346,7 +346,7 @@ function qqgroupajaxpost(formid, showid, waitid, showidclass, submitbtn, recall)
 			s = ajaxResponse;
 		}
 		if (!s) {
-			s = lng['int_error'];//vot
+/*vot*/			s = lng['int_error'];
 		}
 
 		if(s != '' && s.indexOf('ajaxerror') != -1) {

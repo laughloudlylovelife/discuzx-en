@@ -44,7 +44,7 @@ body { background-color: transparent; }
 	.pic .c img { max-width: 714px; }
 		* html .pic .c img { width: expression(this.width > 714 ? 714 : true); }
 	.ul_list {}
-		.ul_list a { padding-left: 20px; background-position: 0 50%; background-repeat: no-repeat; }
+/*vot*/		.ul_list a { padding-left: 20px; background-position: 0 50%; background-repeat: no-repeat; }
 		.ul_diy a { background-image: url({STATICURL}image/feed/thread_magic.gif); }
 		.ul_msg a { background-image: url({STATICURL}image/feed/wall.gif); }
 		.ul_avt a { background-image: url({STATICURL}image/feed/album.gif); }

@@ -1,4 +1,4 @@
-// Modified by Valery Votintsev
+//	Modified by Valery Votintsev, codersclub.org
 function xmlobj() {
 	var obj = new Object();
 	obj.createXMLDoc = function(xmlstring) {
@@ -110,7 +110,7 @@ function changeselectthreadsort(selectchoiceoptionid, optionid, type) {
 	if((choicesarr[sselectchoiceoptionid]['slevel'] == 1 || type == 'search') && choicesarr[sselectchoiceoptionid]['scount'] == 1) {
 		nameid = name + ' ' + id;
 	}
-	var selectoption = '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')"><option value="0">'+lng['select_please']+'</option>';
+/*vot*/	var selectoption = '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')"><option value="0">'+lng['select_please']+'</option>';
 	for(var i in choicesarr) {
 		nameid = '';
 		if((choicesarr[sselectchoiceoptionid]['slevel'] == 1 || type == 'search') && choicesarr[i]['scount'] == choicesarr[sselectchoiceoptionid]['scount']) {
@@ -127,7 +127,7 @@ function changeselectthreadsort(selectchoiceoptionid, optionid, type) {
 			if(parseInt(choicesarr[i]['scount']) >= (parseInt(choicesarr[sselectchoiceoptionid]['scount']) + parseInt(choicesarr[sselectchoiceoptionid]['slevel']))) {
 				break;
 			}
-			selectoption += '</select>' + "\r\n" + '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')"><option value="0">'+lng['select_please']+'</option>';
+/*vot*/			selectoption += '</select>' + "\r\n" + '<select' + nameid + ' class="ps vm" onchange="changeselectthreadsort(this.value, \'' + optionid + '\'' + issearch + ');checkoption(\'' + forum_optionlist[soptionid]['sidentifier'] + '\', \'' + forum_optionlist[soptionid]['srequired'] + '\', \'' + forum_optionlist[soptionid]['stype'] + '\')"><option value="0">'+lng['select_please']+'</option>';
 
 			lastcount = parseInt(choicesarr[i]['scount']);
 		}
@@ -160,10 +160,10 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(checktype == 'select') {
 		if(required != '0' && $('typeoption_' + identifier) == null) {
-			warning(ce, lng['required_fill']);
+/*vot*/			warning(ce, lng['required_fill']);
 			return false;
 		} else if(required == '0' && ($('typeoption_' + identifier) == null || $('typeoption_' + identifier).value == '0')) {
-			ce.innerHTML = '<img src="' + IMGDIR + '/check_error.gif" width="16" height="16" class="vm" /> '+lng['select_next_level'];
+/*vot*/			ce.innerHTML = '<img src="' + IMGDIR + '/check_error.gif" width="16" height="16" class="vm" /> '+lng['select_next_level'];
 			ce.className = "warning";
 			return true;
 		}
@@ -177,7 +177,7 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 
 	if(required != '0') {
 		if(checkvalue == '' || checkvalue == '0') {
-			warning(ce, lng['required_fill']);
+/*vot*/			warning(ce, lng['required_fill']);
 			return false;
 		} else {
 			ce.innerHTML = '<img src="' + IMGDIR + '/check_right.gif" width="16" height="16" class="vm" />';
@@ -189,17 +189,17 @@ function checkoption(identifier, required, checktype, checkmaxnum, checkminnum, 
 			warning(ce, lng['numeric_invalid']);
 			return false;
 		} else if(checktype == 'email' && !(/^[\-\.\w]+@[\.\-\w]+(\.\w+)+$/.test(checkvalue))) {
-			warning(ce, lng['email_invalid']);
+/*vot*/			warning(ce, lng['email_invalid']);
 			return false;
 		} else if((checktype == 'text' || checktype == 'textarea') && checkmaxlength != '0' && mb_strlen(checkvalue) > checkmaxlength) {
-			warning(ce, lng['text_too_long']);
+/*vot*/			warning(ce, lng['text_too_long']);
 			return false;
 		} else if((checktype == 'number' || checktype == 'range')) {
 			if(checkmaxnum != '0' && parseInt(checkvalue) > parseInt(checkmaxnum)) {
-				warning(ce, lng['value_is_greater']);
+/*vot*/				warning(ce, lng['value_is_greater']);
 				return false;
 			} else if(checkminnum != '0' && parseInt(checkvalue) < parseInt(checkminnum)) {
-				warning(ce, lng['value_is_less']);
+/*vot*/				warning(ce, lng['value_is_less']);
 				return false;
 			}
 		} else {

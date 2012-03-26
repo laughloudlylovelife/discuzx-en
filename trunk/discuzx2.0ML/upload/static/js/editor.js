@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: editor.js 25628 2011-11-16 08:41:21Z chenmengshu $
-//	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var editorcurrentheight = 400, editorminheight = 400, savedataInterval = 30, editbox = null, editwin = null, editdoc = null, editcss = null, savedatat = null, savedatac = 0, autosave = 1, framemObj = null, cursor = -1, stack = [], initialized = false, postSubmited = false, editorcontroltop = false, editorcontrolwidth = false, editorcontrolheight = false, editorisfull = 0, fulloldheight = 0, savesimplodemode = null;
@@ -70,7 +70,7 @@ function initEditor() {
 //alert('backswitcher');
 				buttons[i].onclick = function(e) {editorfull();doane();}
 			} else if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'simple') {
-				buttons[i].innerHTML = !simplodemode ? lng['general'] : lng['simple'];
+/*vot*/				buttons[i].innerHTML = !simplodemode ? lng['general'] : lng['simple'];
 				buttons[i].onclick = function(e) {editorsimple();doane();}
 			} else if(buttons[i].id.substr(buttons[i].id.indexOf('_') + 1) == 'advanced') {
 //vot				buttons[i].innerHTML = !simplodemode ? lng['general'] : lng['simple'];
@@ -108,6 +108,7 @@ function initEditor() {
 		$(editorid + '_fullswitcher').className = 'xg1';
 
 	}
+//vot
 if(editorisfull) {
 $(editorid + '_fullswitcher').style.display = 'none';
 $(editorid + '_backswitcher').style.display = 'block';
@@ -144,9 +145,9 @@ function savedataTime() {
 		var m = d.getMinutes();
 		h = h < 10 ? '0' + h : h;
 		m = m < 10 ? '0' + m : m;
-		setEditorTip(lng['data_saved_at']+' ' + h + ':' + m + ' '+lng['saved_time']);
+/*vot*/		setEditorTip(lng['data_saved_at']+' ' + h + ':' + m + ' '+lng['saved_time']);
 	}
-	$(editorid + '_svdsecond').innerHTML = '<a title="'+lng['autosave_disable']+'" href="javascript:;" onclick="setAutosave()">' + savedatac + ' '+lng['sec_before_saving']+'</a> ';
+/*vot*/	$(editorid + '_svdsecond').innerHTML = '<a title="'+lng['autosave_disable']+'" href="javascript:;" onclick="setAutosave()">' + savedatac + ' '+lng['sec_before_saving']+'</a> ';
 	savedatac -= 10;
 }
 
@@ -313,8 +314,8 @@ $(editorid + '_backswitcher').style.display = 'block';
 		}
 		editorisfull = 0;
 		editorcontrolpos();
-//$(editorid + '_fullswitcher').style.visibility = 'hidden';
-//$(editorid + '_backswitcher').style.visibility = 'visible';
+//vot $(editorid + '_fullswitcher').style.visibility = 'hidden';
+//vot $(editorid + '_backswitcher').style.visibility = 'visible';
 $(editorid + '_fullswitcher').style.display = 'block';
 $(editorid + '_backswitcher').style.display = 'none';
 	}
@@ -326,7 +327,7 @@ $(editorid + '_backswitcher').style.display = 'none';
 function editorsimple() {
 	if($(editorid + '_body').className == 'edt') {
 		v = 'none';
-		$(editorid + '_simple').innerHTML = lng['simple'];
+/*vot*/		$(editorid + '_simple').innerHTML = lng['simple'];
 		$(editorid + '_body').className = 'edt simpleedt';
 		$(editorid + '_adv_s0').className = 'b2r';
 		$(editorid + '_adv_s1').className = 'b2r';
@@ -334,6 +335,7 @@ function editorsimple() {
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = 'none';
 		}
+//vot
 $(editorid + '_simple').style.display = 'none';
 $(editorid + '_advanced').style.display = 'block';
 		simplodemode = 1;
@@ -347,6 +349,7 @@ $(editorid + '_advanced').style.display = 'block';
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = '';
 		}
+//vot
 $(editorid + '_simple').style.display = 'block';
 $(editorid + '_advanced').style.display = 'none';
 		simplodemode = 0;
@@ -386,7 +389,7 @@ function pasteWord(str) {
 			}
 			return '<' + $2 + style + $4;
 		});
-		htstrml = str.replace(/<(\w[^>]*) lang=([^ |>]*)([^>]*)/gi, "<$1$3");
+/*vot*/		str = str.replace(/<(\w[^>]*) lang=([^ |>]*)([^>]*)/gi, "<$1$3");
 		str = str.replace(/<\\?\?xml[^>]*>/gi, "");
 		str = str.replace(/<\/?\w+:[^>]*>/gi, "");
 		str = str.replace(/&nbsp;/, " ");
@@ -444,7 +447,7 @@ function checkFocus() {
 
 function checklength(theform) {
 	var message = wysiwyg ? html2bbcode(getEditorContents()) : (!theform.parseurloff.checked ? parseurl(theform.message.value) : theform.message.value);
-	showDialog(lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+', ' + (postmaxchars != 0 ? lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']+'.' : ''), 'notice', lng['check_length']);
+/*vot*/	showDialog(lng['current_length']+': ' + mb_strlen(message) + ' '+lng['bytes']+', ' + (postmaxchars != 0 ? lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes']+'.' : ''), 'notice', lng['check_length']);
 }
 
 function setUnselectable(obj) {
@@ -860,7 +863,7 @@ function setContext(cmd) {
 	} else if(fs == null) {
 		fs = '';
 	}
-	fs = fs && cmd != 'clear' ? fs : lng['font'];
+/*vot*/	fs = fs && cmd != 'clear' ? fs : lng['font'];
 	if(fs != $(editorid + '_font').fontstate) {
 		thingy = fs.indexOf(',') > 0 ? fs.substr(0, fs.indexOf(',')) : fs;
 		$(editorid + '_font').innerHTML = thingy;
@@ -921,7 +924,7 @@ function formatFontsize(csssize) {
 		case '24pt': return 6;
 		case '48px':
 		case '36pt': return 7;
-		default: return lng['size'];
+/*vot*/		default: return lng['size'];
 	}
 }
 
@@ -966,7 +969,7 @@ function showEditorMenu(tag, params) {
 	} else {
 		switch(tag) {
 			case 'url':
-				str = lng['enter_link_url']+':<br /><input type="text" id="' + ctrlid + '_param_1" style="width: 98%" value="" class="px" />'+
+/*vot*/				str = lng['enter_link_url']+':<br /><input type="text" id="' + ctrlid + '_param_1" style="width: 98%" value="" class="px" />'+
 					(selection ? '' : '<br />'+lng['enter_link_text']+':<br /><input type="text" id="' + ctrlid + '_param_2" style="width: 98%" value="" class="px" />');
 				break;
 			case 'forecolor':
@@ -990,25 +993,25 @@ function showEditorMenu(tag, params) {
 				if(selection) {
 					return insertText((opentag + selection + closetag), strlen(opentag), strlen(closetag), true, sel);
 				}
-				var lang = {'quote' : lng['insert_quote'], 'code' : lng['insert_code'], 'hide' : lng['hide_content'], 'free' : lng['free_content']};
+/*vot*/				var lang = {'quote' : lng['insert_quote'], 'code' : lng['insert_code'], 'hide' : lng['hide_content'], 'free' : lng['free_content']};
 				str += lang[tag] + ':<br /><textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea>' +
 					(tag == 'hide' ? '<br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="pc" checked="checked" />'+lng['when_thread_replied']+'</label><br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="pc" />'+lng['when_points_more']+'</label> <input type="text" size="3" id="' + ctrlid + '_param_2" class="px pxs" /> '+lng['when_show'] : '');
 				break;
 			case 'tbl':
-				str = '<p class="pbn">'+lng['table_rows']+': <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="px" /> &nbsp; '+lng['table_columns']+': <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="px" /></p><p class="pbn">'+lng['table_width']+': <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="px" /> &nbsp; '+lng['bg_color']+': <input type="text" id="' + ctrlid + '_param_4" size="2" class="px" onclick="showColorBox(this.id, 2)" /></p><p class="xg2 pbn" style="cursor:pointer" onclick="showDialog($(\'tbltips_msg\').innerHTML, \'notice\', \''+lng['tips']+'\', null, 0)"><img id="tbltips" title="'+lng['tips']+'" class="vm" src="' + IMGDIR + '/info_small.gif"> '+lng['table_intro0']+'</p>';
-				str += '<div id="tbltips_msg" style="display: none">'+lng['table_intro1']+'<div class=\'xs0\' style=\'margin:0 5px\'>'+lng['table_intro2']+'</div>'+lng['table_intro3']+'</div>';
+/*vot*/				str = '<p class="pbn">'+lng['table_rows']+': <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="px" /> &nbsp; '+lng['table_columns']+': <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="px" /></p><p class="pbn">'+lng['table_width']+': <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="px" /> &nbsp; '+lng['bg_color']+': <input type="text" id="' + ctrlid + '_param_4" size="2" class="px" onclick="showColorBox(this.id, 2)" /></p><p class="xg2 pbn" style="cursor:pointer" onclick="showDialog($(\'tbltips_msg\').innerHTML, \'notice\', \''+lng['tips']+'\', null, 0)"><img id="tbltips" title="'+lng['tips']+'" class="vm" src="' + IMGDIR + '/info_small.gif"> '+lng['table_intro0']+'</p>';
+/*vot*/				str += '<div id="tbltips_msg" style="display: none">'+lng['table_intro1']+'<div class=\'xs0\' style=\'margin:0 5px\'>'+lng['table_intro2']+'</div>'+lng['table_intro3']+'</div>';
 				break;
 			case 'aud':
-				str = '<p class="pbn">'+lng['audio_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="xg2 pbn">'+lng['audio_support']+'</p>';
+/*vot*/				str = '<p class="pbn">'+lng['audio_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="xg2 pbn">'+lng['audio_support']+'</p>';
 				break;
 			case 'vid':
-				str = '<p class="pbn">'+lng['video_url']+':</p><p class="pbn"><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 220px;" class="px" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="500" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="375" class="px" /></p><p class="xg2 pbn">'+lng['video_support']+'</p>';
+/*vot*/				str = '<p class="pbn">'+lng['video_url']+':</p><p class="pbn"><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 220px;" class="px" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="500" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="375" class="px" /></p><p class="xg2 pbn">'+lng['video_support']+'</p>';
 				break;
 			case 'fls':
-				str = '<p class="pbn">'+lng['flash_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="" class="px" /></p><p class="xg2 pbn">'+lng['flash_support']+'</p>';
+/*vot*/				str = '<p class="pbn">'+lng['flash_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="" class="px" /></p><p class="xg2 pbn">'+lng['flash_support']+'</p>';
 				break;
 			case 'pasteword':
-				stitle = lng['paste_from_word'];
+/*vot*/				stitle = lng['paste_from_word'];
 /*vot*/				str = '<p class="px" style="height:300px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'550px\';this.contentWindow.document.body.contentEditable=true;this.contentWindow.document.body.focus();this.onload=null"></iframe></p>';
 /*vot*/				str += '<p class="xg2 pbn">'+lng['paste_word_tip']+'</p>';
 				menuwidth = 600;
@@ -1033,7 +1036,7 @@ function showEditorMenu(tag, params) {
 				var promptlang = custombbcodes[tag]['prompt'].split("\t");
 				for(var i = 1; i <= params; i++) {
 					if(i != params || !haveSel) {
-						str += (promptlang[i - 1] ? promptlang[i - 1] : lng['enter_please']+' ' + i + lng['nth_parameter']+':') + '<br /><input type="text" id="' + ctrlid + '_param_' + i + '" style="width: 98%" value="" class="px" />' + (i < params ? '<br />' : '');
+/*vot*/						str += (promptlang[i - 1] ? promptlang[i - 1] : lng['enter_please']+' ' + i + lng['nth_parameter']+':') + '<br /><input type="text" id="' + ctrlid + '_param_' + i + '" style="width: 98%" value="" class="px" />' + (i < params ? '<br />' : '');
 					}
 				}
 				break;
@@ -1047,11 +1050,11 @@ function showEditorMenu(tag, params) {
 		if(menupos == '00') {
 			menu.className = 'fwinmask';
 			s = '<table width="100%" cellpadding="0" cellspacing="0" class="fwin"><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l">&nbsp;&nbsp;</td><td class="m_c">'
-				+ '<h3 class="flb"><em>' + stitle + '</em><span><a onclick="hideMenu(\'\', \'win\');return false;" class="flbc" href="javascript:;">'+lng['close']+'</a></span></h3><div class="c">' + str + '</div>'
-				+ '<p class="o pns"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>'+lng['submit']+'</strong></button></p>'
+/*vot*/				+ '<h3 class="flb"><em>' + stitle + '</em><span><a onclick="hideMenu(\'\', \'win\');return false;" class="flbc" href="javascript:;">'+lng['close']+'</a></span></h3><div class="c">' + str + '</div>'
+/*vot*/				+ '<p class="o pns"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>'+lng['submit']+'</strong></button></p>'
 				+ '</td><td class="m_r"></td></tr><tr><td class="b_l"></td><td class="b_c"></td><td class="b_r"></td></tr></table>';
 		} else {
-			s = '<div class="p_opt cl"><span class="y" style="margin:-10px -10px 0 0"><a onclick="hideMenu();return false;" class="flbc" href="javascript:;">'+lng['close']+'</a></span><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>'+lng['submit']+'</strong></button></div></div>';
+/*vot*/			s = '<div class="p_opt cl"><span class="y" style="margin:-10px -10px 0 0"><a onclick="hideMenu();return false;" class="flbc" href="javascript:;">'+lng['close']+'</a></span><div>' + str + '</div><div class="pns mtn"><button type="submit" id="' + ctrlid + '_submit" class="pn pnc"><strong>'+lng['submit']+'</strong></button></div></div>';
 		}
 		menu.innerHTML = s;
 		$(editorid + '_editortoolbar').appendChild(menu);

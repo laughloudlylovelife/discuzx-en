@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: class_task.php 23482 2011-07-19 09:47:58Z zhengqingpeng $
- *		English by Valery Votintsev at sources,ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 class task {

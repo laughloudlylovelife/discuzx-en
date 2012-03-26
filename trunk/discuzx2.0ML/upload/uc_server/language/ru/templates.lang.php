@@ -57,7 +57,7 @@ $languages = array(
 	'menu_update_cache'	=> 'Обновление кэша',
 	'menu_log'		=> 'Вход',
 	'menu_logout'		=> 'Выход',
-	'menu_otheradmincp'	=> 'Другие платформы управления',
+	'menu_otheradmincp'	=> 'Другие AdminCP',
 	'menu_admin_user'	=> 'Администратор',
 
 	'pm_from'		=> 'Отправитель',

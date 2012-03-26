@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: class_core.php 26293 2011-12-08 03:10:51Z zhangguosheng $
- *	English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 define('IN_DISCUZ', true);
@@ -1085,7 +1085,11 @@ function escape_str($string = '' /*, $db=false*/) {
 		} else {
 			$where = $condition;
 		}
-		$res = DB::query("$cmd $table SET $sql WHERE $where", $unbuffered ? 'UNBUFFERED' : '');
+//vot		$res = DB::query("$cmd $table SET $sql WHERE $where", $unbuffered ? 'UNBUFFERED' : '');
+/*vot*/		$res_sql = "$cmd $table SET $sql WHERE $where";
+		$res = DB::query($res_sql);
+//DEBUG
+//echo "sql=".$res_sql."<br>\n";
 		return $res;
 	}
 

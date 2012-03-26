@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: register.js 22639 2011-05-16 07:05:16Z lifangming $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var lastusername = '', lastpassword = '', lastemail = '', lastinvitecode = '', stmp = new Array();
@@ -59,7 +59,7 @@ function addFormEvent(formid, focus){
 	};
 	formNode[stmp[2]].onblur = function () {
 		if(formNode[stmp[2]].value == '') {
-			errormessage(formNode[stmp[2]].id, lng['password_again']);
+/*vot*/			errormessage(formNode[stmp[2]].id, lng['password_again']);
 		}
 		checkpassword(formNode[stmp[1]].id, formNode[stmp[2]].id);
 	};
@@ -104,7 +104,7 @@ function showbirthday(){
 	var el = $('birthday');
 	var birthday = el.value;
 	el.length=0;
-	el.options.add(new Option(lng['day'], ''));
+/*vot*/	el.options.add(new Option(lng['day'], ''));
 	for(var i=0;i<28;i++){
 		el.options.add(new Option(i+1, i+1));
 	}
@@ -233,7 +233,7 @@ function checkusername(id) {
 		lastusername = username;
 	}
 	if(username.match(/<|"/ig)) {
-		errormessage(id, lng['username_invalid']);
+/*vot*/		errormessage(id, lng['username_invalid']);
 		return;
 	}
 //vot	var unlen = username.replace(/[^\x00-\xff]/g, "**").length;
@@ -263,7 +263,7 @@ function checkpassword(id1, id2) {
 	}
 	errormessage(id2);
 	if($(id1).value != $(id2).value) {
-		errormessage(id2, lng['passwords_not_equal']);
+/*vot*/		errormessage(id2, lng['passwords_not_equal']);
 	} else {
 		errormessage(id2, 'succeed');
 	}
@@ -278,7 +278,7 @@ function checkemail(id) {
 		lastemail = email;
 	}
 	if(email.match(/<|"/ig)) {
-		errormessage(id, lng['email_invalid']);
+/*vot*/		errormessage(id, lng['email_invalid']);
 		return;
 	}
 	var x = new Ajax();
@@ -297,7 +297,7 @@ function checkinvite() {
 		lastinvitecode = invitecode;
 	}
 	if(invitecode.match(/<|"/ig)) {
-		errormessage('invitecode', lng['invite_code_invalid']);
+/*vot*/		errormessage('invitecode', lng['invite_code_invalid']);
 		return;
 	}
 	var x = new Ajax();

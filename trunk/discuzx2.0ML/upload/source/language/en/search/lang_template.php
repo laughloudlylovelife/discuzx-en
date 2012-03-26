@@ -16,7 +16,7 @@ $lang = array (
 	'a_comment'		=> 'Comment',//'个评论',
 	'a_visit'		=> 'Visit',//'次查看',
 	'heat'			=> 'Hot',//'热度',
-	'search_credit_msg'	=> 'Each search need to cost $policymsgs',//'每进行一次搜索将扣除 $policymsgs',
+	'search_credit_msg'	=> 'Each search costs $policymsgs',//'每进行一次搜索将扣除 $policymsgs',
 	'180_days_ago'		=> '6 months',//'6 个月',
 	'1_days_ago'		=> '1 day',//'1 天',
 	'2_days_ago'		=> '2 days',//'2 天',
@@ -96,4 +96,3 @@ $lang = array (
 //	'search_option'		=> 'Search Options',//'搜索选项',
 //	'search_quick'		=> 'Quick Search',//'便捷搜索',
 
-?>

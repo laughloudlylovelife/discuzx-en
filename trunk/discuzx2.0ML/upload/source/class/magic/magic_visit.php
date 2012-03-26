@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: magic_money.php 7830 2010-04-14 02:22:32Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -113,6 +114,7 @@ class magic_visit {
 				$note_inserts[] = "('$fid', 'comment', '1', '$_G[uid]', '$_G[username]', '$note', '$_G[timestamp]')";
 			}
 			DB::query('INSERT INTO '.DB::table('home_comment')."(uid, id, idtype, authorid, author, ip, dateline, message) VALUES ".implode(",", $inserts));
+//vot  !!!!!!!!!!! -> notification_add
 			DB::query('INSERT INTO '.DB::table('home_notification')."(uid, type, new, authorid, author, note, dateline) VALUES ".implode(",",$note_inserts));
 			DB::query('UPDATE '.DB::table('common_member')." SET newprompt = newprompt + 1 WHERE uid IN (".dimplode($fids).")");
 		} else {

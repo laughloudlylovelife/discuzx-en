@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: block_activity.php 11418 2010-06-02 02:28:01Z xupeng $
- *		English by Valery Votintsev at sources,ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

@@ -1,4 +1,4 @@
-// English by Valery Votintsev at sources.ru
+// Modified by Valery Votintsev, codersclub.org
 var gSetColorType = "";
 var gIsIE = document.all;
 var gIEVer = fGetIEVer();
@@ -41,10 +41,10 @@ function renewContent() {
 		}
 	};
 
-	if(window.confirm(lng['restore_last_saved'])) { //vot
+/*vot*/	if(window.confirm(lng['restore_last_saved'])) {
 		var data = loadUserdata('home');
 		if(in_array((data = trim(data)), ['', 'null', 'false', null, false])) {
-			parent.showDialog(lng['no_data_recover']); //vot
+/*vot*/			parent.showDialog(lng['no_data_recover']);
 			return;
 		}
 		var data = data.split(/\x09\x09/);
@@ -207,13 +207,13 @@ function format(type, para){
 	if(!gIsIE){
 		switch(type){
 			case "Cut":
-				sAlert = lng['cut_manually']; //vot
+/*vot*/				sAlert = lng['cut_manually'];
 				break;
 			case "Copy":
-				sAlert = lng['copy_manually']; //vot
+/*vot*/				sAlert = lng['copy_manually'];
 				break;
 			case "Paste":
-				sAlert = lng['paste_manually']; //vot
+/*vot*/				sAlert = lng['paste_manually'];
 				break;
 		}
 	}
@@ -297,7 +297,7 @@ function doodleBox(event, id) {
 	if(parent.$('uchome-ttHtmlEditor') != null) {
 		parent.showWindow(id, 'home.php?mod=magic&mid=doodle&showid=blog_doodle&target=uchome-ttHtmlEditor&from=editor');
 	} else {
-		alert(lng['graffiti_no_init']); //vot
+/*vot*/		alert(lng['graffiti_no_init']);
 	}
 }
 function backColor(e){
@@ -459,7 +459,7 @@ function fSetBorderMouseDown(obj) {
 }
 function fDisplayElement(element,displayValue) {
 	if(gIEVer<=5.01 && gIsIE){
-		alert(lng['ie5_only']); //vot
+/*vot*/		alert(lng['ie5_only']);
 		return;
 	}
 	fHideMenu();
@@ -495,7 +495,7 @@ function fSetModeTip(obj){
 		dv.style.padding = "2px";
 		dv.style.border = "1px #000000 solid";
 		dv.style.backgroundColor = "#FFFFCC";
-		dv.innerHTML = lng['edit_raw']; //vot
+/*vot*/		dv.innerHTML = lng['edit_raw'];
 		document.body.appendChild(dv);
 	}else{
 		dvModeTip.style.display = "";
@@ -613,7 +613,7 @@ function changeEditType(flag, ev){
 			}
 			ev = ev || event;
 			if(ev){
-				if(window.confirm(lng['plain_text_warn'])){ //vot
+/*vot*/				if(window.confirm(lng['plain_text_warn'])){
 					$('uchome-editstatus').value = 'text';
 					sub1();
 				}else{

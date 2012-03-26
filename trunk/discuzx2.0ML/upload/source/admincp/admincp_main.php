@@ -61,7 +61,7 @@ var admincpfilename = '$basescript', IMGDIR = '$IMGDIR', STYLEID = '$STYLEID', V
       </div>
 
 <table id="frametable" cellpadding="0" cellspacing="0" width="100%" height="100%">
- <tr height="90" valign="top"><!--vot-->
+<!--vot--> <tr height="90" valign="top">
   <td width="160" class="mainhd">
     <a href="admin.php?action=index" class="logo">Discuz! $admincp</a>
   </td>
@@ -74,6 +74,7 @@ var admincpfilename = '$basescript', IMGDIR = '$IMGDIR', STYLEID = '$STYLEID', V
 
 EOT;
 
+//vot
 if($_G['config']['enable_multilingual']) {
   echo <<<EOT
 
@@ -84,6 +85,7 @@ if($_G['config']['enable_multilingual']) {
 EOT;
 }
 
+//vot
 echo <<<EOT
        <a href="$basescript?action=logout" target="_top">$header_logout</a>
        <span class="pipe">|</span>
@@ -129,7 +131,7 @@ echo <<<EOT
 	<a href="###" id="cpmap" onclick="showMap();return false;"><img src="static/image/admincp/btn_map.gif" title="$lang[admincp_maptext]" width="46" height="18" /></a>
 </div>
 </div>
-<!--/div-->
+<!--vot /div-->
 </td>
 </tr>
 <tr>
@@ -145,6 +147,8 @@ unset($menu);
 
 $plugindefaultkey = $isfounder ? 1 : 0;
 
+/*vot*/	$year = date('Y');
+
 echo <<<EOT
 
   </div>
@@ -159,7 +163,7 @@ echo <<<EOT
 </div>
 <div class="copyright">
 <!-- vot -->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> {$_G['setting']['version']},<br>Release {$_G['setting']['release']}</p>
-	<p>&copy; 2001-2011, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
+<!-- vot -->	<p>&copy; 2001-{$year}, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
 <!-- vot -->	<p><strong>MultiLingual version</strong><br>by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
 </div>
 

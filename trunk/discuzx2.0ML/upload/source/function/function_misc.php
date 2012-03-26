@@ -21,16 +21,16 @@ function convertip($ip) {
 		$iparray = explode('.', $ip);
 
 		if($iparray[0] == 10 || $iparray[0] == 127 || ($iparray[0] == 192 && $iparray[1] == 168) || ($iparray[0] == 172 && ($iparray[1] >= 16 && $iparray[1] <= 31))) {
-			$return = 'LAN';
+/*vot*/			$return = 'LAN';
 		} elseif($iparray[0] > 255 || $iparray[1] > 255 || $iparray[2] > 255 || $iparray[3] > 255) {
-			$return = 'Invalid IP Address';
+/*vot*/			$return = 'Invalid IP Address';
 		} else {
 /*vot*/			$geoipfile = DISCUZ_ROOT.'./data/ipdata/GeoIP.dat';
 			$tinyipfile = DISCUZ_ROOT.'./data/ipdata/tinyipdata.dat';
 			$fullipfile = DISCUZ_ROOT.'./data/ipdata/wry.dat';
 /*vot*/			if(@file_exists($geoipfile)) {
 /*vot*/				$return = convertip_geo($ip, $geoipfile);
-			} elseif(@file_exists($tinyipfile)) {
+/*vot*/			} elseif(@file_exists($tinyipfile)) {
 				$return = convertip_tiny($ip, $tinyipfile);
 			} elseif(@file_exists($fullipfile)) {
 				$return = convertip_full($ip, $fullipfile);
