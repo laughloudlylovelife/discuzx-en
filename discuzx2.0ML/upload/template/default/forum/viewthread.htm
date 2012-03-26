@@ -319,7 +319,7 @@ $_G['forum_tagscript']
 <!--{hook/viewthread_middle}-->
 <!--vot--><!--{if $_G['group']['allowpost']}-->
 <!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
-<!--{if $_G['setting']['fastpost'] && ($allowpostreply || !$_G['uid']) && !$_G['forum_thread']['archiveid'] && ($_G['forum']['status'] != 3 || $_G['isgroupuser'])}-->
+<!--vot--><!--{if $_G['setting']['fastpost'] && ($allowpostreply || !$_G['uid']) && !$_G['forum_thread']['archiveid'] && ($_G['forum']['status'] != 3 || $_G['isgroupuser'])}-->
 	<!--{subtemplate forum/viewthread_fastpost}-->
 <!--{/if}-->
 <!--{/if}-->

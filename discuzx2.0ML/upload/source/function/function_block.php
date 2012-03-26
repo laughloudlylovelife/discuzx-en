@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: function_block.php 26635 2011-12-19 01:59:13Z zhangguosheng $
- *	English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -529,6 +529,7 @@ function block_makeform($blocksetting, $values){
 				$calendar_loaded = true;
 			}
 			$s .= '<input type="text" name="'.$varname.'" class="px" value="'.dhtmlspecialchars($value).'" onclick="showcalendar(event, this, true)" />';
+//vot !!!!!!!!! ADD residecountry !!!!!!!!!!!!!!!!!!!!!!!
 		} elseif($type == 'district') {
 			include_once libfile('function/profile');
 			$elems = $vals = array();

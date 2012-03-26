@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: function_discuzcode.php 23217 2011-06-27 03:36:35Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -574,6 +575,17 @@ function parseflv($url, $width = 0, $height = 0) {
 				}
 			}
 		}
+	} elseif(strpos($lowerurl, 'video.sina.com.cn/v/b/') !== FALSE) {
+		if(preg_match("/http:\/\/video.sina.com.cn\/v\/b\/(\d+)-(\d+).html/i", $url, $matches)) {
+			$flv = 'http://vhead.blog.sina.com.cn/player/outer_player.swf?vid='.$matches[1];
+			if(!$width && !$height) {
+				$api = 'http://interface.video.sina.com.cn/interface/common/getVideoImage.php?vid='.$matches[1];
+				$str = file_get_contents($api);
+				if(!empty($str)) {
+					$imgurl = str_replace('imgurl=', '', trim($str));
+				}
+			}
+		}
 	} elseif(strpos($lowerurl, 'you.video.sina.com.cn/b/') !== FALSE) {
 		if(preg_match("/http:\/\/you.video.sina.com.cn\/b\/(\d+)-(\d+).html/i", $url, $matches)) {
 			$flv = 'http://vhead.blog.sina.com.cn/player/outer_player.swf?vid='.$matches[1];
@@ -582,6 +594,17 @@ function parseflv($url, $width = 0, $height = 0) {
 				$str = file_get_contents($api);
 				if(!empty($str)) {
 					$imgurl = str_replace('imgurl=', '', trim($str));
+				}
+			}
+		}
+	} elseif(strpos($lowerurl, 'http://my.tv.sohu.com/u/') !== FALSE) {
+		if(preg_match("/http:\/\/my.tv.sohu.com\/u\/[^\/]+\/(\d+)/i", $url, $matches)) {
+			$flv = 'http://v.blog.sohu.com/fo/v4/'.$matches[1];
+			if(!$width && !$height) {
+				$api = 'http://v.blog.sohu.com/videinfo.jhtml?m=view&id='.$matches[1].'&outType=3';
+				$str = file_get_contents($api);
+				if(!empty($str) && preg_match("/\"cutCoverURL\":\"(.+?)\"/i", $str, $image)) {
+					$imgurl = str_replace(array('\u003a', '\u002e'), array(':', '.'), $image[1]);
 				}
 			}
 		}

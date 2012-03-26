@@ -381,7 +381,7 @@ $lang = array (
 	'friend_message'	=> 'Ordered by <a href="javascript:;" class="xw1" onmouseover="showTip(this)" tip="Friends heat is a system based on the interaction between you and your friends act as a reference value automatically accumulated, the greater the value that you are the more frequent interaction with the friends">Friends heat</a>',//'按照<a href="javascript:;" class="xw1" onmouseover="showTip(this)" tip="好友热度是系统根据您与好友之间交互的动作自动累计的一个参考值，数值越大，表示您与这位好友互动越频繁">好友热度</a>排序',
 	'friends'		=> 'Friends',//'好友',
 	'ignore_group_feed'	=> 'Ignore user group feeds',//'屏蔽用户组动态',
-	'interactive'		=> 'Interactive',//'互动',
+	'interactive'		=> 'Interaction',//'互动',
 	'manage'		=> 'Manage',//'管理',
 	'max_friend_num'	=> 'You can add up to $maxfriendnum friends',//'最多可以添加 $maxfriendnum 个好友',
 	'month'			=> 'Month',//'月',
@@ -1020,7 +1020,7 @@ $lang = array (
 	'eccredit_retee'		=> 'was rated',//'被评价人',
 	'eccredit_soso_comment'		=> '(no bonus points)',//'(不加分)',
 	'eccredit_tradegoods'		=> 'Related products',//'相关商品',
-	'delete_favorite'		=> 'Delete_favorite',//'删除收藏',
+	'delete_favorite'		=> 'Delete from Favorites',//'删除收藏',
 	'delete_favorite_message'	=> 'Are you sure you want to delete this from Favorites?',//'你确定要删除此收藏吗？',
 	'favorite_count'		=> 'Already favorited <b>$fav_count</b> items',//'已有 <b>$fav_count</b> 个人收藏过本条目',
 	'favorite_description'		=> 'Favorite description',//'收藏说明',
@@ -1472,4 +1472,3 @@ $lang = array (
 	'video_certification_audit'	=> 'Video certification audit',//'视频认证审核',
 );
 
-?>

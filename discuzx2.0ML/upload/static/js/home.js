@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: home.js 22765 2011-05-20 03:06:12Z zhengqingpeng $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var note_step = 0;
@@ -52,7 +52,7 @@ function blogAddOption(sid, aid) {
 		obj.value="new:" + newOption;
 		return true;
 	} else {
-		alert(lng['category_empty']);
+/*vot*/		alert(lng['category_empty']);
 		return false;
 	}
 }
@@ -94,7 +94,7 @@ function resizeImg(id,size) {
 					zoomDiv.style.position = 'relative';
 					zoomDiv.style.cursor = 'pointer';
 
-					this.title = lng['show_orig_image'];
+/*vot*/					this.title = lng['show_orig_image'];
 
 					var zoom = document.createElement('img');
 					zoom.src = 'image/zoom.gif';
@@ -132,14 +132,14 @@ function ischeck(id, prefix) {
 	for(var i = 0; i < form.elements.length; i++) {
 		var e = form.elements[i];
 		if(e.name.match(prefix) && e.checked) {
-			if(confirm(lng['continue_sure'])) {
+/*vot*/			if(confirm(lng['continue_sure'])) {
 				return true;
 			} else {
 				return false;
 			}
 		}
 	}
-	alert(lng['select_item']);
+/*vot*/	alert(lng['select_item']);
 	return false;
 }
 
@@ -184,7 +184,7 @@ function insertWebImg(obj) {
 		insertImage(obj.value);
 		obj.value = 'http://';
 	} else {
-		alert(lng['image_url_invalid']);
+/*vot*/		alert(lng['image_url_invalid']);
 	}
 }
 
@@ -287,7 +287,7 @@ function showFlash(host, flashvar, obj, shareid) {
 	var flashHtml = videoFlash;
 	var videoMp3 = true;
 	if('' == flashvar) {
-		alert(lng['audio_url_invalid']);
+/*vot*/		alert(lng['audio_url_invalid']);
 		return false;
 	}
 	if('music' == host) {
@@ -328,7 +328,7 @@ function showFlash(host, flashvar, obj, shareid) {
 		obj.style.display = 'none';
 		var hideObj = document.createElement('div');
 		hideObj.id = 'flash_hide_' + shareid;
-		var nodetxt = document.createTextNode(lng['collapse']);
+/*vot*/		var nodetxt = document.createTextNode(lng['collapse']);
 		hideObj.appendChild(nodetxt);
 		obj.parentNode.insertBefore(hideObj, obj);
 		hideObj.style.cursor = 'pointer';
@@ -351,7 +351,7 @@ function userapp_open() {
 	x.get('home.php?mod=spacecp&ac=common&op=getuserapp&inajax=1', function(s){
 		$('my_userapp').innerHTML = s;
 		$('a_app_more').className = 'fold';
-		$('a_app_more').innerHTML = lng['collapse'];
+/*vot*/		$('a_app_more').innerHTML = lng['collapse'];
 		$('a_app_more').onclick = function() {
 			userapp_close();
 		};
@@ -363,7 +363,7 @@ function userapp_close() {
 	x.get('home.php?mod=spacecp&ac=common&op=getuserapp&subop=off&inajax=1', function(s){
 		$('my_userapp').innerHTML = s;
 		$('a_app_more').className = 'unfold';
-		$('a_app_more').innerHTML = lng['expand'];
+/*vot*/		$('a_app_more').innerHTML = lng['expand'];
 		$('a_app_more').onclick = function() {
 			userapp_open();
 		};
@@ -753,7 +753,7 @@ function poke_send(id, result) {
 }
 function myfriend_post(uid) {
 	if($('friend_'+uid)) {
-		$('friend_'+uid).innerHTML = '<p>'+lng['you_friends_now']+' <a href="home.php?mod=space&do=wall&uid='+uid+'" class="xi2" target="_blank">'+lng['leave_message']+'</a>, '+lng['or']+' <a href="home.php?mod=spacecp&ac=poke&op=send&uid='+uid+'&handlekey=propokehk_'+uid+'" id="a_poke_'+uid+'" class="xi2" onclick="showWindow(this.id, this.href, \'get\', 0, {\'ctrlid\':this.id,\'pos\':\'13\'});">'+lng['send_greeting']+'</a></p>';
+/*vot*/		$('friend_'+uid).innerHTML = '<p>'+lng['you_friends_now']+' <a href="home.php?mod=space&do=wall&uid='+uid+'" class="xi2" target="_blank">'+lng['leave_message']+'</a>, '+lng['or']+' <a href="home.php?mod=spacecp&ac=poke&op=send&uid='+uid+'&handlekey=propokehk_'+uid+'" id="a_poke_'+uid+'" class="xi2" onclick="showWindow(this.id, this.href, \'get\', 0, {\'ctrlid\':this.id,\'pos\':\'13\'});">'+lng['send_greeting']+'</a></p>';
 	}
 	showCreditPrompt();
 }
@@ -798,7 +798,7 @@ function docomment_get(doid, key) {
 	$(showid).className = 'cmt brm';
 	ajaxget('home.php?mod=spacecp&ac=doing&op=getcomment&handlekey=msg_'+doid+'&doid='+doid+'&key='+key, showid);
 	if($(opid)) {
-		$(opid).innerHTML = lng['collapse'];
+/*vot*/		$(opid).innerHTML = lng['collapse'];
 		$(opid).onclick = function() {
 			docomment_colse(doid, key);
 		}
@@ -813,7 +813,7 @@ function docomment_colse(doid, key) {
 	$(showid).style.display = 'none';
 	$(showid).style.className = '';
 
-	$(opid).innerHTML = lng['reply'];
+/*vot*/	$(opid).innerHTML = lng['reply'];
 	$(opid).onclick = function() {
 		docomment_get(doid, key);
 	}
@@ -842,7 +842,7 @@ function docomment_form_close(doid, id, key) {
 	if(!liObj.length) {
 		$(key+'_'+doid).style.display = 'none';
 		if($(opid)) {
-			$(opid).innerHTML = lng['reply'];
+/*vot*/			$(opid).innerHTML = lng['reply'];
 			$(opid).onclick = function () {
 				docomment_get(doid, key);
 			}
@@ -857,7 +857,7 @@ function feedcomment_get(feedid) {
 	$(showid).style.display = '';
 	ajaxget('home.php?mod=spacecp&ac=feed&op=getcomment&feedid='+feedid+'&handlekey=feedhk_'+feedid, showid);
 	if($(opid) != null) {
-		$(opid).innerHTML = lng['collapse'];
+/*vot*/		$(opid).innerHTML = lng['collapse'];
 		$(opid).onclick = function() {
 			feedcomment_close(feedid);
 		}
@@ -886,7 +886,7 @@ function feedcomment_close(feedid) {
 	$(showid).style.display = 'none';
 	$(showid).style.className = '';
 
-	$(opid).innerHTML = lng['comment'];
+/*vot*/	$(opid).innerHTML = lng['comment'];
 	$(opid).onclick = function() {
 		feedcomment_get(feedid);
 	}
@@ -905,7 +905,7 @@ function feed_more_show(feedid) {
 	$(showid).style.display = '';
 	$(showid).className = 'sub_doing';
 
-	$(opid).innerHTML = '&laquo; '+lng['close_list'];
+/*vot*/	$(opid).innerHTML = '&laquo; '+lng['close_list'];
 	$(opid).onclick = function() {
 		feed_more_close(feedid);
 	}
@@ -917,7 +917,7 @@ function feed_more_close(feedid) {
 
 	$(showid).style.display = 'none';
 
-	$(opid).innerHTML = '&raquo; '+lng['more_feeds'];
+/*vot*/	$(opid).innerHTML = '&raquo; '+lng['more_feeds'];
 	$(opid).onclick = function() {
 		feed_more_show(feedid);
 	}
@@ -958,7 +958,7 @@ function showbirthday(){
 	var el = $('birthday');
 	var birthday = el.value;
 	el.length=0;
-	el.options.add(new Option(lng['day'], ''));
+/*vot*/	el.options.add(new Option(lng['day'], ''));
 	for(var i=0;i<28;i++){
 		el.options.add(new Option(i+1, i+1));
 	}

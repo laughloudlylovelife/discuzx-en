@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: class_member.php 25292 2011-11-03 10:14:21Z zhangguosheng $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -450,12 +451,12 @@ class register_ctl {
 /*vot*/				$username = addslashes(trim(dstripslashes($username)));
 				$usernamelen = dstrlen($username);
 /*vot*/				$username_mblen = mb_strlen($username);
-/*vot*/				if($usernamelen > 64) {
-					showmessage('profile_username_toolong');
+/*vot*/				if($username_mblen < 2) {
+					showmessage('profile_username_tooshort');
 /*vot*/				} elseif($username_mblen > 15) {
 					showmessage('profile_username_toolong');
-/*vot*/				} elseif($username_mblen < 2) {
-					showmessage('profile_username_tooshort');
+/*vot*/				} elseif($usernamelen > 64) {
+					showmessage('profile_username_toolong');
 				}
 //vot				$username = addslashes(trim(dstripslashes($username)));
 				if(uc_get_user($username) && !DB::result_first("SELECT uid FROM ".DB::table('common_member')." WHERE username='$username'")) {

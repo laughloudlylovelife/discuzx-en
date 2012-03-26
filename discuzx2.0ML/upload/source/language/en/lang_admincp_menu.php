@@ -57,6 +57,7 @@ $lang = array
 	'menu_setting_ranklist'		=> 'Rank List',//'排行榜设置',
 	'menu_setting_mobile'		=> 'Mobile Access',//'手机访问设置',
 	'menu_setting_tag'		=> 'Tags',//'标签管理',
+/*vot*/	'menu_setting_language'		=> 'Languages',
 
 	'menu_forums'			=> 'Forums',//'版块管理',
 	'menu_forums_merge'		=> 'Forums merge',//'版块合并',

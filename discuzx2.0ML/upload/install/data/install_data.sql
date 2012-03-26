@@ -95,7 +95,7 @@ INSERT INTO pre_common_member_profile_setting VALUES('constellation', 1, 1, 0, '
 INSERT INTO pre_common_member_profile_setting VALUES('zodiac', 1, 1, 0, 'Zodiac', 'Zodiac Sign (calculated automatically according to birthday)', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
 INSERT INTO pre_common_member_profile_setting VALUES('telephone', 1, 1, 0, 'Fixed telephone number', '', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
 INSERT INTO pre_common_member_profile_setting VALUES('mobile', 1, 1, 0, 'Mobile phone', '', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
-INSERT INTO pre_common_member_profile_setting VALUES('idcardtype', 1, 1, 0, 'Document No. & Type', 'Passport, driver license, and other document ID', 0, 0, 0, 0, 0, 0, 0, 'select', 0, 'ID\nPassport\nDriving license', '');
+INSERT INTO pre_common_member_profile_setting VALUES('idcardtype', 1, 1, 0, 'Document Type', 'Passport, Driver license, or Other document type', 0, 0, 0, 0, 0, 0, 0, 'select', 0, 'ID\nPassport\nDriving license', '');
 INSERT INTO pre_common_member_profile_setting VALUES('idcard', 1, 1, 0, 'Document No.', '', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
 INSERT INTO pre_common_member_profile_setting VALUES('address', 1, 1, 0, 'Postal address', '', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
 INSERT INTO pre_common_member_profile_setting VALUES('zipcode', 1, 1, 0, 'Zip Code', '', 0, 0, 0, 0, 0, 0, 0, 'text', 0, '', '');
@@ -148,6 +148,7 @@ INSERT INTO pre_common_member_profile_setting VALUES('field8', 0, 1, 0, 'Custom 
 
 -- [update_nav]
 
+-- id, parentid, name, title, url, identifier, target, type, available, displayorder, highlight,level, subtype, subcols, icon, subname, suburl, navtype, logo
 INSERT INTO pre_common_nav VALUES ('','0', 'Portal', 'Portal', 'portal.php','1','0','0','1','1','0','0','0', 0, '', '', '', 0, '');
 INSERT INTO pre_common_nav VALUES ('','0', 'Forum', 'Forum', 'forum.php','2','0','0','1','2','0','0','0', 0, '', '', '', 0, '');
 INSERT INTO pre_common_nav VALUES ('','0', 'Groups', 'Groups', 'group.php','3','0','0','1','3','0','0','0', 0, '', '', '', 0, '');
@@ -619,7 +620,7 @@ INSERT INTO pre_common_smiley VALUES ('79','0','14','stamplist', 'Recommended', 
 INSERT INTO pre_common_smiley VALUES ('80','0','15','stamplist', 'Original', '007.small.gif');
 INSERT INTO pre_common_smiley VALUES ('81','0','16','stamplist', 'Moderator Recommended', '008.small.gif');
 INSERT INTO pre_common_smiley VALUES ('82','0','17','stamplist', 'Revelation', '009.small.gif');
-INSERT INTO pre_common_smiley VALUES ('83','4','9','stamp', 'Edited', '010.gif');
+INSERT INTO pre_common_smiley VALUES ('83','0','9','stamp', 'Edited', '010.gif');
 INSERT INTO pre_common_smiley VALUES ('84','0','18','stamplist', 'Edited', '010.small.gif');
 
 

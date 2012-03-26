@@ -267,7 +267,7 @@
 								</item>
 								<item id="style"><![CDATA[]]></item>
 								<item id="first">
-									<item id="text"><![CDATA[A question earn points]]></item>
+									<item id="text"><![CDATA[Answer the question & earn points]]></item>
 									<item id="href"><![CDATA[]]></item>
 									<item id="color"><![CDATA[]]></item>
 									<item id="float"><![CDATA[]]></item>
@@ -1692,7 +1692,7 @@
 				<item id="blocktype"><![CDATA[0]]></item>
 				<item id="name"><![CDATA[Rewards]]></item>
 				<item id="title"><![CDATA[
-<DIV class="blocktitle title"><SPAN class=titletext>A question earn points</SPAN></DIV>]]></item>
+<DIV class="blocktitle title"><SPAN class=titletext>Answer the question & earn points</SPAN></DIV>]]></item>
 				<item id="classname"><![CDATA[]]></item>
 				<item id="summary"><![CDATA[]]></item>
 				<item id="uid"><![CDATA[1]]></item>
@@ -2004,7 +2004,7 @@
 				<item id="blockclass"><![CDATA[group_group]]></item>
 				<item id="blocktype"><![CDATA[0]]></item>
 				<item id="name"><![CDATA[]]></item>
-				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">Newest</span></div>]]></item>
+				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">New groups</span></div>]]></item>
 				<item id="classname"><![CDATA[]]></item>
 				<item id="summary"><![CDATA[]]></item>
 				<item id="uid"><![CDATA[1]]></item>
@@ -2511,7 +2511,7 @@
 				<item id="blockclass"><![CDATA[space_doing]]></item>
 				<item id="blocktype"><![CDATA[0]]></item>
 				<item id="name"><![CDATA[]]></item>
-				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">Doing Records</span></div>]]></item>
+				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">Doings</span></div>]]></item>
 				<item id="classname"><![CDATA[]]></item>
 				<item id="summary"><![CDATA[]]></item>
 				<item id="uid"><![CDATA[1]]></item>
@@ -2717,7 +2717,7 @@
 		</tr>
 		<tr>
 			<th>&nbsp;</th>
-			<td class=\"ptm\"><label><input type=\"checkbox\" name=\"avatarstatus\" value=\"1\" class=\"pc\" /> have uploaded Avatar</label></td>
+			<td class=\"ptm\"><label><input type=\"checkbox\" name=\"avatarstatus\" value=\"1\" class=\"pc\" /> Have Avatar uploaded</label></td>
 		</tr>
 		<tr>
 			<th class=\"ptm\">User name</th>
@@ -2751,7 +2751,7 @@
 				<item id="blockclass"><![CDATA[member_member]]></item>
 				<item id="blocktype"><![CDATA[0]]></item>
 				<item id="name"><![CDATA[]]></item>
-				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">Top Charts</span></div>]]></item>
+				<item id="title"><![CDATA[<div class="blocktitle title"><span style="" class="titletext">Top Members</span></div>]]></item>
 				<item id="classname"><![CDATA[]]></item>
 				<item id="summary"><![CDATA[]]></item>
 				<item id="uid"><![CDATA[1]]></item>
@@ -4374,7 +4374,7 @@ runslideshow();
 				<item id="name"><![CDATA[[X1.5]Group events: small image + title]]></item>
 				<item id="template">
 					<item id="raw"><![CDATA[<div class="module cl xld">
-[loop]s
+[loop]
 <dl class="cl">
 <dd class="m"><a href="{url}"{target}><img src="{pic}" width="48" height="48" alt="{title}" /></a></dd>
 <dt style="padding-bottom: 0;"><a href="{url}" title="{title}"{target}>{title}</a></dt>

@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: post_newthread.php 22852 2011-05-26 04:15:24Z monkey $
- *	English by Valery Votintsev
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {

@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum.js 22522 2011-05-11 03:12:47Z monkey $
-//	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 function saveData(ignoreempty) {
@@ -166,7 +166,7 @@ function announcement() {
 }
 
 function removeindexheats() {
-	return confirm(lng['del_thread_sure']);
+/*vot*/	return confirm(lng['del_thread_sure']);
 }
 
 function showTypes(id, mod) {
@@ -176,7 +176,7 @@ function showTypes(id, mod) {
 	mod = isUndefined(mod) ? 1 : mod;
 	var baseh = o.getElementsByTagName('li')[0].offsetHeight * 2;
 	var tmph = o.offsetHeight;
-	var lang = [lng['expand'], lng['collapse']];
+/*vot*/	var lang = [lng['expand'], lng['collapse']];
 	var cls = ['unfold', 'fold'];
 	if(tmph > baseh) {
 		var octrl = document.createElement('li');
@@ -217,7 +217,7 @@ function fastpostvalidate(theform, noajaxpost) {
 		}
 	}
 	if(theform.message.value == '' && theform.subject.value == '') {
-		s = lng['enter_content']+'.';
+/*vot*/		s = lng['enter_content']+'.';
 		theform.message.focus();
 //vot	} else if(mb_strlen(theform.subject.value) > 80) {
 	} else if(theform.subject.value.length > 80 ) { //vot
@@ -225,7 +225,7 @@ function fastpostvalidate(theform, noajaxpost) {
 		theform.subject.focus();
 	}
 	if(!disablepostctrl && ((postminchars != 0 && mb_strlen(theform.message.value) < postminchars) || (postmaxchars != 0 && mb_strlen(theform.message.value) > postmaxchars))) {
-		s = lng['content_long'] + lng['current_length']+': ' + mb_strlen(theform.message.value) + ' ' + lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes'];
+/*vot*/		s = lng['content_long'] + lng['current_length']+': ' + mb_strlen(theform.message.value) + ' ' + lng['bytes']+'\n'+lng['system_limit']+': ' + postminchars + ' '+lng['up_to']+' ' + postmaxchars + ' '+lng['bytes'];
 	}
 	if(s) {
 		showError(s);
@@ -384,7 +384,7 @@ function checkForumnew(fid, lasttime) {
 			}
 			removetbodyrow(table, 'forumnewshow');
 			var colspan = table.getElementsByTagName('tbody')[0].rows[0].children.length;
-			var checknew = {'tid':'', 'thread':{'common':{'className':'', 'val':'<a href="javascript:void(0);" onclick="ajaxget(\'forum.php?mod=ajax&action=forumchecknew&fid=' + fid+ '&time='+lasttime+'&uncheck=1&inajax=yes\', \'forumnew\');">'+lng['new_reply_exists'], 'colspan': colspan }}};
+/*vot*/			var checknew = {'tid':'', 'thread':{'common':{'className':'', 'val':'<a href="javascript:void(0);" onclick="ajaxget(\'forum.php?mod=ajax&action=forumchecknew&fid=' + fid+ '&time='+lasttime+'&uncheck=1&inajax=yes\', \'forumnew\');">'+lng['new_reply_exists'], 'colspan': colspan }}};
 			addtbodyrow(table, ['tbody'], ['forumnewshow'], 'separatorline', checknew);
 		} else {
 			if(checkForumcount < 50) {

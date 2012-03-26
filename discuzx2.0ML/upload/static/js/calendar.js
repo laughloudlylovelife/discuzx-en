@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: calendar.js 21580 2011-04-01 02:22:19Z svn_project_zhangjie $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var controlid = null;
@@ -32,7 +32,9 @@ function loadcalendar() {
 			s += "<td id=d" + (i * 7 + j) + " height=\"19\">0</td>";
 		s += "</tr>";
 	}
-	s += '<tr id="hourminute" class="pns"><td colspan="4" align="left"><input type="text" size="1" value="" id="hour" class="px vm" onKeyUp=\'this.value=this.value > 23 ? 23 : zerofill(this.value);controlid.value=controlid.value.replace(/\\d+(\:\\d+)/ig, this.value+"$1")\'> '+lng['hours']+' <input type="text" size="1" value="" id="minute" class="px vm" onKeyUp=\'this.value=this.value > 59 ? 59 : zerofill(this.value);controlid.value=controlid.value.replace(/(\\d+\:)\\d+/ig, "$1"+this.value)\'> '+lng['minutes']+'</td><td align="right" colspan="3"><button class="pn" onclick="confirmcalendar();"><em>'+lng['ok']+'</em></button></td></tr>';
+/*vot*/	s += '<tr id="hourminute" class="pns"><td colspan="4" align="left"><input type="text" size="1" value="" id="hour" class="px vm" onKeyUp=\'this.value=this.value > 23 ? 23 : zerofill(this.value);controlid.value=controlid.value.replace(/\\d+(\:\\d+)/ig, this.value+"$1")\'> '+lng['hours'];
+/*vot*/	s += ' <input type="text" size="1" value="" id="minute" class="px vm" onKeyUp=\'this.value=this.value > 59 ? 59 : zerofill(this.value);controlid.value=controlid.value.replace(/(\\d+\:)\\d+/ig, "$1"+this.value)\'> '+lng['minutes'];
+/*vot*/	s += '</td><td align="right" colspan="3"><button class="pn" onclick="confirmcalendar();"><em>'+lng['ok']+'</em></button></td></tr>';
 	s += '</table></div></div>';
 	s += '<div id="calendar_year" onclick="doane(event)" style="display: none;z-index:100001;"><div class="col">';
 	for(var k = 2020; k >= 1931; k--) {

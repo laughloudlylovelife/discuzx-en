@@ -135,4 +135,3 @@ $lang = array (
 	'thread'		=> 'Threads',//'主题',
 );
 
-?>

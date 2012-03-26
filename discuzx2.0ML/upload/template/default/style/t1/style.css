@@ -2,6 +2,7 @@
 [name]Red[/name]
 [iconbgcolor]#BA350F[/iconbgcolor]
 Powered by Discuz! X
+Modified by Valery Votintsev, codersclub.org
 */
 
 html { background: #FAF6ED url(background.png); }
@@ -62,5 +63,5 @@ body { background: transparent url(bgimg.jpg) no-repeat 50% 0; }
 	.p_pop a:hover, .p_pop a.a, #sctype_menu .sca { background-color: #FFECEC; color: #BA350F; }
 	.blk a:hover { background-color: transparent; }
 
-/* Re-defined friends list */
+/* Re-define friend list */
 #nv_home .buddy li { background-color: transparent; border: none; }

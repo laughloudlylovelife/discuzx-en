@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: forum_moderate.js 21562 2011-03-31 08:40:33Z monkey $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 function modaction(action, pid, extra, mod) {
@@ -25,7 +25,7 @@ function modaction(action, pid, extra, mod) {
 		var checked = 1;
 	}
 	if(!checked) {
-		alert(lng['choose_tread']);
+/*vot*/		alert(lng['choose_tread']);
 	} else {
 		$('modactions').action = mod + '&action='+ action +'&fid=' + fid + '&tid=' + tid + '&handlekey=mods&infloat=yes&nopost=yes' + (!pid ? '' : '&topiclist[]=' + pid) + extra + '&r' + Math.random();
 		showWindow('mods', 'modactions', 'post');
@@ -121,7 +121,7 @@ function tmodthreads(optgroup, operation) {
 		}
 	}
 	if(!checked) {
-		alert(lng['choose_tread']);
+/*vot*/		alert(lng['choose_tread']);
 	} else {
 		$('moderate').optgroup.value = optgroup;
 		$('moderate').operation.value = operation;

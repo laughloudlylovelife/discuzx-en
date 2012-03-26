@@ -18,7 +18,9 @@ cpheader();
 
 if($operation == 'alipay') {
 	$settings = array();
-	$query = DB::query("SELECT skey, svalue FROM ".DB::table('common_setting')." WHERE skey IN ('ec_account', 'ec_contract')");
+/*vot*/	$query = DB::query("SELECT skey, svalue
+                            FROM ".DB::table('common_setting')."
+                            WHERE skey IN ('ec_account', 'ec_contract')");
 	while($setting = DB::fetch($query)) {
 		$settings[$setting['skey']] = $setting['svalue'];
 	}
@@ -78,7 +80,7 @@ if($operation == 'alipay') {
 			array('nav_ec_credit', 'ec&operation=credit', 0),
 			array('nav_ec_orders', 'ec&operation=orders', 0),
 			array('nav_ec_tradelog', 'tradelog', 0),
-			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0)
+/*vot*/			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0),
 		));
 
 		showtips('ec_alipay_tips');
@@ -182,7 +184,7 @@ if($operation == 'alipay') {
 			array('nav_ec_credit', 'ec&operation=credit', 0),
 			array('nav_ec_orders', 'ec&operation=orders', 0),
 			array('nav_ec_tradelog', 'tradelog', 0),
-			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0)
+/*vot*/			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0),
 		));
 
 		showtips('ec_tenpay_tips');
@@ -272,7 +274,7 @@ if($operation == 'alipay') {
 			array('nav_ec_credit', 'ec&operation=credit', 0),
 			array('nav_ec_orders', 'ec&operation=orders', 1),
 			array('nav_ec_tradelog', 'tradelog', 0),
-			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0)
+/*vot*/			array('nav_ec_inviteorders', 'ec&operation=inviteorders', 0),
 		));
 		showtips('ec_orders_tips');
 		showtagheader('div', 'ordersearch', !submitcheck('searchsubmit', 1));
@@ -343,7 +345,7 @@ if($operation == 'alipay') {
 					"{$_G[setting][extcredits][$_G[setting][creditstrans]]['title']} $order[amount] {$_G[setting][extcredits][$_G[setting][creditstrans]]['unit']}",
 					"$lang[rmb] $order[price] $lang[rmb_yuan]",
 					$order[submitdate],
-					$order[confirmdate]
+/*vot*/					$order[confirmdate],
 				));
 			}
 

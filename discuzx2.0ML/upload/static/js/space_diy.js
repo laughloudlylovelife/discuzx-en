@@ -3,15 +3,15 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: space_diy.js 21831 2011-04-13 08:53:11Z maruitao $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 var drag = new Drag();
 drag.extend({
 
 	setDefalutMenu : function () {
-		this.addMenu('default', lng['delete'], 'drag.removeBlock(event)');
-		this.addMenu('block', lng['attribute'], 'drag.openBlockEdit(event)');
+/*vot*/		this.addMenu('default', lng['delete'], 'drag.removeBlock(event)');
+/*vot*/		this.addMenu('block', lng['attribute'], 'drag.openBlockEdit(event)');
 	},
 	removeBlock : function (e) {
 		if ( typeof e !== 'string') {
@@ -20,7 +20,7 @@ drag.extend({
 		} else {
 			id = e;
 		}
-		if (!confirm(lng['delete_this_sure'])) return false;
+/*vot*/		if (!confirm(lng['delete_this_sure'])) return false;
 		$(id).parentNode.removeChild($(id));
 		var el = $('chk'+id);
 		if (el != null) el.className = '';
@@ -64,7 +64,7 @@ drag.extend({
 					el  = document.createElement("div");
 					el.className = drag.blockClass + ' ' + drag.moveableObject;
 					el.id = blockname;
-					s = s.replace(/\<script.*\<\/script\>/ig,'<font color="red"> ['+lng['save_js']+'] </font>');
+/*vot*/					s = s.replace(/\<script.*\<\/script\>/ig,'<font color="red"> ['+lng['save_js']+'] </font>');
 					el.innerHTML = s;
 					var id = drag.data['diypage'][0]['columns']['frame1_left']['children'][0]['name'];
 					$('frame1_left').insertBefore(el,$(id));
@@ -192,7 +192,7 @@ spaceDiy.extend({
 			if (!$('infoedit')) {
 				var dom = document.createElement('em');
 				dom.id = 'infoedit';
-				dom.innerHTML = lng['edit'];
+/*vot*/				dom.innerHTML = lng['edit'];
 				$('spacename').appendChild(dom);
 			}
 			$('spaceinfoshow').onmousedown = function () {spaceDiy.showEditSpaceInfo();};
@@ -209,7 +209,7 @@ spaceDiy.extend({
 		var nv = $('editnvinfo');
 		if(!nv) {
 			var dom = document.createElement('div');
-			dom.innerHTML = '<span id="editnvinfo" class="edit" style="background-color:#336699;" onclick="spaceDiy.opNvEditInfo();">'+lng['settings']+'</span>';
+/*vot*/			dom.innerHTML = '<span id="editnvinfo" class="edit" style="background-color:#336699;" onclick="spaceDiy.opNvEditInfo();">'+lng['settings']+'</span>';
 			$('nv').appendChild(dom.childNodes[0]);
 		} else {
 			nv.style.display = '';

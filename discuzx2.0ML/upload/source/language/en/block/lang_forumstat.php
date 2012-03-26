@@ -39,6 +39,6 @@ $lang = array
 	'forumstat_onlinemember_allow'	=> 'Display online members',//'显示在线会员统计',
 	'forumstat_onlinemember_order'	=> 'Show online member order',//'在线会员统计显示顺序',
 	'forumstat_onlinemember_text'	=> 'Show online members tips',//'在线会员统计提示文字',
-	'forumstat_onlinemember_default'	=> 'Onlime members:',//'在线会员:',
+	'forumstat_onlinemember_default'	=> 'Online members:',//'在线会员:',
 );
 

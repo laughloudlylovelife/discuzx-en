@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_nav.php 22849 2011-05-26 01:57:02Z monkey $
- *	Modified by Valery Votintsev
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -68,7 +68,10 @@ if($operation == 'headernav') {
 				$navsubtype[$nav['subtype']] = 'selected="selected"';
 				$readonly = $nav['type'] == '4' ? ' readonly="readonly"' : '';
 /*vot*/				showtablerow('', array('', '', '', '', '',''), array(
-/*vot*/					(in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" : '<input type="checkbox" class="checkbox" value="" disabled="disabled" />').($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ? '<a href="javascript:;" class="left" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : ''),
+/*vot*/					(in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" :
+					'<input type="checkbox" class="checkbox" value="" disabled="disabled" />').
+					($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ?
+					'<a href="javascript:;" class="left" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : ''),
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 /*vot*/					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\"$readonly>".
 /*vot*/						($nav['identifier'] == 6 && $nav['type'] == 0 ? '' : "<a href=\"###\" onclick=\"addrowdirect=1;addrow(this, 1, $nav[id])\" class=\"addchildboard\">$lang[misc_customnav_add_submenu]</a>")."</div>",
@@ -387,7 +390,7 @@ EOT;
 					"<a href=\"".ADMINSCRIPT."?action=nav&operation=footernav&do=edit&id=$nav[id]\" class=\"act\">$lang[edit]</a>"
 				));
 			}
-			echo '<tr><td colspan="2"></td><td colspan="6"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_footernav_add'].'</a></div></td></tr>';
+/*vot*/			echo '<tr><td colspan="2"></td><td colspan="6"><div><a href="###" onclick="addrow(this, 0, 0)" class="addtr">'.$lang['nav_footernav_add'].'</a></div></td></tr>';
 			showsubmit('submit', 'submit', 'del');
 			showtablefooter();
 			showformfooter();
@@ -547,8 +550,8 @@ EOT;
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 /*vot*/					($nav['icon'] ? '<img src="'.$navicon.'" width="16" height="16" class="vmiddle" />' : ''),
 /*vot*/					!in_array($nav['name'], array('{userpanelarea1}', '{userpanelarea2}', '{hr}')) ? (
-						"<input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">") : 
-						"<input type=\"hidden\" name=\"namenew[$nav[id]]\" value=\"$nav[name]\">".cplang('nav_spacenav_'.str_replace(array('{', '}'), '', $nav['name']), array('navname' => $_G['setting']['navs'][5]['navname'])),
+/*vot*/						"<input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\">") : 
+/*vot*/						"<input type=\"hidden\" name=\"namenew[$nav[id]]\" value=\"$nav[name]\">".cplang('nav_spacenav_'.str_replace(array('{', '}'), '', $nav['name']), array('navname' => $_G['setting']['navs'][5]['navname'])),
 /*vot*/					"<input type=\"text\" class=\"txtid\" size=\"2\" name=\"identifier[$nav[id]]\" value=\"$nav[identifier]\">",
 					$nav['type'] == '0' || $nav['name'] == '{hr}' ? $nav['url'] : "<input type=\"text\" class=\"txt\" size=\"15\" name=\"urlnew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['url'])."\">",
 					cplang($nav['type'] == '0' ? 'inbuilt' : ($nav['type'] == '3' ? 'nav_plugin' : ($nav['type'] == '4' ? 'channel' : 'custom'))),

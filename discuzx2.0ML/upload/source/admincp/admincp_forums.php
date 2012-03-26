@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: admincp_forums.php 23399 2011-07-13 10:12:39Z liulanbo $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -702,7 +703,9 @@ var rowtypedata = [
 
 					$typeselect = $sortselect = '';
 
-					$query = DB::query("SELECT * FROM ".DB::table('forum_threadtype')." ORDER BY displayorder");
+/*vot*/					$query = DB::query("SELECT *
+							FROM ".DB::table('forum_threadtype')."
+							ORDER BY displayorder");
 					$typeselect = getthreadclasses_html($fid);
 					while($type = DB::fetch($query)) {
 						$typeselected = array();
@@ -1851,7 +1854,8 @@ EOT;
 
 	$delfields = array(
 		'forums'	=> array('fid', 'fup', 'type', 'name', 'status', 'displayorder', 'threads', 'posts', 'todayposts', 'lastpost', 'modworks', 'icon', 'level', 'commoncredits', 'archive', 'recommend'),
-		'forumfields'	=> array('description', 'password', 'redirect', 'moderators', 'rules', 'threadtypes', 'threadsorts', 'threadplugin', 'jointype', 'gviewperm', 'membernum', 'dateline', 'lastupdate', 'founderuid', 'foundername', 'banner', 'groupnum', 'activity'),
+//vot		'forumfields'	=> array('description', 'password', 'redirect', 'moderators', 'rules', 'threadtypes', 'threadsorts', 'threadplugin', 'jointype', 'gviewperm', 'membernum', 'dateline', 'lastupdate', 'founderuid', 'foundername', 'banner', 'groupnum', 'activity'),
+/*vot*/		'forumfields'	=> array('description', 'password', 'redirect', 'moderators', 'rules', 'threadsorts', 'threadplugin', 'jointype', 'gviewperm', 'membernum', 'dateline', 'lastupdate', 'founderuid', 'foundername', 'banner', 'groupnum', 'activity'),
 	);
 	$fields = array(
 		'forums' 	=> fetch_table_struct('forum_forum'),
@@ -1917,7 +1921,10 @@ EOT;
 		}
 		foreach(array('forum_forum', 'forum_forumfield') as $table) {
 			if(is_array($forumoptions[$table]) && !empty($forumoptions[$table])) {
-				$sourceforum = DB::fetch_first("SELECT ".implode($forumoptions[$table],',')." FROM ".DB::table($table)." WHERE fid='$source'");
+/*vot*/	$sql = "SELECT ".implode($forumoptions[$table],',')."
+		FROM ".DB::table($table)."
+		WHERE fid='$source'";
+				$sourceforum = DB::fetch_first($sql);
 				if(!$sourceforum) {
 					cpmsg('forums_copy_source_invalid', '', 'error');
 				}
@@ -2027,10 +2034,16 @@ function fetch_table_struct($tablename, $result = 'FIELD') {
 }
 
 function getthreadclasses_html($fid) {
-	$threadtypes = DB::result_first("SELECT threadtypes FROM ".DB::table('forum_forumfield')." WHERE fid='$fid'");
+/*vot*/	$threadtypes = DB::result_first("SELECT threadtypes
+					 FROM ".DB::table('forum_forumfield')."
+					 WHERE fid='$fid'");
 	$threadtypes = unserialize($threadtypes);
 
-	$query = DB::query("SELECT * FROM ".DB::table('forum_threadclass')." WHERE fid='$fid' ORDER BY displayorder");
+//vot Here are real thread types !!!!!!!!!!!!!!
+/*vot*/	$query = DB::query("SELECT *
+			    FROM ".DB::table('forum_threadclass')."
+			    WHERE fid='$fid'
+			    ORDER BY displayorder");
 	while($type = DB::fetch($query)) {
 		$enablechecked = $moderatorschecked = '';
 		$typeselected = array();

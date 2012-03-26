@@ -14,7 +14,6 @@ if(!defined('IN_DISCUZ')) {
 if(($special == 1 && !$_G['group']['allowpostpoll']) || ($special == 2 && !$_G['group']['allowposttrade']) || ($special == 3 && !$_G['group']['allowpostreward']) || ($special == 4 && !$_G['group']['allowpostactivity']) || ($special == 5 && !$_G['group']['allowpostdebate'])) {
 	showmessage('group_nopermission', NULL, array('grouptitle' => $_G['group']['grouptitle']), array('login' => 1));
 }
-$posttable = getposttablebytid($_G['tid']);
 $orig = DB::fetch_first("SELECT m.adminid, p.first, p.authorid, p.author, p.dateline, p.anonymous, p.invisible, p.htmlon FROM ".DB::table($posttable)." p
 	LEFT JOIN ".DB::table('common_member')." m ON m.uid=p.authorid
 	WHERE pid='$pid' AND tid='$_G[tid]' AND fid='$_G[fid]'");
