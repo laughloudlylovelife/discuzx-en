@@ -575,6 +575,8 @@ function parseflv($url, $width = 0, $height = 0) {
 				}
 			}
 		}
+//------------------------------------------------------------------
+// vot: added in X2.5
 	} elseif(strpos($lowerurl, 'video.sina.com.cn/v/b/') !== FALSE) {
 		if(preg_match("/http:\/\/video.sina.com.cn\/v\/b\/(\d+)-(\d+).html/i", $url, $matches)) {
 			$flv = 'http://vhead.blog.sina.com.cn/player/outer_player.swf?vid='.$matches[1];
@@ -597,6 +599,8 @@ function parseflv($url, $width = 0, $height = 0) {
 				}
 			}
 		}
+//------------------------------------------------------------------
+// vot: added in X2.5
 	} elseif(strpos($lowerurl, 'http://my.tv.sohu.com/u/') !== FALSE) {
 		if(preg_match("/http:\/\/my.tv.sohu.com\/u\/[^\/]+\/(\d+)/i", $url, $matches)) {
 			$flv = 'http://v.blog.sohu.com/fo/v4/'.$matches[1];

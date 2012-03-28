@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: install.php 22778 2011-05-20 07:15:53Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -81,4 +82,3 @@ runquery($sql);
 
 $finish = true;
 
-?>

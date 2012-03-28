@@ -48,7 +48,7 @@ function updatesession($force = false) {
 					'thismonth' => $oltimespan,
 					'total' => $oltimespan,
 					'lastupdate' => TIMESTAMP,
-					)
+/*vot*/					)
 				);
 			}
 			$discuz->session->set('lastolupdate', TIMESTAMP);
@@ -2108,9 +2108,9 @@ function notification_add($touid, $type, $note, $notevars = array(), $system = 0
 	}
 	if(empty($oldnote['from_num'])) $oldnote['from_num'] = 0;
 	$notevars['from_num'] = $notevars['from_num'] ? $notevars['from_num'] : 1;
-//vot
-$notevars['template'] = $note;
-$notestring = serialize($notevars);
+
+/*vot*/	$notevars['template'] = $note;
+/*vot*/	$notestring = serialize($notevars);
 
 	$setarr = array(
 		'uid' => $touid,
