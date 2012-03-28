@@ -18,7 +18,7 @@ if($_G['gp_action'] == 'checkusername') {
 
 	$username = trim($_G['gp_username']);
 	$usernamelen = dstrlen($username);
-	if($usernamelen < 2) {
+/*vot*/	if($usernamelen < 2) {
 		showmessage('profile_username_tooshort', '', array(), array('handle' => false));
 	} elseif($usernamelen > 15) {
 		showmessage('profile_username_toolong', '', array(), array('handle' => false));
