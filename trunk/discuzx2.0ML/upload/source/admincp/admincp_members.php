@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_members.php 25615 2011-11-16 07:14:10Z chenmengshu $
+ *      $Id: admincp_members.php 28955 2012-03-20 09:24:07Z zhengqingpeng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -146,13 +146,13 @@ EOF;
 	$detail = '';
 	if($uids && is_array($uids)) {
 		$conditions = 'p.uid IN ('.dimplode($uids).')';
-/*vot*/		$query = DB::query("SELECT p.uid,m.username AS username,p.realname,p.gender,p.birthyear,p.birthmonth,p.birthday,p.constellation,
-				p.zodiac,p.telephone,p.mobile,p.idcardtype,p.idcard,p.address,p.zipcode,p.nationality,
-				p.birthcountry,p.birthprovince,p.birthcity,p.birthdist,p.birthcommunity,
-				p.residecountry,p.resideprovince,p.residecity,p.residedist,p.residecommunity,p.residesuite,p.graduateschool,p.education,p.company,
-				p.occupation,p.position,p.revenue,p.affectivestatus,p.lookingfor,p.bloodtype,p.height,p.weight,
-				p.alipay,p.icq,p.qq,p.yahoo,p.msn,p.taobao,p.site,p.bio,p.interest,
-				p.field1,p.field2,p.field3,p.field4,p.field5,p.field6,p.field7,p.field8 FROM ".
+/*vot				p.birthcountry,*/
+/*vot				p.residecountry,*/
+		$query = DB::query("SELECT p.uid,m.username AS username,p.realname,p.gender,p.birthyear,p.birthmonth,p.birthday,p.constellation,
+				p.zodiac,p.telephone,p.mobile,p.idcardtype,p.idcard,p.address,p.zipcode,p.nationality,p.birthprovince,p.birthcity,p.birthdist,
+				p.birthcommunity,p.resideprovince,p.residecity,p.residedist,p.residecommunity,p.residesuite,p.graduateschool,p.education,p.company,
+				p.occupation,p.position,p.revenue,p.affectivestatus,p.lookingfor,p.bloodtype,p.height,p.weight,p.alipay,p.icq,p.qq,
+				p.yahoo,p.msn,p.taobao,p.site,p.bio,p.interest,p.field1,p.field2,p.field3,p.field4,p.field5,p.field6,p.field7,p.field8 FROM ".
 				DB::table('common_member_profile')." p LEFT JOIN ".DB::table('common_member')." m ON p.uid =m.uid WHERE ".$conditions);
 		while($v = DB::fetch($query)) {
 			foreach($v as $key => $value) {
@@ -178,12 +178,12 @@ EOF;
 		'address' => '',
 		'zipcode' => '',
 		'nationality' => '',
-///*vot*/		'birthcountry' => '',
+/*vot		'birthcountry' => '',*/
 		'birthprovince' => '',
 		'birthcity' => '',
 		'birthdist' => '',
 		'birthcommunity' => '',
-///*vot*/		'residecountry' => '',
+/*vot		'residecountry' => '',*/
 		'resideprovince' => '',
 		'residecity' => '',
 		'residedist' => '',
@@ -238,7 +238,7 @@ EOF;
 	header('Expires: 0');
 //vot !!!!!!! VERIFY THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!
 	if($_G['charset'] != 'gbk') {
-		$detail = diconv($detail, $_G['charset'], 'GBK');
+//vot		$detail = diconv($detail, $_G['charset'], 'GBK');
 	}
 	echo $detail;
 	exit();
@@ -390,7 +390,7 @@ EOF;
 		$uids = 0;
 		$extra = '';
 
-		$uids = searchmembers($search_condition);
+		$uids = searchmembers($search_condition, 10);
 		$conditions = $uids ? 'm.uid IN ('.dimplode($uids).')' : '0';
 
 		if(!empty($_G['gp_uidarray'])) {
@@ -400,7 +400,7 @@ EOF;
 			$membernum = DB::num_rows($query);
 			$uids = array();
 			while($member = DB::fetch($query)) {
-				if($membernum < 2000 || !empty($_G['gp_uidarray'])) {
+				if($membernum < 10 || !empty($_G['gp_uidarray'])) {
 					$extra .= '<input type="hidden" name="uidarray[]" value="'.$member['uid'].'" />';
 				}
 				$uids[] = $member['uid'];
@@ -1604,6 +1604,19 @@ EOF;
 
 		DB::query("UPDATE ".DB::table('common_member_field_forum')." SET groupterms='".($member['groupterms'] ? addslashes(serialize($member['groupterms'])) : '')."' WHERE uid='$member[uid]'");
 
+		$noticekey = '';
+		if($_GET['bannew'] == 'post') {
+			$noticekey = 'member_ban_speak';
+		}
+		if($noticekey) {
+			$notearr = array(
+				'user' => "<a href=\"home.php?mod=space&uid=$_G[uid]\">$_G[username]</a>",
+				'day' => intval($_POST['banexpirynew']),
+				'reason' => $reason
+			);
+			notification_add($member['uid'], 'system', $noticekey, $notearr, 1);
+		}
+
 		if($_G['adminid'] == 1 && !empty($_G['gp_clear']) && is_array($_G['gp_clear'])) {
 			require_once libfile('function/delete');
 			$membercount = array();
@@ -2424,7 +2437,7 @@ EOF;
 
 /*vot*/		$query = DB::query("SELECT title, displayorder, available, invisible, showincard, showinregister, fieldid
 				    FROM ".DB::table('common_member_profile_setting')."
-				    ORDER BY displayorder, available DESC");
+				    ORDER BY available DESC, displayorder");
 		$list = array();
 		while($value = DB::fetch($query)) {
 			$fieldid = $value['fieldid'];
@@ -2869,7 +2882,7 @@ function shownewsletter() {
 	showsetting('members_newsletter_message', 'message', '', 'textarea');
 	showsetting('members_newsletter_method', array('notifymembers', array(
 	    array('email', $lang['email'], array('pmextra' => 'none', 'posttype' => '')),
-	    array('notice', $lang['notice'], array('pmextra' => 'none', 'posttype' => 'none')),
+	    array('notice', $lang['notice'], array('pmextra' => 'none', 'posttype' => '')),
 	    array('pm', $lang['grouppm'], array('pmextra' => '', 'posttype' => 'none')),
 	)), 'pm', 'mradio');
 	showtagheader('tbody', 'posttype', '', 'sub');
@@ -3086,7 +3099,7 @@ function notifymembers($operation, $variable) {
 		$conditions = $uids ? 'uid IN ('.dimplode($uids).')' : '0';
 
 		require_once libfile('function/discuzcode');
-		$message = $_G['gp_notifymembers'] == 'email' && $_G['gp_posttype'] ? discuzcode($message, 1, 0, 1, '', '' ,'' ,1) : discuzcode($message, 1, 0);
+		$message = in_array($_G['gp_notifymembers'], array('email','notice')) && $_G['gp_posttype'] ? discuzcode($message, 1, 0, 1, '', '' ,'' ,1) : discuzcode($message, 1, 0);
 		$pmuids = array();
 		if($_G['gp_notifymembers'] == 'pm') {
 			$membernum = countmembers($search_condition, $urladd);
@@ -3126,10 +3139,10 @@ function notifymembers($operation, $variable) {
 			'current' => $current,
 			'next' => $next,
 			'search_condition' => serialize($search_condition),
-			'action' => "action=members&operation=$operation&{$operation}submit=yes&current=$next&pertask=$pertask&notifymember={$_G['gp_notifymember']}&notifymembers=".rawurlencode($_G['gp_notifymembers']).$urladd
+			'action' => "action=members&operation=$operation&{$operation}submit=yes&current=$next&pertask=$pertask&system={$_G['gp_system']}&posttype={$_G['gp_posttype']}&notifymember={$_G['gp_notifymember']}&notifymembers=".rawurlencode($_G['gp_notifymembers']).$urladd
 		);
 		save_newsletter('newsletter_detail', $newsletter_detail);
-		cpmsg("$lang[members_newsletter_send]: ".cplang('members_newsletter_processing', array('current' => $current, 'next' => $next, 'search_condition' => serialize($search_condition))), "action=members&operation=$operation&{$operation}submit=yes&current=$next&pertask=$pertask&notifymember={$_G['gp_notifymember']}&notifymembers=".rawurlencode($_G['gp_notifymembers']).$urladd, 'loadingform');
+		cpmsg("$lang[members_newsletter_send]: ".cplang('members_newsletter_processing', array('current' => $current, 'next' => $next, 'search_condition' => serialize($search_condition))), "action=members&operation=$operation&{$operation}submit=yes&current=$next&pertask=$pertask&system={$_G['gp_system']}&posttype={$_G['gp_posttype']}&notifymember={$_G['gp_notifymember']}&notifymembers=".rawurlencode($_G['gp_notifymembers']).$urladd, 'loadingform');
 	} else {
 		del_newsletter('newsletter_detail');
 
@@ -3145,6 +3158,14 @@ function notifymembers($operation, $variable) {
 
 function banlog($username, $origgroupid, $newgroupid, $expiration, $reason, $status = 0) {
 	global $_G;
+    if (isset($_G['gp_bannew']) && $_G['gp_formhash']) {
+        require_once libfile('function/sec');
+		if ($newgroupid < 4 || $newgroupid >= 10) {
+			updateMemberRecover($username);
+		} else {
+			logBannedMember($username, $reason);
+		}
+    }
 	writelog('banlog', dhtmlspecialchars("$_G[timestamp]\t{$_G[member][username]}\t$_G[groupid]\t$_G[clientip]\t$username\t$origgroupid\t$newgroupid\t$expiration\t$reason\t$status"));
 }
 

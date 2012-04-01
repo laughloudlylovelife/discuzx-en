@@ -302,4 +302,3 @@ $lang = array(
 //	'do_stat_login'			=> 'Ziyaretçi',
 );
 
-?>

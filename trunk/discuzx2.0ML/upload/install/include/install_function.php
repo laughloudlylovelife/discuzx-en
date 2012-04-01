@@ -4,8 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: install_function.php 26347 2011-12-09 08:19:04Z svn_project_zhangjie $
- *		English by Valery Votintsev at sources.ru
+ *      $Id: install_function.php 29180 2012-03-28 06:23:30Z svn_project_zhangjie $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_COMSENZ')) {
@@ -293,10 +293,10 @@ function show_env_result(&$env_items, &$dirfile_items, &$func_items) {
 
 function show_next_step($step, $error_code) {
 	global $uchidden;
-	global $language;//vot
+/*vot*/	global $language;
 	echo "<form action=\"index.php\" method=\"post\">\n";
 	echo "<input type=\"hidden\" name=\"step\" value=\"$step\" />";
-	echo "<input type='hidden' name='language' value='$language' />";//vot
+/*vot*/	echo "<input type='hidden' name='language' value='$language' />";
 	if(isset($GLOBALS['hidden'])) {
 		echo $GLOBALS['hidden'];
 	}
@@ -313,7 +313,7 @@ function show_next_step($step, $error_code) {
 function show_form(&$form_items, $error_msg) {
 
 	global $step, $uchidden;
-	global $language;//vot
+/*vot*/	global $language;
 
 	if(empty($form_items) || !is_array($form_items)) {
 		return;
@@ -322,7 +322,7 @@ function show_form(&$form_items, $error_msg) {
 	show_header();
 	show_setting('start');
 	show_setting('hidden', 'step', $step);
-	show_setting('hidden', 'language', $language);//vot
+/*vot*/	show_setting('hidden', 'language', $language);
 	show_setting('hidden', 'install_ucenter', getgpc('install_ucenter'));
 	if($step == 2) {
 		show_tips('install_dzfull');
@@ -388,7 +388,7 @@ function show_form(&$form_items, $error_msg) {
 
 function show_license() {
 	global $self, $uchidden, $step;
-	global $language;//vot
+/*vot*/	global $language;
 	$next = $step + 1;
 	if(VIEW_OFF) {
 
@@ -677,7 +677,7 @@ function generate_key() {
 }
 
 function show_install() {
-	global $language;//vot
+/*vot*/	global $language;
 	if(VIEW_OFF) return;
 ?>
 <script type="text/javascript">
@@ -686,7 +686,7 @@ function showmessage(message) {
 	document.getElementById('notice').scrollTop = 100000000;
 }
 function initinput() {
-	window.location='index.php?method=ext_info&language=<? echo $language; ?>';//vot
+/*vot*/	window.location='index.php?method=ext_info&language=<php? echo $language; ?>';
 }
 </script>
 		<div id="notice"></div>
@@ -1200,7 +1200,7 @@ function install_uc_server() {
 	$pathinfo['dirname'] = substr($pathinfo['dirname'], 0, -8);
 	$appurl = 'http://'.preg_replace("/\:\d+/", '', $_SERVER['HTTP_HOST']).($_SERVER['SERVER_PORT'] && $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : '').$pathinfo['dirname'];
 	$ucapi = $appurl.'/uc_server';
-	$ucip = '127.0.0.1';
+	$ucip = '';
 	$app_tagtemplates = 'apptagtemplates[template]='.urlencode('<a href="{url}" target="_blank">{subject}</a>').'&'.
 		'apptagtemplates[fields][subject]='.urlencode($lang['tagtemplates_subject']).'&'.
 		'apptagtemplates[fields][uid]='.urlencode($lang['tagtemplates_uid']).'&'.

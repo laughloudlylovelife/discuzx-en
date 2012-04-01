@@ -282,6 +282,7 @@ $lang = array (
   'thread_closed'	=> 'โพสต์นี้ได้ถูกปิดแล้ว, ไม่สามารถแสดงความเห็นเพิ่มเติม!', //X2
   'postcomment_error'	=> 'ขออภัย, คุณไม่สามารถแสดงความเห็นโพสต์นี้ หรือไม่พบโพสต์ดังกล่าว', //X2
   'postappend_only_yourself'	=> 'สามารถเพิ่มได้เฉพาะเนื้อหาโพสต์ของตัวเอง',
+	'postappend_not_open'			=> 'Sorry, forum is not enable Post complementary functions',//'抱歉，版块没有开启帖子补充功能',
   'postappend_add_succeed'	=> 'เพิ่มเรียบร้อยแล้ว ',
   'replynotice_success_1'	=> 'กำหนดผู้รับสำเร็จ ', //X2
   'replynotice_success_0'	=> 'ยกเลิกการตั้งค่าสำเร็จ ', //X2
@@ -973,4 +974,3 @@ $lang = array (
 
 );
 
-?>

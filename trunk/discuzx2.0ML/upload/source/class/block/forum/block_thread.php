@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: block_thread.php 11780 2010-06-13 02:11:52Z xupeng $
- *		English by Valery Votintsev at sources.ru
+ *	Modified by by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -80,8 +80,7 @@ class block_thread {
 					array(4, 'threadlist_special_4'),
 					array(5, 'threadlist_special_5'),
 					array(0, 'threadlist_special_0'),
-				),
-				'default' => array('0')
+				)
 			),
 			'viewmod' => array(
 				'title' => 'threadlist_viewmod',
@@ -323,7 +322,7 @@ class block_thread {
 
 		$sqlfield = '';
 		$joinmethod = empty($tids) ? 'INNER' : 'LEFT';
-		if($style['getpic'] || $picrequired) {
+		if($picrequired) {
 /*vot*/			$sqlfrom .= " $joinmethod JOIN `".DB::table('forum_threadimage')."` ti ON (t.tid=ti.tid AND ti.tid>0)";
 			$sqlfield = ', ti.attachment as attachmenturl, ti.remote';
 		}

@@ -38,6 +38,7 @@ $lang = array (
 	'nav_sethomepage'	=> 'Đặt trang chủ',//'Set as Homepage',//'设为首页',
 	'nav_setfavorite'	=> 'Đặt Bookmark',//'Add to Favorites',//'收藏本站',
 	'nav_uchome'		=> 'UCHome',//'',
+
 //	'nav_'		=> '',//'',
 
 );

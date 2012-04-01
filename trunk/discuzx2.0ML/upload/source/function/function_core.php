@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_core.php 26648 2011-12-19 03:03:50Z zhangguosheng $
+ *      $Id: function_core.php 29089 2012-03-26 10:23:28Z zhangguosheng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -35,7 +35,6 @@ function updatesession($force = false) {
 		}
 		$discuz = & discuz_core::instance();
 		$oltimespan = $_G['setting']['oltimespan'];
-//16.01.2012
 //vot		//$lastolupdate = $discuz->session->var['lastolupdate'];
 /*vot*/		$lastolupdate = DB::result_first("SELECT lastupdate FROM ".DB::table('common_onlinetime')." WHERE uid='$_G[uid]'");
 		if($_G['uid'] && $oltimespan && TIMESTAMP - ($lastolupdate ? $lastolupdate : $ulastactivity) > $oltimespan * 60) {
@@ -49,7 +48,7 @@ function updatesession($force = false) {
 					'total' => $oltimespan,
 					'lastupdate' => TIMESTAMP,
 /*vot*/					)
-				);
+/*vot*/				);
 			}
 			$discuz->session->set('lastolupdate', TIMESTAMP);
 		}
@@ -71,10 +70,9 @@ function updatesession($force = false) {
 			if($oltimespan && TIMESTAMP - $ulastactivity > 43200) {
 				$total = DB::result_first("SELECT total FROM ".DB::table('common_onlinetime')." WHERE uid='$_G[uid]'");
 				DB::update('common_member_count', array('oltime' => round(intval($total) / 60)), "uid='$_G[uid]'", 1);
-//16.01.2012
-/*vot*/				dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
+//vot				dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
 			}
-//vot			//dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
+			dsetcookie('ulastactivity', authcode(TIMESTAMP, 'ENCODE'), 31536000);
 			DB::update('common_member_status', array('lastip' => $_G['clientip'], 'lastactivity' => TIMESTAMP, 'lastvisit' => TIMESTAMP), "uid='$_G[uid]'", 1);
 		}
 	}
@@ -148,7 +146,7 @@ function getuserprofile($field) {
 		'status'	=> array('regip','lastip','lastvisit','lastactivity','lastpost','lastsendmail','invisible','buyercredit','sellercredit','favtimes','sharetimes','profileprogress'),
 		'field_forum'	=> array('publishfeed','customshow','customstatus','medals','sightml','groupterms','authstr','groups','attentiongroup'),
 		'field_home'	=> array('videophoto','spacename','spacedescription','domain','addsize','addfriend','menunum','theme','spacecss','blockposition','recentnote','spacenote','privacy','feedfriend','acceptemail','magicgift','stickblogs'),
-		'profile'	=> array('realname','gender','birthyear','birthmonth','birthday','constellation','zodiac','telephone','mobile','idcardtype','idcard','address','zipcode','nationality','birthprovince','birthcity','resideprovince','residecity','residedist','residecommunity','residesuite','graduateschool','company','education','occupation','position','revenue','affectivestatus','lookingfor','bloodtype','height','weight','alipay','icq','qq','yahoo','msn','taobao','site','bio','interest','field1','field2','field3','field4','field5','field6','field7','field8'),
+/*vot*/		'profile'	=> array('realname','gender','birthyear','birthmonth','birthday','constellation','zodiac','telephone','mobile','idcardtype','idcard','address','zipcode','nationality',/*'birthcountry',*/'birthprovince','birthcity',/*'residecountry',*/'resideprovince','residecity','residedist','residecommunity','residesuite','graduateschool','company','education','occupation','position','revenue','affectivestatus','lookingfor','bloodtype','height','weight','alipay','icq','qq','yahoo','msn','taobao','site','bio','interest','field1','field2','field3','field4','field5','field6','field7','field8'),
 		'verify'	=> array('verify1', 'verify2', 'verify3', 'verify4', 'verify5', 'verify6', 'verify7'),
 	);
 	$profiletable = '';
@@ -391,7 +389,7 @@ function dstrpos($string, &$arr, $returnvalue = false) {
 }
 
 function isemail($email) {
-	return strlen($email) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $email);
+	return strlen($email) > 6 && preg_match("/^([A-Za-z0-9\-_.+]+)@([A-Za-z0-9\-]+[.][A-Za-z0-9\-.]+)$/", $email);
 }
 
 function quescrypt($questionid, $answer) {
@@ -672,8 +670,9 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 			$preend = '_diy_preview';
 			$_G['gp_preview'] = !empty($_G['gp_preview']) ? $_G['gp_preview'] : '';
 			$curtplname = $oldfile;
-			if(isset($_G['cache']['diytemplatename'.$_G['basescript']])) {
-				$diytemplatename = &$_G['cache']['diytemplatename'.$_G['basescript']];
+			$basescript = $_G['mod'] == 'viewthread' && !empty($_G['thread']) ? 'forum' : $_G['basescript'];
+			if(isset($_G['cache']['diytemplatename'.$basescript])) {
+				$diytemplatename = &$_G['cache']['diytemplatename'.$basescript];
 			} else {
 				$diytemplatename = &$_G['cache']['diytemplatename'];
 			}
@@ -721,7 +720,10 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 		$file = 'mobile/'.$oldfile;
 	}
 
-	$tplfile = ($tpldir ? $tpldir.'/' : './template/').$file.'.htm';
+	if(!$tpldir) {
+		$tpldir = './template/default';
+	}
+	$tplfile = $tpldir.'/'.$file.'.htm';
 
 	$file == 'common/header' && defined('CURMODULE') && CURMODULE && $file = 'common/header_'.$_G['basescript'].'_'.CURMODULE;
 
@@ -753,7 +755,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 
 /*vot*/	$cachefile = './data/template/'.DISCUZ_LANG.'_'.(defined('STYLEID') ? STYLEID.'_' : '_').$templateid.'_'.str_replace('/', '_', $file).'.tpl.php';
 
-	if($templateid != 1 && !file_exists(DISCUZ_ROOT.$tplfile)) {
+	if($templateid != 1 && !file_exists(DISCUZ_ROOT.$tplfile) && !file_exists(DISCUZ_ROOT.($tplfile = $tpldir.$filebak.'.htm'))) {
 		$tplfile = './template/default/'.$filebak.'.htm';
 	}
 
@@ -819,7 +821,7 @@ function loadcache($cachenames, $force = false) {
 		foreach($cachedata as $cname => $data) {
 			if($cname == 'setting') {
 				$_G['setting'] = $data;
-			} elseif(strpos($cname, 'usergroup_'.$_G['groupid']) !== false) {
+			} elseif($cname == 'usergroup_'.$_G['groupid']) {
 				$_G['cache'][$cname] = $_G['group'] = $data;
 			} elseif($cname == 'style_default') {
 				$_G['cache'][$cname] = $_G['style'] = $data;
@@ -1266,6 +1268,8 @@ function output() {
 	if(defined('IN_MOBILE')) {
 		mobileoutput();
 	}
+	include_once libfile('function/cloud');
+	show();
 	$havedomain = implode('', $_G['setting']['domain']['app']);
 	if($_G['setting']['rewritestatus'] || !empty($havedomain)) {
 		$content = ob_get_contents();
@@ -1780,7 +1784,7 @@ function censor($message, $modword = NULL, $return = FALSE) {
 	require_once libfile('class/censor');
 	$censor = discuz_censor::instance();
 	$censor->check($message, $modword);
-	if($censor->modbanned() && $_G['group']['ignorecensor']) {
+	if($censor->modbanned() && !$_G['group']['ignorecensor']) {
 		$wordbanned = implode(', ', $censor->words_found);
 		if($return) {
 			return array('message' => lang('message', 'word_banned', array('wordbanned' => $wordbanned)));
@@ -1802,7 +1806,7 @@ function censor($message, $modword = NULL, $return = FALSE) {
 					$message = str_replace('[url]'.$urllist[0][$key].'[/url]', $urllist[0][$key], $message);
 					$message = preg_replace(
 						array(
-							"@\[url=".preg_quote($urllist[0][$key],'@')."\](.*?)\[/url\]@is",
+							"@\[url=.*?".preg_quote($urllist[0][$key],'@').".*?\](.*?)\[/url\]@is",
 							"@href=('|\")".preg_quote($urllist[0][$key],'@')."\\1@is",
 							"@\[url\](.*?".preg_quote($urllist[0][$key],'@').".*?)\[/url\]@is",
 						),
@@ -1895,7 +1899,7 @@ function stripsearchkey($string) {
 
 function dmkdir($dir, $mode = 0777, $makeindex = TRUE){
 	if(!is_dir($dir)) {
-		dmkdir(dirname($dir));
+		dmkdir(dirname($dir), $mode, $makeindex);
 		@mkdir($dir, $mode);
 		if(!empty($makeindex)) {
 			@touch($dir.'/index.html'); @chmod($dir.'/index.html', 0777);
@@ -2509,7 +2513,7 @@ function get_url_list($message) {
 	$return = array();
 
 	(strpos($message, '[/img]') || strpos($message, '[/flash]')) && $message = preg_replace("/\[img[^\]]*\]\s*([^\[\<\r\n]+?)\s*\[\/img\]|\[flash[^\]]*\]\s*([^\[\<\r\n]+?)\s*\[\/flash\]/is", '', $message);
-	if(preg_match_all("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto):\/\/|www\.)([a-z0-9\/\-_+=.~!%@?#%&;:$\\()|]+\s*)/i", $message, $urllist)) {
+	if(preg_match_all("/((https?|ftp|gopher|news|telnet|rtsp|mms|callto|bctp|thunder|qqdl|synacast){1}:\/\/|www\.)[^\[\]\"']+/i", $message, $urllist)) {
 		foreach($urllist[0] as $key => $val) {
 			$val = trim($val);
 			$return[0][$key] = $val;

@@ -2,8 +2,8 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: common_extra.js 25470 2011-11-10 08:54:19Z zhangguosheng $
-//	Modified by Valery Votintsev
+	$Id: common_extra.js 27453 2012-02-01 06:54:54Z svn_project_zhangjie $
+//	Modified by Valery Votintsev, codersclub.org
 */
 
 function _relatedlinks(rlinkmsgid) {
@@ -57,7 +57,7 @@ function _updatesecqaa(idhash) {
 		}
 		$('checksecqaaverify_' + idhash).innerHTML = '<img src="'+ IMGDIR + '/none.gif" width="16" height="16" class="vm" />';
 		ajaxget('misc.php?mod=secqaa&action=update&idhash=' + idhash, 'secqaa_' + idhash, null, '', '', function() {
-			secST['qaa_' + idhash] = setTimeout(function() {$('secqaa_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updatesecqaa(\''+idhash+'\')">'+lng['refresh_q&a']+'</span>';}, 180000);
+/*vot*/			secST['qaa_' + idhash] = setTimeout(function() {$('secqaa_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updatesecqaa(\''+idhash+'\')">'+lng['refresh_q&a']+'</span>';}, 180000);
 		});
 	}
 }
@@ -71,7 +71,7 @@ function _updateseccode(idhash, play) {
 			}
 			$('checkseccodeverify_' + idhash).innerHTML = '<img src="'+ IMGDIR + '/none.gif" width="16" height="16" class="vm" />';
 			ajaxget('misc.php?mod=seccode&action=update&idhash=' + idhash, 'seccode_' + idhash, null, '', '', function() {
-				secST['code_' + idhash] = setTimeout(function() {$('seccode_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updateseccode(\''+idhash+'\')">'+lng['refresh_code']+'</span>';}, 180000);
+/*vot*/				secST['code_' + idhash] = setTimeout(function() {$('seccode_' + idhash).innerHTML = '<span class="xi2 cur1" onclick="updateseccode(\''+idhash+'\')">'+lng['refresh_code']+'</span>';}, 180000);
 			});
 		}
 	} else {
@@ -100,9 +100,9 @@ function _checksec(type, idhash, showmsg, recall) {
 			obj.innerHTML = '<img src="'+ IMGDIR + '/check_error.gif" width="16" height="16" class="vm" />';
 			if(showmsg) {
 				if(type == 'code') {
-					showDialog(lng['code_invalid']);//vot
+/*vot*/					showError(lng['code_invalid']);
 				} else if(type == 'qaa') {
-					showDialog(lng['q&a_invalid']);//vot
+/*vot*/					showError(lng['q&a_invalid']);
 				}
 				recall(0);
 			}
@@ -166,7 +166,7 @@ function _copycode(obj) {
 		rng.moveToElementText(obj);
 		rng.select();
 	}
-	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, lng['code_clipboard']);
+/*vot*/	setCopy(BROWSER.ie ? obj.innerText.replace(/\r\n\r\n/g, '\r\n') : obj.textContent, lng['code_clipboard']);
 }
 
 function _setCopy(text, msg){
@@ -177,10 +177,10 @@ function _setCopy(text, msg){
 				showPrompt(null, null, '<span>' + msg + '</span>', 1500);
 			}
 		} else {
-			showDialog('<div class="c"><div style="width: 200px; text-align: center;">'+lng['copy_failed']+'</div></div>', 'alert');
+/*vot*/			showDialog('<div class="c"><div style="width: 200px; text-align: center;">'+lng['copy_failed']+'</div></div>', 'alert');
 		}
 	} else {
-		var msg = '<div class="c"><div style="width: 200px; text-align: center; text-decoration:underline;">'+lng['copy2clipboard']+'</div>' +
+/*vot*/		var msg = '<div class="c"><div style="width: 200px; text-align: center; text-decoration:underline;">'+lng['copy2clipboard']+'</div>' +
 		AC_FL_RunContent('id', 'clipboardswf', 'name', 'clipboardswf', 'devicefont', 'false', 'width', '200', 'height', '40', 'src', STATICURL + 'image/common/clipboard.swf', 'menu', 'false',  'allowScriptAccess', 'sameDomain', 'swLiveConnect', 'true', 'wmode', 'transparent', 'style' , 'margin-top:-20px') + '</div>';
 		showDialog(msg, 'info');
 		text = text.replace(/[\xA0]/g, ' ');
@@ -227,27 +227,27 @@ function _showselect(obj, inpid, t, rettype) {
 		$('append_parent').appendChild(div);
 		s = '';
 		if(!t) {
-			s += showselect_row(inpid, lng['day1'], 1, 0, rettype);
-			s += showselect_row(inpid, lng['week1'], 7, 0, rettype);
-			s += showselect_row(inpid, lng['month1'], 30, 0, rettype);
-			s += showselect_row(inpid, lng['month3'], 90, 0, rettype);
-			s += showselect_row(inpid, lng['custom'], -2);
+/*vot*/			s += showselect_row(inpid, lng['day1'], 1, 0, rettype);
+/*vot*/			s += showselect_row(inpid, lng['week1'], 7, 0, rettype);
+/*vot*/			s += showselect_row(inpid, lng['month1'], 30, 0, rettype);
+/*vot*/			s += showselect_row(inpid, lng['month3'], 90, 0, rettype);
+/*vot*/			s += showselect_row(inpid, lng['custom'], -2);
 		} else {
 			if($(t)) {
 				var lis = $(t).getElementsByTagName('LI');
 				for(i = 0;i < lis.length;i++) {
 					s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = this.innerHTML;$(\''+obj.id+'_menu\').style.display=\'none\'">' + lis[i].innerHTML + '</a>';
 				}
-				s += showselect_row(inpid, lng['custom'], -1);
+/*vot*/				s += showselect_row(inpid, lng['custom'], -1);
 			} else {
-				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">'+lng['permanent']+'</a>';
-				s += showselect_row(inpid, lng['days7'], 7, 1, rettype);
-				s += showselect_row(inpid, lng['days14'], 14, 1, rettype);
-				s += showselect_row(inpid, lng['month1'], 30, 1, rettype);
-				s += showselect_row(inpid, lng['month3'], 90, 1, rettype);
-				s += showselect_row(inpid, lng['month6'], 182, 1, rettype);
-				s += showselect_row(inpid, lng['year1'], 365, 1, rettype);
-				s += showselect_row(inpid, lng['custom'], -1);
+/*vot*/				s += '<a href="javascript:;" onclick="$(\'' + inpid + '\').value = \'0\'">'+lng['permanent']+'</a>';
+/*vot*/				s += showselect_row(inpid, lng['days7'], 7, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['days14'], 14, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['month1'], 30, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['month3'], 90, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['month6'], 182, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['year1'], 365, 1, rettype);
+/*vot*/				s += showselect_row(inpid, lng['custom'], -1);
 			}
 		}
 		$(div.id).innerHTML = s;
@@ -376,11 +376,11 @@ function _zoom(obj, zimg, nocover, pn) {
 		menu = document.createElement('div');
 		menu.id = menuid;
 		if(cover) {
-			menu.innerHTML = '<div class="zoominner" id="' + menuid + '_zoomlayer" style="display:none"><p><span class="y"><a id="' + menuid + '_imglink" class="imglink" target="_blank" title="'+lng['open_new_win']+'">'+lng['open_new_win']+'</a><a id="' + menuid + '_adjust" href="javascipt:;" class="imgadjust" title="'+lng['actual_size']+'">'+lng['actual_size']+'</a>' +
-				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="'+lng['close']+'">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'</p>' +
+/*vot*/			menu.innerHTML = '<div class="zoominner" id="' + menuid + '_zoomlayer" style="display:none"><p><span class="y"><a id="' + menuid + '_imglink" class="imglink" target="_blank" title="'+lng['open_new_win']+'">'+lng['open_new_win']+'</a><a id="' + menuid + '_adjust" href="javascipt:;" class="imgadjust" title="'+lng['actual_size']+'">'+lng['actual_size']+'</a>' +
+/*vot*/				'<a href="javascript:;" onclick="hideMenu()" class="imgclose" title="'+lng['close']+'">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'</p>' +
 				'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		} else {
-			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
+/*vot*/			menu.innerHTML = '<div class="popupmenu_popup" id="' + menuid + '_zoomlayer" style="width:auto"><span class="right y"><a href="javascript:;" onclick="hideMenu()" class="flbc" style="width:20px;margin:0 0 2px 0">'+lng['close']+'</a></span> '+lng['wheel_zoom']+'<div class="zimg_p" id="' + menuid + '_picpage"></div><div class="hm" id="' + menuid + '_img"></div></div>';
 		}
 		if(BROWSER.ie || BROWSER.chrome){
 			menu.onmousewheel = adjust;
@@ -406,9 +406,9 @@ function _zoom(obj, zimg, nocover, pn) {
 			}
 			if(authorcurrent !== '') {
 				paid = authorcurrent > 0 ? authorimgs[authorcurrent - 1] : authorimgs[authorlength - 1];
-				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_prev"><strong>'+lng['prev']+'</strong></div> ';//vot
+/*vot*/				picpage += ' <div id="zimg_prev" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'0 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'0 -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_prev"><strong>'+lng['prev']+'</strong></div> ';
 				paid = authorcurrent < authorlength - 1 ? authorimgs[authorcurrent + 1] : authorimgs[0];
-				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_next"><strong>'+lng['next']+'</strong></div> ';//vot
+/*vot*/				picpage += ' <div id="zimg_next" onmouseover="dragMenuDisabled=true;this.style.backgroundPosition=\'100% 50px\'" onmouseout="dragMenuDisabled=false;this.style.backgroundPosition=\'100% -100px\';" onclick="zoom($(\'aimg_' + paid + '\'), $(\'aimg_' + paid + '\').getAttribute(\'zoomfile\'), 0, 1)" class="zimg_next"><strong>'+lng['next']+'</strong></div> ';
 			}
 			if(picpage) {
 				$(menuid + '_picpage').innerHTML = picpage;
@@ -1015,12 +1015,12 @@ function _widthauto(obj) {
 		}
 		HTMLNODE.className += ' widthauto';
 		setcookie('widthauto', 1, 86400 * 30);
-		obj.innerHTML = lng['narrow_screen'];//vot
+/*vot*/		obj.innerHTML = lng['narrow_screen'];
 	} else {
 		$('css_widthauto').disabled = true;
 		HTMLNODE.className = HTMLNODE.className.replace(' widthauto', '');
 		setcookie('widthauto', -1, 86400 * 30);
-		obj.innerHTML = lng['wide_screen'];//vot
+/*vot*/		obj.innerHTML = lng['wide_screen'];
 	}
 	hideMenu();
 }
@@ -1031,7 +1031,7 @@ function _showCreditmenu() {
 		menu.id = 'extcreditmenu_menu';
 		menu.style.display = 'none';
 		menu.className = 'p_pop';
-		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> ' + lng['wait_please'] + '</div>';//vot
+/*vot*/		menu.innerHTML = '<div class="p_opt"><img src="'+ IMGDIR + '/loading.gif" width="16" height="16" class="vm" /> ' + lng['wait_please'] + '</div>';
 		$('append_parent').appendChild(menu);
 		ajaxget($('extcreditmenu').href, 'extcreditmenu_menu', 'ajaxwaitid');
 	}
@@ -1102,10 +1102,8 @@ function _createPalette(colorid, id, func) {
 		dom.innerHTML = iframe;
 		$('append_parent').appendChild(dom);
 	}
-	var base = document.getElementsByTagName('base');
-	var baseurl = base && base > 0 ? base[0].getAttribute('href') : '';
 	func = !func ? '' : '|' + func;
-	window.frames["c"+colorid+"_frame"].location.href = baseurl+STATICURL+"image/admincp/getcolor.htm?c"+colorid+"|"+id+func;
+	window.frames["c"+colorid+"_frame"].location.href = STATICURL+"image/admincp/getcolor.htm?c"+colorid+"|"+id+func;
 	showMenu({'ctrlid':'c'+colorid});
 	var iframeid = "c"+colorid+"_menu";
 	_attachEvent(window, 'scroll', function(){hideMenu(iframeid);});

@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: template.class.php 1098 2011-05-19 01:28:17Z svn_project_zhangjie $
+	Modified by Valery Votintsev, codersclub.org
 */
 
 class template {

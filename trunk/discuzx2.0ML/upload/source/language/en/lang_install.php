@@ -7,7 +7,7 @@
  *      $Id: install_lang.php by Valery Votintsev at sources.ru
  */
 
-define('UC_VERNAME', 'English Version');
+define('UC_VERNAME', 'International Version');
 
 $lang = array(
 	'SC_GBK'		=> 'Simplified Chinese GBK encoding',//'简体中文版',

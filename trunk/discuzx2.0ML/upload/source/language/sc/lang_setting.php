@@ -37,7 +37,7 @@ $lang = array (
 	'nav_task'	=> '任务',//'Tasks',
 	'nav_sethomepage'	=> '设为首页',//'Set as Homepage',
 	'nav_setfavorite'	=> '收藏本站',//'Add to Favorites',
-	'nav_uchome'		=> 'UCHome',//'',
+	'nav_uchome'		=> 'UC首页',//'',
 //	'nav_'		=> '',//'',
 
 

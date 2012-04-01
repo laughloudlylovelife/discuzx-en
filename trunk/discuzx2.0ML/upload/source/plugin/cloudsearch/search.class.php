@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: search.class.php 26709 2011-12-20 08:38:43Z zhouguoqiang $
- *	English by Valery Votintsev, http://codersclub.org/discuzx/
+ *	Modified by Valery Votintsev, codersclub.org/discuzx/
  */
 
 if(!defined('IN_DISCUZ')) {

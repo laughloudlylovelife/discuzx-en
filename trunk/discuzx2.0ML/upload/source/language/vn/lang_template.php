@@ -81,10 +81,6 @@ $lang = array (
   'your_mobile_browser' => 'Hãy chọn ',
   'e_redo' => 'Làm lại',
   'e_undo' => 'Lùi lại',
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
   'header_add_frame' => 'Thêm frame',
   'header_add_module' => 'Thêm module',
   'header_clearall' => 'Xóa trắng',
@@ -358,9 +354,14 @@ $lang = array (
   'top_orderby_credits' => 'Tổng số điểm',
   'top_orderby_posts' => 'Tổng số bài',
   'top_orderby_uid' => 'Thời điểm đăng ký',
-  	  
+
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'Default style',//'[name]默认风格[/name]',
@@ -418,4 +419,3 @@ $lang = array (
 	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
 );
 
-?>

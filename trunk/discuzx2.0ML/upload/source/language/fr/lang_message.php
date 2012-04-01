@@ -282,6 +282,7 @@ $lang = array (
 	'thread_closed'			=> 'Cette discussion a &#233;t&#233; ferm&#233;e et ne peut &#234;tre comment&#233;!',//'该帖子已被关闭，不能评论！', // 'This thread has been closed and can not be commented!'
 	'postcomment_error'		=> 'D&#233;sol&#233;, vous ne pouvez pas commenter ce post ou le poste pas trouv&#233;',//'抱歉，您不能点评此帖或帖子尚未找到', // 'Sorry, you can not comment this post or the post not found'
 	'postappend_only_yourself'	=> 'Vous ne pouvez ajouter du contenu dans vos messages',
+	'postappend_not_open'			=> 'Sorry, forum is not enable Post complementary functions',//'抱歉，版块没有开启帖子补充功能',
 	'postappend_add_succeed'	=> 'Ajouter avec Succ&#232;s',
 	'replynotice_success_1'		=> 'R&#233;glez Accueil avec succ&#232;s',//'接收设置成功 ', // 'Set Home successfully'
 	'replynotice_success_0'		=> 'Annuler Accueil avec succ&#232;s',//'取消设置成功 ', // 'Cancel Home successfully'
@@ -973,4 +974,3 @@ $lang = array (
 
 );
 
-?>

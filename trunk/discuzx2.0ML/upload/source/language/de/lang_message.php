@@ -116,6 +116,7 @@ $lang = array (
 	'post_poll_option_toomany'	=> 'Deine Umfrage enth&auml;lt zu viele Optionen. Es sind maximal {maxpolloptions} Umfrageoptionen erlaubt. Bitte gehe zur&uuml;ck, um deine Eingabe zu korrigieren.',
 	'reward_credits_between'	=> 'Die Belohnung muss zwischen {minrewardprice} und {maxrewardprice} betragen.',
 	'reward_credits_shortage'	=> 'Du besitzt nicht genug Credits.',
+	'reward_credits_closed'			=> 'Trade credits feature is turned off, please contact the administrator.',//'交易积分被关闭，请联系管理员。',
 	'activity_fromtime_please'	=> 'Du musst eine Startzeit angeben.',
 	'activity_sort_please'		=> 'Du musst die Art der Unternehmung angeben.',
 	'activity_address_please'	=> 'Du musst eine Adresse angeben.',
@@ -281,6 +282,7 @@ $lang = array (
 'thread_closed'				=> 'This thread has been closed and can not be commented!',//'该帖子已被关闭，不能评论！',
 'postcomment_error'			=> 'Sorry, you can not comment this post or the post not found',//'抱歉，您不能点评此帖或帖子尚未找到',
 'postappend_only_yourself'		=> 'You can add posts only into your own content',//'只能在自己的帖子后补充内容',
+	'postappend_not_open'			=> 'Sorry, forum is not enable Post complementary functions',//'抱歉，版块没有开启帖子补充功能',
 'postappend_add_succeed'		=> 'Post added successfully',//'添加成功',
 'replynotice_success_1'			=> 'Set Home successfully',//'接收设置成功 ',
 'replynotice_success_0'			=> 'Cancel Home successfully',//'取消设置成功 ',
@@ -969,9 +971,6 @@ $lang = array (
 'attackevasive_2_message'	=> 'Access to the site using proxy servers is now restricted. Remove your proxy settings, and access to the site directly.',//'&#x672c;&#x7ad9;&#x73b0;&#x5728;&#x9650;&#x5236;&#x4f7f;&#x7528;&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#xff0c;&#x8bf7;&#x53bb;&#x9664;&#x60a8;&#x7684;&#x4ee3;&#x7406;&#x8bbe;&#x7f6e;&#xff0c;&#x76f4;&#x63a5;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x3002;',
 'attackevasive_4_subject'	=> 'reload the page opens',//'&#x9875;&#x9762;&#x91cd;&#x8f7d;&#x5f00;&#x542f;',
 'attackevasive_4_message'	=> 'Welcome to the site! The page is reloading now, please wait...',//'&#x6b22;&#x8fce;&#x5149;&#x4e34;&#x672c;&#x7ad9;&#xff0c;&#x9875;&#x9762;&#x6b63;&#x5728;&#x91cd;&#x65b0;&#x8f7d;&#x5165;&#xff0c;&#x8bf7;&#x7a0d;&#x5019;&#x20;&#x2e;&#x2e;&#x2e;',
-//119: 	'reward_credits_closed'		=> 'Trade credits feature is turned off, please contact the administrator.',//'交易积分被关闭，请联系管理员。',
-
 
 );
 
-?>

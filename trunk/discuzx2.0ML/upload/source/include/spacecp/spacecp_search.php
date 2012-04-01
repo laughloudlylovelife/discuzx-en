@@ -138,7 +138,6 @@ if(!empty($_GET['searchsubmit']) || !empty($_GET['searchmode'])) {
 
 	include_once libfile('function/profile');
 /*vot*/
-/*
 	$countryhtml = '';
 	if(!isset($_G['lang']['admincp_menu'])) {
 		lang('country'); // Load country list
@@ -150,7 +149,6 @@ if(!empty($_GET['searchsubmit']) || !empty($_GET['searchmode'])) {
 		}
 		$countryhtml .= "<option value=\"$country_id\"$selectstr>$country_name</option>";
 	}
-*/
 	$birthcityhtml = showdistrict(array(0,0), array('birthprovince', 'birthcity'), 'birthcitybox', null, 'birth');
 	$residecityhtml = showdistrict(array(0,0, 0, 0), array('resideprovince', 'residecity', 'residedist', 'residecommunity'), 'residecitybox', null, 'reside');
 
@@ -177,4 +175,3 @@ $navtitle = lang('core', 'title_search_friend');
 $actives = array($op=>' class="a"', 'search'=>' class="a"');
 include template('home/spacecp_search');
 
-?>

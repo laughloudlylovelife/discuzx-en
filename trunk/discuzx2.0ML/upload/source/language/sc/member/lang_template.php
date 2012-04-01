@@ -10,9 +10,8 @@
  */
 
 $lang = array (
-
   'getpassword'			=> '找回密码',
-  'login_guest'			=> '没有帐号？注册',
+  'login_guest' => '没有帐号？{$_G[setting][reglinkname]}',
   'new_password'		=> '新密码',
   'new_password_confirm'	=> '确认密码',
   'submit'			=> '提交',
@@ -42,9 +41,8 @@ $lang = array (
   'register_message1'		=> '你填写的注册原因会被当作申请注册的重要参考依据，请认真填写。',
   'register_password_tips'	=> '请填写密码',
   'register_repassword_tips'	=> '请再次输入密码',
-  'register_username_tips'	=> '用户名由 2 到 15 个字符组成',
+/*vot*/  'register_username_tips'	=> '用户名由 2 到 15 个字符组成',
   'rulemessage'			=> '网站服务条款',
-//	'return_login'			=> '返回登录',
 );
 
 ?>

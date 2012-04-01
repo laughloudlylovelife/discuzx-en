@@ -98,27 +98,27 @@ $lang = array(
 	'block4'		=> 'Custom block 4',//'自定义模块4',
 	'block5'		=> 'Custom block 5',//'自定义模块5',
 	'blockdata'		=> array(
-		'personalinfo'	=> 'Personal Info',//'个人资料',
-		'profile'	=> 'Profile',//'个人资料',
-		'doing'		=> 'Doings',//'记录',
-		'feed'		=> 'Feeds',//'动态',
-		'blog'		=> 'Blogs',//'日志',
-		'stickblog'	=> 'Top blogs',//'置顶日志',
-		'album'		=> 'Albums',//'相册',
-		'friend'	=> 'Friends',//'好友',
-		'visitor'	=> 'Visitors',//'最近访客',
-		'wall'		=> 'Wall',//'留言板',
-		'share'		=> 'Shares',//'分享',
-		'thread'	=> 'Threads',//'主题',
-		'group'		=> 'Groups',
-		'music'		=> 'Music',//'音乐盒',
-		'statistic'	=> 'Statistics',//'统计信息',
-		'myapp'		=> 'Applications',//'应用',
-		'block1'	=> 'Free block 1',//'自由模块1',
-		'block2'	=> 'Free block 2',//'自由模块2',
-		'block3'	=> 'Free block 3',//'自由模块3',
-		'block4'	=> 'Free block 4',//'自由模块4',
-		'block5'	=> 'Free block 5',//'自由模块5'
+			'personalinfo'	=> 'Personal Info',//'个人资料',
+			'profile'	=> 'Profile',//'个人资料',
+			'doing'		=> 'Doings',//'记录',
+			'feed'		=> 'Feeds',//'动态',
+			'blog'		=> 'Blogs',//'日志',
+			'stickblog'	=> 'Top blogs',//'置顶日志',
+			'album'		=> 'Albums',//'相册',
+			'friend'	=> 'Friends',//'好友',
+			'visitor'	=> 'Visitors',//'最近访客',
+			'wall'		=> 'Wall',//'留言板',
+			'share'		=> 'Shares',//'分享',
+			'thread'	=> 'Threads',//'主题',
+			'group'		=> 'Groups',
+			'music'		=> 'Music',//'音乐盒',
+			'statistic'	=> 'Statistics',//'统计信息',
+			'myapp'		=> 'Applications',//'应用',
+			'block1'	=> 'Free block 1',//'自由模块1',
+			'block2'	=> 'Free block 2',//'自由模块2',
+			'block3'	=> 'Free block 3',//'自由模块3',
+			'block4'	=> 'Free block 4',//'自由模块4',
+			'block5'	=> 'Free block 5',//'自由模块5'
 	),
 
 	'block_title'		=> '<div class="blocktitle title"><span>{bname}</span>{more}</div>',
@@ -254,4 +254,3 @@ $lang = array(
 
 );
 
-?>

@@ -41,7 +41,7 @@ $lang = array (
   'register_message1'		=> '你填寫的註冊原因會被當作申請註冊的重要參考依據，請認真填寫。',
   'register_password_tips'	=> '請填寫密碼',
   'register_repassword_tips'	=> '請再次輸入密碼',
-  'register_username_tips'	=> '用戶名由 2 到 15 個字符組成',
+/*vot*/  'register_username_tips'	=> '用戶名由 2 到 15 個字符組成',
   'rulemessage'			=> '網站服務條款',
 );
 

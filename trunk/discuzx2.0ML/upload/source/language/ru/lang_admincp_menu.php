@@ -28,7 +28,7 @@ $lang = array
 	'header_portal'		=> 'Портал',
 	'header_group'		=> 'Группы',
 	'header_founder'	=> 'Администрация',
-	'header_addons'		=> 'Дополнения',
+	'header_cloudaddons'	=> 'Дополнения',
 
 
 	'menu_home'			=> 'Админ-Центр',
@@ -181,6 +181,8 @@ $lang = array
 
 	'admincp_title'			=> $_G['setting']['bbname'].' Админ-Центр',
 
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
+
 );
 
-?>

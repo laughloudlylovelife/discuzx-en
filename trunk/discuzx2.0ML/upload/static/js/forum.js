@@ -220,7 +220,7 @@ function fastpostvalidate(theform, noajaxpost) {
 /*vot*/		s = lng['enter_content']+'.';
 		theform.message.focus();
 //vot	} else if(mb_strlen(theform.subject.value) > 80) {
-	} else if(theform.subject.value.length > 80 ) { //vot
+/*vot*/	} else if(theform.subject.value.length > 80 ) {
 		s = lng['title_long']+'.';
 		theform.subject.focus();
 	}

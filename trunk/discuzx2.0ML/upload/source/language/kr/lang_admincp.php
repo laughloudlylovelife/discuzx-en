@@ -1868,6 +1868,17 @@ $lang = array
 	'setting_attach_remote_minsize_comment'	=> '单位：KB，只有尺寸大于当前设置的附件才使用远程附件功能，0 或留空为不限制',
 	'setting_attach_remote_ftpcheck'	=> '检测远程附件设置',
 
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
+
 	'setting_attach_remote_-100'	=> '当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
 	'setting_attach_remote_-101'	=> '远程附件功能未开启',
 	'setting_attach_remote_-102'	=> '尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
@@ -6132,6 +6143,11 @@ $lang = array
 	'import_data_invalid'	=> '数据无法识别，请返回',
 	'import_data_typeinvalid'	=> '数据类型错误，请返回',
 
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
+
 
 	'rewrite_message'	=> '<h1>Apache Web Server(独立主机用户)</h1>
 <pre class="colorbox">
@@ -6214,7 +6230,7 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Change language',
 'change_style'		=> 'Change style',
 

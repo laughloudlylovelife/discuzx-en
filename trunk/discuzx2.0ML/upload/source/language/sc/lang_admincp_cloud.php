@@ -4,7 +4,7 @@
  *	  [Discuz!] (C)2001-2099 Comsenz Inc.
  *	  This is NOT a freeware, use is subject to license terms
  *
- *	  $Id: lang_admincp_cloud.php 24711 2011-10-09 05:04:31Z zhouguoqiang $
+ *	  $Id: lang_admincp_cloud.php 29038 2012-03-23 06:22:39Z songlixin $
  */
 
 $extend_lang = array
@@ -26,10 +26,12 @@ $extend_lang = array
 	'menu_cloud_connect' => 'QQ互联',
 	'menu_cloud_search' => '纵横搜索',
 	'menu_cloud_stats' => '腾讯分析',
-	'menu_cloud_security' => '云安全',
+	'menu_cloud_security' => '防水墙',
 	'menu_cloud_smilies' => 'SOSO表情',
 	'menu_cloud_qqgroup' => '社区QQ群',
 	'menu_cloud_union' => 'Discuz!联盟',
+	'menu_cloud_mobile' => '手机客户端',
+	'menu_cloud_storage' => '旋风存储',
 
 	'close' => '关闭',
 	'continue' => '继续',
@@ -157,7 +159,7 @@ $extend_lang = array
 	'cloud_stats' => '腾讯分析',
 	'cloud_stats_tips' => '<li>选择的样式会显示在论坛底部的右下方。</li>',
 	'cloud_stats_status' => '启用腾讯分析',
-	'cloud_stats_icon_set' => '选择样式',
+	'cloud_stats_icon_set' => '选择样式（图标或文字将显示在论坛右下角）',
 	'cloud_stats_icon_none' => '不显示图标和文字',
 	'cloud_stats_icon_word9' => '腾讯分析',
 	'cloud_stats_icon_word10' => '网站统计',
@@ -167,6 +169,9 @@ $extend_lang = array
 	'cloud_smilies' => 'SOSO表情',
 	'cloud_smilies_tips' => '<li>搜尽天下表情，为网站带来无穷的乐趣与体验。</li>
 		<li>省略繁琐的上传表情流程，无缝“偷渡”QQ表情到您的网站，论坛表情变得不再单调无味。</li>',
+	'cloud_storage' => '旋风存储',
+	'cloud_storage_tips' => '<li>为网站节省空间带宽，让用户享受超大文件的高速存储，上传下载尽在云端。</li>
+		<li>体验高速上传下载，支持单个文件高达2GB的附件上传，附件永久有效，为论坛降低成本。</li>',
 
 	'cloud_smilies_status' => '启用SOSO 表情',
 
@@ -286,6 +291,62 @@ $extend_lang = array
 	'qqgroup_preview_button' => '推送信息',
 	'attach_img' => '图片附件',
 
+	'security_member_list' => '违规用户',
+	'security_thread_list' => '违规主题',
+	'security_post_list' => '违规回帖',
+	'security_members_name' => '用户名',
+	'security_members_eviltype' => '恶意类型',
+	'security_post_eviltype' => '恶意类型',
+	'security_thread_eviltype' => '恶意类型',
+	'security_isreported' => '是否已经上报过',
+	'security_admin_operate' => '状态',
+	'security_isreported_yes' => '是',
+	'security_isreported_no' => '否',
+	'security_type_1' => '政治',
+	'security_type_2' => '色情',
+	'security_type_3' => '灌水',
+	'security_type_4' => '挂马',
+	'security_type_5' => '广告',
+	'security_type_6' => '其他',
+	'security_opreateresult_0' => '回收站',
+	'security_opreateresult_1' => '正常',
+	'security_opreateresult_2' => '已删除',
+	'security_opreateresult_3' => '忽略',
+	'security_subject' => '标题',
+	'security_forum' => '版块',
+	'security_author' => '作者/发帖时间',
+	'security_view' => '查看',
+	'security_view_thread' => '查看主题',
+	'security_clicktotoggle' => '点击折叠/展开详细内容',
+	'security_foldall' => '全部折叠',
+	'security_exfoldall' => '全部展开',
+	'security_userdeleted' => '该用户已被管理人员删除',
+	'security_postdeleted' => '该帖子已被管理人员删除',
+	'security_modreason' => '防水墙自动处理',
+	'security_restore_user' => '恢复该用户',
+	'security_change_usergroup' => '更改用户组',
+
+	'recyclebin_search_security_thread' => '仅包含防水墙处理的主题',
+	'recyclebin_search_security_post' => '仅包含防水墙处理的回帖',
+
+	'security_index' => '首页',
+	'security_index_list' => '首页',
+	'security_setting' => '白名单设置',
+	'security_blanklist' => '白名单设置',
+	'security_setting_list' => '白名单设置',
+	'security_tips' => '小贴士',
+	'security_tips_1' => '<li><p>系统识别到违规主题和违规回帖后，自动将主题和回帖放入<a href="admin.php?action=recyclebin" style="text-decoration:none; color:#0000FF;">回收站</a></p></li>',
+	'security_white_list_setting' => '白名单设置',
+	'security_usergroup_white_list' => '用户组白名单',
+	'security_usergroup_white_list_comment' => '所选用户组内用户的操作，防水墙不做处理，可以按住 CTRL 多选',
+	'security_forum_white_list' => '版块白名单',
+	'security_forum_white_list_comment' => '所选版块内的主题和回复，防水墙不做处理，可以按住 CTRL 多选',
+	'security_recyclebin_thread' => '到回收站处理主题',
+	'security_recyclebin_post' => '到回收站处理回帖',
+	'security_thread_status' => '主题状态',
+	'security_post_status' => '回帖状态',
+	'security_thread_member' => '用户状态',
+	'setting_update_succeed' => '当前设置更新成功',
 );
 
 $GLOBALS['admincp_actions_normal'][] = 'cloud';

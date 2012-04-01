@@ -1,18 +1,15 @@
 +--------------------------------------------------------------------------+
- International (Multi-Lingual) Discuz!X v.2.0 Version
-
- Release 20111010
-
- by Valery Votintsev from sources.ru
-
+ International (Multi-Lingual) Discuz!X v.2.0
+ Release 20120329
+ by Valery Votintsev, codersclub.org
 +--------------------------------------------------------------------------+
 
 ATTENTION!
 
-This package IS NOT ORIGINAL Discuz!X Release!!!
+This package IS NOT ORIGINAL Discuz!X !!!
 
-This is a modified ENGLISH VERSION
-based on original Discuz!X v.2. Release 20111010
+This is a modified INTERNATIONAL VERSION
+based on original Discuz!X v.2. Release 20120329
 
 
 +--------------------------------------------------------------------------+

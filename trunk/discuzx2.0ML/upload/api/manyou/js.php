@@ -197,7 +197,7 @@ class Search {
 		$leftHtmlCode .= '<p id="return-homepage"><a href="'.(!empty($_G['setting']['defaultindex']) ? $_G['setting']['defaultindex'] : 'forum.php').'">' . lang('home/template', 'return_homepage') . '</a></p>' . "\n";
 		$leftHtmlCode .= "<ul id=\"navs-menu\">\n";
 		foreach($_G['setting']['navs'] as $navsid => $nav) {
-			$nav['nav'] = '<li ' . $nav['nav'] . '>' .$nav['navname'].'</a></li>';
+/*vot*/			$nav['nav'] = '<li ' . $nav['nav'] . '>' .$nav['navname'].'</a></li>';
 			if($nav['available']) {
 				if($navsid == 6 && !empty($_G['setting']['plugins']['jsmenu'])) {
 					$leftHtmlCode .= "\t$nav[nav]\n";

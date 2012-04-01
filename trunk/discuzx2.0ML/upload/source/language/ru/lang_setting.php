@@ -10,7 +10,6 @@
  */
 
 $lang = array (
-
 //---------------------------
 //vot: Titles from install_var.php, pre_common_nav table
 
@@ -39,6 +38,11 @@ $lang = array (
 	'nav_sethomepage'	=> 'Установить как домашнюю',//'设为首页',
 	'nav_setfavorite'	=> 'Добавить в избранное',//'收藏本站',
 	'nav_uchome'		=> 'ЮЦХ0ме',//'',
+//vot: for TEST only !!!!!!!!
+	'nav_test1'		=> 'Тест1',//'',
+	'nav_default'		=> 'Дефаулт',//'',
+	'nav_newsuflink'	=> 'НьюСубЛинк',//'',
+
 //	'nav_'		=> '',//'',
 
 );

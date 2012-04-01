@@ -29,7 +29,7 @@ $lang = array
 	'header_portal'		=> 'Portal',
 	'header_group'		=> 'Gruppen',
 	'header_founder'	=> 'Webmaster',
-	'header_addons'		=> 'Addons',//'扩展中心',
+	'header_cloudaddons'	=> 'Addons',//'扩展中心',
 
 
 	'menu_home'			=> 'AdminCP',//'管理中心首页',
@@ -40,6 +40,7 @@ $lang = array
 	'menu_setting_customnav'	=> 'Navigationsleiste',
 	'menu_setting_styles'		=> 'Interface',
 	'menu_setting_optimize'		=> 'Optimierung',
+	'menu_setting_seo'		=> 'SEO',//'SEO设置',
 	'menu_setting_functions'	=> 'Forum Funktionen',
 	'menu_setting_domain'		=> 'Domain-Einstellungen',
 	'menu_setting_user'		=> 'User Einstellung',
@@ -52,7 +53,6 @@ $lang = array
 	'menu_setting_uc'		=> 'UCenter Einstellung',
 	'menu_setting_uchome'		=> 'UCHome Einstellung',
 	'menu_setting_home'		=> 'Home',
-	'menu_setting_manyou'		=> 'Manyou Einrichten',
 	'menu_setting_search'		=> 'Suche-Einstellungen',
 	'menu_setting_district'		=> 'Regionale Einstellungen',
 	'menu_setting_ranklist'		=> 'Top-Einstellungen',
@@ -73,7 +73,7 @@ $lang = array
 	'menu_members_credits'		=> 'Credit Award',
 	'menu_members_profile'		=> 'Benutzerbereich',
 	'menu_members_profile_group'	=> 'User Groups',//'用户栏目分组',
-	'menu_members_verify'		=> 'Information Audit',
+	'menu_members_verify_setting'	=> 'Information Audit',
 	'menu_members_stat'		=> 'Mitglieder Statistik',
 	'menu_moderate_modmembers'	=> 'Genehmigungen',
 	'menu_profilefields'		=> 'Mitglieder Profile',
@@ -140,6 +140,7 @@ $lang = array
 	'menu_misc_onlinelist'		=> 'Mitglieder Online Icon',
 
 	'menu_misc_link'		=> 'Link',//'友情链接',
+	'menu_misc_relatedlink'		=> 'Related Links',//'关联链接',
 	'memu_focus_topic'		=> 'Elternkategorie',
 	'menu_adv_custom'		=> 'Werbung',//'站点广告',
 
@@ -181,6 +182,8 @@ $lang = array
 
 	'admincp_title'			=> $_G['setting']['bbname'].' Admin Center',//$_G['setting']['bbname'].' 管理中心',
 
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
+
 );
 
-?>

@@ -1,9 +1,8 @@
-||==================================||
-|| Discuz! X upgrade documentation  ||
-||----------------------------------||
-|| English Version                  ||
-|| by Valery Votintsev at sources.ru||
-||==================================||
+||=====================================||
+|| International Discuz! X upgrade     ||
+||-------------------------------------||
+|| by Valery Votintsev, codersclub.org ||
+||=====================================||
 
 This document is designed to help you to upgrade your current version
 of any Comsenz product (not Discuz!X Series) to the latest Discuz! X version.

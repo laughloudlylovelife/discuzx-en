@@ -137,7 +137,7 @@ $lang = array(
 							<input type="hidden" name="id" value="{uid}" />
 							<input type="hidden" name="idtype" value="uid" />
 							<input type="hidden" name="commentsubmit" value="true" />' :
-							'<div class="pt hm">你需要登录后才可以留言 <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href)" class="xi2">登录</a> | <a href="member.php?mod='.$_G['setting']['regname'].'" class="xi2">注册</a></div>').'
+							'<div class="pt hm">你需要登录后才可以留言 <a href="member.php?mod=logging&action=login" onclick="showWindow(\'login\', this.href)" class="xi2">登录</a> | <a href="member.php?mod='.$_G['setting']['regname'].'" class="xi2">'.$_G['setting']['reglinkname'].'</a></div>').'
 							<p class="ptn"><button '.($_G['uid'] ? 'type="submit"' : 'type="button" onclick="showWindow(\'login\', \'member.php?mod=logging&action=login&guestmessage=yes\')"').' name="commentsubmit_btn" value="true" id="commentsubmit_btn" class="pn"><strong>留言</strong></button></p>
 							<input type="hidden" name="handlekey" value="commentwall_{uid}" />
 							<span id="return_commentwall_{uid}"></span>

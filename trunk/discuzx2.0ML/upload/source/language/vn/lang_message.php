@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -282,6 +282,7 @@ $lang = array (
   'thread_closed' => 'Bài viết này đã đóng , không thể nhận xét!',
   'postcomment_error' => 'Có lỗi, bình luận hoặc đăng bài này không được tìm thấy',
   'postappend_only_yourself' => 'Chỉ có thể được thêm vào sau khi nội dung của các bài viết của mình',
+	'postappend_not_open'			=> 'Sorry, forum is not enable Post complementary functions',//'抱歉，版块没有开启帖子补充功能',
   'postappend_add_succeed' => 'Thêm thành công ',
   'replynotice_success_1' => 'Thành công ',
   'replynotice_success_0' => 'Bỏ đặt thành công ',
@@ -973,4 +974,3 @@ $lang = array (
 
 );
 
-?>

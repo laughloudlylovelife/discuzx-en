@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: editor.js 25628 2011-11-16 08:41:21Z chenmengshu $
+	$Id: editor.js 27008 2011-12-30 01:39:09Z monkey $
 	Modified by Valery Votintsev, codersclub.org
 */
 
@@ -103,25 +103,24 @@ function initEditor() {
 	}
 	if($(editorid + '_fullswitcher') && BROWSER.ie && BROWSER.ie < 7) {
 		$(editorid + '_fullswitcher').onclick = function () {
-			showDialog(lng['browser_update'], 'notice', lng['tips']);
+/*vot*/			showDialog(lng['browser_update'], 'notice', lng['tips']);
 		};
 		$(editorid + '_fullswitcher').className = 'xg1';
-
 	}
 //vot
 if(editorisfull) {
-$(editorid + '_fullswitcher').style.display = 'none';
-$(editorid + '_backswitcher').style.display = 'block';
+  $(editorid + '_fullswitcher').style.display = 'none';
+  $(editorid + '_backswitcher').style.display = 'block';
 } else {
-$(editorid + '_fullswitcher').style.display = 'block';
-$(editorid + '_backswitcher').style.display = 'none';
+  $(editorid + '_fullswitcher').style.display = 'block';
+  $(editorid + '_backswitcher').style.display = 'none';
 }
 if(simplodemode) {
-$(editorid + '_simple').style.display = 'none';
-$(editorid + '_advanced').style.display = 'block';
+  $(editorid + '_simple').style.display = 'none';
+  $(editorid + '_advanced').style.display = 'block';
 } else {
-$(editorid + '_simple').style.display = 'block';
-$(editorid + '_advanced').style.display = 'none';
+  $(editorid + '_simple').style.display = 'block';
+  $(editorid + '_advanced').style.display = 'none';
 }
 
 	if($(editorid + '_svdsecond') && savedatat === null) {
@@ -134,7 +133,7 @@ $(editorid + '_advanced').style.display = 'none';
 
 function savedataTime() {
 	if(!autosave) {
-		$(editorid + '_svdsecond').innerHTML = '<a title="'+lng['click_autosave_enable']+'" href="javascript:;" onclick="setAutosave()">'+lng['autosave_enable']+'</a> ';
+/*vot*/		$(editorid + '_svdsecond').innerHTML = '<a title="'+lng['click_autosave_enable']+'" href="javascript:;" onclick="setAutosave()">'+lng['autosave_enable']+'</a> ';
 		return;
 	}
 	if(!savedatac) {
@@ -153,7 +152,7 @@ function savedataTime() {
 
 function setAutosave() {
 	autosave = !autosave;
-	setEditorTip(autosave ? lng['autosave_enabled'] : lng['autosave_disabled']);
+/*vot*/	setEditorTip(autosave ? lng['autosave_enabled'] : lng['autosave_disabled']);
 	setcookie('editorautosave_' + editorid, autosave ? 1 : -1, 2592000);
 	savedataTime();
 }
@@ -292,8 +291,8 @@ function editorfull(op) {
 		window.onresize = function() { editorfull(1); };
 ///*vot*/ $(editorid + '_fullswitcher').style.visibility = 'visible';
 ///*vot*/ $(editorid + '_backswitcher').style.visibility = 'hidden';
-$(editorid + '_fullswitcher').style.display = 'none';
-$(editorid + '_backswitcher').style.display = 'block';
+/*vot*/	$(editorid + '_fullswitcher').style.display = 'none';
+/*vot*/	$(editorid + '_backswitcher').style.display = 'block';
 		editorisfull = 1;
 	} else {
 		if(savesimplodemode) {
@@ -316,12 +315,13 @@ $(editorid + '_backswitcher').style.display = 'block';
 		editorcontrolpos();
 //vot $(editorid + '_fullswitcher').style.visibility = 'hidden';
 //vot $(editorid + '_backswitcher').style.visibility = 'visible';
-$(editorid + '_fullswitcher').style.display = 'block';
-$(editorid + '_backswitcher').style.display = 'none';
+/*vot*/	$(editorid + '_fullswitcher').style.display = 'block';
+/*vot*/	$(editorid + '_backswitcher').style.display = 'none';
 	}
 	if(iswysiwyg) {
 		switchEditor(1);
 	}
+//vot	$(editorid + '_fullswitcher').innerHTML = editorisfull ? '返回' : '全屏';
 }
 
 function editorsimple() {
@@ -335,13 +335,12 @@ function editorsimple() {
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = 'none';
 		}
-//vot
-$(editorid + '_simple').style.display = 'none';
-$(editorid + '_advanced').style.display = 'block';
+/*vot*/	$(editorid + '_simple').style.display = 'none';
+/*vot*/	$(editorid + '_advanced').style.display = 'block';
 		simplodemode = 1;
 	} else {
 		v = '';
-		$(editorid + '_simple').innerHTML = lng['general'];
+/*vot*/		$(editorid + '_simple').innerHTML = lng['general'];
 		$(editorid + '_body').className = 'edt';
 		$(editorid + '_adv_s0').className = 'b1r';
 		$(editorid + '_adv_s1').className = 'b1r';
@@ -349,9 +348,8 @@ $(editorid + '_advanced').style.display = 'block';
 		if(allowswitcheditor) {
 			$(editorid + '_switcher').style.display = '';
 		}
-//vot
-$(editorid + '_simple').style.display = 'block';
-$(editorid + '_advanced').style.display = 'none';
+/*vot*/	$(editorid + '_simple').style.display = 'block';
+/*vot*/	$(editorid + '_advanced').style.display = 'none';
 		simplodemode = 0;
 	}
 	setcookie('editormode_' + editorid, simplodemode ? 1 : -1, 2592000);
@@ -475,7 +473,7 @@ function writeEditorContents(text) {
 			text = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
 /*vot*/				'<html'+rtl+'><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
 				(BROWSER.ie && BROWSER.ie > 7 ? '<meta http-equiv="X-UA-Compatible" content="IE=7" />' : '' ) +
-				'<link rel="stylesheet" type="text/css" href="data/cache/style_' + STYLEID + '_wysiwyg' + RTLSUFFIX + '.css?' + VERHASH + '" />' +
+/*vot*/				'<link rel="stylesheet" type="text/css" href="data/cache/style_' + STYLEID + '_wysiwyg' + RTLSUFFIX + '.css?' + VERHASH + '" />' +
 				(BROWSER.ie ? '<script>window.onerror = function() { return true; }</script>' : '') +
 				'</head><body>' + text + '</body></html>';
 			editdoc.designMode = allowhtml ? 'on' : 'off';
@@ -642,6 +640,8 @@ function getCaret() {
 		checkFocus();
 		var sel = document.selection.createRange();
 		editbox.sel = sel;
+		editdoc._selectionStart = editdoc.selectionStart;
+		editdoc._selectionEnd = editdoc.selectionEnd;
 	}
 }
 
@@ -694,7 +694,7 @@ function discuzcode(cmd, arg) {
 	}
 
 	checkFocus();
-//googlemap by yongbing@ichangning.com
+//vot:	googlemap by yongbing@ichangning.com
 	if(in_array(cmd, ['sml', 'url', 'quote', 'code', 'free', 'hide', 'aud', 'vid', 'fls', 'attach', 'image', 'pasteword', 'googlemap']) || cmd == 'tbl' || in_array(cmd, ['fontname', 'fontsize', 'forecolor', 'backcolor']) && !arg) {
 		showEditorMenu(cmd);
 		return;
@@ -752,7 +752,7 @@ function discuzcode(cmd, arg) {
 		} else {
 			insertText(opentag + closetag, opentag.length, closetag.length);
 
-			while(listvalue = prompt(lng['enter_item_list'], '')) {
+/*vot*/			while(listvalue = prompt(lng['enter_item_list'], '')) {
 				if(BROWSER.opera > 8) {
 					listvalue = '\n' + '[*]' + listvalue;
 					insertText(listvalue, strlen(listvalue) + 1, 0);
@@ -786,18 +786,18 @@ function discuzcode(cmd, arg) {
 		}
 	} else if(cmd == 'rst') {
 		loadData();
-		setEditorTip(lng['data_restored']);
+/*vot*/		setEditorTip(lng['data_restored']);
 	} else if(cmd == 'svd') {
 		saveData();
-		setEditorTip(lng['data_saved']);
+/*vot*/		setEditorTip(lng['data_saved']);
 	} else if(cmd == 'chck') {
 		checklength(editorform);
 	} else if(cmd == 'tpr') {
-		if(confirm(lng['clear_all_sure'])) {
+/*vot*/		if(confirm(lng['clear_all_sure'])) {
 			clearContent();
 		}
 	} else if(cmd == 'downremoteimg') {
-		showDialog('<div id="remotedowninfo"><p class="mbn">'+lng['download_remote']+'</p><p><img src="' + STATICURL + 'image/common/uploading.gif" alt="" /></p></div>', 'notice', '', null, 1);
+/*vot*/		showDialog('<div id="remotedowninfo"><p class="mbn">'+lng['download_remote']+'</p><p><img src="' + STATICURL + 'image/common/uploading.gif" alt="" /></p></div>', 'notice', '', null, 1);
 		var message = wysiwyg ? html2bbcode(getEditorContents()) : (!editorform.parseurloff.checked ? parseurl(editorform.message.value) : editorform.message.value);
 		var oldValidate = editorform.onsubmit;
 		var oldAction = editorform.action;
@@ -994,7 +994,7 @@ function showEditorMenu(tag, params) {
 					return insertText((opentag + selection + closetag), strlen(opentag), strlen(closetag), true, sel);
 				}
 /*vot*/				var lang = {'quote' : lng['insert_quote'], 'code' : lng['insert_code'], 'hide' : lng['hide_content'], 'free' : lng['free_content']};
-				str += lang[tag] + ':<br /><textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea>' +
+/*vot*/				str += lang[tag] + ':<br /><textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea>' +
 					(tag == 'hide' ? '<br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="pc" checked="checked" />'+lng['when_thread_replied']+'</label><br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="pc" />'+lng['when_points_more']+'</label> <input type="text" size="3" id="' + ctrlid + '_param_2" class="px pxs" /> '+lng['when_show'] : '');
 				break;
 			case 'tbl':
@@ -1018,9 +1018,9 @@ function showEditorMenu(tag, params) {
 				menupos = '00';
 				menutype = 'win';
 				break;
-//googlemap by yongbing@ichangning.com
+//vot: googlemap by yongbing@ichangning.com
 			case 'googlemap':
-				stitle = lng['map_title'];
+/*vot*/				stitle = lng['map_title'];
 //vot				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./source/plugin/googlemap/googlemap.html"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
 				str = '<p class="px" style="height:390px"><iframe id="' + ctrlid + '_param_1" frameborder="0" style="width:100%;height:100%" onload="this.contentWindow.document.body.style.width=\'530px\';this.onload=null" src="./misc.php?mod=googlemap"></iframe></p><p class="xg2 pbn">'+lng['map_insert']+'</p>';
 				menuwidth = 600;
@@ -1203,7 +1203,7 @@ function showEditorMenu(tag, params) {
 				pasteWord($(ctrlid + '_param_1').contentWindow.document.body.innerHTML);
 				hideMenu('', 'win');
 				break;
-//googlemap by yongbing@ichangning.com
+//vot: googlemap by yongbing@ichangning.com
 			case 'googlemap':
 				//var mapsrc = window.frames[ctrlid + '_param_1'].document.getElementById("mapurl").value;	
 				var mapsrc = document.getElementById(ctrlid + '_param_1').contentWindow.document.getElementById("mapurl").value;
@@ -1319,6 +1319,12 @@ function insertText(text, movestart, moveend, select, sel) {
 		}
 	} else {
 		if(!isUndefined(editdoc.selectionStart)) {
+			if(editdoc._selectionStart) {
+				editdoc.selectionStart = editdoc._selectionStart;
+				editdoc.selectionEnd = editdoc._selectionEnd;
+				editdoc._selectionStart = 0;
+				editdoc._selectionEnd = 0;
+			}
 			var opn = editdoc.selectionStart + 0;
 			editdoc.value = editdoc.value.substr(0, editdoc.selectionStart) + text + editdoc.value.substr(editdoc.selectionEnd);
 

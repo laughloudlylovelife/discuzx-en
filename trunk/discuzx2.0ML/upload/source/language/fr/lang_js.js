@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	Javascript Language variables for English
+	Javascript Language variables
     Traduction par André13 discuz-fr.fr -28.déc.2011- modeur Bertrand
 	$Id: static/js/lang_js.js by Valery Votintsev, vot at sources.ru
 
@@ -16,6 +16,7 @@ var emaildomains = [
 		'aol.com',
 		'gmail.com',
 		'hotmail.com',
+		'msn.com',
 		'yahoo.com'
 		];
 

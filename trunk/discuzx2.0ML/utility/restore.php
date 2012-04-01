@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: restore.php 22782 2011-05-20 09:39:07Z svn_project_zhangjie $
- *	English by Valery Votintsev at sources.ru
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -475,15 +475,15 @@ function sizecount($size) {
 function show_header() {
 	ob_start();
 	$charset = CHARSET;
-	$title = lang('restore_title');//vot
-	$intro = lang('restore_questions');//vot
+/*vot*/	$title = lang('restore_title');
+/*vot*/	$intro = lang('restore_questions');
 /*vot*/	$rtl_suffix = RTLSUFFIX;
-	print <<< EOT
+/*vot*/	print <<< EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=$charset" />
-<title>$title</title><!--vot-->
+<title>$title</title>
 <link href="static/image/admincp/admincp{$rtl_suffix}.css?{$_G[style][verhash]}" rel="stylesheet" type="text/css" media="all" />
 <style type="text/css">
 * { word-break: break-all; }
@@ -564,11 +564,11 @@ function show_msg($message, $url_forward = '', $type = 'message', $success = 0) 
 		echo '<span'.($success ? '' : ' class="red"').'>'.$message.'</span>';
 	} elseif($type == 'redirect') {
 		echo "$message ...";
-		echo "<br /><br /><br /><a href=\"$url_forward\">"+lang('browser_jump')+"</a>";//vot
+/*vot*/		echo "<br /><br /><br /><a href=\"$url_forward\">"+lang('browser_jump')+"</a>";//vot
 		echo "<script>setTimeout(\"redirect('$url_forward');\", 1250);</script>";
 	} elseif($type == 'confirm') {
 		echo "$message";
-		echo "<br /><br /><br /><button id=\"confirmbtn\" onclick=\"redirect('$url_forward')\">"+lang('ok')+"</button><button id=\"cancelbtn\" onclick=\"redirect('{$siteurl}restore.php')\">"+lang('cancel')+"</button>";//vot
+/*vot*/		echo "<br /><br /><br /><button id=\"confirmbtn\" onclick=\"redirect('$url_forward')\">"+lang('ok')+"</button><button id=\"cancelbtn\" onclick=\"redirect('{$siteurl}restore.php')\">"+lang('cancel')+"</button>";//vot
 	}
 
 	show_footer();
@@ -618,8 +618,8 @@ function show_tips($tip, $title = '', $comment = '', $style = 1) {
 }
 
 function lang($lang_key, $force = true, $replace = array()) {
-	static $lang;//vot
-	require_once ROOT_PATH.'utility/lang_restore.php';//vot
+/*vot*/	static $lang;
+/*vot*/	require_once ROOT_PATH.'source/language/'.DISCUZ_LANG.'/lang_restore.php';
 	$return = isset($lang[$lang_key]) ? $lang[$lang_key] : ($force ? $lang_key : '');
 	if($replace && is_array($replace)) {
 		$searchs = $replaces = array();
@@ -795,4 +795,3 @@ class dbstuff {
 		show_error('run_sql_error', $message.$sql.'<br /> Error:'.$this->error().'<br />Errno:'.$this->errno(), 0);
 	}
 }
-?>

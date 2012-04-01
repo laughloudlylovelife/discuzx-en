@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_main.php 22760 2011-05-20 01:03:11Z monkey $
+ *      $Id: admincp_main.php 29171 2012-03-28 02:59:31Z monkey $
  *	Modified by Valery Votintsev at sources.ru
  */
 
@@ -22,7 +22,6 @@ $header_welcome = cplang('header_welcome');
 $header_logout = cplang('header_logout');
 $header_bbs = cplang('header_bbs');
 $cpadmingroup = isfounder() ? cplang('founder_admin') : ($GLOBALS['admincp']->adminsession['cpgroupid'] ? DB::result_first("SELECT cpgroupname FROM ".DB::table('common_admincp_group')." WHERE cpgroupid='".$GLOBALS['admincp']->adminsession['cpgroupid']."'") : cplang('founder_master'));
-$admincp = lang('admincp');
 
 require './source/admincp/admincp_menu.php';
 $basescript = ADMINSCRIPT;
@@ -122,7 +121,7 @@ echo <<<EOT
 
 </ul>
 <div class="currentloca">
-  <p id="admincpnav"></p>
+<p id="admincpnav"></p>
 </div>
 <div class="navbd"></div>
 <div class="sitemapbtn">
@@ -135,8 +134,8 @@ echo <<<EOT
 </td>
 </tr>
 <tr>
- <td valign="top" width="160" class="menutd">
-  <div id="leftmenu" class="menu">
+<td valign="top" width="160" class="menutd">
+<div id="leftmenu" class="menu">
 
 EOT;
 
@@ -151,8 +150,8 @@ $plugindefaultkey = $isfounder ? 1 : 0;
 
 echo <<<EOT
 
-  </div>
- </td>
+</div>
+</td>
 <td valign="top" width="100%" class="mask">
 	<iframe src="$basescript?$extra" id="main" name="main" width="100%" height="100%" frameborder="0" scrolling="yes" style="overflow: visible;display:"></iframe>
 </td>
@@ -162,9 +161,9 @@ echo <<<EOT
 	<span onclick="menuScroll(1)"><img src="static/image/admincp/scrollu.gif" /></span><span onclick="menuScroll(2)"><img src="static/image/admincp/scrolld.gif" /></span>
 </div>
 <div class="copyright">
-<!-- vot -->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> {$_G['setting']['version']},<br>Release {$_G['setting']['release']}</p>
-<!-- vot -->	<p>&copy; 2001-{$year}, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
-<!-- vot -->	<p><strong>MultiLingual version</strong><br>by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
+<!--vot-->	<p>Powered by <a href="http://www.discuz.net/" target="_blank">Discuz!</a> {$_G['setting']['version']},<br>Release {$_G['setting']['release']}</p>
+<!--vot-->	<p>&copy; 2001-{$year}, <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
+<!--vot-->	<p><strong>MultiLingual version</strong><br>by <a href="http://codersclub.org/discuzx/" target="_blank">Valery Votintsev</a></p>
 </div>
 
 <div id="cpmap_menu" class="custom" style="display: none">

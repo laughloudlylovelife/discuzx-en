@@ -50,8 +50,8 @@ if(!submitcheck('settingsubmit')) {
 		shownav('user', 'nav_members_profile_group');
 	} elseif(in_array($operation, array('mail', 'uc'))) {
 		shownav('founder', 'setting_'.$operation);
-///*vot*/	} elseif($operation == 'language') {
-///*vot*/		shownav('global', 'nav_language');
+/*vot*/	} elseif($operation == 'language') {
+/*vot*/		shownav('global', 'nav_language');
 	} else {
 		shownav('global', 'setting_'.$operation);
 	}
@@ -166,12 +166,12 @@ if(!submitcheck('settingsubmit')) {
 		showsubmenuanchors('setting_mobile', array(
 			array('setting_mobile_status', 'status', $_G['gp_anchor'] == 'status')
 		));
-///*vot*/	} elseif($operation == 'language') {
-//		showsubmenu('setting_language', array(
-//			array('setting_cachethread', 'setting&operation=cachethread', $current['cachethread']),
-//			array('setting_memory', 'setting&operation=memory', $current['memory']),
-//			array('setting_serveropti', 'setting&operation=serveropti', $current['serveropti'])
-//		));
+/*vot*/	} elseif($operation == 'language') {
+		showsubmenu('setting_language', array(
+			array('setting_cachethread', 'setting&operation=cachethread', $current['cachethread']),
+			array('setting_memory', 'setting&operation=memory', $current['memory']),
+			array('setting_serveropti', 'setting&operation=serveropti', $current['serveropti'])
+		));
 
 	} else {
 		showsubmenu('setting_'.$operation);
@@ -1984,7 +1984,7 @@ EOT;
 		exit;
 
 /*vot*/	} elseif ($operation == 'language') {
-///*vot*/		showtips('setting_language_tips');
+/*vot*/		showtips('setting_language_tips');
 
 		showtableheader();
 		showsubtitle(array('setting_language_available', 'setting_language_order', 'setting_language_id', 'setting_language_flag', 'setting_language_name', 'setting_language_title', 'setting_language_dir', 'setting_language_actions'), '');

@@ -4,8 +4,8 @@
  *	  [Discuz!] (C)2001-2099 Comsenz Inc.
  *	  This is NOT a freeware, use is subject to license terms
  *
- *	  $Id: admincp_cloud.php 24682 2011-10-08 03:16:16Z yexinhao $
- *		English by Valery Votintsev at sources.ru
+ *	  $Id: admincp_cloud.php 29038 2012-03-23 06:22:39Z songlixin $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -112,7 +112,6 @@ if(!$operation || $operation == 'open') {
 
 			echo <<<EOT
 <link rel="stylesheet" type="text/css" href="static/image/admincp/cloud/cloud.css" />
-
 <script type="text/javascript" src="static/image/admincp/cloud/cloud.js"></script>
 <script type="text/JavaScript">
 var cloudStatus = "$cloudstatus";
@@ -219,7 +218,8 @@ EOT;
 
 	require libfile("cloud/$operation", 'admincp');
 
-} elseif(in_array($operation, array('manyou', 'connect', 'security', 'stats', 'search', 'smilies', 'qqgroup', 'union'))) {
+} elseif(in_array($operation, array('manyou', 'connect', 'security', 'stats', 'search',
+									'smilies', 'qqgroup', 'union', 'storage'))) {
 	if($cloudstatus != 'cloud') {
 		cpmsg('cloud_open_first', '', 'succeed', array(), '<p class="marginbot"><a href="###" onclick="top.location = \''.ADMINSCRIPT.'?frames=yes&action=cloud&operation=open\'" class="lightlink">'.cplang('message_redirect').'</a></p><script type="text/JavaScript">setTimeout("top.location = \''.ADMINSCRIPT.'?frames=yes&action=cloud&operation=open\'", 3000);</script>');
 	}

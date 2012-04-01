@@ -4,7 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_forumdisplay.php 22941 2011-06-07 01:17:43Z monkey $
+ *      $Id: forum_forumdisplay.php 29143 2012-03-27 09:04:37Z chenmengshu $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -395,7 +396,7 @@ if($filter) {
 			}
 
 			foreach($geturl as $field => $value) {
-				if($field != 'page' && $field != 'fid') {
+				if($field != 'page' && $field != 'fid' && $field != 'searchoption') {
 					$multiadd[] = $field.'='.rawurlencode($value);
 					if(in_array($field, $filterfield)) {
 						$filteradd .= $sp;
@@ -471,6 +472,9 @@ if($_G['forum']['threadsorts']['types'] && $sortoptionarray && ($_G['gp_searchop
 	if($_G['gp_searchoption']){
 		$forumdisplayadd['page'] = '&sortid='.$sortid;
 		foreach($_G['gp_searchoption'] as $optionid => $option) {
+			$optionid = intval($optionid);
+			$option['value'] = rawurlencode((string)$option['value']);
+			$option['type'] = rawurlencode((string)$option['type']);
 			$identifier = $sortoptionarray[$sortid][$optionid]['identifier'];
 			$forumdisplayadd['page'] .= $option['value'] ? "&searchoption[$optionid][value]=$option[value]&searchoption[$optionid][type]=$option[type]" : '';
 		}
@@ -479,6 +483,10 @@ if($_G['forum']['threadsorts']['types'] && $sortoptionarray && ($_G['gp_searchop
 	if($searchsorttids = sortsearch($_G['gp_sortid'], $sortoptionarray, $_G['gp_searchoption'], $selectadd, $_G['fid'])) {
 		$filteradd .= "AND t.tid IN (".dimplode($searchsorttids).")";
 	}
+}
+
+if(isset($_G['gp_searchoption'])) {
+    $_G['gp_searchoption'] = dhtmlspecialchars($_G['gp_searchoption']);
 }
 
 $fidsql = '';
@@ -545,7 +553,7 @@ $filterbool = !empty($filter) && in_array($filter, $filterfield);
 $_G['forum_threadcount'] += $filterbool ? 0 : $stickycount;
 $forumdisplayadd['page'] = !empty($forumdisplayadd['page']) ? $forumdisplayadd['page'] : '';
 $multipage_archive = $_G['gp_archiveid'] && in_array($_G['gp_archiveid'], $threadtableids) ? "&archiveid={$_G['gp_archiveid']}" : '';
-$multipage = multi($_G['forum_threadcount'], $_G['tpp'], $page, "forum.php?mod=forumdisplay&fid=$_G[fid]".($multiadd ? '&'.implode('&', $multiadd) : '')."$multipage_archive", $_G['setting']['threadmaxpages']);
+$multipage = multi($_G['forum_threadcount'], $_G['tpp'], $page, "forum.php?mod=forumdisplay&fid=$_G[fid]".$forumdisplayadd['page'].($multiadd ? '&'.implode('&', $multiadd) : '')."$multipage_archive", $_G['setting']['threadmaxpages']);
 $extra = rawurlencode(!IS_ROBOT ? 'page='.$page.($forumdisplayadd['page'] ? '&filter='.$filter.$forumdisplayadd['page'] : '').($forumdisplayadd['orderby'] ? $forumdisplayadd['orderby'] : '') : 'page=1');
 
 $separatepos = 0;
@@ -561,8 +569,7 @@ if(($start_limit && $start_limit > $stickycount) || !$stickycount || $filterbool
 	}
 	$querysticky = '';
 /*vot*/	$query = DB::query("SELECT t.*
-			FROM ".DB::table($threadtable)." t
-			$indexadd
+			FROM ".DB::table($threadtable)." t $indexadd
 			WHERE $fidsql $filteradd AND ($displayorderadd)
 			ORDER BY t.displayorder DESC, t.$_G[gp_orderby] $_G[gp_ascdesc]
 			LIMIT ".($filterbool ? $start_limit : $start_limit - $stickycount).", $_G[tpp]");
@@ -662,7 +669,7 @@ while(($querysticky && $thread = DB::fetch($querysticky)) || ($query && $thread 
 
 	$thread['moved'] = $thread['heatlevel'] = $thread['new'] = 0;
 	$thread['icontid'] = $thread['forumstick'] || !$thread['moved'] && $thread['isgroup'] != 1 ? $thread['tid'] : $thread['closed'];
-	if($_G['forum']['status'] != 3 && ($thread['closed'] || ($_G['forum']['autoclose'] && TIMESTAMP - $thread[$closedby] > $_G['forum']['autoclose']))) {
+	if($_G['forum']['status'] != 3 && ($thread['closed'] || ($_G['forum']['autoclose'] && $thread['fid'] == $_G['fid'] && TIMESTAMP - $thread[$closedby] > $_G['forum']['autoclose']))) {
 		if($thread['isgroup'] == 1) {
 			$thread['folder'] = 'common';
 			$grouptids[] = $thread['closed'];
@@ -833,4 +840,3 @@ if(!defined('IN_ARCHIVER')) {
 	include loadarchiver('forum/forumdisplay');
 }
 
-?>

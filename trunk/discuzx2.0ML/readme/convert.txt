@@ -1,12 +1,11 @@
-||==================================||
-||  Discuz! X Conversion document   ||
-||----------------------------------||
-|| English Version                  ||
-|| by Valery Votintsev at sources.ru||
-||==================================||
+||=====================================||
+|| International Discuz! X Conversion  ||
+||-------------------------------------||
+|| by Valery Votintsev, codersclub.org ||
+||=====================================||
 
-This document is designed to help you to convert the existing
-community products to the Discuz! X series products.
+This document is designed to help you to convert the
+existing Discuz!X to the International Discuz!X.
 
 Before you start the conversion, be sure to read step by step
 the following precautions:

@@ -81,10 +81,6 @@ $lang = array (
   'your_mobile_browser'	=> 'Mobile',  //  Mobile
   'e_redo'		=> 'Refaire',  //  Redo
   'e_undo'		=> 'D&#233;faire',  //  Undo
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
   'header_add_frame'		=> 'Ajout. frame',  //  Add frame
   'header_add_module'		=> 'Ajout. module',  // Add module 
   'header_clearall'		=> 'Nettoyer Tout',  //  Clear all
@@ -361,6 +357,11 @@ $lang = array (
 
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'Style par D&#233;faut',//'[name]默认风格[/name]', // 'Default style'

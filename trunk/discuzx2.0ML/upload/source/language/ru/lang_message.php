@@ -282,6 +282,7 @@ $lang = array (
 	'thread_closed'			=> 'Эта тема закрыта, комментирование невозможно.',
 	'postcomment_error'		=> 'Постинг не найден или недостаточно прав для комментирования.',
 	'postappend_only_yourself'	=> 'Вы можете добавлять комментарии только в свои собственные постинги.',
+	'postappend_not_open'			=> 'Sorry, forum is not enable Post complementary functions',//'抱歉，版块没有开启帖子补充功能',
 	'postappend_add_succeed'	=> 'Постинг успешно добавлен.',
 	'replynotice_success_1'		=> 'Уведомления на ответы включены!',
 	'replynotice_success_0'		=> 'Уведомления на ответы отключены!',
@@ -973,4 +974,3 @@ $lang = array (
 
 );
 
-?>

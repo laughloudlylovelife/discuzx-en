@@ -81,10 +81,6 @@ $lang = array (
 'your_mobile_browser'		=> 'Bitte w&auml;hle ',//'请选择 ',
 	'e_redo'		=> 'Wiederholen',
 	'e_undo'		=> 'R&uuml;ckg&auml;ngig',
-'e_full_screen'			=> 'Full Screen',//'全屏',
-'e_restore_size'		=> 'Restore size',//'恢复',
-'e_simple'			=> 'General Mode',//'常用',
-'e_advanced'			=> 'Advanced Mode',//'高级',
 	'header_add_frame'	=> 'Frame hinzuf&uuml;gen',
 	'header_add_module'	=> 'Modul hinzuf&uuml;gen',
 	'header_clearall'	=> 'Clear',
@@ -361,6 +357,11 @@ $lang = array (
 
 //---------------------------
 // Added by Valery Votintsev
+
+'e_full_screen'			=> 'Full Screen',//'全屏',
+'e_restore_size'		=> 'Restore size',//'恢复',
+'e_simple'			=> 'General Mode',//'常用',
+'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'Default style',//'[name]默认风格[/name]',

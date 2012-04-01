@@ -1278,9 +1278,9 @@ CREATE TABLE pre_common_tag (
 
 DROP TABLE IF EXISTS pre_common_tagitem;
 CREATE TABLE pre_common_tagitem (
-  tagid int(11) NOT NULL DEFAULT '0',
+  tagid int(11) unsigned NOT NULL DEFAULT '0',
   tagname varchar(255) NOT NULL DEFAULT '',
-  itemid int(11) NOT NULL DEFAULT '0',
+  itemid int(11) unsigned NOT NULL DEFAULT '0',
   idtype varchar(255) NOT NULL DEFAULT '',
   KEY tagid (tagid,idtype),
   KEY idtype (idtype,itemid)

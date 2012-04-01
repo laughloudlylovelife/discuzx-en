@@ -687,6 +687,14 @@ var rowtypedata = [
 					}
 					$fupselect .= '</select>';
 
+//DEBUG
+//echo "table=".$table."<br>\n";
+//echo "sql=".$sql."<br>\n";
+//echo "forum=";
+//echo "<pre>";
+//print_r($forum);
+//echo "</pre>";
+//exit;
 					if($forum['threadtypes']) {
 						$forum['threadtypes'] = unserialize($forum['threadtypes']);
 						$forum['threadtypes']['status'] = 1;
@@ -1929,11 +1937,22 @@ EOT;
 					cpmsg('forums_copy_source_invalid', '', 'error');
 				}
 				$sourceforum = array_map('addslashes', $sourceforum);
+//DEBUG
+//echo "table=".$table."<br>\n";
+//echo "sql=".$sql."<br>\n";
+//echo "fields=";
+//echo "<pre>";
+//print_r($sourceforum);
+//echo "</pre>";
+//exit;
+
 				DB::update($table, $sourceforum, "fid IN ($fids)");
 			}
 		}
 
 		updatecache('forums');
+//DEBUG
+//exit;
 		cpmsg('forums_copy_succeed', 'action=forums', 'succeed');
 
 	}

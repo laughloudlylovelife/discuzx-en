@@ -3,7 +3,7 @@
 /**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
- *      Traduit par Andre13 27-déc-2011 - http://discuz-fr.fr support French
+ *      Traduit par Andre13 27-dc-2011 - http://discuz-fr.fr support French
  *      $Id: lang_admincp_menu.php by Valery Votintsev at sources.ru
  */
 
@@ -28,7 +28,7 @@ $lang = array
 	'header_portal'		=> 'Portail',
 	'header_group'		=> 'Groupe',
 	'header_founder'	=> 'Webmaster',
-	'header_addons'		=> 'Extensions',
+	'header_cloudaddons'	=> 'Extensions',
 
 
 	'menu_home'			=> 'Gestion Accueil',
@@ -181,6 +181,8 @@ $lang = array
 
 	'admincp_title'			=> $_G['setting']['bbname'].' Mng. Centre',
 
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
+
 );
 
-?>

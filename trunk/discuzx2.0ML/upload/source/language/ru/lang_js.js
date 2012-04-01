@@ -16,6 +16,7 @@ var emaildomains = [
 		'mail.ru',
 		'gmail.com',
 		'hotmail.com',
+		'msn.com',
 		'qip.ru',
 		'rambler.ru',
 		'yandex.ru',

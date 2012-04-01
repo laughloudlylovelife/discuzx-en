@@ -657,7 +657,7 @@ $lang = array
 	'setting_access_register_connect_credit'		=> 'QQ logged users credit',//'QQ注册用户奖励所用扩展积分',
 	'setting_access_register_connect_credit_comment'	=> 'Logged by QQ users must have points in their account',//'通过QQ注册后，用户奖励所用的扩展积分',
 	'setting_access_register_connect_addcredit'		=> 'Add bonus to registered by QQ users',//'QQ注册用户奖励积分数量',
-	'setting_access_register_connect_addcredit_comment'	=> 'When users registrered through QQ, they will get an award of points',//'通过QQ注册后，用户奖励的扩展积分数量',
+	'setting_access_register_connect_addcredit_comment'	=> 'When users registered through QQ, they will get an award of points',//'通过QQ注册后，用户奖励的扩展积分数量',
 	'setting_access_register_connect_group'			=> 'User groups enabled to register by QQ',//'QQ注册用户初始用户组',
 	'setting_access_register_connect_group_comment'		=> 'Set the groups who can access to the site by QQ number',//'通过QQ注册后，用户的初始用户组',
 	'setting_access_register_connect_regverify'		=> 'Skip verification for QQ users',//'QQ注册的用户忽略注册验证',
@@ -1049,24 +1049,24 @@ $lang = array
 
 	'setting_domain'				=> 'Domain settings',//'域名设置',
 	'setting_domain_base'				=> 'Basic settings',//'基本设置',
-	'setting_domain_base_tips'			=> '<li>Reserved subdomain name can not used in any settings, or used as an object domain name.</li><li>If a personal space or a group turned to go to the subdomain root domain settings <strong>set</strong> root <strong>Groups, Space</strong> the root domain name</li>',//'<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>群组、家园</strong>的根域名</li>',
+	'setting_domain_base_tips'			=> '<li>Reserved subdomain name can not used in any settings, or used as an object domain name.</li><li>If a personal space or a group turned to go to the subdomain root domain settings <strong>set</strong> root <strong>Groups, Space</strong> the root domain name</li>',//"<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>{$_G[setting][navs][3][navname]}、{$_G[setting][navs][4][navname]}</strong>的根域名</li>",
 	'setting_domain_app'				=> 'Application domain',//'应用域名',
 	'setting_domain_app_domain'			=> 'Domain',//'域名',
 	'setting_domain_app_tips'			=> "<li>For the built-in <strong>Portal, Forum, Groups, Spaces</strong>, domain name to bind by default.</li><li>Each binding domain must be unique, <strong>any opening of a domain name, you need to configure the default domain</strong>, otherwise it will create more import problems.</li><li>Set Forum formats such as: portal.comsenz.com</li><li>Do not add &quot;<strong>http://</strong>&quot; at the domain name beginning, or &quot;<strong>/</strong>&quot; at the domain ending.</li>",//"<li>各自绑定的域名不能相同，域名不需要添加“<strong>http://</strong>”，也不要以“<strong>/</strong>”结尾，例如：portal.comsenz.com</li><li>任意开启一项域名，需要配置默认域名，否则会造成多入口问题</li><li>当开启多域名时，请在 config/config_global.php 中修改 cookiedomain 值来设置 cookie 作用域</li>",
 	'setting_domain_app_mobile_tips'		=> 'Configure domain name when access by a phone. Non-mobile browser will be automatically redirected to the default domain name',//'当配置手机域名后，非手机浏览器访问会自动跳转至默认域名',
 	'setting_domain_root'				=> 'Root domain settings',//'根域名设置',
-	'setting_domain_root_tips'			=> "<li><strong>Groups, Space, Forum, Thread, Category</strong> can be set up into a subdomain relative to the root domain name. Example: If a user application need to be set at XXX.comsenz.com, fill in the root domain as: comsenz.com</li><li><strong>Groups, after finishing of set Space</strong> to subdomain, it is also required to open the corresponding subdomain switching so users can apply the appropriate place to bind the subdomain name. User groups also limited by the length of the subdomain name.</li><li>If a <strong>Channel</strong> enabled at subdomain, and it is bound to some directory, configure bt yourself the environment for bind related operation.</li><li>In other cases it is not recommended to change the root domain to subdomains.</li>",//"<li>可以为<strong>个人空间、群组、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、群组</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
+	'setting_domain_root_tips'			=> "<li><strong>Groups, Space, Forum, Thread, Category</strong> can be set up into a subdomain relative to the root domain name. Example: If a user application need to be set at XXX.comsenz.com, fill in the root domain as: comsenz.com</li><li><strong>Groups, after finishing of set Space</strong> to subdomain, it is also required to open the corresponding subdomain switching so users can apply the appropriate place to bind the subdomain name. User groups also limited by the length of the subdomain name.</li><li>If a <strong>Channel</strong> enabled at subdomain, and it is bound to some directory, configure bt yourself the environment for bind related operation.</li><li>In other cases it is not recommended to change the root domain to subdomains.</li>",//"<li>可以为<strong>个人空间、{$_G[setting][navs][3][navname]}、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、{$_G[setting][navs][3][navname]}</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
 	'setting_domain_allow_space'			=> 'Allow Space at subdomain names',//'开启个人空间二级域名',
 	'setting_domain_allow_space_comment'		=> 'If this is turned ON, you need to set the root domain name. A user group or an application domain name length is limited!',//'开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_allow_group'			=> 'Enable groups at subdomain name',//'开启群组二级域名',
 	'setting_domain_allow_group_comment'		=> 'If this is turned ON, you need to set the root domain name, domain name and user group open only after the length of domain name applications',//'开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_hold_domain'			=> 'Reserved subdomain names',//'保留二级域名',
 	'setting_domain_hold_domain_comment'		=> 'Separate multiple domains with "|". You can use the wildcard "*"',//'多个之间用 | 隔开，可以使用通配符* ',
-	'setting_profile_group'				=> 'User groups',//'用户栏目分组',
-	'setting_profile_group_setting'			=> 'User group settings section',//'用户栏目分组设置',
+	'setting_profile_group'				=> 'Group Profile Fields',//'用户栏目分组',
+	'setting_profile_group_setting'			=> 'Group Profile Fields settings',//'用户栏目分组设置',
 	'setting_profile_group_available'		=> 'Available',//'显示',
 	'setting_profile_group_displayorder'		=> 'Display order',//'显示顺序',
-	'setting_profile_group_name'			=> 'Local group name',//'栏目分组名称',
+	'setting_profile_group_name'			=> 'Field name',//'栏目分组名称',
 	'setting_profile_group_list'			=> 'List',//'列表',
 	'setting_profile_permission_basic_status'	=> 'Custom Title',//'自定义头衔',
 	'setting_profile_personal_signature'		=> 'Personal signature',//'个人签名',
@@ -1867,6 +1867,17 @@ $lang = array
 	'setting_attach_remote_minsize_comment'		=> 'Unit: KB. Allow to upload remote attachments only if the size is larger than the value. Set to 0 or leave blank to no limit.',//'单位：KB，只有尺寸大于当前设置的附件才使用远程附件功能，0 或留空为不限制。',
 	'setting_attach_remote_ftpcheck'		=> 'Test remote attachment settings',//'检测远程附件设置',
 
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
+
 	'setting_attach_remote_-100'	=> 'PHP FTP extension module is not installed or FTP functions are disabled.',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用。',
 	'setting_attach_remote_-101'	=> 'Remote attachment feature is disabled.',//'远程附件功能未开启。',
 	'setting_attach_remote_-102'	=> 'Connection to the FTP server failed. Check the FTP server address and port settings are correct.',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确。',
@@ -1967,7 +1978,7 @@ $lang = array
 	'setting_ranklist_index'		=> 'Top List Home',//'排行榜首页',
 	'setting_ranklist_cache_comment'	=> 'Set a reasonable choice to update the module cache according to your server loading. The more modules selected will cause the more the higher server loading.',//'请根据服务器的负载情况，合理选择需要更新缓存的模块，选的模块越多服务器的负载越高。',
 
-	'setting_profile_field'			=> 'Optional profile fields (<a href="?action=members&operation=profile">Click here to enable the new field</a>)',//'可选的资料项(<a href="?action=members&operation=profile">点此启用新资料项</a>)',
+	'setting_profile_field'			=> 'Optional profile fields (<a href="?action=members&operation=profile">Click here for manage all fields</a>)',//'可选的资料项(<a href="?action=members&operation=profile">点此启用新资料项</a>)',
 
 	'tag'				=> 'Tag Management',//'标签管理',
 	'tag_set'			=> 'Set',//'设置',
@@ -2470,8 +2481,8 @@ $lang = array
 	'misc_customnav_parent_top'		=> 'Main Menu',//'主菜单',
 	'misc_customnav_subtype'		=> 'Sub-menu style',//'二级导航样式',
 	'misc_customnav_subtype_comment'	=> 'If the main menu have a secondary navigation sub-menu, the sub-menu can be displayed as menu style, or horizontally',//'如果此主导航存在二级导航，设置二级导航样式是以菜单方式显示，还是以横排方式显示',
-	'misc_customnav_subtype_menu'		=> 'Menu Style',//'菜单样式',
-	'misc_customnav_subtype_sub'		=> 'Horizontal style',//'横排样式',
+	'misc_customnav_subtype_menu'		=> 'Drop-down Menu',//'菜单样式',
+	'misc_customnav_subtype_sub'		=> 'Horizontal Menu',//'横排样式',
 	'misc_customnav_title'			=> 'Menu Item Title',//'菜单说明',
 	'misc_customnav_title_comment'		=> 'Menu item description, when a mouse is over',//'导航的说明会在鼠标移动到其上面时显示',
 	'misc_customnav_url'			=> 'Menu Item URL',//'菜单链接',
@@ -2498,7 +2509,7 @@ $lang = array
 	'misc_customnav_subname'	=> 'Sub-navigation Name',//'副导航名称',
 	'misc_customnav_suburl'		=> 'Sub-navigation Link',//'副导航链接',
 
-	'nav_nav_headernav'		=> 'Main menu',//'页头导航',
+	'nav_nav_headernav'		=> 'Header navigation',//'页头导航',
 	'nav_nav_spacenav'		=> 'Space Navigation',//'家园导航',
 	'nav_nav_footernav'		=> 'Footer Navigation',//'页尾导航',
 	'nav_nav_mynav'			=> 'Personal navigation',//'个人导航',
@@ -2991,10 +3002,10 @@ $lang = array
 
 	'members_profile'				=> 'User profile',//'用户栏目',
 	'members_profile_edit'				=> 'Edit User profile',//'编辑用户栏目',
-	'members_profile_list'				=> 'Topic list',//'栏目列表',
-	'members_profile_group'				=> 'Local groups',//'栏目分组',
+	'members_profile_list'				=> 'Field list',//'栏目列表',
+	'members_profile_group'				=> 'Field groups',//'栏目分组',
 	'members_profile_tips'				=> '<li>Show or hide the user extended information</li><li>As a setting results the existing user information can be expanded.</li>',//'<li>增加或隐藏用户扩展资料</li><li>设置结果可以扩充现有的用户资料。</li>',
-	'members_profile_edit_name'			=> 'Category Name',//'栏目名称',
+	'members_profile_edit_name'			=> 'Field Name',//'栏目名称',
 	'members_profile_edit_field'			=> 'Field name',//'字段名',
 	'members_profile_edit_field_desc'		=> 'Field description',//'栏目描述',
 	'members_profile_edit_available'		=> 'Enable',//'启用',
@@ -3054,7 +3065,7 @@ $lang = array
 	'profilefields_invisible'		=> 'Hidden',//'隐藏',
 	'profilefields_unchangeable'		=> 'Unchangeable',//'不可修改',
 	'profilefields_fields'			=> 'User profile fields',//'用户栏目',
-	'profilefields_add'			=> 'Add a new field',//'添加新栏目',
+	'profilefields_add'			=> 'Add new field',//'添加新栏目',
 
 	'profilefields_edit'			=> 'Edit profile fields',//'编辑栏目信息',
 	'profilefields_edit_title'		=> 'Field title',//'栏目标题',
@@ -6131,6 +6142,11 @@ $lang = array
 	'import_data_invalid'		=> 'Data can not identify, please return',//'数据无法识别，请返回',
 	'import_data_typeinvalid'	=> 'Data type error, please return',//'数据类型错误，请返回',
 
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
+
 
 	'rewrite_message'		=> '<h1>Apache Web Server (independent host used)</h1>
 <pre class="colorbox">
@@ -6213,10 +6229,25 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Change language',
 'change_style'		=> 'Change style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *		Translate by DCV team - http://www.discuz.vn
@@ -201,6 +201,12 @@ Tính đến nay, bạn đã bị cảnh báo {authorwarnings} lần, xin lưu �
 <p class="mbn"><a href="home.php?mod=magic" target="_blank">Quay lại Shop</a>
 <span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">Xem nhà kho</a></p>',
 
+	'pmreportcontent' => '{pmreportcontent}',
+
+//vot ToDo: From install_data.sql
+'welcome_message_title'		=> 'Hello {username}! Thank you for your registration, please read the following ...',
+'welcome_message_content'	=> 'Dear {username}, you have already registered as a member at {sitename}, please when you publish, compliance with local laws and regulations.\nIf you have any questions please contact the administrator, Email: {adminemail}.\n\n\n{bbname}\n{time}',
+'terms_of_services'		=> 'This is Rules.\nMust read!',
+
 );
 
-?>

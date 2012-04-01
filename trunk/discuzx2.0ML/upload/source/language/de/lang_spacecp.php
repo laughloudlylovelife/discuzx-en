@@ -185,9 +185,9 @@ $lang = array(
 	'do_stat_reward'	=> 'Belohnung',
 	'do_stat_debate'	=> 'Diskusion',
 	'do_stat_trade'		=> 'Waren',
-	'do_stat_group' 	=> "Gruppe {$_G[setting][navs][3][navname]}",
+	'do_stat_group'		=> "Gruppe {$_G[setting][navs][3][navname]}",
 	'do_stat_tgroup'	=> "{$_G[setting][navs][3][navname]}",
-	'do_stat_home' 		=> "{$_G[setting][navs][4][navname]}",
+	'do_stat_home'		=> "{$_G[setting][navs][4][navname]}",
 	'do_stat_forum'		=> "{$_G[setting][navs][2][navname]}",
 	'do_stat_groupthread'	=> 'Gruppenthema',
 	'do_stat_post'		=> 'Themen Antworten',
@@ -302,4 +302,3 @@ $lang = array(
 
 );
 
-?>
