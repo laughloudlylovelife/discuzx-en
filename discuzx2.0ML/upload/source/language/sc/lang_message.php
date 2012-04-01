@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_message.php 22889 2011-05-30 07:31:11Z monkey $
+ *      $Id: lang_message.php 26938 2011-12-28 02:37:54Z svn_project_zhangjie $
  *
  *      This file is automatically generate
  */
@@ -116,7 +116,7 @@ $lang = array (
   'post_poll_option_toomany' => '抱歉，您的投票选项超过 {maxpolloptions} 个',
   'reward_credits_between' => '抱歉，悬赏积分必须在 {minrewardprice} 与 {maxrewardprice} 之间',
   'reward_credits_shortage' => '抱歉，积分余额不足',
-	'reward_credits_closed'			=> '交易积分被关闭，请联系管理员。',//'Trade credits feature is turned off, please contact the administrator.',
+  'reward_credits_closed' => '交易积分被关闭，请联系管理员。',
   'activity_fromtime_please' => '抱歉，活动开始时间不能为空',
   'activity_sort_please' => '抱歉，活动所属类别不能为空',
   'activity_address_please' => '抱歉，活动地点不能为空',
@@ -282,6 +282,7 @@ $lang = array (
   'thread_closed' => '该帖子已被关闭，不能评论！',
   'postcomment_error' => '抱歉，您不能点评此帖或帖子尚未找到',
   'postappend_only_yourself' => '只能在自己的帖子后补充内容',
+  'postappend_not_open' => '抱歉，版块没有开启帖子补充功能',
   'postappend_add_succeed' => '添加成功 ',
   'replynotice_success_1' => '接收设置成功 ',
   'replynotice_success_0' => '取消设置成功 ',

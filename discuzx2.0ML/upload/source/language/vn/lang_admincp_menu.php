@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *      Translate by Kyehani - discuz.vn
@@ -28,7 +28,7 @@ $lang = array
 	'header_portal' => 'Portal',
 	'header_group' => 'Group',
 	'header_founder' => 'Sáng lập',
-	'header_addons' => 'Mở rộng',
+	'header_cloudaddons' => 'Mở rộng',
 
 
 	'menu_home' => 'Trang chủ',
@@ -181,6 +181,8 @@ $lang = array
 
 	'admincp_title' => $_G['setting']['bbname'].' trung tâm quản lý',
 
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
+
 );
 
-?>

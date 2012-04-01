@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: block_groupthread.php 11780 2010-06-13 02:11:52Z xupeng $
- *		English by Valery Votintsev at sources,ru
+ *	Modified by by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -48,8 +48,7 @@ class block_groupthread {
 					array(4, 'groupthread_special_4'),
 					array(5, 'groupthread_special_5'),
 					array(0, 'groupthread_special_0'),
-				),
-				'default' => array('0')
+				)
 			),
 			'rewardstatus' => array(
 				'title' => 'groupthread_special_reward',
@@ -296,7 +295,7 @@ class block_groupthread {
 		$sqlfield = '';
 		$sqlfrom = "FROM `".DB::table('forum_thread')."` t";
 		$joinmethod = empty($tids) ? 'INNER' : 'LEFT';
-		if($style['getpic'] || $picrequired) {
+		if($picrequired) {
 /*vot*/			$sqlfrom .= " $joinmethod JOIN `".DB::table('forum_threadimage')."` ti ON (t.tid=ti.tid AND ti.tid>0)";
 			$sqlfield = ', ti.attachment as attachmenturl, ti.remote';
 		}

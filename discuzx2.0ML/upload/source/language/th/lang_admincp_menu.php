@@ -28,7 +28,7 @@ $lang = array
 	'header_portal'		=> 'พอร์ทัล',
 	'header_group'		=> 'คลับ',
 	'header_founder'	=> 'เว็บมาสเตอร์',
-	'header_addons'		=> 'ส่วนเสริม',
+	'header_cloudaddons'	=> 'ส่วนเสริม',
 
 
 	'menu_home'			=> 'หน้าแรกศูนย์จัดการ',
@@ -181,6 +181,8 @@ $lang = array
 
 	'admincp_title'		=> $_G['setting']['bbname'].' ศูนย์กลางการจัดการ',
 
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
+
 );
 
-?>

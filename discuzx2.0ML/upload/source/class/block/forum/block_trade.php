@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: block_trade.php 11418 2010-06-02 02:28:01Z xupeng $
- *		English by Valery Votintsev at sources,ru
+ *	Modified by by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -253,7 +253,7 @@ class block_trade {
 				$posttable = $key == 0 ? 'forum_post' : 'forum_post_'.$key;
 				$query = DB::query("SELECT pid, message FROM ".DB::table($posttable)." WHERE pid IN  (".dimplode($var).")");
 				while($result = DB::fetch($query)) {
-					$list[$result['pid']]['summary'] = messagecutstr($result['message'], $messagelength);
+					$list[$result['pid']]['summary'] = messagecutstr($result['message'], $summarylength);
 				}
 			}
 

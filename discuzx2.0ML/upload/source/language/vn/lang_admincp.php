@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *		Translated by Kyehani - www.lophocit.com
@@ -131,7 +131,7 @@ $lang = array
 	'rmb' => 'VNĐ',
 	'rmb_yuan' => 'Đồng',
 	'posts' => 'Số bài',
-	'blogid' =>'Blog ID',
+	'blogid' => 'Blog ID',
 	'view' => 'Xem',
 	'reply' => 'Trả lời',
 	'hot' => 'Nổi bật',
@@ -1867,6 +1867,17 @@ $lang = array
 	'setting_attach_remote_minsize_comment' => 'Đơn vị: KB, chỉ có kích thước lớn hơn các thiết lập hiện hành của tập tin đính kèm trước khi sử dụng file đính kèm từ xa, 0 hoặc để trống để không giới hạn.',
 	'setting_attach_remote_ftpcheck' => 'Kiểm tra cài đặt',
 
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
+
 	'setting_attach_remote_-100' => 'Hiện tại máy chủ FTP module PHP mỡ rộng không được cài đặt chức năng FTP hoặc bị vô hiệu hóa',
 	'setting_attach_remote_-101' => 'Chưa mở file đính kèm từ xa',
 	'setting_attach_remote_-102' => 'Kết nối đến máy chủ FTP không thành công, kiểm tra các địa chỉ và thông số phải chắc chắn là chính xác',
@@ -3292,7 +3303,7 @@ $lang = array
 	'usergroups_add'		=> 'Add a new user group',//'添加新用户组',
 	'usergroups_level_add'		=> 'Add a new level',//'添加新级别',
 	'usergroups_sepcial_add'	=> 'Add a new special user group',//'添加新特殊用户组',
-	'usergroups_tips'		=> '<li>System user groups and special user groups are intended to identify a group member points and privileges. The system groups and special groups can not be changed by a member himself.</li><li>System groups and special groups do not require to specify the user points range. Discuz! reserved eight built-in entitled system groups (from guests to the site administrator). Special user groups require a member must be edited for add to the group.</li><li>A user group points lower limit must bes equal or less than 0, otherwise it will be access problems for the group members.</Li>',//'<li>用户组分为系统组,特殊组和会员组，会员组以积分确定组别和权限，而系统组和特殊组是人为设定，不会由系统自行改变。</li><li>系统组和特殊组的设定不需要指定积分，Discuz! 预留了从站点管理员到游客等的 8 个系统头衔，特殊组的用户需要在编辑会员时将其加入。</li><li>会员用户组至少分为两组，其积分下限分别为负值(任一负数)和 0，否则将导致部分用户无法与用户组匹配的问题。</li>',
+	'usergroups_tips'		=> '<li>System user groups and special user groups are intended to identify a group member points and privileges. The system groups and special groups can not be changed by a member himself.</li><li>System groups and special groups do not require to specify the user points range. Discuz! reserved eight built-in entitled system groups (from guests to the site administrator). Special user groups require a member must be edited for add to the group.</li><li>A user group points lower limit must bes equal or less than 0, otherwise it will be access problems for the group members.</Li>',//'<li>用户组分为系统组、特殊组和会员组，会员组以积分确定组别和权限，而系统组和特殊组是人为设定，不会由系统自行改变。</li><li>系统组和特殊组的设定不需要指定积分，Discuz! 预留了从站点管理员到游客等的 8 个系统头衔，特殊组的用户需要在编辑会员时将其加入。</li><li>会员用户组至少分为两组，其积分下限分别为负值(任一负数)和 0，否则将导致部分用户无法与用户组匹配的问题。</li>',
 	'usergroups_member'		=> 'User group members',//'会员用户组',
 	'usergroups_special'		=> 'Special group members',//'特殊用户组',
 	'usergroups_specialadmin'	=> 'Special admin group members',//'特殊管理组',
@@ -3649,7 +3660,7 @@ $lang = array
 	'groups_mergegroup_id' => 'Điền ID nhóm mục tiêu',
 
 	'threads'			=> 'Bulk Thread Management',//'批量主题管理',
-	'threads_tips'			=> '<li>Thread mass management. You can search threads and bulk delete, move, set category, set/cancel top, set/cancel digest, open/close/delete attachments, etc.</li><li>Please search threads with your conditions, and then select the appropriate action.</li>',//'<li>通过批量主题管理，您可以对搜索到的主题进行批量删除,移动,分类/取消分类,删除,置顶/取消置顶,设置/取消精华,打开/关闭以及删除主题中的附件等操作；</li><li>请先根据条件搜索主题，然后选择相应的操作。</li>',
+	'threads_tips'			=> '<li>Thread mass management. You can search threads and bulk delete, move, set category, set/cancel top, set/cancel digest, open/close/delete attachments, etc.</li><li>Please search threads with your conditions, and then select the appropriate action.</li>',//'<li>通过批量主题管理，您可以对搜索到的主题进行批量删除、移动、分类/取消分类、删除、置顶/取消置顶、设置/取消精华、打开/关闭以及删除主题中的附件等操作；</li><li>请先根据条件搜索主题，然后选择相应的操作。</li>',
 	'threads_list'			=> 'Thread list',//'主题列表',
 	'threads_search' => 'Tìm chủ đề',
 	'threads_search_include_yes' => 'Chỉ bao hàm',
@@ -5428,7 +5439,7 @@ $lang = array
 	'adv_edit_style_text_link'		=> 'Text Link (required)',//'文字链接(必填)',
 	'adv_edit_style_text_link_comment'	=> 'Please enter the textual ad link pointing to the URL address',//'请输入文字广告指向的 URL 链接地址',
 	'adv_edit_style_text_size'		=> 'Font Size (optional)',//'文字大小(选填)',
-	'adv_edit_style_text_size_comment'	=> 'Please enter the font size for display the advertisements text content, you can use pt, px, or em units',//'请输入文字广告的内容显示字体，可使用 pt,px,em 为单位',
+	'adv_edit_style_text_size_comment'	=> 'Please enter the font size for display the advertisements text content, you can use pt, px, or em units',//'请输入文字广告的内容显示字体，可使用 pt、px、em 为单位',
 	'adv_edit_style_custom'			=> 'Custom',//'自定义',
 	'adv_edit_style_image'			=> 'Image Ads',//'图片广告',
 	'adv_edit_style_image_url'		=> 'Image Address (required)',//'图片地址(必填)',
@@ -5686,7 +5697,7 @@ $lang = array
 	'article_clear_trash_confirm'	=> 'Are you sure you want to clean the Recycle Bin?',//'确定要清空回收站吗',
 
 	'diytemplate' => 'Quản lý DIY',
-	'diytemplate_perm_tips'			=> '<li>Here you can set user permissions to the role of this page to add all the DIY modules (module does not inherit permissions, except where the page).</li><li>Module inheritance rights permissions may be set in the individual module settings page: &quot;Module Management&quot; =&gt; &quot;Manage Permissions&quot;</li><li>Permission determine rules: 1. From small to large (where the page permissions are greater than the module permissions); 2, the authority "allow management" that can manage the module properties and can manage the module data;<br />3. permission to "Allow Push" and not "needs push to be reviewed" to manage module data; 4. The permissions "Allow Push" and "needs push to be reviewed" to push it data management module can not</li>',//'<li>此处设置的用户权限将作用于此页面所有DIY添加的模块(模块不继承所在页面权限除外)</li><li>模块是否继承所在页面权限和单个模块的权限的设置在“模块管理”=>“管理权限”中设置</li><li>1,权限由小到大(模块的权限大于所在页面的权限)；2,权限"允许管理"即可以管理模块属性又可以管理模块数据；<br />3,权限"允许推送"且非"推送需要审核"可以管理模块数据； 4,权限"允许推送"且"推送需要审核"可以推送但不可以管理模块数据</li>',
+	'diytemplate_perm_tips'			=> '<li>Here you can set user permissions to the role of this page to add all the DIY modules (module does not inherit permissions, except where the page).</li><li>Module inheritance rights permissions may be set in the individual module settings page: &quot;Module Management&quot; =&gt; &quot;Manage Permissions&quot;</li><li>Permission determine rules: 1. From small to large (where the page permissions are greater than the module permissions); 2, the authority "allow management" that can manage the module properties and can manage the module data;<br />3. permission to "Allow Push" and not "needs push to be reviewed" to manage module data; 4. The permissions "Allow Push" and "needs push to be reviewed" to push it data management module can not</li>',//'<li>此处设置的用户权限将作用于此页面所有DIY添加的模块(模块不继承所在页面权限除外)</li><li>模块是否继承所在页面权限和单个模块的权限的设置在“模块管理”=>“管理权限”中设置</li><li>1、权限由小到大(模块的权限大于所在页面的权限)；2、权限"允许管理"即可以管理模块属性又可以管理模块数据；<br />3、权限"允许推送"且非"推送需要审核"可以管理模块数据； 4、权限"允许推送"且"推送需要审核"可以推送但不可以管理模块数据</li>',
 	'diytemplate_name' => 'Tên trang',
 	'diytemplate_name_comment'		=> 'Page with some template name',//'使用些模板的页面的名称',
 	'diytemplate_targettplname' => 'Tạo mẫu',
@@ -5728,8 +5739,8 @@ $lang = array
 	'portalcategory_username' => 'Tác giả',
 	'portalcategory_filewrite_error'	=> 'If write file error occured, make sure the program has write access to the root directory of the website',//'写文件错误,请确定程序有网站根目录的写权限',
 	'portalcategory_foldername_is_empty' => 'Tên thư mục không thể để trống',
-	'portalcategory_foldername_rename_error'	=> 'Failed to rename the directory. The directory name can contain only letters, numbers and underscores (_), make sure that the name of legal.',//'目录重命名失败，目录名只能包含字母,数字和下划线(_)，请确认目录名的合法性',
-	'portalcategory_foldername_invalid'		=> 'The directory name can contain only letters, numbers and underscores (_), make sure that the name of legal.',//'目录名只能包含字母,数字和下划线(_)，请确认目录名的合法性',
+	'portalcategory_foldername_rename_error'	=> 'Failed to rename the directory. The directory name can contain only letters, numbers and underscores (_), make sure that the name of legal.',//'目录重命名失败，目录名只能包含字母、数字和下划线(_)，请确认目录名的合法性',
+	'portalcategory_foldername_invalid'		=> 'The directory name can contain only letters, numbers and underscores (_), make sure that the name of legal.',//'目录名只能包含字母、数字和下划线(_)，请确认目录名的合法性',
 	'portalcategory_foldername' => 'Tên thư mục',
 	'portalcategory_foldername_comment'		=> 'This category generate the folder name directly under the root directory of the Website, and requires site root directory has write permission.<br />Set to an empty created directory will be deleted.',//'此频道要生成的文件夹名称，直接在网站根目录下生成，要求网站根目录有写的权限<br />设置为空将删除所建立的目录',
 	'portalcategory_summary'			=> 'SEO description',//'SEO 描述',
@@ -5981,7 +5992,7 @@ $lang = array
 	'postsplit_from'		=> 'Source table',//'分表来源',
 	'postsplit_to'			=> 'Target table',//'目标表',
 	'postsplit_create' => 'Tạo một bảng mới',
-	'postsplit_manage_tips'		=> '<li>Threads with a lot of posts can decrease the server efficiency. Split post function divide posts to different data tables.</li><li>There are three types of split posts:  to the main table, to the slave table, to the archive table.The main table must have one and only one post stored in a new thread. The slave table is intended for store all the thread replies, the main table is joined in the background with the slave table for update and delete posts, etc. It can be created any number of Archive tables, used for archiving old posts. Archived posts can not be managed in the bulk management operations, but we can view and reply.</Li><li>Only empty table can be deleted.</li><li>If the main table at the current time has a huge number of posts, you can create a new main table, then the original main table will become a slave table, and the former slave table (if present) will become the archive table. Emerging threads of posts will be stored in a new topic.</li><li>You can use the "Move post" feature to move posts between the various tables.</li>',//'<li>帖子分表功能可以将帖子分在不同的数据表中，适合帖子数很多并且运行效率受到影响的站点使用。</li><li>分表有三种类型：主表,副表,存档表。其中主表必须有且只有一个，用于存放新主题的帖子；副表最多有一个，作为主表内容的补充，可与主表联合进行后台的进行批量更新,删除等操作；存档表可有任意多个，用于归档旧帖子，不参后台的批量管理操作，但可以进行浏览,回复。</li><li>只有空表可以被删除。</li><li>如果当前主表内帖子过多，可以创建一个新的主表，此时原来的主表将变成副表，原来的副表（如果存在）将变成存档表，新发的主题帖将存放在新的主题中。</li><li>可以使用“帖子移动”功能在各个分表之间移动帖子。</li>',
+	'postsplit_manage_tips'		=> '<li>Threads with a lot of posts can decrease the server efficiency. Split post function divide posts to different data tables.</li><li>There are three types of split posts:  to the main table, to the slave table, to the archive table.The main table must have one and only one post stored in a new thread. The slave table is intended for store all the thread replies, the main table is joined in the background with the slave table for update and delete posts, etc. It can be created any number of Archive tables, used for archiving old posts. Archived posts can not be managed in the bulk management operations, but we can view and reply.</Li><li>Only empty table can be deleted.</li><li>If the main table at the current time has a huge number of posts, you can create a new main table, then the original main table will become a slave table, and the former slave table (if present) will become the archive table. Emerging threads of posts will be stored in a new topic.</li><li>You can use the "Move post" feature to move posts between the various tables.</li>',//'<li>帖子分表功能可以将帖子分在不同的数据表中，适合帖子数很多并且运行效率受到影响的站点使用。</li><li>分表有三种类型：主表、副表、存档表。其中主表必须有且只有一个，用于存放新主题的帖子；副表最多有一个，作为主表内容的补充，可与主表联合进行后台的进行批量更新、删除等操作；存档表可有任意多个，用于归档旧帖子，不参后台的批量管理操作，但可以进行浏览、回复。</li><li>只有空表可以被删除。</li><li>如果当前主表内帖子过多，可以创建一个新的主表，此时原来的主表将变成副表，原来的副表（如果存在）将变成存档表，新发的主题帖将存放在新的主题中。</li><li>可以使用“帖子移动”功能在各个分表之间移动帖子。</li>',
 	'postsplit_move_tips'		=> '<li>If a large amount of posts data involved in the move transfer, please <strong>Close the forum</strong> for a time the operation will completed.</li><li>In order to prevent the database problems during the moving, make the data backup first.</li><li>Use a conditional search for find threads you want to move, and then select the target table.</li><li>Move operation may take some time, please be patient.</li>',//'<li>帖子移动涉及大量的数据转移，请<strong>关闭论坛</strong>后使用</li><li>为防止数据库在移动过程中出现问题，请先进行数据备份。</li><li>按条件搜索出要移动的主题帖，然后选择目标分表。</li><li>移动操作可能需要一段时间，请耐心等待。</li>',
 	'postsplit_manage'		=> 'Post split',// Management',//'分表管理',
 	'postsplit_move'		=> 'Move posts',//'帖子移动',
@@ -6008,7 +6019,7 @@ $lang = array
 	'postsplit_move_threads_search_posttable'	=> 'Where the target table',//'所在分表',
 	'postsplit_move_threads_per_time'		=> 'Move number of Topics per time',//'每次移动主题数',
 	'postsplit_move_threads_per_time_comment'	=> 'recommended no more than 1000',//'建议不超过 1000',
-	'postsplit_move_threads_per_time_250'		=> '250 (recommended for low-end servers and shared hosting users)',//'250 (推荐低端服务器,共享主机用户使用)',
+	'postsplit_move_threads_per_time_250'		=> '250 (recommended for low-end servers and shared hosting users)',//'250 (推荐低端服务器、共享主机用户使用)',
 	'postsplit_move_threads_per_time_500'		=> '500 (recommended option)',//'500 (推荐选项)',
 	'postsplit_move_threads_per_time_1000'		=> '1000 (recommended for dedicated servers, can improve processing speed)',//'1000 (推荐独立服务器用户使用，可提高处理速度)',
 	'postsplit_manage_submit'			=> 'Confirm the table operation',//'确认分表',
@@ -6030,7 +6041,7 @@ $lang = array
 	'threadsplit_manage_table_memo'		=> 'Remark',//'备注信息',
 	'threadsplit_manage_table_orig'		=> 'Main thread table info',//'thread 主表信息',
 	'threadsplit_manage_table_archive'	=> 'Archive thread table info',//'thread 存档表信息',
-	'threadsplit_move_tips'			=> '<li>Thread move functionality can be used for move a particular thread from main table (forum_thread) to the archive table.</li><li>Before moving a thread, make sure there is at least one archive thread table (with table name like forum_thread_1, forum_thread_2 ...). </li><li>For complete the thread movement, you have to search threads you want to move by thread filtering, and then select the target table.</li>',//'<li>主题移动功能可将特定的主题在原始表（forum_thread）和新建的主题存档表之间移动。</li><li>移动主题之前，请确定存在至少一个主题存档表（表名为 forum_thread_1,forum_thread_2……）。</li><li>通过主题搜索筛选出要移动的主题，再选择目标表，即可完成主题数据的移动。</li>',
+	'threadsplit_move_tips'			=> '<li>Thread move functionality can be used for move a particular thread from main table (forum_thread) to the archive table.</li><li>Before moving a thread, make sure there is at least one archive thread table (with table name like forum_thread_1, forum_thread_2 ...). </li><li>For complete the thread movement, you have to search threads you want to move by thread filtering, and then select the target table.</li>',//'<li>主题移动功能可将特定的主题在原始表（forum_thread）和新建的主题存档表之间移动。</li><li>移动主题之前，请确定存在至少一个主题存档表（表名为 forum_thread_1、forum_thread_2……）。</li><li>通过主题搜索筛选出要移动的主题，再选择目标表，即可完成主题数据的移动。</li>',
 	'threads_search_sourcetable'		=> 'Search the following thread table',//'搜索以下 thread 分表',
 	'threadsplit_move_tidrange'		=> 'Thread ID range',//'tid 范围',
 	'threadsplit_move_to'			=> 'Move to',//'移动到',
@@ -6074,7 +6085,7 @@ $lang = array
 	'setting_manyou_base_status'		=> 'Enable application platform',//'启用漫游应用',
 	'setting_manyou_base_status_comment'	=> 'Select whether to enable the applications. If you turn off applications, your users will not use any application based on this platform',//'选择是否开启漫游应用。如果关闭漫游应用，你的网站用户将不能使用任何基于漫游的应用',
 	'setting_manyou_search_status'		=> 'Enable Application Search',//'启用漫游搜索',
-	'setting_manyou_search_status_comment'	=> 'Application search feature is designed for Discuz! products tailored to the efficient, Full-text search service, without using the Web site MySQL resources',//'漫游搜索是专为 Discuz! 产品量身定做的高效,全文搜索服务，无须网站的 MySQL 资源',
+	'setting_manyou_search_status_comment'	=> 'Application search feature is designed for Discuz! products tailored to the efficient, Full-text search service, without using the Web site MySQL resources',//'漫游搜索是专为 Discuz! 产品量身定做的高效、全文搜索服务，无须网站的 MySQL 资源',
 	'setting_manyou_search_invite'		=> 'Invitation code for application search feature',//'漫游搜索邀请码',
 	'setting_manyou_search_invite_comment'	=> 'Currently in beta, Be opened to enter an invitation code for application search, <a href="http://www.discuz.net/thread-1669366-1-1.html" target="_blank">Click here to apply for an invitation code</a>',//'目前处于测试阶段，需要输入邀请码方可开通漫游搜索，<a href="http://www.discuz.net/thread-1669366-1-1.html" target="_blank">点击这里申请邀请码</a>',
 	'setting_manyou_base_status_no'		=> 'Application platform is not enabled, you can not make this management',//'尚未开启漫游功能，不能进行此管理',
@@ -6085,7 +6096,7 @@ $lang = array
 	'setting_manyou_base_open_app_prompt'		=> 'Enable Applications Notice',//'开启漫游应用公告',
 	'setting_manyou_base_open_app_prompt_comment'	=> 'When the MYOP platform is announced a new application, a user browser will open a pop up window with tips or update notifications',//'当平台有了新的应用公告时，用户打开浏览器的时候会弹出窗口提示，类似漫游应用更新提示',
 	'setting_manyou_base_refresh'			=> 'Sync Application Platform Information',//'同步漫游信息',
-	'setting_manyou_base_refresh_comment'		=> 'If you change a navigation name Search settings, etc., you have to synchronize this information with the MYOP service',//'如果更改了导航名称,搜索设置等，请同步漫游信息',
+	'setting_manyou_base_refresh_comment'		=> 'If you change a navigation name Search settings, etc., you have to synchronize this information with the MYOP service',//'如果更改了导航名称、搜索设置等，请同步漫游信息',
 	'setting_manyou_base_showgift_comment'		=> 'If you enable the application gifts in the MYOP platform, the page will display "Recommended gifts"',//'如果你开启了 MYOP 平台的礼物应用后，可以在首页显示“推荐礼物”',
 	'setting_manyou_manage'				=> 'Application Platform Management',//'漫游应用管理',
 	'setting_manyou_search_manage'			=> 'Application Search Management',//'漫游搜索管理',
@@ -6131,6 +6142,11 @@ $lang = array
 	'import_data_invalid' => 'Dữ liệu không xác định, xin vui lòng quay trở lại',
 	'import_data_typeinvalid' => 'Kiểu dữ liệu lỗi, hãy trở về',
 
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
+
 
 	'rewrite_message' => '<h1>Apache Web Server(Máy chủ độc lập)</h1>
 <pre class="colorbox">
@@ -6140,9 +6156,9 @@ $lang = array
 &lt;/IfModule&gt;
 </pre>
 
-<h1>Apache Web Server(Share hosting)</h1>
+<h1>Apache Web Server (Virtual Host used)</h1>
 <pre class="colorbox">
-# RewriteEngine
+# Enable RewriteEngine module
 RewriteEngine On
 
 # Sửa đổi từ sau đây /discuz nếu tên thư mục chứ diễn đàn của bạn không là /discuz
@@ -6214,9 +6230,25 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Change language',
+'change_style'		=> 'Change style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

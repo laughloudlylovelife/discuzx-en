@@ -1049,13 +1049,13 @@ $lang = array
 
 	'setting_domain'				=> 'Domain settings',//'域名设置',
 	'setting_domain_base'				=> 'Basic settings',//'基本设置',
-	'setting_domain_base_tips'			=> '<li>Reserved subdomain name can not used in any settings, or used as an object domain name.</li><li>If a personal space or a group turned to go to the subdomain root domain settings <strong>set</strong> root <strong>Groups, Space</strong> the root domain name</li>',//'<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>群组、家园</strong>的根域名</li>',
+	'setting_domain_base_tips'			=> '<li>Reserved subdomain name can not used in any settings, or used as an object domain name.</li><li>If a personal space or a group turned to go to the subdomain root domain settings <strong>set</strong> root <strong>Groups, Space</strong> the root domain name</li>',//"<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>{$_G[setting][navs][3][navname]}、{$_G[setting][navs][4][navname]}</strong>的根域名</li>",
 	'setting_domain_app'				=> 'Application domain',//'应用域名',
 	'setting_domain_app_domain'			=> 'Domain',//'域名',
 	'setting_domain_app_tips'			=> "<li>For the built-in <strong>Portal, Forum, Groups, Spaces</strong>, domain name to bind by default.</li><li>Each binding domain must be unique, <strong>any opening of a domain name, you need to configure the default domain</strong>, otherwise it will create more import problems.</li><li>Set Forum formats such as: portal.comsenz.com</li><li>Do not add &quot;<strong>http://</strong>&quot; at the domain name beginning, or &quot;<strong>/</strong>&quot; at the domain ending.</li>",//"<li>各自绑定的域名不能相同，域名不需要添加“<strong>http://</strong>”，也不要以“<strong>/</strong>”结尾，例如：portal.comsenz.com</li><li>任意开启一项域名，需要配置默认域名，否则会造成多入口问题</li><li>当开启多域名时，请在 config/config_global.php 中修改 cookiedomain 值来设置 cookie 作用域</li>",
 	'setting_domain_app_mobile_tips'		=> 'Configure domain name when access by a phone. Non-mobile browser will be automatically redirected to the default domain name',//'当配置手机域名后，非手机浏览器访问会自动跳转至默认域名',
 	'setting_domain_root'				=> 'Root domain settings',//'根域名设置',
-	'setting_domain_root_tips'			=> "<li><strong>Groups, Space, Forum, Thread, Category</strong> can be set up into a subdomain relative to the root domain name. Example: If a user application need to be set at XXX.comsenz.com, fill in the root domain as: comsenz.com</li><li><strong>Groups, after finishing of set Space</strong> to subdomain, it is also required to open the corresponding subdomain switching so users can apply the appropriate place to bind the subdomain name. User groups also limited by the length of the subdomain name.</li><li>If a <strong>Channel</strong> enabled at subdomain, and it is bound to some directory, configure bt yourself the environment for bind related operation.</li><li>In other cases it is not recommended to change the root domain to subdomains.</li>",//"<li>可以为<strong>个人空间、群组、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、群组</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
+	'setting_domain_root_tips'			=> "<li><strong>Groups, Space, Forum, Thread, Category</strong> can be set up into a subdomain relative to the root domain name. Example: If a user application need to be set at XXX.comsenz.com, fill in the root domain as: comsenz.com</li><li><strong>Groups, after finishing of set Space</strong> to subdomain, it is also required to open the corresponding subdomain switching so users can apply the appropriate place to bind the subdomain name. User groups also limited by the length of the subdomain name.</li><li>If a <strong>Channel</strong> enabled at subdomain, and it is bound to some directory, configure bt yourself the environment for bind related operation.</li><li>In other cases it is not recommended to change the root domain to subdomains.</li>",//"<li>可以为<strong>个人空间、{$_G[setting][navs][3][navname]}、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、{$_G[setting][navs][3][navname]}</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
 	'setting_domain_allow_space'			=> 'Allow Space at subdomain names',//'开启个人空间二级域名',
 	'setting_domain_allow_space_comment'		=> 'If this is turned ON, you need to set the root domain name. A user group or an application domain name length is limited!',//'开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_allow_group'			=> 'Enable groups at subdomain name',//'开启群组二级域名',
@@ -1867,6 +1867,17 @@ $lang = array
 	'setting_attach_remote_minsize_comment'		=> 'Unit: KB. Allow to upload remote attachments only if the size is larger than the value. Set to 0 or leave blank to no limit.',//'单位：KB，只有尺寸大于当前设置的附件才使用远程附件功能，0 或留空为不限制。',
 	'setting_attach_remote_ftpcheck'		=> 'Test remote attachment settings',//'检测远程附件设置',
 
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
+
 	'setting_attach_remote_-100'	=> 'PHP FTP extension module is not installed or FTP functions are disabled.',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用。',
 	'setting_attach_remote_-101'	=> 'Remote attachment feature is disabled.',//'远程附件功能未开启。',
 	'setting_attach_remote_-102'	=> 'Connection to the FTP server failed. Check the FTP server address and port settings are correct.',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确。',
@@ -1978,7 +1989,7 @@ $lang = array
 	'tag_tagindex_num'		=> 'Number of tags shown at the TAGS page',//'标签页显示标签数量',
 	'tag_thread_link_num'		=> 'Number of tags shown at recommended threads',//'主题解析推荐标签数量',
 	'tag_thread_link_num_comment'	=> 'Set the number of tags in recommended threads, 0 to disable. Note: too large tag amount will consume a lot of server resources. Recommended number is 100.',//'设置主题帖解析推荐标签的数目，0 为不解析。注意: 数量太大会消耗服务器资源，推荐数目 100',
-	'tag_recommend'		 	=> 'Recommended Tags',//'推荐标签',
+	'tag_recommend'			=> 'Recommended Tags',//'推荐标签',
 	'tagname'			=> 'Tag name',//'标签名称',
 	'tag_status'			=> 'Tag Status',//'标签状态',
 	'tag_recommend_comment'		=> 'Recommended tags per line, with length of 3-20 characters for each tag',//'每行一个推荐标签，标签长度在3-20个字符内',
@@ -6131,6 +6142,11 @@ $lang = array
 	'import_data_invalid'		=> 'Data can not identify, please return',//'数据无法识别，请返回',
 	'import_data_typeinvalid'	=> 'Data type error, please return',//'数据类型错误，请返回',
 
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
+
 
 	'rewrite_message'		=> '<h1>Apache Web Server (independent host used)</h1>
 <pre class="colorbox">
@@ -6213,7 +6229,7 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Change language',
 'change_style'		=> 'Change style',
 
@@ -6247,4 +6263,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>

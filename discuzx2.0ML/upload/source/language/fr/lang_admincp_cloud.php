@@ -31,6 +31,8 @@ $extend_lang = array
 	'menu_cloud_smilies'	=> 'SOSO Smileys',//'SOSO表情',
 	'menu_cloud_qqgroup'	=> 'Groupe QQ Communautaire',//'社区QQ群',
 	'menu_cloud_union'	=> 'Adv Union',//'广告联盟',
+	'menu_cloud_mobile'	=> 'Mobile client',//'手机客户端',
+	'menu_cloud_storage'	=> 'Tornado storage',//'旋风存储',
 
 	'close'			=> 'Fermer',//'关闭',
 	'continue'		=> 'Continuer',//'继续',
@@ -168,6 +170,9 @@ $extend_lang = array
 	'cloud_smilies'			=> 'SOSO Smileys',//'SOSO表情',
 	'cloud_smilies_tips'		=> '<li>Recherche &#224;  rendre le monde examiner pour le site apporte beaucoup de plaisir et de l\'exp&#233;rience.</li><li>Omettre le processus fastidieux de Smileys en ajout sans joindres "illégalement"QQ expression à votre site Web, Forum expression ne sont plus monotone.</li>',//'<li>搜尽天下表情，为网站带来无穷的乐趣与体验。</li>
 //		<li>省略繁琐的上传表情流程，无缝“偷渡”QQ表情到您的网站，论坛表情变得不再单调无味。</li>',
+	'cloud_storage'			=> 'Tornado storage',//'旋风存储',
+	'cloud_storage_tips'		=> '<li>Space-saving bandwidth for the site, allowing users to enjoy high-speed storage of large files, upload and download the best in the clouds.</li>
+					<li>Experience high-speed uploading and downloading, support for a single file attachment upload up to 2GB, permanent attachment to reduce costs for the Forum.</li>',
 
 	'cloud_smilies_status'		=> 'Activé SOSO smileys',//'启用SOSO 表情',
 
@@ -287,8 +292,63 @@ $extend_lang = array
 	'qqgroup_preview_button'	=> 'Appuyez renseignements',//'推送信息', // 'Push information'
 	'attach_img'			=> 'Image Pièce jointe',//'图片附件',
 
+	'security_member_list'		=> 'Violation users',//'违规用户',
+	'security_thread_list'		=> 'Violation threads',//'违规主题',
+	'security_post_list'		=> 'Violation replies',//'违规回帖',
+	'security_members_name'		=> 'User names',//'用户名',
+	'security_members_eviltype'	=> 'Malicious type',//'恶意类型',
+	'security_post_eviltype'	=> 'Malicious type',//'恶意类型',
+	'security_thread_eviltype'	=> 'Malicious type',//'恶意类型',
+	'security_isreported'		=> 'Has been reported before',//'是否已经上报过',
+	'security_admin_operate'	=> 'Status',//'状态',
+	'security_isreported_yes'	=> 'Yes',//'是',
+	'security_isreported_no'	=> 'No',//'否',
+	'security_type_1'		=> 'Politic',//'政治',
+	'security_type_2'		=> 'Porno',//'色情',
+	'security_type_3'		=> 'Irrigation',//'灌水',
+	'security_type_4'		=> 'Hang horse',//'',//'挂马',
+	'security_type_5'		=> 'Advertising',//'广告',
+	'security_type_6'		=> 'Other',//'其他',
+	'security_opreateresult_0'	=> 'Recycle Bin',//'回收站',
+	'security_opreateresult_1'	=> 'Normal',//'正常',
+	'security_opreateresult_2'	=> 'Deleted',//'已删除',
+	'security_opreateresult_3'	=> 'Ignored',//'忽略',
+	'security_subject'		=> 'Title',//'标题',
+	'security_forum'		=> 'Forum',//'版块',
+	'security_author'		=> 'Author/Post time',//'作者/发帖时间',
+	'security_view'			=> 'View',//'查看',
+	'security_view_thread'		=> 'View thread',//'查看主题',
+	'security_clicktotoggle'	=> 'Click to collapse/expand details',//'点击折叠/展开详细内容',
+	'security_foldall'		=> 'Collapse all',//'全部折叠',
+	'security_exfoldall'		=> 'Expand all',//'全部展开',
+	'security_userdeleted'		=> 'User was deleted',//'该用户已被管理人员删除',
+	'security_postdeleted'		=> 'Post was deleted',//'该帖子已被管理人员删除',
+	'security_modreason'		=> 'Waterproof wall automatic processing',//'防水墙自动处理',
+	'security_restore_user'		=> 'Restore user',//'恢复该用户',
+	'security_change_usergroup'	=> 'Change User Group',//'更改用户组',
+
+	'recyclebin_search_security_thread'	=> 'Contains only waterproof wall subject',//'仅包含防水墙处理的主题',
+	'recyclebin_search_security_post'	=> 'Contains only waterproof wall replies',//'仅包含防水墙处理的回帖',
+
+	'security_index'			=> 'Home',//'首页',
+	'security_index_list'			=> 'Home',//'首页',
+	'security_setting'			=> 'White List settings',//'白名单设置',
+	'security_blanklist'			=> 'White List settings',//'白名单设置',
+	'security_setting_list'			=> 'White List settings',//'白名单设置',
+	'security_tips'				=> 'Tips',//'小贴士',
+	'security_tips_1'			=> '<li><p>Threads and replies into the system identifies Violation threads and irregularities replies, automatic <a href="admin.php?action=recyclebin" style="text-decoration:none; color:#0000FF;">Recycle Bin</a></p></li>',//'<li><p>系统识别到违规主题和违规回帖后，自动将主题和回帖放入<a href="admin.php?action=recyclebin" style="text-decoration:none; color:#0000FF;">回收站</a></p></li>',
+	'security_white_list_setting'		=> 'White List settings',//'白名单设置',
+	'security_usergroup_white_list'		=> 'White list of user groups',//'用户组白名单',
+	'security_usergroup_white_list_comment'	=> 'Operation for the selected user groups. If waterproof wall is not treated, you can hold down the CTRL for multiple choice',//'所选用户组内用户的操作，防水墙不做处理，可以按住 CTRL 多选',
+	'security_forum_white_list'		=> 'Forum white list',//'版块白名单',
+	'security_forum_white_list_comment'	=> 'Thread and reply within the selected forum, waterproof wall not deal with, hold down the CTRL for multiple choice',//'所选版块内的主题和回复，防水墙不做处理，可以按住 CTRL 多选',
+	'security_recyclebin_thread'		=> 'Deal with Threads to the Recycle Bin',//'到回收站处理主题',
+	'security_recyclebin_post'		=> 'To recycle bin processing replies',//'到回收站处理回帖',
+	'security_thread_status'		=> 'Thread Status',//'主题状态',
+	'security_post_status'			=> 'Replies status',//'回帖状态',
+	'security_thread_member'		=> 'User status',//'用户状态',
+	'setting_update_succeed'		=> 'Current settings updated successfully',//'当前设置更新成功',
 );
 
-$GLOBALS['admincp_actions_normal'][] = 'nuages';
+$GLOBALS['admincp_actions_normal'][] = 'cloud'; // DO NOT TRANSLATE THIS!!
 
-?>

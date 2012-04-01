@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_admincp.php 22760 2011-05-20 01:03:11Z monkey $
+ *      $Id: function_admincp.php 28030 2012-02-21 05:43:34Z monkey $
  *	Modified by Valery Votintsev at sources.ru
  */
 
@@ -831,7 +831,7 @@ function showsubmit($name = '', $value = 'submit', $before = '', $after = '', $f
 		return;
 	}
 	$str = '<tr>';
-	$str .= $name && in_array($before, array('del', 'select_all', 'td')) ? '<td class="td25" colspan="2">'.($before != 'td' ? '<input type="checkbox" name="chkall" id="chkall'.($chkkallid = random(4)).'" class="checkbox" onclick="checkAll(\'prefix\', this.form, \'delete\')" /><label for="chkall'.$chkkallid.'">'.cplang($before) : '').'</label></td>' : '';
+/*vot*/	$str .= $name && in_array($before, array('del', 'select_all', 'td')) ? '<td class="td25" colspan="2">'.($before != 'td' ? '<input type="checkbox" name="chkall" id="chkall'.($chkkallid = random(4)).'" class="checkbox" onclick="checkAll(\'prefix\', this.form, \'delete\')" /><label for="chkall'.$chkkallid.'">'.cplang($before) : '').'</label></td>' : '';
 	$str .= '<td colspan="15">';
 	$str .= $floatright ? '<div class="cuspages right">'.$floatright.'</div>' : '';
 	$str .= '<div class="fixsel">';
@@ -1344,5 +1344,49 @@ function rewritedata($alldata = 1) {
 		$data['rulevars']['forum_archiver']['{value}'] = '([0-9]+)';
 	}
 	return $data;
+}
+
+function siteftp_form($action) {
+	showformheader($action);
+	showtableheader('cloudaddons_ftp_setting');
+	showsetting('setting_attach_remote_enabled_ssl', 'siteftp[ssl]', '', 'radio');
+	showsetting('setting_attach_remote_ftp_host', 'siteftp[host]', '', 'text');
+	showsetting('setting_attach_remote_ftp_port', 'siteftp[port]', '21', 'text');
+	showsetting('setting_attach_remote_ftp_user', 'siteftp[username]', '', 'text');
+	showsetting('setting_attach_remote_ftp_pass', 'siteftp[password]', '', 'text');
+	showsetting('setting_attach_remote_ftp_pasv', 'siteftp[pasv]', 0, 'radio');
+	showsetting('setting_attach_ftp_dir', 'siteftp[attachdir]', '', 'text');
+	showsubmit('settingsubmit');
+	showtablefooter();
+	showformfooter();
+}
+
+function siteftp_check($siteftp, $dir) {
+	global $_G;
+	require_once libfile('class/ftp');
+	$siteftp['on'] = 1;
+	$siteftp['password'] = authcode($siteftp['password'], 'ENCODE', md5($_G['config']['security']['authkey']));
+	$ftp = & discuz_ftp::instance($siteftp);
+	$ftp->connect();
+	$ftp->upload(DISCUZ_ROOT.'./source/discuz_version.php', $dir.'/discuz_version.php');
+	if($ftp->error()) {
+		cpmsg('setting_ftp_remote_'.$ftp->error(), '', 'error');
+	}
+	if(!file_exists(DISCUZ_ROOT.'./'.$dir.'/discuz_version.php')) {
+		cpmsg('cloudaddons_ftp_path_error', '', 'error');
+	}
+	$ftp->ftp_delete($typedir.'/discuz_version.php');
+	$_G['siteftp'] = $ftp;
+}
+
+function siteftp_upload($readfile, $writefile) {
+	global $_G;
+	if(!isset($_G['siteftp'])) {
+		return;
+	}
+	$_G['siteftp']->upload($readfile, $writefile);
+	if($_G['siteftp']->error()) {
+		cpmsg('setting_ftp_remote_'.$_G['siteftp']->error(), '', 'error');
+	}
 }
 

@@ -67,7 +67,7 @@ function attachimglstshow(pid, islazy) {
 					continue;
 				}
 				imagelist += '<div class="pattimg">' +
-					'<a class="pattimg_zoom" href="javascript:;" onclick="zoom($(\'aimg_' + aimgcount[pid][i] + '\'), attachimggetsrc(\'aimg_' + aimgcount[pid][i] + '\'))" title="'+lng['click_to_enlarge']+'">'+lng['click_to_enlarge']+'</a>' +
+/*vot*/					'<a class="pattimg_zoom" href="javascript:;" onclick="zoom($(\'aimg_' + aimgcount[pid][i] + '\'), attachimggetsrc(\'aimg_' + aimgcount[pid][i] + '\'))" title="'+lng['click_to_enlarge']+'">'+lng['click_to_enlarge']+'</a>' +
 					'<img ' + (islazy ? 'file' : 'src') + '="forum.php?mod=image&aid=' + aimgcount[pid][i] + '&size=100x100&key=' + imagelistkey + '&atid=' + tid + '" width="100" height="100" /></div>';
 			}
 			if($('imagelistthumb_' + pid)) {
@@ -163,7 +163,7 @@ function parsetag(pid) {
 }
 
 function setanswer(pid, from){
-	if(confirm(lng['best_answer_sure'])){
+/*vot*/	if(confirm(lng['best_answer_sure'])){
 		if(BROWSER.ie) {
 			doane(event);
 		}
@@ -236,7 +236,7 @@ function succeedhandle_fastpost(locationhref, message, param) {
 		$('fastpostreturn').className = '';
 	} else {
 		if(!message) {
-			message = lng['premoderated'];
+/*vot*/			message = lng['premoderated'];
 		}
 		$('post_new').style.display = $('fastpostmessage').value = $('fastpostreturn').className = '';
 		$('fastpostreturn').innerHTML = message;

@@ -170,7 +170,7 @@ $lang = array
 	'invite_friend'		=> 'F&#233;licitations, vous avez invit&#233; et ajout&#233; {actor} en tant qu\'Ami avec Succ&#232;s',  //    
 
 	'poke_request'		=> '<a href="{fromurl}" class="xi2">{fromusername}</a>: <span class="xw0">{pokemsg}&nbsp;</span><a href="home.php?mod=spacecp&ac=poke&op=reply&uid={fromuid}&from=notice" id="a_p_r_{fromuid}" class="xw1" onclick="showWindow(this.id, this.href, \'get\',  //     0);">Dis bonjour</a><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=poke&op=ignore&uid={fromuid}&from=notice" id="a_p_i_{fromuid}" onclick="showWindow(\'pokeignore\',  //     this.href, \'get\',  //     0);">Ignorer</a>',  //   '<a href="{fromurl}" class="xi2">{fromusername}</a>: <span class="xw0">{pokemsg}&nbsp;</span><a href="home.php?mod=spacecp&ac=poke&op=reply&uid={fromuid}&from=notice" id="a_p_r_{fromuid}" class="xw1" onclick="showWindow(this.id, this.href, \'get\',  //     0);">Say hello</a><span class="pipe">|</span><a href="home.php?mod=spacecp&ac=poke&op=ignore&uid={fromuid}&from=notice" id="a_p_i_{fromuid}" onclick="showWindow(\'pokeignore\',  //     this.href, \'get\',  //     0);">Ignore</a>' 
-	
+
 	'profile_verify_error'		=> '{verify} information a &#233;t&#233; non-Valid&#233;, vous avez besoin de re-envoyer les informations ci-dessous:<br/>{profile}<br/>Refuse reason:{reason}',  //  '{verify} information was invalidate, you need to re-submit the information below:<br/>{profile}<br/>Refuse reason:{reason}'  
 	'profile_verify_pass'		=> 'F&#233;licitations, vos {verify} informations ont &#233;t&#233; approuv&#233;',  // 'Congratulations, your {verify} information has been approval'   
 	'profile_verify_pass_refusal'	=> 'D&#233;sol&#233;, votre {verify} information a &#233;t&#233; non-Valid&#233;',  // 'Sorry, your {verify} inforamtion was invalidate'   
@@ -200,15 +200,20 @@ $lang = array
 	'report_change_credits'	=> '{actor} a trait&#233; votre dossier, vos points {creditchange}',  // '{actor} has dealt with your report, your points {creditchange}'   
 	'new_report'		=> 'Il y a un nouveau rapport, <a href="admin.php?action=report" target="_blank">clic ici</a> pour entrer au P.A Admin.',  // 'There is new report, <a href="admin.php?action=report" target="_blank">click here</a> to enter Admin CP.'   
 	'new_post_report'	=> 'En attente d\'un nouveau rapport,<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank"> administration</a>.',  //  'Pending a new report,<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank"> administration</a>.'  
+//	'magics_receive'	=> 'You received {actor}\'s props {magicname}
+//<p class="summary">{actor} said: <span>{msg}</span></p>
+//<p class="mbn"><a href="home.php?mod=magic" target="_blank">Present back</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">view my props</a></p>',  //    
 	'magics_receive'	=> 'vous avez recu {actor}\'s accessoires {magicname}
 				<p class="summary">{actor} dis: <span>{msg}</span></p>
 				<p class="mbn"><a href="home.php?mod=magic" target="_blank">Retour Cadeau</a>
 				<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">Voir mes Accessoires</a></p>',     
-//	'magics_receive'	=> 'You received {actor}\'s props {magicname}
-//<p class="summary">{actor} said: <span>{msg}</span></p>
-//<p class="mbn"><a href="home.php?mod=magic" target="_blank">Present back</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">view my props</a></p>',  //    
-//	'grouplevel_update'	=> 'F&#233;licitations, votre Groupe {groupname} est mis &#224; jour au {newlevel}.',  //    
+
+	'pmreportcontent' => '{pmreportcontent}',
+
+//vot ToDo: From install_data.sql
+'welcome_message_title'		=> 'Hello {username}! Thank you for your registration, please read the following ...',
+'welcome_message_content'	=> 'Dear {username}, you have already registered as a member at {sitename}, please when you publish, compliance with local laws and regulations.\nIf you have any questions please contact the administrator, Email: {adminemail}.\n\n\n{bbname}\n{time}',
+'terms_of_services'		=> 'This is Rules.\nMust read!',
 
 );
 
-?>

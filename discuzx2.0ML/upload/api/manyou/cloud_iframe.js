@@ -1,4 +1,4 @@
-// English by Valery Votintsev at sources.ru
+// Modified by Valery Votintsev, codersclub.org
 var url = window.location.href;
 var siteUrl = url.substr(0, url.indexOf('api/manyou/cloud_channel.htm'));
 
@@ -43,7 +43,7 @@ function changPageStatus(identifier) {
 						title = title.substr(0, title.indexOf(' - '));
 					}
 					discuzIframe.document.title = title + ' - ' + cloudText + ' - ' + text;
-					discuzIframe.document.getElementById('admincpnav').innerHTML= cloudText + '&nbsp;&raquo;&nbsp;' + text + '&nbsp;&nbsp;<a target="main" title="' + lng['add_operation'] + '" href="' + link + '">[+]</a>';//vot
+/*vot*/					discuzIframe.document.getElementById('admincpnav').innerHTML= cloudText + '&nbsp;&raquo;&nbsp;' + text + '&nbsp;&nbsp;<a target="main" title="' + lng['add_operation'] + '" href="' + link + '">[+]</a>';
 				}
 			}
 		} else {

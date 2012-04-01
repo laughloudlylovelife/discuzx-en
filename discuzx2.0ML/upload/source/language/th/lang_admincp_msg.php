@@ -150,7 +150,7 @@ $lang = array (
 
   'blogcategory_update_succeed'		=> 'อัพเดทหมวดหมู่บล็อกสำเร็จ ',
   'blogcategory_catgory_not_found'	=> 'ไม่พบหมวดหมู่บล็อก',
-//ระบบบัตรเงินสด ขออนุญาตไม่แปล เนื่องจากยังไม่มีความนิยมในประเทศไทย
+
 	'card_config_succeed'		=> 'Recharge card set successfully',//'充值卡密设置成功 ',
 	'card_make_cleardateline_early'	=> 'Sorry, Please select a period of time greater than now, correct the generated card valid time',//'抱歉，请选择一个有效期大于现在的时间，以正确生成有效卡片',
 	'card_make_rule_empty'		=> 'Generation rule is empty',//'生成规则为空',
@@ -159,7 +159,7 @@ $lang = array (
 	'card_make_step'		=> 'Generatin the Card: the first step {step} / Total {step_num} steps / Success {succeed_num} sheets / Repeated {fail_num} sheets',//'正在生成卡片：第{step}步/共{step_num}步, 成功{succeed_num}张/重复{fail_num}张',
 	'card_make_rate_succeed'	=> 'Card generation is completed! Click here to generate random card numbers with the same rules! Total generated: {succeed_num} sheets, Failed: {fail_num} sheets',//'卡片生成完毕！按此生成规则随机的卡片号码重复过多！共生成了{succeed_num}张, 失败了{fail_num}张',
 	'card_make_succeed'		=> 'Card generation is completed! Total generated: {succeed_num} sheets, Failed: {fail_num} sheets',//'卡片生成完毕！共生成了{succeed_num}张, 失败了{fail_num}张',
-  'action_noaccess'	=> 'ขออภัย, คุณไม่มีสิทธิ์เข้าใช้คุณสมบัตินี้',
+  'action_noaccess'		=> 'ขออภัย, คุณไม่มีสิทธิ์เข้าใช้คุณสมบัตินี้',
 
   'filecheck_nofound_md5file'	=> 'ไม่พบไฟล์ในการตรวจสอบ, ไม่สามารถดำเนินการได้',
   'imagepreview_errorcode_0'	=> 'รูปภาพไม่ตรงกับเงื่อนไข, ไม่สามารถดำเนินการได้',
@@ -565,6 +565,20 @@ $lang = array (
   'moderate_shares_succeed'	=> 'การตรวจสอบเนื้อหาสำเร็จ, มี {validates} ที่ได้รับการอนุมัติ, {ignores} ที่ถูกปฏิเสธ, {deletes} ที่ถูกลบ',
 
   'moderate_threads_succeed'	=> 'การตรวจสอบเนื้อหาสำเร็จ, มี {validates} ที่ได้รับการอนุมัติ, {ignores} ที่ถูกปฏิเสธ,  {recycles} ที่ถูกย้ายไปยังถังขยะรีไซเคิล, {deletes} ที่ถูกลบ',
+
+	'cloudaddons_validator_error'		=> 'Check failed, you can not download this application',//'校验失败，你无法下载此应用',
+	'cloudaddons_downloading'		=> 'Download the addon {addonid}, please wait ...',//'应用 {addonid} 下载中，请稍候 ......',
+	'cloudaddons_download_error'		=> 'Data Download Error',//'数据下载错误',
+	'cloudaddons_download_write_error'	=> 'Can not download the file, make sure the "data/download/" directory is writable',//'文件无法下载，请确认 "data/download/" 目录是否可写',
+	'cloudaddons_installing'		=> 'Installing the addon {addonid}, please wait ...',//'应用 {addonid} 安装中，请稍候......',
+	'cloudaddons_install_error'		=> 'You can not install this application ({ErrorCode})',//'你不能安装此应用({ErrorCode})',
+	'cloudaddons_install_files_changed'	=> 'The following files are missing or has been modified, whether or not to continue coverage? <br /> <br /> {files}',//'以下文件丢失或者被修改过，是否继续覆盖？<br /><br />{files}',
+	'cloudaddons_pack_installed'		=> 'Extension installation is completed',//'扩展安装完毕',
+	'cloudaddons_genuine_message'		=> 'Sorry, you have installed not genuine application, the installer can not continue<br /><br /><a href="admin.php?action=cloudaddons&id={addonid}">Click here to install the genuine application</a>',//'对不起，您安装的不是正版应用，安装程序无法继续执行<br /><br /><a href="admin.php?action=cloudaddons&id={addonid}">点击这里安装正版应用</a>',
+	'cloudaddons_file_read_error'		=> 'File read error, please try again',//'文件读取错误，请重试',
+	'cloudaddons_file_write_error'		=> 'File write error, please try again',//'文件写入错误，请重试',
+	'cloudaddons_ftp_path_error'		=> 'FTP Site path errors, please re-fill',//'站点 FTP 路径错误，请重新填写',
+	'cloudaddons_check_write_error'		=> '"data/download/" or "data/addonmd5/" Directory can not be created or written to, this will cause the application can not be installed, check the server environment',//'"data/download/" 或 "data/addonmd5/" 目录无法创建或写入，这将会导致应用无法安装，请检查服务器环境',
+	'cloudaddons_check_url_fopen_error'	=> 'Your server can not access Application Center, which will cause the application can not be installed. Please contact your service provider or Web technical staff to ensure that your server to function properly access addon.discuz.com',//'您的服务器无法访问应用中心，这将会导致应用无法安装。请联系您的服务商或者网站技术人员，确保您的服务器能够正常访问 addon.discuz.com',
 );
 
-?>

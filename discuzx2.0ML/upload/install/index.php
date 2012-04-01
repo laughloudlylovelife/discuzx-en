@@ -5,7 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: index.php 24668 2011-09-30 03:01:00Z svn_project_zhangjie $
- *	English by Valery Votintsev
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -20,7 +20,7 @@ require ROOT_PATH.'./source/discuz_version.php';
 require ROOT_PATH.'./install/include/install_var.php';
 require ROOT_PATH.'./install/include/install_mysql.php';
 require ROOT_PATH.'./install/include/install_function.php';
-require ROOT_PATH.'./source/language/en/lang_install.php';
+/*vot*/ require ROOT_PATH.'./source/language/en/lang_install.php';
 
 $view_off = getgpc('view_off');
 
@@ -455,9 +455,9 @@ if($method == 'show_license') {
 	} else {
 		show_header();
 		echo '</div><div class="main" style="margin-top: -123px;"><ul style="line-height: 200%; margin-left: 30px;">';
-		echo '<li><a href="../">'.lang('install_succeed').'</a><br>';
+/*vot*/		echo '<li><a href="../">'.lang('install_succeed').'</a><br>';
 //vot		echo '<script>setTimeout(function(){window.location=\'../\'}, 2000);</script>'.lang('auto_redirect').'</li>';
-		echo '</li>';//vot
+/*vot*/		echo '</li>';
 //vot		echo '<div id="platformIntro"></div>';
 		echo '</ul></div>';
 //vot		echo '<script type="text/javascript" src="http://cp.discuz.qq.com/cloud/platformIntroJS?siteurl='.urlencode($default_appurl).'&version='.DISCUZ_VERSION.'" charset="utf-8"></script>';

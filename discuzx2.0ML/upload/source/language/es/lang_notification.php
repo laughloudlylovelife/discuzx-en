@@ -71,13 +71,13 @@ $lang = array
 
 	'reason_ban_post'	=> 'Tu tema <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> fue {modaction} por {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
+//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
+//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
+//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 	'reason_warn_post'	=> 'Tu tema <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> fue {modaction} por {actor}.<br/>
 				Fueron advertidos {warninglimit} veces en {warningexpiration} días, estará deshabilitado su post {warningexpiration} días automáticamente.<br/>
 				En la actualidad, usted ha sido advertido {authorwarnings} veces!
 				<div class="quote"><blockquote>{reason}</blockquote></div>',
-//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
-//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
-//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'reason_move'			=> 'Tu tema <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> fue movido a <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> por {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} 移动到 <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -206,14 +206,20 @@ $lang = array
 	'report_change_credits'		=> '{actor} tiene ocuparse de su informe, el total de los puntos {creditchange}',//'{actor} 处理了你的举报，你的 {creditchange}',
 	'new_report'			=> 'nuevo informe pendiente, <a href="admin.php?action=report" target="_blank">Haga clic aquí para entrar en el fondo que se procesa</a>.',//'有新的举报等待处理，<a href="admin.php?action=report" target="_blank">点此进入后台处理</a>。',
 	'new_post_report'		=> 'Nuevo informe pendiente,, <a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">Haga clic aquí para acceder al panel de administración</a>.',//'有新的举报等待处理，<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">点此进入管理面版</a>。',
+//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
+//<p class="summary">{actor} 说：<span>{msg}</span></p>
+//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
 	'magics_receive'		=> 'Usted ha recibido la magia {magicname} de {actor}.
 					<p class="summary">{actor} dice: <span>{msg}</span></p>
 					<p class="mbn"><a href="home.php?mod=magic" target="_blank">Devolver el regalo!</a>
 					<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">Ver mi magia</a></p>',
-//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
-//<p class="summary">{actor} 说：<span>{msg}</span></p>
-//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
+
+	'pmreportcontent' => '{pmreportcontent}',
+
+//vot ToDo: From install_data.sql
+'welcome_message_title'		=> 'Hello {username}! Thank you for your registration, please read the following ...',
+'welcome_message_content'	=> 'Dear {username}, you have already registered as a member at {sitename}, please when you publish, compliance with local laws and regulations.\nIf you have any questions please contact the administrator, Email: {adminemail}.\n\n\n{bbname}\n{time}',
+'terms_of_services'		=> 'This is Rules.\nMust read!',
 
 );
 
-?>

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_notification.php 22303 2011-04-29 02:42:08Z maruitao $
+ *      $Id: lang_notification.php 27369 2012-01-18 10:29:12Z svn_project_zhangjie $
  */
 
 $lang = array
@@ -171,6 +171,7 @@ $lang = array
 	'profile_verify_pass' => '恭喜您，您填寫的{verify}資料審核已通過',
 	'profile_verify_pass_refusal' => '很遺憾，您填寫的{verify}資料審核已被拒絕',
 	'member_ban_speak' => '您已被 {user} 禁止發言，期限：{day}天(0：代表永久禁言)，禁言理由：{reason}',
+
 	'member_moderate_invalidate' => '您的賬號未能通過管理員的審核，請<a href="home.php?mod=spacecp&ac=profile">重新提交註冊信息</a>。<br />管理員留言: <b>{remark}</b>',
 	'member_moderate_validate' => '您的賬號已通過審核。<br />管理員留言: <b>{remark}</b>',
 	'member_moderate_invalidate_no_remark' => '您的賬號未能通過管理員的審核，請<a href="home.php?mod=spacecp&ac=profile">重新提交註冊信息</a>。',
@@ -198,6 +199,8 @@ $lang = array
 	'magics_receive' => '您收到 {actor} 送給您的道具 {magicname}
 <p class="summary">{actor} 說：<span>{msg}</span></p>
 <p class="mbn"><a href="home.php?mod=magic" target="_blank">回贈道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
+
+	'pmreportcontent' => '{pmreportcontent}',
 
 );
 

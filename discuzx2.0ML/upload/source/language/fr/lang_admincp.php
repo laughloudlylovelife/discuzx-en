@@ -1867,6 +1867,17 @@ $lang = array
 	'setting_attach_remote_minsize_comment'	=> 'Unit&#233;: Kio, seule la Taille &#233;tait plus grande que l\'ensemble actuel la saisie &#224; utiliser de pi&#232;ce jointe &#224; distance, 0 ou laissez vide pour ne pas limiter', // '单位：KB, 只有尺寸大于当前设置的附件才使用远程附件功能, 0 或留空为不限制'
 	'setting_attach_remote_ftpcheck'	=> 'D&#233;tection des accessoires &#224; distance R&#233;glez', // '检测远程附件设置'
 
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
+
 	'setting_attach_remote_-100'	=> 'PHP est NON install&#233; sur le serveur FTP ou en cours de fonction FTP est d&#233;sactiv&#233; module d\'extension', // '当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用'
 	'setting_attach_remote_-101'	=> 'Fonction de pi&#232;ce jointe &#224; distance n\'est pas ouvert', // '远程附件功能未开启'
 	'setting_attach_remote_-102'	=> 'Essayez de vous connecter &#224; un serveur FTP &#233;choue, v&#233;rifiez l\'adresse du serveur FTP et le num&#233;ro de port est correctement configur&#233;', // '尝试连接到 FTP 服务器失败, 请检查 FTP 服务器地址和端口号设置是否正确'
@@ -2493,7 +2504,7 @@ $lang = array
 
 	'misc_customnav_icon'		=> 'Navigation Ic&#244;ne', // '导航图标'
 	'misc_customnav_icon_comment'	=> 'Taille des ic&#244;nes 16x16.URL Disponible "{STATICURL}"Fichier statique pour le compte du site static/ Catalogue, disponible &#224; config/config_global.php Modifications', // '图标大小 16x16.URL 中可用“{STATICURL}”代表站点静态文件 static/ 目录, 可在 config/config_global.php 中修改'
-'misc_mynav_icon_comment'	=> 'Icon size 40x40. URL available "{STATICURL}" Static file representatives the site static/ directory, available to modify at config/config_global.php',//'图标大小 40x40。URL 中可用“{STATICURL}”代表站点静态文件 static/ 目录，可在 config/config_global.php 中修改',
+	'misc_mynav_icon_comment'	=> 'Icon size 40x40. URL available "{STATICURL}" Static file representatives the site static/ directory, available to modify at config/config_global.php',//'图标大小 40x40。URL 中可用“{STATICURL}”代表站点静态文件 static/ 目录，可在 config/config_global.php 中修改',
 	'misc_customnav_allowsub'	=> 'Vice &#233;cran de navigation', // '显示副导航'
 	'misc_customnav_subname'	=> 'Nom de vice de navigation', // '副导航名称'
 	'misc_customnav_suburl'		=> 'Vice liens de navigation', // '副导航链接'
@@ -3723,6 +3734,7 @@ $lang = array
 					<li>Lorsque le sujet dans l\'optimisation de la file d\'attente, nous ne recommandons pas ce sujet pour supprimer un message, si le contenu est en effet ill&#233;gale, pouvons-nous recommander de le d&#233;sactiver</li>
 					<li>Lorsque vous prenez le plancher, les activit&#233;s entreprises, le syst&#232;me r&#233;cup&#232;re automatiquement le th&#232;me de la construction d\'optimisation en une file d\'attente et vous pouvez soit r&#233;pondre ici sera le sujet dans la file d\'optimisation suppl&#233;mentaires</li>
 					',
+
 	'threads_postposition_replies'	=> 'Sup&#233;rieure &#224; la r&#233;ponse sp&#233;cifi&#233;e', // '指定回复数大于'
 	'delandadd'		=> 'Reconstruction d\'optimisation', // '重建优化'
 	'deleteposition'	=> 'Retirez &#224; optimiser', // '删除优化'
@@ -4448,7 +4460,7 @@ $lang = array
 	'plugins_config_uninstall'	=> 'D&#233;sinstaller', // '卸载'
 	'plugins_config_upgrade'	=> 'M&#224;j.', // '升级'
 	'plugins_config_delete'		=> 'D&#233;sinstaller', //  '卸载'
-'plugins_config_upgrade_other'		=> 'Etes-vous s&#251;r que vous voulez mettre &#224; jour le plug-in {pluginname} {version} &#224; la prochaine version?',//'你确定要把 {pluginname} {version} 插件升级到以下版本吗？', //  'Are you sure you want to upgrade the Plug-in {pluginname} {version} to the next version?'
+	'plugins_config_upgrade_other'		=> 'Etes-vous s&#251;r que vous voulez mettre &#224; jour le plug-in {pluginname} {version} &#224; la prochaine version?',//'你确定要把 {pluginname} {version} 插件升级到以下版本吗？', //  'Are you sure you want to upgrade the Plug-in {pluginname} {version} to the next version?'
 	'plugins_config_uninstallplugin'	=> 'D&#233;sinstallez le plug-in', // '卸载此插件'
 	'plugins_edit'			=> 'conception de plug-in', // '设计插件'
 	'plugins_edit_available'	=> ' (Plug-in activ&#233;)', // ' (插件已启用)'
@@ -5103,7 +5115,7 @@ $lang = array
 					<li>Cache des donn&#233;es: cache tout le site &#224; jour les donn&#233;es</li>
 					<li>Cache Mod&#232;le: Maj. de mod&#232;les de forum, le style et les fichiers cache, lorsque vous modifiez un mod&#232;le ou le style, mais il y a pas d\'effet imm&#233;diat lorsqu\'il est utilis&#233;</li>
 					<li>Cat&#233;gories BRICO Module m&#233;moire cache: Maj. BRICO bricolage module de classification, lorsque vous installez ou modifier une cat&#233;gorie de modules de bricolage DIY, mais ne prennent pas effet imm&#233;diatement masqu&#233;</li>
-				',
+					',
 
 	'tools_updatecache_data'	=> 'Cache de Donn&#233;es', // '数据缓存'
 	'tools_updatecache_tpl'		=> 'Cache de Template', // '模板缓存'
@@ -6130,8 +6142,13 @@ $lang = array
 	'import_data_invalid'		=> 'Donn&#233;es peuvent ne pas &#234;tre Identifi&#233;, retour', // '数据无法识别, 请返回'
 	'import_data_typeinvalid'	=> 'Erreur Type Donn&#233;es, Svp. revenir', // '数据类型错误, 请返回'
 
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
 
-	'rewrite_message'	=> '<h1>Apache Web Serveur(Ind&#233;pendamment de cet Utilisateur h&#244;te)</h1>
+
+	'rewrite_message'		=> '<h1>Apache Web Serveur(Ind&#233;pendamment de cet Utilisateur h&#244;te)</h1>
 <pre class="colorbox">
 &lt;IfModule mod_rewrite.c&gt;
 	RewriteEngine On
@@ -6212,10 +6229,25 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Nettoyez tous les journaux des transactions des Points des Membres',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Changer la langue',
 'change_style'		=> 'Changer le style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

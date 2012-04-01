@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *		Translate by DCV team - http://www.discuz.vn
@@ -19,4 +19,3 @@ $lang = array(
 	'friend_group_more' => 'Tùy chỉnh {num}'
 );
 
-?>

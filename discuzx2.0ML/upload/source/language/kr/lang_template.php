@@ -81,10 +81,6 @@ $lang = array (
 	'your_mobile_browser'	=> '선택',
 	'e_redo'	=> '다시',
 	'e_undo'	=> '취소',
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
 	'header_add_frame'	=> '프레임추가',
 	'header_add_module'	=> '모듈 추가',
 	'header_clearall'	=> '지우기',
@@ -361,6 +357,11 @@ $lang = array (
 
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'Default style',//'[name]默认风格[/name]',

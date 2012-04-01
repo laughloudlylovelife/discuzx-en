@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -46,7 +46,7 @@ $lang = array(
 					    1 => 'Original',//'原创',
 					    2 => 'Hot',//'热点',
 					    3 => 'Photos',//'组图',
-					    4 => 'Broken News',//'爆料',
+					    4 => 'Breaking News',//'爆料',
 					    5 => 'Headline',//'头条',
 					    6 => 'Slideshow',//'幻灯',
 					    7 => 'Scroll',//'滚动',

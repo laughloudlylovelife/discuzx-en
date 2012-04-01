@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp.php 23576 2011-07-26 06:57:50Z zhangguosheng $
+ *      $Id: lang_admincp.php 28030 2012-02-21 05:43:34Z monkey $
  */
 
 
@@ -1049,13 +1049,13 @@ $lang = array
 
 	'setting_domain' => '域名设置',
 	'setting_domain_base' => '基本设置',
-	'setting_domain_base_tips' => "<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>群组、家园</strong>的根域名</li>",
+	'setting_domain_base_tips' => "<li>保留二级域名设置后所有人都无法申请或使用该域名</li><li>个人空间、群组的二级域名开启后需要到<strong>根域名设置</strong>中设置<strong>{$_G[setting][navs][3][navname]}、{$_G[setting][navs][4][navname]}</strong>的根域名</li>",
 	'setting_domain_app' => '应用域名',
 	'setting_domain_app_domain' => '域名',
 	'setting_domain_app_tips' => "<li>各自绑定的域名不能相同，域名不需要添加“<strong>http://</strong>”，也不要以“<strong>/</strong>”结尾，例如：portal.comsenz.com</li><li>任意开启一项域名，需要配置默认域名，否则会造成多入口问题</li><li>当开启多域名时，请在 config/config_global.php 中修改 cookiedomain 值来设置 cookie 作用域</li>",
 	'setting_domain_app_mobile_tips' => '当配置手机域名后，非手机浏览器访问会自动跳转至默认域名',
 	'setting_domain_root' => '根域名设置',
-	'setting_domain_root_tips' => "<li>可以为<strong>个人空间、群组、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、群组</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
+	'setting_domain_root_tips' => "<li>可以为<strong>个人空间、{$_G[setting][navs][3][navname]}、版块、专题、频道</strong>设置一个二级域名的根域名。例：用户申请XXX.comsenz.com,根域名填：comsenz.com</li><li><strong>个人空间、{$_G[setting][navs][3][navname]}</strong>设置完二级域名的根后，还需要在<strong>基本设置</strong>中开启相应的二级域名开关，用户才能在相应的地方申请绑定二级域名，同时受限于用户组的二级域名长度</li><li><strong>频道</strong>启用二级域名如果是绑定目录的，需要自已在环境中配置相关的绑定操作</li><li>不建议中途将不同的根域变更为相同的根域</li>",
 	'setting_domain_allow_space' => '开启个人空间二级域名',
 	'setting_domain_allow_space_comment' => '开启后需在设置根域名、以及用户组域名长度后方能开启域名申请',
 	'setting_domain_allow_group' => '开启群组二级域名',
@@ -1866,6 +1866,17 @@ $lang = array
 	'setting_attach_remote_minsize' => '附件尺寸下限',
 	'setting_attach_remote_minsize_comment' => '单位：KB，只有尺寸大于当前设置的附件才使用远程附件功能，0 或留空为不限制',
 	'setting_attach_remote_ftpcheck' => '检测远程附件设置',
+
+	'setting_ftp_remote_-100' => '当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101' => '尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102' => '尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103' => '尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104' => '尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105' => '尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106' => '尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107' => '尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir' => '站点根目录',
+	'setting_attach_ftp_dir_comment' => '站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
 
 	'setting_attach_remote_-100' => '当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
 	'setting_attach_remote_-101' => '远程附件功能未开启',
@@ -6053,17 +6064,17 @@ $lang = array
 	'category_area' => '地区管理',
 	'category_counter' => '统计数据',
 
-	'category_channel' => '基本设置',
-	'category_channel_config' => '基本设置',
-	'category_channel_open' => '是否开启',
-	'category_channel_title' => '名称',
-	'category_channel_identifier' => '标识',
-	'category_channel_identifier_comment' => '做为改模块的唯一标识，如无必要请勿修改',
+//	'category_channel' => '基本设置',
+//	'category_channel_config' => '基本设置',
+//	'category_channel_open' => '是否开启',
+//	'category_channel_title' => '名称',
+//	'category_channel_identifier' => '标识',
+//	'category_channel_identifier_comment' => '做为改模块的唯一标识，如无必要请勿修改',
 
-	'category_option' => '选项管理',
-	'category_sort' => '分类管理',
-	'category_area' => '地区管理',
-	'category_counter' => '统计数据',
+//	'category_option' => '选项管理',
+//	'category_sort' => '分类管理',
+//	'category_area' => '地区管理',
+//	'category_counter' => '统计数据',
 
 	'setting_manyou' => 'Manyou 设置',
 	'setting_manyou_tips' => '<li>开启漫游应用功能后，用户可以自由选择各种不同的应用(诸如开心农场、快乐庄园、德克萨斯扑克、荣光医院......)在站内进行使用。</li>
@@ -6131,12 +6142,18 @@ $lang = array
 	'import_data_invalid' => '数据无法识别，请返回',
 	'import_data_typeinvalid' => '数据类型错误，请返回',
 
+	'cloudaddons_ftp_setting' => '站点 FTP 设置',
+	'cloudaddons_unwriteabledirs' => '站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link' => '获取更多插件',
+	'cloudaddons_style_link' => '获取更多风格',
+
 
 	'rewrite_message' => '<h1>Apache Web Server(独立主机用户)</h1>
 <pre class="colorbox">
 &lt;IfModule mod_rewrite.c&gt;
 	RewriteEngine On
-{apache1}&lt;/IfModule&gt;
+{apache1}
+&lt;/IfModule&gt;
 </pre>
 
 <h1>Apache Web Server(虚拟主机用户)</h1>
@@ -6169,7 +6186,8 @@ RepeatLimit 32
 <pre class="colorbox">
 &lt;rewrite&gt;
 	&lt;rules&gt;
-{iis7}	&lt;/rules&gt;
+{iis7}
+	&lt;/rules&gt;
 &lt;/rewrite&gt;
 </pre>
 
@@ -6215,6 +6233,21 @@ RepeatLimit 32
 'change_language'	=> '更改语言',//'Change language',
 'change_style'		=> '切换风格',//'Change Style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

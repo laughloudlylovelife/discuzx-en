@@ -81,10 +81,6 @@ $lang = array (
   'your_mobile_browser'	=> 'กรุณาเลือก ',
   'e_redo'		=> 'ทำซ้ำ',
   'e_undo'		=> 'เลิกทำ',
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
   'header_add_frame'	=> 'เพิ่มเฟรม',
   'header_add_module'	=> 'เพิ่มโมดูล',
   'header_clearall'	=> 'ล้างทั้งหมด',
@@ -362,6 +358,11 @@ $lang = array (
 //---------------------------
 // Added by Valery Votintsev
 
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
+
 //static/space/t1/style.css
 	'default_style'	=> 'Default style',//'[name]默认风格[/name]',
 
@@ -421,4 +422,3 @@ $lang = array (
   'copyright'	=> '&copy; 2001-2011 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a> Thai Language by <a href="http://www.discuzthai.com" target="_blank">DiscuzThai.com</a>',
 );
 
-?>

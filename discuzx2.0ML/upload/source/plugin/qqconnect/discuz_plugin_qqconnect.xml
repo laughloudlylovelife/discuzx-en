@@ -62,6 +62,7 @@
 				<item id="connect_wbsign_no_account"><![CDATA[You have not yet opened Tencent microblogging function. Can not use the signature function for Tencent microblogging]]></item>
 				<item id="connect_wbsign_no_bind"><![CDATA[You need to bind the QQ account, before use the signature function Tencent microblogging]]></item>
 				<item id="connect_wbsign_tip"><![CDATA[After insert the Tencent microblogging as a forum signature, the site members and visitors will be able to see your latest microblogging information in real time]]></item>
+				<item id="connect_access_token_out_of_date_share"><![CDATA[For your account security, please use the QQ account to log in again, will you upgrade your account security mechanisms<br/><br/>Click <a href=\"{$_G[connect][login_url]}\"><img src=\"static/image/common/qq_login.gif\" class=\"vm\" alt=\"QQ login\" /></a> The page will jump, make sure you have saved post data]]></item>
 			</item>
 			<item id="templatelang">
 				<item id="connect_header_login"><![CDATA[QQ login]]></item>
@@ -184,6 +185,9 @@
 				<item id="connect_spacecp_weibo_reason_is_short"><![CDATA[Please enter your microblog content to be broadcast]]></item>
 				<item id="connect_member_register_tip"><![CDATA[You will use the QQ account {$qq_nick}, registered at the site, <a href="{$change_qq_url}">Replace the QQ account</a>?]]></item>
 				<item id="connect_member_loginbind_tip"><![CDATA[You will use the QQ account {$qq_nick} binded to the site account, <a href="{$change_qq_url}">Replace the QQ account</a>?]]></item>
+				<item id="connect_wbsign_no_account"><![CDATA[You have not yet opened Tencent microblogging can not be used Tencent microblogging signature function]]></item>
+				<item id="connect_wbsign_no_bind"><![CDATA[You need to bind the QQ account, in order to use Tencent microblogging signature function]]></item>
+				<item id="connect_wbsign_tip"><![CDATA[Insert Tencent microblogging as a forum signature can be the first time your microblogging information displayed to the members and visitors of the site]]></item>
 			</item>
 		</item>
 	</item>

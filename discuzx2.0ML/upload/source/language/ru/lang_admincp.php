@@ -659,7 +659,6 @@ $lang = array
 	'setting_access_register_connect_addcredit'		=> 'Бонус за регистрацию через QQ-аккаунт',
 	'setting_access_register_connect_addcredit_comment'	=> 'Установить размер бонуса за регистрацию с использованием QQ-аккаунта.',
 	'setting_access_register_connect_group'			=> 'Группы пользователей, которым разрешена регистрация через QQ-аккаунт',
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	'setting_access_register_connect_group_comment'		=> 'Зарегистрируйте свою первую группу пользователей в QQ',
 	'setting_access_register_connect_regverify'		=> 'QQ зарегистрированные пользователи будут проходить регистрацию без проверки',
 	'setting_access_register_connect_regverify_comment'	=> 'Установка для пользователей QQ прохождение регистрации без проверки',
@@ -1867,6 +1866,17 @@ $lang = array
 	'setting_attach_remote_minsize'			=> 'Размер вложений',
 	'setting_attach_remote_minsize_comment'		=> 'Установка размера вложений (формат в KB). Оставьте пустым для отмены  каких-либо ограничений',
 	'setting_attach_remote_ftpcheck'		=> 'Обнаружение удаленных вложений',
+
+	'setting_ftp_remote_-100'		=> 'The current server PHP FTP extension module is not installed or FTP function is disabled',//'当前服务器 PHP 没有安装 FTP 扩展模块或 FTP 函数被禁用',
+	'setting_ftp_remote_-101'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-102'		=> 'Connect to the FTP server failed, please check the FTP server address and port number is set correctly',//'尝试连接到 FTP 服务器失败，请检查 FTP 服务器地址和端口号设置是否正确',
+	'setting_ftp_remote_-103'		=> 'Log into the FTP server failed, check the FTP account password settings are correct',//'尝试登录到 FTP 服务器失败，请检查 FTP 帐号密码设置是否正确',
+	'setting_ftp_remote_-104'		=> 'Change directory failed, check the site directory settings are correct',//'尝试切换目录失败，请检查站点目录设置是否正确',
+	'setting_ftp_remote_-105'		=> 'Create directory failed, check the site directory settings are correct, and check the FTP account to create the directory permissions',//'尝试创建目录失败，请检查站点目录设置是否正确，并检查 FTP 帐号是否具有创建目录的权限',
+	'setting_ftp_remote_-106'		=> 'Upload file failed, check whether the site directory has the permission to upload files',//'尝试上传文件失败，请检查站点目录是否具有上传文件的权限',
+	'setting_ftp_remote_-107'		=> 'Failed attempt to upload files, check the FTP account has permission to upload files, confirm permission is normal, try using passive mode (pasv) connection',//'尝试上传文件失败，请检查 FTP 帐号是否具有上传文件的权限，如果确认权限正常，请尝试使用被动模式(pasv)连接',
+	'setting_attach_ftp_dir'		=> 'The site root directory',//'站点根目录',
+	'setting_attach_ftp_dir_comment'	=> 'The site root directory absolute path or relative path relative to the FTP home directory, at the end do not add the slash "/", "." means the FTP home directory',//'站点根目录的绝对路径或相对于 FTP 主目录的相对路径，结尾不要加斜杠“/”，“.”表示 FTP 主目录',
 
 	'setting_attach_remote_-100'	=> 'На PHP отключена функция FTP',
 	'setting_attach_remote_-101'	=> 'Функция для удаленных вложений не включена',
@@ -6054,6 +6064,18 @@ $lang = array
 	'category_area'		=> 'Управление областями',
 	'category_counter'	=> 'Статистика',
 
+//	'category_channel'			=> 'Base settings',//'基本设置',
+//	'category_channel_config'		=> 'Base settings',//'基本设置',
+//	'category_channel_open'			=> 'Is open',//'是否开启',
+//	'category_channel_title'		=> 'Title',//'名称',
+//	'category_channel_identifier'		=> 'Idetifier',//'标识',
+//	'category_channel_identifier_comment'	=> 'Change unique module identifier. Do not modify if not necessary.',//'做为改模块的唯一标识，如无必要请勿修改',
+
+//	'category_option'			=> 'Options Management',//'选项管理',
+//	'category_sort'				=> 'Category management',//'分类管理',
+//	'category_area'				=> 'Regions Management',//'地区管理',
+//	'category_counter'			=> 'Statistical data',//'统计数据',
+
 	'setting_manyou'	=> 'Настройка приложений',
 	'setting_manyou_tips'	=> '<li>MYOP - это открытый роуминг приложений. Пользователь может выбирать различные приложения, например: Happy Farm (ферма), Пруд, День Манор, Покер штат Техас и множество других приложений для использования.</li>
 				<li>Также имеется функция поиска роуминга. Пользователи могут использовать функцию поиска по роумингу приложений. </li>
@@ -6119,6 +6141,11 @@ $lang = array
 
 	'import_data_invalid'		=> 'Не могу определить данные, пожалуйста, вернитесь!',
 	'import_data_typeinvalid'	=> 'Ошибка типа данных, пожалуйста, вернитесь!',
+
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
 
 
 	'rewrite_message'	=> '<h1>Apache Web Server</h1>
@@ -6202,10 +6229,25 @@ RepeatLimit 32
 	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
 
 //---------------------------
-//Change Language
+//Change Language/Style
 'change_language'	=> 'Изменить язык',//'Change language',
 'change_style'		=> 'Change style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

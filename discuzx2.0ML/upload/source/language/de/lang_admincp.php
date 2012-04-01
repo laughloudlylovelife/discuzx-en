@@ -485,6 +485,7 @@ $lang = array
 
 	'nav_founder_perm_group'	=> 'Team-Positionen',
 	'nav_founder_perm_member'	=> 'Team-Mitglieder',
+'nav_founder_perm_notifyusers'	=> 'Notifies',//'管理通知',
 
 	'nav_postsplit_manage'		=> 'Post-Tabelle split',//'分表管理',
 	'nav_postsplit_move'		=> 'Beitrag bewegen',//'帖子移动',
@@ -856,9 +857,9 @@ $lang = array
 	'setting_styles_viewthread_show_images'			=> 'Bilder in Beitr&auml;gen anzeigen:',
 	'setting_styles_viewthread_show_images_comment'		=> '',
 	'setting_styles_viewthread_imagemaxwidth'		=> 'Max. Bild Weite in Beitr&auml;gen:',
-'setting_styles_viewthread_imagemaxwidth_comment'	=> 'If an image width is greater than this value, the image will be automatically resized. The value must be integer type (number of pixels) and must not exceed 1920.',//'当帖内图片宽度大于设置的值时图片宽度会被自动调节。如为整数，图片的宽度不会超过您所设置的值。如为百分比，图片的宽度将根据不同风格自由调整为百分比适当的大小。宽度最大不能超过 1920',
-'setting_styles_viewthread_imagelistthumb'		=> 'Display image list in the posts horizontally',//'帖内图片列表中图片横排显示条件',
-'setting_styles_viewthread_imagelistthumb_comment'	=> 'Set how many post images will displayed horizontally. Set to 0 or leave blank to disable the horizontal displaying.',//'设置当帖内图片列表中图片数量满足多少张以后以横排方式显示，0 或留空为关闭横排显示',
+	'setting_styles_viewthread_imagemaxwidth_comment'	=> 'If an image width is greater than this value, the image will be automatically resized. The value must be integer type (number of pixels) and must not exceed 1920.',//'当帖内图片宽度大于设置的值时图片宽度会被自动调节。如为整数，图片的宽度不会超过您所设置的值。如为百分比，图片的宽度将根据不同风格自由调整为百分比适当的大小。宽度最大不能超过 1920',
+	'setting_styles_viewthread_imagelistthumb'		=> 'Display image list in the posts horizontally',//'帖内图片列表中图片横排显示条件',
+	'setting_styles_viewthread_imagelistthumb_comment'	=> 'Set how many post images will displayed horizontally. Set to 0 or leave blank to disable the horizontal displaying.',//'设置当帖内图片列表中图片数量满足多少张以后以横排方式显示，0 或留空为关闭横排显示',
 	'setting_styles_viewthread_zoomstatus'			=> 'Zooming verwenden:',
 	'setting_styles_viewthread_zoomstatus_comment'		=> 'Diese Funktion hilft dabei durch Grafiken gestreckte Beitr&auml;ge zu verkleinern. W&auml;hle "Ja", um bei einem Klick auf das Bild eine Vergr&ouml;&szlig;erung per JavaScript anzuzeigen. W&auml;hle "Nein", um das Bild in einem neuen Fenster zu &ouml;ffnen.',
 	'setting_styles_viewthread_csscache'			=> 'CSS Style Cache:',
@@ -1896,6 +1897,17 @@ $lang = array
 	'setting_attach_antileech_refcheck_comment'	=> 'W&auml;hle "Ja", um den Referrer von den aufgerufenen Anh&auml;ngen zu &uuml;berpr&uuml;fen und so Downloads &uuml;ber andere Internetseiten zu verhindern.', 
 	'setting_attach_antileech_remote_hide_dir'	=> 'Reale URL verbergen:', 
 	'setting_attach_antileech_remote_hide_dir_comment'	=> 'Diese Funktion kann die Performance ev. beeintr&auml;chtigen.',
+	'setting_attach_portal_article_img_thumb_closed_comment'	=> 'Make thumbnails from uploaded article images',//'是否开启文章上传图片的缩略图',
+	'setting_attach_portal_article_imgsize'			=> 'Thumbnail size for article images',//'文章图片缩略图尺寸',
+	'setting_attach_portal_article_imgsize_comment'		=> 'When you upload a large image, the program will generate a corresponding small image, the default size of 300*300px.',//'如果上传一些尺寸很大的数码图片，则程序会按照本设置进行生成相应的小图片，默认大小为 300*300',
+
+	'setting_attach_antileech'				=> 'Anti-leech settings',//'防盗链设置',
+	'setting_attach_antileech_expire'			=> 'Attachment links expiration',//'附件链接有效期',
+	'setting_attach_antileech_expire_comment'		=> 'Unit: hours. Set to 0 or blank for permanent attachment links. Expired links are updated automatically. This feature can prevent the attachment leeching and bulk downloads, but it will cause inconvenience for normal members to download.',//'单位：小时，0 或留空表示附件链接永久有效，过期后链接自动更新。本功能可有效防止附件被盗链或附件被软件批量下载，但是会给会员的正常下载带来不便',
+	'setting_attach_antileech_refcheck'			=> 'Check the attachment referer',//'下载附件来路检查',
+	'setting_attach_antileech_refcheck_comment'		=> 'Select "Yes" for check a referer when download attachments from other sites or sites banned for downloads. Note: This feature will display a "message about image attachment", and will increase the server loading.',//'选择“是”将检查下载附件的来路，来自其他网站或站点的下载请求将被禁止。注意: 本功能在开启“帖子中显示图片附件”时，会加重服务器负担',
+	'setting_attach_antileech_remote_hide_dir'		=> 'Hide the real attachment path',//'隐藏远程附件真实路径',
+	'setting_attach_antileech_remote_hide_dir_comment'	=> 'This option will increase the server loading, and significantly increase the local server traffic. Choose whether a download/upload attachment file name must be hidden.',//'选择是，将加重本地服务器负担，并明显增加本地服务器流量；选择否，下载的附件与上传的附件文件名将会不一致。',
 
 	'setting_imgwater'			=> 'Watermark',//'水印设置',
 	'setting_imgwater_portal'		=> 'Artikel',
@@ -6128,8 +6140,13 @@ $lang = array
 'custommenu_add'		=> 'Add custom menu operation',//'添加常用操作',
 'custommenu_addto'		=> 'Add to the parent menu',//'添加到常用操作',
 
-'import_data_invalid'		=> 'Data can not identify, please return',//'数据无法识别，请返回',
-'import_data_typeinvalid'	=> 'Data type error, please return',//'数据类型错误，请返回',
+	'import_data_invalid'		=> 'Data can not identify, please return',//'数据无法识别，请返回',
+	'import_data_typeinvalid'	=> 'Data type error, please return',//'数据类型错误，请返回',
+
+	'cloudaddons_ftp_setting'	=> 'Site FTP settings',//'站点 FTP 设置',
+	'cloudaddons_unwriteabledirs'	=> 'Site {basedir} directory below the directory is not writable, can not install this application online, please fill out the site FTP connection parameters (this setting is not saved):<br />{unwriteabledirs}',//'站点 {basedir} 目录下的以下目录不可写，无法在线安装此应用，请填写本站点的 FTP 连接参数(本设置不会被保存):<br />{unwriteabledirs}',
+	'cloudaddons_plugin_link'	=> 'Get more plugins',//'获取更多插件',
+	'cloudaddons_style_link'	=> 'Get more styles',//'获取更多风格',
 
 
 'rewrite_message'		=> '<h1>Apache Web Server (independent host used)</h1>
@@ -6217,6 +6234,21 @@ RepeatLimit 32
 	'change_language'	=> 'Sprache ändern',//'Change language',
 	'change_style'		=> 'Stil ändern',//'Change style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------
@@ -6232,4 +6264,3 @@ if(file_exists($adminextendfile = DISCUZ_ROOT.'./data/cache/cache_adminextend.ph
 	}
 }
 
-?>

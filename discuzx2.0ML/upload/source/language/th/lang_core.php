@@ -206,7 +206,7 @@ $lang = array
 //vot source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'Refresh frequency limit',
 	'attackevasive_1_message'	=> 'You visit the site too fast, less than two seconds! Please wait a little...',
-	'attackevasive_2_subject'	=> 'Access throug proxy servers is restricted',
+	'attackevasive_2_subject'	=> 'Access through proxy servers is restricted',
 	'attackevasive_2_message'	=> 'Access to the site through a proxy servers is restricted for mow. Please remove your proxy setting configuration, and access to the site directly.',
 	'attackevasive_4_subject'	=> 'Open the page reload',
 	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
@@ -216,4 +216,3 @@ $lang = array
 
 );
 
-?>

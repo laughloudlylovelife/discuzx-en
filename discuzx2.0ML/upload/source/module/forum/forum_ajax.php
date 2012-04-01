@@ -4,8 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_ajax.php 25637 2011-11-16 09:14:03Z liulanbo $
- * Modified by Valery Votintsev, codersclub.org
+ *      $Id: forum_ajax.php 27348 2012-01-17 07:34:00Z svn_project_zhangjie $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -41,17 +41,8 @@ if($_G['gp_action'] == 'checkusername') {
 
 } elseif($_G['gp_action'] == 'checkemail') {
 
-	$email = trim($_G['gp_email']);
-	loaducenter();
-	$ucresult = uc_user_checkemail($email);
-
-	if($ucresult == -4) {
-		showmessage('profile_email_illegal', '', array(), array('handle' => false));
-	} elseif($ucresult == -5) {
-		showmessage('profile_email_domain_illegal', '', array(), array('handle' => false));
-	} elseif($ucresult == -6) {
-		showmessage('profile_email_duplicate', '', array(), array('handle' => false));
-	}
+	require_once libfile('function/member');
+	checkemail($_G['gp_email']);
 
 } elseif($_G['gp_action'] == 'checkinvitecode') {
 
@@ -452,4 +443,3 @@ EOF;
 
 showmessage('succeed', '', array(), array('handle' => false));
 
-?>

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_template.php 23072 2011-06-16 10:45:46Z svn_project_zhangjie $
+ *      $Id: lang_template.php 25804 2011-11-22 09:05:12Z maruitao $
  *
  *      This file is automatically generate
  */
@@ -60,12 +60,12 @@ $lang = array (
   'admincp' => '管理中心',
   'changestyle' => '切换风格',
   'default' => '默认',
-  'forum_manager' => '论坛管理',
+  'forum_manager' => '{$_G[setting][navs][2][navname]}管理',
   'go_to_mobile' => '进入手机版',
   'login_switch_invisible_mode' => '切换在线状态',
   'logout' => '退出',
   'my_nav' => '快捷导航',
-  'my_nav_login' => '请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">注册</a>',
+  'my_nav_login' => '请 <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>登录</strong></a> 后使用快捷导航<br />没有帐号？<a href="member.php?mod={$_G[setting][regname]}" class="xi2 xw1">$_G[\'setting\'][\'reglinkname\']</a>',
   'open_diy' => '打开 DIY 面板',
   'pm_center' => '消息',
   'portal_block_manage' => '模块管理',
@@ -81,10 +81,6 @@ $lang = array (
   'your_mobile_browser' => '请选择 ',
   'e_redo' => '重做',
   'e_undo' => '撤销',
-	'e_full_screen'			=> '全屏',//'Full Screen',
-	'e_restore_size'		=> '恢复',//'Restore size',
-	'e_simple'			=> '常用',//'General Mode',
-	'e_advanced'			=> '高级',//'Advanced Mode',
   'header_add_frame' => '添加框架',
   'header_add_module' => '添加模块',
   'header_clearall' => '清空',
@@ -165,8 +161,8 @@ $lang = array (
   'mod_works' => '管理统计',
   'stats' => '站点统计',
   'trend' => '趋势统计',
-  'app_add' => '添加应用',
-  'app_management' => '管理应用',
+  'app_add' => '添加$_G[setting][navs][5][navname]',
+  'app_management' => '管理$_G[setting][navs][5][navname]',
   'e_audio' => '音乐',
   'e_audio_title' => '添加音乐',
   'e_autotypeset' => '自动排版',
@@ -361,6 +357,11 @@ $lang = array (
 
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> '全屏',//'Full Screen',
+	'e_restore_size'		=> '恢复',//'Restore size',
+	'e_simple'			=> '常用',//'General Mode',
+	'e_advanced'			=> '高级',//'Advanced Mode',
 
 //static/space/t1/style.css
 	'default_style'	=> '默认风格',

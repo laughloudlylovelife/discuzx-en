@@ -81,10 +81,6 @@ $lang = array (
 	'your_mobile_browser'		=> 'Пожалуйста, выберите ', 
 	'e_redo'			=> 'Повторить',
 	'e_undo'			=> 'Отменить',
-	'e_full_screen'			=> 'На весь экран',//'全屏',
-	'e_restore_size'		=> 'Восстановить размер',//'恢复',
-	'e_simple'			=> 'Простой режим',//'常用',
-	'e_advanced'			=> 'Расширенный режим',//'高级',
 	'header_add_frame'		=> 'Добавить фрейм',
 	'header_add_module'		=> 'Добавить блок',
 	'header_clearall'		=> 'Очистить',
@@ -362,6 +358,11 @@ $lang = array (
 //---------------------------
 // Added by Valery Votintsev
 
+	'e_full_screen'			=> 'На весь экран',//'全屏',
+	'e_restore_size'		=> 'Восстановить размер',//'恢复',
+	'e_simple'			=> 'Простой режим',//'常用',
+	'e_advanced'			=> 'Расширенный режим',//'高级',
+
 //static/space/t1/style.css
 	'default_style'	=> 'Стиль по умолчанию',//'[name]默认风格[/name]',
 
@@ -418,4 +419,3 @@ $lang = array (
 	'e_map_address'	=> 'Enter address for search: ',//'地址： ',
 );
 
-?>

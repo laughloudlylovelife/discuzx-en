@@ -17,6 +17,7 @@ var emaildomains = [
 		'aol.com',
 		'gmail.com',
 		'hotmail.com',
+		'msn.com',
 		'yahoo.com'
 		];
 

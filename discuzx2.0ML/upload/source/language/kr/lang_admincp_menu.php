@@ -29,7 +29,7 @@ $lang = array
 	'header_portal'	=> '포털 관리',
 	'header_group'	=> '그룹 관리',
 	'header_founder'	=> '서버 관리',
-	'header_addons'	=> '디스커즈 확장',
+	'header_cloudaddons'	=> '디스커즈 확장',
 
 
 	'menu_home'	=> '관리 센터',
@@ -58,7 +58,6 @@ $lang = array
 	'menu_setting_ranklist'	=> '순위 목록',
 	'menu_setting_mobile'	=> '모바일 설정',
 	'menu_setting_tag'	=> '태그 관리',	
-
 
 	'menu_forums'	=> '게시판 관리',
 	'menu_forums_merge'	=> '게시판 통합',
@@ -181,8 +180,10 @@ $lang = array
 	'menu_setting_manyou'	=> 'MANYOU 설정',
 	'menu_setting_qqconnect'	=> 'QQ 접속 설정',
 
-	'admincp_title' => $_G['setting']['bbname'].' 관리 센터',
+	'admincp_title'		=> $_G['setting']['bbname'].' 관리 센터',
+
+// Added by Valery Votintsev
+	'menu_setting_language'		=> 'Languages',
 
 );
 
-?>

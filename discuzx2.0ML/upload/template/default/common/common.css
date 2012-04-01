@@ -4,7 +4,7 @@ Main CSS file for Discuz! X
 (C) Comsenz Inc.
 http://www.comsenz.com
 Created & Modified by Lushnis, Pony, Dfox & DragonLee.
-English by Valery Votintsev at sources.ru
+Ьщвшашув by Valery Votintsev, codersclub.org
 
 ----------------------------------
 
@@ -854,6 +854,7 @@ Note on the CSS Hack:
 	/* text with thumbnail image ( must with the additional class .cl ) */
 		.xld .m { float: left; margin: 8px 8px 10px 0; }
 		.xld .atc { float: right; margin-left: 20px; }
+			.ie8 .xld .atc { max-width: 86px; }
 			.xld .atc img { padding: 2px; max-width: 80px; max-height: 80px; border: 1px solid #CCC; background: {WRAPBG}; }
 				.ie6 .xld .atc img { width: expression(this.width > 80 && this.width>=this.height ? 80 : true); height: expression(this.height > 80 && this.width<=this.height ? 80 : true); }
 		.xld a.d, .xl a.d, .attc a.d, .c a.d, .sinf a.d { float: right; width: 20px; height: 20px; overflow: hidden; line-height: 100px; background: url({IMGDIR}/op.png) no-repeat 0 -2px; }
@@ -1598,6 +1599,7 @@ DIY image is not loaded when the Hide Slide
 */
 .slidebox {display: none; }
 
+/*------- Added by Valery Votintsev -----*/
 /*
 	Name:			
 	Level:		Space
@@ -1630,20 +1632,3 @@ DIY image is not loaded when the Hide Slide
 	Explain:		Used for print page
 	Last Modify:		Valery Votintsev
 */
-.print_copyright {
-	text-align: right;
-}
-.sendmail {
-	font-family:'lucida grande',tahoma,'bitstream vera sans',helvetica,sans-serif;
-	font-size:14px;
-	line-height:150%;
-	color:#000;
-	text-align: left;
-	padding:4px;
-}
-.sendmail .title {
-	color:#FFF;
-	background:#FF8E00;
-	font-size:24px;
-	font-weight:bold;
-}

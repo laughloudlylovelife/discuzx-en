@@ -42,4 +42,3 @@ $lang = array
 	'connect_errlog_sig_incorrect'			=> 'Неверная сигнатура URL!',
 );
 
-?>

@@ -5,6 +5,7 @@
  *      This is NOT a freeware, use is subject to license terms
  *
  *      $Id: space_notice.php 22054 2011-04-20 10:51:36Z congyushuai $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -146,4 +147,3 @@ $value['note'] = lang('notification',$template,$notevars);
 dsetcookie('promptstate_'.$_G['uid'], $newprompt, 31536000);
 include_once template("diy:home/space_notice");
 
-?>

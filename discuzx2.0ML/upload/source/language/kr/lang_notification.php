@@ -27,31 +27,31 @@ $lang = array
 	'type_task'		=> '임무',//'任务',
 	'type_group'		=> '그룹',//'群组',
 
-	'mail_to_user'	=> '새 메일',
-	'showcredit'	=> '{actor} 님이 입찰 {credit}을 당신에게 주어 <a href="misc.php?mod=ranklist&type=member" target="_self">입찰 목록</a> 순위를 올림',
-	'share_space'	=> '{actor} 님이 당신의 개인 공간을 공유함',
-	'share_blog'	=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>을 공유함',
-	'share_album'	=> '{actor} 님이 당신의 앨범 <a href="{url}" target="_self">{albumname}</a>을 공유함',
-	'share_pic'	=> '{actor} 님이 당신의 {albumname} 내의 <a href="{url}" target="_self"> 사진</a>을 공유함',
-	'share_thread'	=> '{actor} 님이 당신의 주제글 <a href="{url}" target="_self">{subject}</a>을 공유함',
-	'share_article'	=> '{actor} 님이 당신의 문서 <a href="{url}" target="_self">{subject}</a>을 공유함',
+	'mail_to_user'		=> '새 메일',
+	'showcredit'		=> '{actor} 님이 입찰 {credit}을 당신에게 주어 <a href="misc.php?mod=ranklist&type=member" target="_self">입찰 목록</a> 순위를 올림',
+	'share_space'		=> '{actor} 님이 당신의 개인 공간을 공유함',
+	'share_blog'		=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>을 공유함',
+	'share_album'		=> '{actor} 님이 당신의 앨범 <a href="{url}" target="_self">{albumname}</a>을 공유함',
+	'share_pic'		=> '{actor} 님이 당신의 {albumname} 내의 <a href="{url}" target="_self"> 사진</a>을 공유함',
+	'share_thread'		=> '{actor} 님이 당신의 주제글 <a href="{url}" target="_self">{subject}</a>을 공유함',
+	'share_article'		=> '{actor} 님이 당신의 문서 <a href="{url}" target="_self">{subject}</a>을 공유함',
 	'magic_present_note'	=> '당신에게 아이템 <a href="{url}" target="_self">{name}</a>을 선물함',
-	'friend_add'	=> '{actor} 님과 당신이 친구가 되었습니다.',
+	'friend_add'		=> '{actor} 님과 당신이 친구가 되었습니다.',
 	'friend_request'	=> '{actor} 님이 친구 신청함{note}&nbsp;&nbsp;<a onclick="showWindow(this.id, this.href, \'get\', 0);" class="xw1" id="afr_{uid}" href="{url}">승인</a>',
-	'doing_reply'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">토막글</a>에 답글을 남김',
-	'wall_reply'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">담벼락</a>에 메세지를 남김',
+	'doing_reply'		=> '{actor} 님이 당신의 <a href="{url}" target="_self">토막글</a>에 답글을 남김',
+	'wall_reply'		=> '{actor} 님이 당신의 <a href="{url}" target="_self">담벼락</a>에 메세지를 남김',
 	'pic_comment_reply'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">사진 댓글</a>에 답글을 남김',
 	'blog_comment_reply'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">블로그 댓글</a>에 답글을 남김',
 	'share_comment_reply'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">공유 댓글</a>에 답글을 남김',
-	'wall'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">담벼락</a>에 메세지를 남김',
-	'pic_comment'	=> '{actor} 남이 당신의 <a href="{url}" target="_self">사진</a>에 댓글을 남김',
-	'blog_comment'	=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>에 댓글을 남김',
-	'share_comment'	=> '{actor} 님이 당신의  <a href="{url}" target="_self">공유</a>에 댓글을 남김',
-	'click_blog'	=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>에 표시를 남김',
-	'click_pic'	=> '{actor} 님이 당신의 <a href="{url}" target="_self">사진</a>에 표시를 남김',
-	'click_article'	=> '{actor} 님이 당신의 문서 <a href="{url}" target="_self">{subject}</a>에 표시를 남김',
-	'show_out'	=> '{actor} 님이 당신의 홈페이지를 방문함, 이것은 당신이 지불한 최종 입찰 포인트를 보여줌',
-	'puse_article'	=> '축하합니다.. 당신의 <a href="{url}" target="_self">{subject}</a>가 문서목록에 추가되었습니다. <a href="{newurl}" target="_self">보기</a>',
+	'wall'			=> '{actor} 님이 당신의 <a href="{url}" target="_self">담벼락</a>에 메세지를 남김',
+	'pic_comment'		=> '{actor} 남이 당신의 <a href="{url}" target="_self">사진</a>에 댓글을 남김',
+	'blog_comment'		=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>에 댓글을 남김',
+	'share_comment'		=> '{actor} 님이 당신의  <a href="{url}" target="_self">공유</a>에 댓글을 남김',
+	'click_blog'		=> '{actor} 님이 당신의 블로그 <a href="{url}" target="_self">{subject}</a>에 표시를 남김',
+	'click_pic'		=> '{actor} 님이 당신의 <a href="{url}" target="_self">사진</a>에 표시를 남김',
+	'click_article'		=> '{actor} 님이 당신의 문서 <a href="{url}" target="_self">{subject}</a>에 표시를 남김',
+	'show_out'		=> '{actor} 님이 당신의 홈페이지를 방문함, 이것은 당신이 지불한 최종 입찰 포인트를 보여줌',
+	'puse_article'		=> '축하합니다.. 당신의 <a href="{url}" target="_self">{subject}</a>가 문서목록에 추가되었습니다. <a href="{newurl}" target="_self">보기</a>',
 
 	'myinvite_request'	=> '새 앱 소식 있음.<a href="home.php?mod=space&do=notice&view=userapp">관련된 작업에 대한 앱 정보를 보려면 여기를 클릭 하십시오</a>',
 
@@ -71,13 +71,13 @@ $lang = array
 
 	'reason_ban_post'	=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was {modaction} by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
+//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
+//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
+//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 	'reason_warn_post'	=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was {modaction} by {actor}.<br />
 				If you were warned {warninglimit} times in {warningexpiration} days, you will be disabled to post {warningexpiration} days automatically.<br />
 				Currently, you have been warned {authorwarnings} times!
 				<div class="quote"><blockquote>{reason}</blockquote></div>',
-//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
-//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
-//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'reason_move'			=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was moved to <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} 移动到 <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -108,13 +108,13 @@ $lang = array
 	'transfer'		=> 'You have received {credit} points from {actor} &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=log&suboperation=creditslog" target="_blank" class="lit">Click to view it</a>
 				<p class="summary">{actor} said: <span>{transfermessage}</span></p>',
 
+//	'addfunds' => '您提交的积分充值请求已完成，相应数额的积分已存入您的积分账户 &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">查看 &rsaquo;</a>
+//<p class="summary">订单号：<span>{orderid}</span></p><p class="summary">支出：<span>人民币 {price} 元</span></p><p class="summary">收入：<span>{value}</span></p>',
 	'addfunds'		=> 'Your request to recharge points successfully completed, Corresponding amount of points have been credited to your points account
                 		&nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">Click to view &rsaquo;</a>.
 				<p class="summary">Order number: <span>{orderid}</span></p>
                 		<p class="summary">Payment: <span>{price} USD</span></p>
                 		<p class="summary">Incoming points: <span>{value}</span></p>',
-//	'addfunds' => '您提交的积分充值请求已完成，相应数额的积分已存入您的积分账户 &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">查看 &rsaquo;</a>
-//<p class="summary">订单号：<span>{orderid}</span></p><p class="summary">支出：<span>人民币 {price} 元</span></p><p class="summary">收入：<span>{value}</span></p>',
 
 	'rate_reason'		=> 'Your post in thread <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> was rated {ratescore} by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你在主题 <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> 的帖子被 {actor} 评分 {ratescore} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -206,18 +206,20 @@ $lang = array
 	'report_change_credits'		=> '{actor} has deal with your report, your points {creditchange}',//'{actor} 处理了你的举报，你的 {creditchange}',
 	'new_report'			=> 'new report pending, <a href="admin.php?action=report" target="_blank">Click here to enter the background processing</a>.',//'有新的举报等待处理，<a href="admin.php?action=report" target="_blank">点此进入后台处理</a>。',
 	'new_post_report'		=> 'New pending report, <a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">Click here to enter the administration panel</a>.',//'有新的举报等待处理，<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">点此进入管理面版</a>。',
+//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
+//<p class="summary">{actor} 说：<span>{msg}</span></p>
+//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
 	'magics_receive'		=> 'You have received the magic {magicname} from {actor}.
 					<p class="summary">{actor} said: <span>{msg}</span></p>
 					<p class="mbn"><a href="home.php?mod=magic" target="_blank">Return the gift back!</a>
 					<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">View my magics</a></p>',
-//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
-//<p class="summary">{actor} 说：<span>{msg}</span></p>
-//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
 
+	'pmreportcontent' => '{pmreportcontent}',
+
+//vot ToDo: From install_data.sql
 'welcome_message_title'		=> 'Hello {username}! Thank you for your registration, please read the following ...',
 'welcome_message_content'	=> 'Dear {username}, you have already registered as a member at {sitename}, please when you publish, compliance with local laws and regulations.\nIf you have any questions please contact the administrator, Email: {adminemail}.\n\n\n{bbname}\n{time}',
 'terms_of_services'		=> 'This is Rules.\nMust read!',
 
 );
 
-?>

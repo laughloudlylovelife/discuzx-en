@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: class_core.php 26293 2011-12-08 03:10:51Z zhangguosheng $
+ *      $Id: class_core.php 27386 2012-01-19 10:06:34Z zhengqingpeng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -421,7 +421,7 @@ class discuz_core {
 			$this->_xss_check();
 		}
 
-		if($this->config['security']['attackevasive'] && (!defined('CURSCRIPT') || !in_array($this->var['mod'], array('seccode', 'secqaa', 'swfupload')))) {
+		if($this->config['security']['attackevasive'] && (!defined('CURSCRIPT') || !in_array($this->var['mod'], array('seccode', 'secqaa', 'swfupload')) && !defined('DISABLEDEFENSE'))) {
 			require_once libfile('misc/security', 'include');
 		}
 
@@ -435,14 +435,14 @@ class discuz_core {
 
 		setglobal('charset', $this->config['output']['charset']);
 		define('CHARSET', $this->config['output']['charset']);
-/*vot*/ if(strtolower(CHARSET)=='utf-8') {
-/*vot*/   ini_set('mbstring.internal_encoding','UTF-8'); //vot
-//vot echo 'mbstring.internal_encoding = ' . ini_get('mbstring.internal_encoding') . "<br>\n";
-/*vot*/ }
 		if($this->config['output']['forceheader']) {
 			@header('Content-Type: text/html; charset='.CHARSET);
 		}
 
+/*vot*/ if(strtolower(CHARSET)=='utf-8') {
+/*vot*/   ini_set('mbstring.internal_encoding','UTF-8'); //vot
+//vot echo 'mbstring.internal_encoding = ' . ini_get('mbstring.internal_encoding') . "<br>\n";
+/*vot*/ }
 		//vot MultiLingual Support
 		// Reload current page if the language is changed
 //		if($this->var['language'] != $this->var['oldlanguage']) {
@@ -1085,9 +1085,9 @@ function escape_str($string = '' /*, $db=false*/) {
 		} else {
 			$where = $condition;
 		}
-//vot		$res = DB::query("$cmd $table SET $sql WHERE $where", $unbuffered ? 'UNBUFFERED' : '');
-/*vot*/		$res_sql = "$cmd $table SET $sql WHERE $where";
-		$res = DB::query($res_sql);
+		$res = DB::query("$cmd $table SET $sql WHERE $where", $unbuffered ? 'UNBUFFERED' : '');
+//vot		$res_sql = "$cmd $table SET $sql WHERE $where";
+//vot		$res = DB::query($res_sql);
 //DEBUG
 //echo "sql=".$res_sql."<br>\n";
 		return $res;

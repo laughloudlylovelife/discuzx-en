@@ -81,10 +81,6 @@ $lang = array (
 	'your_mobile_browser'		=> 'Please select ',//'请选择 ',
 	'e_redo'			=> 'Redo',//'重做',
 	'e_undo'			=> 'Undo',//'撤销',
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
 	'header_add_frame'		=> 'Add frame',//'添加框架',
 	'header_add_module'		=> 'Add block',//'添加模块',
 	'header_clearall'		=> 'Clear all',//'清空',
@@ -165,8 +161,8 @@ $lang = array (
 	'mod_works'			=> 'Moderator Stats',//'管理统计',
 	'stats'				=> 'Site statistics',//'站点统计',
 	'trend'				=> 'Trend/Stats',//'趋势统计',
-	'app_add'			=> 'Add application',
-	'app_management'		=> 'Manage application',
+	'app_add'			=> 'Add application',//'添加$_G[setting][navs][5][navname]',
+	'app_management'		=> 'Manage application',//'管理$_G[setting][navs][5][navname]',
 	'e_audio'			=> 'Audio',//'音乐',
 	'e_audio_title'			=> 'Add Audio',//'添加音乐',
 	'e_autotypeset'			=> 'Type Auto-Set',//'自动排版',
@@ -361,6 +357,11 @@ $lang = array (
 
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'Default style',//'[name]默认风格[/name]',

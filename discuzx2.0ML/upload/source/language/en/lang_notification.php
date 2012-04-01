@@ -70,13 +70,13 @@ $lang = array
 
 	'reason_ban_post'	=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was {modaction} by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
+//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
+//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
+//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 	'reason_warn_post'	=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was {modaction} by {actor}.<br />
 				If you were warned {warninglimit} times in {warningexpiration} days, you will be disabled to post {warningexpiration} days automatically.<br />
 				Currently, you have been warned {authorwarnings} times!
 				<div class="quote"><blockquote>{reason}</blockquote></div>',
-//	'reason_warn_post' => '您的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} {modaction}<br />
-//连续 {warningexpiration} 天内累计 {warninglimit} 次警告，您将被自动禁止发言 {warningexpiration} 天。<br />
-//截止至目前，您已被警告 {authorwarnings} 次，请注意！<div class="quote"><blockquote>{reason}</blockquote></div>',
 
 	'reason_move'			=> 'Your thread <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> was moved to <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你的主题 <a href="forum.php?mod=viewthread&tid={tid}" target="_blank">{subject}</a> 被 {actor} 移动到 <a href="forum.php?mod=forumdisplay&fid={tofid}" target="_blank">{toname}</a> <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -107,13 +107,13 @@ $lang = array
 	'transfer'		=> 'You have received {credit} points from {actor} &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=log&suboperation=creditslog" target="_blank" class="lit">Click to view it</a>
 				<p class="summary">{actor} said: <span>{transfermessage}</span></p>',
 
+//	'addfunds' => '您提交的积分充值请求已完成，相应数额的积分已存入您的积分账户 &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">查看 &rsaquo;</a>
+//<p class="summary">订单号：<span>{orderid}</span></p><p class="summary">支出：<span>人民币 {price} 元</span></p><p class="summary">收入：<span>{value}</span></p>',
 	'addfunds'		=> 'Your request to recharge points successfully completed, Corresponding amount of points have been credited to your points account
                 		&nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">Click to view &rsaquo;</a>.
 				<p class="summary">Order number: <span>{orderid}</span></p>
                 		<p class="summary">Payment: <span>{price} USD</span></p>
                 		<p class="summary">Incoming points: <span>{value}</span></p>',
-//	'addfunds' => '您提交的积分充值请求已完成，相应数额的积分已存入您的积分账户 &nbsp; <a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank" class="lit">查看 &rsaquo;</a>
-//<p class="summary">订单号：<span>{orderid}</span></p><p class="summary">支出：<span>人民币 {price} 元</span></p><p class="summary">收入：<span>{value}</span></p>',
 
 	'rate_reason'		=> 'Your post in thread <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> was rated {ratescore} by {actor} <div class="quote"><blockquote>{reason}</blockquote></div>',//'你在主题 <a href="forum.php?mod=redirect&goto=findpost&pid={pid}&ptid={tid}" target="_blank">{subject}</a> 的帖子被 {actor} 评分 {ratescore} <div class="quote"><blockquote>{reason}</blockquote></div>',
 
@@ -205,19 +205,20 @@ $lang = array
 	'report_change_credits'		=> '{actor} has deal with your report, your points {creditchange}',//'{actor} 处理了你的举报，你的 {creditchange}',
 	'new_report'			=> 'new report pending, <a href="admin.php?action=report" target="_blank">Click here to enter the background processing</a>.',//'有新的举报等待处理，<a href="admin.php?action=report" target="_blank">点此进入后台处理</a>。',
 	'new_post_report'		=> 'New pending report, <a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">Click here to enter the administration panel</a>.',//'有新的举报等待处理，<a href="forum.php?mod=modcp&action=report&fid={fid}" target="_blank">点此进入管理面版</a>。',
+//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
+//<p class="summary">{actor} 说：<span>{msg}</span></p>
+//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
 	'magics_receive'		=> 'You have received the magic {magicname} from {actor}.
 					<p class="summary">{actor} said: <span>{msg}</span></p>
 					<p class="mbn"><a href="home.php?mod=magic" target="_blank">Return the gift back!</a>
 					<span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">View my magics</a></p>',
-//	'magics_receive' => '您收到 {actor} 送给您的道具 {magicname}
-//<p class="summary">{actor} 说：<span>{msg}</span></p>
-//<p class="mbn"><a href="home.php?mod=magic" target="_blank">回赠道具</a><span class="pipe">|</span><a href="home.php?mod=magic&action=mybox" target="_blank">查看我的道具箱</a></p>',
 
-// ToDo: From install_data.sql
+	'pmreportcontent' => '{pmreportcontent}',
+
+//vot ToDo: From install_data.sql
 'welcome_message_title'		=> 'Hello {username}! Thank you for your registration, please read the following ...',
 'welcome_message_content'	=> 'Dear {username}, you have already registered as a member at {sitename}, please when you publish, compliance with local laws and regulations.\nIf you have any questions please contact the administrator, Email: {adminemail}.\n\n\n{bbname}\n{time}',
 'terms_of_services'		=> 'This is Rules.\nMust read!',
 
 );
 
-?>

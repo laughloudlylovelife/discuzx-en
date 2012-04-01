@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_profile.php 25613 2011-11-16 07:08:48Z chenmengshu $
+ *      $Id: function_profile.php 27243 2012-01-12 03:27:26Z zhengqingpeng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -421,7 +421,11 @@ function showdistrict($values, $elems=array(), $container='districtbox', $showle
 	}
 	$names = array('province', 'city', 'district', 'community');
 	for($i=0; $i<4;$i++) {
-		$elems[$i] = !empty($elems[$i]) ? dhtmlspecialchars($elems[$i]) : ($containertype == 'birth' ? 'birth' : 'reside').$names[$i];
+		if(!empty($elems[$i])) {
+			$elems[$i] = dhtmlspecialchars(preg_replace("/[^\[A-Za-z0-9_\]]/", '', $elems[$i]));
+		} else {
+			$elems[$i] = ($containertype == 'birth' ? 'birth' : 'reside').$names[$i];
+		}
 	}
 
 	for($i=0;$i<$showlevel;$i++) {
@@ -519,4 +523,3 @@ function get_zodiac($birthyear) {
 	$idx = (($birthyear - 1900) % 12) + 1;
 	return $idx > 0 && $idx <= 12 ? lang('space', 'zodiac_'. $idx) : '';
 }
-?>

@@ -4,7 +4,8 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: update.php by Valery Votintsev at sources.ru
+ *      $Id: update.php 27663 2012-02-09 04:59:02Z monkey $
+ *	Modified by Valery Votintsev, codersclub.org
  */
 
 include_once('../source/class/class_core.php');
@@ -32,14 +33,14 @@ $theurl = 'update.php';
 
 $lockfile = DISCUZ_ROOT.'./data/update.lock';
 if(file_exists($lockfile)) {
-	show_msg(lang('update','del_update_lock'));//vot
+/*vot*/	show_msg(lang('update','del_update_lock'));
 }
 
 $devmode = file_exists(DISCUZ_ROOT.'./install/data/install_dev.sql');
 $sqlfile = DISCUZ_ROOT.($devmode ? './install/data/install_dev.sql' : './install/data/install.sql');
 
 if(!file_exists($sqlfile)) {
-	show_msg(lang('update','sql_file') .$sqlfile. lang('update','does_not_exist'));//vot
+/*vot*/	show_msg(lang('update','sql_file') .$sqlfile. lang('update','does_not_exist'));
 }
 
 if($_POST['delsubmit']) {
@@ -64,7 +65,7 @@ if($_POST['delsubmit']) {
 		}
 	}
 
-	show_msg(lang('update','table_delete_completed'), $theurl.'?step=style');//vot
+/*vot*/	show_msg(lang('update','table_delete_completed'), $theurl.'?step=style');
 }
 
 if(empty($_GET['step'])) $_GET['step'] = 'start';
@@ -79,12 +80,12 @@ if($_GET['step'] == 'start') {
 //DEBUG
 //echo "version=".$version."<br>";
 	if(!DB::result_first('SELECT svalue FROM '.DB::table('common_setting')." WHERE skey='bbclosed' LIMIT 1")) {
-		show_msg(lang('update','close_before_update'));//vot
+/*vot*/		show_msg(lang('update','close_before_update'));
 	}
 	if(strcmp($version, '1.5.2') <= 0) {
-		show_msg(lang('update','ucenter160update'));//vot
+/*vot*/		show_msg(lang('update','ucenter160update'));
 	} else {
-		show_msg(lang('update','db_will_upgrade').'<br>' //vot
+/*vot*/		show_msg(lang('update','db_will_upgrade').'<br>'
 			.lang('update','check_latest_version').'<br><br>'
 			.lang('update','check_plugins').'<br><br>'
 			.'<a href="'.$theurl.'?step=prepare">'.lang('update','update_start').'</a>');//vot
@@ -95,7 +96,7 @@ if($_GET['step'] == 'start') {
 		DB::query("TRUNCATE ".DB::table('forum_groupinvite'));
 	}
 	if(DB::fetch_first("SHOW COLUMNS FROM ".DB::table('forum_activityapply')." LIKE 'contact'")) {
-		$query = DB::query("UPDATE ".DB::table('forum_activityapply')." SET message=CONCAT_WS('".lang('update','contacts')."', message, contact) WHERE contact<>''");//vot
+/*vot*/		$query = DB::query("UPDATE ".DB::table('forum_activityapply')." SET message=CONCAT_WS('".lang('update','contacts')."', message, contact) WHERE contact<>''");
 		DB::query("ALTER TABLE ".DB::table('forum_activityapply')." DROP contact");
 	}
 	if($row = DB::fetch_first("SHOW COLUMNS FROM ".DB::table('forum_postcomment')." LIKE 'authorid'")) {
@@ -111,10 +112,10 @@ if($_GET['step'] == 'start') {
 		DB::query("ALTER TABLE ".DB::table('common_failedlogin')." ADD PRIMARY KEY ipusername (ip,username)");
 	}
 	if(!$row = DB::fetch_first("SHOW COLUMNS FROM ".DB::table('forum_forumfield')." LIKE 'seodescription'")) {
-		DB::query("ALTER TABLE ".DB::table('forum_forumfield')." ADD seodescription text NOT NULL default '' COMMENT 'SEO forum description' AFTER keywords");//vot
+/*vot*/		DB::query("ALTER TABLE ".DB::table('forum_forumfield')." ADD seodescription text NOT NULL default '' COMMENT 'SEO forum description' AFTER keywords");
 		DB::query("UPDATE ".DB::table('forum_forumfield')." SET seodescription=description WHERE membernum='0'");
 	}
-	show_msg(lang('update','ready_to_db_upgrade'), $theurl.'?step=sql');//vot
+/*vot*/	show_msg(lang('update','ready_to_db_upgrade'), $theurl.'?step=sql');
 } elseif ($_GET['step'] == 'sql') {
 
 	$sql = implode('', file($sqlfile));
@@ -122,13 +123,13 @@ if($_GET['step'] == 'start') {
 	$newtables = empty($matches[1])?array():$matches[1];
 	$newsqls = empty($matches[0])?array():$matches[0];
 	if(empty($newtables) || empty($newsqls)) {
-		show_msg(lang('update','sql_empty'));//vot
+/*vot*/		show_msg(lang('update','sql_empty'));
 	}
 
 	$i = empty($_GET['i'])?0:intval($_GET['i']);
 	$count_i = count($newtables);
 	if($i>=$count_i) {
-		show_msg(lang('update','db_structure_upgraded'), $theurl.'?step=data');//vot
+/*vot*/		show_msg(lang('update','db_structure_upgraded'), $theurl.'?step=data');
 	}
 	$newtable = $newtables[$i];
 
@@ -153,9 +154,9 @@ if($_GET['step'] == 'start') {
 		$usql = str_replace("CREATE TABLE IF NOT EXISTS pre_", 'CREATE TABLE IF NOT EXISTS '.$config['tablepre'], $usql);
 		$usql = str_replace("CREATE TABLE pre_", 'CREATE TABLE '.$config['tablepre'], $usql);
 		if(!DB::query($usql, 'SILENT')) {
-			show_msg(lang('update','add_table') .DB::table($newtable). lang('update','sql_error') .':<br><br>'.dhtmlspecialchars($usql));//vot
+/*vot*/			show_msg(lang('update','add_table') .DB::table($newtable). lang('update','sql_error') .':<br><br>'.dhtmlspecialchars($usql));
 		} else {
-			$msg = lang('update','add_table') .DB::table($newtable). lang('update','completed');//vot
+/*vot*/			$msg = lang('update','add_table') .DB::table($newtable). lang('update','completed');
 		}
 	} else {
 		$value = DB::fetch($query);
@@ -168,9 +169,9 @@ if($_GET['step'] == 'start') {
 					if(!empty($oldcols[$key])) {
 						$usql = "RENAME TABLE ".DB::table($newtable)." TO ".DB::table($newtable.'_bak');
 						if(!DB::query($usql, 'SILENT')) {
-							show_msg(lang('update','upgrade_table') .DB::table($newtable). lang('update','sql_error').':<br><br><b>'.lang('update','sql_statement').'</b>:<div style=\"position:absolute;font-size:11px;font-family:verdana,arial;background:#EBEBEB;padding:0.5em;\">'.dhtmlspecialchars($usql)."</div><br><b>Error</b>: ".DB::error()."<br><b>Errno.</b>: ".DB::errno());//vot
+/*vot*/							show_msg(lang('update','upgrade_table') .DB::table($newtable). lang('update','sql_error').':<br><br><b>'.lang('update','sql_statement').'</b>:<div style=\"position:absolute;font-size:11px;font-family:verdana,arial;background:#EBEBEB;padding:0.5em;\">'.dhtmlspecialchars($usql)."</div><br><b>Error</b>: ".DB::error()."<br><b>Errno.</b>: ".DB::errno());
 						} else {
-							$msg = lang('update','table_rename') .DB::table($newtable). lang('update','completed');//vot
+/*vot*/							$msg = lang('update','table_rename') .DB::table($newtable). lang('update','completed');
 							show_msg($msg, $theurl.'?step=sql&i='.$_GET['i']);
 						}
 					}
@@ -214,12 +215,12 @@ if($_GET['step'] == 'start') {
 		if(!empty($updates)) {
 			$usql = "ALTER TABLE ".DB::table($newtable)." ".implode(', ', $updates);
 			if(!DB::query($usql, 'SILENT')) {
-				show_msg(lang('update','upgrade_table') .DB::table($newtable). lang('update','sql_error'). ':<br><br><b>'.lang('update','sql_statement').'</b>:<div style=\"position:absolute;font-size:11px;font-family:verdana,arial;background:#EBEBEB;padding:0.5em;\">'.dhtmlspecialchars($usql)."</div><br><b>Error</b>: ".DB::error()."<br><b>Errno.</b>: ".DB::errno());//vot
+/*vot*/				show_msg(lang('update','upgrade_table') .DB::table($newtable). lang('update','sql_error'). ':<br><br><b>'.lang('update','sql_statement').'</b>:<div style=\"position:absolute;font-size:11px;font-family:verdana,arial;background:#EBEBEB;padding:0.5em;\">'.dhtmlspecialchars($usql)."</div><br><b>Error</b>: ".DB::error()."<br><b>Errno.</b>: ".DB::errno());
 			} else {
-				$msg = lang('update','upgrade_table') .DB::table($newtable). lang('update','completed');//vot
+/*vot*/				$msg = lang('update','upgrade_table') .DB::table($newtable). lang('update','completed');
 			}
 		} else {
-			$msg = lang('update','check_table') .DB::table($newtable). lang('update','skip_table');//vot
+/*vot*/			$msg = lang('update','check_table') .DB::table($newtable). lang('update','skip_table');
 		}
 	}
 
@@ -245,9 +246,9 @@ if($_GET['step'] == 'start') {
 		if($i==0) {
 			$value = DB::fetch_first('SELECT * FROM '.DB::table('common_member_profile_setting')." WHERE fieldid = 'realname'");
 			if(!empty($value)) {
-				show_msg(lang('update','real_names_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/				show_msg(lang('update','real_names_updated'), "$theurl?step=data&op=$nextop");
 			}
-			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('realname', '1', '0', '1', '".lang('update','real_name')."', '', '0', '0', '0', '0', '1', 'text', '0', '', '', '0', '0')");//vot
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('realname', '1', '0', '1', '".lang('update','real_name')."', '', '0', '0', '0', '0', '1', 'text', '0', '', '', '0', '0')");
 		}
 		$t = DB::result_first('SELECT uid FROM '.DB::table('common_member')." ORDER BY uid DESC LIMIT 1");
 		$names = $uids = array();
@@ -262,35 +263,35 @@ if($_GET['step'] == 'start') {
 		}
 
 		if($n>0) {
-			show_msg(lang('update','real_name_progress')."[$n/$t]", "$theurl?step=data&op=realname&i=$n");//vot
+/*vot*/			show_msg(lang('update','real_name_progress')."[$n/$t]", "$theurl?step=data&op=realname&i=$n");
 		} else {
-			show_msg(lang('update','real_names_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/			show_msg(lang('update','real_names_updated'), "$theurl?step=data&op=$nextop");
 		}
 
 	} elseif($_GET['op'] == 'profile') {
 		$nextop = 'setting';
 		$value = DB::result_first('SELECT count(*) FROM '.DB::table('common_member_profile_setting')." WHERE fieldid = 'birthdist'");
 		if(!$value) {
-			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthdist', 1, 0, 0, 'Birth District', 'Birth District/County', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
-			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthcommunity', 1, 0, 0, 'Birth Community', '', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Birth City' WHERE fieldid = 'birthcity'");
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Reside City' WHERE fieldid = 'residecity'");
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthdist', 1, 0, 0, 'Birth District', 'Birth District/County', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_member_profile_setting')." VALUES ('birthcommunity', 1, 0, 0, 'Birth Community', '', 0, 0, 0, 0, 0, 0, 0, 'select', 0, '', '')");
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Birth City' WHERE fieldid = 'birthcity'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Reside City' WHERE fieldid = 'residecity'");
 		}
 		$count = DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_district')." WHERE `level`='1' AND `usetype`>'0'");
 		if(!$count) {
 			DB::query("UPDATE ".DB::table('common_district')." SET `usetype`='3' WHERE `level` = '1'");
 		}
 		$profile = DB::fetch_first('SELECT * FROM '.DB::table('common_member_profile_setting')." WHERE fieldid = 'birthday'");
-		if($profile['title'] == '出生日期' || $profile['title'] == 'Birthday') {//vot: Chinese/English "Birthday"
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Birthday' WHERE fieldid = 'birthday'");
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Document type' WHERE fieldid = 'idcardtype'");
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Alipay' WHERE fieldid = 'alipay'");
+/*vot*/		if($profile['title'] == '出生日期' || $profile['title'] == 'Birthday') {//vot: Chinese/English "Birthday"
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Birthday' WHERE fieldid = 'birthday'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Document type' WHERE fieldid = 'idcardtype'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='Alipay' WHERE fieldid = 'alipay'");
 			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='ICQ' WHERE fieldid = 'icq'");
 			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='QQ' WHERE fieldid = 'qq'");
 			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='MSN' WHERE fieldid = 'msn'");
-			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='TaoBao' WHERE fieldid = 'taobao'");
+/*vot*/			DB::query("UPDATE ".DB::table('common_member_profile_setting')." SET title='TaoBao' WHERE fieldid = 'taobao'");
 		}
-		show_msg(lang('update','users_updated'), "$theurl?step=data&op=$nextop");
+/*vot*/		show_msg(lang('update','users_updated'), "$theurl?step=data&op=$nextop");
 	} elseif($_GET['op'] == 'setting') {
 		$nextop = 'admingroup';
 		$settings = $newsettings = array();
@@ -473,7 +474,7 @@ if($_GET['step'] == 'start') {
 				array (
 				  'available' => 1,
 				  'displayorder' => 0,
-				  'title' => 'Basic info',
+/*vot*/				  'title' => 'Basic info',
 				  'field' =>
 				  array (
 					'realname' => 'realname',
@@ -497,7 +498,7 @@ if($_GET['step'] == 'start') {
 				),
 				'contact' =>
 				array (
-				  'title' => 'Contacts',
+/*vot*/				  'title' => 'Contacts',
 				  'available' => '1',
 				  'displayorder' => '1',
 				  'field' =>
@@ -515,7 +516,7 @@ if($_GET['step'] == 'start') {
 				array (
 				  'available' => 1,
 				  'displayorder' => 2,
-				  'title' => 'Education info',
+/*vot*/				  'title' => 'Education info',
 				  'field' =>
 				  array (
 					'graduateschool' => 'graduateschool',
@@ -526,7 +527,7 @@ if($_GET['step'] == 'start') {
 				array (
 				  'available' => 1,
 				  'displayorder' => 3,
-				  'title' => 'Work info',
+/*vot*/				  'title' => 'Work info',
 				  'field' =>
 				  array (
 					'occupation' => 'occupation',
@@ -537,7 +538,7 @@ if($_GET['step'] == 'start') {
 				),
 				'info' =>
 				array (
-				  'title' => 'Personal Info',
+/*vot*/				  'title' => 'Personal Info',
 				  'available' => '1',
 				  'displayorder' => '4',
 				  'field' =>
@@ -565,7 +566,7 @@ if($_GET['step'] == 'start') {
 		}
 		DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('regname', 'register')");
 		if(empty($settings['reglinkname'])) {
-			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('reglinkname', 'Registration')");
+/*vot*/			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('reglinkname', 'Registration')");
 		}
 
 		if(empty($settings['domain'])) {
@@ -614,7 +615,7 @@ if($_GET['step'] == 'start') {
 			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('allowviewuserthread', '".addslashes(serialize($allowviewuserthread))."')");
 		}
 		if(!isset($settings['focus'])) {
-			$focusnew = array('title' => lang('update','recommended_webmaster'), 'cookie' => 1);//vot
+/*vot*/			$focusnew = array('title' => lang('update','recommended_webmaster'), 'cookie' => 1);//vot
 			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('focus', '".addslashes(serialize($focusnew))."')");
 		} else {
 			$focus = unserialize($settings['focus']);
@@ -640,17 +641,17 @@ if($_GET['step'] == 'start') {
 			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('preventrefresh', '$preventrefreshnew')");
 		}
 		if(!isset($settings['article_tags'])) {
-			$article_tagsnew = addslashes(serialize(lang('update','article_tags')));//vot
+/*vot*/			$article_tagsnew = addslashes(serialize(lang('update','article_tags')));//vot
 			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('article_tags', '$article_tagsnew')");
 		}
 		if(empty($settings['anonymoustext'])) {
-			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('anonymoustext', '".lang('update','anonymous')."')");//vot
+/*vot*/			DB::query("REPLACE INTO ".DB::table('common_setting')." VALUES ('anonymoustext', '".lang('update','anonymous')."')");//vot
 		}
 		if(!$word_type_count = DB::result_first("SELECT count(*) FROM ".DB::table('common_word_type')."")) {
-			DB::query("INSERT INTO ".DB::table('common_word_type')." VALUES('1',  '".lang('update','politics')."'),('2', '".lang('update','advertising')."')");//vot
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_word_type')." VALUES('1',  '".lang('update','politics')."'),('2', '".lang('update','advertising')."')");//vot
 		}
 		if(!isset($settings['userreasons'])) {
-			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('userreasons', '".lang('update','userreasons')."')");//vot
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_setting')." VALUES ('userreasons', '".lang('update','userreasons')."')");//vot
 		}
 		if(!$forum_typevar_search = DB::result_first("SELECT count(*) FROM ".DB::table('forum_typevar')." WHERE search > 2 LIMIT 1")) {
 			DB::query("UPDATE ".DB::table('forum_typevar')." SET search = '3' WHERE search = '1'");
@@ -667,14 +668,14 @@ if($_GET['step'] == 'start') {
 		}
 
 		if(!DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_addon')." WHERE `key` = '25z5wh0o00' AND siteurl = 'http://addons.discuz.com' LIMIT 1")) {
-			DB::query("REPLACE INTO ".DB::table('common_addon')." (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', '".lang('update','plugin_center')."', 'http://addons.discuz.com', '".lang('update','plugin_forum')."', 'http://addons.discuz.com/contact', 'http://www.comsenz.com/addon/logo.gif', 1)");//vot
+/*vot*/			DB::query("REPLACE INTO ".DB::table('common_addon')." (`key`, `title`, `sitename`, `siteurl`, `description`, `contact`, `logo`, `system`) VALUES ('25z5wh0o00', 'Comsenz', '".lang('update','plugin_center')."', 'http://addons.discuz.com', '".lang('update','plugin_forum')."', 'http://addons.discuz.com/contact', 'http://www.comsenz.com/addon/logo.gif', 1)");//vot
 		}
 
 		if(!DB::result_first("SELECT allowreplycredit FROM ".DB::table('common_usergroup_field')." WHERE groupid = 1")) {
 			DB::query("UPDATE ".DB::table('common_usergroup_field')." SET allowreplycredit = '1' WHERE groupid = 1");
 		}
 		DB::delete('common_addon', "`key`='R051uc9D1i'");
-		show_msg(lang('update','settings_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','settings_updated'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'admingroup') {
 		$nextop = 'updatethreadtype';
 		if(!DB::result_first("SELECT allowclearrecycle FROM ".DB::table('common_admingroup')." WHERE allowclearrecycle='1'")) {
@@ -700,7 +701,7 @@ if($_GET['step'] == 'start') {
 		if(!DB::result_first("SELECT allowbanvisituser FROM ".DB::table('common_admingroup')." WHERE allowbanvisituser='1'")) {
 			DB::query('UPDATE '.DB::table('common_admingroup')." SET allowbanvisituser='1' WHERE admingid='1' OR admingid='2'");
 		}
-		show_msg(lang('update','group_setting_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','group_setting_updated'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'updatethreadtype') {
 		$nextop = 'updatecron';
 		$selectoption = array();
@@ -728,31 +729,31 @@ if($_GET['step'] == 'start') {
 				DB::query("ALTER TABLE ".DB::table('forum_optionvalue')."$threadtypearr[typeid] ".implode(',', $varnames));
 			}
 		}
-		show_msg(lang('update','group_setting_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','group_setting_updated'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'updatecron') {
 		$nextop = 'updatemagic';
 		if(!DB::result_first("SELECT filename FROM ".DB::table('common_cron')." WHERE filename='cron_cleanfeed.php'")) {
-			DB::query("INSERT INTO ".DB::table('common_cron')." VALUES ('', '1','system','".lang('update','clean_feeds')."','cron_cleanfeed.php','1269746634','1269792000','-1','-1','0','0')");//vot
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_cron')." VALUES ('', '1','system','".lang('update','clean_feeds')."','cron_cleanfeed.php','1269746634','1269792000','-1','-1','0','0')");//vot
 		}
 
 		if(DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_cron')." WHERE filename='cron_birthday_daily.php'")) {
 			DB::query("DELETE FROM ".DB::table('common_cron')." WHERE filename='cron_birthday_daily.php'");
 		}
 
-		show_msg(lang('update','cron_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','cron_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'updatemagic') {
 		$nextop = 'updatereport';
 		if(DB::result_first("SELECT name FROM ".DB::table('common_magic')." WHERE identifier='highlight'")) {
-			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','color_card')."', description='".lang('update','color_card_descr')."' WHERE identifier='highlight'");//vot
+/*vot*/			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','color_card')."', description='".lang('update','color_card_descr')."' WHERE identifier='highlight'");//vot
 		}
 		if(DB::result_first("SELECT name FROM ".DB::table('common_magic')." WHERE identifier='namepost'")) {
-			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','visitor_card')."', description='".lang('update','visitor_card_descr')."' WHERE identifier='namepost'");//vot
+/*vot*/			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','visitor_card')."', description='".lang('update','visitor_card_descr')."' WHERE identifier='namepost'");//vot
 		}
 		if(DB::result_first("SELECT name FROM ".DB::table('common_magic')." WHERE identifier='anonymouspost'")) {
-			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','anonymous_card')."', description='".lang('update','anonymous_card_descr')."' WHERE identifier='anonymouspost'");//vot
+/*vot*/			DB::query("UPDATE ".DB::table('common_magic')." SET name='".lang('update','anonymous_card')."', description='".lang('update','anonymous_card_descr')."' WHERE identifier='anonymouspost'");//vot
 		}
 
-		show_msg(lang('update','magics_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','magics_updated'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'updatereport') {
 		$nextop = 'myappcount';
 		if(!DB::result_first('SELECT skey FROM '.DB::table('common_setting')." WHERE skey='report_reward'")) {
@@ -790,7 +791,7 @@ if($_GET['step'] == 'start') {
 			DB::query("REPLACE INTO ".DB::table('common_setting')." (skey, svalue) VALUES ('report_reward', '$report_reward')");
 		}
 
-		show_msg(lang('update','reports_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','reports_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'myappcount') {
 
 		$nextop = 'nav';
@@ -799,7 +800,7 @@ if($_GET['step'] == 'start') {
 			DB::query("DROP TABLE `".DB::table('common_myapp_count')."`");
 			DB::query("DROP TABLE `".DB::table('home_userapp_stat')."`");
 		}
-		show_msg(lang('update','apps_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','apps_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'nav') {
 
@@ -825,7 +826,7 @@ if($_GET['step'] == 'start') {
 			}
 		}
 
-		show_msg(lang('update','navigation_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','navigation_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'forumstatus') {
 
@@ -838,7 +839,7 @@ if($_GET['step'] == 'start') {
 			DB::update('forum_forum', array('status' => 1), "status='2'");
 		}
 
-		show_msg(lang('update','group_status_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','group_status_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'poststick') {
 
@@ -851,7 +852,7 @@ if($_GET['step'] == 'start') {
 			DB::query("DELETE FROM ".DB::table('forum_postposition')." WHERE stick='1'");
 		}
 
-		show_msg(lang('update','recommendations_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','recommendations_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'usergroup') {
 		$nextop = 'creditrule';
@@ -860,7 +861,7 @@ if($_GET['step'] == 'start') {
 			!DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_usergroup_field')." WHERE allowmediacode>'0'")) {
 			DB::update('common_usergroup_field', array('allowmediacode' => 1), "groupid<'4' OR groupid>'9'");
 		}
-		show_msg(lang('update','users_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','users_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'creditrule') {
 		$nextop = 'bbcode';
 		$delrule = array('register', 'realname', 'invitefriend', 'report', 'uploadimage', 'editrealname', 'editrealemail', 'delavatar');
@@ -868,13 +869,13 @@ if($_GET['step'] == 'start') {
 		if($count) {
 			DB::query("DELETE FROM ".DB::table('common_credit_rule')." WHERE action IN(".dimplode($delrule).")");
 		}
-		DB::update('common_credit_rule',array('rulename' => lang('update','daylogin')),"action='daylogin'");//vot
+/*vot*/		DB::update('common_credit_rule',array('rulename' => lang('update','daylogin')),"action='daylogin'");//vot
 		$count = DB::result_first("SELECT COUNT(*) FROM ".DB::table('common_credit_rule')." WHERE action='portalcomment'");
 		if(!$count) {
-			DB::query("INSERT INTO ".DB::table('common_credit_rule')." (`rulename`, `action`, `cycletype`, `cycletime`, `rewardnum`, `norepeat`, `extcredits1`, `extcredits2`, `extcredits3`, `extcredits4`, `extcredits5`, `extcredits6`, `extcredits7`, `extcredits8`, `fids`) VALUES ('".lang('update','portalcomment')."','portalcomment','1','0','40','1','0','1','0','0','0','0','0','0','')");//vot
+/*vot*/			DB::query("INSERT INTO ".DB::table('common_credit_rule')." (`rulename`, `action`, `cycletype`, `cycletime`, `rewardnum`, `norepeat`, `extcredits1`, `extcredits2`, `extcredits3`, `extcredits4`, `extcredits5`, `extcredits6`, `extcredits7`, `extcredits8`, `fids`) VALUES ('".lang('update','portalcomment')."','portalcomment','1','0','40','1','0','1','0','0','0','0','0','0','')");//vot
 		}
 
-		show_msg(lang('update','points_rules_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','points_rules_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'bbcode') {
 		$nextop = 'stamp';
 		$allowcusbbcodes = array();
@@ -887,7 +888,7 @@ if($_GET['step'] == 'start') {
 		if($allowcusbbcodes) {
 			DB::query("UPDATE ".DB::table('forum_bbcode')." SET perm='".implode("\t", $allowcusbbcodes)."' WHERE perm=''");
 		}
-		show_msg(lang('update','custom_bbcode_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','custom_bbcode_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'stamp') {
 		$nextop = 'block_item';
 		$stampnew = DB::result_first("SELECT COUNT(*) FROM ".DB::table('forum_thread')." WHERE stamp>'0'");
@@ -899,13 +900,13 @@ if($_GET['step'] == 'start') {
 				DB::query("UPDATE ".DB::table('forum_thread')." SET stamp='$row[stamp]' WHERE tid='$row[tid]'", 'UNBUFFERED');
 			}
 		}
-		DB::query("REPLACE INTO ".DB::table('common_smiley')." (id, typeid, displayorder, type, code, url) VALUES ('83','4','9','stamp','".lang('update','edited_by')."','010.gif')");//vot
-		DB::query("REPLACE INTO ".DB::table('common_smiley')." (id, typeid, displayorder, type, code, url) VALUES ('84','0','18','stamplist','".lang('update','edited_by')."','010.small.gif')");//vot
+/*vot*/		DB::query("REPLACE INTO ".DB::table('common_smiley')." (id, typeid, displayorder, type, code, url) VALUES ('83','4','9','stamp','".lang('update','edited_by')."','010.gif')");//vot
+/*vot*/		DB::query("REPLACE INTO ".DB::table('common_smiley')." (id, typeid, displayorder, type, code, url) VALUES ('84','0','18','stamplist','".lang('update','edited_by')."','010.small.gif')");//vot
 		require_once libfile('function/cache');
 		updatecache('stamps');
 		updatecache('stamptypeid');
 		show_msg(lang('update','stamps_completed'), "$theurl?step=data&op=$nextop");//vot
-	} elseif($_GET['op'] == 'block_item') {
+/*vot*/	} elseif($_GET['op'] == 'block_item') {
 		$nextop = 'block_permission';
 		$bids = $items = $blocks = array();
 		$query = DB::query("SELECT itemid, bid, pic, picflag, thumbpath FROM ".DB::table('common_block_item')." WHERE makethumb='1'");
@@ -927,7 +928,7 @@ if($_GET['step'] == 'start') {
 				DB::update('common_block_item', array('thumbpath' => $thumbpath), "itemid='$item[itemid]'");
 			}
 		}
-		show_msg(lang('update','perms_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','perms_updated'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'block_permission') {
 		$nextop = 'portalcategory_permission';
@@ -948,7 +949,7 @@ if($_GET['step'] == 'start') {
 				}
 			}
 		}
-		show_msg(lang('update','block_permissions_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','block_permissions_completed'), "$theurl?step=data&op=$nextop");
 	} elseif($_GET['op'] == 'portalcategory_permission') {
 		$nextop = 'portal_comment';
 		if(!DB::result_first('SELECT inheritedcatid FROM '.DB::table('portal_category_permission')." WHERE inheritedcatid > '0' LIMIT 1")) {
@@ -965,14 +966,14 @@ if($_GET['step'] == 'start') {
 				}
 			}
 		}
-		show_msg(lang('update','portal_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','portal_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'portal_comment') {
 		$nextop = 'portal_article_cover_img';
 		$one = DB::fetch_first('SELECT * FROM '.DB::table('portal_comment')." WHERE id=0 AND idtype='' LIMIT 1");
 		if($one && isset($one['aid'])) {
 			DB::query("UPDATE ".DB::table('portal_comment')." SET id=aid,idtype='aid' WHERE aid>0");
 		}
-		show_msg(lang('update','articles_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','articles_updated'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'portal_article_cover_img') {
 		$nextop = 'block_style';
@@ -980,7 +981,7 @@ if($_GET['step'] == 'start') {
 		if($pic && is_numeric(substr($pic, 0, strpos($pic,'/')))) {
 			DB::query("UPDATE ".DB::table('portal_article_title')." SET pic=CONCAT('portal/',pic) WHERE LENGTH(pic)>6");
 		}
-		show_msg(lang('update','article_comments_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','article_comments_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'block_style') {
 		$nextop = 'block_script';
@@ -1002,10 +1003,10 @@ if($_GET['step'] == 'start') {
 				$sql = implode("\r\n", $data);
 				runquery($sql);
 			}
-			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X1.5', 'Built-in')");
-			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X2.0', 'Built-in')");
+/*vot*/			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X1.5', 'Built-in')");
+/*vot*/			DB::query("UPDATE ".DB::table('common_block_style')." SET name = replace(`name`, 'X2.0', 'Built-in')");
 		}
-		show_msg(lang('update','blocks_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','blocks_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'block_script') {
 		$nextop = 'common_usergroup_field';
 		include_once libfile('function/block');
@@ -1040,7 +1041,7 @@ if($_GET['step'] == 'start') {
 			block_updatecache($bid, true);
 		}
 
-		show_msg(lang('update','scripts_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','scripts_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'common_usergroup_field') {
 		$nextop = 'group_index';
 		if(!DB::result_first('SELECT skey FROM '.DB::table('common_setting')." WHERE skey='group_recommend' LIMIT 1")) {
@@ -1062,7 +1063,7 @@ if($_GET['step'] == 'start') {
 				}
 			}
 		}
-		show_msg(lang('update','group_permissions_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','group_permissions_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'group_index') {
 		$nextop = 'domain';
@@ -1074,7 +1075,7 @@ if($_GET['step'] == 'start') {
 				import_diy($v['importfile'], $v['primaltplname'], $v['targettplname']);
 			}
 		}
-		show_msg(lang('update','group_home_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','group_home_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'domain') {
 		$nextop = 'pm';
@@ -1108,12 +1109,12 @@ if($_GET['step'] == 'start') {
 			$domainroot = $_G['config']['home']['domainroot'] ? $_G['config']['home']['domainroot'] : '';
 			DB::query("INSERT INTO ".DB::table('common_domain')." (domain, domainroot, id, idtype) SELECT domain, '$domainroot', uid, 'home' FROM ".DB::table('common_member_field_home')." WHERE domain<>''");
 		}
-		show_msg(lang('update','domains_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','domains_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'pm') {
 		$nextop = 'allowgetimage';
 		DB::query("UPDATE ".DB::table('common_member')." SET newpm='0'");
-		show_msg(lang('update','new_pm_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','new_pm_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'allowgetimage') {
 		$nextop = 'verify';
@@ -1127,7 +1128,7 @@ if($_GET['step'] == 'start') {
 				DB::query('UPDATE '.DB::table('forum_access')." SET allowgetimage='".intval($row['allowgetattach'])."' WHERE uid='$row[uid]'");
 			}
 		}
-		show_msg(lang('update','view_img_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','view_img_completed'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'verify') {
 		$nextop = 'threadimage';
@@ -1144,7 +1145,7 @@ if($_GET['step'] == 'start') {
 		$updateverify = $_GET['updateverify'] ? true : false;
 		if(!isset($verifys[6])) {
 			$verifys[6] = array(
-					'title' => lang('update','realname_verify'),//vot
+/*vot*/					'title' => lang('update','realname_verify'),//vot
 					'available' => $settings['realname'],
 					'showicon' => 0,
 					'viewrealname' => 0,
@@ -1152,7 +1153,7 @@ if($_GET['step'] == 'start') {
 					'icon' => ''
 				);
 			$verifys[7] = array(
-					'title' => lang('update','video_verify'),//vot
+/*vot*/					'title' => lang('update','video_verify'),//vot
 					'available' => $settings['videophoto'],
 					'showicon' => 0,
 					'viewvideophoto' => $settings['video_allowviewspace'],
@@ -1188,11 +1189,11 @@ if($_GET['step'] == 'start') {
 
 				}
 				if($n) {
-					show_msg(lang('update','real_name_verification')." [$n/$t]", "$theurl?step=data&op=verify&i=$n&updateverify=true");//vot
+/*vot*/					show_msg(lang('update','real_name_verification')." [$n/$t]", "$theurl?step=data&op=verify&i=$n&updateverify=true");//vot
 				}
 			}
 		}
-		show_msg(lang('update','real_name_verification_completed'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','real_name_verification_completed'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'forumattach') {
 		$nextop = 'moderate';
 		$limit = 10000;
@@ -1234,7 +1235,7 @@ if($_GET['step'] == 'start') {
 					));
 				}
 				$start += $limit;
-				show_msg(lang('update','attachment_upgrade').($start/$count), "$theurl?step=data&op=forumattach&start=$start");//vot
+/*vot*/				show_msg(lang('update','attachment_upgrade').($start/$count), "$theurl?step=data&op=forumattach&start=$start");//vot
 			}
 			DB::query("DROP TABLE `".DB::table('forum_attachmentfield')."`");
 			DB::query("ALTER TABLE ".DB::table('forum_attachment')."
@@ -1252,7 +1253,7 @@ if($_GET['step'] == 'start') {
 				DROP `picid`
 			");
 		}
-		show_msg(lang('update','attachment_upgraded'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','attachment_upgraded'), "$theurl?step=data&op=$nextop");//vot
 	} elseif($_GET['op'] == 'threadimage') {
 		$nextop = 'forumattach';
 		$defaultmonth = 10;
@@ -1272,19 +1273,19 @@ if($_GET['step'] == 'start') {
 					fwrite($fp, implode('|', $data));
 					fclose($fp);
 				} else {
-					show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/					show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
 				}
 			} else {
 				$data = @file($cachefile);
 				if(!$data) {
-					show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/					show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
 				}
 				$data = explode('|', $data[0]);
 			}
 			$tids = array_slice($data, $start, $limit);
 			if(!$tids) {
 				@unlink($cachefile);
-				show_msg(lang('update','topic_image_upgraded'), $theurl.'?step=data&op='.$nextop);//vot
+/*vot*/				show_msg(lang('update','topic_image_upgraded'), $theurl.'?step=data&op='.$nextop);//vot
 			}
 			$query = DB::query("SELECT tid, pid FROM ".DB::table('forum_post')." WHERE tid IN (".dimplode($tids).") AND first='1'");
 			$insertsql = array();
@@ -1292,16 +1293,16 @@ if($_GET['step'] == 'start') {
 				$threadimage = DB::fetch_first("SELECT attachment, remote FROM ".DB::table(getattachtablebytid($row['tid']))." WHERE pid='$row[pid]' AND isimage IN ('1', '-1') ORDER BY width DESC LIMIT 1");
 				if($threadimage['attachment']) {
 					$threadimage = daddslashes($threadimage);
-					$insertsql[] = "('$row[tid]', '$threadimage[attachment]', '$threadimage[remote]')";
+/*vot*/					$insertsql[$row['tid']] = "('$row[tid]', '$threadimage[attachment]', '$threadimage[remote]')";
 				}
 			}
 			if($insertsql) {
 				DB::query("INSERT INTO ".DB::table('forum_threadimage')." (`tid`, `attachment`, `remote`) VALUES ".implode(',', $insertsql));
 			}
 			$start += $limit;
-			show_msg(lang('update','topic_image_upgrade') . $start, "$theurl?step=data&op=threadimage&start=$start");//vot
+/*vot*/			show_msg(lang('update','topic_image_upgrade') . $start, "$theurl?step=data&op=threadimage&start=$start");//vot
 		} else {
-			show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/			show_msg(lang('update','topic_image_skip'), "$theurl?step=data&op=$nextop");//vot
 		}
 	} elseif($_GET['op'] == 'moderate') {
 
@@ -1361,7 +1362,7 @@ if($_GET['step'] == 'start') {
 				updatemoderate('topicid_cid', $row['cid']);
 			}
 		}
-		show_msg(lang('update','verify_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','verify_updated'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'founder') {
 
@@ -1385,7 +1386,7 @@ if($_GET['step'] == 'start') {
 			}
 		}
 
-		show_msg(lang('update','founder_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','founder_updated'), "$theurl?step=data&op=$nextop");//vot
 
 	} elseif($_GET['op'] == 'plugin') {
 
@@ -1416,15 +1417,15 @@ if($_GET['step'] == 'start') {
 			save_syscache('pluginlanguage_install', $_G['cache']['pluginlanguage_install']);
 		}
 
-		show_msg(lang('update','plugins_updated'), "$theurl?step=data&op=$nextop");//vot
+/*vot*/		show_msg(lang('update','plugins_updated'), "$theurl?step=data&op=$nextop");//vot
 
 	} else {
 
-		$deletevar = array('app', 'home');// need to delete items in the Config
+/*vot*/		$deletevar = array('app', 'home');// need to delete items in the Config
 		$default_config = $_config = array();
 		$default_configfile = DISCUZ_ROOT.'./config/config_global_default.php';
 		if(!file_exists($default_configfile)) {
-			exit(lang('update','config_default_lost'));//vot
+/*vot*/			exit(lang('update','config_default_lost'));//vot
 		} else {
 			include $default_configfile;
 			$default_config = $_config;
@@ -1433,16 +1434,16 @@ if($_GET['step'] == 'start') {
 		include $configfile;
 		DB::query("UPDATE ".DB::table('common_plugin')." SET available='0' WHERE identifier NOT IN ('qqconnect', 'cloudstat', 'soso_smilies')");
 		if(save_config_file($configfile, $_config, $default_config, $deletevar)) {
-			show_msg(lang('update','data_processing_completed'), "$theurl?step=delete");//vot
+/*vot*/			show_msg(lang('update','data_processing_completed'), "$theurl?step=delete");//vot
 		} else {
-			show_msg(lang('update','config_not_writable').'<br /><br /><a href="'.$theurl.'?step=delete">'.lang('update','config_continue').'</a>');//vot
+/*vot*/			show_msg(lang('update','config_not_writable').'<br /><br /><a href="'.$theurl.'?step=delete">'.lang('update','config_continue').'</a>');//vot
 		}
 	}
 
 }elseif ($_GET['step'] == 'delete') {
 
 	if(!$devmode) {
-		show_msg(lang('update','data_delete_next'), "$theurl?step=style");//vot
+/*vot*/		show_msg(lang('update','data_delete_next'), "$theurl?step=style");//vot
 	}
 
 	$oldtables = array();
@@ -1500,7 +1501,7 @@ if($_GET['step'] == 'start') {
 			$deltablehtml .= "<tr><td><input type=\"checkbox\" name=\"deltables[$tablename]\" value=\"1\"></td><td>{$config['tablepre']}$tablename</td></tr>";
 		}
 		$deltablehtml .= '</table>';
-		echo "<p>".lang('update','tables_unused')."</p> $deltablehtml";//vot
+/*vot*/		echo "<p>".lang('update','tables_unused')."</p> $deltablehtml";//vot
 	}
 
 	$delcolumnhtml = '';
@@ -1510,22 +1511,22 @@ if($_GET['step'] == 'start') {
 			foreach ($cols as $coltype => $col) {
 				if (is_array($col)) {
 					foreach ($col as $index => $indexvalue) {
-						$delcolumnhtml .= "<tr><td><input type=\"checkbox\" name=\"delcols[$tablename][$coltype][$index]\" value=\"1\"></td><td>{$config['tablepre']}$tablename</td><td>".lang('update','index')." ($coltype) $index $indexvalue</td></tr>";//vot
+/*vot*/						$delcolumnhtml .= "<tr><td><input type=\"checkbox\" name=\"delcols[$tablename][$coltype][$index]\" value=\"1\"></td><td>{$config['tablepre']}$tablename</td><td>".lang('update','index')." ($coltype) $index $indexvalue</td></tr>";//vot
 					}
 				} else {
-					$delcolumnhtml .= "<tr><td><input type=\"checkbox\" name=\"delcols[$tablename][$col]\" value=\"1\"></td><td>{$config['tablepre']}$tablename</td><td>".lang('update','field')." $col</td></tr>";//vot
+/*vot*/					$delcolumnhtml .= "<tr><td><input type=\"checkbox\" name=\"delcols[$tablename][$col]\" value=\"1\"></td><td>{$config['tablepre']}$tablename</td><td>".lang('update','field')." $col</td></tr>";//vot
 				}
 			}
 		}
 		$delcolumnhtml .= '</table>';
 
-		echo "<p>".lang('update','fields_unused')."</p> $delcolumnhtml";//vot
+/*vot*/		echo "<p>".lang('update','fields_unused')."</p> $delcolumnhtml";//vot
 	}
 
 	if(empty($deltables) && empty($delcolumns)) {
-		echo "<p>".lang('update','tables_fields_no_unused')."</p><a href=\"$theurl?step=style\">".lang('update','click_next_step')."</a></p>";//vot
+/*vot*/		echo "<p>".lang('update','tables_fields_no_unused')."</p><a href=\"$theurl?step=style\">".lang('update','click_next_step')."</a></p>";//vot
 	} else {
-		echo "<p><input type=\"submit\" name=\"delsubmit\" value=\"".lang('update','submit_delete')."\"></p><p>".lang('update','ignore_unused')."<br><a href=\"$theurl?step=style\">".lang('update','next_step_directly')."</a></p>";//vot
+/*vot*/		echo "<p><input type=\"submit\" name=\"delsubmit\" value=\"".lang('update','submit_delete')."\"></p><p>".lang('update','ignore_unused')."<br><a href=\"$theurl?step=style\">".lang('update','next_step_directly')."</a></p>";//vot
 	}
 	echo '</form>';
 
@@ -1534,7 +1535,7 @@ if($_GET['step'] == 'start') {
 
 } elseif ($_GET['step'] == 'style') {
 	if(empty($_GET['confirm'])) {
-		show_msg(lang('update','default_style_restore_sure')."<br /><br /><a href=\"$theurl?step=style&confirm=yes\">[ ".lang('update','yes')." ]</a>&nbsp;&nbsp;<a href=\"$theurl?step=cache\">[ ".lang('update','no')." ]</a>", '');//vot
+/*vot*/		show_msg(lang('update','default_style_restore_sure')."<br /><br /><a href=\"$theurl?step=style&confirm=yes\">[ ".lang('update','yes')." ]</a>&nbsp;&nbsp;<a href=\"$theurl?step=cache\">[ ".lang('update','no')." ]</a>", '');//vot
 	}
 
 	define('IN_ADMINCP', true);
@@ -1544,7 +1545,7 @@ if($_GET['step'] == 'start') {
 	import_styles(1, $dir, 1, 0);
 	DB::update('common_setting', array('svalue' => 1), "skey='styleid'");
 
-	show_msg(lang('update','default_style_restored'), "$theurl?step=cache");//vot
+/*vot*/	show_msg(lang('update','default_style_restored'), "$theurl?step=cache");//vot
 
 } elseif ($_GET['step'] == 'cache') {
 
@@ -1560,7 +1561,7 @@ if($_GET['step'] == 'start') {
 	dir_clear(ROOT_PATH.'./uc_client/data/cache');
 	save_syscache('setting', '');
 
-	show_msg('<span id="finalmsg">'.lang('update','cache_update').'</span><iframe src="../misc.php?mod=initsys" style="display:none;" onload="document.getElementById(\'finalmsg\').innerHTML = \''.lang('update','database_updated').'\'"></iframe>');//vot
+/*vot*/	show_msg('<span id="finalmsg">'.lang('update','cache_update').'</span><iframe src="../misc.php?mod=initsys" style="display:none;" onload="document.getElementById(\'finalmsg\').innerHTML = \''.lang('update','database_updated').'\'"></iframe>');//vot
 
 }
 
@@ -1648,7 +1649,7 @@ function remakesql($value) {
 function show_msg($message, $url_forward='') {
 
 	if($url_forward) {
-		$message = "<a href=\"$url_forward\">$message (".lang('update','jump_to').")</a><script>setTimeout(\"window.location.href ='$url_forward';\", 1);</script>";//vot
+/*vot*/		$message = "<a href=\"$url_forward\">$message (".lang('update','jump_to').")</a><script>setTimeout(\"window.location.href ='$url_forward';\", 1);</script>";//vot
 	}
 
 	show_header();
@@ -1711,9 +1712,10 @@ END;
 }
 
 function show_footer() {
-	print<<<END
+/*vot*/	print<<<END
 	</div>
-	<div id="footer">&copy; Comsenz Inc. 2001-2011 http://www.comsenz.com. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; English Version by Valery Votintsev at sources.ru</div>
+	<div id="footer">&copy; Comsenz Inc. 2001-2011 http://www.comsenz.com
+		<br/>International Version by Valery Votintsev, codersclub.org</div>
 	</div>
 	<br>
 	</body>
@@ -1933,4 +1935,3 @@ function block_style_conver_to_thread($style, $blockclass) {
 	return $arr;
 }
 
-?>
