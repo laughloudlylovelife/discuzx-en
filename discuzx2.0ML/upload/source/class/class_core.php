@@ -82,7 +82,9 @@ class discuz_core {
 			set_magic_quotes_runtime(0);
 		}
 
+/*vot*/		if(!defined('DISCUZ_ROOT')) {
 /*vot*/		define('DISCUZ_ROOT', preg_replace("/^\w\:/i",'',str_replace("\\",'/',substr(dirname(__FILE__), 0, -12))));
+/*vot*/		}
 		define('MAGIC_QUOTES_GPC', function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc());
 		define('ICONV_ENABLE', function_exists('iconv'));
 		define('MB_ENABLE', function_exists('mb_convert_encoding'));
@@ -91,7 +93,7 @@ class discuz_core {
 		define('TIMESTAMP', time());
 		$this->timezone_set();
 
-		if(!defined('DISCUZ_CORE_FUNCTION') && !@include(DISCUZ_ROOT.'./source/function/function_core.php')) {
+/*vot*/		if(!defined('DISCUZ_CORE_FUNCTION') && !@include_once(DISCUZ_ROOT.'./source/function/function_core.php')) {
 			exit('function_core.php is missing');
 		}
 
@@ -279,8 +281,6 @@ class discuz_core {
 			// set language from cookies
 			if($this->var['cookie']['language']) {
 				$lng = strtolower($this->var['cookie']['language']);
-//DEBUG
-//echo "Cookie lang=",$lng,"<br>";
 			}
 
 			// check if the language from GET is valid
@@ -290,8 +290,14 @@ class discuz_core {
 					// set from GET
 					$lng = $tmp;
 				}
-//DEBUG
-//echo "_GET lang=",$lng,"<br>";
+
+		// set new language to cookie
+		dsetcookie('language', $lng);
+
+			$url = $_SERVER['REQUEST_URI'];
+			$url = preg_replace("~[\?\&]language\=\w*~i",'',$url);
+			dheader('Location: '.$url);
+			exit;
 			}
 
 			// Check for language auto-detection
@@ -300,7 +306,7 @@ class discuz_core {
 				if($detect) {
 					$lng = detect_language($this->var['config']['languages'],$default_lang);
 //DEBUG
-//echo "Detect lang=",$lng,"<br>";
+//echo "Auto-Detect lang=",$lng,"<br>";
 				}
 			}
 		}
@@ -310,7 +316,7 @@ class discuz_core {
 		}
 
 //DEBUG
-//echo "Result lang=",$lng,"<br>";
+//echo "Result lng=",$lng,"<br>";
 		$this->var['oldlanguage'] = $lng; // Store Old Language Value for compare
 
 		// define DISCUZ_LANG

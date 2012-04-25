@@ -3,7 +3,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: smilies.js 21444 2011-03-25 10:12:35Z lifangming $
-	Modified by Valery Votintsev
+	Modified by Valery Votintsev, codersclub.org
 */
 
 function _smilies_show(id, smcols, seditorkey) {

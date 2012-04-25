@@ -693,7 +693,7 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 				$file = $primaltpl ? $primaltpl : $oldfile;
 			}
 			$tplrefresh = $_G['config']['output']['tplrefresh'];
-			if($tpldir == 'data/diy' && ($tplrefresh ==1 || ($tplrefresh > 1 && !($_G['timestamp'] % $tplrefresh))) && filemtime($diypath.$file.'.htm') < filemtime(DISCUZ_ROOT.TPLDIR.'/'.($primaltpl ? $primaltpl : $oldfile).'.htm')) {
+/*vot*/			if($tpldir == 'data/diy' && ($tplrefresh ==1 || ($tplrefresh > 1 && !($_G['timestamp'] % $tplrefresh))) && @filemtime($diypath.$file.'.htm') < @filemtime(DISCUZ_ROOT.TPLDIR.'/'.($primaltpl ? $primaltpl : $oldfile).'.htm')) {
 				if (!updatediytemplate($file)) {
 					unlink($diypath.$file.'.htm');
 					$tpldir = '';
@@ -1378,6 +1378,9 @@ function hookscript($script, $hscript, $type = 'funcs', $param = array(), $func 
 		$_G['inhookscript'] = true;
 		$funcs = !$func ? $_G['setting'][HOOKTYPE][$hscript][$script][$type] : array($func => $_G['setting'][HOOKTYPE][$hscript][$script][$type][$func]);
 		foreach($funcs as $hookkey => $hookfuncs) {
+//DEBUG
+//writedebug(&$hookfuncs,'hookfuncs=');
+/*vot*/	if(is_array($hookfuncs)) {
 			foreach($hookfuncs as $hookfunc) {
 				if($hooksadminid[$hookfunc[0]]) {
 					$classkey = (HOOKTYPE != 'hookscriptmobile' ? '' : 'mobile').'plugin_'.($hookfunc[0].($hscript != 'global' ? '_'.$hscript : ''));
@@ -1409,6 +1412,7 @@ function hookscript($script, $hscript, $type = 'funcs', $param = array(), $func 
 					}
 				}
 			}
+/*vot*/	}
 		}
 	}
 	$_G['inhookscript'] = false;
@@ -2028,7 +2032,8 @@ function swapclass($class1, $class2 = '') {
 
 function writelog($file, $log) {
 	global $_G;
-	$yearmonth = dgmdate(TIMESTAMP, 'Ym', $_G['setting']['timeoffset']);
+//vot	$yearmonth = dgmdate(TIMESTAMP, 'Ym', $_G['setting']['timeoffset']);
+/*vot*/	$yearmonth = gmdate('Ym');
 	$logdir = DISCUZ_ROOT.'./data/log/';
 	$logfile = $logdir.$yearmonth.'_'.$file.'.php';
 	if(@filesize($logfile) > 2048000) {
@@ -2050,7 +2055,7 @@ function writelog($file, $log) {
 		@flock($fp, 2);
 		$log = is_array($log) ? $log : array($log);
 		foreach($log as $tmp) {
-			fwrite($fp, "<?PHP exit;?>\t".str_replace(array('<?', '?>'), '', $tmp)."\n");
+/*vot*/			fwrite($fp, "<?PHP exit;?>\t". date('Y-m-d H:i:s'). "\n". str_replace(array('<?', '?>'), '', $tmp)."\n");
 		}
 		fclose($fp);
 	}
@@ -2797,4 +2802,84 @@ function makeSearchSignUrl() {
 	}
 	return !empty($url) ? array($url, $params) : array();
 }
-?>
+
+
+//------------------------------------------------------------------
+function backtrace() {
+
+  $raw = debug_backtrace();
+   
+  echo "<div><b>BackTrace:</b>\n";
+  echo "<table border='1' cellPadding='4'>\n";
+  echo "<tr>\n";
+  echo "<th>File</th>\n";
+  echo "<th>Line</th>\n";
+  echo "<th>Function</th>\n";
+  echo "<th>Args</th>\n";
+  echo "</tr>\n";
+
+  foreach($raw as $entry){
+    $args = '';
+
+//DEBUG
+//echo "<pre>\n";
+//echo "entry: ";
+//print_r($entry);
+//echo "</pre>\n";
+
+    if($entry['function'] != 'backtrace') {
+      echo "<tr>\n";
+      echo "<td>".$entry['file']."</td>\n";
+      echo "<td>".$entry['line']."</td>\n";
+      echo "<td>".$entry['function']."</td>\n";
+
+      foreach ($entry['args'] as $a) {
+        if (!empty($args)) {
+            $args .= ', ';
+        }
+        switch (gettype($a)) {
+        case 'integer':
+        case 'double':
+            $args .= $a;
+            break;
+        case 'string':
+            $a = htmlspecialchars(substr($a, 0, 64)).((strlen($a) > 64) ? '...' : '');
+            $args .= "\"$a\"";
+            break;
+        case 'array':
+            $args .= 'Array('.count($a).')';
+            break;
+        case 'object':
+            $args .= 'Object('.get_class($a).')';
+            break;
+        case 'resource':
+            $args .= 'Resource('.strstr($a, '#').')';
+            break;
+        case 'boolean':
+            $args .= $a ? 'True' : 'False';
+            break;
+        case 'NULL':
+            $args .= 'Null';
+            break;
+        default:
+            $args .= 'Unknown';
+        }
+      }
+      if(!$args) $args = '&nbsp;';
+      echo "<td>".$args."</td>\n";
+      echo "</tr>\n";
+    }
+  }
+
+  echo "</table>\n";
+}
+
+//---------------------------------------
+//vot Write Debug Info (print_r)
+function writedebug($var,$title='') {
+  echo "<pre>";
+  if($title) echo '(',gettype($var),') ',$title;
+  print_r($var);
+  echo "<pre>";
+}
+
