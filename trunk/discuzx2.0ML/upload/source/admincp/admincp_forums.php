@@ -558,6 +558,7 @@ var rowtypedata = [
 		$forumselect = '';
 		$sgid = 0;
 		foreach($_G['cache']['forums'] as $forums) {
+/*vot*/			if(!isset($_G['gp_multi'])) $_G['gp_multi'] = array();
 			$checked = $fid == $forums['fid'] || in_array($forums['fid'], $_G['gp_multi']);
 			if($forums['type'] == 'group') {
 				$sgid = $forums['fid'];
@@ -1720,7 +1721,7 @@ EOT;
 					'postattachperm' => $_G['gp_postattachpermnew'],
 					'postimageperm' => $_G['gp_postimagepermnew'],
 					'relatedgroup' => $_G['gp_relatedgroupnew'],
-					'spviewperm' => implode("\t", $_G['gp_spviewpermnew']),
+/*vot*/					'spviewperm' => isset($_G['gp_spviewpermnew']) ? implode("\t", $_G['gp_spviewpermnew']) : '',
 				));
 			}
 			if($forumfielddata) {

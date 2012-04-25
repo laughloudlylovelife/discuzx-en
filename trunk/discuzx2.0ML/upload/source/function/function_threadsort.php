@@ -606,6 +606,7 @@ function getsortedoptionlist() {
 	$forum_optionlist = $_G['forum_optionlist'];
 	foreach($_G['forum_optionlist'] as $key => $value) {
 		$choicesarr = $value['choices'];
+/*vot*/		if(empty($choicesarr)) $choicesarr = array();
 		uksort($choicesarr, 'cmpchoicekey');
 		$forum_optionlist[$key]['choices'] = $choicesarr;
 	}
@@ -636,4 +637,3 @@ function optionlistxml($input, $pre = '') {
 	}
 	return $str;
 }
-?>

@@ -47,28 +47,35 @@
 			<div class="wp">
 				<div class="z">
 					<!--{loop $_G['setting']['topnavs'][0] $nav}-->
-<!--vot-->					<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->{$nav[code]}{$nav[navname]}</a><span class="pipe">|</span><!--{/if}-->
+<!--vot-->					<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
+<!--vot-->					{$nav[code]}{$nav[navname]}</a>
+<!--vot-->					<span class="pipe">|</span>
+<!--vot-->					<!--{/if}-->
 					<!--{/loop}-->
 					<!--{hook/global_cpnav_extra1}-->
 				</div>
 				<div class="y">
 					<!--{hook/global_cpnav_extra2}-->
 					<!--{loop $_G['setting']['topnavs'][1] $nav}-->
-<!--vot-->					<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->{$nav[code]}{$nav[navname]}</a><span class="pipe">|</span><!--{/if}-->
+<!--vot-->					<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->
+<!--vot-->					{$nav[code]}{$nav[navname]}</a>
+<!--vot-->					<span class="pipe">|</span>
+<!--vot-->					<!--{/if}-->
 					<!--{/loop}-->
 					<!--{if $_G['basescript'] == 'forum' && empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']}-->
 						<a href="javascript:;" onclick="widthauto(this)"><!--{if !$_G['forum_widthauto']}-->{lang switch_wide}<!--{else}-->{lang switch_narrow}<!--{/if}--></a>
-						<span class="pipe">|</span>
+<!--vot-->					<span class="pipe">|</span>
 					<!--{/if}-->
 
 					<!-- vot Multi-Lingual -->
 					<!--{if $_G[config][enable_multilingual]}-->
-					<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}">{lang change_language}:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
-					<span class="pipe">|</span>
+<!--vot-->					<a id="lslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'lslct','pos':'34!'})});" title="{lang change_language}">{lang change_language}:<img class="flag" src="{$_G[langurl]}{$_G[langicon]}"/></a>
+<!--vot-->					<span class="pipe">|</span>
 					<!--{/if}-->
 
-					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
 <!--vot-->					<a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}:<img src="{IMGDIR}/style_switch.png"></a>
+<!--vot-->					<span class="pipe">|</span>
+					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
 					<!--{/if}-->
 					<!--{if CURMODULE != 'topic' && $_G['group']['allowdiy'] && !empty($_G['style']['tplfile']) || CURMODULE == 'topic' && !empty($_G['style']['tplfile']) && ($_G['group']['allowaddtopic'] && $topic['uid'] == $_G['uid'] || $_G['group']['allowmanagetopic'])}-->
 						<a id="diy-tg" href="javascript:openDiy();" title="{lang open_diy}" class="xi1 xw1">DIY</a>
@@ -89,7 +96,7 @@
 			<!--{/loop}-->
 			</div>
 
-			<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
+<!--vot-->		<!--{if !empty($_G['style']['extstyle'])}-->
 				<div id="sslct_menu" class="cl p_pop" style="display: none;">
 <!--vot-->				<!--{if !$_G[style][defaultextstyle]}-->
 <!--vot-->					<a class="sslct_btn" onclick="extstyle('')"><i></i>{lang default}</a>

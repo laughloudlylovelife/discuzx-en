@@ -132,6 +132,7 @@ if(!$operation) {
 		foreach($hookscript as $script => $modules) {
 			foreach($modules as $module => $data) {
 				foreach(array('funcs' => '', 'outputfuncs' => '_output', 'messagefuncs' => '_message') as $functype => $funcname) {
+/*vot*/				    if(isset($data[$functype])) {
 					foreach($data[$functype] as $k => $funcs) {
 						$pluginids = array();
 						foreach($funcs as $func) {
@@ -144,6 +145,7 @@ if(!$operation) {
 							}
 						}
 					}
+/*vot*/				    }
 				}
 			}
 		}

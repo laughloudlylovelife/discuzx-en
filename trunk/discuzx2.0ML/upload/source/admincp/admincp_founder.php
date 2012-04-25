@@ -362,6 +362,8 @@ if($operation == 'perm') {
 	} elseif($do == 'notifyusers') {
 		$notifyusers = unserialize($_G['setting']['notifyusers']);
 		$notifytypes = explode(',', $_G['setting']['adminnotifytypes']);
+//writedebug($notifyusers,'notifyusers=');
+/*vot*/		if(!$notifyusers) $notifyusers = array();
 		if(!submitcheck('submit')) {
 			showpermstyle();
 			showsubmenu('menu_founder_perm', array(

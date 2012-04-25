@@ -1214,7 +1214,7 @@ Note on the CSS Hack:
 	Explain:		Quick login at the page header
 	Last Modify:	Pony
 */
-/*vot*/ .fastlg { width: 60%; line-height: 24px; float:right;}
+/*vot*/ .fastlg { /*width: 60%;*/ line-height: 24px; float:right;}
 	.fastlg td { padding: 2px 0 2px 4px; }
 	.fastlg_fm { margin-right: 5px; padding-right: 5px; border-right: 1px solid {COMMONBORDER}; }
 	#ls_fastloginfield_ctrl { line-height: 20px; border: none; background-color: transparent; background-position: 100% -1px; }
@@ -1344,7 +1344,7 @@ Note on the CSS Hack:
 	Explain:		Simulation <input type="file" /> Careful not to allow button too wide
 	Last Modify:	Pony
 */
-.filebtn { position: relative; margin: 0 auto; width: 60px; overflow: hidden; }
+/*vot*/ .filebtn { position: relative; margin: 0 auto; width: 70px; overflow: hidden; }
 	.filebtn .pf { position: absolute; right: 0; height: 23px; opacity: 0; filter:alpha(opacity=0); }
 
 /* Upload popup */

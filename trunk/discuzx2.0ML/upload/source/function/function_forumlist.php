@@ -161,7 +161,7 @@ function getcacheinfo($tid) {
 	$cache = array('filemtime' => 0, 'filename' => '');
 	$tidmd5 = substr(md5($tid), 3);
 	$fulldir = $cachethreaddir2.'/'.$tidmd5[0].'/'.$tidmd5[1].'/'.$tidmd5[2].'/';
-	$cache['filename'] = $fulldir.$tid.'.htm';
+/*vot*/	$cache['filename'] = $fulldir. DISCUZ_LANG . '_' .$tid.'.htm';
 	if(file_exists($cache['filename'])) {
 		$cache['filemtime'] = filemtime($cache['filename']);
 	} else {
