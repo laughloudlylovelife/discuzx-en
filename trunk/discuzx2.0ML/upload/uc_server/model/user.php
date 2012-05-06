@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: user.php 1078 2011-03-30 02:00:29Z monkey $
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -41,7 +42,7 @@ class usermodel {
 	function check_username($username) {
 		$guestexp = '\xA1\xA1|\xAC\xA3|^Guest|^\xD3\xCE\xBF\xCD|\xB9\x43\xAB\xC8';
 		$len = strlen($username);
-		$mblen = $this->dstrlen($username);
+/*vot*/		$mblen = $this->dstrlen($username);
 /*vot*/		if($len > 64) {
 /*vot*/			return FALSE;
 /*vot*/		} elseif($mblen < 2) {

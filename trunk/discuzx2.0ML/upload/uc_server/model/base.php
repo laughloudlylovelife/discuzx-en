@@ -5,10 +5,21 @@
 This is NOT a freeware, use is subject to license terms
 
 $Id: base.php 1059 2011-03-01 07:25:09Z monkey $
-	English by Valery Votintsev at sources.ru
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');
+
+//vot Define UC Language !!!
+//vot		include_once UC_ROOT.'./view/default/main.lang.php';
+//vot	!!!! ToDo: Add Language detection by Cookie/Input !!!!!!!!!!!!!!!
+//DEBUG
+//echo "base.php: uc_lang1=", UC_LANG, "<br>\n";
+/*vot*/		define('UC_LANG',UC_DEFAULT_LANG);
+/*vot*/		define('RTLSUFFIX',UC_DEFAULT_DIR == 'rtl' ? '_rtl' : '');
+///*vot*/		include_once UC_ROOT.'./language/'.UC_LANG.'/main.lang.php';
+//DEBUG
+//echo "base.php: uc_lang2=", UC_LANG, "<br>\n";
 
 class base {
 
@@ -65,8 +76,10 @@ class base {
 //vot Define UC Language !!!
 //vot		include_once UC_ROOT.'./view/default/main.lang.php';
 //vot	!!!! ToDo: Add Language detection by Cookie/Input !!!!!!!!!!!!!!!
+if(!defined('UC_LANG')) {
 /*vot*/		define('UC_LANG',UC_DEFAULT_LANG);
 /*vot*/		define('RTLSUFFIX',UC_DEFAULT_DIR == 'rtl' ? '_rtl' : '');
+}
 /*vot*/		include_once UC_ROOT.'./language/'.UC_LANG.'/main.lang.php';
 		$this->lang = &$lang;
 	}
