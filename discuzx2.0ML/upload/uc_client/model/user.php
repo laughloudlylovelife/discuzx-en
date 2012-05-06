@@ -5,6 +5,8 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: user.php 1078 2011-03-30 02:00:29Z monkey $
+
+	Modified by Valery Votintsev at sources.ru
 */
 
 !defined('IN_UC') && exit('Access Denied');
