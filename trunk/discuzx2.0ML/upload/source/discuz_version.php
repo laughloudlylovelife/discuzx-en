@@ -14,7 +14,7 @@ if(!defined('IN_DISCUZ')) {
 if(!defined('DISCUZ_VERSION')) {
 	define('DISCUZ_VERSION', 'X2');
 	define('DISCUZ_RELEASE', '20120329');
-	define('DISCUZ_ML_REVISION', '388');
+	define('DISCUZ_ML_REVISION', '389');
 }
 
 ?>
