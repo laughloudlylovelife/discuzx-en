@@ -16,8 +16,6 @@ $lang = array(
 	'TC_UTF8'		=> 'Traditionnelle Chinoise Encodage UTF8',//'繁体中文 UTF8 版',
 	'EN_ISO'		=> 'ENGLISH ISO8859', // 'ENGLISH ISO8859'
 	'EN_UTF8'		=> 'ENGLISH UTF-8', // 'ENGLISH UTF-8'
-	'FR_UTF8'		=> 'FRANCAIS UTF-8', // 'FRANCAIS UTF-8'
-	'FR_ISO'		=> 'FRANCAIS ISO8859', // 'FRANCAIS ISO8859'
 
 	'title_install'		=> SOFT_NAME.' Assistant de configuration',//SOFT_NAME.' 安装向导', // ' Setup Wizard'
 	'agreement_yes'		=> 'Je souscris',//'我同意', // 'I agree'
@@ -362,8 +360,10 @@ $lang = array(
 //vot	'install_region_data'		=> 'Install regional data',//'Install regional data',
 
 //---------------------------------------------------------------
+// Added by Bertrand
 
-
+	'FR_UTF8'		=> 'FRANCAIS UTF-8', // 'FRANCAIS UTF-8'
+	'FR_ISO'		=> 'FRANCAIS ISO8859', // 'FRANCAIS ISO8859'
 
 );
 
