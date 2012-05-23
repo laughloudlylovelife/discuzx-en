@@ -304,7 +304,7 @@ $lang = array (
   'mod_option_return'		=> 'Retourner au Forum',  // 'Return to forum'     
   'mod_option_subject'		=> 'Gestion sujets',  //  'Manage threads'    
   'modcp_logs'			=> 'Gesion logs ou Journaux',  // 'Manage logs'     
-
+'modcp_report'			=> 'Report Management',//'管理举报',
   'action'		=> 'Action',  // 'Action'     
   'delete_check'	=> 'Supprimer?',  // 'Del?'     
   'displayorder'	=> 'Commande',  //  'Order'    
