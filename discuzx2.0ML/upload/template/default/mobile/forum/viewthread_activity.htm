@@ -74,7 +74,7 @@
 	<!--{else}-->
 		<form name="activity" id="activity" method="post" autocomplete="off" action="forum.php?mod=misc&action=activityapplies&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if $_G['gp_from']}&from=$_G['gp_from']{/if}&mobile=yes" >
 			<input type="hidden" name="formhash" value="{FORMHASH}" />
-			
+
 			<!--{if $_G['setting']['activitycredit'] && $activity['credit'] && !$applied}--><p class="xi1">{lang activity_need_credit} $activity[credit] {$_G['setting']['extcredits'][$_G['setting']['activitycredit']][title]}</p><!--{/if}-->
                 <!--{if $activity['cost']}-->
                    <p>{lang activity_paytype} <label><input class="pr" type="radio" value="0" name="payment" id="payment_0" checked="checked" />{lang activity_pay_myself}</label> <label><input class="pr" type="radio" value="1" name="payment" id="payment_1" />{lang activity_would_payment} </label> <input name="payvalue" size="3" class="txt_s" /> {lang payment_unit}</p>
@@ -103,7 +103,7 @@
 				<!--{/if}-->
 			</div>
 		</form>
-		
+
 		<script type="text/javascript">
 			function succeedhandle_activityapplies(locationhref, message) {
 				showDialog(message, 'notice', '', 'location.href="' + locationhref + '"');

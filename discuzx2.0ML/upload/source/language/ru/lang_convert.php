@@ -6,7 +6,7 @@
  *      Convert Language File
  *      $Id: utility/convert/language/lang.php by Valery Votintsev at sources.ru
  */
-$language = array(
+$lang = array(
 
 	'config_dbhost'		=> 'Сервер базы данных',
 	'config_dbuser'		=> 'Пользователя базы данных',

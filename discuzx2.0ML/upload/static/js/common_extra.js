@@ -1015,12 +1015,12 @@ function _widthauto(obj) {
 		}
 		HTMLNODE.className += ' widthauto';
 		setcookie('widthauto', 1, 86400 * 30);
-/*vot*/		obj.innerHTML = lng['narrow_screen'];
+/*vot*/		obj.innerHTML = lng['narrow_screen'] + ' <img src="' +SITEURL+IMGDIR+ '/shrink.png">';
 	} else {
 		$('css_widthauto').disabled = true;
 		HTMLNODE.className = HTMLNODE.className.replace(' widthauto', '');
 		setcookie('widthauto', -1, 86400 * 30);
-/*vot*/		obj.innerHTML = lng['wide_screen'];
+/*vot*/		obj.innerHTML = lng['wide_screen'] + ' <img src="' +SITEURL+IMGDIR+ '/expand.png">';
 	}
 	hideMenu();
 }

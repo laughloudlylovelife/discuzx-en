@@ -168,16 +168,16 @@
 				<div class="rfm">
 					<table>
 						<tr>
-							<th><label for="lostpw_username">{lang username}:</label></th>
-							<td><input type="text" name="username" id="lostpw_username" size="30" value=""  tabindex="1" class="px p_fre" /></td>
+<!--vot-->						<th><label for="lostpw_email">{lang email}:</label></th>
+							<td><input type="text" name="email" id="lostpw_email" size="30" value=""  tabindex="1" class="px p_fre" /></td>
 						</tr>
 					</table>
 				</div>
 				<div class="rfm">
 					<table>
 						<tr>
-<!--vot-->						<th>{lang or} &nbsp; <label for="lostpw_email">{lang email}:</label></th>
-							<td><input type="text" name="email" id="lostpw_email" size="30" value=""  tabindex="1" class="px p_fre" /></td>
+<!--vot-->						<th>{lang or} &nbsp; <label for="lostpw_username">{lang username}:</label></th>
+							<td><input type="text" name="username" id="lostpw_username" size="30" value=""  tabindex="1" class="px p_fre" /></td>
 						</tr>
 					</table>
 				</div>
@@ -251,7 +251,7 @@
 <!--{else}-->
 	display('layer_login_$loginhash');
 	display('layer_lostpw_$loginhash');
-	$('lostpw_username').focus();
+/*vot*/	$('lostpw_email').focus();
 <!--{/if}-->
 </script>
 

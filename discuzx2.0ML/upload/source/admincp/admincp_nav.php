@@ -69,9 +69,9 @@ if($operation == 'headernav') {
 				$readonly = $nav['type'] == '4' ? ' readonly="readonly"' : '';
 /*vot*/				showtablerow('', array('', '', '', '', '',''), array(
 /*vot*/					(in_array($nav['type'], array('2', '1')) ? "<input class=\"checkbox\" type=\"checkbox\" name=\"delete[]\" value=\"$nav[id]\">" :
-					'<input type="checkbox" class="checkbox" value="" disabled="disabled" />').
-					($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ?
-					'<a href="javascript:;" class="left" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : ''),
+/*vot*/					'<input type="checkbox" class="checkbox" value="" disabled="disabled" />').
+/*vot*/					($subnavlist[$nav['id']] || $nav['identifier'] == 6 && $nav['type'] == 0 && count($pluginsubnav) ?
+/*vot*/					'<a href="javascript:;" class="left" onclick="toggle_group(\'subnav_'.$nav['id'].'\', this)">[+]</a>' : ''),
 					"<input type=\"text\" class=\"txt\" size=\"2\" name=\"displayordernew[$nav[id]]\" value=\"$nav[displayorder]\">",
 /*vot*/					"<div><input type=\"text\" class=\"txt\" size=\"15\" name=\"namenew[$nav[id]]\" value=\"".dhtmlspecialchars($nav['name'])."\"$readonly>".
 /*vot*/						($nav['identifier'] == 6 && $nav['type'] == 0 ? '' : "<a href=\"###\" onclick=\"addrowdirect=1;addrow(this, 1, $nav[id])\" class=\"addchildboard\">$lang[misc_customnav_add_submenu]</a>")."</div>",
@@ -163,7 +163,7 @@ if($operation == 'headernav') {
 </script>
 EOT;
 
-		} else { //if(!submitcheck('submit')) == Save nav list/order
+/*vot*/		} else { //if(!submitcheck('submit')) == Save nav list/order
 
 			if($ids = dimplode($_G['gp_delete'])) {
 				DB::query("DELETE FROM ".DB::table('common_nav')." WHERE navtype='0' AND id IN ($ids)");

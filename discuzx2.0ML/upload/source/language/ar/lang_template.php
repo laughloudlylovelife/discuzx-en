@@ -81,10 +81,6 @@ $lang = array (
 	'your_mobile_browser'		=> 'الهاتف/حدد ',
 	'e_redo'			=> 'إعادة',//'重做',
 	'e_undo'			=> 'تراجع',//'撤销',
-	'e_full_screen'			=> 'Full Screen',//'全屏',
-	'e_restore_size'		=> 'Restore size',//'恢复',
-	'e_simple'			=> 'General Mode',//'常用',
-	'e_advanced'			=> 'Advanced Mode',//'高级',
 	'header_add_frame'		=> 'إضافة اطار',//'添加框架',
 	'header_add_module'		=> 'إضافة مربع جانبي',//'添加模块',
 	'header_clearall'		=> 'مسح الكل',//'清空',
@@ -358,9 +354,14 @@ $lang = array (
 	'top_orderby_credits'		=> 'بواسطة عدد النقاط ',//'按积分总数',
 	'top_orderby_posts'		=> 'بواسطة عدد المشاركات ',//'按发帖总数',
 	'top_orderby_uid'		=> ' بواسطة وقت التسجيل ',//'按注册时间',
-	'search_friends'		=> 'البحث عن الأصدقاء',//'搜索好友',
+
 //---------------------------
 // Added by Valery Votintsev
+
+	'e_full_screen'			=> 'Full Screen',//'全屏',
+	'e_restore_size'		=> 'Restore size',//'恢复',
+	'e_simple'			=> 'General Mode',//'常用',
+	'e_advanced'			=> 'Advanced Mode',//'高级',
 
 //static/space/t1/style.css
 	'default_style'	=> 'الاستايل الافتراضي',//'[name]默认风格[/name]',
@@ -418,4 +419,3 @@ $lang = array (
 	'e_map_address'	=> 'أدخل مكان البحث: ',//'地址： ',
 );
 
-?>

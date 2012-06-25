@@ -449,7 +449,7 @@ Translated by Valery Votintsev
 			.tl .new {}
 			.tl .comm {}
 			.tl .frm { width: 150px; }
-			.tl .o { width: 20px; }
+/*vot*/			.tl .o { width: 20px; padding-left: 5px;}
 			.tl .num { width: 60px; line-height: 14px; }
 			.tl .by { width: 105px; line-height: 14px; }
 				.tl cite, .tl .num em { display: block; }

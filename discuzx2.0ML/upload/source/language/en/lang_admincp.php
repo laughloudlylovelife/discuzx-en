@@ -2161,7 +2161,7 @@ $lang = array
 	'forums_edit_extend_widthauto_-1'		=> 'Narrow-screen (fixed width)',//'窄屏(固定宽度)',
 	'forums_edit_extend_widthauto_1'		=> 'Wide-screen (free width)',//'宽屏(自由宽度)',
 	'forums_edit_extend_picstyle'			=> 'Enable the image list mode',//'开启图片列表模式',
-	'forums_edit_extend_picstyle_comment'		=> 'Images will be displayed in a list of topics. Thread cover can be unified: <a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">Set width and height</a>',//'主题列表将以图片方式显示，主题封面可统一<a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">设置宽高</a>',//'主题列表将以图片方式显示，主题封面可统一<a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">设置宽高</a>',
+	'forums_edit_extend_picstyle_comment'		=> 'Images will be displayed in a thread list.<br/>Thread cover can be unified: <a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">Set width and height</a>',//'主题列表将以图片方式显示，主题封面可统一<a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">设置宽高</a>',//'主题列表将以图片方式显示，主题封面可统一<a href="'.ADMINSCRIPT.'?action=setting&operation=styles&anchor=forumdisplay">设置宽高</a>',
 	'forums_edit_extend_allowside'			=> 'Show Sidebar',//'显示边栏',
 	'forums_edit_extend_allowside_comment'		=> 'Select "Yes" for show the sidebar section contents at Home.',//'选择“是”版块首页侧边将显示聚合本版内容的信息',
 	'forums_edit_extend_defaultorderfield'		=> '<span class="spectitle">Thread default sort field</span>',//'<span class="spectitle">主题默认排序字段</span>',

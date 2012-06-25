@@ -2055,7 +2055,7 @@ function writelog($file, $log) {
 		@flock($fp, 2);
 		$log = is_array($log) ? $log : array($log);
 		foreach($log as $tmp) {
-/*vot*/			fwrite($fp, "<?PHP exit;?>\t". date('Y-m-d H:i:s'). "\n". str_replace(array('<?', '?>'), '', $tmp)."\n");
+			fwrite($fp, "<?PHP exit;?>\t". str_replace(array('<?', '?>'), '', $tmp)."\n");
 		}
 		fclose($fp);
 	}

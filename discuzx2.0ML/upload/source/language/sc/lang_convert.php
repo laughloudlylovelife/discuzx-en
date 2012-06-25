@@ -4,9 +4,10 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *      Convert Language File
- *      $Id: utility/convert/language/lang.php by Valery Votintsev at sources.ru
+ *      was $Id: utility/convert/language/lang.php
+ *      $Id: lang_convert.php by Valery Votintsev at sources.ru
  */
-$language = array(
+$lang = array(
 
 	'config_dbhost'		=> '数据库服务器',//'Database server',
 	'config_dbuser'		=> '数据库用户名',//'Database username',

@@ -1,4 +1,4 @@
-<!--{eval 
+<!--{eval
 	$_G[home_tpl_titles] = array(lang('userapp/template', 'app_management'));
 }-->
 <!--{template common/header}-->
@@ -40,7 +40,7 @@
 				<div class="mgapp" id="applistcontent">
 					<h3 class="pbn bbda cl">
 						<a href="userapp.php?mod=manage&my_suffix=%2Fapp%2Flist" class="y xg1 xw0">{lang app_add}</a>
-						{lang my} $_G[setting][navs][5][navname]
+<!--vot-->					{lang my} $_G[setting][navs][5][navname]
 					</h3>
 					<!--{if $my_userapp}-->
 						<script type="text/javascript" src="{$_G[setting][jspath]}home_drag.js?{VERHASH}"></script>

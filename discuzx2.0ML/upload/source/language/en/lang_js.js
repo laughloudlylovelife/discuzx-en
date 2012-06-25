@@ -504,7 +504,7 @@ var lng = {
 	'no_style'		: 'No style',//'无样式',
 	'solid_line'		: 'Solid Line',//'实线',
 	'dotted_line'		: 'Dotted Line',//'点线',
-	'dashed_line'		: 'Dased Line',//'虚线',
+	'dashed_line'		: 'Dashed Line',//'虚线',
 //	'font'			: 'Font',//'字体',
 	'link'			: 'Link',//'链接',
 	'border'		: 'Border',//'边框',
