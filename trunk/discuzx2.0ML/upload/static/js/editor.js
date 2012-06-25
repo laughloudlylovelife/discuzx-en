@@ -970,7 +970,7 @@ function showEditorMenu(tag, params) {
 		switch(tag) {
 			case 'url':
 /*vot*/				str = lng['enter_link_url']+':<br /><input type="text" id="' + ctrlid + '_param_1" style="width: 98%" value="" class="px" />'+
-					(selection ? '' : '<br />'+lng['enter_link_text']+':<br /><input type="text" id="' + ctrlid + '_param_2" style="width: 98%" value="" class="px" />');
+/*vot*/					(selection ? '' : '<br />'+lng['enter_link_text']+':<br /><input type="text" id="' + ctrlid + '_param_2" style="width: 98%" value="" class="px" />');
 				break;
 			case 'forecolor':
 				showColorBox(ctrlid, 1);
@@ -995,20 +995,20 @@ function showEditorMenu(tag, params) {
 				}
 /*vot*/				var lang = {'quote' : lng['insert_quote'], 'code' : lng['insert_code'], 'hide' : lng['hide_content'], 'free' : lng['free_content']};
 /*vot*/				str += lang[tag] + ':<br /><textarea id="' + ctrlid + '_param_1" style="width: 98%" cols="50" rows="5" class="txtarea"></textarea>' +
-					(tag == 'hide' ? '<br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="pc" checked="checked" />'+lng['when_thread_replied']+'</label><br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="pc" />'+lng['when_points_more']+'</label> <input type="text" size="3" id="' + ctrlid + '_param_2" class="px pxs" /> '+lng['when_show'] : '');
+/*vot*/					(tag == 'hide' ? '<br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_1" class="pc" checked="checked" />' + lng['when_thread_replied'] + '</label><br /><label><input type="radio" name="' + ctrlid + '_radio" id="' + ctrlid + '_radio_2" class="pc" />' + lng['when_points_more'] + '</label> <input type="text" size="3" id="' + ctrlid + '_param_2" class="px pxs" /> ' + lng['when_show'] : '');
 				break;
 			case 'tbl':
-/*vot*/				str = '<p class="pbn">'+lng['table_rows']+': <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="px" /> &nbsp; '+lng['table_columns']+': <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="px" /></p><p class="pbn">'+lng['table_width']+': <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="px" /> &nbsp; '+lng['bg_color']+': <input type="text" id="' + ctrlid + '_param_4" size="2" class="px" onclick="showColorBox(this.id, 2)" /></p><p class="xg2 pbn" style="cursor:pointer" onclick="showDialog($(\'tbltips_msg\').innerHTML, \'notice\', \''+lng['tips']+'\', null, 0)"><img id="tbltips" title="'+lng['tips']+'" class="vm" src="' + IMGDIR + '/info_small.gif"> '+lng['table_intro0']+'</p>';
-/*vot*/				str += '<div id="tbltips_msg" style="display: none">'+lng['table_intro1']+'<div class=\'xs0\' style=\'margin:0 5px\'>'+lng['table_intro2']+'</div>'+lng['table_intro3']+'</div>';
+/*vot*/				str = '<p class="pbn">' + lng['table_rows'] + ': <input type="text" id="' + ctrlid + '_param_1" size="2" value="2" class="px" /> &nbsp; ' + lng['table_columns'] + ': <input type="text" id="' + ctrlid + '_param_2" size="2" value="2" class="px" /></p><p class="pbn">' + lng['table_width'] + ': <input type="text" id="' + ctrlid + '_param_3" size="2" value="" class="px" /> &nbsp; ' + lng['bg_color'] + ': <input type="text" id="' + ctrlid + '_param_4" size="2" class="px" onclick="showColorBox(this.id, 2)" /></p><p class="xg2 pbn" style="cursor:pointer" onclick="showDialog($(\'tbltips_msg\').innerHTML, \'notice\', \''+lng['tips']+'\', null, 0)"><img id="tbltips" title="' + lng['tips'] + '" class="vm" src="' + IMGDIR + '/info_small.gif"> ' + lng['table_intro0'] + '</p>';
+/*vot*/				str += '<div id="tbltips_msg" style="display: none">' + lng['table_intro1'] + '<div class=\'xs0\' style=\'margin:0 5px\'>' + lng['table_intro2'] + '</div>' + lng['table_intro3'] + '</div>';
 				break;
 			case 'aud':
-/*vot*/				str = '<p class="pbn">'+lng['audio_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="xg2 pbn">'+lng['audio_support']+'</p>';
+/*vot*/				str = '<p class="pbn">' + lng['audio_url'] + ':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="xg2 pbn">' + lng['audio_support'] + '</p>';
 				break;
 			case 'vid':
-/*vot*/				str = '<p class="pbn">'+lng['video_url']+':</p><p class="pbn"><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 220px;" class="px" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="500" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="375" class="px" /></p><p class="xg2 pbn">'+lng['video_support']+'</p>';
+/*vot*/				str = '<p class="pbn">' + lng['video_url'] + ':</p><p class="pbn"><input type="text" value="" id="' + ctrlid + '_param_1" style="width: 220px;" class="px" /></p><p class="pbn">' + lng['width'] + ': <input id="' + ctrlid + '_param_2" size="5" value="500" class="px" /> &nbsp; ' + lng['height'] + ': <input id="' + ctrlid + '_param_3" size="5" value="375" class="px" /></p><p class="xg2 pbn">' + lng['video_support'] + '</p>';
 				break;
 			case 'fls':
-/*vot*/				str = '<p class="pbn">'+lng['flash_url']+':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="pbn">'+lng['width']+': <input id="' + ctrlid + '_param_2" size="5" value="" class="px" /> &nbsp; '+lng['height']+': <input id="' + ctrlid + '_param_3" size="5" value="" class="px" /></p><p class="xg2 pbn">'+lng['flash_support']+'</p>';
+/*vot*/				str = '<p class="pbn">' + lng['flash_url'] + ':</p><p class="pbn"><input type="text" id="' + ctrlid + '_param_1" class="px" value="" style="width: 220px;" /></p><p class="pbn">' + lng['width'] + ': <input id="' + ctrlid + '_param_2" size="5" value="" class="px" /> &nbsp; ' + lng['height'] + ': <input id="' + ctrlid + '_param_3" size="5" value="" class="px" /></p><p class="xg2 pbn">'+lng['flash_support']+'</p>';
 				break;
 			case 'pasteword':
 /*vot*/				stitle = lng['paste_from_word'];
@@ -1133,10 +1133,10 @@ function showEditorMenu(tag, params) {
 				var bgcolor = $(ctrlid + '_param_4').value;
 				rows = /^[-\+]?\d+$/.test(rows) && rows > 0 && rows <= 30 ? rows : 2;
 				columns = /^[-\+]?\d+$/.test(columns) && columns > 0 && columns <= 30 ? columns : 2;
-				width = width.substr(width.length - 1, width.length) == '%' ? (width.substr(0, width.length - 1) <= 98 ? width : '98%') : (width <= 560 ? width : '98%');
+/*vot*/				width = width.substr(width.length - 1, width.length) == '%' ? (width.substr(0, width.length - 1) <= 98 ? width : '98%') : (width <= 560 ? width + 'px' : '98%');
 				bgcolor = /[\(\)%,#\w]+/.test(bgcolor) ? bgcolor : '';
 				if(wysiwyg) {
-					str = '<table cellspacing="0" cellpadding="0" width="' + (width ? width : '50%') + '" class="t_table"' + (bgcolor ? ' bgcolor="' + bgcolor + '"' : '') + '>';
+/*vot*/					str = '<table cellspacing="0" cellpadding="0" style="width:' + (width ? width : '50%') + '" class="t_table"' + (bgcolor ? ' bgcolor="' + bgcolor + '"' : '') + '>';
 					for (var row = 0; row < rows; row++) {
 						str += '<tr>\n';
 						for (col = 0; col < columns; col++) {

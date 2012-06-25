@@ -6,7 +6,7 @@
  *      Convert Language File
  *      $Id: utility/convert/language/lang.php by Valery Votintsev at sources.ru
  */
-$language = array(
+$lang = array(
 
 	'config_dbhost' => '數據庫服務器',//'Database server',
 	'config_dbuser' => '數據庫用戶名',//'Database username',
@@ -36,7 +36,7 @@ $language = array(
 	'config_from_data' => '源數據',//'Source data',
 	'config_target_forum' => '目標版塊',//'Target forum',
 	'config_poll' => '投票',//'Polls',
-	'config_event' => '活動','Events',
+	'config_event' => '活動',//'Events',
 	'config_auto_create' => '自動創建',//'Auto-create',
 	'config_convert' => '保存轉換配置',//'Save converted configuration',
 

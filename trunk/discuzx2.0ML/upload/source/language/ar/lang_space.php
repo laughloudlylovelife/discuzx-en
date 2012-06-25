@@ -252,6 +252,8 @@ $lang = array(
 	'viewthread_userinfo_lastdate'	=> 'آخر دخول',
 	'viewthread_userinfo_oltime'	=> 'إجمالي الدخول',
 
+//-------------------------------------------------------
+// Added by Khalid Nahhal
 	'facebook_profile'	=> 'عرض الملف الشخصي في الفيسبوك',
 	'add_facebook_friend'	=> 'إضافة صديق من الفيسبوك',
 );

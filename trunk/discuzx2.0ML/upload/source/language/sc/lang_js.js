@@ -389,8 +389,9 @@ var lng = {
 	'notify_on_reply_cancel'	: '取消回复通知',
 	'share_connection_failed'	: '分享服务连接失败，请稍后再试',
 	'qq_bind'		: '请先绑定QQ账号',
-	'quote_by'	: '本帖最后由 .*? 于 .*? 编辑',
-	'copy_code'	: '复制代码',
+	'quote_by'		: '本帖最后由 .*? 于 .*? 编辑',
+	'copy_code'		: '复制代码',
+	'set_cover'		: '设为封面',
 
 //--------------------------------
 //static/js/home.js
@@ -595,7 +596,7 @@ var lng = {
 	'password_fill'		: '请填写密码',
 	'password_again'	: '请再次输入密码',
 	'email_fill'		: '请输入邮箱地址',
-
+	'password_strength'	: '密码强度:',//'Password strength: ',
 //--------------------------------
 //static/js/smilies.js
 

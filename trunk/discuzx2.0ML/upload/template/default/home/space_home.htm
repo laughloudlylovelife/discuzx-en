@@ -200,7 +200,7 @@
 					</div>
 <!--vot-->				<div class="bm_h cl">
 						<span class="y">
-							<a href="home.php?mod=space&uid=$space[uid]&do=friend&view=visitor">{lang all}</a>
+						<a href="home.php?mod=space&uid=$space[uid]&do=friend&view=visitor">{lang all}</a>
 						</span>
 						<h2>{lang recent_visit}</h2>
 					</div>
@@ -235,9 +235,9 @@
 				<div class="bm">
 <!--vot-->				<div class="cl">
 						<span class="y">
-						<!--{if $_G['setting']['magicstatus'] && $_G['setting']['magics']['detector']}-->
-						<a id="a_magic_detector" href="home.php?mod=magic&mid=detector" onclick="showWindow('magics',this.href,'get', 0)" class="xg1" style="display: inline-block; padding-left: 18px; background: url({STATICURL}image/magic/detector.small.gif) no-repeat 0 50%;">{$_G[setting][magics][detector]}</a>
-						<!--{/if}-->
+							<!--{if $_G['setting']['magicstatus'] && $_G['setting']['magics']['detector']}-->
+							<a id="a_magic_detector" href="home.php?mod=magic&mid=detector" onclick="showWindow('magics',this.href,'get', 0)" class="xg1" style="display: inline-block; padding-left: 18px; background: url({STATICURL}image/magic/detector.small.gif) no-repeat 0 50%;">{$_G[setting][magics][detector]}</a>
+							<!--{/if}-->
 						</span>
 					</div>
 					<div class="bm_h cl">
@@ -449,7 +449,7 @@
 								<!--{if $day=='yesterday'}-->{lang yesterday}<!--{elseif $day=='today'}-->{lang today}<!--{else}-->$day<!--{/if}-->
 							</h4>
 						<!--{/if}-->
-	
+
 						<ul class="el">
 						<!--{loop $values $value}-->
 							<!--{template home/space_feed_li}-->

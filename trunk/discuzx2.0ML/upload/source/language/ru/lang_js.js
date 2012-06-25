@@ -311,7 +311,7 @@ var lng = {
 //--------------------------------
 //static/js/forum_moderate.js
 
-	'choose_tread'	: 'Вуберите тему для модерирования',//'请选择需要操作的帖子',
+	'choose_tread'	: 'Выберите тему для модерирования',//'请选择需要操作的帖子',
 
 //--------------------------------
 //static/js/forum_post.js
@@ -359,17 +359,17 @@ var lng = {
 	'attachments'		: 'Файлы',//'附件',
 	'upload_failed'		: 'Ошибка загрузки',//'上传失败',
 
-	'attach_big'		: 'Attachment size exceeds the allowed limit',//'服务器限制无法上传那么大的附件',
-	'attach_group_big'	: 'You user group total attachment size exceeds allowed limit',//'用户组限制无法上传那么大的附件',
-	'attach_type_big'	: 'This file type total attachment size exceeds allowed limit',//'文件类型限制无法上传那么大的附件',
-	'attach_daily_big'	: 'Daily total attachment size exceeds allowed limit',//'本日已无法上传更多的附件',
-	'validating_q&a'	: 'Validating the Q & A, please wait',//'验证问答校验中，请稍后',
-	'validating_code'	: 'Validating the code, please wait',//'验证码校验中，请稍后',
-	'attach_type_disabled'	: 'This attachment type is disabled',//'附件类型被禁止',
-	'attach_max'		: 'Not larger than',//'不能超过',
-	'vote_max_reached'	: 'Reached the maximum number of votes: ',//'已达到最大投票数',
-	'no_remote_attach'	: 'Sorry, no remote attachment',//'抱歉，暂无远程附件',
-	'delete_post_sure'	: 'Sure you want to delete this post?',//'确定要删除该帖子吗？',
+	'attach_big'		: 'Размер файла превышает допустимый лимит',//'服务器限制无法上传那么大的附件',
+	'attach_group_big'	: 'Вы превысили разрешенный для Вашей группы размер файла',//'用户组限制无法上传那么大的附件',
+	'attach_type_big'	: 'Превышен размер файла, установленный для данного типа файлов',//'文件类型限制无法上传那么大的附件',
+	'attach_daily_big'	: 'Превышен дневной лимит на загрузку файлов',//'本日已无法上传更多的附件',
+	'validating_q&a'	: 'Проверка ответа на секретный вопрос, ожидайте...',//'验证问答校验中，请稍后',
+	'validating_code'	: 'Проверка кода верификации, ожидайте...',//'验证码校验中，请稍后',
+	'attach_type_disabled'	: 'Данный тип файлов запрещён к закрузке',//'附件类型被禁止',
+	'attach_max'		: 'Не более чем ',//'不能超过',
+	'vote_max_reached'	: 'Превышен лимит голосов: ',//'已达到最大投票数',
+	'no_remote_attach'	: 'Данный файл не найден в сети',//'抱歉，暂无远程附件',
+	'delete_post_sure'	: 'Вы уверены, что хотите удалить этот постинг?',//'确定要删除该帖子吗？',
 //--------------------------------
 //static/js/forum_viewthread.js
 
@@ -390,7 +390,7 @@ var lng = {
 	'share_connection_failed'	: 'Ошибка подключения к сервису закладок. Пожалуйста, повторите попытку позже',//'分享服务连接失败，请稍后再试',
 	'qq_bind'		: 'Пожалуйста, подключите Ваш QQ аккаунт',//'请先绑定QQ账号',
 	'quote_by'	: 'Quote by .*? in .*? code',//'本帖最后由 .*? 于 .*? 编辑',
-	'copy_code'	: 'Копировать код',//'复制代码',
+	'copy_code'		: 'Копировать код',//'复制代码',
 
 //--------------------------------
 //static/js/home.js
@@ -452,7 +452,7 @@ var lng = {
 	'image_description'	: 'Описание изображения',//'图片描述',
 //	'upload_ok'		: 'Uploaded Successfully',//'上传成功',
 //	'upload_failed'		: 'Upload Failed',//'上传失败',
-	'uploading_wait'	: 'Загрузка, ждём-с...',//'上传中，请等待',
+	'uploading_wait'	: 'Загрузка, ожидайте...',//'上传中，请等待',
 	'retry'			: 'Повторить',//'重试',
 
 //--------------------------------
@@ -509,7 +509,7 @@ var lng = {
 	'dotted_line'		: 'Пунктирная линия',//'点线',
 	'dashed_line'		: 'Штриховая линия',//'虚线',
 //	'font'			: 'Font',//'字体',
-	'link'			: 'Ссылув',//'链接',
+	'link'			: 'Ссылка',//'链接',
 	'border'		: 'Бордюр',//'边框',
 	'size'			: 'Размер',//'大小',
 	'color'			: 'Цвет',//'颜色',
@@ -635,11 +635,11 @@ var lng = {
 //--------------------------------------------
 //static/js/googlemap.js + static/js/editor.js
 
-	'map_title'		: 'Google Maps',//'google图',
-	'map_insert'		: 'Insert Google Map',//'插入google地图',
-	'map_insert_tips'	: 'Insert Google Maps by address searching (temporarily supported only single label!)',//'通过搜索插入google地图（暂只支持单点标注）！',
-	'map_center_changed'	: 'The map center is changed!',//'地图中心已经改变！',
-	'map_wrong_address'	: 'Wrong address! Current address was not found',//' 地址错误，未找到当前地址',
+	'map_title'		: 'Карты Google',//'google图',
+	'map_insert'		: 'Вставить карту Google',//'插入google地图',
+	'map_insert_tips'	: 'Найти положение на карте по адресу (временно только по одному слову!)',//'通过搜索插入google地图（暂只支持单点标注）！',
+	'map_center_changed'	: 'Центрирование карты изменено!',//'地图中心已经改变！',
+	'map_wrong_address'	: 'Неверный адрес! Местоположение не найдено',//' 地址错误，未找到当前地址',
 
 //-------------------------------------
 //	''	: '',//'',

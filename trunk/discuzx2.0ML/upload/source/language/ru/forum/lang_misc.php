@@ -10,7 +10,7 @@
 $lang = array
 (
 	'discuz_lang'		=> 'misc',
-
+	'contact'		=> 'Контакты:',//'联系方式:',
 	'anonymous'		=> 'Анонимы',
 	'anonymoususer'		=> 'Аноним',
 	'guestuser'		=> 'Гость',
@@ -57,7 +57,7 @@ $lang = array
 	'post_trade_pm_buynum'		=> 'Количество покупаемого товара',
 	'post_trade_pm_wishprice'	=> 'Желательная цена',
 	'post_trade_pm_reason'		=> 'Причина предлагаемого изменения цены',
-
+	'post_deleted'			=> 'Неверный уровень, постинг был удалён',//'无效楼层，该帖已经被删除',
 	'postappend_content'		=> 'Добавить пост',
 	'payment_unit'			=> 'руб.',
 

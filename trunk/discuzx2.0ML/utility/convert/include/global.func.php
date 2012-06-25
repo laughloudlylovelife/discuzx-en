@@ -514,15 +514,15 @@ EOT;
 }
 
 function lang($name, $vars = array()) {
-	static $language;
+/*vot*/	static $lang;
 	if($language === null) {
 //vot		@include DISCUZ_ROOT.'./language/lang.php';
-/*vot*/		@include DISCUZ_ROOT.'./language/en/lang_update.php';
-		if(empty($language)) {
-			$language = array();
+/*vot*/		@include DISCUZ_ROOT.'./language/'. DISCUZ_LANG .'/lang_update.php';
+/*vot*/		if(empty($lang)) {
+/*vot*/			$lang = array();
 		}
 	}
-	$ret = isset($language[$name]) ? $language[$name] : $name;
+/*vot*/	$ret = isset($lang[$name]) ? $lang[$name] : $name;
 	if(!empty($vars)) {
 		foreach ($vars as $key => $value) {
 			$ret = str_replace('{'.$key.'}', $value);

@@ -8,11 +8,11 @@
  */
 
 $lang = array(
-	'hour'			=> 'Hour',//'小时',
+	'hour'			=> ' hour(s) ',//'小时',
 	'before'		=> ' ago',//'前',
-	'minute'		=> 'min.',//'分钟',
-	'second'		=> 'sec.',//'秒',
-	'now'			=> 'Now',//'现在',
+	'minute'		=> ' min. ',//'分钟',
+	'second'		=> ' sec. ',//'秒',
+	'now'			=> ' Now',//'现在',
 	'dot'			=> '. ',//'、',
 	'poll'			=> 'Polls',//'投票',
 	'blog'			=> 'Blogs',//'日志',

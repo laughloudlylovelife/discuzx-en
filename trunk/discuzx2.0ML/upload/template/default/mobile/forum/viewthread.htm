@@ -33,7 +33,7 @@
             <!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
                 <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]" >[{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}]</a>
             <!--{/if}-->
-            
+
             <a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_G[gp_extra]" id="thread_subject" >$_G[forum_thread][subject]</a>
             <!--{if $_G['forum_thread'][displayorder] == -2}--> <span class="xg1">({lang moderating})</span>
             <!--{elseif $_G['forum_thread'][displayorder] == -3}--> <span class="xg1">({lang have_ignored})</span>
@@ -123,7 +123,7 @@
                         <!--{if $_G['forum_thread']['price'] > 0 && $_G['forum_thread']['special'] == 0}-->
                             {lang pay_threads}: <strong>$_G[forum_thread][price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]} </strong> <a href="forum.php?mod=misc&action=viewpayments&tid=$_G[tid]" >{lang pay_view}</a>
                         <!--{/if}-->
-                        
+
                         <!--{if $post['first'] && $threadsort && $threadsortshow}-->
                         	<!--{if $threadsortshow['optionlist'] && !($post['status'] & 1) && !$_G['forum_threadpay']}-->
                                 <!--{if $threadsortshow['optionlist'] == 'expire'}-->
@@ -140,8 +140,8 @@
                                 <!--{/if}-->
                             <!--{/if}-->
                         <!--{/if}-->
-                        
-                        
+
+
                         <!--{if $post['first']}-->
                             <!--{if !$_G[forum_thread][special]}-->
                                 <div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
@@ -164,7 +164,7 @@
                         <!--{else}-->
                             <div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
                         <!--{/if}-->
-                        
+
                         <!--{if $post['attachment']}-->
                         	<div class="warning">
                             {lang attachment}: <em><!--{if $_G['uid']}-->{lang attach_nopermission}<!--{else}-->{lang attach_nopermission_login}<!--{/if}--></em>

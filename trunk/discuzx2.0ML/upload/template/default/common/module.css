@@ -182,41 +182,12 @@ Modified by Valery Votintsev, codersclub.org
 .appl { float: right; margin-top: 8px; border: none; background-color: transparent; }
 .upf { width: 500px; }
 *+html .upf { width: 520px; }
-	.p_tbl { height: auto; line-height: 160%; border-bottom: none; }
-		.p_tbl table { *table-layout: fixed; }
-			.p_tbl table td { height: 28px; line-height: 28px; border-bottom: 1px solid {COMMONBG}; }
-				.atnu { width: 16px; }
-				/*.attachctrl { width: 40px; }*/
-				.atna {}
-					.atna p img, .attswf p img { vertical-align: middle; height: 16px; }
-					.atna .lighttxt, .attswf .lighttxt { color: {MIDTEXT} !important; }
-				.attpr { width: 40px; text-align: center; }
-					.attv .px, .attp .px { width: 25px; }
-					.attv { width: 100px; }
-				.atturl img { height: 20px !important; }
-				.attc { width: 20px }
-				*+html .attc { width: 40px; }
-				.atds { width: 80px; text-align: center; }
-					.atds .px { width: 60px; }
-				.attp { text-align: center; width: 40px; }
-		.upfl { height: auto !important; height: 165px; max-height: 300px; overflow: auto; overflow-x: hidden; }
-			.upfl a, #imgattachlist a { color: {HIGHLIGHTLINK}; }
-			.upfl table td { border-bottom: 1px solid {SPECIALBORDER}; height: 30px; line-height: 24px; }
 
-	.upnf { white-space: normal; }
-	.upbk { zoom: 1; }
-		.fldt { margin-bottom: 8px; }
-	/* Upload file a list of unused */
-	.ufl { width: 300px; }
-	.ufl p{ padding: 4px 0; border-top: 1px solid {SPECIALBORDER}; }
+.upnf { white-space: normal; }
+.upbk { zoom: 1; }
+	.fldt { margin-bottom: 8px; }
 
-	.p_pop .flb { position: absolute; right: 10px; top: 18px; *top: 13px; }
-
-.imgl { margin-bottom: 5px; width: 100%; *width: 99.6%; }
-	.imgl td { padding: 8px 0; text-align: center; }
-	.imgl img { border: 1px solid {LIGHTTEXT}; }
-	.imgf .px { width: 106px; padding: 2px; height: 14px; line-height: 14px; }
-	.imgdeleted { opacity: 0.3; filter: alpha(opacity=30); }
+.p_pop .flb { position: absolute; right: 10px; top: 18px; *top: 13px; }
 
 .fnm { width: 100px !important; }
 .fszm { width: 55px !important; line-height: normal; }
@@ -243,6 +214,42 @@ Modified by Valery Votintsev, codersclub.org
 	#draftlist.a { position: relative; z-index: 302; border-color: {DROPMENUBORDER}; {DROPMENUBGCODE} }
 	#draftlist_menu { margin-top: -1px; padding: 10px; border: 1px solid {DROPMENUBORDER}; {DROPMENUBGCODE}; }
 /** end **/
+
+
+/** forum::post,forum::forumdisplay,forum::viewthread,group::post,group::forumdisplay,group::viewthread,portal::portalcp,home::spacecp **/
+.p_tbl { height: auto; line-height: 160%; border-bottom: none; }
+	.p_tbl table { *table-layout: fixed; }
+		.p_tbl table td { height: 28px; line-height: 28px; border-bottom: 1px solid {COMMONBG}; }
+			.atnu { width: 16px; }
+			/*.attachctrl { width: 40px; }*/
+			.atna {}
+				.atna p img, .attswf p img { vertical-align: middle; height: 16px; }
+				.atna .lighttxt, .attswf .lighttxt { color: {MIDTEXT} !important; }
+			.attpr { width: 40px; text-align: center; }
+				.attv .px, .attp .px { width: 25px; }
+				.attv { width: 100px; }
+			.atturl img { height: 20px !important; }
+			.attc { width: 20px }
+			*+html .attc { width: 40px; }
+			.atds { width: 80px; text-align: center; }
+				.atds .px { width: 60px; }
+			.attp { text-align: center; width: 40px; }
+/** end **/
+
+
+/** forum::post,group::post,portal::portalcp,home::spacecp **/
+/* Post, blog, upload image list style by Pony 11090615 */
+.upfl { height: auto !important; height: 165px; max-height: 300px; overflow: auto; overflow-x: hidden; }
+	.upfl a, #imgattachlist a { color: {HIGHLIGHTLINK}; }
+	.upfl table td { border-bottom: 1px solid {SPECIALBORDER}; height: 30px; line-height: 24px; }
+	/* Upload file a list of unused */
+	.ufl { width: 300px; }
+	.ufl p{ padding: 4px 0; border-top: 1px solid {SPECIALBORDER}; }
+.imgl { margin-bottom: 5px; width: 100%; *width: 99.6%; }
+	.imgl td { padding: 8px 0; text-align: center; }
+	.imgl img { border: 1px solid {LIGHTTEXT}; }
+	.imgf .px { width: 106px; padding: 2px; height: 14px; line-height: 14px; }
+	.imgdeleted { opacity: 0.3; filter: alpha(opacity=30); }
 
 /** forum::viewthread,forum::forumdisplay,forum::post,group **/
 /* Thread icon by michael */
@@ -445,12 +452,12 @@ Modified by Valery Votintsev, codersclub.org
 				.tl th a:visited { color: {MIDTEXT}; }
 				.fromg { visibility: hidden; }
 				.ie6 .fromg, tr:hover .fromg { visibility: visible; }
-			.tl .icn { padding-left: 5px; width: 25px; text-align: left; }
+/*vot*/			.tl .icn { padding-right: 5px; width: 20px; text-align: left; }
 				.tl .icn a:hover { text-decoration: none; }
 			.tl .new {}
 			.tl .comm {}
 			.tl .frm { width: 150px; }
-			.tl .o { width: 20px; }
+/*vot*/			.tl .o { width: 20px; padding-right: 5px;}
 			.tl .num { width: 60px; line-height: 14px; }
 			.tl .by { width: 105px; line-height: 14px; }
 				.tl cite, .tl .num em { display: block; }
@@ -1320,15 +1327,15 @@ i.pstatus { display: block; margin-bottom: -30px; font-size: 12px; text-align: c
 	.facel { padding: 8px; width: 240px; }
 		.facel img { margin: 5px; }
 
-/* View profile by lushnis */
-	#pprl li { clear: both; padding: 3px 0 3px 90px; }
-/*vot*/		#pprl li em { float: left; margin-left: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
-	#pbbs li, #psts li, #pntc li { clear: none; float: left; width: 270px }
-
 /* Reminded of the content will be used. This stand-alone class, so personalized. To make the content more visible reminder, the span can be defined under the summary */
 	.summary { margin: 10px 0; }
 /** end **/
 
+
+/* View profile by lushnis */
+	#pprl li { clear: both; padding: 3px 0 3px 90px; }
+/*vot*/		#pprl li em { float: left; margin-left: -90px; width: 140px; white-space: nowrap; overflow: hidden; }
+	#pbbs li, #psts li, #pntc li { clear: none; float: left; width: 270px }
 
 /** home::space,home::spacecp,home::medal,misc::ranklist **/
 	/* Space Image list */
