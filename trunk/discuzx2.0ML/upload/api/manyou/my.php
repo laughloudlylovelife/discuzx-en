@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: my.php 28993 2012-03-22 01:54:47Z songlixin $
+ *      $Id: my.php 30833 2012-06-25 07:41:12Z zhouxiaobo $
  */
 
 define('IN_API', true);
@@ -1093,7 +1093,7 @@ class My extends Manyou {
 	function onSearchGetUpdatedPosts($num, $lastPostIds = array()) {
 
 		if ($lastPostIds) {
-			$sql = sprintf("DELETE FROM %s WHERE pid IN (%s)", DB::table('forum_postlog'), implode($lastPostIds, ', '));
+			$sql = sprintf("DELETE FROM %s WHERE pid IN (%s)", DB::table('forum_postlog'), dimplode($lastPostIds));
 			DB::query($sql);
 		}
 
@@ -1153,7 +1153,7 @@ class My extends Manyou {
 		if (!$pIds) {
 			return false;
 		}
-		$sql = sprintf("DELETE FROM %s WHERE pid IN (%s)", DB::table('forum_postlog'), implode($pIds, ', '));
+		$sql = sprintf("DELETE FROM %s WHERE pid IN (%s)", DB::table('forum_postlog'), dimplode($pIds));
 		DB::query($sql);
 		return true;
 	}
@@ -1243,7 +1243,7 @@ class My extends Manyou {
 			$authorids = array_keys($authors);
 			if ($authorids) {
 				$banuids= $uids = array();
-				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 				$query = DB::query($sql);
 				while ($author = DB::fetch($query)) {
 					$uids[$author['uid']] = $author['uid'];
@@ -1343,7 +1343,7 @@ class My extends Manyou {
 			$authorids = array_keys($authors);
 			if ($authorids) {
 				$banuids= $uids = array();
-				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 				$query = DB::query($sql);
 				while ($author = DB::fetch($query)) {
 					$uids[$author['uid']] = $author['uid'];
@@ -1493,7 +1493,7 @@ class My extends Manyou {
 			$authorids = array_keys($authors);
 			if ($authorids) {
 				$banuids= $uids = array();
-				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 				$query = DB::query($sql);
 				while ($author = DB::fetch($query)) {
 					$uids[$author['uid']] = $author['uid'];
@@ -1613,13 +1613,13 @@ class My extends Manyou {
 	function onSearchGetUpdatedThreads($num, $lastThreadIds = array(), $lastForumIds = array(), $lastUserIds = array()) {
 
 		if ($lastThreadIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog'). ' WHERE tid IN (' . implode($lastThreadIds, ', ') . ")");
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog'). ' WHERE tid IN (' . dimplode($lastThreadIds) . ")");
 		}
 		if ($lastForumIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE fid IN (' . implode($lastForumIds, ', ') . ") AND tid = 0");
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE fid IN (' . dimplode($lastForumIds) . ") AND tid = 0");
 		}
 		if ($lastUserIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE uid IN (' . implode($lastUserIds, ', ') . ") AND tid = 0");
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE uid IN (' . dimplode($lastUserIds) . ") AND tid = 0");
 		}
 
 		$result = array();
@@ -1723,13 +1723,13 @@ class My extends Manyou {
 	function onSearchRemoveThreadLogs($lastThreadIds = array(), $lastForumIds = array(), $lastUserIds = array()) {
 
 		if ($lastThreadIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE tid IN (' . implode($lastThreadIds, ', ') . ')');
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE tid IN (' . dimplode($lastThreadIds) . ')');
 		}
 		if ($lastForumIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE fid IN (' . implode($lastForumIds, ', ') . ') AND tid = 0');
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE fid IN (' . dimplode($lastForumIds) . ') AND tid = 0');
 		}
 		if ($lastUserIds) {
-			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE uid IN (' . implode($lastUserIds, ', ') . ') AND tid = 0');
+			DB::query('DELETE FROM ' . DB::table('forum_threadlog') . ' WHERE uid IN (' . dimplode($lastUserIds) . ') AND tid = 0');
 		}
 
 		return true;
@@ -1775,7 +1775,7 @@ class My extends Manyou {
 		$authorids = array_keys($authors);
 		if ($authorids) {
 			$banuids= $uids = array();
-			$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+			$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 			$query = DB::query($sql);
 			while ($author = DB::fetch($query)) {
 				$uids[$author['uid']] = $author['uid'];
@@ -1874,7 +1874,7 @@ class My extends Manyou {
 			$authorids = array_keys($authors);
 			if ($authorids) {
 				$banuids= $uids = array();
-				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 				$query = DB::query($sql);
 				while ($author = DB::fetch($query)) {
 					$uids[$author['uid']] = $author['uid'];
@@ -2030,7 +2030,7 @@ class My extends Manyou {
 			$authorids = array_keys($authors);
 			if ($authorids) {
 				$banuids= $uids = array();
-				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), implode($authorids, ', '));
+				$sql = sprintf('SELECT uid, username, groupid FROM %s WHERE uid IN (%s)', DB::table('common_member'), dimplode($authorids));
 				$query = DB::query($sql);
 				while ($author = DB::fetch($query)) {
 					$uids[$author['uid']] = $author['uid'];

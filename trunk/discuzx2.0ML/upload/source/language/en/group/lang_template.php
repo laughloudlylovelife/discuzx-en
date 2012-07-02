@@ -201,10 +201,5 @@ $lang = array (
 	'orderby_default'		=> 'Default order',//'默认排序',
 	'stats_main_threads_count'	=> 'Threads',//'主题数',
 	'threads'			=> 'Threads',//'主题',
-// Obsolete
-//	'group_image_resize'	=> 'The image will be automatically resized to 644 X 150 px',//'自动缩略成 720 X 168 像素大小的图片',
-	'group_create_notice'	=> 'Note: You can change other group details after the group creating. But the group name and category can not be modified later.',//'注：除群组名称和分类暂时不能修改外，其它项目在创建完成后仍可修改。',
-	'replies/views'		=> 'Replies/Views',//'回复/查看',//vot
 );
 
-?>

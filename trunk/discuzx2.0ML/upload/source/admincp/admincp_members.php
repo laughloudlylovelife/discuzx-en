@@ -217,8 +217,7 @@ EOF;
 		'field6' => '',
 		'field7' => '',
 		'field8' => '');
-/*vot*/	$query = DB::query("SELECT fieldid, title
-			    FROM ".DB::table('common_member_profile_setting'));
+	$query = DB::query("SELECT fieldid, title FROM ".DB::table('common_member_profile_setting'));
 	while($value = DB::fetch($query)) {
 		if(isset($title[$value['fieldid']])) {
 			$title[$value['fieldid']] = $value['title'];
@@ -2167,7 +2166,7 @@ EOF;
 		showtablerow('', array('', 'class="td28" colspan="3"', 'class="td28" colspan="2"'), array(
 			$lang['add_new'],
 			'<input type="text" class="txt" name="ip1new" value="'.$iptoban[0].'" size="3" maxlength="3">.<input type="text" class="txt" name="ip2new" value="'.$iptoban[1].'" size="3" maxlength="3">.<input type="text" class="txt" name="ip3new" value="'.$iptoban[2].'" size="3" maxlength="3">.<input type="text" class="txt" name="ip4new" value="'.$iptoban[3].'" size="3" maxlength="3">',
-			$lang['validity'].': <input type="text" class="txt" name="validitynew" value="30" size="3"> '.$lang['days']
+/*vot*/			$lang['validity'].': <input type="text" class="txt" name="validitynew" value="9999" size="3"> '.$lang['days']
 		));
 		showsubmit('ipbansubmit', 'submit', 'del');
 		showtablefooter();

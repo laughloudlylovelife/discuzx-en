@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: uc.php 28842 2012-03-14 10:42:48Z svn_project_zhangjie $
+ *      $Id: uc.php 29457 2012-04-13 01:31:12Z svn_project_zhangjie $
  */
 
 error_reporting(0);
@@ -45,8 +45,6 @@ if(!defined('IN_UC')) {
 
 	$discuz = & discuz_core::instance();
 	$discuz->init();
-
-	require DISCUZ_ROOT.'./config/config_ucenter.php';
 
 	$get = $post = array();
 

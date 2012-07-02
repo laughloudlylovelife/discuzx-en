@@ -3,14 +3,15 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: install.php 29021 2012-03-22 09:35:55Z songlixin $
+ *      $Id: install.php 29291 2012-03-31 10:36:17Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-$sql = "SHOW COLUMNS FROM pre_forum_attachment_0";
+$table = DB::table('forum_attachment_0');
+$sql = "SHOW COLUMNS FROM " . $table;
 $query = DB::query($sql);
 while($installdata = DB::fetch($query)){
 	$installf[] = $installdata['Field'];

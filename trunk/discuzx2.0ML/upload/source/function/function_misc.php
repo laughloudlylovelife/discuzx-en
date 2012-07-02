@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_misc.php 27060 2012-01-04 01:32:05Z songlixin $
+ *      $Id: function_misc.php 30186 2012-05-16 03:21:53Z zhengqingpeng $
  *	GeoIP Support by Valery Votintsev, http://codersclub.org/discuzx/
  */
 
@@ -279,7 +279,11 @@ function procthread($thread, $timeformat = 'd') {
 	if($postsnum  > $_G['ppp']) {
 		$posts = $postsnum;
 		$topicpages = ceil($posts / $_G['ppp']);
-		$domain = 'http://'.($_G['setting']['domain']['app']['forum'] ? $_G['setting']['domain']['app']['forum'] : ($_G['setting']['domain']['app']['default'] ? $_G['setting']['domain']['app']['default'] : '')).'/';
+		if($_G['setting']['domain']['app']['forum'] || $_G['setting']['domain']['app']['default']) {
+			$domain = 'http://'.($_G['setting']['domain']['app']['forum'] ? $_G['setting']['domain']['app']['forum'] : ($_G['setting']['domain']['app']['default'] ? $_G['setting']['domain']['app']['default'] : '')).'/';
+		} else {
+			$domain = $_G['siteurl'];
+		}
 		for($i = 1; $i <= $topicpages; $i++) {
 			if(!in_array('forum_viewthread', $_G['setting']['rewritestatus'])) {
 				$pagelinks .= '<a href="forum.php?mod=viewthread&tid='.$thread['tid'].'&page='.$i.($_G['gp_from'] ? '&from='.$_G['gp_from'] : '').'" target="_blank">'.$i.'</a> ';

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_forumdisplay.php 29143 2012-03-27 09:04:37Z chenmengshu $
+ *      $Id: forum_forumdisplay.php 30549 2012-06-01 09:29:51Z zhengqingpeng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -247,18 +247,13 @@ foreach($_G['cache']['forums'] as $sub) {
 		}
 		$subexists = 1;
 		$sublist = array();
-/*vot*/		$sql = !empty($_G['member']['accessmasks']) ?
-				"SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect, a.allowview
-				 FROM ".DB::table('forum_forum')." f
-				 LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid
-				 LEFT JOIN ".DB::table('forum_access')." a ON a.uid='$_G[uid]' AND a.fid=f.fid
-				 WHERE fup='$_G[fid]' AND status>'0' AND type='sub'
-				 ORDER BY f.displayorder"
-			      : "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect
-				 FROM ".DB::table('forum_forum')." f
-				 LEFT JOIN ".DB::table('forum_forumfield')." ff USING(fid)
-				 WHERE f.fup='$_G[fid]' AND f.status>'0' AND f.type='sub'
-				 ORDER BY f.displayorder";
+		$sql = !empty($_G['member']['accessmasks']) ? "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect, a.allowview FROM ".DB::table('forum_forum')." f
+						LEFT JOIN ".DB::table('forum_forumfield')." ff ON ff.fid=f.fid
+						LEFT JOIN ".DB::table('forum_access')." a ON a.uid='$_G[uid]' AND a.fid=f.fid
+						WHERE fup='$_G[fid]' AND status>'0' AND type='sub' ORDER BY f.displayorder"
+					: "SELECT f.fid, f.fup, f.type, f.name, f.threads, f.posts, f.todayposts, f.lastpost, f.domain, ff.description, ff.moderators, ff.icon, ff.viewperm, ff.extra, ff.redirect FROM ".DB::table('forum_forum')." f
+						LEFT JOIN ".DB::table('forum_forumfield')." ff USING(fid)
+						WHERE f.fup='$_G[fid]' AND f.status>'0' AND f.type='sub' ORDER BY f.displayorder";
 		$query = DB::query($sql);
 		while($sub = DB::fetch($query)) {
 			$sub['extra'] = unserialize($sub['extra']);
@@ -443,11 +438,7 @@ if(($_G['forum']['status'] != 3 && $_G['forum']['allowside']) || !empty($_G['for
 			$whosonline = array();
 			$forumname = strip_tags($_G['forum']['name']);
 
-/*vot*/			$query = DB::query("SELECT uid, groupid, username, invisible, lastactivity
-					    FROM ".DB::table('common_session')."
-					    WHERE uid>'0' AND fid='$_G[fid]' AND invisible='0'
-					    ORDER BY lastactivity DESC
-					    LIMIT 12");
+			$query = DB::query("SELECT uid, groupid, username, invisible, lastactivity FROM ".DB::table('common_session')." WHERE uid>'0' AND fid='$_G[fid]' AND invisible='0' ORDER BY lastactivity DESC LIMIT 12");
 			$_G['setting']['whosonlinestatus'] = 1;
 			while($online = DB::fetch($query)) {
 				if($online['uid']) {
@@ -568,23 +559,20 @@ if(($start_limit && $start_limit > $stickycount) || !$stickycount || $filterbool
 		$indexadd = " FORCE INDEX (digest) ";
 	}
 	$querysticky = '';
-/*vot*/	$query = DB::query("SELECT t.*
-			FROM ".DB::table($threadtable)." t $indexadd
-			WHERE $fidsql $filteradd AND ($displayorderadd)
-			ORDER BY t.displayorder DESC, t.$_G[gp_orderby] $_G[gp_ascdesc]
-			LIMIT ".($filterbool ? $start_limit : $start_limit - $stickycount).", $_G[tpp]");
+	$query = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t $indexadd
+		WHERE $fidsql $filteradd AND ($displayorderadd)
+		ORDER BY t.displayorder DESC, t.$_G[gp_orderby] $_G[gp_ascdesc]
+		LIMIT ".($filterbool ? $start_limit : $start_limit - $stickycount).", $_G[tpp]");
 
 } else {
 
-/*vot*/	$querysticky = DB::query("SELECT t.*
-			FROM ".DB::table($threadtable)." t
-			WHERE t.tid IN ($stickytids) AND (t.displayorder IN (2, 3, 4))
-			ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
-			LIMIT $start_limit, ".($stickycount - $start_limit < $_G['tpp'] ? $stickycount - $start_limit : $_G['tpp']));
+	$querysticky = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t
+		WHERE t.tid IN ($stickytids) AND (t.displayorder IN (2, 3, 4))
+		ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
+		LIMIT $start_limit, ".($stickycount - $start_limit < $_G['tpp'] ? $stickycount - $start_limit : $_G['tpp']));
 
 	if($_G['tpp'] - $stickycount + $start_limit > 0) {
-/*vot*/		$query = DB::query("SELECT t.*
-			FROM ".DB::table($threadtable)." t
+		$query = DB::query("SELECT t.* FROM ".DB::table($threadtable)." t
 			WHERE $fidsql $filteradd AND ($displayorderadd)
 			ORDER BY displayorder DESC, $_G[gp_orderby] $_G[gp_ascdesc]
 			LIMIT ".($_G['tpp'] - $stickycount + $start_limit));
@@ -721,6 +709,11 @@ while(($querysticky && $thread = DB::fetch($querysticky)) || ($query && $thread 
 	$threadids[] = $thread['tid'];
 	$_G['forum_threadlist'][] = $thread;
 
+}
+
+if(empty($_G['forum_threadlist']) && $page <= ceil($_G['forum_threadcount'] / $_G['tpp'])) {
+	require_once libfile('function/post');
+	updateforumcount($_G['fid']);
 }
 
 if($_G['setting']['verify']['enabled'] && $verifyuids) {

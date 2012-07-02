@@ -291,12 +291,15 @@ class block_groupthread {
 		if($orderby == 'heats') {
 			$sql .= " AND t.heats>'0'";
 		}
+		$sqlfrom = $sqlfield = $joinmethodpic = '';
 
-		$sqlfield = '';
-		$sqlfrom = "FROM `".DB::table('forum_thread')."` t";
-		$joinmethod = empty($tids) ? 'INNER' : 'LEFT';
 		if($picrequired) {
-/*vot*/			$sqlfrom .= " $joinmethod JOIN `".DB::table('forum_threadimage')."` ti ON (t.tid=ti.tid AND ti.tid>0)";
+			$joinmethodpic = 'INNER';
+		} else if($style['getpic']) {
+			$joinmethodpic = 'LEFT';
+		}
+		if($joinmethodpic) {
+/*vot*/			$sqlfrom .= " $joinmethodpic JOIN `".DB::table('forum_threadimage')."` ti ON (t.tid=ti.tid AND ti.tid>0)";
 			$sqlfield = ', ti.attachment as attachmenturl, ti.remote';
 		}
 		if(empty($fids)) {
@@ -305,6 +308,7 @@ class block_groupthread {
 		}
 
 		$query = DB::query("SELECT t.* $sqlfield
+			FROM `".DB::table('forum_thread')."` t
 			$sqlfrom WHERE t.readperm='0'
 			$sql
 			AND t.displayorder>='0'

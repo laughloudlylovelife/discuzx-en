@@ -10,7 +10,7 @@
 $lang = array
 (
 	'discuz_lang'		=> 'misc',
-
+	'contact'		=> 'Contacts:',//'联系方式:',
 	'anonymous'		=> 'Anonymous',//'匿名',
 	'anonymoususer'		=> 'Anonymous',
 	'guestuser'		=> 'Guest',
@@ -57,7 +57,7 @@ $lang = array
 	'post_trade_pm_buynum'		=> 'Buy amount',//'购买数量',
 	'post_trade_pm_wishprice'	=> 'Wish Price',//'我期望的价格是',
 	'post_trade_pm_reason'		=> 'Reason of negotiation',//'我议价的理由是',
-
+	'post_deleted'			=> 'Invalid floor, This post has been deleted',//'无效楼层，该帖已经被删除',
 	'postappend_content'		=> 'Add post',//'补充内容',
 	'payment_unit'			=> 'USD',//'元',
 

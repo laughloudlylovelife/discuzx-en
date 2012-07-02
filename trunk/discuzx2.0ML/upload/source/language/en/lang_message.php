@@ -133,6 +133,7 @@ $lang = array (
 	'search_forum_invalid'			=> 'You did not specified the scope of search forum.',//'您没有指定搜索论坛的范围，请返回重新填写。',
 	'search_invalid'			=> 'You did not specified a search keyword or user name.',//'您没有指定要搜索的关键字或用户名，请返回重新填写。',
 	'search_redirect'			=> 'Search completed successfully, now redirecting to result page.',//'搜索成功完成，现在将转入结果页面。',
+/*!*/	'search_closed'				=> 'Search function is turned off',//'搜索功能已关闭',
 	'to_view_the_photo_does_not_exist'	=> 'Oops, specified album does not exist',//'出问题了，您要查看的相册不存在',
 	'ban_view_other_thead'			=> 'You can not view other users threads and posts.',//'禁止查看其他用户的主题和帖子，请返回。',
 	'album_does_not_exist'			=> 'Specified album does not exist',//'指定的相册不存在',
@@ -961,16 +962,6 @@ $lang = array (
 	'magics_thunder_message'	=> '{magicname} was published successfully',//'已成功发布 {magicname}',
 
 	'admin_cpanel_noaccess_ip'	=> 'Sorry, Only the administrator can set IP address range to access the system settings, your address is not within the allowed range',//'对不起，管理员设定了只有特定 IP 地址范围才能访问系统设置，您的地址不在被允许的范围内',
-
-//---------------------------
-// Added by Valery Votintev
-//source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> 'Frequent refresh limit',//'&#x9891;&#x7e41;&#x5237;&#x65b0;&#x9650;&#x5236;',
-	'attackevasive_1_message'	=> 'Your are visited the site too fast, or a refresh time is less than two seconds! Please wait a few seconds...',//'&#x60a8;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x901f;&#x5ea6;&#x8fc7;&#x5feb;&#x6216;&#x8005;&#x5237;&#x65b0;&#x95f4;&#x9694;&#x65f6;&#x95f4;&#x5c0f;&#x4e8e;&#x4e24;&#x79d2;&#xff01;&#x8bf7;&#x7b49;&#x5f85;&#x9875;&#x9762;&#x81ea;&#x52a8;&#x8df3;&#x8f6c;&#x20;&#x2e;&#x2e;&#x2e;',
-	'attackevasive_2_subject'	=> 'Proxy access restricted',//'&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#x9650;&#x5236;',
-	'attackevasive_2_message'	=> 'Access to the site using proxy servers is now restricted. Remove your proxy settings, and access to the site directly.',//'&#x672c;&#x7ad9;&#x73b0;&#x5728;&#x9650;&#x5236;&#x4f7f;&#x7528;&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#xff0c;&#x8bf7;&#x53bb;&#x9664;&#x60a8;&#x7684;&#x4ee3;&#x7406;&#x8bbe;&#x7f6e;&#xff0c;&#x76f4;&#x63a5;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x3002;',
-	'attackevasive_4_subject'	=> 'reload the page opens',//'&#x9875;&#x9762;&#x91cd;&#x8f7d;&#x5f00;&#x542f;',
-	'attackevasive_4_message'	=> 'Welcome to the site! The page is reloading now, please wait...',//'&#x6b22;&#x8fce;&#x5149;&#x4e34;&#x672c;&#x7ad9;&#xff0c;&#x9875;&#x9762;&#x6b63;&#x5728;&#x91cd;&#x65b0;&#x8f7d;&#x5165;&#xff0c;&#x8bf7;&#x7a0d;&#x5019;&#x20;&#x2e;&#x2e;&#x2e;',
 
 );
 

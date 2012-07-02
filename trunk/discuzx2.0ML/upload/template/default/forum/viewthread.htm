@@ -28,8 +28,6 @@
 	<div id="pgt" class="pgs mbm cl {if $modmenu['thread']}pbm bbs{/if}">
 		<div class="pgt">$multipage</div>
 		<span class="y pgb"{if $_G['setting']['visitedforums']} id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"{/if}><a href="$upnavlink">{lang return_forumdisplay}</a></span>
-
-<!--vot--><!--{if $_G['group']['allowpost']}-->
 		<!--{if $_G['forum']['threadsorts'] && $_G['forum']['threadsorts']['templatelist']}-->
 			<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
 				<button id="newspecial" class="pn pnc" onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]&extra=$extra&sortid=$id'"><strong>{lang i_want}$name</strong></button>
@@ -41,7 +39,6 @@
 <!--vot-->		<a id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">{lang reply}</a>
 		<!--{/if}-->
 		<!--{hook/viewthread_postbutton_top}-->
-<!--{/if}-->
 	</div>
 
 <!--{if $_G['group']['allowpost'] && ($_G['group']['allowposttrade'] || $_G['group']['allowpostpoll'] || $_G['group']['allowpostreward'] || $_G['group']['allowpostactivity'] || $_G['group']['allowpostdebate'] || $_G['setting']['threadplugins'] || $_G['forum']['threadsorts'])}-->
@@ -307,9 +304,7 @@ $_G['forum_tagscript']
 	$multipage
 	<span class="pgb y"{if $_G['setting']['visitedforums']} id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"{/if}><a href="$upnavlink">{lang return_forumdisplay}</a></span>
 	<!--{if !$_G['forum_thread']['is_archived']}-->
-<!--vot--><!--{if $_G['group']['allowpost']}-->
-<!--vot-->	<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title ="{lang send_posts}">{lang send_posts}</a>
-<!--{/if}-->
+<!--vot-->	<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}">{lang send_posts}</a>
 	<!--{/if}-->
 	<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
 <!--vot-->	<a id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">{lang reply}</a>
@@ -317,11 +312,9 @@ $_G['forum_tagscript']
 </div>
 
 <!--{hook/viewthread_middle}-->
-<!--vot--><!--{if $_G['group']['allowpost']}-->
 <!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
-<!--vot--><!--{if $_G['setting']['fastpost'] && ($allowpostreply || !$_G['uid']) && !$_G['forum_thread']['archiveid'] && ($_G['forum']['status'] != 3 || $_G['isgroupuser'])}-->
+<!--{if $_G['setting']['fastpost'] && ($allowpostreply || !$_G['uid']) && !$_G['forum_thread']['archiveid'] && ($_G['forum']['status'] != 3 || $_G['isgroupuser'])}-->
 	<!--{subtemplate forum/viewthread_fastpost}-->
-<!--{/if}-->
 <!--{/if}-->
 
 <!--{hook/viewthread_bottom}-->

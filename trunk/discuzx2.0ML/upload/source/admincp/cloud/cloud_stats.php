@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: cloud_stats.php 24511 2011-09-22 09:23:35Z yexinhao $
+ *      $Id: cloud_stats.php 29629 2012-04-23 07:38:25Z yexinhao $
  */
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 	exit('Access Denied');
@@ -77,7 +77,7 @@ if($_G['gp_anchor'] == 'base') {
 	shownav('navcloud', 'cloud_stats');
 	showsubmenu('cloud_stats', $statsnav);
 
-	$statsDomain = 'http://stats.discuz.qq.com';
+	$statsDomain = 'http://ta.qq.com';
 	$signUrl = generateSiteSignUrl(array('v' => 2));
 
 	headerLocation($statsDomain.'/statsSummary/?'.$signUrl);

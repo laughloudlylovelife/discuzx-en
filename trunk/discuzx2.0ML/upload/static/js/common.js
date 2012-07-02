@@ -2,7 +2,7 @@
 	[Discuz!] (C)2001-2009 Comsenz Inc.
 	This is NOT a freeware, use is subject to license terms
 
-	$Id: common.js 24745 2011-10-10 05:58:53Z monkey $
+	$Id: common.js 30758 2012-06-18 06:48:59Z chenmengshu $
 //	Modified by Valery Votintsev
 */
 
@@ -283,7 +283,7 @@ function Ajax(recvType, waitId) {
 
 	var aj = new Object();
 
-	aj.loading = lng['wait_please'];
+/*vot*/	aj.loading = lng['wait_please'];
 	aj.recvType = recvType ? recvType : 'XML';
 	aj.waitId = waitId ? $(waitId) : null;
 
@@ -348,7 +348,7 @@ function Ajax(recvType, waitId) {
 				aj.resultHandle(aj.XMLHttpRequest.responseText, aj);
 			} else if(aj.recvType == 'XML') {
 				if(!aj.XMLHttpRequest.responseXML || !aj.XMLHttpRequest.responseXML.lastChild || aj.XMLHttpRequest.responseXML.lastChild.localName == 'parsererror') {
-					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">'+lng['int_error']+'</a>' , aj);
+/*vot*/					aj.resultHandle('<a href="' + aj.targetUrl + '" target="_blank" style="color:red">'+lng['int_error']+'</a>' , aj);
 				} else {
 					aj.resultHandle(aj.XMLHttpRequest.responseXML.lastChild.firstChild.nodeValue, aj);
 				}
@@ -653,7 +653,7 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 				try {
 					s = $(ajaxframeid).contentWindow.document.documentElement.firstChild.nodeValue;
 				} catch(e) {
-					s = lng['int_error'];
+/*vot*/					s = lng['int_error'];
 				}
 			}
 		}
@@ -684,7 +684,16 @@ function ajaxpost(formid, showid, waitid, showidclass, submitbtn, recall) {
 		}
 		if(!evaled) evalscript(s);
 		ajaxframe.loading = 0;
-		$('append_parent').removeChild(ajaxframe.parentNode);
+		if(!BROWSER.firefox) {
+			$('append_parent').removeChild(ajaxframe.parentNode);
+		} else {
+			setTimeout(
+				function(){
+					$('append_parent').removeChild(ajaxframe.parentNode);
+				},
+				100
+			);
+		}
 	};
 	if(!ajaxframe) {
 		var div = document.createElement('div');
@@ -796,7 +805,7 @@ function showPreview(val, id) {
 
 function showloading(display, waiting) {
 	var display = display ? display : 'block';
-	var waiting = waiting ? waiting : lng['wait_please'];
+/*vot*/	var waiting = waiting ? waiting : lng['wait_please'];
 	$('ajaxwaitid').innerHTML = waiting;
 	$('ajaxwaitid').style.display = display;
 }
@@ -860,11 +869,11 @@ function loadcss(cssname) {
 			css.id = 'css_' + cssname,
 			css.type = 'text/css';
 			css.rel = 'stylesheet';
-			css.href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
+/*vot*/			css.href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
 			var headNode = document.getElementsByTagName("head")[0];
 			headNode.appendChild(css);
 		} else {
-			$('css_' + cssname).href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
+/*vot*/			$('css_' + cssname).href = 'data/cache/style_' + STYLEID + '_' + cssname + RTLSUFFIX + '.css?' + VERHASH;
 		}
 		CSSLOADED[cssname] = 1;
 	}
@@ -1329,7 +1338,7 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 	mode = in_array(mode, ['confirm', 'notice', 'info', 'right']) ? mode : 'alert';
 	var menuid = 'fwin_dialog';
 	var menuObj = $(menuid);
-	confirmtxtdefault = lng['submit'];
+/*vot*/	confirmtxtdefault = lng['submit'];
 	closetime = isUndefined(closetime) ? '' : closetime;
 	closefunc = function () {
 		if(typeof func == 'function') func();
@@ -1337,17 +1346,17 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 		hideMenu(menuid, 'dialog');
 	};
 	if(closetime) {
-		leftmsg = closetime + lng['sec_after_win_closed'];
+/*vot*/		leftmsg = closetime + lng['sec_after_win_closed'];
 		showDialogST = setTimeout(closefunc, closetime * 1000);
 	}
 	locationtime = isUndefined(locationtime) ? '' : locationtime;
 	if(locationtime) {
-		leftmsg = locationtime + lng['sec_after_page_jump'];
+/*vot*/		leftmsg = locationtime + lng['sec_after_page_jump'];
 		showDialogST = setTimeout(closefunc, locationtime * 1000);
-		confirmtxtdefault = lng['jump_now'];
+/*vot*/		confirmtxtdefault = lng['jump_now'];
 	}
 	confirmtxt = confirmtxt ? confirmtxt : confirmtxtdefault;
-	canceltxt = canceltxt ? canceltxt : lng['cancel'];
+/*vot*/	canceltxt = canceltxt ? canceltxt : lng['cancel'];
 
 	if(menuObj) hideMenu('fwin_dialog', 'dialog');
 	menuObj = document.createElement('div');
@@ -1360,8 +1369,8 @@ function showDialog(msg, mode, t, func, cover, funccancel, leftmsg, confirmtxt, 
 		hidedom = '<style type="text/css">object{visibility:hidden;}</style>';
 	}
 	var s = hidedom + '<table cellpadding="0" cellspacing="0" class="fwin"><tr><td class="t_l"></td><td class="t_c"></td><td class="t_r"></td></tr><tr><td class="m_l">&nbsp;&nbsp;</td><td class="m_c"><h3 class="flb"><em>';
-	s += t ? t : lng['reminder'];
-	s += '</em><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="'+lng['close']+'">'+lng['close']+'</a></span></h3>';
+/*vot*/	s += t ? t : lng['reminder'];
+/*vot*/	s += '</em><span><a href="javascript:;" id="fwin_dialog_close" class="flbc" onclick="hideMenu(\'' + menuid + '\', \'dialog\')" title="'+lng['close']+'">'+lng['close']+'</a></span></h3>';
 	if(mode == 'info') {
 		s += msg ? msg : '';
 	} else {
@@ -1418,7 +1427,7 @@ function showWindow(k, url, mode, cache, menuv) {
 			ajaxpost(url, 'fwin_content_' + k, '', '', '', function() {initMenu();show();});
 		}
 		if(parseInt(BROWSER.ie) != 6) {
-			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> '+lng['wait_please'])}, 500);
+/*vot*/			loadingst = setTimeout(function() {showDialog('', 'info', '<img src="' + IMGDIR + '/loading.gif"> '+lng['wait_please'])}, 500);
 		}
 	};
 	var initMenu = function() {
@@ -1476,7 +1485,7 @@ function showError(msg) {
 	var p = /<script[^\>]*?>([^\x00]*?)<\/script>/ig;
 	msg = msg.replace(p, '');
 	if(msg !== '') {
-		showDialog(msg, 'alert', lng['error_message'], null, true, null, '', '', '', 3);
+/*vot*/		showDialog(msg, 'alert', lng['error_message'], null, true, null, '', '', '', 3);
 	}
 }
 
@@ -1834,14 +1843,14 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 	var tclass = searchtxt.className;
 	searchtxt.className = tclass + ' xg1';
 	searchtxt.onfocus = function () {
-		if(searchtxt.value == lng['enter_search_string']) {
+/*vot*/		if(searchtxt.value == lng['enter_search_string']) {
 			searchtxt.value = '';
 			searchtxt.className = tclass;
 		}
 	};
 	searchtxt.onblur = function () {
 		if(searchtxt.value == '' ) {
-			searchtxt.value = lng['enter_search_string'];
+/*vot*/			searchtxt.value = lng['enter_search_string'];
 			searchtxt.className = tclass + ' xg1';
 		}
 	};
@@ -1890,7 +1899,7 @@ function initSearchmenu(searchform, cloudSearchUrl) {
 }
 
 function searchFocus(obj) {
-	if(obj.value == lng['enter_search_string']) {
+/*vot*/	if(obj.value == lng['enter_search_string']) {
 		obj.value = '';
 	}
 	if($('cloudsearchquery') != null) {
@@ -1987,7 +1996,7 @@ function strLenCalc(obj, checklen, maxlen) {
 		$(checklen).innerHTML = curlen - len;
 	} else {
 //vot		obj.value = mb_cutstr(v, maxlen, true);
-		obj.value = obj.value.substr(v, maxlen);//vot
+/*vot*/		obj.value = obj.value.substr(v, maxlen);
 	}
 }
 
@@ -2003,7 +2012,7 @@ function noticeTitle() {
 
 function noticeTitleFlash() {
 	if(NOTICETITLE.flashNumber < 5 || NOTICETITLE.flashNumber > 4 && !NOTICETITLE['State']) {
-		document.title = (NOTICETITLE['State'] ? lng['notices_no'] : lng['notices_yes']) + NOTICETITLE['oldTitle'];
+/*vot*/		document.title = (NOTICETITLE['State'] ? lng['notices_no'] : lng['notices_yes']) + NOTICETITLE['oldTitle'];
 		NOTICETITLE['State'] = !NOTICETITLE['State'];
 	}
 	NOTICETITLE.flashNumber = NOTICETITLE.flashNumber < NOTICETITLE.sleep ? ++NOTICETITLE.flashNumber : 0;
@@ -2058,7 +2067,7 @@ function addFavorite(url, title) {
 		try {
 			window.sidebar.addPanel(title, url, '');
         	} catch (e) {
-			showDialog(lng['ctrl_d_favorites'], 'notice');
+/*vot*/			showDialog(lng['ctrl_d_favorites'], 'notice');
 		}
 	}
 }
@@ -2068,7 +2077,7 @@ function setHomepage(sURL) {
 		document.body.style.behavior = 'url(#default#homepage)';
 		document.body.setHomePage(sURL);
 	} else {
-		showDialog(lng['non_ie_manually'], 'notice');
+/*vot*/		showDialog(lng['non_ie_manually'], 'notice');
 		doane();
 	}
 }

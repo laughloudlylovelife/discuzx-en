@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_block.php 27231 2012-01-11 09:35:50Z svn_project_zhangjie $
+ *      $Id: function_block.php 30547 2012-06-01 09:06:40Z zhangguosheng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -192,7 +192,13 @@ function block_updatecache($bid, $forceupdate=false) {
 	if(is_object($obj)) {
 		DB::update('common_block', array('dateline'=>TIMESTAMP), array('bid'=>$bid));
 		$_G['block'][$bid]['dateline'] = TIMESTAMP;
-		$block['param'] = empty($block['param'])?array():unserialize($block['param']);
+		if(!is_array($block['param'])) {
+			if(!empty($block['param'])) {
+				$block['param'] = unserialize($block['param']);
+			} else {
+				$block['param'] = array();
+			}
+		}
 		$theclass = block_getclass($block['blockclass']);
 		$thestyle = !empty($block['styleid']) ? block_getstyle($block['styleid']) : unserialize($block['blockstyle']);
 
@@ -215,8 +221,10 @@ function block_updatecache($bid, $forceupdate=false) {
 			}
 			$leftnum = $block['shownum'] - count($datalist);
 			if($leftnum > 0 && empty($block['isblank'])) {
-				$block['param']['items'] = $leftnum;
-				$block['param']['bannedids'] = implode(',',$bannedids);
+				if($leftnum != $block['param']['items']) {
+					$block['param']['items'] = $leftnum;
+					$block['param']['bannedids'] = implode(',',$bannedids);
+				}
 				$return = $obj->getdata($thestyle, $block['param']);
 				$return['data'] = array_merge($datalist, (array)$return['data']);
 			} else {
@@ -346,10 +354,11 @@ function block_template($bid) {
 				if($field['datatype'] == 'int') {// int
 					$replacevalue = intval($replacevalue);
 				} elseif($field['datatype'] == 'string') {
-					$replacevalue = $replacevalue;
+					$replacevalue = preg_replace("/([\$|\\\\])/", '\\\\$1', $replacevalue);
 				} elseif($field['datatype'] == 'date') {
 					$replacevalue = dgmdate($replacevalue, $block['dateuformat'] ? 'u' : $block['dateformat'], '9999', $block['dateuformat'] ? $block['dateformat'] : '');
 				} elseif($field['datatype'] == 'title') {//title
+					$replacevalue = preg_replace("/([\$|\\\\])/", '\\\\$1', $replacevalue);
 					$searcharr[] = '{title-title}';
 					$replacearr[] = !empty($blockitem['fields']['fulltitle']) ? $blockitem['fields']['fulltitle'] : htmlspecialchars($replacevalue);
 					$searcharr[] = '{alt-title}';
@@ -358,6 +367,7 @@ function block_template($bid) {
 						$replacevalue = '<font style="'.$style.'">'.$replacevalue.'</font>';
 					}
 				} elseif($field['datatype'] == 'summary') {//summary
+					$replacevalue = preg_replace("/([\$|\\\\])/", '\\\\$1', $replacevalue);
 					if($blockitem['showstyle'] && ($style = block_showstyle($blockitem['showstyle'], 'summary'))) {
 						$replacevalue = '<font style="'.$style.'">'.$replacevalue.'</font>';
 					}
@@ -421,9 +431,10 @@ function block_template($bid) {
 		foreach($dynamicparts as $value) {
 			$template = preg_replace($value[0], $value[1], $template);
 		}
+		$template = stripslashes($template);
 	}
-	$template = preg_replace('/\s*\[(order\d{0,1})=\w+\](.*?)\[\/\\1\]\s*/is', '', $template);
-	$template = preg_replace('/\s*\[(index\d{0,1})=\w+\](.*?)\[\/\\1\]\s*/is', '', $template);
+	$template = preg_replace('/\s*\[(order\d+)=\w+\](.*?)\[\/\\1\]\s*/is', '', $template);
+	$template = preg_replace('/\s*\[(index\d+})=\w+\](.*?)\[\/\\1\]\s*/is', '', $template);
 	$template = preg_replace('/\s*\[(loop\d{0,1})\](.*?)\[\/\\1\]\s*/is', '', $template);
 
 	return $template;
@@ -975,7 +986,7 @@ function block_parse_template($str_template, &$arr) {
 		}
 	}
 	$match = array();
-	if(preg_match_all('/\[(order\d)=(\d+|odd|even)\](.*?)\[\/\\1]/is', $str_template, $match)) {
+	if(preg_match_all('/\[(order\d+)=(\d+|odd|even)\](.*?)\[\/\\1]/is', $str_template, $match)) {
 		foreach($match[1] as $key=>$value) {
 			$content = trim($match[3][$key]);
 			$order = $match[2][$key];
@@ -984,13 +995,13 @@ function block_parse_template($str_template, &$arr) {
 		}
 	}
 	$match = array();
-	if(preg_match_all('/\[index=(\d)\](.*?)\[\/index]/is', $str_template, $match)) {
+	if(preg_match_all('/\[index=(\d+)\](.*?)\[\/index]/is', $str_template, $match)) {
 		foreach($match[1] as $key=>$order) {
 			$template['index'][$order] = trim($match[2][$key]);
 		}
 	}
 	$match = array();
-	if(preg_match_all('/\[(index\d)=(\d)\](.*?)\[\/\\1]/is', $str_template, $match)) {
+	if(preg_match_all('/\[(index\d+)=(\d+)\](.*?)\[\/\\1]/is', $str_template, $match)) {
 		foreach($match[1] as $key=>$value) {
 			$content = trim($match[3][$key]);
 			$order = intval($match[2][$key]);

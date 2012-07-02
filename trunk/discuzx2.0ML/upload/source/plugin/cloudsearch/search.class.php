@@ -4,7 +4,7 @@
  *      [Discuz! X] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: search.class.php 26709 2011-12-20 08:38:43Z zhouguoqiang $
+ *      $Id: search.class.php 30272 2012-05-18 02:20:48Z zhouxiaobo $
  *	Modified by Valery Votintsev, codersclub.org/discuzx/
  */
 
@@ -37,7 +37,7 @@ class plugin_cloudsearch {
 				$srchotquery = '';
 				if(!empty($searchparams[1])) {
 					foreach($searchparams[1] as $key => $value) {
-						$srchotquery .= '&' . $key . '=' . $value;
+						$srchotquery .= '&' . $key . '=' . rawurlencode($value);
 					}
 				}
 				$res = tpl_cloudsearch_global_footer_related($searchparams[0], $srchotquery);
@@ -58,7 +58,7 @@ class plugin_cloudsearch_forum extends plugin_cloudsearch {
 			$srchotquery = '';
 			if(!empty($searchparams[1])) {
 				foreach($searchparams[1] as $key => $value) {
-					$srchotquery .= '&' . $key . '=' . $value;
+					$srchotquery .= '&' . $key . '=' . rawurlencode($value);
 				}
 			}
 			return tpl_cloudsearch_index_top($recwords, $searchparams, $srchotquery);
@@ -104,9 +104,7 @@ class plugin_cloudsearch_forum extends plugin_cloudsearch {
 				if(isset($result['status']) && $result['status'] === 0) {
 					$data = $result['result'];
 
-					if($data) {
-						save_syscache($kname, array('ts' => TIMESTAMP, 'result' => $data));
-					}
+					save_syscache($kname, array('ts' => TIMESTAMP, 'result' => $data));
 				}
 			}
 		}

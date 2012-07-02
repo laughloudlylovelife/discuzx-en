@@ -16,7 +16,7 @@
 9. Upgrade/Convert utilities translated
 10. All Discuz!X "readme/" files translated to English
 11. UCenter API Development Guide translated to English
-12. Added 12 language packs:
+12. Added 13 language packs:
 	'ar' => 'Arabic',
 	'sc' => 'Simplified Chinese',
 	'tc' => 'Traditional Chinese',
@@ -24,6 +24,7 @@
 	'en' => 'English',
 	'fr' => 'French',
 	'kr' => 'Korean',
+	'pl' => 'Polish',
 	'ru' => 'Russian',
 	'es' => 'Spanish',
 	'th' => 'Thai',
@@ -32,6 +33,39 @@
 
 More details see at our forum http://codersclub.org/discuzx/
 
++======================================+
+   Discuz! X2 Release 20120628
++======================================+
+
+FIX: correct for search interface error in call implode() function
+FIX: Friend requests postscript problem
+FIX: foreground management, have been audited by the article, background or Prompt of Audit problem
+FIX: QQ Internet exposure anonymous posts user information
+FIX: Thread module can use the help field text error
+
+FIX: Password description section limiting the number to modify back to the original IP authentication mode
+FIX: Compatible with the theme of pagination error when processing after filing
+FIX: DIY module retrieval of containing $ and \ character template parsing error
+FIX: Thread comments pseudo-static link error.
+FIX: Correction for the archive table caused paging disorder bug
+
+FIX: Enable of allow navigation settings problem for admin team 
+FIX: Filter for exif information
+FIX: portal topic Reply have no ip
+FIX: Magic return according to the current discount price
+FIX: Cloud search Correction for hot topic words to obtain the failure of a short period of time repeat request cloud platform
+
+FIX: Cloud  search with Chinese links rawurlencode processing
+FIX: Correction for block template allows only index [0-9] BUG
+FIX: Quick replies shows the floor error, When the thread operation of the deleted posts
+FIX: Repair ajax cookies reported problems
+FIX: Corection of vulnerability when moderator edit credits
+
+FIX: Group Forum page can not DIY
+FIX: Correction of remote attachment variable covers over the wrong address
+FIX: Failure of repair module push library data table paging features
+FIX: modify the block filter data ID caused the filterd data failure
+FIX: fix slide block in the second block edit properties page does not display content in the DOM
 
 +======================================+
    Discuz! X2 Release 20120329

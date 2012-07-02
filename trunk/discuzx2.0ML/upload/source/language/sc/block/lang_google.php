@@ -23,8 +23,6 @@ $lang = array
 	'google_default_1' => '站内搜索',
 	'google_client' => '搜索联盟 ID',
 	'google_client_comment' => '如果你加入了 Google 搜索联盟，可以在这里填写 ID',
-// Added by vot
-	'google_lang_ru'	=> '俄语',//'Russian',
 );
 
 ?>

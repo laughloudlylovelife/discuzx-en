@@ -28,17 +28,19 @@ $recwords[$k+1] = $v;
 		<div class="filter">
 			<ul class="cl">
 			<!--{loop $recwords $key $recword}-->
-			<!--{if !empty($searchparams[0])}-->
-				<!--{if empty($recword[3])}-->
-					<li><a href="$searchparams[0]?q=$recword[0]&source=word.hotopicf.{$key}{$srchotquery}&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+			<!--{if $encodeWord=rawurlencode(trim($recword[0]))}-->
+				<!--{if !empty($searchparams[0])}-->
+					<!--{if empty($recword[3])}-->
+						<li><a href="$searchparams[0]?q=$encodeWord&source=word.hotopicf.{$key}{$srchotquery}&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+					<!--{else}-->
+						<li class="clewcolor"><a href="$searchparams[0]?q=$encodeWord&source=word.hotopicf.{$key}{$srchotquery}&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+					<!--{/if}-->
 				<!--{else}-->
-					<li class="clewcolor"><a href="$searchparams[0]?q=$recword[0]&source=word.hotopicf.{$key}{$srchotquery}&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
-				<!--{/if}-->
-			<!--{else}-->
-				<!--{if empty($recword[3])}-->
-					<li><a href="search.php?mod=forum&srchtxt=$recword[0]&formhash={FORMHASH}&searchsubmit=true&source=word.hotopicf.<!--{$key+1}-->&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
-				<!--{else}-->
-					<li class="clewcolor"><a href="search.php?mod=forum&srchtxt=$recword[0]&formhash={FORMHASH}&searchsubmit=true&source=word.hotopicf.<!--{$key+1}-->&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+					<!--{if empty($recword[3])}-->
+						<li><a href="search.php?mod=forum&srchtxt=$encodeWord&formhash={FORMHASH}&searchsubmit=true&source=word.hotopicf.<!--{$key+1}-->&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+					<!--{else}-->
+						<li class="clewcolor"><a href="search.php?mod=forum&srchtxt=$encodeWord&formhash={FORMHASH}&searchsubmit=true&source=word.hotopicf.<!--{$key+1}-->&num=$recword[2]" target="_blank">$recword[0]<span class="number">($recword[2])</span></a></li>
+					<!--{/if}-->
 				<!--{/if}-->
 			<!--{/if}-->
 			<!--{/loop}-->
@@ -63,15 +65,17 @@ function tpl_cloudsearch_viewthread_postbottom_output() {
 function tpl_cloudsearch_global_footer_related($searchDomain, $srchotquery) {
 global $_G;
 $rel_title = urlencode($_G['forum_thread']['subject']);
+$get_reltid = dintval($_GET[reltid]);
+$get_pre_pos = dhtmlspecialchars(trim($_GET[pre_pos]));
 }
 <!--{block return}-->
 
-	<!--{if empty($_GET['inajax'])}-->
+	<!--{if empty($_G['inajax'])}-->
 	<script type="text/javascript">
 	var rel_tid = "$_G['tid']";
 	var rel_title = "$rel_title";
-	var rel_reltid = "$_GET[reltid]";
-	var rel_prepos = "$_GET[pre_pos]";
+	var rel_reltid = "$get_reltid";
+	var rel_prepos = "$get_pre_pos";
 	var my_siteid = "$_G['setting']['my_siteid']";
 	var rel_uid = "$_G['uid']";
 	var charset = "{CHARSET}";
@@ -80,7 +84,7 @@ $rel_title = urlencode($_G['forum_thread']['subject']);
 	var searchDomain = "$searchDomain";
 	var srchotquery = "$srchotquery";
 	</script>
-	<script type="text/javascript" src="http://cache.soso.com/30d/js/discuz/relate_subject.js" charset="UTF-8"></script>
+<!--vot--><script type="text/javascript" src="http://cache.soso.com/30d/js/discuz/relate_subject.js" charset="UTF-8"></script>
 	<!--{/if}-->
 <!--{/block}-->
 <!--{eval return $return;}-->

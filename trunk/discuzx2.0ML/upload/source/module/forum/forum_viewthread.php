@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_viewthread.php 28766 2012-03-12 08:54:28Z chenmengshu $
+ *      $Id: forum_viewthread.php 30000 2012-05-07 04:11:29Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -820,7 +820,7 @@ if(empty($_G['gp_viewpid'])) {
 	if($rushreply) {
 		$post['number'] = DB::result_first("SELECT position FROM ".DB::table('forum_postposition')." WHERE pid='$_G[gp_viewpid]'");
 	} else {
-		$post['number'] = DB::result_first("SELECT COUNT(*) FROM ".DB::table($posttable)." WHERE tid='$post[tid]' AND dateline<='$post[dbdateline]'");
+		$post['number'] = DB::result_first("SELECT COUNT(*) FROM ".DB::table($posttable)." WHERE tid='$post[tid]' AND dateline<='$post[dbdateline]' AND invisible=0");
 	}
 	if($rushreply) {
 		$preg_str = rushreply_rule($rewardfloorarr);

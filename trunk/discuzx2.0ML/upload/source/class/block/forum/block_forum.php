@@ -134,7 +134,11 @@ class block_forum {
 		$datalist = $list = array();
 		$attachurl = preg_match('/^(http|ftp|ftps|https):\/\//', $_G['setting']['attachurl']) ? $_G['setting']['attachurl'] : $_G['siteurl'].$_G['setting']['attachurl'];
 		while($data = DB::fetch($query)) {
-			$data['icon'] = $data['icon'] ? $data['icon'] : 'static/image/common/forum_new.gif';
+			if(!empty($data['icon'])) {
+				$data['icon'] = preg_match('/^(http|ftp|ftps|https):\/\//', $data['icon']) ? $data['icon'] : $attachurl.'common/'.$data['icon'];
+			} else {
+				$data['icon'] = 'static/image/common/forum_new.gif';
+			}
 			$list[] = array(
 				'id' => $data['fid'],
 				'idtype' => 'fid',
@@ -144,7 +148,7 @@ class block_forum {
 				'summary' => cutstr($data['description'], $summarylength, ''),
 				'fields' => array(
 					'fulltitle' => $data['name'],
-					'icon' => preg_match('/^(http|ftp|ftps|https):\/\//', $data['icon']) ? $data['icon'] : $attachurl.'common/'.$data['icon'],
+					'icon' => $data['icon'],
 					'threads' => intval($data['threads']),
 					'posts' => intval($data['posts']),
 					'todayposts' => intval($data['todayposts'])

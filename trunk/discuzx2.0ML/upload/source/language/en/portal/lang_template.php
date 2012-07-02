@@ -296,7 +296,8 @@ $lang = array (
 	'view_publisher'		=> 'Publisher',//'发布者',
 	'view_related'			=> 'Related readings',//'相关阅读',
 	'view_views'			=> 'Views',//'查看数',
-//vot
+
+// Added by Valery Votintsev
 	'select_all'	=> 'Select All',//'全选',
 	'select_mod'	=> 'Choose module',//'选择模块',
 	'select_page'	=> 'Select page',//'选择页面',

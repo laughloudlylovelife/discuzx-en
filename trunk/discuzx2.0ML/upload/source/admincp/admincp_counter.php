@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_counter.php 24982 2011-10-20 06:24:46Z svn_project_zhangjie $
+ *      $Id: admincp_counter.php 29537 2012-04-18 06:28:48Z chenmengshu $
  *		English by Valery Votintsev at sources.ru
  */
 
@@ -33,6 +33,7 @@ if(submitcheck('forumsubmit', 1)) {
 		while($data = DB::fetch($query_a)) {
 			$threadtables[] = $data['threadtableid'];
 		}
+		$threadtables = array_unique($threadtables);
 		foreach($threadtables as $tableid) {
 			$threadtable = $tableid ? "forum_thread_$tableid" : 'forum_thread';
 			$data = DB::fetch_first("SELECT COUNT(*) AS threads, SUM(replies)+COUNT(*) AS posts FROM ".DB::table($threadtable)." WHERE fid='{$forum['fid']}' AND displayorder>='0'");
@@ -218,7 +219,7 @@ if(submitcheck('forumsubmit', 1)) {
 
 	$optionvalues = array();
 
-	$query = DB::query("SELECT v.*, p.identifier, p.type FROM ".DB::table('forum_typevar')." v LEFT JOIN ".DB::table('forum_typeoption')." p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('radio','select','number')");
+	$query = DB::query("SELECT v.*, p.identifier, p.type FROM ".DB::table('forum_typevar')." v LEFT JOIN ".DB::table('forum_typeoption')." p ON p.optionid=v.optionid WHERE search='1' OR p.type IN('checkbox','radio','select','number')");
 	$optionvalues = $sortids = array();
 	while($row = DB::fetch($query)) {
 		$optionvalues[$row['sortid']][$row['identifier']] = $row['type'];
@@ -256,7 +257,7 @@ if(submitcheck('forumsubmit', 1)) {
 			$tables[$field['Field']] = 1;
 		}
 		foreach($optionids[$sortid] as $optionid => $identifier) {
-			if(!$tables[$identifier] && (in_array($options[$identifier], array('radio', 'select', 'number')) || $search[$optionid])) {
+			if(!$tables[$identifier] && (in_array($options[$identifier], array('checkbox', 'radio', 'select', 'number')) || $search[$optionid])) {
 				$fieldname = $identifier;
 				if(in_array($options[$identifier], array('radio'))) {
 					$fieldtype = 'smallint(6) UNSIGNED NOT NULL DEFAULT \'0\'';

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp.php 28030 2012-02-21 05:43:34Z monkey $
+ *      $Id: lang_admincp.php 30095 2012-05-10 06:36:49Z zhengqingpeng $
  */
 
 
@@ -4675,8 +4675,8 @@ $lang = array
 	'magics_config_discount' => '道具回收价格折扣',
 	'magics_config_discount_comment' => '设置道具系统回收价格折扣，此值为百分比，例如如果此值为 85，则系统将以道具原价 85% 的价格回收，建议不超过 100，有效防止刷积分。留空或者 0 表示不开启道具回收功能',
 
-	'magics_market' => '道具市场',
-	'magics_market_seller' => '出售者',
+	'magics_market'=> '道具市场',
+	'magics_market_seller'=> '出售者',
 
 	'magics_identifier' => '标识',
 	'magic_recommend' => '推荐',
@@ -4833,8 +4833,8 @@ $lang = array
 	'ec_alipay_contract_comment' => '如果你的支付宝账号是签约用户，可以选择“是”让论坛使用你自己的商家服务平台。如果你还未签约，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">请点击这里签约</a>',
 	'ec_alipay_securitycode' => '交易安全校验码 (key)',
 	'ec_alipay_securitycode_comment' => '支付宝签约用户可以在此处填写支付宝分配给你的交易安全校验码，此校验码你可以到支付宝官方的商家服务功能处查看',
-	'ec_alipay_partner' => '合作者身份 (partnerID)',
-	'ec_alipay_partner_comment' => '支付宝签约用户请在此处填写支付宝分配给你的合作者身份，签约用户的手续费按照你与支付宝官方的签约协议为准。如果你还未签约，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">请点击这里签约</a>；如果在签约时出现合同模板冲突，请咨询0571-88158090',
+/*!*/	'ec_alipay_partner' => '合作者身份 (PID)',
+/*!*/	'ec_alipay_partner_comment' => '支付宝签约用户请在此处填写支付宝分配给你的合作者身份，签约用户的手续费按照你与支付宝官方的签约协议为准。<br/>如果你还未签约，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">请点击这里签约</a>；如果已签约,<a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&product=fastpay" target="_blank">请点击这里获取PID、Key</a>;如果在签约时出现合同模板冲突，请咨询0571-88158090',
 	'ec_alipay_creditdirectpay' => '使用纯即时到帐接口',
 	'ec_alipay_creditdirectpay_comment' => '如果你的签约协议中包含纯即时到帐接口（不是标准双接口）可以选择此项，让积分充值只能使用即时到账方式付款',
 
@@ -6209,29 +6209,10 @@ RepeatLimit 32
 //source/admincp/admincp_index.php - javascript function shownews()
 	'subscribe'			=> '订阅',//'Subscribe',
 
-//source/admincp/admincp_quickquery.php
-	'quick_enable'			=> '快速开启论坛版块功能',
-	'quick_enable_trash'		=> '开启 所有版块 主题回收站',
-	'quick_enable_bbcode'		=> '开启 所有版块 Discuz! 代码”',
-	'quick_enable_img'		=> '开启 所有版块 [IMG] 代码”',
-	'quick_enable_smilies'		=> '开启 所有版块 Smilies 代码',
-	'quick_enable_jammer'		=> '开启 所有版块 内容干扰码',
-	'quick_enable_anonymous'	=> '开启 所有版块 允许匿名发贴”',
-	'quick_disable'			=> '快速关闭论坛版块功能',
-	'quick_disable_trash'		=> '关闭 所有版块 主题回收站',
-	'quick_disable_html'		=> '关闭 所有版块 HTML 代码',
-	'quick_disable_bbcode'		=> '关闭 所有版块 Discuz! 代码',
-	'quick_disable_img'		=> '关闭 所有版块 [IMG] 代码',
-	'quick_disable_smilies'		=> '关闭 所有版块 Smilies 代码',
-	'quick_disable_jammer'		=> '关闭 所有版块 内容干扰码',
-	'quick_disable_anonymous'	=> '关闭 所有版块 允许匿名发贴',
-	'quick_members'			=> '会员操作相关',
-	'quick_clean_trans'		=> '清空 所有会员 积分交易记录',
-
 //---------------------------
-//Change Language
-'change_language'	=> '更改语言',//'Change language',
-'change_style'		=> '切换风格',//'Change Style',
+//Change Language/Style
+	'change_language'	=> '更改语言',//'Change language',
+	'change_style'		=> '切换风格',//'Change Style',
 
 	'language'				=> 'Languages',
 	'setting_language'			=> 'Language Settings',

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_threadtypes.php 22864 2011-05-27 03:04:15Z monkey $
+ *      $Id: admincp_threadtypes.php 29387 2012-04-10 02:21:02Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -556,16 +556,16 @@ EOT;
 <a name="template"></a>
 <div class="colorbox">
 <h4 style="margin-bottom:15px;"><?php echo $threadtype['name'];?> - <?php echo $lang['threadtype_infotypes_template'];?></h4>
-<textarea cols="100" rows="15" id="typetemplate" name="typetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo $threadtype['template'];?></textarea>
+<textarea cols="100" rows="15" id="typetemplate" name="typetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo dhtmlspecialchars($threadtype['template']);?></textarea>
 <br /><br />
 <h4 style="margin-bottom:15px;"><?php echo $threadtype['name'];?> - <?php echo $lang['threadtype_infotypes_stemplate'];?></h4>
-<textarea cols="100" rows="15" id="stypetemplate" name="stypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo $threadtype['stemplate'];?></textarea>
+<textarea cols="100" rows="15" id="stypetemplate" name="stypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo dhtmlspecialchars($threadtype['stemplate']);?></textarea>
 <br /><br />
 <h4 style="margin-bottom:15px;"><?php echo $threadtype['name'];?> - <?php echo $lang['threadtype_infotypes_ptemplate'];?></h4>
-<textarea cols="100" rows="15" id="ptypetemplate" name="ptypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo $threadtype['ptemplate'];?></textarea>
+<textarea cols="100" rows="15" id="ptypetemplate" name="ptypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo dhtmlspecialchars($threadtype['ptemplate']);?></textarea>
 <br /><br />
 <h4 style="margin-bottom:15px;"><?php echo $threadtype['name'];?> - <?php echo $lang['threadtype_infotypes_btemplate'];?></h4>
-<textarea cols="100" rows="15" id="btypetemplate" name="btypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo $threadtype['btemplate'];?></textarea>
+<textarea cols="100" rows="15" id="btypetemplate" name="btypetemplate" style="width: 95%;" onkeyup="textareasize(this)"><?php echo dhtmlspecialchars($threadtype['btemplate']);?></textarea>
 <br /><br />
 <b><?php echo $lang['threadtype_infotypes_template'];?>:</b>
 <ul class="tpllist"><?php echo $lang['threadtype_infotypes_template_tips'];?></ul>

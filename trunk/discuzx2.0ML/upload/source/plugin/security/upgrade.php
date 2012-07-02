@@ -11,37 +11,38 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
-$data = false;
-$query = DB::query('SHOW FIELDS FROM pre_security_failedlog', '', 'SILENT');
+$table = DB::table('security_failedlog');
+$query = DB::query('SHOW FIELDS FROM ' . $table, '', 'SILENT');
 if($query) {
-	$data = array();
+	$field = array();
 	while($value = DB::fetch($query)) {
-		$data[$value['Field']] = $value;
+		$field[$value['Field']] = $value;
 	}
 }
+
 $sql = '';
 if (!$field['scheduletime']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `scheduletime` INT(10) NOT NULL DEFAULT '0';\n";
+	$sql .= "ALTER TABLE $table ADD `scheduletime` INT(10) NOT NULL DEFAULT '0';\n";
 }
 
 if (!$field['lastfailtime']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `lastfailtime` INT(10) NOT NULL DEFAULT '0';\n";
+	$sql .= "ALTER TABLE $table ADD `lastfailtime` INT(10) NOT NULL DEFAULT '0';\n";
 }
 
 if (!$field['posttime']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `posttime` INT(10) unsigned NOT NULL DEFAULT '0';\n";
+	$sql .= "ALTER TABLE $table ADD `posttime` INT(10) unsigned NOT NULL DEFAULT '0';\n";
 }
 
 if (!$field['delreason']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `delreason` char(255) NOT NULL;\n";
+	$sql .= "ALTER TABLE $table ADD `delreason` char(255) NOT NULL;\n";
 }
 
 if (!$field['extra1']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `extra1` INT(10) unsigned NOT NULL DEFAULT '0';\n";
+	$sql .= "ALTER TABLE $table ADD `extra1` INT(10) unsigned NOT NULL DEFAULT '0';\n";
 }
 
 if (!$field['extra2']) {
-	$sql .= "ALTER TABLE `pre_security_failedlog` ADD `extra2` char(255) NOT NULL;\n";
+	$sql .= "ALTER TABLE $table ADD `extra2` char(255) NOT NULL;\n";
 }
 if ($sql) {
 	runquery($sql);

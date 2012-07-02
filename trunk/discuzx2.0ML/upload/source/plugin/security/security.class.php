@@ -4,7 +4,7 @@
  *		[Discuz! X] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: security.class.php 28951 2012-03-20 09:01:38Z liudongdong $
+ *		$Id: security.class.php 30420 2012-05-28 05:41:22Z songlixin $
  */
 
 
@@ -84,7 +84,7 @@ EOF;
 	}
 
 	function global_footerlink() {
-		return '&nbsp;<a href="javascript:;" title="'.lang('plugin/security', 'title').'"><img src="static/image/common/security.png"></a>&nbsp;';
+		return '&nbsp;<a href="http://discuz.qq.com/service/security" target="_blank" title="'.lang('plugin/security', 'title').'"><img src="static/image/common/security.png"></a>&nbsp;';
 	}
 
 	function deletepost($param) {
@@ -170,7 +170,7 @@ EOF;
 		$sec = Sec::getInstance();
 		$sec->reportLogin($param['uid']);
 		$this->_retryReport();
-		dsetcookie('cookiereport', $this->_encodeReportTime($_G['timestamp']), '86400');
+		dsetcookie('cookiereport', $this->_encodeReportTime($_G['timestamp']), '43200');
 		return true;
 	}
 

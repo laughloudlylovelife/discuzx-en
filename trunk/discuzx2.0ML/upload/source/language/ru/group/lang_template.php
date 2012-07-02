@@ -1,6 +1,6 @@
 <?php
 
-/**+++
+/**
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
@@ -201,10 +201,5 @@ $lang = array (
 	'orderby_default'		=> 'по умолчанию',
 	'stats_main_threads_count'	=> 'Тем',
 	'threads'			=> 'Темы',
-// Obsolete
-//	'group_image_resize'	=> 'Автоматический ресайз до 644 х 158 пикс.',
-	'group_create_notice'	=> 'После создания сообщества Вы сможете настроить любые его параметры кроме названия и категории.',
-	'replies/views'		=> 'Ответов/Просмотров',//'回复/查看',//vot
 );
 
-?>
