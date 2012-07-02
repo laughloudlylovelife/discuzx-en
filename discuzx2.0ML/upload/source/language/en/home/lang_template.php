@@ -76,7 +76,7 @@ $lang = array (
 	'comprehensive_overview'	=> 'Comprehensive overview',//'综合概况',
 	'comprehensive_overview_message'	=> 'Here you can see a comprehensive overview of the site statistics (need at least 2 days of functioning for the effective statistics).',//'这里看到的是站点的综合概况发展统计(需要至少统计2天后才有效)。',
 	'info_interactive'			=> 'Replies info',//'信息互动',
-	'interactive_help_message'	=> '<li>Visitors: refers to the daily number of unique visitors. If the user visited the site many times, the visitor counted only once.</li>
+/*vot*/	'interactive_help_message'	=> '<li>Visitors: refers to the daily number of unique visitors. If the user visited the site many times, the visitor counted only once.</li>
 					<li>Forum: refers to the every day post topics, voting, activities, rewards, debates, events, and the total number of thread Replies.</li>
 					<li>Groups: refers to the total number of every day created groups, group topics, group replies.</li>
 					<li>Spaces: refers to the daily publised doings, blogs, photos, topics, polls, events, shares, and the total number of each comment.</li>
@@ -227,8 +227,8 @@ $lang = array (
 	'total'			=> 'Total',//'共',
 	'all_blogs'		=> 'All blogs',//'全部日志',
 	'blog'			=> 'Blogs',//'日志',
-	'blog_read'		=> 'Read blog',//'次阅读',
-	'blog_replay'		=> 'Comment',//'个评论',
+	'blog_read'		=> 'Views',//'次阅读',
+	'blog_replay'		=> 'Comments',//'个评论',
 	'cancel_stick'		=> 'Unstick',//'取消置顶',
 	'follow_search_blog'	=> 'Search the following blogs',//'以下是搜索日志',
 	'friend_blog'		=> 'Friend Blogs',//'好友的日志',
@@ -525,7 +525,6 @@ $lang = array (
 	'magics_yourcredit'		=> 'You currently have {$_G[setting][extcredits][$magic[credit]][title]}',//'你目前有{$_G[setting][extcredits][$magic[credit]][title]}',
 	'memcp_usergroups_buy'		=> 'Buy',//'购买',
 	'my_magic_volume'		=> 'My magic bag capacity:',//'我的道具包可用容量',
-
 	'stock'			=> 'In stock',//'库存',
 	'days'			=> 'Days',//'天',
 	'expire'		=> 'Validity(expire)',//'有效期',

@@ -12,6 +12,7 @@ if(!defined('IN_DISCUZ') || !defined('IN_MODCP')) {
 }
 if(!empty($_G['fid'])) {
 	$curcredits = $_G['setting']['creditstransextra'][8] ? $_G['setting']['creditstransextra'][8] : $_G['setting']['creditstrans'];
+	$report_reward = unserialize($_G['setting']['report_reward']);
 	if(submitcheck('reportsubmit')) {
 		if($_G['gp_reportids']) {
 			foreach($_G['gp_reportids'] as $reportid) {
@@ -21,6 +22,9 @@ if(!empty($_G['fid'])) {
 					if($uid != $_G['uid']) {
 						$msg = !empty($_G['gp_msg'][$reportid]) ? '<br />'.htmlspecialchars($_G['gp_msg'][$reportid]) : '';
 						if(!empty($_G['gp_creditsvalue'][$reportid])) {
+							if($report_reward['max'] < $_G['gp_creditsvalue'][$reportid] || $_G['gp_creditsvalue'][$reportid] < $report_reward['min']) {
+								showmessage('parameters_error', "$cpscript?mod=modcp&action=report&fid=$_G[fid]");
+							}
 							$credittag = $_G['gp_creditsvalue'][$reportid] > 0 ? '+' : '';
 							$creditchange = '<br />'.lang('forum/misc', 'report_msg_your').$_G['setting']['extcredits'][$curcredits]['title'].'&nbsp;'.$credittag.$_G['gp_creditsvalue'][$reportid];
 							updatemembercount($uid, array($curcredits => intval($_G['gp_creditsvalue'][$reportid])), true, 'RPC', $reportid);
@@ -37,7 +41,7 @@ if(!empty($_G['fid'])) {
 		}
 	}
 	$rewardlist = '';
-	$report_reward = unserialize($_G['setting']['report_reward']);
+
 	$offset = abs(ceil(($report_reward['max'] - $report_reward['min']) / 10));
 	if($report_reward['max'] > $report_reward['min']) {
 		for($vote = $report_reward['max']; $vote >= $report_reward['min']; $vote -= $offset) {

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: space_home.php 29154 2012-03-27 10:15:25Z zhengqingpeng $
+ *      $Id: space_home.php 30782 2012-06-19 06:06:33Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -34,6 +34,8 @@ if(empty($_GET['view'])) {
 	} else {
 		$_GET['view'] = 'all';
 	}
+} elseif(!in_array($_GET['view'], array('we', 'me', 'all', 'app'))) {
+	$_GET['view'] = 'all';
 }
 if(empty($_GET['order'])) {
 	$_GET['order'] = 'dateline';

@@ -4,7 +4,7 @@
  *		[Discuz!] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: function_sec.php 28975 2012-03-21 05:19:29Z songlixin $
+ *		$Id: function_sec.php 30105 2012-05-10 10:04:55Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -225,7 +225,6 @@ function logDeleteThread($tids, $reason = 'Admin Delete') {
 			}
 		}
 	}
-	file_put_contents('delete.log', var_export($logData, TRUE), FILE_APPEND);
 
 	if (count($logData)) {
 		require_once libfile('class/sec');
@@ -260,7 +259,6 @@ function logDeletePost($pids, $reason = 'Admin Delete') {
 			);
 		}
 	}
-	file_put_contents('delete.log', var_export($logData, TRUE), FILE_APPEND);
 	if (count($logData)) {
 		require_once libfile('class/sec');
 		$sec = Sec::getInstance();

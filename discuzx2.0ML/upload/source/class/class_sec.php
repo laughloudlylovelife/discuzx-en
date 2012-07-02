@@ -24,6 +24,10 @@ class Sec {
 	function __construct() {
 	}
 
+	function _getUA() {
+		return $_SERVER['HTTP_USER_AGENT'];
+	}
+
 	function setClient() {
 		global $_G;
 
@@ -72,6 +76,7 @@ class Sec {
 			'remoteIp' => $_SERVER['REMOTE_ADDR'],
 			'hasVerifyCode' => $secReportCodeStatus,
 			'regResult' => 1,
+			'userAgent' => $this->_getUA(),
 			'extra' => $extra
 		);
 
@@ -152,6 +157,7 @@ class Sec {
 			'posts' => $posts,
 			'signature' => $signature,
 			'userBitMap' => $userBitMap,
+			'userAgent' => $this->_getUA(),
 			'extra' => $extra
 		);
 		$result = $this->_secClient->securityReportUserLogin($batchData);
@@ -409,7 +415,10 @@ class Sec {
 				$threadSpecial = 'other';
 			}
 		}
-
+		if ($_G['gp_action'] == 'newtrade') {
+			$type = 'newThread';
+			$pid = $firstPost['pid'];
+		}
 
 		$batchData[] = array(
 						'tId' => $tid,
@@ -434,6 +443,7 @@ class Sec {
 						'shares' => $shares,
 						'title' => $post['subject'],
 						'content' => $post['message'],
+						'sortMessage' => $sortMessage,
 						'attachList' => $postAttachs,
 						'reportType' => $type,
 						'contentBitMap' => $contentBitMap,
@@ -441,6 +451,7 @@ class Sec {
 						'extra' => $extra,
 						'specialType' => $threadSpecial,
 						'signature' => $memberField['sightml'],
+						'userAgent' => $this->_getUA(),
 		);
 
 		$result = $this->_secClient->securityReportPost($batchData);

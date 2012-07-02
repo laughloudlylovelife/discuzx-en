@@ -85,7 +85,7 @@ $lang = array
 	'title_article_favorite' => '文章收藏',
 	'title_all_favorite' => '全部收藏',
 	'title_friend_list' => '好友列表',
-	'title_of' => '的',
+//vot	'title_of' => '的',
 	'title_all_poll' => '随便看看投票',
 	'title_we_poll' => '好友发起的投票',
 	'title_me_poll' => '我的投票',
@@ -151,7 +151,7 @@ $lang = array
 	'title_memcp_privacy' => '隐私筛选',
 	'title_memcp_avatar' => '修改头像',
 	'title_memcp_profile' => '个人资料',
-//	'title_memcp_sendmail' => '邮件提醒',
+//vot	'title_memcp_sendmail' => '邮件提醒',
 	'title_memcp_credit' => '积分',
 	'title_memcp_friend' => '好友',
 	'title_memcp_usergroup' => '用户组',
@@ -173,7 +173,7 @@ $lang = array
 	'title_ranklist_group' => '群组排行',
 	'title_ranklist_app' => '应用排行',
 	'title_ranklist_index' => '全部排行',
-//	'title_ranklist_index' => '排行榜',
+//vot	'title_ranklist_index' => '排行榜',
 	'title_search' => '搜索',
 	'title_topic_management' => '创建专题',
 	'title_portal_management' => '门户管理',
@@ -203,7 +203,9 @@ $lang = array
 	'search' => '搜索',
 	'page' => '第{page}页',
 
-//vot source/include/misc/misc_security.php
+//---------------------------------------------
+// Added by Valery Votintsev
+//source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> '刷新频率限制',//'Refresh frequency limit',
 	'attackevasive_1_message'	=> '您访问网站的速度太快，不到两秒钟！请等一下...',//'You visit the site too fast, less than two seconds! Please wait a little...',
 	'attackevasive_2_subject'	=> '通过代理服务器的访问是受到限制',//'Access through proxy servers is restricted',
@@ -211,7 +213,7 @@ $lang = array
 	'attackevasive_4_subject'	=> '打开页面重载',//'Open the page reload',
 	'attackevasive_4_message'	=> '欢迎的网站，页面重新载入，请稍候...',//'Welcome to the site, the page is re-loading, please wait ...',
 
-//vot Months Names
+// Months Names
 	'month_name'	=> array('月','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'),//array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
 
 );

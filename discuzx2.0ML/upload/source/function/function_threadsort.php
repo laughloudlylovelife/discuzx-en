@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_threadsort.php 22937 2011-06-03 01:15:26Z monkey $
+ *      $Id: function_threadsort.php 29452 2012-04-12 09:10:05Z chenmengshu $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -348,7 +348,7 @@ function threadsortshow($sortid, $tid) {
 						$_G['forum_option'][$option['identifier']]['value'] = implode(' &raquo; ', $tmpidentifiervalue);
 						unset($tmpchoiceid, $tmpidentifiervalue);
 					} elseif($option['type'] == 'image') {
-						$imgoptiondata = unserialize($optiondata[$optionid]['value']);
+						$imgoptiondata = unserialize(stripslashes($optiondata[$optionid]['value']));
 						$threadsortshow['sortaids'][] = $imgoptiondata['aid'];
 						if(empty($templatearray['viewthread'])) {
 							$maxwidth = $option['maxwidth'] ? 'width="'.$option['maxwidth'].'"' : '';

@@ -4833,8 +4833,8 @@ $lang = array
 	'ec_alipay_contract_comment'		=> 'If you have a subscriber account, you can choose "Yes" for the Forum will using your own merchant service platform. If you have not signed, you can <a href="https://www.alipay.com/himalayas/practicality_customer.htm?customer_external_id=C4335344590036426018&market_type=from_agent_contract&pro_codes=21790F5A8C48B687F7F62F29651356BB" target="_blank">Sign now</a>',//'如果您的支付宝账号是签约用户，可以选择“是”让论坛使用您自己的商家服务平台。如果您还未签约，<a href="https://www.alipay.com/himalayas/practicality_customer.htm?customer_external_id=C4335344590036426018&market_type=from_agent_contract&pro_codes=21790F5A8C48B687F7F62F29651356BB" target="_blank">请点击这里签约</a>',
 	'ec_alipay_securitycode'		=> 'Transaction security check code (key)',//'交易安全校验码 (key)',
 	'ec_alipay_securitycode_comment'	=> 'Enter the transaction security check code assigned to you by Alipay. This verification code enable you to pay with official Alipay business services.',//'支付宝签约用户可以在此处填写支付宝分配给您的交易安全校验码，此校验码您可以到支付宝官方的商家服务功能处查看',
-	'ec_alipay_partner'			=> 'Partner status (partnerID)',//'合作者身份 (partnerID)',
-	'ec_alipay_partner_comment'		=> 'Enter assigned to you Alipay partner status ID. The user fees is payed in accordance with the contract you are signing of the official agreement. If you have not signed, you can <a href="https://www.alipay.com/himalayas/practicality_customer.htm?customer_external_id=C4335344590036426018&market_type=from_agent_contract&pro_codes=21790F5A8C48B687F7F62F29651356BB" target="_blank">Sign now</ a>. If the contract cause a conflict, please contact 0571-88158090.',//'支付宝签约用户请在此处填写支付宝分配给您的合作者身份，签约用户的手续费按照您与支付宝官方的签约协议为准。如果您还未签约，<a href="https://www.alipay.com/himalayas/practicality_customer.htm?customer_external_id=C4335344590036426018&market_type=from_agent_contract&pro_codes=21790F5A8C48B687F7F62F29651356BB" target="_blank">请点击这里签约</a>；如果在签约时出现合同模板冲突，请咨询0571-88158090。',
+/*!*/	'ec_alipay_partner'			=> 'Partner status (PID)',//'合作者身份 (PID)',
+/*!*/	'ec_alipay_partner_comment'		=> 'Enter assigned to you Alipay partner status ID. The user fees is payed in accordance with the contract you are signing of the official agreement.<br/>If you yet not registered, please <a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">Sign now</a>. If you allready registered, <a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&product=fastpay" target="_blank">Click here to obtain the PID and Key</a>; If you encounter an error when signing, please contact the Support Service by phone: 0571-88158090.',//'支付宝签约用户请在此处填写支付宝分配给你的合作者身份，签约用户的手续费按照你与支付宝官方的签约协议为准。<br/>如果你还未签约，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">请点击这里签约</a>；如果已签约,<a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&product=fastpay" target="_blank">请点击这里获取PID、Key</a>;如果在签约时出现合同模板冲突，请咨询0571-88158090',
 	'ec_alipay_creditdirectpay'		=> 'Use the account interface directly',//'使用即时到帐接口',
 	'ec_alipay_creditdirectpay_comment'	=> 'If after signing the agreement you allowed to direct use the merchant interface, choose it to allow integration withg real-time payments, such as recharge, product sell, etc.',//'如果您的签约协议中包含即时到帐接口可以选择此项，让积分充值、商品交易使用即时到账方式付款',
 
@@ -6209,29 +6209,10 @@ RepeatLimit 32
 //source/admincp/admincp_index.php - javascript function shownews()
 	'subscribe'			=> 'Subscribe',//'订阅',
 
-//source/admincp/admincp_quickquery.php
-	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',
-	'quick_enable_trash'		=> 'Enable Recycle Bin for all forums',//'开启 所有版块 主题回收站',
-	'quick_enable_bbcode'		=> 'Enable BB-Codes for all forums',//'开启 所有版块 Discuz! 代码”',
-	'quick_enable_img'		=> 'Enable [IMG] code for all forums',//'开启 所有版块 [IMG] 代码”',
-	'quick_enable_smilies'		=> 'Enable Smilies code for all forums',//'开启 所有版块 Smilies 代码',
-	'quick_enable_jammer'		=> 'Enable Jammer code for all forums',//'开启 所有版块 内容干扰码',
-	'quick_enable_anonymous'	=> 'Enable anonymous posting for all forums',//'开启 所有版块 允许匿名发贴”',
-	'quick_disable'			=> 'Quick disable functions',//'快速关闭论坛版块功能',
-	'quick_disable_trash'		=> 'Disable Recycle Bin for all forums',//'关闭 所有版块 主题回收站',
-	'quick_disable_html'		=> 'Disable HTML code for all forums',//'关闭 所有版块 HTML 代码',
-	'quick_disable_bbcode'		=> 'Disable BB-Codes for all forums',//'关闭 所有版块 Discuz! 代码',
-	'quick_disable_img'		=> 'Disable [IMG] code for all forums',//'关闭 所有版块 [IMG] 代码',
-	'quick_disable_smilies'		=> 'Disable Smilies codes for all forums',//'关闭 所有版块 Smilies 代码',
-	'quick_disable_jammer'		=> 'Disable Jammer Code for all forums',//'关闭 所有版块 内容干扰码',
-	'quick_disable_anonymous'	=> 'Disable anonymous posting for all forums',//'关闭 所有版块 允许匿名发贴',
-	'quick_members'			=> 'Members related functions',//'会员操作相关',
-	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
-
 //---------------------------
 //Change Language/Style
-'change_language'	=> 'Change language',
-'change_style'		=> 'Change style',
+	'change_language'	=> 'Change language',
+	'change_style'		=> 'Change style',
 
 	'language'				=> 'Languages',
 	'setting_language'			=> 'Language Settings',

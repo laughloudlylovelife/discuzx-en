@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: portalcp_block.php 27354 2012-01-17 08:58:18Z zhangguosheng $
+ *      $Id: portalcp_block.php 29567 2012-04-19 03:35:30Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -339,11 +339,17 @@ if($op == 'block') {
 		showmessage('do_success', "portal.php?mod=portalcp&ac=block&op=itemdata&bid=$bid&page=$page");
 	}
 
+	$count = DB::result_first('SELECT COUNT(*) FROM '.DB::table('common_block_item_data')." WHERE bid='$bid' AND isverified=1");
+	$multi = '';
 	$datalist = array();
-	$query = DB::query('SELECT * FROM '.DB::table('common_block_item_data')." WHERE bid='$bid' AND isverified='1' ORDER BY stickgrade DESC, verifiedtime DESC LIMIT $start, $perpage");
-	while(($value=DB::fetch($query))) {
-		$value['verifiedtime'] = dgmdate($value['verifiedtime']);
-		$datalist[$value['dataid']] = $value;
+	if($count) {
+		$query = DB::query('SELECT * FROM '.DB::table('common_block_item_data')." WHERE bid='$bid' AND isverified='1' ORDER BY stickgrade DESC, verifiedtime DESC LIMIT $start, $perpage");
+		while(($value=DB::fetch($query))) {
+			$value['verifiedtime'] = dgmdate($value['verifiedtime']);
+			$datalist[$value['dataid']] = $value;
+		}
+
+		$multi = multi($count, $perpage, $page, "portal.php?mod=portalcp&ac=block&bid=$bid&op=itemdata");
 	}
 
 } elseif($op == 'setting') {
@@ -420,7 +426,7 @@ if($op == 'block') {
 		}
 	} elseif($op == 'push') {
 
-		$item = get_push_item($thestyle, $_GET['id'], $_GET['idtype']);
+		$item = get_push_item($block, $thestyle, $_GET['id'], $_GET['idtype']);
 		if($itemid) {
 			$item['itemid'] = $itemid;
 		}
@@ -445,7 +451,7 @@ if($op == 'block') {
 			if(in_array($_GET['idtype'],array('tid', 'gtid', 'aid', 'picid', 'blogid'))) {
 				$_GET['idtype'] = $_GET['idtype'] == 'gtid' ? 'tids' : $_GET['idtype'].'s';
 			}
-			$item = get_push_item($thestyle, $_GET['id'], $_GET['idtype'], $block['blockclass'], $block['script']);
+			$item = get_push_item($block, $thestyle, $_GET['id'], $_GET['idtype'], $block['blockclass'], $block['script']);
 			if(empty($item)) showmessage('block_data_type_invalid', null, null, array('msgtype'=>3));
 		}
 	} elseif($op=='verifydata' || $op=='managedata') {
@@ -778,7 +784,7 @@ function block_ban_item($block, $item) {
 	DB::update('common_block', array('param'=>$parameters), array('bid'=>intval($block['bid'])));
 }
 
-function get_push_item($blockstyle, $id, $idtype, $blockclass = '', $script = '') {
+function get_push_item($block, $blockstyle, $id, $idtype, $blockclass = '', $script = '') {
 	$item = array();
 	$obj = null;
 	if(empty($blockclass) || empty($script)) {
@@ -799,6 +805,9 @@ function get_push_item($blockstyle, $id, $idtype, $blockclass = '', $script = ''
 	}
 	if($obj && is_object($obj)) {
 		$paramter = array($idtype => intval($id));
+		if(isset($block['param']['picrequired'])) {
+			$paramter['picrequired'] = $block['param']['picrequired'];
+		}
 		$return = $obj->getData($blockstyle, $paramter);
 		if($return['data']) {
 			$item = array_shift($return['data']);

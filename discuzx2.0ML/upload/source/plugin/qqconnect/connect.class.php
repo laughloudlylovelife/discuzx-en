@@ -242,6 +242,8 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 
 		require_once libfile('function/connect');
 
+		$extrajs = '';
+
 		if($GLOBALS['page'] == 1 && $_G['forum_firstpid'] && $GLOBALS['postlist'][$_G['forum_firstpid']]['invisible'] == 0 && TIMESTAMP - $_G['forum_thread']['dateline'] < 43200) {
 			$_G['connect']['feed_js'] = $_G['connect']['t_js'] = $feedlogstatus = $tlogstatus = false;
 			if((!getstatus($_G['forum_thread']['status'], 7) || !getstatus($_G['forum_thread']['status'], 8))
@@ -278,27 +280,6 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 				DB::query("UPDATE ".DB::table('forum_thread')." SET status='$newstatus' WHERE tid='$_G[tid]'");
 			}
 
-			$_G['connect']['thread_url'] = $_G['siteurl'].$GLOBALS['canonical'];
-
-			$_G['connect']['qzone_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=1&thread_id=' . $_G['tid'];
-			$_G['connect']['weibo_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=2&thread_id=' . $_G['tid'];
-			$_G['connect']['pengyou_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=3&thread_id=' . $_G['tid'];
-
-			$_G['connect']['qzone_share_api'] = $_G['connect']['qzone_public_share_url'].'?url='.urlencode($_G['connect']['thread_url']);
-			$_G['connect']['pengyou_share_api'] = $_G['connect']['qzone_public_share_url'].'?to=pengyou&url='.urlencode($_G['connect']['thread_url']);
-			$params = array('oauth_consumer_key' => $_G['setting']['connectappid'], 'title' => $GLOBALS['postlist'][$_G['forum_firstpid']]['subject'], 'url' => $_G['connect']['thread_url']);
-			$params['sig'] = connect_get_sig($params, connect_get_sig_key());
-			$_G['connect']['t_share_api'] =	$_G['connect']['url'].'/mblog/redirect?'.cloud_http_build_query($params, '', '&');
-
-			$_G['connect']['first_post'] = daddslashes($GLOBALS['postlist'][$_G['forum_firstpid']]);
-			$_G['gp_connect_autoshare'] = !empty($_G['gp_connect_autoshare']) ? 1 : 0;
-
-			$_G['connect']['weibo_appkey'] = $_G['connect']['weibo_public_appkey'];
-			if($this->allow && $_G['setting']['connect']['mblog_app_key']) {
-				$_G['connect']['weibo_appkey'] = $_G['setting']['connect']['mblog_app_key'];
-			}
-
-			$extrajs = '';
 			if($_G['connect']['feed_js'] || $_G['connect']['t_js']) {
 				$params = array();
 				$params['thread_id'] = $_G['tid'];
@@ -309,32 +290,56 @@ class plugin_qqconnect extends plugin_qqconnect_base {
 				$jsurl = $_G['connect']['discuz_new_feed_url'].'&'.cloud_http_build_query($params, '', '&');
 				$extrajs = connect_output_javascript($jsurl);
 			}
-
-			if (trim($_G['forum']['viewperm'])) {
-				$allowViewPermGroupIds = explode("\t", trim($_G['forum']['viewperm']));
-			}
-			if (trim($_G['forum']['getattachperm'])) {
-				$allowViewAttachGroupIds = explode("\t", trim($_G['forum']['getattachperm']));
-			}
-			$bigWidth = '400';
-			$bigHeight = '400';
-			$share_images = array();
-			foreach ($postlist[$_G['connect']['first_post']['pid']]['attachments'] as $attachment) {
-				if ($attachment['isimage'] == 0 || $attachment['price'] > 0
-					|| $attachment['readperm'] > $_G['group']['readaccess']
-					|| ($allowViewPermGroupIds && !in_array($_G['groupid'], $allowViewPermGroupIds))
-					|| ($allowViewAttachGroupIds && !in_array($_G['groupid'], $allowViewAttachGroupIds))) {
-					continue;
-				}
-				$key = md5($attachment['aid'].'|'.$bigWidth.'|'.$bigHeight);
-				$bigImageURL = $_G['siteurl'] . 'forum.php?mod=image&aid='.$attachment['aid'] . '&size=' . $bigWidth . 'x' . $bigHeight . '&key=' . rawurlencode($key) . '&type=fixnone&nocache=1';
-				$share_images[] = urlencode($bigImageURL);
-			}
-			$_G['connect']['share_images'] = implode('|', $share_images);
-
-			connect_merge_member();
-			return tpl_viewthread_share_method().$extrajs;
 		}
+
+		$_G['connect']['thread_url'] = $_G['siteurl'].$GLOBALS['canonical'];
+
+		$_G['connect']['qzone_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=1&thread_id=' . $_G['tid'];
+		$_G['connect']['weibo_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=2&thread_id=' . $_G['tid'];
+		$_G['connect']['pengyou_share_url'] = $_G['siteurl'] . 'home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp&pluginop=share&sh_type=3&thread_id=' . $_G['tid'];
+
+		$_G['connect']['qzone_share_api'] = $_G['connect']['qzone_public_share_url'].'?url='.urlencode($_G['connect']['thread_url']);
+		$_G['connect']['pengyou_share_api'] = $_G['connect']['qzone_public_share_url'].'?to=pengyou&url='.urlencode($_G['connect']['thread_url']);
+		$params = array('oauth_consumer_key' => $_G['setting']['connectappid'], 'title' => $GLOBALS['postlist'][$_G['forum_firstpid']]['subject'], 'url' => $_G['connect']['thread_url']);
+		$params['sig'] = connect_get_sig($params, connect_get_sig_key());
+		$_G['connect']['t_share_api'] =	$_G['connect']['url'].'/mblog/redirect?'.cloud_http_build_query($params, '', '&');
+
+		$_G['connect']['first_post'] = daddslashes($GLOBALS['postlist'][$_G['forum_firstpid']]);
+		if ($_G['connect']['first_post']['anonymous']) {
+			$_G['connect']['first_post']['authorid'] = 0;
+			$_G['connect']['first_post']['author'] = '';
+		}
+		$_G['gp_connect_autoshare'] = !empty($_G['gp_connect_autoshare']) ? 1 : 0;
+
+		$_G['connect']['weibo_appkey'] = $_G['connect']['weibo_public_appkey'];
+		if($this->allow && $_G['setting']['connect']['mblog_app_key']) {
+			$_G['connect']['weibo_appkey'] = $_G['setting']['connect']['mblog_app_key'];
+		}
+
+		if (trim($_G['forum']['viewperm'])) {
+			$allowViewPermGroupIds = explode("\t", trim($_G['forum']['viewperm']));
+		}
+		if (trim($_G['forum']['getattachperm'])) {
+			$allowViewAttachGroupIds = explode("\t", trim($_G['forum']['getattachperm']));
+		}
+		$bigWidth = '400';
+		$bigHeight = '400';
+		$share_images = array();
+		foreach ($postlist[$_G['connect']['first_post']['pid']]['attachments'] as $attachment) {
+			if ($attachment['isimage'] == 0 || $attachment['price'] > 0
+				|| $attachment['readperm'] > $_G['group']['readaccess']
+				|| ($allowViewPermGroupIds && !in_array($_G['groupid'], $allowViewPermGroupIds))
+				|| ($allowViewAttachGroupIds && !in_array($_G['groupid'], $allowViewAttachGroupIds))) {
+				continue;
+			}
+			$key = md5($attachment['aid'].'|'.$bigWidth.'|'.$bigHeight);
+			$bigImageURL = $_G['siteurl'] . 'forum.php?mod=image&aid='.$attachment['aid'] . '&size=' . $bigWidth . 'x' . $bigHeight . '&key=' . rawurlencode($key) . '&type=fixnone&nocache=1';
+			$share_images[] = urlencode($bigImageURL);
+		}
+		$_G['connect']['share_images'] = implode('|', $share_images);
+
+		connect_merge_member();
+		return tpl_viewthread_share_method().$extrajs;
 	}
 
 	function _viewthread_bottom_output() {

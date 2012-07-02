@@ -4833,8 +4833,8 @@ $lang = array
 	'ec_alipay_contract_comment'		=> 'Если в вашем аккаунте выбран Alipay пользователь, вы можете выбрать "Да" для форума и использовать собственные торговые платформы для продажи услуг. Если вы еще не зарегистрировались, <a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">нажмите здесь для регистрации</a>.',
 	'ec_alipay_securitycode'		=> 'Код проверки безопасности (key)',
 	'ec_alipay_securitycode_comment'	=> 'Пользователи смогут входить на Alipay счет указанный здесь и выполнять проверку безопасности кода. Для получения проверочного кода зайдите на официальный бизнес-сайт Alipay',
-	'ec_alipay_partner'			=> 'Статуса партнера (partnerID)',
-	'ec_alipay_partner_comment'		=> 'Укажите здесь статус партнера, подтверждающий Вашу личность (статус должен быть подписан для взымания платы с пользователей (официальное подписание соглашения). Если у Вас ещё нет открытого счета, то Вы можете <a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">Зарегистрироваться</a>. Если при регистрации возникла ошибка, Вы должны связаться с техподдержкой по телефону: 0571-88158090',
+/*!*/	'ec_alipay_partner'			=> 'Статуса партнера (PID)',
+/*!*/	'ec_alipay_partner_comment'		=> 'Укажите здесь статус партнера, подтверждающий Вашу личность (статус должен быть подписан для взымания платы с пользователей (официальное подписание соглашения).<br/>Если у Вас ещё нет открытого счета, то Вы можете <a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">Зарегистрироваться</a>. Если Вы уже зарегистрированы, Вы можете <a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&product=fastpay" target="_blank">ПОлучить PID и Key</a>; Если при регистрации возникла ошибка, Вы должны связаться с техподдержкой по телефону: 0571-88158090',
 	'ec_alipay_creditdirectpay'		=> 'Использование интерфейса в режиме реального времени',
 	'ec_alipay_creditdirectpay_comment'	=> 'Если подписанное соглашение содержит интерфейс мгновенной оплаты (не стандартный двойной интерфейс), тогда можете выбрать этот вариант',
 
@@ -6209,29 +6209,10 @@ RepeatLimit 32
 //source/admincp/admincp_index.php - javascript function shownews()
 	'subscribe'			=> 'Subscribe',//'订阅',
 
-//source/admincp/admincp_quickquery.php
-	'quick_enable'			=> 'Quick enable functions',//'快速开启论坛版块功能',
-	'quick_enable_trash'		=> 'Enable Recycle Bin for all forums',//'开启 所有版块 主题回收站',
-	'quick_enable_bbcode'		=> 'Enable BB-Codes for all forums',//'开启 所有版块 Discuz! 代码”',
-	'quick_enable_img'		=> 'Enable [IMG] code for all forums',//'开启 所有版块 [IMG] 代码”',
-	'quick_enable_smilies'		=> 'Enable Smilies code for all forums',//'开启 所有版块 Smilies 代码',
-	'quick_enable_jammer'		=> 'Enable Jammer code for all forums',//'开启 所有版块 内容干扰码',
-	'quick_enable_anonymous'	=> 'Enable anonymous posting for all forums',//'开启 所有版块 允许匿名发贴”',
-	'quick_disable'			=> 'Quick disable functions',//'快速关闭论坛版块功能',
-	'quick_disable_trash'		=> 'Disable Recycle Bin for all forums',//'关闭 所有版块 主题回收站',
-	'quick_disable_html'		=> 'Disable HTML code for all forums',//'关闭 所有版块 HTML 代码',
-	'quick_disable_bbcode'		=> 'Disable BB-Codes for all forums',//'关闭 所有版块 Discuz! 代码',
-	'quick_disable_img'		=> 'Disable [IMG] code for all forums',//'关闭 所有版块 [IMG] 代码',
-	'quick_disable_smilies'		=> 'Disable Smilies codes for all forums',//'关闭 所有版块 Smilies 代码',
-	'quick_disable_jammer'		=> 'Disable Jammer Code for all forums',//'关闭 所有版块 内容干扰码',
-	'quick_disable_anonymous'	=> 'Disable anonymous posting for all forums',//'关闭 所有版块 允许匿名发贴',
-	'quick_members'			=> 'Members related functions',//'会员操作相关',
-	'quick_clean_trans'		=> 'Clean all Member Points transaction logs',//'清空 所有会员 积分交易记录',
-
 //---------------------------
 //Change Language/Style
-'change_language'	=> 'Изменить язык',//'Change language',
-'change_style'		=> 'Change style',
+	'change_language'	=> 'Изменить язык',//'Change language',
+	'change_style'		=> 'Change style',
 
 	'language'				=> 'Languages',
 	'setting_language'			=> 'Language Settings',

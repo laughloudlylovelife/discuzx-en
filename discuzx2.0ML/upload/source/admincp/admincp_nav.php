@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_nav.php 22849 2011-05-26 01:57:02Z monkey $
+ *      $Id: admincp_nav.php 30365 2012-05-24 07:51:03Z chenmengshu $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -13,6 +13,10 @@ if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 }
 
 cpheader();
+
+if(!$operation) {
+	$operation = 'headernav';
+}
 
 $navs = array('headernav', 'topnav', 'footernav', 'mynav', 'spacenav');
 $navdata = array();

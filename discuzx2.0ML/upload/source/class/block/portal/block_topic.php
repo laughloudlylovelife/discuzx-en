@@ -69,7 +69,7 @@ class block_topic {
 				'url' => array('name' => lang('blockclass', 'blockclass_topic_field_url'), 'formtype' => 'text', 'datatype' => 'string'),
 				'title' => array('name' => lang('blockclass', 'blockclass_topic_field_title'), 'formtype' => 'title', 'datatype' => 'title'),
 				'pic' => array('name' => lang('blockclass', 'blockclass_topic_field_pic'), 'formtype' => 'pic', 'datatype' => 'pic'),
-				'summary' => array('name' => lang('blockclass', 'blockclass_topic_field_title'), 'formtype' => 'summary', 'datatype' => 'summary'),
+				'summary' => array('name' => lang('blockclass', 'blockclass_topic_field_summary'), 'formtype' => 'summary', 'datatype' => 'summary'),
 				'uid' => array('name' => lang('blockclass', 'blockclass_topic_field_uid'), 'formtype' => 'text', 'datatype' => 'int'),
 				'username' => array('name' => lang('blockclass', 'blockclass_topic_field_username'), 'formtype' => 'text', 'datatype' => 'string'),
 				'dateline' => array('name' => lang('blockclass', 'blockclass_topic_field_dateline'), 'formtype' => 'date', 'datatype' => 'date'),

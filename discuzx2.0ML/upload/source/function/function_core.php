@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_core.php 29089 2012-03-26 10:23:28Z zhangguosheng $
+ *      $Id: function_core.php 29638 2012-04-23 09:26:04Z zhangguosheng $
  *	Modified by Valery Votintsev, codersclub.org
  */
 
@@ -674,6 +674,9 @@ function template($file, $templateid = 0, $tpldir = '', $gettplfile = 0, $primal
 			if(isset($_G['cache']['diytemplatename'.$basescript])) {
 				$diytemplatename = &$_G['cache']['diytemplatename'.$basescript];
 			} else {
+				if(!isset($_G['cache']['diytemplatename'])) {
+					loadcache('diytemplatename');
+				}
 				$diytemplatename = &$_G['cache']['diytemplatename'];
 			}
 			$tplsavemod = 0;
@@ -2055,7 +2058,7 @@ function writelog($file, $log) {
 		@flock($fp, 2);
 		$log = is_array($log) ? $log : array($log);
 		foreach($log as $tmp) {
-			fwrite($fp, "<?PHP exit;?>\t". str_replace(array('<?', '?>'), '', $tmp)."\n");
+			fwrite($fp, "<?PHP exit;?>\t".str_replace(array('<?', '?>'), '', $tmp)."\n");
 		}
 		fclose($fp);
 	}

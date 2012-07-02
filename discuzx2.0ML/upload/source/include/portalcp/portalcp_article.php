@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: portalcp_article.php 24254 2011-09-02 02:43:37Z zhangguosheng $
+ *      $Id: portalcp_article.php 30779 2012-06-19 05:52:56Z zhangguosheng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -366,19 +366,20 @@ if(submitcheck("articlesubmit", 0, $seccodecheck, $secqaacheck)) {
 	}
 	if($_POST['status'] == '0') {
 		DB::update('portal_article_title', array('status'=>'0'), array('aid'=>$aid));
-
+		updatemoderate('aid', $aid, 2);
 		$tourl = dreferer('portal.php?mod=view&aid='.$aid);
 		showmessage('article_passed', $tourl);
 
 	} elseif($_POST['status'] == '2') {
 		DB::update('portal_article_title', array('status'=>'2'), array('aid'=>$aid));
-
+		updatemoderate('aid', $aid, 1);
 		$tourl = dreferer('portal.php?mod=view&aid='.$aid);
 		showmessage('article_ignored', $tourl);
 
 	} elseif($_POST['status'] == '-1') {
 		include_once libfile('function/delete');
 		deletearticle(array($aid), 0);
+		updatemoderate('aid', $aid, 2);
 
 		$tourl = dreferer('portal.php?mod=portalcp&catid='.$article['catid']);
 		showmessage('article_deleted', $tourl);

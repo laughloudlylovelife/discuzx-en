@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_member.php 27351 2012-01-17 07:43:08Z svn_project_zhangjie $
+ *      $Id: function_member.php 30561 2012-06-04 03:23:55Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -108,8 +108,8 @@ function setloginstatus($member, $cookietime) {
 function logincheck($username) {
 	global $_G;
 	$return = 0;
-	$username = addslashes(trim(stripslashes($username)));
-	$login = DB::fetch_first("SELECT count, lastupdate FROM ".DB::table('common_failedlogin')." WHERE ip='$_G[clientip]' AND username='$username'");
+	$username = 1;
+	$login = DB::fetch_first("SELECT count, lastupdate FROM ".DB::table('common_failedlogin')." WHERE ip='$_G[clientip]'");
 	$return = (!$login || (TIMESTAMP - $login['lastupdate'] > 900)) ? 4 : max(0, 4 - $login['count']);
 
 	if(!$login) {
@@ -123,8 +123,7 @@ function logincheck($username) {
 
 function loginfailed($username) {
 	global $_G;
-	$username = addslashes(trim(stripslashes($username)));
-	DB::query("UPDATE ".DB::table('common_failedlogin')." SET count=count+1, lastupdate='$_G[timestamp]' WHERE ip='$_G[clientip]' AND username='$username'");
+	DB::query("UPDATE ".DB::table('common_failedlogin')." SET count=count+1, lastupdate='$_G[timestamp]' WHERE ip='$_G[clientip]'");
 }
 
 function getuidfields() {

@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_post.php 29223 2012-03-29 09:10:48Z chenmengshu $
+ *      $Id: function_post.php 30487 2012-05-30 09:11:07Z svn_project_zhangjie $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -125,20 +125,21 @@ function ftpupload($aids, $uid = 0) {
 		return;
 	}
 	$attachtables = $pics = array();
-	$query = DB::query("SELECT aid, tableid FROM ".DB::table('forum_attachment')." WHERE aid IN (".dimplode($aids).") AND uid='$uid'");
+	$uidadd = $_G['forum']['ismoderator'] ? '' : " AND uid='$uid'";
+	$query = DB::query("SELECT aid, tableid FROM ".DB::table('forum_attachment')." WHERE aid IN (".dimplode($aids).")$uidadd");
 	while($attach = DB::fetch($query)) {
 		$attachtables[$attach['tableid']][] = $attach['aid'];
 	}
 	foreach($attachtables as $attachtable => $aids) {
 		$attachtable = 'forum_attachment_'.$attachtable;
 		$query = DB::query("SELECT aid, thumb, attachment, filename, filesize, picid FROM ".DB::table($attachtable)." WHERE aid IN (".dimplode($aids).") AND remote='0'");
-		$aids = array();
+		$remoteaids = array();
 		while($attach = DB::fetch($query)) {
 			$attach['ext'] = fileext(strtolower($attach['filename']));
-			if(((!$_G['setting']['ftp']['allowedexts'] && !$_G['setting']['ftp']['disallowedexts']) || ($_G['setting']['ftp']['allowedexts'] && in_array($attach['ext'], $_G['setting']['ftp']['allowedexts'])) || ($_G['setting']['ftp']['disallowedexts'] && !in_array($attach['ext'], $_G['setting']['ftp']['disallowedexts']))) && (!$_G['setting']['ftp']['minsize'] || $attach['filesize'] >= $_G['setting']['ftp']['minsize'] * 1024)) {
+			if(((!$_G['setting']['ftp']['allowedexts'] && !$_G['setting']['ftp']['disallowedexts']) || ($_G['setting']['ftp']['allowedexts'] && in_array($attach['ext'], $_G['setting']['ftp']['allowedexts'])) || ($_G['setting']['ftp']['disallowedexts'] && !in_array($attach['ext'], $_G['setting']['ftp']['disallowedexts']) && (!$_G['setting']['ftp']['allowedexts'] || $_G['setting']['ftp']['allowedexts'] && in_array($attach['ext'], $_G['setting']['ftp']['allowedexts'])))) && (!$_G['setting']['ftp']['minsize'] || $attach['filesize'] >= $_G['setting']['ftp']['minsize'] * 1024)) {
 				if(ftpcmd('upload', 'forum/'.$attach['attachment']) && (!$attach['thumb'] || ftpcmd('upload', 'forum/'.getimgthumbname($attach['attachment'])))) {
 					dunlink($attach);
-					$aids[] = $attach['aid'];
+					$remoteaids[$attach['aid']] = $attach['aid'];
 					if($attach['picid']) {
 						$pics[] = $attach['picid'];
 					}
@@ -146,8 +147,8 @@ function ftpupload($aids, $uid = 0) {
 			}
 		}
 
-		if($aids) {
-			DB::update($attachtable, array('remote' => 1), "aid IN (".dimplode($aids).")");
+		if($remoteaids) {
+			DB::update($attachtable, array('remote' => 1), "aid IN (".dimplode($remoteaids).")");
 		}
 	}
 	if($pics) {

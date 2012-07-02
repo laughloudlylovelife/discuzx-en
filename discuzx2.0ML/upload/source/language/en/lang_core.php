@@ -85,7 +85,7 @@ $lang = array
 	'title_article_favorite'	=> 'Favorite Articles',//'文章收藏',
 	'title_all_favorite'		=> 'All Favorites',//'全部收藏',
 	'title_friend_list'		=> 'Friend List',//'好友列表',
-//	'title_of'			=> 'of',//'的',
+//vot	'title_of'			=> 'of',//'的',
 	'title_all_poll'		=> 'All Polls',//'随便看看投票',
 	'title_we_poll'			=> 'Friend Polls',//'好友发起的投票',
 	'title_me_poll'			=> 'My Polls',//'我的投票',
@@ -151,7 +151,7 @@ $lang = array
 	'title_memcp_privacy'		=> 'Privacy',//'隐私筛选',
 	'title_memcp_avatar'		=> 'Modify Avatar',//'修改头像',
 	'title_memcp_profile'		=> 'Personal Data',//'个人资料',
-//	'title_memcp_sendmail'		=> 'Mail Alert',//'邮件提醒',
+//vot	'title_memcp_sendmail'		=> 'Mail Alert',//'邮件提醒',
 	'title_memcp_credit'		=> 'Points',//'积分',
 	'title_memcp_friend'		=> 'Friends',//'好友',
 	'title_memcp_usergroup'		=> 'User Groups',//'用户组',
@@ -173,7 +173,7 @@ $lang = array
 	'title_ranklist_group'		=> 'Group Ranks',//'群组排行',
 	'title_ranklist_app'		=> 'Application Ranking',//'应用排行',
 	'title_ranklist_index'		=> 'All Ranks',//'全部排行',
-//	'title_ranklist_index'		=> 'Rank',//'排行榜',
+//vot	'title_ranklist_index'		=> 'Rank',//'排行榜',
 	'title_search'			=> 'Search',//'搜索',
 	'title_topic_management'	=> 'Topic Management',//'创建专题',
 	'title_portal_management'	=> 'Portal Management',//'门户管理',
@@ -203,7 +203,9 @@ $lang = array
 	'search'			=> 'Search',//'搜索',
 	'page'				=> 'page {page}',
 
-//vot source/include/misc/misc_security.php
+//---------------------------------------------
+// Added by Valery Votintsev
+//source/include/misc/misc_security.php
 	'attackevasive_1_subject'	=> 'Refresh frequency limit',
 	'attackevasive_1_message'	=> 'You visit the site too fast, less than two seconds! Please wait a little...',
 	'attackevasive_2_subject'	=> 'Access through proxy servers is restricted',
@@ -211,7 +213,7 @@ $lang = array
 	'attackevasive_4_subject'	=> 'Open the page reload',
 	'attackevasive_4_message'	=> 'Welcome to the site, the page is re-loading, please wait ...',
 
-//vot Months Names
+// Months Names
 	'month_name'	=> array('Month','January','February','March','April','May','June','July','August','September','October','November','December'),
 
 );

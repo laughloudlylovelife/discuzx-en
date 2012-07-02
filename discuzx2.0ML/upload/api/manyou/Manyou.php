@@ -4,7 +4,7 @@
  *		[Discuz!] (C)2001-2099 Comsenz Inc.
  *		This is NOT a freeware, use is subject to license terms
  *
- *		$Id: Manyou.php 28952 2012-03-20 09:18:17Z songlixin $
+ *		$Id: Manyou.php 30813 2012-06-21 04:44:49Z zhouxiaobo $
  */
 
 define('MY_FRIEND_NUM_LIMIT', 2000);
@@ -784,13 +784,13 @@ class SearchHelper {
 				if ($k == 'displayorder') {
 					if ($v >= 0) {
 						$result['displayStatus'] = 'normal';
-					} elseif ($v = -1) {
+					} elseif ($v == -1) {
 						$result['displayStatus'] = 'recycled';
-					} elseif ($v = -2) {
+					} elseif ($v == -2) {
 						$result['displayStatus'] = 'unapproved';
-					} elseif ($v = -3) {
+					} elseif ($v == -3) {
 						$result['displayStatus'] = 'ignored';
-					} elseif ($v = -4) {
+					} elseif ($v == -4) {
 						$result['displayStatus'] = 'draft';
 					} else {
 						$result['displayStatus'] = 'unknown';
@@ -1198,7 +1198,7 @@ class Cloud_Client {
 				$url = 'http://api.discuz.qq.com/site_security.php';
 				break;
 			default:
-				$url = $this->url;
+				$url = 'http://api.discuz.qq.com/site.php';
 		}
 
 

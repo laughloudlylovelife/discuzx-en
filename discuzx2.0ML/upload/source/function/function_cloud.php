@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_cloud.php 29038 2012-03-23 06:22:39Z songlixin $
+ *      $Id: function_cloud.php 29291 2012-03-31 10:36:17Z songlixin $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -427,9 +427,7 @@ function cloud_init_uniqueid() {
 
 function show() {
 	global $_G;
-	if ($_G['adminid'] != 1) {
-		return false;
-	}
+	$clientVersion = '2';
 
 	include_once DISCUZ_ROOT . '/source/discuz_version.php';
 	$release = DISCUZ_RELEASE;
@@ -439,6 +437,10 @@ function show() {
 	$isfounder = checkfounder($_G['member']);
 	$sId = $_G['setting']['my_siteid'];
 	$version = $_G['setting']['version'];
+	$adminId = $_G['adminid'];
+	$openId = getOpenId2($_G['uid']);
+	$uid = $_G['uid'];
+	$groupId = $_G['groupid'];
 	$ts = TIMESTAMP;
 	$sig = '';
 	if ($sId) {
@@ -449,6 +451,10 @@ function show() {
 			'fix_bug' => $fix,
 			'is_founder' => $isfounder,
 			's_url' => $_G[siteurl],
+			'admin_id' => $adminId,
+			'open_id' => $openId,
+			'uid' => $uid,
+			'group_id' => $groupId,
 			'last_send_time' => $_COOKIE['dctips'],
 		);
 		ksort($params);
@@ -466,8 +472,13 @@ function show() {
 			var discuzApi = '$cloudApi';
 			var discuzIsFounder = '$isfounder';
 			var discuzFixbug = '$fix';
+			var discuzAdminId = '$adminId';
+			var discuzOpenId = '$openId';
+			var discuzUid = '$uid';
+			var discuzGroupId = '$groupId';
 			var ts = '$ts';
 			var sig = '$sig';
+			var discuzTipsCVersion = '$clientVersion';
 		</script>
 		<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script>
 EOF;
@@ -490,6 +501,17 @@ function checkfounder($user = '') {
 	} else {
 		return FALSE;
 	}
+}
+
+function getOpenId2($uid) {
+	$member = DB::fetch_first("SELECT * FROM " . DB::table('common_member') . " WHERE uid = '$uid'");
+	if ($member['conisbind']) {
+		$openId = DB::result_first("SELECT conopenid FROM " . DB::table('common_member_connect') . " WHERE uid = '$uid'");
+	} else {
+		$openId = '';
+	}
+
+	return $openId;
 }
 
 ?>

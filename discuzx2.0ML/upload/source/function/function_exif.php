@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_exif.php 6741 2010-03-25 07:36:01Z cnteacher $
+ *      $Id: function_exif.php 30346 2012-05-24 03:16:28Z zhengqingpeng $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -38,11 +38,27 @@ function getexif($img) {
 	"7"		=>	"flash fired and strobe return light detected",
 	);
 
+	if(!function_exists('exif_read_data')) {
+		return exif_lang('img_info');
+	}
 	$exif = @exif_read_data($img,"IFD0");
 	if ($exif === false) {
 		$new_img_info	=	exif_lang('img_info');
 	} else {
 		@$exif = exif_read_data($img, 0, true);
+		foreach($exif as $type => $typearr) {
+			foreach($typearr as $key => $kval) {
+				if(is_array($kval)) {
+					foreach($kval as $vkey => $value) {
+						$str = dhtmlspecialchars(preg_replace("/[^\[A-Za-z0-9_\.\/:\s-\]]/", '', trim($value)));
+						$exif[$type][$key][$vkey] = $str;
+					}
+				} elseif(!in_array($key, array('ComponentsConfiguration', 'FileSource', 'SceneType'))) {
+					$str = dhtmlspecialchars(preg_replace("/[^\[A-Za-z0-9_\.\/:\s-\]]/", '', trim($kval)));
+					$exif[$type][$key] = $str;
+				}
+			}
+		}
 		$new_img_info	=	array (
 		exif_lang('FileName')			=>	$exif[FILE][FileName],
 		exif_lang('FileType')		=>	$imgtype[$exif[FILE][FileType]],

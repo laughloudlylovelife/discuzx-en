@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: adv_custom.php 9396 2010-04-28 08:27:33Z monkey $
+ *      $Id: adv_custom.php 29606 2012-04-23 02:28:10Z liulanbo $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -28,7 +28,6 @@ class adv_custom {
 			echo '<br >';cpmsg(lang('adv/custom', 'custom_id_notfound'));
 		}
 		$this->customname = $custom['name'];
-		return $settings;
 	}
 
 	function setsetting(&$advnew, &$parameters) {

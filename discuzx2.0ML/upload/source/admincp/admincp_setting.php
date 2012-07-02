@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_setting.php 23419 2011-07-14 03:49:57Z liulanbo $
+ *      $Id: admincp_setting.php 30451 2012-05-29 08:36:46Z chenmengshu $
  *	Modified by Valery Votintsev, codersclub.org
  */
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
@@ -2586,7 +2586,7 @@ $settingnew['uc']['api'] = preg_replace("/\/$/",'',$settingnew['uc']['api']);
 		if(isset($settingnew['watermarktext']['album'])) {
 			watermarkinit('album');
 		}
-		foreach(array('protal', 'forum', 'album') as $imgwatertype) {
+		foreach(array('portal', 'forum', 'album') as $imgwatertype) {
 			if($settingnew['watermarkstatus'][$imgwatertype]) {
 				$settingnew['watermarktrans'][$imgwatertype] = intval($settingnew['watermarktrans'][$imgwatertype]);
 				$settingnew['watermarkquality'][$imgwatertype] = intval($settingnew['watermarkquality'][$imgwatertype]);

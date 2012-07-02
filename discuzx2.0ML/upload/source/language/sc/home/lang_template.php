@@ -76,7 +76,7 @@ $lang = array (
   'comprehensive_overview' => '综合概况',
   'comprehensive_overview_message' => '这里看到的是站点的综合概况发展统计(需要至少统计 2 天后才有效)',
   'info_interactive' => '信息互动',
-  'interactive_help_message' => '<li>来访用户：指的是每天访问本站的唯一用户数。一个用户访问多次，也只算一次</li>
+/*vot*/  'interactive_help_message' => '<li>来访用户：指的是每天访问本站的唯一用户数。一个用户访问多次，也只算一次</li>
   				<li>论坛：指的是每天发布主题、投票、活动、悬赏、辩论、商品和主题回帖的总数量 </li>
 				<li>群组：指的是每天创建群组、群组主题、群组回帖的总数量 </li>
 				<li>家园：指的是每天发布记录、日志、图片、话题、投票、活动、分享和互相评论的总数量 </li>

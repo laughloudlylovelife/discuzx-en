@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_admincp.php 28030 2012-02-21 05:43:34Z monkey $
+ *      $Id: function_admincp.php 30544 2012-06-01 08:25:31Z chenmengshu $
  *	Modified by Valery Votintsev at sources.ru
  */
 
@@ -1264,7 +1264,7 @@ function rewritedata($alldata = 1) {
 	$data = array();
 	if(!$alldata) {
 		if(in_array('portal_topic', $_G['setting']['rewritestatus'])) {
-			$data['search']['portal_topic'] = "/".$_G['domain']['pregxprw']['portal']."\?mod\=topic&(amp;)?topic\=(.+?)?\"([^\>]*)\>/e";
+			$data['search']['portal_topic'] = "/".$_G['domain']['pregxprw']['portal']."\?mod\=topic&(amp;)?topic\=([^#]+?)?\"([^\>]*)\>/e";
 			$data['replace']['portal_topic'] = "rewriteoutput('portal_topic', 0, '\\1', '\\3', '\\4')";
 		}
 
