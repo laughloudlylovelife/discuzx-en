@@ -204,7 +204,7 @@ $lang = array(
 	'do_stat_eventcomment' => '活動評論',
 	'do_stat_eventjoin' => '參加活動',
 	'do_stat_sharecomment' => '分享評論',
-	'do_stat_post' => '主題回帖',
+//	'do_stat_post' => '主題回帖',
 	'do_stat_click' => '表態',
 	'do_stat_wall' => '留言',
 	'do_stat_poke' => '打招呼',
@@ -285,6 +285,7 @@ $lang = array(
 	'profile_verify_modify_error' => '{verify}已經認證通過不允許修改',
 	'profile_verify_verifying' => '您的{verify}信息已提交，請耐心等待核查。',
 
+//'district_level_0'		=> '-国家-',//'- Country -',
 	'district_level_1' => '-省份-',
 	'district_level_2' => '-城市-',
 	'district_level_3' => '-州縣-',
