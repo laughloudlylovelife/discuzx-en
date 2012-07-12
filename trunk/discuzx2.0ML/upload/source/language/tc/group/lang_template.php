@@ -201,10 +201,6 @@ $lang = array (
   'orderby_default' => '默認排序',
   'stats_main_threads_count' => '主題數',
   'threads' => '主題',
-// Obsolete
-//	'group_image_resize'	=> '自动缩略成 720 X 168 像素大小的图片',
-	'group_create_notice'	=> '注：除群组名称和分类暂时不能修改外，其它项目在创建完成后仍可修改。',
-	'replies/views'		=> '回复/查看',//vot
 );
 
 ?>

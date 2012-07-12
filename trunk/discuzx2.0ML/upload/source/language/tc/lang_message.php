@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_message.php 26938 2011-12-28 02:37:54Z svn_project_zhangjie $
+ *      $Id: lang_message.php 30863 2012-06-27 03:33:04Z zhangjie $
  *
  *      This file is automatically generate
  */
@@ -133,6 +133,7 @@ $lang = array (
   'search_forum_invalid' => '抱歉，您尚未指定搜索論壇的範圍',
   'search_invalid' => '抱歉，您尚未指定要搜索的關鍵字或用戶名',
   'search_redirect' => '搜索成功，現在將轉入結果頁面',
+  'search_closed' => '搜索功能已關閉',
   'to_view_the_photo_does_not_exist' => '抱歉，您要查看的相冊不存在或正在審核',
   'ban_view_other_thead' => '抱歉，禁止查看其他用戶的主題和帖子',
   'album_does_not_exist' => '抱歉，指定的相冊不存在',
@@ -915,7 +916,7 @@ $lang = array (
   'threadtype_num_invalid' => '抱歉，資料數值不正確，請檢查 {typetitle} 選項',
   'threadtype_unchangeable_invalid' => '抱歉，資料不得修改，請檢查{typetitle}選項',
 
-  'user_banned' => '抱歉，您的 IP 地址不在被允許，或您的賬號被禁用，無法訪問本站點',
+  'user_banned' => '抱歉，您的 IP 地址不在允許範圍內，或您的賬號被禁用，無法訪問本站點',
   'board_closed' => '抱歉，本站點暫時關閉，詳情請 <a href="mailto:{adminemail}">聯繫管理員</a>',
 
   'login_strike' => '密碼錯誤次數過多，請 15 分鐘後重新登錄',
@@ -961,16 +962,6 @@ $lang = array (
   'magics_thunder_message' => '{magicname} 發佈成功 ',
 
   'admin_cpanel_noaccess_ip' => '抱歉，只有特定 IP 範圍才能訪問',
-
-//---------------------------
-// Added by Valery Votintev
-//source/include/misc/misc_security.php
-	'attackevasive_1_subject'	=> '&#x9891;&#x7e41;&#x5237;&#x65b0;&#x9650;&#x5236;',
-	'attackevasive_1_message'	=> '&#x60a8;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x901f;&#x5ea6;&#x8fc7;&#x5feb;&#x6216;&#x8005;&#x5237;&#x65b0;&#x95f4;&#x9694;&#x65f6;&#x95f4;&#x5c0f;&#x4e8e;&#x4e24;&#x79d2;&#xff01;&#x8bf7;&#x7b49;&#x5f85;&#x9875;&#x9762;&#x81ea;&#x52a8;&#x8df3;&#x8f6c;&#x20;&#x2e;&#x2e;&#x2e;',
-	'attackevasive_2_subject'	=> '&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#x9650;&#x5236;',
-	'attackevasive_2_message'	=> '&#x672c;&#x7ad9;&#x73b0;&#x5728;&#x9650;&#x5236;&#x4f7f;&#x7528;&#x4ee3;&#x7406;&#x670d;&#x52a1;&#x5668;&#x8bbf;&#x95ee;&#xff0c;&#x8bf7;&#x53bb;&#x9664;&#x60a8;&#x7684;&#x4ee3;&#x7406;&#x8bbe;&#x7f6e;&#xff0c;&#x76f4;&#x63a5;&#x8bbf;&#x95ee;&#x672c;&#x7ad9;&#x3002;',
-	'attackevasive_4_subject'	=> '&#x9875;&#x9762;&#x91cd;&#x8f7d;&#x5f00;&#x542f;',
-	'attackevasive_4_message'	=> '&#x6b22;&#x8fce;&#x5149;&#x4e34;&#x672c;&#x7ad9;&#xff0c;&#x9875;&#x9762;&#x6b63;&#x5728;&#x91cd;&#x65b0;&#x8f7d;&#x5165;&#xff0c;&#x8bf7;&#x7a0d;&#x5019;&#x20;&#x2e;&#x2e;&#x2e;',
 
 );
 

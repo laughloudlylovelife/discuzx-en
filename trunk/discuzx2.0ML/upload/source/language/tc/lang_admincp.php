@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: lang_admincp.php 28030 2012-02-21 05:43:34Z monkey $
+ *      $Id: lang_admincp.php 30095 2012-05-10 06:36:49Z zhengqingpeng $
  */
 
 
@@ -4833,8 +4833,8 @@ $lang = array
 	'ec_alipay_contract_comment' => '如果你的支付寶賬號是簽約用戶，可以選擇「是」讓論壇使用你自己的商家服務平台。如果你還未簽約，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">請點擊這裡簽約</a>',
 	'ec_alipay_securitycode' => '交易安全校驗碼 (key)',
 	'ec_alipay_securitycode_comment' => '支付寶簽約用戶可以在此處填寫支付寶分配給你的交易安全校驗碼，此校驗碼你可以到支付寶官方的商家服務功能處查看',
-	'ec_alipay_partner' => '合作者身份 (partnerID)',
-	'ec_alipay_partner_comment' => '支付寶簽約用戶請在此處填寫支付寶分配給你的合作者身份，簽約用戶的手續費按照你與支付寶官方的簽約協議為準。如果你還未簽約，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">請點擊這裡簽約</a>；如果在簽約時出現合同模板衝突，請咨詢0571-88158090',
+	'ec_alipay_partner' => '合作者身份 (PID)',
+	'ec_alipay_partner_comment' => '支付寶簽約用戶請在此處填寫支付寶分配給你的合作者身份，簽約用戶的手續費按照你與支付寶官方的簽約協議為準。<br/>如果你還未簽約，<a href="http://act.life.alipay.com/systembiz/discuz/" target="_blank">請點擊這裡簽約</a>；如果已簽約,<a href="https://b.alipay.com/order/pidKey.htm?pid=2088501719138773&product=fastpay" target="_blank">請點擊這裡獲取PID、Key</a>;如果在簽約時出現合同模板衝突，請咨詢0571-88158090',
 	'ec_alipay_creditdirectpay' => '使用純即時到帳接口',
 	'ec_alipay_creditdirectpay_comment' => '如果你的簽約協議中包含純即時到帳接口（不是標準雙接口）可以選擇此項，讓積分充值只能使用即時到賬方式付款',
 
@@ -6206,29 +6206,26 @@ RepeatLimit 32
 //source/admincp/admincp_index.php - javascript function shownews()
 	'subscribe'			=> '订阅',//'Subscribe',
 
-//source/admincp/admincp_quickquery.php
-	'quick_enable'			=> '快速开启论坛版块功能',
-	'quick_enable_trash'		=> '开启 所有版块 主题回收站',
-	'quick_enable_bbcode'		=> '开启 所有版块 Discuz! 代码”',
-	'quick_enable_img'		=> '开启 所有版块 [IMG] 代码”',
-	'quick_enable_smilies'		=> '开启 所有版块 Smilies 代码',
-	'quick_enable_jammer'		=> '开启 所有版块 内容干扰码',
-	'quick_enable_anonymous'	=> '开启 所有版块 允许匿名发贴”',
-	'quick_disable'			=> '快速关闭论坛版块功能',
-	'quick_disable_trash'		=> '关闭 所有版块 主题回收站',
-	'quick_disable_html'		=> '关闭 所有版块 HTML 代码',
-	'quick_disable_bbcode'		=> '关闭 所有版块 Discuz! 代码',
-	'quick_disable_img'		=> '关闭 所有版块 [IMG] 代码',
-	'quick_disable_smilies'		=> '关闭 所有版块 Smilies 代码',
-	'quick_disable_jammer'		=> '关闭 所有版块 内容干扰码',
-	'quick_disable_anonymous'	=> '关闭 所有版块 允许匿名发贴',
-	'quick_members'			=> '会员操作相关',
-	'quick_clean_trans'		=> '清空 所有会员 积分交易记录',
-
 //---------------------------
-//Change Language
-'change_language'	=> '更改语言',//'Change language',
+//Change Language/Style
+	'change_language'	=> '更改语言',//'Change language',
+	'change_style'		=> '切换风格',//'Change Style',
 
+	'language'				=> 'Languages',
+	'setting_language'			=> 'Language Settings',
+	'setting_language_tips'			=> '<li>Add/Modify your language packs</li>',
+	'setting_language_available'		=> 'Enable',
+	'setting_language_id'			=> 'Id',
+	'setting_language_order'		=> 'Order',
+	'setting_language_flag'			=> 'Flag',
+	'setting_language_name'			=> 'Name (National!)',
+	'setting_language_title'		=> 'Title (English!)',
+	'setting_language_dir'			=> 'Direction',
+	'setting_language_actions'		=> 'Actions',
+//	'setting_language_...'			=> 'Language Settings ....',
+//	...
+	'nav_language'				=> 'Languages',
+//	...
 );
 
 //------------------------------------------------------

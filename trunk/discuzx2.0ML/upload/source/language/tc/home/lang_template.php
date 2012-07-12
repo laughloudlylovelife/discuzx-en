@@ -76,7 +76,7 @@ $lang = array (
   'comprehensive_overview' => '綜合概況',
   'comprehensive_overview_message' => '這裡看到的是站點的綜合概況發展統計(需要至少統計 2 天後才有效)',
   'info_interactive' => '信息互動',
-  'interactive_help_message' => '<li>來訪用戶：指的是每天訪問本站的唯一用戶數。一個用戶訪問多次，也只算一次</li>
+/*vot*/  'interactive_help_message' => '<li>來訪用戶：指的是每天訪問本站的唯一用戶數。一個用戶訪問多次，也只算一次</li>
   				<li>{$_G[setting][navs][2][navname]}：指的是每天發佈主題、投票、活動、懸賞、辯論、商品和主題回帖的總數量 </li>
 				<li>{$_G[setting][navs][3][navname]}：指的是每天創建{$_G[setting][navs][3][navname]}、{$_G[setting][navs][3][navname]}主題、{$_G[setting][navs][3][navname]}回帖的總數量 </li>
 				<li>{$_G[setting][navs][4][navname]}：指的是每天發佈記錄、日誌、圖片、話題、投票、活動、分享和互相評論的總數量 </li>
