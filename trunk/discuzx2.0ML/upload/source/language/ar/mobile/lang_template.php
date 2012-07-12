@@ -92,5 +92,6 @@ $lang = array (
   'user_mobile_pm_comment'	=> 'تم الاسال , سيتم تحويلك للصفحة السابقة',
   'reset'	=> 'مسح',
   'reg_username'	=> 'إسم المستخدم من 3-15',
+	'viewimg'			=> 'View image',//'查看图片',
 );
 

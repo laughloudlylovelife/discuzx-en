@@ -19,5 +19,6 @@ $lang = array
 	'namepost_succeed'	=> 'تمت العملية بنجاح',
 	'namepost_info_noperm'	=> 'عذراً ، لا يمكنك إستخدام هذه الدعائم في هذا المنتدى',
 	'namepost_info_user_noperm'	=> 'عذراً ، لا يمكنك إستخدام هذه الدعائم على هذا المستخدم',
+	'magic_namepost_succeed'	=> 'The user is anonymous',//'匿名的用户是',
 );
 
