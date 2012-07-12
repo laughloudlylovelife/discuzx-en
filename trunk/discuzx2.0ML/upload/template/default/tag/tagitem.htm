@@ -21,22 +21,22 @@
 	<h1 class="mt"><img class="vm" src="{IMGDIR}/tag.gif" alt="tag" /> {lang tag}: $tagname</h1>
 	<!--{if empty($showtype) || $showtype == 'thread'}-->
 		<div class="bm tl">
-			<div class="th">
-				<table cellspacing="0" cellpadding="0">
-					<tr>
-						<th><h2>{lang related_thread}</h2></th>
+<!--vot-->		<div class="bm_h">
+<!--vot-->			<h2>{lang related_thread}</h2>
+<!--vot-->		</div>
+<!--vot-->		<div>
+<!--Lake-->			<!--{if $threadlist}-->
+<!--Lake-->			<table cellspacing="0" cellpadding="4" border=1 width="100%" class="bm">
+<!--vot-->				<tr align="center">
+<!--Lake-->					<td>&nbsp;</td>
+<!--vot-->					<td>{lang thread}</td>
 						<td class="by">{lang forum}</td>
 						<td class="by">{lang author}</td>
 						<td class="num">{lang replies}</td>
 						<td class="by">{lang lastpost}</td>
 					</tr>
-				</table>
-			</div>
-			<div class="bm_c">
-				<!--{if $threadlist}-->
-					<table cellspacing="0" cellpadding="0">
 						<!--{loop $threadlist $thread}-->
-							<tr>
+<!--vot-->							<tr align="center">
 								<td class="icn">
 									<a href="forum.php?mod=viewthread&tid=$thread[tid]{if $_G['gp_archiveid']}&archiveid={$_G['gp_archiveid']}{/if}" title="{lang target_blank}" target="_blank">
 									<!--{if $thread[folder] == 'lock'}-->
@@ -82,7 +82,7 @@
 								<td class="by">
 									<cite>
 										<!--{if $thread['authorid'] && $thread['author']}-->
-											<a href="home.php?mod=space&uid=$thread[authorid]" c="1">$thread[author]</a>
+											<a href="home.php?mod=space&uid=$thread[authorid]" c="1">$thread[author]</a>,
 										<!--{else}-->
 											{lang anonymous}
 										<!--{/if}-->
@@ -91,10 +91,10 @@
 								</td>
 								<td class="num">
 									<a href="forum.php?mod=viewthread&tid=$thread[tid]" class="xi2">$thread[replies]</a>
-									<em>$thread[views]</em>
+<!--Lake-->								/ <em>$thread[views]</em>
 								</td>
 								<td class="by">
-									<cite><!--{if $thread['lastposter']}--><a href="{if $thread[digest] != -2}home.php?mod=space&username=$thread[lastposterenc]{else}forum.php?mod=viewthread&tid=$thread[tid]&page={echo max(1, $thread[pages]);}{/if}" c="1">$thread[lastposter]</a><!--{else}-->$_G[setting][anonymoustext]<!--{/if}--></cite>
+									<cite><!--{if $thread['lastposter']}--><a href="{if $thread[digest] != -2}home.php?mod=space&username=$thread[lastposterenc]{else}forum.php?mod=viewthread&tid=$thread[tid]&page={echo max(1, $thread[pages]);}{/if}" c="1">$thread[lastposter]</a><!--{else}-->$_G[setting][anonymoustext]<!--{/if}--></cite>,
 									<em><a href="{if $thread[digest] != -2}forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost$highlight#lastpost{else}forum.php?mod=viewthread&tid=$thread[tid]&page={echo max(1, $thread[pages]);}{/if}">$thread[lastpost]</a></em>
 								</td>
 							</tr>
