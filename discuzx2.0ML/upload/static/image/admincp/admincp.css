@@ -190,7 +190,7 @@ a.faq { background: url(faq.gif) no-repeat 0 2px; padding:1px; margin-left:10px;
 	.tips a:hover, .tips2 a:hover, .tipsblock a:hover{ color:#09C; }
 
 /* table */
-.tb{ clear:both; width:100%; margin-top: 8px; }
+/*vot*/ .tb{ clear:both; width:100%; margin-top: 8px; border-bottom: 1px solid #9CF;}
 
 /*vot*/	.tb tr {
 	border: 1px solid #9CF;
