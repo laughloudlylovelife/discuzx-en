@@ -248,6 +248,17 @@
 		<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
 			<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
 
+<!--vot-->		<!-- Facebook Comments -->
+<!--vot-->		<!--{if !empty($_G['setting']['facebook_comment'])}-->
+<!--vot-->		<div id="fb-root" style="margin-top:16px;"></div>
+<!--vot-->		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<!--vot-->		<!--{if !empty($_G['setting']['rewritestatus']) && in_array('forum_viewthread', $_G['setting']['rewritestatus'])}-->
+<!--vot-->		<fb:comments href="{$_G['siteurl']}thread-{$_G['tid']}-1-1.html" num_posts="2" width="757"></fb:comments>
+<!--vot-->		<!--{else}-->
+<!--vot-->		<fb:comments href="{$_G['siteurl']}forum.php?mod=viewthread&tid={$_G['tid']}&extra=page%3D1" num_posts="2" width="757"></fb:comments>
+<!--vot-->		<!--{/if}-->
+<!--vot-->		<!--{/if}-->
+
 		<!--{if $post['invisible'] == 0}-->
 		<div id="p_btn" class="mtw mbm cl">
 			<!--{if !empty($_G['setting']['pluginhooks']['viewthread_share_method'])}-->
