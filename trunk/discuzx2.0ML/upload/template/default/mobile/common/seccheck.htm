@@ -3,12 +3,12 @@
 	$sectpl = !empty($sectpl) ? explode("<sec>", $sectpl) : array('<br />',': ','<br />','');
 	$secshow = !isset($secshow) ? 1 : $secshow;
 	$sectabindex = !isset($sectabindex) ? 1 : $sectabindex;
-    $ran = random(5, 1);
+	$ran = random(5, 1);
 }
 <!--{if $secqaacheck}-->
 <!--{eval
 	include libfile('function/seccode');
-    $message = '';
+	$message = '';
 	$question = make_secqaa($sechash);
 	$secqaa = lang('core', 'secqaa_tips').$question;
 }-->
@@ -17,7 +17,7 @@
 <input name="sechash" type="hidden" value="$sechash" />
 <!--{if $sectpl}-->
 	<!--{if $secqaacheck}-->
-		<p>
+	<p>
         
         <strong>{lang secqaa}</strong>
         <br />

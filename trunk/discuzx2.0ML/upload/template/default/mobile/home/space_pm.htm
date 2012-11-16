@@ -13,12 +13,12 @@
         <p>
         	<!--{if $value[touid]}-->
 			<!--{if $value[msgfromid] == $_G[uid]}-->
-				<span class="xg1">{lang me}{lang you_to}{$value[tousername]}{lang say}</span>
+<!--vot-->			<span class="xg1">{lang me} {lang you_to} {$value[tousername]} {lang say}</span>
 			<!--{else}-->
-				<span class="xg1">{$value[tousername]}{lang you_to}{lang me}{lang say}</span>
+<!--vot-->			<span class="xg1">{$value[tousername]} {lang you_to} {lang me} {lang say}</span>
 			<!--{/if}-->
             <!--{elseif $value['pmtype'] == 2}-->
-			<span class="xg1">{lang chatpm_author}:$value['firstauthor']</span>
+			<span class="xg1">{lang chatpm_author}: $value['firstauthor']</span>
 		<!--{/if}-->
             <span class="xg1"><!--{date($value[dateline], 'u')}--></span>
         </p>
@@ -40,24 +40,24 @@
         <a name="last"></a>
         <div class="bm_c">
             <form id="pmform" class="pmform" name="pmform" method="post" action="home.php?mod=spacecp&ac=pm&op=send&pmid=$pmid&daterange=$daterange&pmsubmit=yes&mobile=yes" >
-			<input type="hidden" name="formhash" value="{FORMHASH}" />
-			<!--{if !$touid}-->
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<!--{if !$touid}-->
 			<input type="hidden" name="plid" value="$plid" />
-			<!--{else}-->
+		<!--{else}-->
 			<input type="hidden" name="touid" value="$touid" />
-			<!--{/if}-->
-			<textarea rows="2" cols="40" name="message" class="txt" id="replymessage" onkeydown="ctrlEnter(event, 'pmsubmit');"></textarea>
-			<p class="mtn">
-				<input type="submit" name="pmsubmit" id="pmsubmit" value="{lang reply}" />
-			</p>
+		<!--{/if}-->
+		<textarea rows="2" cols="40" name="message" class="txt" id="replymessage" onkeydown="ctrlEnter(event, 'pmsubmit');"></textarea>
+		<p class="mtn">
+			<input type="submit" name="pmsubmit" id="pmsubmit" value="{lang reply}" />
+		</p>
             </form>
         </div>
      </div>
     <!--{/if}-->
 <!--{/if}-->
 <!--{else}-->
-	<div class="bm_c">
-		{lang user_mobile_pm_error}
+    <div class="bm_c">
+	{lang user_mobile_pm_error}
     </div>
 <!--{/if}-->
 </div>
