@@ -36,7 +36,13 @@
 <!--{/loop}-->
 <!--{hook/index_middle_mobile}-->
 <div class="box">
-	{lang index_today}$todayposts<span class="pipe">|</span>{lang index_members}$_G['cache']['userstats']['totalmembers']<!--{if empty($gid) && $_G['setting']['whosonlinestatus'] && $onlinenum}--><span class="pipe">|</span>{lang online}$onlinenum<!--{/if}-->
+	{lang index_today}: $todayposts
+	<span class="pipe">|</span>
+	{lang index_members}: $_G['cache']['userstats']['totalmembers']
+	<!--{if empty($gid) && $_G['setting']['whosonlinestatus'] && $onlinenum}-->
+	<span class="pipe">|</span>
+	{lang online}: $onlinenum
+	<!--{/if}-->
 </div>
 <!--{hook/index_bottom_mobile}-->
 <!--{subtemplate mobile/common/footer}-->

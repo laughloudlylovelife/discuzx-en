@@ -14,7 +14,7 @@
 	</form>
 <!--{else}-->
 	<p class="xw1">{lang title_memcp_favorite}</p>
-    <p><!--{if $_G[gp_type] == 'forum'}-->{lang favorite_forum_confirm}<!--{elseif $_G[gp_type] == 'thread'}--> {lang favorite_thread_confirm}<!--{/if}--><strong>{$title}</strong></p>
+<!--vot--> <p><!--{if $_G[gp_type] == 'forum'}-->{lang favorite_forum_confirm}<!--{elseif $_G[gp_type] == 'thread'}--> {lang favorite_thread_confirm}<!--{/if}--> <strong>{$title}</strong></p>
 	<form method="post" autocomplete="off" id="favoriteform_{$id}" name="favoriteform_{$id}" action="home.php?mod=spacecp&ac=favorite&type=$type&id=$id&spaceuid=$spaceuid&mobile=yes" >
 		<input type="hidden" name="favoritesubmit" value="true" />
 		<input type="hidden" name="referer" value="{eval echo dreferer();}" />

@@ -2,15 +2,22 @@
 function tpl_hide_credits_hidden($creditsrequire) {
 global $_G;
 }
-<!--{block return}--><div class="locked"><!--{if $_G[uid]}-->{$_G[username]}<!--{else}-->{lang guest}<!--{/if}-->{lang post_hide_credits_hidden}</div><!--{/block}-->
+<!--{block return}-->
+<div class="locked">
+<!--{if $_G[uid]}-->{$_G[username]}<!--{else}-->{lang guest}<!--{/if}-->
+{lang post_hide_credits_hidden}
+</div>
+<!--{/block}-->
 <!--{eval return $return;}-->
 {eval
 }
 
 function tpl_hide_credits($creditsrequire, $message) {
 }
-<!--{block return}--><div class="locked">{lang post_hide_credits}</div>
-$message<br /><br />
+<!--{block return}-->
+<div class="locked">{lang post_hide_credits}</div>
+$message
+<br /><br />
 <!--{/block}-->
 <!--{eval return $return;}-->
 {eval
@@ -18,21 +25,36 @@ $message<br /><br />
 
 function tpl_codedisp($discuzcodes, $code) {
 }
-<!--{block return}--><div class="blockcode"><div id="code$discuzcodes[codecount]"><ol><li>$code</ol></div><em>{lang discuzcode_copyclipboard}</em></div><!--{/block}-->
+<!--{block return}-->
+<div class="blockcode">
+	<div id="code$discuzcodes[codecount]">
+		<ol><li>$code</ol>
+	</div>
+	<em>{lang discuzcode_copyclipboard}</em>
+</div>
+<!--{/block}-->
 <!--{eval return $return;}-->
 {eval
 }
 
 function tpl_quote() {
 }
-<!--{block return}--><div class="quote"><blockquote>\\1</blockquote></div><!--{/block}-->
+<!--{block return}-->
+<div class="quote">
+	<blockquote>\\1</blockquote>
+</div>
+<!--{/block}-->
 <!--{eval return $return;}-->
 {eval
 }
 
 function tpl_free() {
 }
-<!--{block return}--><div class="quote"><blockquote>\\1</blockquote></div><!--{/block}-->
+<!--{block return}-->
+<div class="quote">
+	<blockquote>\\1</blockquote>
+</div>
+<!--{/block}-->
 <!--{eval return $return;}-->
 {eval
 }
@@ -40,7 +62,11 @@ function tpl_free() {
 function tpl_hide_reply() {
 global $_G;
 }
-<!--{block return}--><div class="showhide"><h4>{lang post_hide}</h4>\\1</div>
+<!--{block return}-->
+<div class="showhide">
+	<h4>{lang post_hide}</h4>
+	\\1
+</div>
 <!--{/block}-->
 <!--{eval return $return;}-->
 {eval
@@ -49,7 +75,12 @@ global $_G;
 function tpl_hide_reply_hidden() {
 global $_G;
 }
-<!--{block return}--><div class="locked"><!--{if $_G[uid]}-->{$_G[username]}<!--{else}-->{lang guest}<!--{/if}-->{lang post_hide_reply_hidden}</div><!--{/block}-->
+<!--{block return}-->
+<div class="locked">
+	<!--{if $_G[uid]}-->{$_G[username]}<!--{else}-->{lang guest}<!--{/if}-->
+	{lang post_hide_reply_hidden}
+</div>
+<!--{/block}-->
 <!--{eval return $return;}-->
 {eval
 }
@@ -74,16 +105,28 @@ $is_archive = $_G['forum_thread']['is_archived'] ? "&fid=".$_G['fid']."&archivei
 			<!--{/if}-->
 			<span class="xg1">($attach[dateline] {lang upload})</span>
 		</p>
-		<p class="xg1">$attach[attachsize]<!--{if $attach['readperm']}-->, {lang readperm}: <strong>$attach[readperm]</strong><!--{/if}-->, {lang downloads}: $attach[downloads]<!--{if !$attach['attachimg'] && $_G['getattachcredits']}-->, {lang attachcredits}: $_G[getattachcredits]<!--{/if}--></p>
+		<p class="xg1">
+			$attach[attachsize]
+			<!--{if $attach['readperm']}-->
+				, {lang readperm}: <strong>$attach[readperm]</strong>
+			<!--{/if}-->
+				, {lang downloads}: $attach[downloads]
+			<!--{if !$attach['attachimg'] && $_G['getattachcredits']}-->
+				, {lang attachcredits}: $_G[getattachcredits]
+			<!--{/if}-->
+		</p>
 		<p>
 			<!--{if $attach['price']}-->
-				{lang price}: <strong>$attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</strong> &nbsp;[<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]" target="_blank">{lang pay_view}</a>]
+				{lang price}: <strong>$attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]} {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</strong>
+                                &nbsp;[<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]" target="_blank">{lang pay_view}</a>]
 				<!--{if !$attach['payed']}-->
 					&nbsp;[<a href="forum.php?mod=misc&action=attachpay&aid=$attach[aid]&tid=$attach[tid]">{lang attachment_buy}</a>]
 				<!--{/if}-->
 			<!--{/if}-->
 		</p>
-		<!--{if $attach['description']}--><p class="xg2">{$attach[description]}</p><!--{/if}-->
+		<!--{if $attach['description']}-->
+			<p class="xg2">{$attach[description]}</p>
+		<!--{/if}-->
 	</dd>
 </div>
 <!--{/block}-->
@@ -103,14 +146,15 @@ $is_archive = $_G['forum_thread']['is_archived'] ? "&fid=".$_G['fid']."&archivei
 		<div class="box box_ex2">
 			<a href="forum.php?mod=attachment{$is_archive}&aid=$aidencode&nothumb=yes" id="aid$attach[aid]" class="xw1" target="_blank">$attach[filename]</a>
 			<span class="xg1">($attach[dateline] {lang upload})</span>
-			<p class="xg1">{lang sourceimagesize} $attach[attachsize], {lang downloads}: $attach[downloads]</p>
+			<p class="xg1">{lang sourceimagesize}: $attach[attachsize], {lang downloads}: $attach[downloads]</p>
 			<p class="mbn">
 			<!--{if $attach['readperm']}-->{lang readperm}: <strong>$attach[readperm]</strong><!--{/if}-->
-				<!--{if $attach['price']}-->{lang price}: <strong>$attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</strong> &nbsp;[<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]">{lang pay_view}</a>]
+			<!--{if $attach['price']}-->{lang price}: <strong>$attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]} {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}</strong>
+                          &nbsp;[<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]">{lang pay_view}</a>]
 				<!--{if !$attach['payed']}-->
 					&nbsp;[<a href="forum.php?mod=misc&action=attachpay&aid=$attach[aid]&tid=$attach[tid]" target="_blank">{lang attachment_buy}</a>]
 				<!--{/if}-->
-				<!--{/if}-->
+			<!--{/if}-->
 			</p>
 			<!--{if $attach['description']}--><p class="mbn xg2">{$attach[description]}</p><!--{/if}-->
 			<!--{if !$attach['price'] || $attach['payed']}-->
@@ -149,7 +193,8 @@ $is_archive = $_G['forum_thread']['is_archived'] ? '&fid='.$_G['fid'].'&archivei
 			<em class="xg1"><br />({lang downloads}: $attach[downloads], $attach[dateline] {lang upload})
 			</em>
 			<!--{if $attach['price']}-->
-				<p class="xg1">{lang price}: $attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}&nbsp;<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]">[{lang pay_view}]</a>
+				<p class="xg1">{lang price}: $attach[price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]} {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]}
+                                     &nbsp;<a href="forum.php?mod=misc&action=viewattachpayments&aid=$attach[aid]">[{lang pay_view}]</a>
 				<!--{if !$attach['payed']}-->
 				&nbsp;[<a href="forum.php?mod=misc&action=attachpay&aid=$attach[aid]&tid=$attach[tid]" target="_blank">{lang attachment_buy}</a>]
 				<!--{/if}-->
