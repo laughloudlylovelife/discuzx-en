@@ -119,6 +119,8 @@ function writetocsscache($data) {
 //echo "writetocsscache: check 1 for cssfile=".DISCUZ_ROOT.'./'.$data['tpldir'].'/common/extend_'.$entry."<br>";
 			if(file_exists($cssfile = DISCUZ_ROOT.'./'.$data['tpldir'].'/common/extend_'.$entry)) {
 				$cssdata .= @implode('', file($cssfile));
+//DEBUG
+//echo "writetocsscache: extend_css=", $cssfile, ", extend_data=", file($cssfile), "<br>";
 			}
 			if(is_array($_G['setting']['plugins']['available']) && $_G['setting']['plugins']['available']) {
 				foreach($_G['setting']['plugins']['available'] as $plugin) {
